@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+@import url(http://fonts.googleapis.com/css?family=Kreon:400,700&text=%26);
+
+
 body {
     font-family:sans-serif;
     margin:0;
@@ -5,14 +9,21 @@ body {
     background-color:#EEE;
 }
 
+h1, h2, h3 {
+    font-family: 'Playfair Display', 'Source Sans Pro', sans-serif;
+}
+
 header[role=banner] {
     background-color:#FFF;
     color:#191919;
-    padding:0.5em 0 0 0;
+    padding:0 0 0 0;
     margin-bottom:0em;
     text-align:center;
 }
 
+header[role=banner] img {
+    padding:1em 0 0 0;
+}
 header[role=banner] h1 {
     margin:0;
 }
@@ -20,7 +31,7 @@ header[role=banner] h1 {
 header[role=banner] em {
     display:block;
     margin:0.3em 0;
-    padding:0.5em 0 0 0;
+    padding:0.5em 0 1em 0;
 }
 
 header[role=banner] nav, header[role=banner] nav a {
@@ -42,7 +53,9 @@ header[role=banner] nav ul li {
 
 
 body > section {
-    margin:0.5em;
+    margin:0 auto;
+    width:90%;
+    max-width:50em;
 }
 
 @media only screen and (min-width: 30em) {
@@ -56,7 +69,8 @@ body > section {
     }
     header[role=banner] em {
         position:relative;
-/*        top:1em;*/
+        margin:0 auto;
         left:3.1em;
+        max-width:80%;
     }
 }
