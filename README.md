@@ -1,2 +1,2 @@
-Blog
-====
+# Democracy Club Website
+
