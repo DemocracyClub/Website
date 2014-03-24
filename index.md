@@ -14,3 +14,7 @@ Who are we? We’re [Sym Roe](https://twitter.com/symroe) and [Will Moy](https:/
 We don’t have many plans yet, but if you want to be involved please let us have your email, or follow us on twitter. We need to work together to work out how to make this the best election Britain’s ever had.
 
 Let’s get talking.
+
+* [Mailing list](https://groups.google.com/forum/#!forum/democracy-club)
+* Hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe) or [@puzzlesthewill](https://twitter.com/puzzlesthewill)
+* [GitHub](https://github.com/DemocracyClub/) or [Sym's list of ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
