@@ -15,6 +15,7 @@ We don’t have many plans yet, but if you want to be involved please let us hav
 
 Let’s get talking.
 
+* [@democlub](https://twitter.com/democlub)
 * [Get involved!](get_involved)
 * [Mailing list](https://groups.google.com/forum/#!forum/democracy-club)
 * Hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe), [@puzzlesthewill](https://twitter.com/puzzlesthewill) or [@MeAndVan](https://twitter.com/MeAndVan)
