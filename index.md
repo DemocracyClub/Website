@@ -3,7 +3,7 @@ layout: default
 title: Democracy Club
 ---
 
-There’s [just over a year](https://twitter.com/DaysToElection) until the next general election.
+There’s [only a few days](https://twitter.com/DaysToElection) until the next general election.
 
 In 2010 7,000 non-partisan volunteers [got together](http://news.bbc.co.uk/1/hi/uk_politics/election_2010/8651258.stm) as Democracy Club and got stuck in doing a range of useful, simple activities like working out who all the candidates were, and collecting information about what they thought about major issues. But it was just an experiment, and one that was started a bit too close to the election to have much impact. 
 
@@ -18,6 +18,6 @@ Let’s get talking.
 * [@democlub](https://twitter.com/democlub)
 * [Get involved!](get_involved)
 * [Mailing list](https://groups.google.com/forum/#!forum/democracy-club)
-* Hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe), [@puzzlesthewill](https://twitter.com/puzzlesthewill) or [@MeAndVan](https://twitter.com/MeAndVan)
+* Hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe) and [@puzzlesthewill](https://twitter.com/puzzlesthewill)
 * [GitHub](https://github.com/DemocracyClub/) or [Sym's list of ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
 * [@DaysToElection bot](https://twitter.com/DaysToElection)
