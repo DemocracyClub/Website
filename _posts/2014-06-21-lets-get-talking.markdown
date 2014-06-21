@@ -5,7 +5,7 @@ date:   2014-06-21 21:00:00
 categories: blog
 ---
 
-We have a lot of plans and ideas for how to make democracy and elections better, that we'll be blogging and emailing about over the coming months.
+We have a lot of plans and ideas for how to make democracy and elections better that we'll be blogging and emailing about over the coming months.
 
 The thing we've found so far is that you do too!
 
