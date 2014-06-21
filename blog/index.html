@@ -9,7 +9,7 @@ title: Blog posts
 
         <header>
             <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
+            <span class="date"><time datetime="{{post.date|date:"%F"}}">{{ post.date | date_to_string }}</time></span><br/>
             <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
         </header>
 
