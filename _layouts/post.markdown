@@ -15,7 +15,7 @@ layout: default
 
 ### Comments
 
-Rather than write a comment here, why not [join the mailing list](https://groups.google.com/forum/#!forum/democracy-club) or tweet us [@democlub](https://twitter.com/democlub) or on the hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub)
+Rather than write a comment here, why not [join the mailing list](https://groups.google.com/forum/#!forum/democracy-club) tweet us [@democlub](https://twitter.com/democlub) or use the hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub)
 {% endcapture %}
 
 {{ text | markdownify }}
