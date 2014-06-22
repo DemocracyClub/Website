@@ -32,4 +32,4 @@ We've started earlier this time around, but the months are whooshing past.
 
 Will and I both have full time jobs, so it's all about getting started early and working with others to make Democracy Club as effective as possible.
 
-This weekend we're organising an unconference for anyone who's interested in making the next election better. If that's you, you can sign up here.
+This weekend we're organising an unconference for anyone who's interested in making the next election better. If that's you, [you can sign up here](http://www.eventbrite.co.uk/e/democracy-club-unconference-tickets-11441621197?aff=eac2).
