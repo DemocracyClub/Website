@@ -18,6 +18,6 @@ Let’s get talking.
 * [@democlub](https://twitter.com/democlub)
 * [Get involved!](get_involved)
 * [Mailing list](https://groups.google.com/forum/#!forum/democracy-club)
-* Hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe) and [@puzzlesthewill](https://twitter.com/puzzlesthewill)
+* [@democlub](https://twitter.com/democlub), hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe) and [@puzzlesthewill](https://twitter.com/puzzlesthewill)
 * [GitHub](https://github.com/DemocracyClub/) or [Sym's list of ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
 * [@DaysToElection bot](https://twitter.com/DaysToElection)
