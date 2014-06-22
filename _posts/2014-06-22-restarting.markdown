@@ -1,4 +1,9 @@
-## Restarting
+---
+layout: post
+title:  "Restarting"
+date:   2014-06-22 19:00:00
+categories: blog
+---
 
 Although I wan't involved in organizing Democracy Club before the 2010 election, I did get involved as a volunteer.  I [uploaded election leaflets](http://electionleaflets.org) that were shoved through my door (as well as getting everyone I knew to give me their leaflets to upload), called up my MP Richard Bacon, asking him why he hadn't filled out the candidate survey and I even made a little project that [stored the major party manifestoes](https://github.com/symroe/manifestos) and made them searchable.
 
