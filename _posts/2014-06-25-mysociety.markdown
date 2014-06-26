@@ -8,7 +8,7 @@ categories: blog
 Following on from [yesterday's post]({% post_url 2014-06-24-mapping-the-projects %}) about some initial projects, here is a guest post from mySociety's 
 Myf Nixon.
 
-We talk a lot about the basic projects being the 'pipes a sewers' of democracy.  In other words, the stuff that needs to be in place as a baseline before other projects can happen.  mySociety, and particularly the Poplus projects are excellent example of this, and without them projects like Democracy Club would have a much harder time.
+We talk a lot about the basic projects being the 'pipes and sewers' of democracy.  In other words, the stuff that needs to be in place as a baseline before other projects can happen.  mySociety, and particularly the Poplus projects are excellent example of this, and without them projects like Democracy Club would have a much harder time.
 
 ----
 
@@ -16,7 +16,7 @@ mySociety build tools that give people greater access to democracy - you probabl
 
 More recently though, we’ve been concerned with writing code that will help other people to run their own civic or democratic websites and online tools. And if you’re planning to put something together for the 2015 election, you might find they provide some very useful shortcuts.
 
-Under the banner of the recently evolved Poplus project, we’re creating Components, small pieces of code that each:
+Under the banner of the recently evolved [Poplus](http://www.poplus.org/) project, we’re creating Components, small pieces of code that each:
 
 a) perform one useful task for civic websites
 b) can work alone or together with other Components
@@ -30,7 +30,7 @@ Do check out the Poplus website for more information on [what’s available](htt
 
 Once texts have been imported to SayIt, they become very accessible. They’re easier to browse. You can search them. And you can link to them in a whole variety of ways: link to everything said by a single speaker, for example, or to one specific statement within a long debate.
 
-You can see SayIt in action in a few places. Here, for example, are transcripts from Philadelphia’s City council meetings. And here is the Leveson Inquiry in a far more accessible form than the PDFs on which it was originally shared with the public.
+You can see SayIt in action in a few places. Here, for example, are [transcripts from Philadelphia’s City council meetings](http://philadelphia.sayit.mysociety.org/). [And here is the Leveson Inquiry](http://leveson.sayit.mysociety.org/) in a far more accessible form than the PDFs on which it was originally shared with the public.
 
 SayIt can also be used more like a scrapbook - see [this small collection](http://stroud.sayit.mysociety.org/) of things said about the town of Stroud.
 
