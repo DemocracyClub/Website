@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "mySociety"
-date:   2014-06-24 19:00:00
+date:   2014-06-25 19:00:00
 categories: blog
 ---
 
@@ -62,4 +62,3 @@ PopIt is an obvious tool for doing things like:
 If you are interested in using PopIt, give us a shout at hello@mysociety.org.
 
 You might also like to get talking on the [Poplus mailing](https://groups.google.com/forum/#!forum/poplus) list and see if there are other Components planned that might suit your plans.
-
