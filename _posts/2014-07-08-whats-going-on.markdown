@@ -5,7 +5,7 @@ date:   2014-07-09 06:50:00
 categories: blog
 ---
 
-Democracy Club and others [got together recently](http://democracyclub.org.uk/blog/2014/06/21/lets-get-talking/) to share our plans and ideas for how to make democracy and elections better. We're very grateful King's College London for providing a home at short notice.
+Democracy Club and others [got together recently](http://democracyclub.org.uk/blog/2014/06/21/lets-get-talking/) to share our plans and ideas for how to make democracy and elections better. We're very grateful to King's College London for providing a home at short notice.
 
 We all know that competing with the [election din from political parties](http://democracyclub.org.uk/blog/2014/06/26/a-fair-fight/) will be hard and collaboration will be critical. So the first thing we did was ask participants to map what election projects are out there.
 
