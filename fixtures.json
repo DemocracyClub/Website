@@ -1,0 +1,113 @@
+[
+{
+    "fields": {
+        "slug": "democracy-club",
+        "parent": null,
+        "title": "Democracy Club"
+    },
+    "model": "hermes.category",
+    "pk": 1
+},
+{
+    "fields": {
+        "body": "We have a lot of plans and ideas for how to make democracy and elections better that we'll be blogging and emailing about over the coming months.\r\n\r\nThe thing we've found so far is that you do too!\r\n\r\nThere are so many people and organisations out there getting ready by writing code, gathering data, planning campaigns, running workshops and so on.  \r\n\r\nIt's exciting and a little overwhelming at times just trying to keep track of it all.\r\n\r\nWouldn't it be great if we all got together to talk about what we were doing?\r\n\r\nWouldn't it be better if we figured out that we could help each other?\r\n\r\n## Introducing the [Democracy Club Unconference](https://www.eventbrite.co.uk/e/democracy-club-tickets-11441621197#)\r\n\r\nIf you don't know, an [unconference][unconference] is a conference that's run by who attends.  Have something to talk about?  Great, turn up, put your name in a session slot and see who turns up.\r\n\r\nIt's a great way to get a large group of people talking, and we plan to try to capture all the conversations on the day and build on them collectively.\r\n\r\n\r\n## Join us\r\n\r\nWe're hosting this event on the [28th of June 2014 in London](https://www.eventbrite.co.uk/e/democracy-club-tickets-11441621197#).  We'd love it it you could turn up and join in the conversation.  We'd especially love it if you have a project you're working on that you can talk about.  Or Maybe you know someone who does?  Bring them along too!\r\n\r\n\r\n[unconference]: http://en.wikipedia.org/wiki/Unconference\r\n",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "symroe"
+        ],
+        "summary": "We have a lot of plans and ideas for how to make democracy and elections better that we'll be blogging and emailing about over the coming months.",
+        "created_on": "2014-06-21T20:00:00Z",
+        "modified_on": "2014-11-01T16:45:37.711Z",
+        "slug": "lets-get-talking",
+        "subject": "We need to talk"
+    },
+    "model": "hermes.post",
+    "pk": 1
+},
+{
+    "fields": {
+        "body": "Although I wan't involved in organizing Democracy Club before the 2010 election, I did get involved as a volunteer.  I [uploaded election leaflets](http://electionleaflets.org) that were shoved through my door (as well as getting everyone I knew to give me their leaflets to upload), called up my MP Richard Bacon, asking him why he hadn't filled out the candidate survey and I even made a little project that [stored the major party manifestoes](https://github.com/symroe/manifestos) and made them searchable.\r\n\r\nI remember feeling incredibly empowered by having the ability to take these small actions.  It was (rightly) like voting was only a small part of living in a democracy, with the other parts made up by small tasks performed by a lot of people.\r\n\r\nHowever, after the election day and the weeks after it where we all got caught up with the coalition I slowly forgot about the collection of projects.  The next election seemed like an age away, and there weren't any obvious tasks that I could do that related to the day to day of government.\r\n\r\nIt seemed like everyone else forgot too, and the volunteer run project all but stopped.\r\n\r\nThis all changed over Christmas 2013, when the extended family conversation turned to politics.  I enjoy talking about politics, but this conversation made me feel like we hadn't moved anywhere since 2010: disempowerment and cynicism about career politicians.  We've all had conversation like that, and it's all too tempting to give up.\r\n\r\nInstead of doing that though, I made a list of things that I, as a programmer, could to that might make *some* difference.  Some of these ideas were to help out existing projects, some were brand new projects.\r\n\r\nThen I started talking to people, realizing that there was limited value to me writing a load of code without having the people who were interested in using the tools I was making.\r\n\r\nThe obvious place to start was at the (no longer happening) mySociety meet ups at Mozilla.  It was there that Tom Steinberg put me in touch with Full Fact's Will Moy.\r\n\r\nWill and I realised that if we got started earlier Democracy Club could have even more impact this time around, especially if we could bring together the volunteers and the technical expertise that made it work last time with even better links to other people's projects.\r\n\r\n\r\nWe got the blessing Tim and Seb who had started the project 4 years before, and so Democracy Club was relaunched.\r\n\r\n## What's next\r\n\r\nWe've started earlier this time around, but the months are whooshing past.\r\n\r\nWill and I both have full time jobs, so it's all about getting started early and working with others to make Democracy Club as effective as possible.\r\n\r\nThis weekend we're organising an unconference for anyone who's interested in making the next election better. If that's you, [you can sign up here](http://www.eventbrite.co.uk/e/democracy-club-unconference-tickets-11441621197?aff=eac2).",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "symroe"
+        ],
+        "summary": "Although I wan't involved in organizing Democracy Club before the 2010 election, I did get involved as a volunteer.  I [uploaded election leaflets](http://electionleaflets.org) that were shoved through my door (as well as getting everyone I knew to give me their leaflets to upload), called up my MP Richard Bacon, asking him why he hadn't filled out the candidate survey and I even made a little project that [stored the major party manifestoes](https://github.com/symroe/manifestos) and made them searchable.",
+        "created_on": "2014-06-22T18:00:00Z",
+        "modified_on": "2014-11-01T17:06:03.846Z",
+        "slug": "restarting",
+        "subject": "Restarting"
+    },
+    "model": "hermes.post",
+    "pk": 2
+},
+{
+    "fields": {
+        "body": "In the past two or three years \u2014 that is, at any time since the Arab Spring, since the tsunami hit Fukushima, or since William and Kate got married \u2014 have you discussed politics?\r\n\r\nIf you have, welcome to the 35%.\r\n\r\nYou might be even more special than that. Do you recognise this person\u2026?\r\n \r\n## 1. You think getting involved in politics can make a difference\r\n\r\nOnly 7% of us strongly agree that getting involved in politics can make a difference \u2014 and only 25% even tend to agree. The rest of us are either indifferent or disbelieving.\r\n \r\n## 2. You know a lot about politics\r\n\r\nOnly 4% of people think they know a great deal about politics. To the nearest 10%, that\u2019s nobody. Another 40% say we know a fair amount, but more than half of us say we know not very much or nothing at all.\r\n \r\n## 3. You want to be involved in national decisions\r\n\r\nOnly 6% of us want to be very involved in national decisions, with another 27% up for being fairly involved. Two thirds of us would prefer mainly to keep out of it or to steer clear completely.\r\n \r\n## 4. And you care\r\n\r\nAre you part of the 8% minority who are very interested politics? Or the 34% who are fairly interested? Or do you stick with the majority who say we\u2019re not very interested, or not interested at all?\r\n \r\n\r\nIt\u2019s an unusual sort of person who\u2019s really involved in politics, who speaks the language, cares about the ins and outs and wants to get stuck in. Fewer than one in ten of us fit that bill.\r\n\r\nYet about a third of us have talked about politics or done something like sign a petition in the past few years. We may not follow politics avidly, but we\u2019re not indifferent either. But it\u2019s likely that we care a lot more about issues than we do about politics itself.\r\n\r\nAnd before we conclude that politics is a minority sport, two thirds of us plan to vote at the next election \u2014 in fact, half of us say we\u2019re certain to, and the rest of those say we\u2019re likely to.\r\n\r\nSo if you had to split the country into political tribes, very roughly you might say that 10% or less of us are into politics; another 30% pay some attention but care more about issues; another 30% focus on just voting; and the final 30% don\u2019t even vote.\r\n\r\nAnd if you\u2019re one of that 10% and you want to help or encourage the others to get involved, ironically perhaps talking a less about politics might help.\r\n\r\nWhat Democracy Club did in 2010 was help people get information specifically about their candidates in their area, and what they stood for, exactly when people needed that information to choose how to vote. We think that\u2019s a pretty good starting point: if you\u2019re not that into politics, but you care enough to get involved in particular issues, or simply to turn out and vote, we want to build things that help you in 2015.\r\n\r\nAnd we\u2019ve got 318 days to do it.",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "willmoy"
+        ],
+        "summary": "In the past two or three years \u2014 that is, at any time since the Arab Spring, since the tsunami hit Fukushima, or since William and Kate got married \u2014 have you discussed politics?\r\n",
+        "created_on": "2014-06-23T18:00:00Z",
+        "modified_on": "2014-11-01T17:06:54.479Z",
+        "slug": "odd-one-out",
+        "subject": "The odd one out"
+    },
+    "model": "hermes.post",
+    "pk": 3
+},
+{
+    "fields": {
+        "body": "As I said [on Sunday](/blog/2014/06/21/lets-get-talking/), keeping track of all the projects and tools out there is a little overwhelming sometimes.\r\n\r\nIt's because of this that I started on the [ideas list](https://github.com/symroe/Election/blob/master/IDEAS.mkd) over Christmas, but I'd like to expand on this in a way that allows everyone to see a map of who is doing what.\r\n\r\nSo, let's start with the easy stuff: what Democracy Club (and friends) did over the last General Election:\r\n\r\n### Candidates database\r\n\r\nThis underpins almost every other project.  We need to know who's standing for election and where before we can build anything that lets anyone interact with them.\r\n\r\nWe think Democracy Club made the most comprehensive list last time around, and we have an even better chance this time.\r\n\r\nSo far we know of a few different projects that are starting to build such a list and we hope they'll all publish them as open data.\r\n\r\nI'd like to see this data accessible in the [Popolo](http://popoloproject.com/) format using mySociety's amazing [PoPit](http://popit.poplus.org/) project.  \r\n\r\nBecause of the importance of this, I feel like Democracy Club should help with these projects as much as it can.\r\n\r\n### Candidates survey\r\n\r\nIn brief, this project emailed all the candidates to ask them to fill out a survey, answering local and national question.\r\n\r\n### [Election Leaflets](http://www.electionleaflets.org/)\r\n\r\nBefore throwing them away (or reading them\u2026), take a photo of all the election leaflets that get shoved through your letter box.  Upload it to this site to contribute towards a permanent archive.\r\n\r\n----\r\n\r\n\r\nSo we can think of this as a baseline for Democracy Club in 2015, but there were (and are) so many other projects.  We didn't do anything around vote matching to party policies (there are a few popular sites that do this), we didn't really do anything offline or for people who aren't in the [7% of people who strongly agree that getting involved in politics can make a difference](/blog/2014/06/23/odd-one-out/).\r\n\r\nThere will be so many more things that were done that we didn't know about, from academic projects to NGO campaigns, to news organizations, to hackers with a cool github project.\r\n\r\nWe'd like to know about them all, and the more we know the better we can help everyone talk to each other.\r\n\r\nIf you have ideas, have a project of any sort or are interested in using something we might make, please get in touch \u2013 we'd love to know what everyone is up to.\r\n\r\n[If you're free, come along on Saturday to talk to us in person](http://www.eventbrite.co.uk/e/democracy-club-unconference-tickets-11441621197?aff=eac2)",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "symroe"
+        ],
+        "summary": "As I said [on Sunday](/blog/2014/06/21/lets-get-talking/), keeping track of all the projects and tools out there is a little overwhelming sometimes.",
+        "created_on": "2014-06-24T18:00:00Z",
+        "modified_on": "2014-11-01T17:38:47.053Z",
+        "slug": "mapping-projects",
+        "subject": "Mapping the projects"
+    },
+    "model": "hermes.post",
+    "pk": 4
+},
+{
+    "fields": {
+        "body": "Following on from [yesterday's post](/blog/2014/06/24/mapping-projects/) about some initial projects, here is a guest post from mySociety's \r\n[Myf Nixon](https://twitter.com/mockduck).\r\n\r\nWe talk a lot about the basic projects being the 'pipes and sewers' of democracy.  In other words, the stuff that needs to be in place as a baseline before other projects can happen.  mySociety, and particularly the Poplus projects are excellent example of this, and without them projects like Democracy Club would have a much harder time.\r\n\r\n----\r\n\r\nmySociety build tools that give people greater access to democracy - you probably know us (if at all) through our UK websites FixMyStreet, WriteToThem, TheyWorkForYou and WhatDoTheyKnow. \r\n\r\nMore recently though, we\u2019ve been concerned with writing code that will help other people to run their own civic or democratic websites and online tools. And if you\u2019re planning to put something together for the 2015 election, you might find they provide some very useful shortcuts.\r\n\r\nUnder the banner of the recently evolved [Poplus](http://www.poplus.org/) project, we\u2019re creating Components, small pieces of code that each:\r\n\r\na) perform one useful task for civic websites\r\nb) can work alone or together with other Components\r\nc) are open source\r\n\r\nDo check out the Poplus website for more information on [what\u2019s available](http://poplus.org/components/current/) (and maybe [get involved](http://poplus.org/get-involved/other-ways/) as a developer yourself) but for now I\u2019d like to introduce you to our two most recent Components, [SayIt](http://sayit.mysociety.org/) and [PopIt](http://popit.poplus.org/).\r\n\r\n### SayIt\r\n\r\n[SayIt](http://sayit.mysociety.org/) allows you to publish things that people have said online, quickly and easily. It\u2019s ideal for storing and displaying things like speeches, minutes of meetings, or transcripts of trials.\r\n\r\nOnce texts have been imported to SayIt, they become very accessible. They\u2019re easier to browse. You can search them. And you can link to them in a whole variety of ways: link to everything said by a single speaker, for example, or to one specific statement within a long debate.\r\n\r\nYou can see SayIt in action in a few places. Here, for example, are [transcripts from Philadelphia\u2019s City council meetings](http://philadelphia.sayit.mysociety.org/). [And here is the Leveson Inquiry](http://leveson.sayit.mysociety.org/) in a far more accessible form than the PDFs on which it was originally shared with the public.\r\n\r\nSayIt can also be used more like a scrapbook - see [this small collection](http://stroud.sayit.mysociety.org/) of things said about the town of Stroud.\r\n\r\nWhat would you do with SayIt? Well, it\u2019d be a very easy tool to use for some of the following:\r\n\r\n- Collect everything said by election candidates in hustings, in the press or on social media\r\n- Collect everything said by anyone on a hot political issue\r\n- Store and publish election promises\r\n\r\nAnyone can set up their own SayIt instance - it\u2019s deliberately been set up with very low barriers to entry, so you don\u2019t even need to be remotely tecchy. Drop us a line at [sayit@mysociety.org](mailto:sayit@mysociety.org) and we\u2019ll show you how.\r\n\r\n### PopIt\r\n\r\n[PopIt](http://popit.poplus.org/) is designed to solve the simple problem of storing, displaying and maintaining data about people and positions.\r\n\r\nMostly, we expect those people to be politicians or electoral candidates - but PopIt can be used for any group of people who are interlinked. It\u2019s particularly useful for people running parliamentary monitoring websites (like our own TheyWorkForYou) - it\u2019s currently being used on websites such as Chile\u2019s [Vota Inteligente](http://votainteligente.cl/) and [Congreso Interactivo](http://monitor.congresointeractivo.org/) in Argentina, among others.\r\n\r\nAgain, PopIt is very easy to populate with data - it has a web interface that is pretty self-explanatory for anyone who can use the web. So when it gets close to the wire, you can rope in friends and family to help you.\r\n\r\nPopIt is an obvious tool for doing things like:\r\n\r\n- Creating lists of electoral candidates\r\n- Creating lists of incumbent politicians\r\n- Highlighting links between the people on those lists\r\n- Showing positions in terms of who holds them now and who previously held them\r\n\r\n- and it will also sit neatly under whatever functionality you have planned. Plus, of course, it talks nicely to SayIt, opening up further possibilities there.\r\n\r\nIf you are interested in using PopIt, give us a shout at hello@mysociety.org.\r\n\r\nYou might also like to get talking on the [Poplus mailing](https://groups.google.com/forum/#!forum/poplus) list and see if there are other Components planned that might suit your plans.\r\n",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "symroe"
+        ],
+        "summary": "Following on from [yesterday's post](/blog/2014/06/24/mapping-projects/) about some initial projects, here is a guest post from mySociety's \r\n[Myf Nixon](https://twitter.com/mockduck).\r\n",
+        "created_on": "2014-06-25T18:00:00Z",
+        "modified_on": "2014-11-01T17:36:27.140Z",
+        "slug": "mysociety",
+        "subject": "mySociety"
+    },
+    "model": "hermes.post",
+    "pk": 5
+},
+{
+    "fields": {
+        "body": "Nesta have an [interesting blog post up](http://www.nesta.org.uk/blog/big-data-and-2015-uk-general-election-digital-democracy-or-digitally-divisive) about big data at the next election. It\u2019s painful reading: it makes it sound like the election campaign will be something done by politicians to the rest of us. (Again).\r\n\r\nTom Steinberg, founder of mySociety, reckons that in the long run this technological arms race won\u2019t put any party ahead because they\u2019ll all end up with equivalent tools that cancel each out.\r\n\r\nThe signs are there: in a battle for the silliest name, the Conservatives are revamping a big database called \u2018Merlin\u2019, while Labour have \u2018Nation Builder\u2019 and the Liberal Democrats have VAN (\u2018Voter Activation Network\u2019).\r\n\r\nBut while the parties might all end up on a level playing field, where does that leave the rest of us? They can recall how you said you\u2019d vote ten years ago, when perhaps you can\u2019t. But can you recall how they said they\u2019d vote? And, as they target their messages ever more closely, how do you know they\u2019re saying the same thing to everyone? In 2010 the political parties spent \u00a331 million on their election campaigns; that\u2019s a lot of noise to make a dent in.\r\n\r\nFor the next few elections it might be a case of \u2018do, if you\u2019d rather not be done to\u2019. They know about us, but what do we know about them? If we wait until the formal campaign starts it\u2019ll be too late to come up with a decent answer.\r\n\r\nWe\u2019ve already talked about [mapping some of the civic projects]({% post_url 2014-06-24-mapping-the-projects %}) that are planned for the election but we also need to map what data\u2019s out there and which of it is in useful formats. There\u2019s all kinds of interesting stuff already out there:\r\n\r\nMySociety lead the pack, with the new tools [PopIt and SayIt]({% post_url 2014-06-25-mysociety %}) they blogged about here yesterday.\r\n\r\nJournalisted, from the Media Standards Trust, lets you keep an eye on news published online, and provides an API. The Guardian also provides APIs to its content.\r\n\r\nWord is that Ipsos MORI\u2019s [social media analysis platform](http://www.ipsos-mori.com/newsevents/blogs/thepoliticswire/1542/Debating-the-debate-public-reaction-on-Twitter-to-the-live-Europe-discussion.aspx) developed with Demos and the University of Sussex might become available for others to use by the time of the election.\r\n\r\nParty Election Broadcasts are now pretty reliably on YouTube, so you can do interesting things with like [adding](https://fullfact.org/europe/eu_election_ukip_broadcast_video-32026) [factchecks](https://fullfact.org/europe/eu_election_lib_dem_braodcast-32150).\r\n\r\nAnd at local level, for example, Adrian Short has shared the [code](https://github.com/adrianshort/Sutton-Elections) behind his [Sutton Elections](http://www.suttonelections.org.uk/) site.\r\n\r\nIn America, a new browser plugin tells you [where your representative gets funding](http://daily.represent.us/new-plugin-shows-congress-money/) from. Could we do that here? As far as I know party funding information doesn\u2019t have a useful API yet.\r\n\r\nWhat else are we missing? Come along to the [Democracy Club unconference this Saturday](http://democracyclub.org.uk/blog/2014/06/21/lets-get-talking/) and let\u2019s work it out and work out how to fix it.\r\n",
+        "category": 1,
+        "hero": "",
+        "author": [
+            "willmoy"
+        ],
+        "summary": "Nesta have an [interesting blog post up](http://www.nesta.org.uk/blog/big-data-and-2015-uk-general-election-digital-democracy-or-digitally-divisive) about big data at the next election. It\u2019s painful reading: it makes it sound like the election campaign will be something done by politicians to the rest of us. (Again).",
+        "created_on": "2014-06-26T18:00:00Z",
+        "modified_on": "2014-11-01T17:37:30.377Z",
+        "slug": "a-fair-fight",
+        "subject": "A fair fight?"
+    },
+    "model": "hermes.post",
+    "pk": 6
+}
+]
