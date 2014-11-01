@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load typogrify_tags %}
+
+{% block content %}
+    {% for post in posts %}
+    <article>
+
+        <header>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
+            <span class="date"><time
+                    datetime="{{post.created_on|date:"c"}}">{{post.created_on}}</time></span>,
+            <span rel="author">{{post.author.first_name}}
+                            {{post.author.last_name}}</span>
+        </header>
+
+        <div class="entry">{{ post.rendered_summary|safe|typogrify  }}</div>
+
+    </article>
+    {% endfor %}
+{% endblock %}

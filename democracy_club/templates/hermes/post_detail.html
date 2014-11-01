@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load typogrify_tags %}
+
+
+
+{% block content %}
+
+    <article>
+
+        <header>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
+            <span class="date">
+                <time datetime="{{post.modified_on|date:"c"}}">
+                    {{post.created_on}}</time></span>,
+            <span rel="author">{{post.author.first_name}}
+                {{post.author.last_name}}</span>
+        </header>
+
+        <div class="entry">{{ post.rendered|safe|typogrify }}</div>
+
+    </article>
+
+{% endblock %}

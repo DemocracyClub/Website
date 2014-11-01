@@ -1,0 +1,4 @@
+* Set up proper backlog
+* Write importer for members
+* Integrate MaPit and PoPit
+* View for members to update themselves
