@@ -59,10 +59,6 @@ venv
 democracy_club/settings/local.py
 democracy_club/settings/production.py
 
-# collect static output directory
-democracy_club/assets/
-democracy_club/static/
-
 .DS_Store
 
 # node
