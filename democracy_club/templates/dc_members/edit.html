@@ -1,0 +1,42 @@
+{% extends "dc_members/base.html" %}
+{% load socialaccount %}
+
+{% block member_content %}
+
+<h2>Your details</h2>
+<form method=post>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type=submit>Update profile</button>
+</form>
+
+{% if linked_accounts %}
+<section id="linked_accounts">
+    <h2>Linked accounts</h2>
+    <p>Accounts that you have linked to Democracy Club - use these to log
+        in to your account.  We will never use these account to post
+        messages, read your information or anything else.  They are simply
+        for logging in.</p>
+    <ul>
+        {% for account_name, account in linked_accounts.items %}
+        <li>
+            <h3>{{account_name}}</h3>
+            <a href="{{ account.get_profile_url }}">
+                <img src="{{ account.get_avatar_url }}"><br>
+                {% if account_name == "Twitter"%}@{% endif %}{{ account }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <h4>Add new accounts</h4>
+        {% for provider in socialaccount.providers %}
+        {% if provider.name not in linked_accounts.keys %}
+    <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
+         href="{% provider_login_url provider.id process=connect %}">{{provider.name}}</a>
+        {% endif %}
+        {% endfor %}
+</section>
+{% endif %}
+
+
+{% endblock member_content %}

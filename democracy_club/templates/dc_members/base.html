@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% block member_menu %}
+<ul>
+    <li><a href="{% url 'edit_member' %}">Edit</a></li>
+    <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+</ul>
+{% endblock member_menu %}
+{% block member_content %}{% endblock member_content %}
+{% endblock content %}

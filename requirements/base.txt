@@ -10,7 +10,9 @@ psycopg2
 
 Pillow
 markdown
--e git+git@github.com:chrisdrackett/django-typogrify.git#egg=typogrify
--e git+git@github.com:klen/django_markdown.git#egg=django_markdown
+-e git+https://github.com/chrisdrackett/django-typogrify.git#egg=typogrify
+-e git+https://github.com/klen/django_markdown.git#egg=django_markdown
+django-allauth
+django-ratelimit
 
--e git+git@github.com:DemocracyClub/django-hermes.git#egg=hermes
+-e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes

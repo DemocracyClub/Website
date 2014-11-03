@@ -104,6 +104,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    "dc_members.authentication.MemberTokenBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 ROOT_URLCONF = 'democracy_club.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -124,13 +132,24 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = (
-    'members',
+    'dc_members',
     'hermes',
     'typogrify',
     'django_markdown',
 )
 
+ALLAUTH_APPS = (
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.tumblr',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.facebook',
+)
+
 INSTALLED_APPS += PROJECT_APPS
+INSTALLED_APPS += ALLAUTH_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -171,8 +190,27 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     "django.contrib.auth.context_processors.auth",
+
+    # allauth specific context processors
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
 )
 
+
+AUTH_PROFILE_MODULE = 'dc_members.Member'
+LOGIN_REDIRECT_URL = "/members/"
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_QUERY_EMAIL=True
+ACCOUNT_USERNAME_REQUIRED = False
+SOCIALACCOUNT_PROVIDERS = {
+     'google': {'SCOPE': ['https://www.googleapis.com/auth/userinfo.profile'],
+                'AUTH_PARAMS': {'access_type': 'online'}},
+     'facebook': {
+        'SCOPE': ['email',],
+        # 'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'METHOD': 'oauth2',
+     },
+}
 
 # EMAILS
 
