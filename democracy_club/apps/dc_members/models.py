@@ -30,7 +30,7 @@ class Member(models.Model):
             self.email,
             self.postcode
         ])).hexdigest()
-    
+
     def _update_postcode(self):
         """
         When the postcode changes, grab the new json from mapit
@@ -40,7 +40,7 @@ class Member(models.Model):
         res = requests.get(base_url + clean_postcode).json()
         self.mapit_json = res
         self.constituency = res['areas'][str(res['shortcuts']['WMC'])]['name']
-    
+
     def save(self, *args, **kwargs):
         """
         Set the token if it doesn't exist
