@@ -5,6 +5,8 @@
 django==1.7.1
 
 django-model-utils
+django-localflavor
+jsonfield
 
 psycopg2
 

@@ -8,6 +8,7 @@ from ratelimit.mixins import RatelimitMixin
 from .models import Member
 from .forms import MemberUpdateForm
 
+
 class MemberMixin():
     def get_object(self, queryset=None):
         if queryset is None:
@@ -17,6 +18,7 @@ class MemberMixin():
             user=self.request.user)
         self.member = obj
         return obj
+
 
 class MemberLoginFromTokenView(RatelimitMixin, RedirectView):
     ratelimit_key = 'ip'
@@ -33,8 +35,6 @@ class MemberLoginFromTokenView(RatelimitMixin, RedirectView):
         return reverse('view_member')
 
 
-
-# TODO rate limit
 class MemberUpdateView(MemberMixin, UpdateView):
     """
     Take a token and find a Member object that matches it.
@@ -56,8 +56,6 @@ class MemberUpdateView(MemberMixin, UpdateView):
         context['linked_accounts'] = linked_accounts
 
         return context
-
-
 
 
 class MemberHomeView(MemberMixin, DetailView):
