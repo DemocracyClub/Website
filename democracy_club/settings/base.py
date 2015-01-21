@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'localflavor',
+    'markdown_deux'
 )
 
 PROJECT_APPS = (
@@ -227,3 +228,14 @@ except ImportError:
 # importing test settings file if necessary (TODO could be done better)
 if len(sys.argv) > 1 and 'test' in sys.argv[1]:
     from .testing import *
+
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": True,
+            "markdown-in-html": True,
+        },
+        "safe_mode": False,
+    },
+}

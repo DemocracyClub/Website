@@ -1,57 +1,42 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load django_markdown %}
+{% load markdown_deux_tags %}
 
 {% block content %}
 
-{% filter markdown %}
+{% markdown %}
 
 Democracy Club is a group of volunteers that aims to increase the quantity, quality and accessibility of information on election candidates, politicians and democratic processes through digital tools, microvolunteering and collaboration with like-minded organisations.
 
-## Get involved:
-
-### Follow [@democlub](https://twitter.com/democlub) on twitter
-
-We'll tweet about new things we're doing, and we'd really like your help in spreading the word about us.
-
-You can also motivate yourself by following the [@DaysToElection bot](https://twitter.com/DaysToElection)!
-<a 
-    class="twitter-timeline" 
-    href="https://twitter.com/DaysToElection" 
-    data-tweet-limit="1" 
-    data-widget-id="552473762550259712"
-    data-chrome="nofooter noscrollbar noborders"
-    >Tweets by @DaysToElection</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<section  markdown="1">
 
 ###  Contribute to [YourNextMP](http://yournextmp.com/)
 
 [<img src="{% static 'images/ynmp.png' %}" width="300" height="231" alt="YourNextMP home page" class="thumb">](http://yournextmp.com/)
 
-This is surprisingly addictive!  The easiest thing to do is enter your postcode to see what we know about your constituency already.  
+At the last election, YourNextMP’s volunteer-sourced database of candidates was found to be <strong>more accurate</strong> than at least one of the most popular commercial datasets.
 
-Then start googling to see if there's anything we don't know.  You can try google news, the local press, party websites, etc.
-
-After you've done your constituency, you can take a look at the [list of all constituencies](http://yournextmp.com/numbers/constituencies) to full in the blanks.
-
-Also, you can come and [talk to us about it on #YNMP on Freenode IRC](irc://irc.freenode.net/#YNMP)
-
-For the programmers, we have an API that you can access here: [https://yournextmp.popit.mysociety.org/api](https://yournextmp.popit.mysociety.org/api).
-
-All the [code is on github](https://github.com/mysociety/yournextmp-popit), pull requests very welcome!
-
-## Talk to us
-
-[Email about ideas and projects]((https://groups.google.com/forum/#!forum/democracy-club)), 
-[contribute to existing ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd), 
-[write some code](https://github.com/DemocracyClub/) or [come and meet us in person](http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3)
+YourNextMP is already the biggest, most well sourced and well structured database of General Election 2015 candidate data. Get the data now, or help by contributing new nuggets.
 
 
+</section>
+<section markdown="1">
+
+## Get involved:
+
+### Talk to us
+
+* [Email about ideas and projects]((https://groups.google.com/forum/#!forum/democracy-club))
+* [Contribute to existing ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
+* [Write some code](https://github.com/DemocracyClub/)
+* [Come and meet us in person](http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3)
+</section>
 
 
 
 
 
-{% endfilter %}
+
+{% endmarkdown %}
 
 {% endblock %}
