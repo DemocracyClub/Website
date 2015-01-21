@@ -215,6 +215,7 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # EMAILS
 
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # .local.py overrides all the common settings.
 try:

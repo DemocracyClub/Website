@@ -1,27 +1,56 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load django_markdown %}
 
 {% block content %}
 
 {% filter markdown %}
-There’s [only a few days](https://twitter.com/DaysToElection) until the next general election.
 
-In 2010 7,000 non-partisan volunteers [got together](http://news.bbc.co.uk/1/hi/uk_politics/election_2010/8651258.stm) as Democracy Club and got stuck in doing a range of useful, simple activities like working out who all the candidates were, and collecting information about what they thought about major issues. But it was just an experiment, and one that was started a bit too close to the election to have much impact.
+Democracy Club is a group of volunteers that aims to increase the quantity, quality and accessibility of information on election candidates, politicians and democratic processes through digital tools, microvolunteering and collaboration with like-minded organisations.
 
-In 2015 we want to do far better, and so we’re starting far earlier.  We want to form a community of people who just want the election to be better. More facts, less bluster. More issues, fewer non-stories.
+## Get involved:
 
-Who are we? We’re [Sym Roe](https://twitter.com/symroe) and [Will Moy](https://twitter.com/puzzlesthewill). We aren’t exactly an army, and we don’t have any money. But we are two people who think that in these ultra-sceptical times there must be a bunch of other people out there who think that we can work together to make the next election just suck less.
+### Follow [@democlub](https://twitter.com/democlub) on twitter
 
-We don’t have many plans yet, but if you want to be involved please let us have your email, or follow us on twitter. We need to work together to work out how to make this the best election Britain’s ever had.
+We'll tweet about new things we're doing, and we'd really like your help in spreading the word about us.
 
-Let’s get talking.
+You can also motivate yourself by following the [@DaysToElection bot](https://twitter.com/DaysToElection)!
+<a 
+    class="twitter-timeline" 
+    href="https://twitter.com/DaysToElection" 
+    data-tweet-limit="1" 
+    data-widget-id="552473762550259712"
+    data-chrome="nofooter noscrollbar noborders"
+    >Tweets by @DaysToElection</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-* [@democlub](https://twitter.com/democlub)
-* [Get involved!](get_involved)
-* [Mailing list](https://groups.google.com/forum/#!forum/democracy-club)
-* [@democlub](https://twitter.com/democlub), hashtag [#DemocracyClub](https://twitter.com/search?q=%23democracyclub), [@symroe](https://twitter.com/symroe) and [@puzzlesthewill](https://twitter.com/puzzlesthewill)
-* [GitHub](https://github.com/DemocracyClub/) or [Sym's list of ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
-* [@DaysToElection bot](https://twitter.com/DaysToElection)
+###  Contribute to [YourNextMP](http://yournextmp.com/)
+
+[<img src="{% static 'images/ynmp.png' %}" width="300" height="231" alt="YourNextMP home page" class="thumb">](http://yournextmp.com/)
+
+This is surprisingly addictive!  The easiest thing to do is enter your postcode to see what we know about your constituency already.  
+
+Then start googling to see if there's anything we don't know.  You can try google news, the local press, party websites, etc.
+
+After you've done your constituency, you can take a look at the [list of all constituencies](http://yournextmp.com/numbers/constituencies) to full in the blanks.
+
+Also, you can come and [talk to us about it on #YNMP on Freenode IRC](irc://irc.freenode.net/#YNMP)
+
+For the programmers, we have an API that you can access here: [https://yournextmp.popit.mysociety.org/api](https://yournextmp.popit.mysociety.org/api).
+
+All the [code is on github](https://github.com/mysociety/yournextmp-popit), pull requests very welcome!
+
+## Talk to us
+
+[Email about ideas and projects]((https://groups.google.com/forum/#!forum/democracy-club)), 
+[contribute to existing ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd), 
+[write some code](https://github.com/DemocracyClub/) or [come and meet us in person](http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3)
+
+
+
+
+
+
 
 {% endfilter %}
 

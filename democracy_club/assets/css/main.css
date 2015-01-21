@@ -36,15 +36,18 @@ section h4 {
 
 
 header[role=banner] {
-    background-color:#FFF;
+/*    background-color:#FFF;*/
     color:#191919;
-    padding:0 0 0 0;
-    margin-bottom:0em;
+    padding:0;
+    margin:0em;
     text-align:center;
 }
 
 header[role=banner] img {
-    padding:1em 0 0 0;
+    padding:0;
+    display:block;
+    margin:1em auto 0 auto;
+    max-width:130px;
 }
 header[role=banner] h1 {
     margin:0;
@@ -56,9 +59,11 @@ header[role=banner] em {
     padding:0.5em 0 1em 0;
 }
 
-header[role=banner] nav, header[role=banner] nav a {
-    background-color:#3571C3;
+header[role=banner] nav {
+    border-top:1px solid #AAA;
+    border-bottom:1px solid #AAA;
     color:#FFF;
+    margin-bottom:1em;
 }
 
 header[role=banner] nav ul {
@@ -68,16 +73,26 @@ header[role=banner] nav ul {
 }
 
 header[role=banner] nav ul li {
-    padding:0 0.2em;
     margin:0;
     display:inline;
 }
 
+header[role=banner] nav ul li a {
+    color:#000;
+}
+
+header[role=banner] nav ul li+li:before {
+    content: "\2219";
+    color:#000;
+    padding:0 0.5em;
+}
 
 body > section {
     margin:0 auto;
-    width:90%;
-    max-width:40em;
+    width:100%;
+    padding:5% 10%;
+    background-color:#FFF;
+    box-sizing: border-box;
 }
 
 p {
@@ -127,20 +142,18 @@ form button {
     header[role=banner] h1 {
         display:inline;
     }
-    header[role=banner] img {
-        position:relative;
-        top:2em;
-        left:-0.5em;
-    }
-    header[role=banner] em {
-        position:relative;
-        margin:0 auto;
-        left:3.1em;
-        max-width:80%;
-    }
 
     form button {
         min-width:20px;
     }
-
+    
+    body {
+        width:80%;
+        margin:0 auto;
+    }
+    
+    .thumb {
+        float:left;
+        padding:0 0.5em 0.5em 0;
+    }
 }
