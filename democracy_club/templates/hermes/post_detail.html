@@ -12,8 +12,17 @@
             <span class="date">
                 <time datetime="{{post.modified_on|date:"c"}}">
                     {{post.created_on}}</time></span>,
-            <span rel="author">{{post.author.first_name}}
-                {{post.author.last_name}}</span>
+            <span rel="author">
+                {% if post.author.first_name == "Sym" %}
+                    <a href="https://twitter.com/symroe">
+                        {{post.author.first_name}}
+                        {{post.author.last_name}}
+                    </a>
+                {% else %}
+                    {{post.author.first_name}}
+                    {{post.author.last_name}}
+                {% endif %}
+            </span>
         </header>
 
         <div class="entry">{{ post.rendered|safe|typogrify }}</div>
