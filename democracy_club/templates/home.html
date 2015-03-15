@@ -2,53 +2,221 @@
 {% load staticfiles %}
 {% load markdown_deux_tags %}
 
+{% block body_class %}class="full_width"{% endblock %}
+
+
 {% block content %}
 
-{% markdown %}
+<h2 class="countdown"><span class="days">56</span> Days to go</h2>
+<section role="heading">
+  <h1>Democracy Club</h1>
+  <p>
+    Democracy Club is a group of volunteers that aims to increase the quantity,
+    quality and accessibility of information on election candidates, politicians
+    and democratic processes through digital tools, microvolunteering and
+    collaboration with like-minded organisations.
+  </p>
 
-Democracy Club is a group of volunteers that aims to increase the quantity, quality and accessibility of information on election candidates, politicians and democratic processes through digital tools, microvolunteering and collaboration with like-minded organisations.
+  <h2>Join our mailing list</h2>
+  <form action="http://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <input type="hidden" name="list" value="N9KiQZ763AS892dmj8H8xIcHrA"/>
+    <button type="submit" name="submit" id="submit">Join</button>
+  </form>
+</section>
 
-<section  markdown="1">
+<hr>
 
-###  Contribute to [YourNextMP](http://yournextmp.com/)
+<h2>Some of the ways you can help Democracy Club</h2>
 
-[<img src="{% static 'images/ynmp.png' %}" width="300" height="231" alt="YourNextMP home page" class="thumb">](http://yournextmp.com/)
 
-At the last election, YourNextMP’s volunteer-sourced database of candidates was found to be <strong>more accurate</strong> than at least one of the most popular commercial datasets.
-
-YourNextMP is already the biggest, most well sourced and well structured database of General Election 2015 candidate data. Get the data now, or help by contributing new nuggets.
+<section class="box_widget">
+  <header>
+    <h3>Find information<br>on your candidates</h3>
+  </header>
+  <p>
+    Use <a href="https://YourNextMP.com/">YourNextMP.com</a> to find out who your
+    candidates are.  If we don't currently hold all the information in our
+    crowd sourced database then help out by finding a source and adding it to
+    the site.
+  </p>
+  <a href="https://YourNextMP.com/" class="read_more">More details</a>
 </section>
 
 
-<section  markdown="1">
-###  Contribute to [MeetYourNextMP](http://meetyournextmp.com/)
-
-[<img src="{% static 'images/mynmp.png' %}" width="300" height="231" alt="MeetYourNextMP home page" class="thumb">](http://meetyournextmp.com/)
-
-For the first time this year, we are creating a volunteer-sourced database of hustings and events. Let's make it easy for people to meet their next MP!
-
-Get the data now, or help by contributing any events you know about.
-
-
-
-</section>
-<section markdown="1">
-
-## Get involved:
-
-### Talk to us
-
-* [Talk to us about ideas and projects](https://groups.google.com/forum/#!forum/democracy-club)
-* [Contribute to existing ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd)
-* [Write some code](https://github.com/DemocracyClub/)
-* [Come and meet us in person](http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3)
+<section class="box_widget">
+  <header>
+    <h3>Meet your candidates</h3>
+  </header>
+  <p>
+    Use <a href="https://MeetYourNextMP.com/">MeetYourNextMP.com</a> to find out
+    what events your candidates are going to, so you can talk to them in person,
+    or list events you know they will be attending if we don't already have them
+    in our database.
+  </p>
+  <a href="https://MeetYourNextMP.com/" class="read_more">More details</a>
 </section>
 
+<section class="box_widget">
+  <header>
+    <h3>Read your <br>Candidate's CV</h3>
+  </header>
+  <p>
+    Use <a href="http://cv.democracyclub.org.uk">MPCV</a> to read the CV of your
+    candidates, or ask them to make it public so you can decide if you should
+    give them a job.
+  </p>
+  <a href="http://cv.democracyclub.org.uk" class="read_more">More details</a>
+</section>
+
+<section class="box_widget">
+  <header>
+    <h3>Read articles about your candidate or area</h3>
+  </header>
+  <p>
+    <a href="http://ElectionMentions.com">Election Mentions</a> presents articles that we think are relevant in an attractive
+    and simple list, facilitating further research, and ultimately helping to
+    inform your vote. You can also add articles you find for other people to read.
+    </p>
+  <a href="http://ElectionMentions.com" class="read_more">More details</a>
+</section>
+
+<section class="box_widget">
+  <header>
+    <h3>Contribute to code</h3>
+  </header>
+  <p>
+    We have some fun projects to work on! Everything we do is open source and
+    we're always in need of technical people of any sort!
+  </p>
+  <a href="/blog/2015/03/13/developers-we-need-your-help/" class="read_more">More details</a>
+</section>
+
+<section class="box_widget">
+  <header>
+    <h3>Find your polling station</h3>
+  </header>
+  <p>
+    We're launching <a href="http://pollingstations.democracyracyclub.org.uk/">a hugely ambitious
+    website</a> that is trying to gather all the data on the location of polling
+    stations all over the country so we can tell you where to vote.  Help us get
+    it all!
+    </p>
+  <a href="http://pollingstations.democracyclub.org.uk/" class="read_more">More details</a>
+</section>
+
+<section class="box_widget">
+  <header>
+    <h3>Attend an event</h3>
+  </header>
+  <p>
+    We hold twice weekly events in London so if you're in the area come along
+    and see how you can help us in the run up to the election.
+  </p>
+  <a href="http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3"  class="read_more">More details</a>
+</section>
+
+<section class="box_widget">
+  <header>
+    <h3>Consume our data</h3>
+  </header>
+  <p>
+    We have data. Lots of data. From 1,000s of election leaflets, to all the
+    candidates, hustings and news articles. Take a look at our APIs page for more.
+  </p>
+  <a href="/data/" class="read_more">More details</a>
+</section>
+
+{# <section class="box_widget"> #}
+{#   <header> #}
+{#     <h3>Donate</h3> #}
+{#   </header> #}
+{#   <p> #}
+{#     We need help paying for servers, developers and everything else involved in #}
+{#     keeping all our projects alive between elections, as well as creating new ones. #}
+{#   </p> #}
+{#   <a href="#" class="read_more">More details</a> #}
+{# </section> #}
+
+{# <section class="box_widget"> #}
+{#   <header> #}
+{#     <h3>Join in on Twitter</h3> #}
+{#   </header> #}
+{#   <p> #}
+{#     We hold twice weekly events in London so if you're in the area come along #}
+{#     and see how you can help us in the run up to the election. #}
+{#   </p> #}
+{#   <a href="#" class="read_more">More details</a> #}
+{# </section> #}
+
+<section class="box_widget">
+  <header>
+    <h3>We need help</h3>
+  </header>
+  <p>
+    Be it with <a href="/blog/2015/01/12/help-designers-wanted/">design</a>,
+    <a href="/blog/2015/03/13/developers-we-need-your-help/">development</a> or other
+    helping our, we really need more people to get involved and make our projects
+    happen.
+  </p>
+  <a href="/blog/2015/01/12/help-designers-wanted/" class="read_more">More details</a>
+</section>
+
+<hr>
 
 
 
 
 
-{% endmarkdown %}
+
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <p>&nbsp;</p> #}
+{# <hr> #}
+{#  #}
+{# ###  Contribute to [YourNextMP](http://yournextmp.com/) #}
+{#  #}
+{# [<img src="{% static 'images/ynmp.png' %}" alt="YourNextMP home page" class="thumb">](http://yournextmp.com/) #}
+{#  #}
+{# At the last election, YourNextMP’s volunteer-sourced database of candidates was found to be <strong>more accurate</strong> than at least one of the most popular commercial datasets. #}
+{#  #}
+{# YourNextMP is already the biggest, most well sourced and well structured database of General Election 2015 candidate data. Get the data now, or help by contributing new nuggets. #}
+{# </section> #}
+{#  #}
+{#  #}
+{# <section> #}
+{# ###  Contribute to [MeetYourNextMP](http://meetyournextmp.com/) #}
+{#  #}
+{# [<img src="{% static 'images/mynmp.png' %}" alt="MeetYourNextMP home page" class="thumb">](http://meetyournextmp.com/) #}
+{#  #}
+{# For the first time this year, we are creating a volunteer-sourced database of hustings and events. Let's make it easy for people to meet their next MP! #}
+{#  #}
+{# Get the data now, or help by contributing any events you know about. #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{#  #}
+{# ## Get involved: #}
+{#  #}
+{# ### Talk to us #}
+{#  #}
+{# * [Talk to us about ideas and projects](https://groups.google.com/forum/#!forum/democracy-club) #}
+{# * [Contribute to existing ideas](https://github.com/symroe/Election/blob/master/IDEAS.mkd) #}
+{# * [Write some code](https://github.com/DemocracyClub/) #}
+{# * [Come and meet us in person](http://www.eventbrite.co.uk/e/full-fact-and-democracy-club-volunteer-social-tickets-14529368733?aff=es2&rank=3) #}
+{#  #}
 
 {% endblock %}

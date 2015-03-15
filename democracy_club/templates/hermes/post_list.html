@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% load typogrify_tags %}
 
+{% block body_class %}class="blog"{% endblock %}
+
 {% block content %}
+    <h2>Democracy Club Blog</h2>
     {% for post in posts %}
     <article>
-
         <header>
-            <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
-            <span class="date"><time
-                    datetime="{{post.created_on|date:"c"}}">{{post.created_on}}</time></span>,
-            <span rel="author">{{post.author.first_name}}
-                            {{post.author.last_name}}</span>
+            <h3><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
+            <div role="contentinfo">
+              <span class="date"><time datetime="{{post.created_on|date:"c"}}" itemprop="published">{{post.created_on}}</time></span>,
+              <span rel="author" itemprop="fn">{{post.author.first_name}} {{post.author.last_name}}</span>
+            </div>
         </header>
 
         <div class="entry">{{ post.rendered_summary|safe|typogrify  }}</div>
-
+        <a href="{{ post.get_absolute_url }}" class="read_more">Read more</a>
     </article>
     {% endfor %}
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load typogrify_tags %}
 
+{% block body_class %}class="blog"{% endblock %}
 
 
 {% block content %}
@@ -9,20 +10,25 @@
 
         <header>
             <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
-            <span class="date">
-                <time datetime="{{post.modified_on|date:"c"}}">
-                    {{post.created_on}}</time></span>,
-            <span rel="author">
+            <div role="contentinfo">
+              <span class="date"><time datetime="{{post.modified_on|date:"c"}}">{{post.created_on}}</time></span>,
+              <span rel="author">
                 {% if post.author.first_name == "Sym" %}
-                    <a href="https://twitter.com/symroe">
-                        {{post.author.first_name}}
-                        {{post.author.last_name}}
-                    </a>
+                <a href="https://twitter.com/symroe">
+                {{post.author.first_name}}
+                {{post.author.last_name}}
+                </a>
+                {% elif post.author.first_name == "Will" %}
+                <a href="https://twitter.com/puzzlesthewill">
+                {{post.author.first_name}}
+                {{post.author.last_name}}
+                </a>
                 {% else %}
-                    {{post.author.first_name}}
-                    {{post.author.last_name}}
+                {{post.author.first_name}}
+                {{post.author.last_name}}
                 {% endif %}
-            </span>
+              </span>
+            </div>
         </header>
 
         <div class="entry">{{ post.rendered|safe|typogrify }}</div>
