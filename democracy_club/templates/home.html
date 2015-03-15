@@ -7,7 +7,9 @@
 
 {% block content %}
 
-<h2 class="countdown"><span class="days">53</span> Days to go</h2>
+{% if days_to_election %}
+<h2 class="countdown"><span class="days">{{ days_to_election }}</span> Days to go</h2>
+{% endif %}
 <section role="heading">
   <h1>Democracy Club</h1>
   <p>

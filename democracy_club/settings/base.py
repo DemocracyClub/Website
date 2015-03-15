@@ -193,6 +193,8 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
     "django.contrib.messages.context_processors.messages",
     "django.contrib.auth.context_processors.auth",
 
+    "democracy_club.context_processors.days_to_election",
+
     # allauth specific context processors
     "allauth.account.context_processors.account",
     "allauth.socialaccount.context_processors.socialaccount",
