@@ -335,8 +335,7 @@ body #navigation li a.active {
 }
 
 
-
-@media only screen and (min-width: 42em) {
+@media only screen and (min-width: 53em) {
 
     header[role=banner] img {
         max-width:90px;
@@ -388,20 +387,22 @@ body #navigation li a.active {
 
     .box_widget {
         float:left;
-        width:30%;
+        width:44%;
         margin-right:4.1%;
         margin-bottom:2.5em;
         padding-bottom:0.5em;
         min-height:18em;
     }
 
-    .box_widget:nth-child(3n+3) {
+    .box_widget:nth-child(2n+2) {
         margin-left:0;
     }
-    .box_widget:nth-child(3n+3) {
+    .box_widget:nth-child(2n+2) {
         margin-right:0;
         float:right;
     }
+
+
 
     body > footer > .wrap > section {
         float:left;
@@ -474,8 +475,59 @@ body #navigation li a.active {
 
     body > main > section[role=heading] {
         float:right;
-        width:65%;
+        width:50%;
         padding-left:2em;
     }
+
+}
+
+
+@media only screen and (min-width: 65em) and (max-width: 75em){
+    body > main > section[role=heading] {
+        width:50% !important;
+    }
+
+    .box_widget {
+        float:left;
+        width:22%;
+        margin-right:4.1%;
+        margin-bottom:2.5em;
+        padding-bottom:0.5em;
+        min-height:22em !important;
+    }
+
+}
+
+@media only screen and (min-width: 65em) {
+    body > main > section[role=heading] {
+        width:64%;
+    }
+
+    .box_widget {
+        float:left;
+        width:30%;
+        margin-right:4.1%;
+        margin-bottom:2.5em;
+        padding-bottom:0.5em;
+        min-height:18em;
+    }
+
+    .box_widget:nth-child(2n+2) {
+    }
+    .box_widget:nth-child(2n+2) {
+        margin-right:4%;
+        float:left;
+    }
+
+
+    .box_widget:nth-child(3n+3) {
+        margin-left:0;
+    }
+    .box_widget:nth-child(3n+3) {
+        margin-right:0;
+        float:right;
+    }
+
+
 
 }
