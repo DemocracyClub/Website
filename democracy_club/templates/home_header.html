@@ -1,0 +1,29 @@
+
+{% if days_to_election %}
+<h2 class="countdown"><span class="days">{{ days_to_election }}</span> Days to go</h2>
+{% endif %}
+<section role="heading">
+  <h1>Democracy Club</h1>
+  <p>
+    Democracy Club is a group of volunteers that aims to increase the quantity,
+    quality and accessibility of information on election candidates, politicians
+    and democratic processes through digital tools, microvolunteering and
+    collaboration with like-minded organisations.
+  </p>
+
+  <h2>Join our mailing list</h2>
+  <form action="http://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <input type="hidden" name="list" value="N9KiQZ763AS892dmj8H8xIcHrA"/>
+    <button type="submit" name="submit" id="submit">Join</button>
+  </form>
+</section>
+
+<hr>
