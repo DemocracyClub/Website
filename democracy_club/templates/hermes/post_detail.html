@@ -24,6 +24,12 @@
                 {{post.author.last_name}}
                 </a>
                 {% else %}
+                {% elif post.author.first_name == "Joe" %}
+                <a href="https://twitter.com/j0e_m">
+                {{post.author.first_name}}
+                {{post.author.last_name}}
+                </a>
+                {% else %}
                 {{post.author.first_name}}
                 {{post.author.last_name}}
                 {% endif %}
