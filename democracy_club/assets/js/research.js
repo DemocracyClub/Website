@@ -112,7 +112,7 @@
       }
       data['answer'] = answer;
       jQuery.post(
-        'http://localhost:8000/research/answers/',
+        'https://democracyclub.org.uk/research/answers/',
         data,
         function() {show_step(1);}
       )
