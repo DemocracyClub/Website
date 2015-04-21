@@ -19,3 +19,5 @@ django-ratelimit
 
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 django-markdown-deux
+django-extensions
+djangorestframework==3.1.1

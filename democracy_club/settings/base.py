@@ -130,7 +130,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'localflavor',
-    'markdown_deux'
+    'markdown_deux',
+    'django_extensions',
+    'rest_framework',
 )
 
 PROJECT_APPS = (
@@ -138,6 +140,7 @@ PROJECT_APPS = (
     'hermes',
     'typogrify',
     'django_markdown',
+    'research',
 )
 
 ALLAUTH_APPS = (

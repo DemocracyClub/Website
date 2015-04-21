@@ -1,0 +1,21 @@
+.research_step {
+    text-align:center;
+}
+
+.research_step button {
+    border:1px solid #FFF;
+    font-size:1.1em;
+}
+
+.simplemodal-container a {
+    color:#FFF;
+}
+
+a.simplemodal-close, a.simplemodal-close:visited {
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size:1em;
+    padding:0.2em;
+    color:#FFF;
+}

@@ -25,4 +25,5 @@ urlpatterns = patterns('',
     url(r'^help_out/$', TemplateView.as_view(template_name="help_out.html")),
     url(r'^members/', include('dc_members.urls')),
     url(r'^blog/', include('hermes.urls')),
+    url(r'^research/', include('research.urls', namespace="research")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
