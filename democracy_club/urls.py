@@ -26,4 +26,5 @@ urlpatterns = patterns('',
     url(r'^members/', include('dc_members.urls')),
     url(r'^blog/', include('hermes.urls')),
     url(r'^research/', include('research.urls', namespace="research")),
+    url(r'^donate/', include('donations.urls', namespace="donations")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

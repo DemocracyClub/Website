@@ -344,6 +344,76 @@ body #navigation li a.active {
     display:block;
 }
 
+/* Donation form */
+form.donate_form .donation_amount input {
+    min-width:0;
+
+}
+
+form.donate_form .donation_amount div {
+    background: #dee0e2;
+    border: 1px solid #dee0e2;
+    width:6em;
+    overflow:auto;
+    line-height:1.8em;
+    padding-left:0.5em;
+    margin:0.5em 0;
+}
+
+form.donate_form .donation_amount div input {
+    display:inline;
+    float:right;
+}
+
+
+form.donate_form ul {
+    list-style-type:none;
+    margin:0;
+    padding:1em 0 1em 0;
+    clear:both;
+    display:block;
+    overflow:auto;
+}
+
+form.donate_form ul li {
+    display: block;
+    background: #dee0e2;
+    border: 1px solid #dee0e2;
+    padding: 18px;
+    margin: 10px;
+    cursor: pointer;
+    float: left;
+    min-width:1em;
+}
+
+form.donate_form ul li:first-child {
+    margin-left:0;
+}
+
+form.donate_form ul li label,
+form.donate_form ul li input {
+    cursor: pointer;
+}
+
+form.donate_form ul input {
+    min-width:auto;
+    display:inline;
+}
+
+form.donate_form #id_interval_length {
+    min-width:3em;
+    width:3em;
+}
+
+form fieldset {
+    margin:1em 0;
+}
+
+
+fieldset.hidden {
+    display:none;
+}
+
 
 @media only screen and (min-width: 53em) {
 
@@ -525,3 +595,4 @@ body #navigation li a.active {
 
 
 }
+

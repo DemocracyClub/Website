@@ -244,3 +244,7 @@ MARKDOWN_DEUX_STYLES = {
         "safe_mode": False,
     },
 }
+
+GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
+GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club increase the quantity,"\
+" quality and accessibility of information on election candidates, politicians and democratic processes"

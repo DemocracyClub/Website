@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method=post class="donate_form">
+  {% csrf_token %}
+
+  <div class="donation_amount">
+    {{ form.amount.label_tag }}
+    <div>£{{ form.amount }}</div>
+  </div>
+
+  {{ form.payment_type }}
+
+  <fieldset id="donation_frequency" class="hidden">
+    <legend>Frequency</legend>
+    {{ form.interval_length.label_tag }}
+    {{ form.interval_length }}
+    {{ form.interval_unit }}
+  </fieldset>
+  <button type=submit>Next</button>
+</form>
+
+{% endblock content %}
+
+{% block javascript %}
+{{ block.super }}
+<script>
+  $('#donation_frequency').hide()
+  if ($('input[name=payment_type]:checked').val() == "subscription") {
+    $('#donation_frequency').show()
+  }
+  $('input[name=payment_type]:radio').change(function() {
+    if (this.value == "subscription") {
+      $('#donation_frequency').show()
+    } else {
+      $('#donation_frequency').hide()
+    }
+  })
+</script>
+{% endblock javascript %}
