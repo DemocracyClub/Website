@@ -19,6 +19,8 @@ INTERVAL_UNITS = (
 class GoCardlessHelper(object):
     def __init__(self):
         self.gocardless = gocardless
+        if getattr(settings, 'GOCARDLESS_USE_SANDBOX', False):
+            self.gocardless.environment = "sandbox"
         self.gocardless.set_details(
             app_id=settings.GOCARDLESS_APP_ID,
             app_secret=settings.GOCARDLESS_APP_SECRET,
