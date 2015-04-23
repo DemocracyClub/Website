@@ -1,24 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<p>Do you love democracy? Have you found our tools useful? </p>
+
+<p>We're a tiny team on a big mission to make simple tools that make it easy to find out more information on your local area, political representatives and elections.</p>
+
+<p>In just a few months we’ve made an open database of candidate, a directory of public meetings, a way to view CVs of candidates and much much more.  We’ve been used by The Guardian, The Telegraph, The BBC, Google, 38 Degrees and many more.</p>
+
+<p>Doing this costs money.  We need developers, designers, hosting, email servers and so on, as well as people to talk to the press and work with other organisations.</p>
+
+<p>Importantly we think that these tools are needed in the times between elections, so we can get to work earlier and make future elections better than ever.</p>
+
+<p>We would love your help with a one-off or regular donation. </p>
+
+
+
 <form method=post class="donate_form">
   {% csrf_token %}
-
+  {{ form.errors }}
   <div class="donation_amount">
     {{ form.amount.label_tag }}
     <div>£{{ form.amount }}</div>
   </div>
 
+  {{ form.payment_interval }}
   {{ form.payment_type }}
+  {{ form.interval_length }}
+  {{ form.interval_unit }}
 
-  <fieldset id="donation_frequency" class="hidden">
-    <legend>Frequency</legend>
-    {{ form.interval_length.label_tag }}
-    {{ form.interval_length }}
-    {{ form.interval_unit }}
-  </fieldset>
+
+
   <button type=submit>Next</button>
 </form>
+
+
+<p>Democracy Club is a Community Interest Company.</p>
+<p>In the event we raise enough money to cover our costs, we will
+  use any surplus to improve or build on our services.</p>
 
 {% endblock content %}
 

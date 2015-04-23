@@ -11,8 +11,7 @@ class DonateFormView(FormView):
         return {
             'payment_type': 'bill',
             'amount': '10',
-            'interval_length': '1',
-            'interval_unit': 'month',
+            'payment_interval': 'once',
         }
 
     def form_valid(self, form):

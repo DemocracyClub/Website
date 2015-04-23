@@ -353,7 +353,9 @@ form.donate_form .donation_amount input {
 form.donate_form .donation_amount div {
     background: #dee0e2;
     border: 1px solid #dee0e2;
-    width:6em;
+    width:5em;
+    max-width:5em;
+    min-width:5em;
     overflow:auto;
     line-height:1.8em;
     padding-left:0.5em;
@@ -361,8 +363,13 @@ form.donate_form .donation_amount div {
 }
 
 form.donate_form .donation_amount div input {
-    display:inline;
+    display:inline-block;
+    width:4em;
     float:right;
+}
+
+form.donate_form .donation_amount label {
+    font-weight:bold;
 }
 
 
@@ -400,19 +407,6 @@ form.donate_form ul input {
     display:inline;
 }
 
-form.donate_form #id_interval_length {
-    min-width:3em;
-    width:3em;
-}
-
-form fieldset {
-    margin:1em 0;
-}
-
-
-fieldset.hidden {
-    display:none;
-}
 
 
 @media only screen and (min-width: 53em) {

@@ -4,6 +4,11 @@ from django.conf import settings
 
 import gocardless
 
+FRIENDLY_INTERVALS = (
+    ("once", 'One off'),
+    ("weekly", 'Once a week'),
+    ("monthly", 'Once a month'),
+)
 
 PAYMENT_TYPES = (
     ('bill', 'Once'),
