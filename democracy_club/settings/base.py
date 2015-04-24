@@ -254,6 +254,7 @@ GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club increase the quantity,
 CORS_URLS_REGEX = r'^/research/answers/*$'
 CORS_ORIGIN_WHITELIST = (
         'localhost:8000',
+        'localhost:4000',
         'yournextmp.com',
         'meetyournextmp.com',
         'electionmentions.com',
