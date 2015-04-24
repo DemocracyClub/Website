@@ -96,6 +96,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,6 +134,7 @@ INSTALLED_APPS = (
     'markdown_deux',
     'django_extensions',
     'rest_framework',
+    'corsheaders',
 )
 
 PROJECT_APPS = (
@@ -248,3 +250,14 @@ MARKDOWN_DEUX_STYLES = {
 GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
 GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club increase the quantity,"\
 " quality and accessibility of information on election candidates, politicians and democratic processes"
+
+CORS_URLS_REGEX = r'^/research/answers/*$'
+CORS_ORIGIN_WHITELIST = (
+        'localhost:8000',
+        'yournextmp.com',
+        'meetyournextmp.com',
+        'electionmentions.com',
+        'cv.democracyclub.org.uk',
+        'pollingstations.democracyclub.org.uk',
+        'democracyclub.org.uk',
+    )

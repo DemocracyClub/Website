@@ -1,0 +1,85 @@
+<style>
+.research_step {
+    text-align:center;
+}
+
+.research_step button {
+    border:1px solid #FFF;
+    font-size:1.1em;
+}
+
+.simplemodal-container a {
+    color:#FFF;
+}
+
+a.simplemodal-close, a.simplemodal-close:visited {
+    position:absolute;
+    right:0;
+    bottom:0;
+    font-size:1em;
+    padding:0.2em;
+    color:#FFF;
+}
+
+#comments + button:before {
+    display:block;
+    content:"asd";
+/*    text-align:center;*/
+}
+</style>
+
+<section id="research_form" style="display:none;">
+  <form>
+    <div class="research_step">
+      <p id="research_informed">Did the information on this site make you feel more informed?</p>
+      <button type="submit" aria-describedby="research_informed">Yes</button>
+      <button type="submit" aria-describedby="research_informed">No</button>
+    </div>
+    <div class="research_step">
+      <p id="research_plan_to_vote">Do you plan to vote?</p>
+      <button type="submit" aria-describedby="research_plan_to_vote">Yes</button>
+      <button type="submit" aria-describedby="research_plan_to_vote">No</button>
+    </div>
+    <div class="research_step">
+      <p id="research_influenced">Has using this site influenced the way that you are likely to vote?</p>
+      <button type="submit" aria-describedby="research_influenced">Yes</button>
+      <button type="submit" aria-describedby="research_influenced">No</button>
+      <button type="submit" aria-describedby="research_influenced">N/A</button>
+    </div>
+    <div class="research_step">
+      <p id="research_power">Having used this website, how do you feel about your own power over candidates or parties?</p>
+      <button type="submit" aria-describedby="research_power">More powerful</button>
+      <button type="submit" aria-describedby="research_power">About the same</button>
+      <button type="submit" aria-describedby="research_power">Less powerful</button>
+    </div>
+    <div class="research_step">
+      <p id="research_age">What is your age?</p>
+      <button type="submit" aria-describedby="research_age">17 or under</button>
+      <button type="submit" aria-describedby="research_age">18-25</button>
+      <button type="submit" aria-describedby="research_age">26-35</button>
+      <button type="submit" aria-describedby="research_age">36-45</button>
+      <button type="submit" aria-describedby="research_age">46-55</button>
+      <button type="submit" aria-describedby="research_age">56-65</button>
+      <button type="submit" aria-describedby="research_age">Above 66</button>
+    </div>
+    <div class="research_step">
+      <p id="research_gender">What is your gender?</p>
+      <input type="text" value="" id="gender_answer" aria-describedby="research_gender">
+      <button name="inform" data-answer_el="gender_answer">Next</button>
+    </div>
+    <div class="research_step">
+      <p id="research_comments">Do you have any comments?</p>
+      <div><textarea id="comments" spellcheck></textarea></div>
+      <button name="inform" aria-describedby="research_comments" data-answer_el="comments">Send</button>
+    </div>
+    <div class="research_step">
+      <p>Thank you for answering and helping us make Democracy Club better.</p>
+      <p>We're a small organisation and would really appreciate a one off donation
+        so we can continue to provide services like this going.</p>
+      <p><a href="https://democracyclub.org.uk/donate/"></a></p>
+        <p>Or <a href="https://democracyclub.org.uk/contact/">Get in touch</a>
+        if you would like to talk to us more!</p>
+        <a href="#" onclick="$.modal.close();">Close</a>
+    </div>
+  </form>
+</section>
