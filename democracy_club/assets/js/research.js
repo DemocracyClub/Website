@@ -32,13 +32,13 @@ THE SOFTWARE.
 
 
 
+
   (function() {
     var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
   templates['research_questions'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-      return "<style>\n.research_step {\n    text-align:center;\n}\n\n.research_step button {\n    border:1px solid #FFF;\n    font-size:1.1em;\n}\n\n.simplemodal-container a {\n    color:#FFF;\n}\n\na.simplemodal-close, a.simplemodal-close:visited {\n    position:absolute;\n    right:0;\n    bottom:0;\n    font-size:1em;\n    padding:0.2em;\n    color:#FFF;\n}\n\n#comments + button:before {\n    display:block;\n    content:\"asd\";\n/*    text-align:center;*/\n}\n</style>\n\n<section id=\"research_form\" style=\"display:none;\">\n  <form>\n    <div class=\"research_step\">\n      <p id=\"research_informed\">Did the information on this site make you feel more informed?</p>\n      <button type=\"submit\" aria-describedby=\"research_informed\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_informed\">No</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_plan_to_vote\">Do you plan to vote?</p>\n      <button type=\"submit\" aria-describedby=\"research_plan_to_vote\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_plan_to_vote\">No</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_influenced\">Has using this site influenced the way that you are likely to vote?</p>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">No</button>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">N/A</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_power\">Having used this website, how do you feel about your own power over candidates or parties?</p>\n      <button type=\"submit\" aria-describedby=\"research_power\">More powerful</button>\n      <button type=\"submit\" aria-describedby=\"research_power\">About the same</button>\n      <button type=\"submit\" aria-describedby=\"research_power\">Less powerful</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_age\">What is your age?</p>\n      <button type=\"submit\" aria-describedby=\"research_age\">17 or under</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">18-25</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">26-35</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">36-45</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">46-55</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">56-65</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">Above 66</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_gender\">What is your gender?</p>\n      <input type=\"text\" value=\"\" id=\"gender_answer\" aria-describedby=\"research_gender\">\n      <button name=\"inform\" data-answer_el=\"gender_answer\">Next</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_comments\">Do you have any comments?</p>\n      <div><textarea id=\"comments\" spellcheck></textarea></div>\n      <button name=\"inform\" aria-describedby=\"research_comments\" data-answer_el=\"comments\">Send</button>\n    </div>\n    <div class=\"research_step\">\n      <p>Thank you for answering and helping us make Democracy Club better.</p>\n      <p>We're a small organisation and would really appreciate a one off donation\n        so we can continue to provide services like this going.</p>\n      <p><a href=\"https://democracyclub.org.uk/donate/\"></a></p>\n        <p>Or <a href=\"https://democracyclub.org.uk/contact/\">Get in touch</a>\n        if you would like to talk to us more!</p>\n        <a href=\"#\" onclick=\"$.modal.close();\">Close</a>\n    </div>\n  </form>\n</section>";
+      return "\n\n<section id=\"research_form\" style=\"display:none;\">\n  <form>\n    <div class=\"research_step\">\n      <p id=\"research_informed\">Did the information on this site make you feel more informed?</p>\n      <button type=\"submit\" aria-describedby=\"research_informed\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_informed\">No</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_plan_to_vote\">Do you plan to vote?</p>\n      <button type=\"submit\" aria-describedby=\"research_plan_to_vote\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_plan_to_vote\">No</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_influenced\">Has using this site influenced the way that you are likely to vote?</p>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">Yes</button>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">No</button>\n      <button type=\"submit\" aria-describedby=\"research_influenced\">N/A</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_power\">Having used this website, how do you feel about your own power over candidates or parties?</p>\n      <button type=\"submit\" aria-describedby=\"research_power\">More powerful</button>\n      <button type=\"submit\" aria-describedby=\"research_power\">About the same</button>\n      <button type=\"submit\" aria-describedby=\"research_power\">Less powerful</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_age\">What is your age?</p>\n      <button type=\"submit\" aria-describedby=\"research_age\">17 or under</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">18-25</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">26-35</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">36-45</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">46-55</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">56-65</button>\n      <button type=\"submit\" aria-describedby=\"research_age\">Above 66</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_gender\">What is your gender?</p>\n      <input type=\"text\" value=\"\" id=\"gender_answer\" aria-describedby=\"research_gender\">\n      <button name=\"inform\" data-answer_el=\"gender_answer\">Next</button>\n      <button name=\"inform\" data-answer_el=\"gender_answer\">I'd rather not say</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_postcode\">What is your postcode?</p>\n      <input type=\"text\" value=\"\" id=\"gender_postcode\" aria-describedby=\"research_postcode\">\n      <button name=\"inform\" data-answer_el=\"research_postcode\">Next</button>\n      <button name=\"inform\" data-answer_el=\"research_postcode\">I'd rather not say</button>\n    </div>\n    <div class=\"research_step\">\n      <p id=\"research_comments\">Do you have any comments?</p>\n      <div><textarea id=\"comments\" spellcheck rows=\"10\"></textarea></div>\n      <button name=\"inform\" aria-describedby=\"research_comments\" data-answer_el=\"comments\">Send</button>\n    </div>\n    <div class=\"research_step\">\n      <p>Thank you for answering and helping us make Democracy Club better.</p>\n      <p>We're a small organisation and would really appreciate a one off donation\n        so we can continue to provide services like this going.</p>\n      <p><a href=\"https://democracyclub.org.uk/donate/\"></a></p>\n        <p>Or <a href=\"https://democracyclub.org.uk/contact/\">Get in touch</a>\n        if you would like to talk to us more!</p>\n        <a href=\"#\" onclick=\"$.modal.close();\">Close</a>\n    </div>\n  </form>\n</section>";
   },"useData":true});
   })();
-
 
 
 
@@ -118,18 +118,21 @@ THE SOFTWARE.
         'top':'auto !important',
         'max-width':'100%',
         'width':'100%',
-        'height':'250px',
+        'height':'150px',
         'box-sizing': 'border-box'
       }
+      var close_html = "<a href='#' style='float:left' title='Close' class='modal-close'>Don't ask me again</a>";
 
       if (step >= 1) {
-        CONTAINER_CSS['top'] = '15px';
-        CONTAINER_CSS['bottom'] = '15px';
-        CONTAINER_CSS['left'] = '15px';
-        CONTAINER_CSS['right'] = '15px';
+        CONTAINER_CSS['top'] = '10%';
+        CONTAINER_CSS['bottom'] = '10%';
+        CONTAINER_CSS['left'] = '10%';
+        CONTAINER_CSS['right'] = '10%';
         CONTAINER_CSS['height'] = initial_height + 'px !important';
         CONTAINER_CSS['margin'] = '0';
         CONTAINER_CSS['width'] = 'auto';
+        CONTAINER_CSS['padding'] = '10%';
+        close_html = "<a href='#' style='float:leftl;top:0' title='Close' class='modal-close'>Close</a>";
       }
 
       var options = {
@@ -138,8 +141,7 @@ THE SOFTWARE.
           $.modal.close();
         },
         autoPosition: false,
-        closeHTML: "<a href='#' style='float:left' title='Close' class='modal-close'>Don't ask me again</a>",
-        close: false,
+        closeHTML: close_html,
         overlayClose: true,
         overlayCss: {
                 'background-color':'#000',
@@ -147,9 +149,6 @@ THE SOFTWARE.
         containerCss: CONTAINER_CSS
       }
 
-      if (step == 0) {
-        options['close'] = true;
-      }
 
       $(form_steps[step]).modal(options);
     }
@@ -188,7 +187,7 @@ THE SOFTWARE.
 
 
       // Work out if we should show the form
-      if (!Cookies.has(cookie_hide_name)) {
+      // if (!Cookies.has(cookie_hide_name)) {
         // Set a GUID
         if (!Cookies.has(cookie_name)) {
           var guid = make_guid();
@@ -199,7 +198,7 @@ THE SOFTWARE.
         window.guid = guid;
         load_fieldsets()
         show_step(0)
-      }
+      // }
     }
 
     function track_page_views() {

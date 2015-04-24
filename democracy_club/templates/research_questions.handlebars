@@ -1,32 +1,4 @@
-<style>
-.research_step {
-    text-align:center;
-}
 
-.research_step button {
-    border:1px solid #FFF;
-    font-size:1.1em;
-}
-
-.simplemodal-container a {
-    color:#FFF;
-}
-
-a.simplemodal-close, a.simplemodal-close:visited {
-    position:absolute;
-    right:0;
-    bottom:0;
-    font-size:1em;
-    padding:0.2em;
-    color:#FFF;
-}
-
-#comments + button:before {
-    display:block;
-    content:"asd";
-/*    text-align:center;*/
-}
-</style>
 
 <section id="research_form" style="display:none;">
   <form>
@@ -66,10 +38,17 @@ a.simplemodal-close, a.simplemodal-close:visited {
       <p id="research_gender">What is your gender?</p>
       <input type="text" value="" id="gender_answer" aria-describedby="research_gender">
       <button name="inform" data-answer_el="gender_answer">Next</button>
+      <button name="inform" data-answer_el="gender_answer">I'd rather not say</button>
+    </div>
+    <div class="research_step">
+      <p id="research_postcode">What is your postcode?</p>
+      <input type="text" value="" id="gender_postcode" aria-describedby="research_postcode">
+      <button name="inform" data-answer_el="research_postcode">Next</button>
+      <button name="inform" data-answer_el="research_postcode">I'd rather not say</button>
     </div>
     <div class="research_step">
       <p id="research_comments">Do you have any comments?</p>
-      <div><textarea id="comments" spellcheck></textarea></div>
+      <div><textarea id="comments" spellcheck rows="10"></textarea></div>
       <button name="inform" aria-describedby="research_comments" data-answer_el="comments">Send</button>
     </div>
     <div class="research_step">
