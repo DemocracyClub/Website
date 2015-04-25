@@ -76,14 +76,14 @@ a.simplemodal-close, a.simplemodal-close:visited {
     <div class="research_step">
       <p id="research_gender">What is your gender?</p>
       <input type="text" value="" id="gender_answer" aria-describedby="research_gender">
-      <button name="inform" data-answer_el="gender_answer">Next</button>
-      <button name="inform" data-answer_el="gender_answer">I'd rather not say</button>
+      <button name="inform" aria-describedby="research_gender" data-answer_el="gender_answer">Next</button>
+      <button name="inform" aria-describedby="research_gender">I'd rather not say</button>
     </div>
     <div class="research_step">
       <p id="research_postcode">What is your postcode?</p>
-      <input type="text" value="" id="gender_postcode" aria-describedby="research_postcode">
-      <button name="inform" data-answer_el="research_postcode">Next</button>
-      <button name="inform" data-answer_el="research_postcode">I'd rather not say</button>
+      <input type="text" value="" id="research_postcode" aria-describedby="research_postcode">
+      <button name="inform" aria-describedby="research_postcode" data-answer_el="research_postcode">Next</button>
+      <button name="inform" aria-describedby="research_postcode">I'd rather not say</button>
     </div>
     <div class="research_step">
       <p id="research_comments">Do you have any comments?</p>
