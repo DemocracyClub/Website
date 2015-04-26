@@ -42,11 +42,30 @@ class StatsView(View):
         data['power_over_candidates']['less'] = Answer.objects\
             .filter(question=q, answer="Less powerful").count()
 
+        q = "Has using this site influenced the way that you are likely to vote?"
+        data['influenced'] = {
+            'question': q,
+        }
+        data['influenced']['yes'] = Answer.objects\
+            .filter(question=q, answer="Yes").count()
+        data['influenced']['no'] = Answer.objects\
+            .filter(question=q, answer="No").count()
+
         q = "What is your age?"
         data['age'] = {
             'question': q,
         }
         data['age'] = dict(Answer.objects\
+            .filter(question=q)\
+            .values_list('answer',)\
+            .annotate(count=Count('id'))\
+            .order_by())
+
+        q = "What is your gender?"
+        data['gender'] = {
+            'question': q,
+        }
+        data['gender'] = dict(Answer.objects\
             .filter(question=q)\
             .values_list('answer',)\
             .annotate(count=Count('id'))\
