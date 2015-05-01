@@ -251,7 +251,7 @@ GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
 GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club increase the quantity,"\
 " quality and accessibility of information on election candidates, politicians and democratic processes"
 
-CORS_URLS_REGEX = r'^/research/answers/*$'
+CORS_URLS_REGEX = r'^/research/answers/*|/members/api/members/*$'
 CORS_ORIGIN_WHITELIST = (
         'localhost:8000',
         'localhost:4000',
