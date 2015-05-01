@@ -81,7 +81,7 @@ THE SOFTWARE.
     (function() {
       var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
     templates['signup_form'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-        return "<style>\n\n</style>\n\n<form>\n<p>Sign up to the Democracy Club mailing list to hear more about our projects</p>\n<label for=\"name\">Name</label>\n<input type=\"text\" name=\"name\" value=\"\" required>\n\n<label for=\"email\">Email</label>\n<input type=\"email\" name=\"email\" value=\"\" required>\n<button type=\"submit\" class=\"button success\">Sign up</button>\n\n</form>";
+        return "<form>\n<p>Sign up to the Democracy Club mailing list to hear more about our projects</p>\n<label for=\"name\">Name</label>\n<input type=\"text\" name=\"name\" value=\"\" required>\n\n<label for=\"email\">Email</label>\n<input type=\"email\" name=\"email\" value=\"\" required>\n<button type=\"submit\" class=\"button success\">Sign up</button>\n\n</form>";
     },"useData":true});
     templates['signup_form_thanks'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
         return "<h4>Thanks</h4>\n<p>We'll be in touch soon!</p>\n";
