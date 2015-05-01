@@ -109,7 +109,7 @@ THE SOFTWARE.
       postData.push({name:'source', value: source});
       // Cookies.set(cookie_form_submitted_name, 1, Infinity, '/');
       $.ajax({
-        url : "http://localhost:8000/members/api/members/",
+        url : "https://democracyclub.org.uk/members/api/members/",
         type: "POST",
         data : postData,
         success:function(data, textStatus, jqXHR) {
