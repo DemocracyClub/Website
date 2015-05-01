@@ -1,4 +1,3 @@
-import os
 import hashlib
 
 import requests
@@ -12,13 +11,14 @@ class Member(models.Model):
     Members are people who have done tasks in the past.  They are added when
     someone gives us their information with the intent of "joining" DC.
     """
-    user = models.ForeignKey(User, unique=True)
+    user = models.ForeignKey(User, unique=True, null=True)
     name = models.CharField(blank=True, max_length=255)
     email = models.EmailField()
     constituency = models.CharField(blank=True, max_length=255)
     mapit_json = JSONField(null=True)
     postcode = models.CharField(blank=True, max_length=20)
     token = models.CharField(blank=True, max_length=255, db_index=True)
+    source = models.CharField(blank=True, max_length=800)
 
 
     @models.permalink
@@ -54,4 +54,3 @@ class Member(models.Model):
                 # The postcode has changed
                 self._update_postcode()
         super(Member, self).save(*args, **kwargs)
-    
