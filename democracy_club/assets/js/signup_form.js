@@ -80,12 +80,12 @@ THE SOFTWARE.
     // HTML Template
     (function() {
       var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-    templates['signup_form'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-        return "<form>\n<p>Sign up to the Democracy Club mailing list to hear more about our projects</p>\n<label for=\"name\">Name</label>\n<input type=\"text\" name=\"name\" value=\"\" required>\n\n<label for=\"email\">Email</label>\n<input type=\"email\" name=\"email\" value=\"\" required>\n<button type=\"submit\" class=\"button success\">Sign up</button>\n\n</form>";
-    },"useData":true});
-    templates['signup_form_thanks'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-        return "<h4>Thanks</h4>\n<p>We'll be in touch soon!</p>\n";
-    },"useData":true});
+      templates['signup_form'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+        return "<div class=\"small-12 large-12 columns row\">\n  <h3>Join the mailing list</h3>\n  <form>\n  <p>Sign up to the Democracy Club mailing list to hear more about our projects</p>\n  <label for=\"name\">Name</label>\n  <input type=\"text\" name=\"name\" value=\"\" required>\n\n  <label for=\"email\">Email</label>\n  <input type=\"email\" name=\"email\" value=\"\" required>\n  <button type=\"submit\" class=\"button success\">Sign up</button>\n  </form>\n</div>\n";
+      },"useData":true});
+      templates['signup_form_thanks'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+        return "<div class=\"small-12 large-12 columns row\">\n  <h3>Thanks</h3>\n  <p>We'll be in touch soon!</p>\n</div>";
+      },"useData":true});
     })();
 
     var win = context, doc = win.document;
@@ -93,13 +93,15 @@ THE SOFTWARE.
     var initial_height = window.height;
     var source = doc.URL;
     var cookie_form_submitted_name = "hide_dc_signup";
+    var signup_form_template = Handlebars.templates.signup_form;
+    var thanks_template = Handlebars.templates.signup_form_thanks;
 
 
 
     function showThanks(e) {
       signup_form_continer.fadeOut(300, function() {
-        signup_form_continer.find('form').remove();
-        signup_form_continer.append(Handlebars.templates.signup_form_thanks);
+        signup_form_continer.find('.row').remove();
+        signup_form_continer.append(thanks_template);
         signup_form_continer.fadeIn(600);
       })
     }
@@ -127,11 +129,11 @@ THE SOFTWARE.
     function show_signup_form() {
 
       // Work out if we should show the form
-      if (!Cookies.has(cookie_form_submitted_name)) {
-        signup_form_continer.append(Handlebars.templates.signup_form);
+      // if (!Cookies.has(cookie_form_submitted_name)) {
+        signup_form_continer.append(signup_form_template);
         var form = signup_form_continer.find('form');
         form.submit(submitForm);
-      }
+      // }
     }
 
     show_signup_form();
