@@ -109,7 +109,7 @@ THE SOFTWARE.
     function submitForm(e) {
       var postData = $(this).serializeArray();
       postData.push({name:'source', value: source});
-      // Cookies.set(cookie_form_submitted_name, 1, Infinity, '/');
+      Cookies.set(cookie_form_submitted_name, 1, Infinity, '/');
       $.ajax({
         url : "https://democracyclub.org.uk/members/api/members/",
         type: "POST",
@@ -129,11 +129,11 @@ THE SOFTWARE.
     function show_signup_form() {
 
       // Work out if we should show the form
-      // if (!Cookies.has(cookie_form_submitted_name)) {
+      if (!Cookies.has(cookie_form_submitted_name)) {
         signup_form_continer.append(signup_form_template);
         var form = signup_form_continer.find('form');
         form.submit(submitForm);
-      // }
+      }
     }
 
     show_signup_form();
