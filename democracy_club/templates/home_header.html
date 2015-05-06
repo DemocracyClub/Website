@@ -1,8 +1,8 @@
 
 {% if days_to_election %}
 <h2 class="countdown"><span class="days">{{ days_to_election }}</span> Days to go</h2>
-{% endif %}
 <section role="heading">
+{% endif %}
   <h1>Democracy Club</h1>
   <p>
     Democracy Club is a group of volunteers that aims to increase the quantity,
@@ -24,6 +24,8 @@
     <input type="hidden" name="list" value="N9KiQZ763AS892dmj8H8xIcHrA"/>
     <button type="submit" name="submit" id="submit">Join</button>
   </form>
+{% if days_to_election %}
 </section>
+{% endif %}
 
 <hr>
