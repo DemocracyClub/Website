@@ -10,8 +10,8 @@ class DonateFormView(FormView):
     def get_initial(self):
         return {
             'payment_type': 'bill',
-            'amount': '10',
-            'payment_interval': 'once',
+            'amount': '3',
+            'payment_interval': 'monthly',
         }
 
     def form_valid(self, form):
