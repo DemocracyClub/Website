@@ -200,9 +200,6 @@ TEMPLATE_CONTEXT_PROCESSORS =  (
 
     "democracy_club.context_processors.days_to_election",
 
-    # allauth specific context processors
-    "allauth.account.context_processors.account",
-    "allauth.socialaccount.context_processors.socialaccount",
 )
 
 

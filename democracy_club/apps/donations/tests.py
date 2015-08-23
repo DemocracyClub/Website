@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-import helpers
+from . import helpers
 
 class TestGoCardless(TestCase):
     def test_helpers(self):
