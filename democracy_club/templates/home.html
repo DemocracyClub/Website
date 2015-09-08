@@ -1,43 +1,86 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load markdown_deux_tags %}
+{% load typogrify_tags %}
 
 {% block body_class %}class="full_width"{% endblock %}
 
 
+{% block header %}
+  <div class="row large_header">
+    <div class="columns large-6 small-12 medium-6">
+      <a href="/" class="logo"><img src="{% static 'images/logo-large.png' %}"></a>
+    </div>
+    <div class="columns large-6 small-12 medium-6">
+      <h1>Democracy Club</h1>
+      {% filter typogrify %}
+      <p>
+        Democracy Club is for a thriving democracy in the UK, where people
+        feel they can engage politically with the state in a simple,
+        easy-to-use and effective way.
+      </p>
+      <p><strong>Our mission</strong> is to create digital tools and datasets that help democracy.
+        We focus on elections due to their high engagement levels.
+        A core team builds the tools, hundreds of volunteers upload data, and
+        we connect with organisations with large audiences to distribute the
+        data in a user-friendly fashion. We encourage government to adopt these
+        tools and datasets officially. </p>
+      {% endfilter %}
+    </div>
+
+  </div>
+{% endblock header %}
+
 {% block content %}
-{% if not request.session.is_member %}
-{% include "home_header.html" %}
-{% endif %}
 
-<h2>Democracy Club can help you</h2>
-
-
-{% if request.session.is_member %}
-{% include "home_header.html" %}
-{% endif %}
-
-  <section>
-    {% for post in latest_posts  %}
-    <h3><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
-    {{ post.summary }}
-    <a href="{{ post.get_absolute_url }}"  class="read_more">Read more</a>
-
-    {% endfor %}
-  </section>
-
-  <section class="">
-    <header>
-      <h3>Come to our meetup</h3>
-    </header>
+<section class="row">
+  <div class="columns large-12">
+    <h2>What we do</h2>
+  </div>
+  <div class="columns large-6">
+    <h3>Lists of Candidates</h3>
     <p>
-      We hold twice weekly events in London so if you're in the area come along
-      and see how you can help us in the run up to the election.
+      There is no open dataset of candidates for elections in the UK. This means
+      that citizens cannot easily discover who they can vote for at the next
+      election. The lack of open data also means that media organisations,
+      campaigners and academics cannot easily monitor candidates. An open
+      dataset of candidates must exist to enable related products to exist, e.g.
+      voter advice applications or records of speakers at hustings. A thriving
+      democracy is a transparent one.
     </p>
-    <a href="http://www.meetup.com/Democracy-Club-Meetup/"  class="read_more">More details</a>
-  </section>
-<div style="width: 225px;" id="1431531963486"></div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </div>
+  <div class="columns large-6">
+    <h3>Polling stations</h3>
+    <p>
+      One of the top searched for terms on the day of the 2015
+      general election was ‘Where do I vote?’ This information is rarely
+      online. Councils send voters a polling card, but they might lose
+      it or not have it available at the time they want to vote. We believe
+      that thousands of people are disenfranchised by the lack of this
+      information. It should be online.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="row">
+  <div class="columns large-12">
+    <h2>On the blog</h2>
+    <ul class="large-block-grid-2">
+    {% for post in latest_posts  %}
+      <li>
+          <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|typogrify }}</a></h3>
+          {{ post.summary|markdown|truncatewords_html:30 }}
+          <a href="{{ post.get_absolute_url }}"  class="read_more">Read more</a>
+      </li>
+    {% endfor %}
+    </ul>
+
+  </div>
+</section>
+
 
 
 {% endblock %}

@@ -60,3 +60,8 @@ body > section {
         left:3.1em;
     }
 }
+
+div[role=contentinfo] {
+    font-size:19px;
+    color:red;
+}

@@ -31,6 +31,7 @@
 
 
         {% block css %}
+        <link href="{% static 'css/foundation.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/main.css' %}" rel="stylesheet">
         {% endblock %}
 
@@ -39,30 +40,58 @@
     </head>
     <body {% block body_class %}{% endblock %}>
         <header role=banner>
-            <a href="/"><img src="{% static 'images/logo.png' %}"></a>
-            <h1>
-                <a href="/">Democracy<br>Club</a>
-            </h1>
+          {% block header %}
+          <div class="row">
+            <div class="columns large-1">
+              <a href="/"><img src="{% static 'images/logo.png' %}"></a>
+            </div>
+            <div class="columns large-11">
+              <h1>
+                  <a href="/">Democracy<br>Club</a>
+              </h1>
+            </div>
+          </div>
+          {% endblock header %}
         </header>
-        <nav role="navigation" id="navigation">
-            <button title="navigation menu" aria-label="navigation menu">Take me to... <span>☰</span></button>
-            <ul aria-expanded="true">
-                <li><a href="/" {% if request.path == "/" %}class="active"{% endif %}>Home</a></li>
-                <li><a href="/about/" {% if request.path == "/about/" %}class="active"{% endif %}>About</a></li>
-                <li><a href="/projects/" {% if request.path == "/projects/" %}class="active"{% endif %}>Projects</a></li>
-                <li><a href="/blog/" {% if request.path == "/blog/" %}class="active"{% endif %}>Blog</a></li>
-                <li><a href="/contact/" {% if request.path == "/contact/" %}class="active"{% endif %}>Contact</a></li>
-                <li><a href="/donate/" {% if request.path == "/donate/" %}class="active"{% endif %}>Donate</a></li>
+
+
+        <div class="contain-to-grid">
+          <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+              <li class="name"><!-- Leave this empty --></li>
+              <li class="toggle-topbar"><a href="#"><span>Go to…</span></a></li>
             </ul>
-        </nav>
+            <section class="top-bar-section">
+              <div class="row">
+                <div class="columns large-12">
+                      <ul class="left">
+                        <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+                        <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
+                        <li {% if request.path == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
+                        <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
+                        <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+                        <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
+                      </ul>
+                </div>
+              </div>
+            </section>
+
+          </nav>
+        </div>
+
+
         <main>
-            {% block content %}{% endblock content %}
+          <div class="row">
+            <div class="columns large-12">
+              {% block content %}{% endblock content %}
+            </div>
+          </div>
 
         </main>
         <footer>
-          <div class="wrap">
+          <div class="row">
 
-            <section>
+            <section class="columns large-4">
               <header>
                 <h2>About Us</h2>
               </header>
@@ -74,7 +103,7 @@
               </ul>
             </section>
 
-            <section>
+            <section class="columns large-4">
               <header>
                 <h2>Our Sites</h2>
               </header>
@@ -87,7 +116,7 @@
               </ul>
             </section>
 
-            <section>
+            <section class="columns large-4">
               <header>
                 <h2>Social Media</h2>
               </header>
@@ -116,9 +145,10 @@
         {% endif %}
         {% block javascript %}
         <script src="{% static 'js/scripts.js' %}"></script>
-        {# {% if 'show_question' in request.GET %} #}
-        <script src="{% static 'js/research.min.js' %}"></script>
-        {# {% endif %} #}
+        <script src="{% static 'js/foundation.min.js' %}"></script>
+        <script>
+           $(document).foundation();
+         </script>
         {% endblock javascript %}
     </body>
 </html>
