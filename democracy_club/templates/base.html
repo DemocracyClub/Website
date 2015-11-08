@@ -67,7 +67,7 @@
                       <ul class="left">
                         <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
                         <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
-                        <li {% if request.path == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
+                        <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
                         <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
                         <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
                         <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>

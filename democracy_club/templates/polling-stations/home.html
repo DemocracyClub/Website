@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<section class="large-8">
+<h1>Open Polling Stations</h1>
+
+<h2>What do we want to do?</h2>
+<p>We want to create an open dataset of polling station locations matched to
+  addresses. We intend to encourage leading media organisations (e.g. Google,
+  Facebook) and councils to use the data and we will also provide an easy-to-use
+  website for the public to access directly. </p>
+
+<h2>Why is this important? </h2>
+<p>One of the top search terms inputted into Google on the day of the 2015
+  general election was ‘Where do I vote?’ This information is rarely online.
+  Councils send citizens a polling card, but citizens might lose it or not have
+  it available at the time they want to vote. We believe that thousands of people
+  are disenfranchised by the lack of this information. It should be online.</p>
+
+<h2>How do we propose to do it?</h2>
+<p>We will use shape files from the councils to plot house addresses against
+  polling stations - as councils do currently. We will make this data open so
+  anyone can use it. We have begun working with some partner councils, and have
+  a working prototype that we tested at the 2015 general election. We will begin
+  full time work on this project for the 2016 elections in Nov 2015.</p>
+
+<p><a href="{% url "polling_technical_explainer" %}">Read a more in-depth technical explanation about how we plan to do this,
+  and how you can help</a></p>
+</section>
+
+
+{% endblock content %}
