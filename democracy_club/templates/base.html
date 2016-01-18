@@ -8,6 +8,8 @@
         <meta name="theme-color" content="#31A289">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+        <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
+
         <title>{% block title %}{% endblock title %} Democracy Club</title>
 
         <meta property="og:image" content="{% static "images/logo-large.png"%}" />
@@ -100,6 +102,7 @@
                 <li><a href="/data/">Data</a></li>
                 <li><a href="/help_out/">Help Out</a></li>
                 <li><a href="/contact/">Contact Us</a></li>
+                <li><a href="{% url "hermes_post_feed" %}">Blog RSS/Atom feed</a></li>
               </ul>
             </section>
 
