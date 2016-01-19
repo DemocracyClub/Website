@@ -1,9 +1,12 @@
 {% extends "base.html" %}
-
+{% load django_markdown %}
 
 {% block content %}
 <section class="large-8">
 <h1>Open Polling Stations</h1>
+{% filter markdown %}
+*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+{% endfilter %}
 
 <h2>What do we want to do?</h2>
 <p>We want to create an open dataset of polling station locations matched to
