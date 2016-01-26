@@ -1,0 +1,3 @@
+## Requirements
+
+* django_extensions
