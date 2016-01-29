@@ -3,8 +3,9 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.core.urlresolvers import reverse_lazy
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 from core.views import HomeView
 
@@ -27,9 +28,12 @@ urlpatterns = patterns('',
         TemplateView.as_view(template_name="polling-stations/home.html"),
         name="polling_one_pager"
         ),
-    url(r'^projects/polling-stations/techincal/$',
+    url(r'^projects/polling-stations/technical/$',
         TemplateView.as_view(template_name="polling-stations/technical.html"),
         name="polling_technical_explainer"
+        ),
+    url(r'^projects/polling-stations/techincal/$',
+        RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
         ),
     url(r'^contact/$', TemplateView.as_view(template_name="contact.html"), name="contact"),
     url(r'^members/', include('dc_members.urls')),
