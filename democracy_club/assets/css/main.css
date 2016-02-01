@@ -429,39 +429,6 @@ form.donate_form ul input {
         float:left;
         margin-left:2.5em;
     }
-
-    #signup_form {
-        display:table;
-        width:100%;
-    }
-
-    [role="heading"] h2 {
-        margin:0;
-        padding:0;
-        font-size:1rem;
-    }
-
-    #signup_form > div {
-        display:table-row;
-    }
-
-    #signup_form label {
-/*        float:left;*/
-        display:table-cell;
-        min-width:20%;
-        width:20%;
-    }
-
-    #signup_form input {
-        display:table-cell;
-        min-width:60%;
-        width:100%;
-    }
-
-    #signup_form > button {
-        padding:0.5em;
-    }
-
 }
 
 
