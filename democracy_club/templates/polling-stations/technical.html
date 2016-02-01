@@ -6,20 +6,29 @@
 <section class="large-8">
 <h1>Open Polling Station data</h1>
 {% filter markdown %}
-*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+*If you would like to talk to us about this project, please email
+[pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk)
+or call Sym on [07742079314](tel:07742079314)*
 
 ## Technical requirements
 
 
 ### Background
 
-In the England, Scotland and Wales, councils are responsible for managing their polling stations (Northern Ireland has a single Electoral Office that manages them all).
+In the England, Scotland and Wales, councils are responsible for managing
+their polling stations (Northern Ireland has a single Electoral Office
+that manages them all).
 
-This includes ensuring that the buildings themselves are accessible to everyone, and assigning the houses in the local area to vote at the correct polling station.  Votes at a polling station can only be cast from people at the allocated house, however the allocation varies depending on what polling stations are open for a given election.
+This includes ensuring that the buildings themselves are accessible to
+everyone, and assigning the houses in the local area to vote at the correct
+polling station.  Votes at a polling station can only be cast from people at
+the allocated house, however the allocation varies depending on what polling
+stations are open for a given election.
 
 ## The two datasets
 
-There are two bits of information that are needed in order to find out at what polling station a given address is able to vote:
+There are two bits of information that are needed in order to find out at
+what polling station a given address is able to vote:
 
 1. **The location of the polling stations**, and
 2. **The houses that can vote at that polling station**
@@ -31,9 +40,16 @@ We currently know of two main ways that this data is stored by councils:
 
 
 ###  Option 1: 'Shapefiles' GIS software
-This normally means that the council's GIS team maintain a list of **_points_** (polling stations) that have IDs, and a set of **_polygons_** (shapes on a map) that define the polling district.
+This normally means that the council's GIS team maintain a list of **_points_**
+ (polling stations) that have IDs, and a set of **_polygons_** (shapes on a
+ map) that define the polling district.
 
-If this is the case, then the data can normally be exported from the GIS software quickly.  The ownership of the data normally falls between the council and OS.  If the OS basemaps have been used to create the shapes, then the data is publishable under 'presumption to publish'.  You can read more about this [in an example from the OS about polling district data drawn using BaseMap (PDF, slides 34-38)](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf)
+If this is the case, then the data can normally be exported from the GIS
+software quickly.  The ownership of the data normally falls between the council
+and OS.  If the OS basemaps have been used to create the shapes, then the data
+is publishable under 'presumption to publish'.  You can read more about this
+[in an example from the OS about polling district data drawn using BaseMap
+(PDF, slides 34-38)](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf)
 
 We can deal with most geographical formats when we import the data, including:
 
@@ -41,14 +57,18 @@ We can deal with most geographical formats when we import the data, including:
 * [Shapefile](https://en.wikipedia.org/wiki/Shapefile)
 * [KML](https://en.wikipedia.org/wiki/Category:Keyhole_Markup_Language)
 
-If you use a different format, there is a high chance we can work out how to import it in to our system.
+If you use a different format, there is a high chance we can work out how to
+import it in to our system.
 
 
 ### Option 2: Lists of UPRNs
 
-This normally looks like a list of [Unique Property Reference Numbers](http://www.ordnancesurvey.co.uk/about/governance/policies/addressbase-uprn.html) with the polling station ID attached to each of them.
+This normally looks like a list of
+[Unique Property Reference Numbers](http://www.ordnancesurvey.co.uk/about/governance/policies/addressbase-uprn.html)
+with the polling station ID attached to each of them.
 
-The list of polling stations is still required, with an ID that allows linking to the UPRN list.
+The list of polling stations is still required, with an ID that allows
+linking to the UPRN list.
 
 We can accept almost any sort of format of data, including:
 
@@ -57,22 +77,48 @@ We can accept almost any sort of format of data, including:
 * TSV
 * JSON
 
-If you use a different format, there is a high chance we can work out how to import it in to our system.
+If you use a different format, there is a high chance we can work out how to
+import it in to our system.
 
 ## How to publish
 
-The best case scenario is that the council publishes this data at a reliable URL in a predictable format on their web site directly.  This means we only need a URL for both datasets, and we can import them often, ensuring that the data is always up to date.
+The best case scenario is that the council publishes this data at a reliable
+URL in a predictable format on their web site directly.  This means we only need
+a URL for both datasets, and we can import them often, ensuring that the data
+is always up to date.
 
-Alternatively, we will accept data emailed to [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk), or uploaded to a data portal like [data.gov.uk](http://data.gov.uk/).
+Alternatively, we will accept data emailed to
+[pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk),
+or uploaded to a data portal like [data.gov.uk](http://data.gov.uk/).
 
+## Data Licensing
+
+In the case of shapefiles, the Councils have the ability to open the dataset fully, under a
+permissive licence like the [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+[See the PDF linked above](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf)
+for more information on this.
+
+In the case of UPRNs, we have signed the [Public Sector End User Licence](https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/end-user-licence.html)
+with The Electoral Commission, who are supporting this project.
+A copy of this and the Memorandum of Understanding we have with
+The Electoral Commission is available on request from Council officials.
+
+This allows us to receive UPRN databases from any public sector authority for use in this project.
+
+It's important to not that we **do not want the electoral register, or any personal information on anyone**.
+We only need UPRNs linked to polling station and no other part of the database.
 
 ## Embedding
 
-If you publish the data in the open for us to use, you are able to use [our service](http://pollingstations.democracyclub.org.uk/) on [your web site directly](https://democracyclub.org.uk/blog/2015/04/01/how-polling-station-finder-helps-councils/).  [Talk to us]({% url "contact"%}) about how to go about doing this.
+If you publish the data in the open for us to use, you are able to use
+[our service](http://pollingstations.democracyclub.org.uk/) on
+[your web site directly](https://democracyclub.org.uk/blog/2015/04/01/how-polling-station-finder-helps-councils/).
+[Talk to us]({% url "contact"%}) about how to go about doing this.
 
 ### Problems?
 
-If there is anything wrong with this page, please [contact us]({% url "contact"%}) and we'll fix it.  If you know of another system of publishing this data, please let us know!
+If there is anything wrong with this page, please [contact us]({% url "contact"%})
+and we'll fix it.  If you know of another system of publishing this data, please let us know!
 
 {% endfilter %}
 
