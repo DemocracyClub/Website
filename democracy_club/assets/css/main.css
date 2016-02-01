@@ -439,6 +439,8 @@ form.donate_form ul input {
     form input, form label {
         display:inline;
     }
+}
+
 
 div[role=contentinfo] {
     font-size:1rem;
