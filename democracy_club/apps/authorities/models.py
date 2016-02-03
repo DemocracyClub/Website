@@ -60,3 +60,16 @@ class AuthorityServiceDetails(models.Model):
             self.SNAC.name,
             self.LGSL.description
         )
+
+
+class MapitArea(models.Model):
+    gss = models.CharField(max_length=100, primary_key=True)
+    parent_authority = models.ForeignKey(Authority, null=True)
+    name = models.CharField(blank=True, max_length=100)
+    area_type = models.CharField(blank=True, max_length=100)
+    unit_id = models.CharField(blank=True, max_length=100)
+    type_name = models.CharField(blank=True, max_length=255)
+    country_name = models.CharField(blank=True, max_length=100)
+
+    def __str__(self):
+        return self.name

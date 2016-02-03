@@ -1,6 +1,6 @@
 from django.contrib.gis import admin
 
-from .models import (Authority, AuthorityGeo,
+from .models import (Authority, AuthorityGeo, MapitArea,
                      AuthorityServiceCategory, AuthorityServiceDetails)
 
 class AuthorityGeoInline(admin.StackedInline):
@@ -22,3 +22,4 @@ admin.site.register(Authority, AuthorityAdmin)
 admin.site.register(AuthorityGeo)
 admin.site.register(AuthorityServiceCategory)
 admin.site.register(AuthorityServiceDetails, AuthorityServiceDetailsAdmin)
+admin.site.register(MapitArea)
