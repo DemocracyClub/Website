@@ -19,6 +19,14 @@ class Authority(TimeStampedModel):
 
     class Meta:
         verbose_name_plural = "authorities"
+        ordering = ('name',)
+
+    def election_urls(self):
+        return self.authorityservicedetails_set.filter(LGSL_id=362)
+
+    @property
+    def child_areas(self):
+        return self.mapitarea_set.all().order_by('name')
 
 
 class AuthorityGeo(TimeStampedModel):
