@@ -22,10 +22,14 @@ class MemberMixin():
         if queryset is None:
                 queryset = self.get_queryset()
 
-        obj, new = self.request.user.member_set.get_or_create(
-            user=self.request.user)
-        self.member = obj
-        return obj
+        try:
+            member = self.request.user.member
+        except Member.DoesNotExist:
+            member = Member(user=self.request.user)
+            member.save()
+
+        self.member = member
+        return member
 
 
 class MemberLoginFromTokenView(RatelimitMixin, RedirectView):

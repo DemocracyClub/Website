@@ -26,9 +26,10 @@ class Member(models.Model):
         return ('view_member', (), {})
 
     def generate_token(self):
-        return hashlib.sha1("--".join([
-            self.email,
-            self.postcode
+        joiner = "--".encode('utf8')
+        return hashlib.sha1(joiner.join([
+            self.email.encode('utf8'),
+            self.postcode.encode('utf8')
         ])).hexdigest()
 
     def _update_postcode(self):

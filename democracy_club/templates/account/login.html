@@ -1,0 +1,80 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+
+<section class="row">
+  <div class="columns large-12">
+    <h1>{% trans "Sign In" %}</h1>
+  </div>
+</section>
+
+<section class="row">
+
+  {# <div class="columns large-6"> #}
+  {#   <h2>Become a supporter</h2> #}
+  {#   <p>Join Democracy Club and help keep us going by donating just a little each month.</p> #}
+  {#   <p>With your money we will</p> #}
+  {#   <ul> #}
+  {#     <li>Provide our candidate list for every major election in the UK</li> #}
+  {#     <li>Maintain an archive of historic UK candidate data</li> #}
+  {#     <li>Work on getting data on polling stations in the public domain, so we can all find out where to vote</li> #}
+  {#     <li>…and much more.  We rely on grants and donations to keep these services running|!</li> #}
+  {#   </ul> #}
+  {#     <a class=button>Support us</a> #}
+  {#  #}
+  {#   <h2>Become a member</h2> #}
+  {#   <p>With our free membership will have access to our crowd sourcing tools</p> #}
+  {#     <a class="button secondary">Become a member</a> #}
+  {# </div> #}
+
+
+  <div class="columns large-12">
+    <h2>Existing account?</h2>
+
+    {% get_providers as socialaccount_providers %}
+
+    {% if socialaccount_providers %}
+    <p>{% blocktrans with site.name as site_name %}Please sign in with one
+    of of the following:{% endblocktrans %}</p>
+
+    <div class="socialaccount_ballot">
+
+      <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+      </ul>
+    </div>
+
+    {% include "socialaccount/snippets/login_extra.html" %}
+    <p>Or enter your email address and a password below</p>
+    {% else %}
+    <p>{% blocktrans %}If you have not created an account yet, then please
+    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    {% endif %}
+
+    <form class="login form large-6" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <p><a class="secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
+
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+
+      <button class="button primaryAction" type="submit">{% trans "Sign In" %}</button>
+    </form>
+
+    {% endblock %}
+
+
+
+  </div>
+</section>
+
+
+
