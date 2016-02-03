@@ -53,6 +53,13 @@ class AuthorityElectionPosition(TimeStampedModel):
     authority_election = models.ForeignKey(AuthorityElection)
     user = models.ForeignKey(User)
     area = models.ForeignKey(MapitArea)
+    seats = models.IntegerField(blank=True, null=True, default=0)
+
+    def __str__(self):
+        return "{0} ({1})".format(
+            self.authority_election,
+            self.area
+        )
 
 
 class AuthorityElectionSkipped(TimeStampedModel):

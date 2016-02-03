@@ -466,3 +466,8 @@ ol.indent li {
 a.button:visited {
     color:#FFF;
 }
+#area_form input[type=number] {
+    width:4em;
+    min-width:10px;
+    display:inline;
+}

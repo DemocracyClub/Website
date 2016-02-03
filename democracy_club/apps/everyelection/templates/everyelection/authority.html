@@ -31,7 +31,7 @@
 
     <p>This could mean that every ward has an election (some wards have more than one councillor), or it could mean that only some wards have a councillor up for election.</p>
 
-    <p>We need your help finding out what wards actually have an election.</p>
+    <p>We need your help finding out what wards actually have an election and how many seats are in each ward.</p>
 
 
     <h3>1. Go to the <a href="{{ object.authority.website }}" target="_blank">council's web site</a></h3>
@@ -57,7 +57,7 @@
     <p>If the web site doesn't tell you anything useful, you can <a href="tel:{{ object.authority.phone }}"><br><strong>call them on {{ object.authority.phone }}</strong></a> and:</p>
     <ol class="indent">
       <li>Ask to speak to their Democratic or Electoral services team</li>
-      <li>Ask that team what wards are up for election on the 5th of May</li>
+      <li>Ask that team what wards are up for election on the 5th of May and how many seats are in each ward</li>
       <li>Remember that the council will get a lot of calls, so you might be put on hold or not be able to speak with the right person on your first call.</li>
     </ol>
 
@@ -79,15 +79,15 @@
   </div>
 
   <div class="columns large-6">
-    <h3>Select the wards that are up for election:</h3>
+    <h3>Enter the number of seats up for election in each wards:</h3>
     <form method=post id="area_form">
       {% if form.errors.areas %}
         <label class="error">Please select at least one ward</label>
       {% endif %}
       {% csrf_token %}
-      {% for area in form.areas %}
+      {% for field in form %}
         <div>
-        {{area}}
+          {{ field }} {{ field.label_tag }}
         </div>
       {% endfor %}
       <button type=submit class=button id="area_submit">Submit</button>
@@ -100,12 +100,9 @@
 {% endblock content %}
 {% block page_javascript %}
 <script>
-  // Check all
-  var checkboxes = $('#area_form input[type=checkbox]');
-  $('#area_form').prepend('<a href="#" id="check_all">Check All</a>')
-  $('#check_all').on("click", function(e) {
-    e.stopPropagation();
-    checkboxes.prop('checked', true);
+
+  $('#area_form label').on('click', function() {
+    $(this).prev('input').select()
   })
 
   //Skip form
