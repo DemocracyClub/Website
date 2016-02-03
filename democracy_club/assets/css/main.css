@@ -462,3 +462,7 @@ ol.indent li {
     margin-left:3em;
     padding-bottom:0.2em;
 }
+
+a.button:visited {
+    color:#FFF;
+}

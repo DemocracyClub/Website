@@ -10,12 +10,16 @@
     <figure style="text-align:center">
       <img src="{% static 'everyelection/wards.png'%}">
       <figcaption class="small">
-        Image credit <a href="https://commons.wikimedia.org/wiki/File:Norfolk_UK_ward_map_(blank).svg#mw-jump-to-license">wikipedia</a>
+        Image credit
+        <a href="https://commons.wikimedia.org/wiki/File:Norfolk_UK_ward_map_(blank).svg#mw-jump-to-license">
+          wikipedia</a>
       </figcaption>
     </figure>
     <h3>Council elections</h3>
-    <p>We know all the councils that have elections, but we don't know what wards within those councils have seats up for reelection.</p>
-    <a href="{% url "everyelection:random_authority" %}" class="button button-large">Help us find the seats</a>
+    <p>We know all the councils that have elections, but we don't know what
+      wards within those councils have seats up for reelection.</p>
+    <a href="{% url "everyelection:random_election" %}" class="button button-large">
+      Help us find the seats</a>
 
   </div>
 
