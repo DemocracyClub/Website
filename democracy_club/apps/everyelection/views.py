@@ -13,7 +13,9 @@ class RandomAuthority(RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
-        authority_election = AuthorityElection.objects.all().order_by('?').first()
+        authority_election = AuthorityElection.objects.annotate(
+            position_count=Count('authorityelectionposition')
+        ).order_by('position_count').first()
         return reverse('everyelection:authority', kwargs={
             'pk': authority_election.pk})
 
