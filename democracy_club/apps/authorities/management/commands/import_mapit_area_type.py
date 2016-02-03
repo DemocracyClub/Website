@@ -1,3 +1,9 @@
+"""
+DIW
+MTW
+UTW
+"""
+
 import time
 
 import requests
@@ -25,6 +31,7 @@ class Command(BaseCommand):
         req = requests.get('%sareas/%s' % (
             constants.MAPIT_URL, mapit_type))
         for mapit_id, area in list(req.json().items()):
+            print(area)
             authority = Authority.objects.get(mapit_id=area['parent_area'])
             MapitArea.objects.get_or_create(
                 gss=area['codes']['gss'],
