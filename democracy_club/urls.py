@@ -13,10 +13,10 @@ from core.views import HomeView
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    (r'^accounts/', include('allauth.urls')),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^logout/$', 'django.contrib.auth.views.logout',
         {'next_page': '/'}, name='auth_logout'),
     url(r'^$', HomeView.as_view(), name="home"),
@@ -40,4 +40,5 @@ urlpatterns = patterns('',
     url(r'^blog/', include('hermes.urls')),
     url(r'^research/', include('research.urls', namespace="research")),
     url(r'^donate/', include('donations.urls', namespace="donations")),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^everyelection/', include('everyelection.urls', namespace="everyelection")),
+]# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

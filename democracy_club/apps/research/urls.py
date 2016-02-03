@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'answers', AnswerView)
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'stats', StatsView.as_view()),
     url(r'', include(router.urls)),
-)
+]
