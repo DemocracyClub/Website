@@ -16,12 +16,14 @@ class RandomAuthority(RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
-        authority_elections = list(AuthorityElection.objects.annotate(
+        authority_elections = list(AuthorityElection.objects.exclude(
+            percent_posts=100
+        )\
+        .annotate(
             position_count=Count('authorityelectionposition')
         ).order_by('position_count').values_list('election_id', flat=True))
         half = authority_elections[0:int(len(authority_elections)/2)]
         authority_election = random.choice(half)
-
 
         return reverse('everyelection:authority', kwargs={
             'pk': authority_election})
