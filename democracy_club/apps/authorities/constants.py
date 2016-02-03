@@ -10,3 +10,9 @@ AUTHORITY_TYPES = [
     "LGD",
     "UTA",
 ]
+
+AREA_TYPES = [
+    "DIW",
+    "MTW",
+    "UTW",
+]
