@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if elections_researched %}
+<div class="panel callout radius">
+  <h2>Your contributions</h2>
+  <p>Thanks so much for helping out!  You've:</p>
+  <ul>
+    <li>
+      Researched
+        <strong>{{elections_researched}}</strong> election{{ elections_researched|pluralize }}
+    </li>
+    <li>
+      Found
+        <strong>{{areas_researched}}</strong> area{{ elections_researched|pluralize }} that {{ areas_researched|pluralize:"has,have" }} an election
+    </li>
+  </ul>
+
+</div>
+{% endif %}
+
+<h1>{{ object.authority.name }}</h1>
+<h2>Task: find a list of wards up for election</h2>
+
+<h3>1. Go to the <a href="{{ object.authority.website }}" target="_blank">council's web site</a></h3>
+<p>Often you're looking for something called 'election notices'.  These are normally PDFs.</p>
+<p>
+  {% if object.authority.election_urls %}
+    {% if object.authority.election_urls.1 %}
+      We think you'll find this information on one of these pages:
+      <ul>
+        {% for url in object.authority.election_urls %}
+          <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+ You might be able to find <a href="{{ object.authority.election_urls.0.URL }}"target="_blank"><strong>more information about the elections here</strong></a>
+    {% endif %}
+  {% endif %}
+</p>
+
+
+<h3>2. Phone the council</h3>
+    <p>If the web site doesn't tell you anything useful, you can <a href="tel:{{ object.authority.phone }}"><strong>call them on {{ authority.phone }}</strong></a> and:</p>
+  <ol class="indent">
+    <li>Ask to speak to their Democratic or Electoral services team</li>
+    <li>Ask that team what wards are up for election on the 5th of May</li>
+    <li>Remember that the council will get a lot of calls, so you might be put on hold or not be able to speak with the right person on your first call.</li>
+  </ol>
+
+<h3>3. Select the wards that are up for election below:</h3>
+<form method=post>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type=submit>Submit</button>
+</form>
+{% endblock content %}

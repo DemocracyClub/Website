@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<h1>Every election</h1>
+<h2>Help us find every seat up for election on the 5th of May 2016</h2>
+
+<section class="row">
+  <div class="columns large-6 small-12">
+    <figure style="text-align:center">
+      <img src="{% static 'everyelection/wards.png'%}">
+      <figcaption class="small">
+        Image credit <a href="https://commons.wikimedia.org/wiki/File:Norfolk_UK_ward_map_(blank).svg#mw-jump-to-license">wikipedia</a>
+      </figcaption>
+    </figure>
+    <h3>Council elections</h3>
+    <p>We know all the councils that have elections, but we don't know what wards within those councils have seats up for reelection.</p>
+    <a href="{% url "everyelection:random_authority" %}" class="button button-large">Help us find the seats</a>
+
+  </div>
+
+
+  <div class="columns large-6 small-12">
+    <figure style="text-align:center">
+      <img src="{% static 'everyelection/United_Kingdom.png'%}">
+      <figcaption class="small">
+        Image credit <a href="https://commons.wikimedia.org/wiki/File:United_Kingdom_EU.svg">wikipedia</a>
+      </figcaption>
+    </figure>
+    <h3>What we already know</h3>
+    <p>These are the elections we already know about.</p>
+    {# <p>You can use our look up tool to find out more about the elections in your area</p> #}
+    <a href="#" class="button button-large">Find out about elections</a>
+
+  </div>
+
+</section>
+
+{% endblock content %}

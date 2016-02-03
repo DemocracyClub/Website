@@ -440,3 +440,16 @@ div[role=contentinfo] {
 .project {
     margin-bottom:1.5em;
 }
+
+figure {
+    margin:0;
+}
+
+figure figcaption.small {
+    font-size:0.5em;
+}
+
+ol.indent li {
+    margin-left:3em;
+    padding-bottom:0.2em;
+}
