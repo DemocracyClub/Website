@@ -7,6 +7,12 @@ from .models import Member
 class MemberUpdateForm(ModelForm):
     class Meta:
         model = Member
-        exclude = ['token', 'user', 'constituency', 'mapit_json']
+        exclude = [
+            'token',
+            'user',
+            'constituency',
+            'mapit_json',
+            'source',
+        ]
 
     postcode = GBPostcodeField(required=True)
