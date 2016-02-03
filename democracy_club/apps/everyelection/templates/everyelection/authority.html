@@ -61,6 +61,21 @@
       <li>Remember that the council will get a lot of calls, so you might be put on hold or not be able to speak with the right person on your first call.</li>
     </ol>
 
+    <form method=post>
+      {% csrf_token %}
+      <p class="small">Check this box if for some reason you can't help out with this authority.</p>
+      <label>Skip this authority
+      <input type="checkbox" id="skip_authority">
+      </label>
+      <div class="hide" id="skip_form">
+        <p>Please add some notes on why you're skipping this authority.
+          Notes will be visible to other users</p>
+        {{ skip_form.notes }}
+
+        <input type=hidden name="skipped_form" value="1">
+        <button type=submit class=button>Skip this authority</button>
+      </div>
+    </form>
   </div>
 
   <div class="columns large-6">
@@ -75,7 +90,7 @@
         {{area}}
         </div>
       {% endfor %}
-      <button type=submit class=button>Submit</button>
+      <button type=submit class=button id="area_submit">Submit</button>
     </form>
   </div>
 
@@ -85,11 +100,18 @@
 {% endblock content %}
 {% block page_javascript %}
 <script>
+  // Check all
   var checkboxes = $('#area_form input[type=checkbox]');
   $('#area_form').prepend('<a href="#" id="check_all">Check All</a>')
   $('#check_all').on("click", function(e) {
     e.stopPropagation();
     checkboxes.prop('checked', true);
+  })
+
+  //Skip form
+  $('#skip_authority').on('click', function() {
+    $('#skip_form').toggle();
+    $('#area_submit').toggle();
   })
 </script>
 {% endblock page_javascript %}

@@ -33,6 +33,21 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
         kwargs['user'] = self.request.user
         return kwargs
 
+    def post(self, *args, **kwargs):
+        if 'skipped_form' in self.request.POST:
+            form = AuthorityElectionSkippedForm({
+                'user': self.request.user.pk,
+                'authority_election': self.get_object().pk,
+                'notes': self.request.POST['notes'],
+            })
+            if form.is_valid():
+                form.save()
+                url = reverse('everyelection:random_election')
+                return redirect(url)
+        return super().post(*args, **kwargs)
+
+
+
     def get_context_data(self, **kwargs):
         kwargs['elections_researched'] = \
             AuthorityElectionPosition.objects.filter(
@@ -43,5 +58,7 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
         kwargs['areas_researched'] = AuthorityElectionPosition.objects.filter(
             user=self.request.user
         ).count()
+
+        kwargs['skip_form'] = AuthorityElectionSkippedForm()
 
         return super().get_context_data(**kwargs)
