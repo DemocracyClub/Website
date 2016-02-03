@@ -1,23 +1,30 @@
+import random
+
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.views.generic import RedirectView, UpdateView
 from django.core.urlresolvers import reverse
+from django.shortcuts import redirect
 
 from braces.views import LoginRequiredMixin
 
 from .models import AuthorityElection, AuthorityElectionPosition
-from .forms import AuthorityAreaForm
+from .forms import AuthorityAreaForm, AuthorityElectionSkippedForm
 
 
 class RandomAuthority(RedirectView):
     permanent = False
 
     def get_redirect_url(self, *args, **kwargs):
-        authority_election = AuthorityElection.objects.annotate(
+        authority_elections = list(AuthorityElection.objects.annotate(
             position_count=Count('authorityelectionposition')
-        ).order_by('position_count').first()
+        ).order_by('position_count').values_list('election_id', flat=True))
+        half = authority_elections[0:int(len(authority_elections)/2)]
+        authority_election = random.choice(half)
+
+
         return reverse('everyelection:authority', kwargs={
-            'pk': authority_election.pk})
+            'pk': authority_election})
 
 
 class AuthorityEdit(LoginRequiredMixin, UpdateView):
