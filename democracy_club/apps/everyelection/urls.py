@@ -9,5 +9,5 @@ urlpatterns = [
         TemplateView.as_view(template_name='everyelection/home.html'),
         name="home"),
     url(r'random_election', RandomAuthority.as_view(), name="random_election"),
-    url(r'authority/(?P<pk>.*)/', AuthorityEdit.as_view(), name="authority"),
+    url(r'election/(?P<pk>.*)/', AuthorityEdit.as_view(), name="authority"),
 ]

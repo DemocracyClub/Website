@@ -429,9 +429,16 @@ form.donate_form ul input {
         float:left;
         margin-left:2.5em;
     }
-}
 
+    [role="heading"] h2 {
+        margin:0;
+        padding:0;
+        font-size:1rem;
+    }
 
+    form input, form label {
+        display:inline;
+    }
 
 div[role=contentinfo] {
     font-size:1rem;

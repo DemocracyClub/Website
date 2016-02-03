@@ -15,7 +15,7 @@ class RandomAuthority(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         authority_election = AuthorityElection.objects.all().order_by('?').first()
         return reverse('everyelection:authority', kwargs={
-            'pk': authority_election.authority.pk})
+            'pk': authority_election.pk})
 
 
 class AuthorityEdit(LoginRequiredMixin, UpdateView):
