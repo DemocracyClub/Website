@@ -9,7 +9,7 @@ from authorities.models import Authority, MapitArea
 class AuthorityElection(models.Model):
     election_id = models.CharField(primary_key=True, max_length=255)
     authority = models.ForeignKey(Authority)
-    election_date = models.DateField()
+    election_date = models.DateField(default="2016-05-05")
     percent_posts = models.IntegerField(blank=False, null=False)
 
     @property
