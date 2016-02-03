@@ -21,10 +21,11 @@ class AuthorityAreaForm(ModelForm):
         fields = []
 
     def clean(self, *args, **kwargs):
-        for area in self.cleaned_data['areas']:
-            AuthorityElectionPosition.objects.get_or_create(
-                authority_election=self.instance,
-                user=self.user,
-                area_id=area
-            )
+        if 'areas' in self.cleaned_data:
+            for area in self.cleaned_data['areas']:
+                AuthorityElectionPosition.objects.get_or_create(
+                    authority_election=self.instance,
+                    user=self.user,
+                    area_id=area
+                )
         return super().clean(*args, **kwargs)
