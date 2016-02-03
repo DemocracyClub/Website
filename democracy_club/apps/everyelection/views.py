@@ -34,12 +34,12 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         kwargs['elections_researched'] = \
             AuthorityElectionPosition.objects.filter(
-                user=self.request.user
-            )\
+                user=self.request.user)\
             .values('authority_election')\
             .distinct().count()
+
         kwargs['areas_researched'] = AuthorityElectionPosition.objects.filter(
             user=self.request.user
         ).count()
 
-        return kwargs
+        return super().get_context_data(**kwargs)
