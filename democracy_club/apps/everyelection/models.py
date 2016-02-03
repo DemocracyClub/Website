@@ -53,3 +53,9 @@ class AuthorityElectionPosition(TimeStampedModel):
     authority_election = models.ForeignKey(AuthorityElection)
     user = models.ForeignKey(User)
     area = models.ForeignKey(MapitArea)
+
+
+class AuthorityElectionSkipped(TimeStampedModel):
+    authority_election = models.ForeignKey(AuthorityElection)
+    user = models.ForeignKey(User)
+    notes = models.TextField(blank=True)
