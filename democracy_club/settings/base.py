@@ -235,8 +235,9 @@ SOCIALACCOUNT_PROVIDERS = {
         'METHOD': 'oauth2',
      },
 }
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_EMAIL_REQUIRED = True
+LOGIN_REDIRECT_URL = "/everyelection/"
 
 
 # EMAILS
