@@ -20,9 +20,7 @@
 </div>
 {% endif %}
 
-<h1>{{ object.authority.name }}
-  {# <img src="{{object.chart_url}}"> #}
-</h1>
+<h1>{{ object.authority.name }}</h1>
 
 <div class="row">
 
@@ -67,7 +65,7 @@
 
   <div class="columns large-6">
     <h3>Select the wards that are up for election:</h3>
-    <form method=post>
+    <form method=post id="area_form">
       {% if form.errors.areas %}
         <label class="error">Please select at least one ward</label>
       {% endif %}
@@ -83,4 +81,15 @@
 
 </div>
 
+
 {% endblock content %}
+{% block page_javascript %}
+<script>
+  var checkboxes = $('#area_form input[type=checkbox]');
+  $('#area_form').prepend('<a href="#" id="check_all">Check All</a>')
+  $('#check_all').on("click", function(e) {
+    e.stopPropagation();
+    checkboxes.prop('checked', true);
+  })
+</script>
+{% endblock page_javascript %}
