@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.gis.db import models
 from django_extensions.db.models import TimeStampedModel
 
