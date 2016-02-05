@@ -65,7 +65,8 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
             .distinct().count()
 
         kwargs['areas_researched'] = AuthorityElectionPosition.objects.filter(
-            user=self.request.user
+            user=self.request.user,
+            seats__gt=0,
         ).count()
 
         kwargs['skip_form'] = AuthorityElectionSkippedForm()
