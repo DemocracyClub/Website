@@ -21,3 +21,4 @@ markdown==2.6.2
 Pillow
 psycopg2
 typogrify==2.0.7
+beautifulsoup4
