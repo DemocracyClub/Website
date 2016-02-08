@@ -214,6 +214,7 @@ body > footer {
     background-color:#DFF3EF;
     overflow:auto;
     padding:1em 0;
+    margin-top:5em;
 }
 
 body > footer .wrap {
@@ -470,4 +471,12 @@ a.button:visited {
     width:4em;
     min-width:10px;
     display:inline;
+}
+
+.button-cta {
+    background-color:#7431A2;
+}
+
+.button.disabled {
+    font-size:0.9rem;
 }
