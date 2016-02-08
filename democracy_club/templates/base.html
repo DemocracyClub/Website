@@ -11,8 +11,8 @@
         <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
 
         <title>{% block title %}{% endblock title %} Democracy Club</title>
-
         <meta property="og:image" content="{% static "images/logo-large.png"%}" />
+        {% block og_tags %}{% endblock og_tags %}
 
         <link rel="apple-touch-icon" sizes="57x57" href="{% static "icons/apple-icon-57x57.png" %}">
         <link rel="apple-touch-icon" sizes="60x60" href="{% static "icons/apple-icon-60x60.png" %}">
