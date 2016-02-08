@@ -479,4 +479,10 @@ a.button:visited {
 
 .button.disabled {
     font-size:0.9rem;
+    opacity: 0.4;
+}
+
+
+code {
+    white-space: pre;
 }
