@@ -57,8 +57,8 @@
     <p>If the web site doesn't tell you anything useful, you can <a href="tel:{{ object.authority.phone }}"><br><strong>call them on {{ object.authority.phone }}</strong></a> and:</p>
     <ol class="indent">
       <li>Ask to speak to their Democratic or Electoral services team</li>
-      <li>Ask that team which wards are up for election on the 5th of May, including the number of seats available in each ward</li>
-      <li>Remember that the council will get a lot of calls, so you might be put on hold or not be able to speak with the right person on your first call.</li>
+      <li>Ask that team which seats are up for election on the 5th of May. We're looking for the number of seats available in each ward</li>
+      <li>Remember that councils get a lot of calls, so you might be put on hold or not be able to speak with the right person on your first call.</li>
     </ol>
 
     <form method=post>
@@ -82,7 +82,7 @@
   </div>
 
   <div class="columns large-6">
-    <h3>Enter the number of seats up for election in each wards:</h3>
+    <h3>Enter the number of seats up for election in each ward:</h3>
     <form method=post id="area_form">
       {% if form.errors.areas %}
         <label class="error">Please select at least one ward</label>
