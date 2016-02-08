@@ -69,6 +69,8 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
             seats__gt=0,
         ).count()
 
+        kwargs['wards_total'] = self.object.authority.child_areas.count()
+
         kwargs['skip_form'] = AuthorityElectionSkippedForm()
 
         return super().get_context_data(**kwargs)

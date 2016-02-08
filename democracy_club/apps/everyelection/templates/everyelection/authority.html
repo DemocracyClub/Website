@@ -93,6 +93,7 @@
           {{ field }} {{ field.label_tag }}
         </div>
       {% endfor %}
+
       <button type=submit class=button id="area_submit">Submit</button>
     </form>
   </div>
@@ -104,8 +105,23 @@
 {% block page_javascript %}
 <script>
 
+$("#area_submit").before(
+  '<p><span class="ward_count">0</span>\
+  of <span class="wards_total">{{ wards_total }}</span> wards</p>');
+
+  $('#area_form input[type=number]').on('change keyup', function() {
+    var total = 0;
+    $('#area_form input[type=number]').each(function(index, el){
+      var value = parseInt($(el).val(), 10);
+      if (value > 0) {
+        total +=1;
+      }
+    })
+    $('.ward_count').text(total);
+  })
+
   $('#area_form label').on('click', function() {
-    $(this).prev('input').select()
+    $(this).prev('input').select();
   })
 
   //Skip form
