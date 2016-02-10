@@ -33,28 +33,8 @@
 
     <p>We need your help finding out which wards actually have an election, and how many seats are available in those elections.</p>
 
-
-    <h3>1. Go to the <a href="{{ object.authority.website }}" target="_blank">council's web site</a></h3>
-    <p>Often you're looking for something called 'election notices'.
-    <br>These are normally PDFs.</p>
-    <p>
-      {% if object.authority.election_urls %}
-        {% if object.authority.election_urls.1 %}
-          We think you'll find this information on one of these pages:
-          <ul>
-            {% for url in object.authority.election_urls %}
-              <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
-            {% endfor %}
-          </ul>
-        {% else %}
-     You might be able to find <a href="{{ object.authority.election_urls.0.URL }}"target="_blank"><strong>more information about the elections here</strong></a>
-        {% endif %}
-      {% endif %}
-    </p>
-
-
-    <h3>2. Phone the council</h3>
-    <p>If the web site doesn't tell you anything useful, you can <a href="tel:{{ object.authority.phone }}"><br><strong>call them on {{ object.authority.phone }}</strong></a> and:</p>
+    <h3>Phone the council</h3>
+    <p>You can <a href="tel:{{ object.authority.phone }}"><strong>call {{ object.authority.name }} on {{ object.authority.phone }}</strong></a> and:</p>
     <ol class="indent">
       <li>Ask to speak to their Democratic or Electoral services team</li>
       <li>Ask that team which seats are up for election on the 5th of May. We're looking for the number of seats available in each ward</li>
