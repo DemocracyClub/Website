@@ -1,14 +1,14 @@
 import random
 
 from django.db.models import Count
-from django.shortcuts import get_object_or_404
-from django.views.generic import RedirectView, UpdateView
+from django.views.generic import RedirectView, UpdateView, ListView
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 
-from braces.views import LoginRequiredMixin
+from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
 
-from .models import AuthorityElection, AuthorityElectionPosition
+from .models import (AuthorityElection, AuthorityElectionPosition,
+                     AuthorityElectionSkipped)
 from .forms import AuthorityAreaForm, AuthorityElectionSkippedForm
 
 
@@ -74,3 +74,9 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
         kwargs['skip_form'] = AuthorityElectionSkippedForm()
 
         return super().get_context_data(**kwargs)
+
+
+# Admin areas
+
+class SkippedAuthoritiesView(StaffuserRequiredMixin, ListView):
+    model = AuthorityElectionSkipped

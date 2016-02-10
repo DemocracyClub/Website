@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-
+{% if request.user.is_staff %}
+<section class="panel callout">
+  <header>
+    <h2>Shhh!  Admin area!</h2>
+  </header>
+<ul>
+  <li><a href="{% url "everyelection:skipped_elections" %}">Skipped elections</a></li>
+</ul>
+</section>
+{% endif %}
 <h1>Every election</h1>
 <h2>Help us find every seat up for election on the 5th of May 2016</h2>
 
