@@ -5,10 +5,10 @@
 
 {% block title %}{{ post.subject }} | {% endblock title %}
 {% block og_tags %}
-
+    <meta property="og:title" content="{{ post.subject }}" />
+    <meta property="og:description" content="{{ post.summary }}" />
+    <meta property="og:type"   content="article" />
 {% endblock og_tags %}
-  <meta property="og:title" content="{{ post.subject }}" />
-  <meta property="og:description" content="{{ post.subject }}" />
 {% block content %}
 
     <article class="columns large-8">
