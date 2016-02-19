@@ -1,7 +1,8 @@
 import random
 
 from django.db.models import Count
-from django.views.generic import RedirectView, UpdateView, ListView
+from django.views.generic import (TemplateView, RedirectView, UpdateView,
+                                  ListView)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 
@@ -10,6 +11,18 @@ from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
 from .models import (AuthorityElection, AuthorityElectionPosition,
                      AuthorityElectionSkipped)
 from .forms import AuthorityAreaForm, AuthorityElectionSkippedForm
+
+class HomeView(TemplateView):
+    template_name='everyelection/home.html'
+
+    def get_context_data(self, *args, **kwargs):
+        kwargs['authorities_researched'] = \
+            AuthorityElectionPosition.objects.values('authority_election')\
+            .count()
+        kwargs['top_users'] = \
+            AuthorityElectionPosition.objects.values('user__username')\
+            .annotate(count=Count('user')).order_by('-count')[:10]
+        return super().get_context_data(**kwargs)
 
 
 class RandomAuthority(RedirectView):

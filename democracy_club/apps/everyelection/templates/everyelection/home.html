@@ -33,6 +33,7 @@
   </div>
 
 
+
   <div class="columns large-6 small-12">
     <figure style="text-align:center">
       <img src="{% static 'everyelection/United_Kingdom.png'%}">
@@ -46,7 +47,31 @@
     <a class="button button-large disabled">Find out about elections (Coming soon!)</a>
 
   </div>
-
 </section>
+{# <section> #}
+{#   <hr> #}
+{#   <div class="large-6 columns"> #}
+{#     <h1>{{ authorities_researched }}</h1> #}
+{#     <h3>Councils researched</h3> #}
+{#   </div> #}
+{#   <div class="large-6 columns"> #}
+{#     <h1>Top researchers</h1> #}
+{#     <table> #}
+{#       <thead> #}
+{#         <th>Username</th> #}
+{#         <th>Number of councils researched</th> #}
+{#       </thead> #}
+{#       <tbody> #}
+{#         {% for user in top_users %} #}
+{#         <tr> #}
+{#           <td>{{ user.user__username }}</td> #}
+{#           <td>{{ user.count }}</td> #}
+{#         </tr> #}
+{#         {% endfor %} #}
+{#       </tbody> #}
+{#     </table> #}
+{#   </div> #}
+{#  #}
+{# </section> #}
 
 {% endblock content %}
