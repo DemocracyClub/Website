@@ -1,12 +1,15 @@
 import random
 
 from django.db.models import Count
+from django.views.generic import View
+from django.http import JsonResponse
+
 from django.views.generic import (TemplateView, RedirectView, UpdateView,
                                   ListView)
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 
-from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
+from braces.views import (LoginRequiredMixin, StaffuserRequiredMixin,)
 
 from .models import (AuthorityElection, AuthorityElectionPosition,
                      AuthorityElectionSkipped)
@@ -93,3 +96,20 @@ class AuthorityEdit(LoginRequiredMixin, UpdateView):
 
 class SkippedAuthoritiesView(StaffuserRequiredMixin, ListView):
     model = AuthorityElectionSkipped
+
+
+class DataView(View):
+    require_json = True
+
+    def get(self, request, *args, **kwargs):
+        context_dict = {}
+        for position in AuthorityElectionPosition.objects.exclude(seats=None):
+            context_dict[position.pk] = {
+                'authority_id': position.authority_election.authority.authority_id,
+                'authority_name': position.authority_election.authority.name,
+                'area_id': position.area.pk,
+                'area_name': position.area.name,
+                'seats': position.seats,
+            }
+
+        return JsonResponse(context_dict)
