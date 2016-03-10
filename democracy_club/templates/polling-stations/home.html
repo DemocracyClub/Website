@@ -6,27 +6,86 @@
 <h1>Open Polling Stations</h1>
 {% filter markdown %}
 *If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+
+## Who are Democracy Club?
+
+Democracy Club is a large group of volunteers assisted by two full-time
+coordinators: Sym Roe and Joe Mitchell. We’ve received funding from Rowntree
+Trust and Google.org to make this project happen. Democracy Club is a
+community interest company (#09461226)
+
+
+## What do we want to do?
+
+We want to create an open dataset of polling station locations matched to
+addresses. We intend to encourage leading media organisations (e.g. Google,
+Facebook) and councils to use the data and we will also provide an easy-to-use
+website for the public to access directly.
+
+## What’s our experience?
+
+Democracy Club created [yournextmp.com](https://yournextmp.com) for the General Election,
+crowdsourced the most accurate and comprehensive dataset of candidates and
+received a million unique visitors. We also provided an API to allow media
+groups like Google and most of the UK newspapers to use the data - reaching
+millions more people. We built a prototype polling-station-finder for 2015,
+which was used by West Berkshire Council.
+
+
+## Why is this important?
+
+One of the top search terms inputted into Google on the day of the 2015
+general election was ‘Where do I vote?’ This information is rarely online.
+Councils send citizens a polling card, but citizens might lose it or not have
+it available at the time they want to vote. We believe that thousands of people
+are disenfranchised by the lack of this information. It should be online.
+
+## How do we propose to do it?
+We will use shape files from the councils to plot house addresses against
+polling stations - as councils do currently. We will make this data open so
+anyone can use it. We have begun working with some partner councils, and have
+a working prototype that we tested at the 2015 general election. We will begin
+full time work on this project for the 2016 elections in Nov 2015.
+
+
+## What if the data changes?
+
+One of the advantages of digital data is that it is easier to update than
+paper polling cards. If you publish to a web address, we will regularly check
+the address. So all you need to do is ensure that when the data changes, you
+republish to the same web address. Alternatively, you can email us with the
+updates and we will make the changes within 24 hours.
+
+
+## Isn’t this personal data?
+
+No, we are not asking for the full Electoral Register, only property IDs or
+shapefiles. Neither shapefiles nor UPRN data are personal data according to
+the Data Protection Act.
+
+
+## Are we allowed to publish the shapefiles?
+
+Yes, shapefiles created from OS BaseMaps are allowed to be published under
+‘presumption to publish’. You can read more about this here.
+
+
+## Do you have a licence for UPRN data?
+Yes, we have partnered with the Electoral Commission to use the data under
+the OS PSMA end user licence.
+
+
+## Why do you need UPRNs or shapefiles, can’t we just provide polling station locations?
+
+Some postcodes can refer to more than one district, so we cannot just use
+postcode data linked to stations for this task.
+
+
+## Could we have a version of your polling station finder on our site?
+
+Yes! This is relatively easy to do. [Please email us](mailto:pollingstations@democracyclub.org.uk).
+
 {% endfilter %}
-
-<h2>What do we want to do?</h2>
-<p>We want to create an open dataset of polling station locations matched to
-  addresses. We intend to encourage leading media organisations (e.g. Google,
-  Facebook) and councils to use the data and we will also provide an easy-to-use
-  website for the public to access directly. </p>
-
-<h2>Why is this important? </h2>
-<p>One of the top search terms inputted into Google on the day of the 2015
-  general election was ‘Where do I vote?’ This information is rarely online.
-  Councils send citizens a polling card, but citizens might lose it or not have
-  it available at the time they want to vote. We believe that thousands of people
-  are disenfranchised by the lack of this information. It should be online.</p>
-
-<h2>How do we propose to do it?</h2>
-<p>We will use shape files from the councils to plot house addresses against
-  polling stations - as councils do currently. We will make this data open so
-  anyone can use it. We have begun working with some partner councils, and have
-  a working prototype that we tested at the 2015 general election. We will begin
-  full time work on this project for the 2016 elections in Nov 2015.</p>
 
 <p><a href="{% url "polling_technical_explainer" %}">Read a more in-depth technical explanation about how we plan to do this,
   and how you can help</a></p>
