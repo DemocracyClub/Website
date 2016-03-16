@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block content %}
+
+<section class="large-8">
+<h1>Election identifier reference</h1>
+{% filter markdown %}
+An election code is made up of an election type followed optionally by an election subtype and/or area and finally the date that the polls open for that particular election. Each section is separated by a period character ('.'). Names are slugified with hyphens ('-') separating tokens. There is no country code for now, but one could be easily added as a prefix.
+
+All characters used are URL-friendly lowercase unreserved characters -- i.e. RFC3986 unreserved characters = ALPHA / DIGIT / "-" / "." / "_" / "~", where ALPHA is [a-z] and DIGIT is [0-9].
+
+Specifying the areas is for by-elections, i.e. when a single member of an assembly is being re-elected, e.g. a single constituency in parliament, or a single ward in a council. Where fractions of a council (half or third) are being elected, that's still an election rather than a by-election.
+
+A mayoral election in a particular city is treated as a sub-election of <kbd>mayor</kbd> elections. Similarly, different local authority elections are treated as sub-elections of <kbd>local</kbd> elections. On the other hand, police and crime commissioners are treated as a single election, with each PCC elected to a police area.
+
+If an assembly, such as the Scottish Parliament, elects members by two different methods, these are split into sub-elections.
+
+## Segments
+
+<table>
+<tr>
+    <th>Election type</th>
+    <th>[Election subtype]</th>
+    <th>[Area]</th>
+    <th>Date</th>
+</tr>
+<tr>
+    <td></td>
+    <td>optional</td>
+    <td>optional (by-elections)</td>
+    <td>day polls open (ISO 8601)</td>
+</tr>
+</table>
+
+## Election types 
+
+<table>
+<tr>
+<th>Election</th><th>Type</th><th>Subtypes</th><th>Areas</th>
+</tr>
+<tr>
+    <td>UK parliament</td><td><kbd>parl</kbd></td><td><em>none</em></td><td>Constituency name as slug</td>
+</tr>
+<tr>
+    <td>Northern Ireland assembly</td><td><kbd>nia</kbd></td><td><em>none</em></td><td>Constituency name as slug</td>
+</tr>
+<tr>
+    <td>Welsh assembly</td><td><kbd>naw</kbd></td><td><table><tr><td><kbd>c</kbd></td><td>constituencies</td></tr><tr><td><kbd>r</kbd></td><td>regions</td></tr></table></td><td>Constituency or region name as slug</td>
+</tr>
+<tr>
+    <td>Scottish parliament</td><td><kbd>sp</kbd></td><td><table><tr><td><kbd>c</kbd></td><td>constituencies</td></tr><tr><td><kbd>r</kbd></td><td>regions</td></tr></table></td><td>Constituency or region name as slug</td>
+</tr>
+<tr>
+    <td>Greater London assembly</td><td><kbd>gla</kbd></td><td><table><tr><td><kbd>c</kbd></td><td>constituencies</td></tr><tr><td><kbd>a</kbd></td><td>additional</td></tr></table></td><td>Constituency name as slug</td>
+</tr>
+<tr>
+    <td>Local elections</td><td><kbd>local</kbd></td><td>Council name as slug</td><td>Ward name as slug</td>
+</tr>
+<tr>
+    <td>Police and crime commissioner</td><td><kbd>pcc</kbd></td><td><em>none</em></td><td>Police area name as slug</td>
+</tr>
+<tr>
+    <td>City mayor</td><td><kbd>mayor</kbd></td><td>Mayoral city as slug</td><td><em>none</em></td>
+</tr>
+<tr>
+    <td>European parliament (UK)</td><td><kbd>eu</kbd></td><td><em>none</em></td><td>Region name as slug</td>
+</tr>
+<tr>
+    <td>Referendum</td><td><kbd>ref</kbd></td><td><em>none</em></td><td><em>none</em></td>
+</tr>
+</table>
+
+## Name and slug rules
+
+Slugification should be done following [Django's slugify function](https://github.com/django/django/blob/master/django/utils/text.py#L415-L428) with unicode disabled. The name for an area should be the official ONS name. For mayoral elections, the name of the city is used. For local elections, the council name is used with non-specific bits removed ('district council', 'city council', etc.).
+
+## Example election identifiers
+
+<table>
+<tr>
+    <td><strong>2016</strong></td>
+    <td>Identifier</td>
+</tr>
+<tr>
+    <td>Scottish Parliamentary elections (constituencies)</td><td><kbd>sp.c.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>Scottish Parliamentary elections (regions)</td><td><kbd>sp.r.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>National Assembly for Wales elections (constituencies)</td><td><kbd>naw.c.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>National Assembly for Wales elections (regions)</td><td><kbd>naw.r.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>London Assembly (constituency)</td><td><kbd>gla.c.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>London Assembly (additional)</td><td><kbd>gla.a.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>Police and Crime Commissioner elections</td><td><kbd>pcc.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>Oxford City Council election</td><td><kbd>local.oxford.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>London mayoral elections</td><td><kbd>mayor.london.2016-05-05</kbd></td>
+</tr>
+<tr>
+    <td>EU referendum</td><td><kbd>ref.2016-06-23</kbd></td>
+</tr>
+<tr>
+    <td><strong>2015</strong></td>
+    <td></td>
+</tr>
+<tr>
+    <td>General Election</td><td><kbd>parl.2015-05-07</kbd></td>
+</tr>
+<tr>
+    <td>Oldham West and Royton by-election</td><td><kbd>parl.oldham-west-and-royton.2015-12-03</kbd></td>
+</tr>
+<tr>
+    <td><strong>2014</strong></td>
+    <td></td>
+</tr>
+<tr>
+    <td>European parliament elections</td><td><kbd>eu.2014-05-22</kbd></td>
+</tr>
+</table>
+{% endfilter %}
+
+</section>
+{% endblock content %}

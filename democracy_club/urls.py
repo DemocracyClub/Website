@@ -35,6 +35,14 @@ urlpatterns = [
     url(r'^projects/polling-stations/techincal/$',
         RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
         ),
+    url(r'^projects/election-ids/reference/$',
+        TemplateView.as_view(template_name="election-ids/reference.html"),
+        name="election_ids_reference"
+        ),
+    url(r'^projects/election-ids/$',
+        TemplateView.as_view(template_name="election-ids/home.html"),
+        name="election_ids"
+        ),
     url(r'^contact/$', TemplateView.as_view(template_name="contact.html"), name="contact"),
     url(r'^members/', include('dc_members.urls')),
     url(r'^blog/', include('hermes.urls')),

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block content %}
+<section class="large-8">
+<h1>Election IDs</h1>
+{% filter markdown %}
+## What are election IDs?
+
+Election IDs are unique identifiers for any state-run election in the UK.
+
+## Why do we need election IDs?
+
+In order to build tools around elections, Democracy Club has found a really basic problem: naming them! It's easy when you're handling just, for example, a General Election, but if you're making a site that has to handle hundreds of different local elections and regional elections, we need a standard way to refer to them. This then allows datasets, such as upcoming elections, candidates, polling stations, leaflets, or news mentions, to be joined up to serve the needs of voters.
+
+## How are they defined?
+
+You can read the [reference definition](/projects/election-ids/reference/) here.
+
+## Can I see a comprehensive list somewhere?
+
+Not yet. You should be able to derive the election ID yourself from the reference, but we'll soon have a list of, at least, the IDs for all upcoming elections.
+{% endfilter %}
+</section>
+
+
+{% endblock content %}
