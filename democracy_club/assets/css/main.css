@@ -228,19 +228,14 @@ section.row#who_can_i_vote_for button {
     color:#000;
 }
 
-section.nav {
-    margin-bottom: 1rem;
-}
-
 ul.nav {
     list-style: none;
     margin: 0;
     padding: 0;
-    border: 1px solid #ccc;
 }
 
 ul.nav li {
-    float: left;
+    font-size: 1.4rem;
 }
 
 ul.nav li a {
@@ -251,7 +246,7 @@ ul.nav li a {
 }
 
 ul.nav li a, ul.av li a:visited {
-    color:#000;
+    color:#333;
     text-decoration:none;
 }
 
@@ -514,6 +509,12 @@ form.donate_form ul input {
 
     body {
         margin:0 auto;
+    }
+
+    ul.nav li {
+        float: left;
+        width: 16.6%;
+        font-size: 1.4rem;
     }
 
     .thumb {
