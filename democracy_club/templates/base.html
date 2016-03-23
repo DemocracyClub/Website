@@ -46,44 +46,31 @@
         <header role=banner>
           {% block header %}
           <div class="row">
-            <div class="columns large-1">
+            <div class="columns large-12">
               <a href="/"><img src="{% static 'images/logo.png' %}"></a>
-            </div>
-            <div class="columns large-11">
               <h1>
-                  <a href="/">Democracy<br>Club</a>
+                  <a href="/">Democracy Club</a>
               </h1>
             </div>
           </div>
           {% endblock header %}
         </header>
 
-
-        <div class="contain-to-grid">
-          <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-              <li class="name"><!-- Leave this empty --></li>
-              <li class="toggle-topbar"><a href="#"><span>Go to…</span></a></li>
+        {% if request.path != "/" %}
+        <section class="row nav">
+          <div class="columns large-12">
+            <ul class="nav">
+              <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+              <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
+              <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
+              <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
+              <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+              <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
+              <div style="clear:both;"></div>
             </ul>
-            <section class="top-bar-section">
-              <div class="row">
-                <div class="columns large-12">
-                      <ul class="left">
-                        <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
-                        <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
-                        <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
-                        <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
-                        <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
-                        <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
-                        {# <li {% if request.path == "/everyelection/" %}class="active"{% endif %}><a href="/everyelection/">Find Elections!</a></li> #}
-                      </ul>
-                </div>
-              </div>
-            </section>
-
-          </nav>
-        </div>
-
+          </div>
+        </section>
+        {% endif %}
 
         <main>
           <div class="row">
@@ -93,9 +80,7 @@
           </div>
         </main>
 
-
-
-        <footer class="panel callout">
+        <footer>
           <div class="row">
 
             <section class="columns large-6">

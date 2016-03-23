@@ -5,90 +5,74 @@
 
 {% block body_class %}class="full_width"{% endblock %}
 
-
-{% block header %}
-  <div class="row large_header">
-    <div class="columns large-6 small-12 medium-6">
-      <a href="/" class="logo"><img src="{% static 'images/logo-large.png' %}"></a>
-    </div>
-    <div class="columns large-6 small-12 medium-6">
-      <h1>Democracy Club</h1>
-      {% filter typogrify %}
-      <p>
-        Democracy Club is for a thriving democracy in the UK, where people
-        feel they can engage politically with the state in a simple,
-        easy-to-use and effective way.
-      </p>
-      <p>Our mission is to create <strong>digital tools and datasets that help democracy</strong>.
-        We focus on elections due to their high engagement levels.
-        A core team builds the tools, hundreds of volunteers upload data, and
-        we connect with organisations with large audiences to distribute the
-        data in a user-friendly fashion. We encourage government to adopt these
-        tools and datasets officially. </p>
-      {% endfilter %}
-
-      {# <section class="row"> #}
-      {#   <div class="columns large-12"> #}
-      {#     <h3>New!  Help us find every local election on May 5th 2016</h3> #}
-      {#     <a class="button button-large" href="{% url "everyelection:home"%}">Find out more</a> #}
-      {#   </div> #}
-      {# </section> #}
-
-    </div>
-
-  </div>
-{% endblock header %}
-
 {% block content %}
 
-
 <section class="row">
-  <div class="columns large-12">
-    <h2>What we do</h2>
+  <div class="columns large-6">
+    <p>We're for a thriving democracy in the UK, where people feel they can engage politically with the state in a simple, easy-to-use and effective way.</p>
   </div>
   <div class="columns large-6">
-    <h3>Lists of Candidates</h3>
-    <p>
-      There is no open dataset of candidates for elections in the UK. This means
-      that citizens cannot easily discover who they can vote for at the next
-      election. The lack of open data also means that media organisations,
-      campaigners and academics cannot easily monitor candidates. An open
-      dataset of candidates must exist to enable related products to exist, e.g.
-      voter advice applications or records of speakers at hustings. A thriving
-      democracy is a transparent one.
-    </p>
-
+    <ul class="nav">
+      <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+      <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
+      <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
+      <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
+      <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+      <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
+      <div style="clear:both;"></div>
+    </ul>
   </div>
-  <div class="columns large-6">
-    <h3>Polling stations</h3>
-    <p>
-      One of the top searched for terms on the day of the 2015
-      general election was ‘Where do I vote?’ This information is rarely
-      online. Councils send voters a polling card, but they might lose
-      it or not have it available at the time they want to vote. We believe
-      that thousands of people are disenfranchised by the lack of this
-      information. It should be online.
-    </p>
-
-  </div>
-
 </section>
 
-<section class="row">
-  <div class="columns large-12">
-    <h2>On the blog</h2>
-    <ul class="large-block-grid-2">
-    {% for post in latest_posts  %}
+<section class="row" id="the_club">
+  <div class="columns large-6">
+    <h2>The Club</h2>
+  </div>
+  <div class="columns large-6">
+    <p>Join thousands of people taking small actions to make democracy better for everyone. Free and non-partisan.</p>
+    <form action="http://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
+      <input type="hidden" name="list" value="N9KiQZ763AS892dmj8H8xIcHrA"/>
+      <input name="email" placeholder="email" type="text"/>
+      <button type="submit" name="submit">Join</button>
+    </form>
+  </div>
+</section>
+
+<section class="row" id="data_for_democracy">
+  <div class="columns large-6">
+    <h2>Data for Democracy</h2>
+  </div>
+  <div class="columns large-6">
+    <p>We provide the most accurate and comprehensive data to power voter information services. Get the data.</p>
+    <button><a href="/projects/">Read more</a></button>
+  </div>
+</section>
+
+<section class="row" id="who_can_i_vote_for">
+  <div class="columns large-6">
+    <h2>Who Can I Vote For?</h2>
+  </div>
+  <div class="columns large-6">
+    <p>Get the information you need to make an informed vote. Coming soon. Tell us what you need. </p>
+    <button><a href="mailto:hello@democracyclub.org.uk">Contact Us</a></button>
+  </div>
+</section>
+
+<!--<section class="row">
+  <div class="columns large-6">
+    <h3>Latest from the blog</h3>
+    <ul class="large-block-grdd-1">
+    {% with latest_post.0 as post  %}
       <li>
           <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|typogrify }}</a></h3>
           {{ post.summary|markdown|truncatewords_html:30 }}
           <a href="{{ post.get_absolute_url }}"  class="read_more">Read more</a>
       </li>
-    {% endfor %}
+    {% endwith %}
     </ul>
 
   </div>
-</section>
+</section>-->
 
 
 
