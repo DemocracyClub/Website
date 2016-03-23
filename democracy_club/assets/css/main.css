@@ -96,7 +96,7 @@ form button {
 /* Header */
 
 header[role=banner] {
-    padding:2rem 0;
+    padding:4rem 0;
     overflow:auto;
     margin:0em;
 }

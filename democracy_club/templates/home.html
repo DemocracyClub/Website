@@ -7,23 +7,6 @@
 
 {% block content %}
 
-<section class="row">
-  <div class="columns large-6">
-    <p>We're for a thriving democracy in the UK, where people feel they can engage politically with the state in a simple, easy-to-use and effective way.</p>
-  </div>
-  <div class="columns large-6">
-    <ul class="nav">
-      <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
-      <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
-      <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
-      <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
-      <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
-      <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
-      <div style="clear:both;"></div>
-    </ul>
-  </div>
-</section>
-
 <section class="row" id="the_club">
   <div class="columns large-6">
     <h2>The Club</h2>
@@ -55,6 +38,20 @@
   <div class="columns large-6">
     <p>Get the information you need to make an informed vote. Coming soon. Tell us what you need. </p>
     <button><a href="mailto:hello@democracyclub.org.uk">Contact Us</a></button>
+  </div>
+</section>
+
+<section class="row">
+  <div class="columns large-12">
+    <ul class="nav">
+      <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
+      <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
+      <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
+      <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
+      <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
+      <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
+      <div style="clear:both;"></div>
+    </ul>
   </div>
 </section>
 
