@@ -137,13 +137,14 @@ header[role=banner] a {
 }
 
 section.row div.columns p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 section.row h2 {
     font-size: 3rem;
     line-height: 3rem;
     color: white;
+    margin-bottom: 1rem;
 }
 
 section.row form#signup_form > input[type=text] {
