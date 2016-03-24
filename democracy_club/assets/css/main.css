@@ -43,6 +43,12 @@ a {
     color:#000;
     text-decoration:underline;
 }
+
+button a:link, button a:visited {
+    color: #fff;
+    text-decoration:none;
+}
+
 nav a {
     text-decoration:none;
 }
@@ -55,8 +61,42 @@ strong {
     font-weight:bold;
 }
 
+/* Forms */
+
+input {
+    border:1px solid #bfc1c3;
+    padding:4px;
+    line-height:1.31579;
+    box-sizing: border-box;
+}
+
+form input, form button, form label {
+    display:block;
+    font-size:19px;
+    clear:left;
+    min-width:100%;
+}
+
+label+input {
+    margin-top:5px;
+}
+
+form > p {
+    margin-bottom:30px;
+}
+
+form button {
+    border:1px solid #bfc1c3;
+    min-width:1em;
+    padding:4px;
+    line-height:1.31579;
+    box-sizing: border-box;
+}
+
+/* Header */
+
 header[role=banner] {
-    padding:10px 0;
+    padding:4rem 0;
     overflow:auto;
     margin:0em;
 }
@@ -65,6 +105,8 @@ header[role=banner] img {
     padding:0;
     display:block;
     margin:1em auto 0 auto;
+    height: 4rem;
+    width: 4rem;
 }
 
 header[role=banner] .large_header .logo img {
@@ -72,16 +114,81 @@ header[role=banner] .large_header .logo img {
 }
 
 header[role=banner] h1 {
-    margin:0.6em 0 0 0.5em;
-    text-align:center;
-    clear:right;
-    font-family:'BrandonText';
-    font-size:2rem;
+    margin: 1rem 0;
+    text-align: center;
+    clear: right;
+    font-family: 'BrandonText';
+    font-size: 3rem;
+    line-height: 4rem;
+    float: none;
+    text-rendering: auto;
+    letter-spacing: -0.05rem;
 }
 
 header[role=banner] a {
     text-decoration:none;
     color:rgb(53, 54, 58);
+}
+
+/* Sections */
+
+.row section.row {
+    margin-bottom: 2rem;
+}
+
+section.row div.columns p {
+    font-size: 1.4rem;
+}
+
+section.row h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+section.row form#signup_form > input[type=text] {
+    display: block;
+    line-height: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    border: 0;
+    line-height: 1rem;
+    min-width: 0%;
+}
+
+section.row#the_club {
+    padding: 2rem;
+    background: #ED706D linear-gradient(#ED7069,#D58C6F);
+    color: white;
+}
+section.row#the_club form#signup_form > button {
+    background: none;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    display: inline;
+}
+    
+section.row#data_for_democracy {
+    padding: 2rem;
+    background: #8469ED linear-gradient(#8469ED,#A96FD5);
+    color: white;
+}
+
+section.row#data_for_democracy button {
+    background: none;
+    border: 2px solid white;
+}
+
+section.row#who_can_i_vote_for {
+    padding: 2rem;
+    background: #30BB48 linear-gradient(#30BB48,#34C887);
+    color: white;
+}
+
+section.row#who_can_i_vote_for button {
+    background: none;
+    border: 2px solid white;
 }
 
 .contain-to-grid {
@@ -121,39 +228,37 @@ header[role=banner] a {
     color:#000;
 }
 
-body nav ul li a {
+ul.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav li {
+    font-size: 1.4rem;
+}
+
+ul.nav li a {
     display: block;
-    padding:1em 0;
+    padding:1em;
     margin:0;
     text-align:center;
 }
 
-body > nav ul li a, body > nav ul li a:visited {
-    color:#000;
+ul.nav li a, ul.av li a:visited {
+    color:#333;
     text-decoration:none;
 }
 
-body > nav ul li a:hover {
+ul.nav li a:hover {
     color:#FFF;
     background-color:#31A289;
-}
-
-body > nav ul li a:active, body > nav ul li a.active {
-    -webkit-box-shadow: inset 0px -7px 0px -4px rgba(49,162,137,1);
-    -moz-box-shadow: inset 0px -7px 0px -4px rgba(49,162,137,1);
-    box-shadow: inset 0px -7px 0px -4px rgba(49,162,137,1);
-}
-
-body > nav ul li+li a {
-    border-right:1px solid #31A289;
-    margin-left:-5px;
 }
 
 body > main {
     margin:0 auto;
     box-sizing: border-box;
     overflow:auto;
-    margin-top:2em;
 }
 
 body > main hr {
@@ -170,38 +275,6 @@ body > main > section:after {
   clear:both;
 }
 
-/* Forms */
-
-input {
-    border:1px solid #bfc1c3;
-    padding:4px;
-    line-height:1.31579;
-    box-sizing: border-box;
-}
-
-form input, form button, form label {
-    display:block;
-    font-size:19px;
-    clear:left;
-    min-width:100%;
-}
-
-label+input {
-    margin-top:5px;
-}
-
-form > p {
-    margin-bottom:30px;
-}
-
-form button {
-    border:1px solid #bfc1c3;
-    min-width:1em;
-    padding:4px;
-    line-height:1.31579;
-    box-sizing: border-box;
-}
-
 .thumb {
     padding:0 0.5em 0.5em 0;
     clear:both;
@@ -211,9 +284,9 @@ form button {
 }
 
 body > footer {
-    background-color:#DFF3EF;
+    background-color: #DCDCDC;
     overflow:auto;
-    padding:1em 0;
+    padding:4em 0;
     margin-top:5em;
 }
 
@@ -393,32 +466,55 @@ form.donate_form ul input {
 
 
 @media only screen and (min-width: 53em) {
-
-    header[role=banner] img {
-        max-width:90px;
-        float:left;
-    }
-    body.full_width header[role=banner] img {
-        max-width:100%;
-        margin-top:0;
-        float:left;
-    }
-    header[role=banner] h1 {
-        float:left;
-    }
-    body.full_width header[role=banner] h1 {
-        font-size:3em;
-        float:none;
-        margin:0;
-    }
-
-
     form button {
         min-width:20px;
     }
 
+    form input, form label {
+        display:inline;
+    }
+
+    header[role=banner] img {
+        max-width:90px;
+        float:left;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    header[role=banner] img {
+        max-width:100%;
+        margin-top:0;
+        float:left;
+    }
+
+    header[role=banner] h1 {
+        float:left;
+    }
+
+    header[role=banner] h1 {
+        font-size: 3em;
+        line-height: 4rem;
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    section.row form#signup_form > input[type=text] {
+        display: inline-block;
+        width: 15rem;
+    }
+
+    section.row form#signup_form > button {
+        margin-left: 1rem;
+    }
+
     body {
         margin:0 auto;
+    }
+
+    ul.nav li {
+        float: left;
+        width: 16.6%;
+        font-size: 1.4rem;
     }
 
     .thumb {
@@ -435,10 +531,6 @@ form.donate_form ul input {
         margin:0;
         padding:0;
         font-size:1rem;
-    }
-
-    form input, form label {
-        display:inline;
     }
 }
 
