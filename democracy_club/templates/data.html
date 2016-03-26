@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="row" id="data_elections">
+  <div class="columns large-6">
+    <h2>Elections</h2>
+    
+    <p>Upcoming UK elections at all levels, with postcode lookup. Ward-level granularity for local authority elections. Identifiers are issued under our <a href="{% url "election_ids" %}">election identifiers</a> project.</p>
+    
+    <ul>
+        <li>Inform people about upcoming elections</li>
+        <li>Use election identifiers to organise your data about elections</li>
+    </ul>
+
+    <p><button><a href="/data/elections/">Read More</a></button></p>
+  </div>
+  <div class="columns large-6">
+    <dl>
+        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+        <dt>Availability</dt> <dd>REST API endpoint</dd>
+        <dt>Includes elections for</dt>
+        <dd>
+            <ul>
+                <li>Westminster</li>
+                <li>Scottish Parliament</li>
+                <li>Welsh Assembly</li>
+                <li>Northern Irish Assembly</li>
+                <li>Greater London Assembly</li>
+                <li>Mayors</li>
+                <li>Local authorities</li>
+                <li>Police and crime commissioners</li>
+            </ul>
+        </dd>
+        <dt>NB</dt> <dd>Currently does not include by-elections</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="row" id="data_candidates">
+  <div class="columns large-6">
+    <h2>Candidates</h2>
+    
+    <p>Candidates in recent and upcoming UK elections. Name, email, photos and social media links are provided for every candidate.</p>
+
+    <ul>
+        <li>Inform people about their candidates</li>
+        <li>Help your users contact their candidates about issues they care about</li>
+        <li>Monitor the public presence of candidates during and after the campaign</li>
+    </ul>
+    
+    <p><button><a href="/data/candidates/">Read More</a></button></p>
+  </div>
+  <div class="columns large-6">
+    <dl>
+        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+        <dt>Availability</dt> <dd>REST API endpoint and Microsoft Excel&trade; compatible CSV</dd>
+        <dt>Elections covered</dt>
+        <dd>
+            <ul>
+                <li>All 2016 UK elections</li>
+                <li>General Election 2015</li>
+                <li>General Election 2010</li>
+            </ul>
+        </dd>
+        <!--<dt>Historical elections covered (as dumps)</dt>
+        <dd>
+            <ul>
+                <li>European Parliament 2014</li>
+                <li>Police and crime commissioner 2012</li>
+            </ul>
+        </dd>-->
+        <dt>NB</dt> <dd>Currently does not include by-elections</dd>
+    </dl>
+  </div>
+</section>
+
+
+{% endblock content %}

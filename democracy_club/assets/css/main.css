@@ -191,6 +191,33 @@ section.row#who_can_i_vote_for button {
     border: 2px solid white;
 }
 
+/* /data/ */
+
+section.row#data_elections {
+    padding: 2rem;
+    background: #26ADE3 linear-gradient(#26ADE3,#26AFE4);
+    color: white;
+}
+
+section.row#data_elections button, section.row#data_candidates button {
+    background: none;
+    border: 2px solid white;
+}
+
+section.row#data_elections a:link, section.row#data_elections a:visited {
+    color: white;
+}
+
+section.row#data_candidates {
+    padding: 2rem;
+    background: #9C4DE8 linear-gradient(#9C4DE8,#7D62CF);
+    color: white;
+}
+
+section.row#data_candidates a:link, section.row#data_candidates a:visited {
+    color: white;
+}
+
 .contain-to-grid {
     box-shadow: 0 1px 3px rgba(0,0,0,0.24);
 }
@@ -226,6 +253,11 @@ section.row#who_can_i_vote_for button {
 
 .top-bar .toggle-topbar a {
     color:#000;
+}
+
+section.nav {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
 }
 
 ul.nav {

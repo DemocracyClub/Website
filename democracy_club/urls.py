@@ -23,7 +23,8 @@ urlpatterns = [
     url(r'thanks/$', TemplateView.as_view(template_name="thanks.html")),
     url(r'thanks/finished$', TemplateView.as_view(template_name="thanks_finished.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
-    url(r'^projects/$', TemplateView.as_view(template_name="projects.html")),
+    url(r'^data/$', TemplateView.as_view(template_name="data.html"), name="data"),
+    url(r'^projects/$', TemplateView.as_view(template_name="projects.html"), name="projects"),
     url(r'^projects/polling-stations/$',
         TemplateView.as_view(template_name="polling-stations/home.html"),
         name="polling_one_pager"
