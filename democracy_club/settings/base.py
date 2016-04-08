@@ -261,6 +261,7 @@ MARKDOWN_DEUX_STYLES = {
         "extras": {
             "code-friendly": True,
             "markdown-in-html": True,
+            "footnotes": True,
         },
         "safe_mode": False,
     },
