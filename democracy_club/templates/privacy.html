@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block content %}
+<h1>Privacy &amp; Terms</h1>
+<div class="large-8">
+{% filter markdown %}
+
+
+### In short
+
+This site is run by Democracy Club Community Interest Company.
+
+We make the following promises about your personal information as a user of
+the site:
+
+* We will not sell or distribute your email address or other personal
+information.
+* We will gladly show you the personal data we store about you in
+order to run the website.
+
+We may use your email address to contact you about your use of the site (for
+example, to ask for feedback) or with occasional announcements about this
+project or similar Democracy Club projects.
+
+### Some more details
+
+As a visitor to the site, we store your IP address. This information is
+accessible to administrators of the site.
+
+If you login to the site, then we store your login details (obviously). We
+also (obviously) store the details of any data you contribute to the site.
+This information is accessible to administrators of the site.
+
+We also use Google Analytics to aggregate and track data about usage of the
+site; you can use a browser plugin to opt out of having data collected by
+Google Analytics.
+
+If you have any questions about this privacy policy, please do [email
+us](mailto:hello@democracyclub.org.uk).
+
+
+## Terms
+
+By using this website you agree to the terms stated here.
+
+This website is owned and managed by Democracy Club Community Interest Company (‘we’, ‘us’).
+
+We are not responsible for the content of external links.
+
+We will take all reasonable measures to ensure that data is corrected if you
+[contact us](mailto:hello@democracyclub.org.uk) regarding errors, but we cannot be held responsible for
+mistakes in the data or liability arising from your reliance on the data.
+
+We reserve the right to alter these terms at any time.
+
+These terms are governed by the law in England and Wales.
+
+If you have any questions about these Terms, please [contact us](mailto:hello@democracyclub.org.uk).
+
+
+{% endfilter %}
+
+{% endblock %}
