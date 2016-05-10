@@ -44,8 +44,15 @@ a {
     text-decoration:underline;
 }
 
-button a:link, button a:visited {
+a.link-button:link, a.link-button:visited {
+    border: 2px solid white;
     color: #fff;
+    display: inline-block;
+    font-size: 1rem;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    line-height: normal;
+    margin: 0;
+    padding: 1rem 2rem 1.0625rem 2rem;
     text-decoration:none;
 }
 
@@ -168,7 +175,7 @@ section.row#the_club form#signup_form > button {
     padding: 0.5rem 1rem;
     display: inline;
 }
-    
+
 section.row#data_for_democracy {
     padding: 2rem;
     background: #8469ED linear-gradient(#8469ED,#A96FD5);
