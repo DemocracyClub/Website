@@ -11,7 +11,6 @@ sys.path.insert(0, root('apps'))
 
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = ()
 
@@ -161,6 +160,7 @@ PROJECT_APPS = (
     'research',
     'authorities',
     'everyelection',
+    'report_2016',
 )
 
 ALLAUTH_APPS = (
@@ -205,20 +205,30 @@ LOGGING = {
     }
 }
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            root('templates')
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                "django.core.context_processors.debug",
+                "django.core.context_processors.i18n",
+                "django.core.context_processors.media",
+                "django.core.context_processors.static",
+                'django.core.context_processors.request',
+                "django.core.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+                "django.contrib.auth.context_processors.auth",
 
-TEMPLATE_CONTEXT_PROCESSORS =  (
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    'django.core.context_processors.request',
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-    "django.contrib.auth.context_processors.auth",
-
-    "democracy_club.context_processors.days_to_election",
-
-)
+                "democracy_club.context_processors.days_to_election",
+            ],
+            'debug': DEBUG
+        },
+    },
+]
 
 
 AUTH_PROFILE_MODULE = 'dc_members.Member'
@@ -262,6 +272,8 @@ MARKDOWN_DEUX_STYLES = {
             "code-friendly": True,
             "markdown-in-html": True,
             "footnotes": True,
+            "header-ids": True,
+            "smarty-pants": True,
         },
         "safe_mode": False,
     },

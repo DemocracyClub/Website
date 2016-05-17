@@ -187,7 +187,7 @@ section.row#data_for_democracy button {
     border: 2px solid white;
 }
 
-section.row#who_can_i_vote_for {
+section.row#who_can_i_vote_for, .intro_panel {
     padding: 2rem;
     background: #30BB48 linear-gradient(#30BB48,#34C887);
     color: white;
@@ -616,4 +616,33 @@ a.button:visited {
 
 code {
     white-space: pre;
+}
+
+
+#report_2016 section header h2 {
+    border-bottom:1px solid #AAA;
+    margin-bottom:1em;
+    margin-top:2em;
+}
+
+#report_2016 .intro_panel h1 {
+    margin:0.5em 0;
+}
+#report_2016 .intro_panel h2 {
+    margin:0.5em 0;
+    line-height:1.6em;
+}
+
+#report_2016 figure {
+    border:1px solid #EEE;
+    margin:0.5em 0;
+    padding:0.5em 0;
+}
+#report_2016 figure figcaption{
+    text-align:center;
+    font-size:0.8em;
+}
+
+#report_2016 section header img {
+    width:100%;
 }

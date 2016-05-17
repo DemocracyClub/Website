@@ -137,7 +137,11 @@
         <script src="{% static 'js/scripts.js' %}"></script>
         <script src="{% static 'js/foundation.min.js' %}"></script>
         <script>
-           $(document).foundation();
+           $(document).foundation({
+              "magellan-expedition": {
+                offset_by_height: false
+              }
+              });
          </script>
         {% endblock javascript %}
         {% block page_javascript %}{% endblock page_javascript %}
