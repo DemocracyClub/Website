@@ -212,6 +212,7 @@ section.row#report_2016 > div.wrap {
     background: rgba(0, 91, 154, 0.25);
 }
 
+
 /* /data/ */
 
 section.row#data_elections {
@@ -632,6 +633,41 @@ code {
     white-space: pre;
 }
 
+/* /report_2016/ */
+
+#report_2016 header.intro_panel {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/The_Old_Bridge%2C_Pontypridd.jpg/1280px-The_Old_Bridge%2C_Pontypridd.jpg");
+    background-position: center center;
+    padding: 0;
+}
+
+#report_2016 header.intro_panel > div.wrap {
+    padding: 2rem;
+    background: rgba(4, 37, 59, 0.5);
+}
+
+#report_2016 header.intro_panel h1, #report_2016 header.intro_panel h2, #report_2016 header.intro_panel h3, #report_2016 header.intro_panel h4, #report_2016 header.intro_panel h5 {
+    color: white;
+}
+
+#report_2016 header.intro_panel h1 {
+    margin: 0.5rem 0rem 1rem 0;
+}
+
+#report_2016 header.intro_panel p#subhead {
+    margin:0.5em 0;
+    line-height:1.6em;
+    color: white;
+    font-size: 1.4rem;
+}
+
+#report_2016 header.intro_panel p#byline {
+    margin:0.5em 0;
+    line-height:1.6em;
+    color: white;
+    font-size: 1.2rem;
+    font-style: italic;
+}
 
 #report_2016 section header h2 {
     border-bottom:1px solid #AAA;
@@ -639,19 +675,12 @@ code {
     margin-top:2em;
 }
 
-#report_2016 .intro_panel h1 {
-    margin:0.5em 0;
-}
-#report_2016 .intro_panel h2 {
-    margin:0.5em 0;
-    line-height:1.6em;
-}
-
 #report_2016 figure {
     border:1px solid #EEE;
     margin:0.5em 0;
     padding:0.5em 0;
 }
+
 #report_2016 figure figcaption{
     text-align:center;
     font-size:0.8em;
