@@ -706,8 +706,9 @@ code {
     width:100%;
 }
 
-#report_2016 section ol {
+#report_2016 section ol, #report_2016 section ul {
     font-size: 1.2rem;
     color: #009;
     line-height: 2;
+    margin-right: 5rem;
 }
