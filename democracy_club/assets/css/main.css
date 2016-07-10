@@ -202,7 +202,7 @@ section.row#who_can_i_vote_for {
 /** Report 2016 */
 
 section.row#report_2016, .intro_panel {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/The_Old_Bridge%2C_Pontypridd.jpg/1280px-The_Old_Bridge%2C_Pontypridd.jpg");
+    background: url("/static/images/report/old_bridge_pontypridd.jpg");
     background-position: center center;
 }
 
@@ -212,6 +212,16 @@ section.row#report_2016 > div.wrap {
     background: rgba(0, 91, 154, 0.25);
 }
 
+section.row#report_2016 > div.wrap div#credit {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    text-align: right;
+}
+
+section.row#report_2016 > div.wrap div#credit a:link,
+section.row#report_2016 > div.wrap div#credit a:visited {
+    color: white;
+}
 
 /* /data/ */
 
@@ -636,7 +646,7 @@ code {
 /* /report_2016/ */
 
 #report_2016 header.intro_panel {
-    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/The_Old_Bridge%2C_Pontypridd.jpg/1280px-The_Old_Bridge%2C_Pontypridd.jpg");
+    background: url("/static/images/report/old_bridge_pontypridd.jpg");
     background-position: center center;
     padding: 0;
 }
@@ -667,6 +677,10 @@ code {
     color: white;
     font-size: 1.2rem;
     font-style: italic;
+}
+
+#report_2016 section {
+    margin-top: 5rem;
 }
 
 #report_2016 section p {
