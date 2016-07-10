@@ -689,18 +689,25 @@ code {
 }
 
 #report_2016 section h4 {
-    margin: 2rem 0 1rem -1rem;
+    margin: 2rem 0 1rem 0rem;
 }
 
 #report_2016 figure {
     margin: 2rem 0 2rem 0;
 }
 
-#report_2016 figure figcaption{
+#report_2016 figure figcaption {
     text-align:center;
     font-size:0.8em;
+    margin: 0 5rem 0 0;
 }
 
 #report_2016 section header img {
     width:100%;
+}
+
+#report_2016 section ol {
+    font-size: 1.2rem;
+    color: #009;
+    line-height: 2;
 }
