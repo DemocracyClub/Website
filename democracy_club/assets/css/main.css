@@ -164,11 +164,22 @@ section.row form#signup_form > input[type=text] {
     min-width: 0%;
 }
 
-section.row#the_club {
+section.row#data_for_democracy, section.row#the_club, section.row#who_can_i_vote_for, section.row#report_2016 {
     padding: 2rem;
-    background: #ED706D linear-gradient(#ED7069,#D58C6F);
     color: white;
 }
+
+section.row button {
+    background: none;
+    border: 2px solid white;
+}
+
+/** The club */
+
+section.row#the_club {
+    background: #ED706D linear-gradient(#ED7069,#D58C6F);
+}
+
 section.row#the_club form#signup_form > button {
     background: none;
     border: 2px solid white;
@@ -176,26 +187,29 @@ section.row#the_club form#signup_form > button {
     display: inline;
 }
 
+/** Data for democracy */
+
 section.row#data_for_democracy {
-    padding: 2rem;
     background: #8469ED linear-gradient(#8469ED,#A96FD5);
-    color: white;
 }
 
-section.row#data_for_democracy button {
-    background: none;
-    border: 2px solid white;
-}
+/** Who can I vote for */
 
-section.row#who_can_i_vote_for, .intro_panel {
-    padding: 2rem;
+section.row#who_can_i_vote_for {
     background: #30BB48 linear-gradient(#30BB48,#34C887);
-    color: white;
 }
 
-section.row#who_can_i_vote_for button {
-    background: none;
-    border: 2px solid white;
+/** Report 2016 */
+
+section.row#report_2016, .intro_panel {
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/The_Old_Bridge%2C_Pontypridd.jpg/1280px-The_Old_Bridge%2C_Pontypridd.jpg");
+    background-position: center center;
+}
+
+section.row#report_2016 > div.wrap {
+    margin: -2rem;
+    padding: 2rem;
+    background: rgba(0, 91, 154, 0.25);
 }
 
 /* /data/ */
