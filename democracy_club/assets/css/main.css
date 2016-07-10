@@ -669,16 +669,31 @@ code {
     font-style: italic;
 }
 
+#report_2016 section p {
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+    margin: 0 5rem 2rem 0rem;
+    text-align: justify;
+}
+
 #report_2016 section header h2 {
-    border-bottom:1px solid #AAA;
-    margin-bottom:1em;
-    margin-top:2em;
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h2 {
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h3 {
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h4 {
+    margin: 2rem 0 1rem -1rem;
 }
 
 #report_2016 figure {
-    border:1px solid #EEE;
-    margin:0.5em 0;
-    padding:0.5em 0;
+    margin: 2rem 0 2rem 0;
 }
 
 #report_2016 figure figcaption{
