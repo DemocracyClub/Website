@@ -5,14 +5,15 @@
 
 {% block content %}
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<article class="columns large-8 main-content" id="report_2016">
 
+<div id="report_2016">
 <header class="panel intro_panel" markdown="1"><div class="wrap">
     <h1>Towards better elections <sup style="font-size: 0.5em;">beta</sup></h1>
     <p id="subhead">Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
     <p id="byline">Democracy Club, May 2016</p>
 </div></header>
 
+<article class="columns large-8 main-content">
 {% filter markdown %}
 <section id="block_section_summary" markdown="1">
 <header><a name="section_summary"></a><h2 data-magellan-destination="section_summary">Summary</h2></header>
@@ -593,7 +594,8 @@ Up to date data can be found at the [polling stations league table](http://polli
 {% endfilter %}
 </article>
 
-<aside class="columns large-4 unstuck show-for-large-up" id="sidebar">
+<div class="columns large-4"><div style="position: absolute;">
+<aside class="unstuck show-for-large-up" id="sidebar">
   <ul class="side-nav sub-nav" data-magellan-expedition>
     <li data-magellan-arrival="section_summary"><a href="#section_summary">Summary</a></li>
     <li data-magellan-arrival="section_vision"><a href="#section_vision">1. Our vision, mission, and an invitation</a></li>
@@ -607,31 +609,8 @@ Up to date data can be found at the [polling stations league table](http://polli
 
   </ul>
 </aside>
-<style>
-
-.stuck {
-  position: fixed;
-  top: 4px;
-  right:48px;
-  background-color:none;
-}
-
-.stuck ul {
-  background-color:transparent;
-}
-.unstuck {
-  position: relative;
-}
-
-footer {
-  height: 6rem;
-  background: #333;
-  color: #fff; }
-
-#sidebar .sub-nav li {
-  float:none;
-}
-</style>
+</div></div>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
 

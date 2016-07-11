@@ -679,6 +679,10 @@ code {
     font-style: italic;
 }
 
+#report_2016 section:first-of-type {
+    margin-top: 2rem;
+}
+
 #report_2016 section {
     margin-top: 5rem;
 }
@@ -725,4 +729,47 @@ code {
     color: #009;
     line-height: 2;
     margin-right: 5rem;
+}
+
+#report_2016 aside ul {
+    background-color: #eee;
+    margin: 0;
+    padding: 1rem;
+}
+
+#report_2016 aside ul li {
+    margin: 0;
+}
+
+#report_2016 aside ul li a:link,
+#report_2016 aside ul li a:visited {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+#report_2016 aside.unstuck {
+    position: relative;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    /*width: 100%;*/
+}
+
+#report_2016 aside.stuck {
+    position: fixed;
+    top: 2rem;
+    /*width: inherit;*/
+}
+
+footer {
+    height: 6rem;
+    background: #333;
+    color: #fff;
+}
+
+#sidebar .sub-nav li {
+    float: none;
+}
+
+#sidebar .sub-nav li.active a {
+    background: #A4B9CE
 }
