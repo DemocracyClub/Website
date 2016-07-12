@@ -164,11 +164,22 @@ section.row form#signup_form > input[type=text] {
     min-width: 0%;
 }
 
-section.row#the_club {
+section.row#data_for_democracy, section.row#the_club, section.row#who_can_i_vote_for, section.row#report_2016 {
     padding: 2rem;
-    background: #ED706D linear-gradient(#ED7069,#D58C6F);
     color: white;
 }
+
+section.row button {
+    background: none;
+    border: 2px solid white;
+}
+
+/** The club */
+
+section.row#the_club {
+    background: #ED706D linear-gradient(#ED7069,#D58C6F);
+}
+
 section.row#the_club form#signup_form > button {
     background: none;
     border: 2px solid white;
@@ -176,26 +187,40 @@ section.row#the_club form#signup_form > button {
     display: inline;
 }
 
+/** Data for democracy */
+
 section.row#data_for_democracy {
-    padding: 2rem;
     background: #8469ED linear-gradient(#8469ED,#A96FD5);
-    color: white;
 }
 
-section.row#data_for_democracy button {
-    background: none;
-    border: 2px solid white;
-}
+/** Who can I vote for */
 
-section.row#who_can_i_vote_for, .intro_panel {
-    padding: 2rem;
+section.row#who_can_i_vote_for {
     background: #30BB48 linear-gradient(#30BB48,#34C887);
-    color: white;
 }
 
-section.row#who_can_i_vote_for button {
-    background: none;
-    border: 2px solid white;
+/** Report 2016 */
+
+section.row#report_2016, .intro_panel {
+    background: url("/static/images/report/old_bridge_pontypridd.jpg");
+    background-position: center center;
+}
+
+section.row#report_2016 > div.wrap {
+    margin: -2rem;
+    padding: 2rem;
+    background: rgba(0, 91, 154, 0.25);
+}
+
+section.row#report_2016 > div.wrap div#credit {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    text-align: right;
+}
+
+section.row#report_2016 > div.wrap div#credit a:link,
+section.row#report_2016 > div.wrap div#credit a:visited {
+    color: white;
 }
 
 /* /data/ */
@@ -618,31 +643,133 @@ code {
     white-space: pre;
 }
 
+/* /report_2016/ */
 
-#report_2016 section header h2 {
-    border-bottom:1px solid #AAA;
-    margin-bottom:1em;
-    margin-top:2em;
+#report_2016 header.intro_panel {
+    background: url("/static/images/report/old_bridge_pontypridd.jpg");
+    background-position: center center;
+    padding: 0;
 }
 
-#report_2016 .intro_panel h1 {
-    margin:0.5em 0;
+#report_2016 header.intro_panel > div.wrap {
+    padding: 2rem;
+    background: rgba(4, 37, 59, 0.5);
 }
-#report_2016 .intro_panel h2 {
+
+#report_2016 header.intro_panel h1, #report_2016 header.intro_panel h2, #report_2016 header.intro_panel h3, #report_2016 header.intro_panel h4, #report_2016 header.intro_panel h5 {
+    color: white;
+}
+
+#report_2016 header.intro_panel h1 {
+    margin: 0.5rem 0rem 1rem 0;
+}
+
+#report_2016 header.intro_panel p#subhead {
     margin:0.5em 0;
     line-height:1.6em;
+    color: white;
+    font-size: 1.4rem;
+}
+
+#report_2016 header.intro_panel p#byline {
+    margin:0.5em 0;
+    line-height:1.6em;
+    color: white;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+#report_2016 section:first-of-type {
+    margin-top: 2rem;
+}
+
+#report_2016 section {
+    margin-top: 5rem;
+}
+
+#report_2016 section p {
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+    margin: 0 5rem 2rem 0rem;
+    text-align: justify;
+}
+
+#report_2016 section header h2 {
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h2 {
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h3 {
+    margin: 2rem 0 1rem -1rem;
+}
+
+#report_2016 section h4 {
+    margin: 2rem 0 1rem 0rem;
 }
 
 #report_2016 figure {
-    border:1px solid #EEE;
-    margin:0.5em 0;
-    padding:0.5em 0;
+    margin: 2rem 0 2rem 0;
 }
-#report_2016 figure figcaption{
+
+#report_2016 figure figcaption {
     text-align:center;
     font-size:0.8em;
+    margin: 0 5rem 0 0;
 }
 
 #report_2016 section header img {
     width:100%;
+}
+
+#report_2016 section ol, #report_2016 section ul {
+    font-size: 1.2rem;
+    color: #009;
+    line-height: 2;
+    margin-right: 5rem;
+}
+
+#report_2016 aside ul {
+    background-color: #eee;
+    margin: 0;
+    padding: 1rem;
+}
+
+#report_2016 aside ul li {
+    margin: 0;
+}
+
+#report_2016 aside ul li a:link,
+#report_2016 aside ul li a:visited {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+#report_2016 aside.unstuck {
+    position: relative;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    /*width: 100%;*/
+}
+
+#report_2016 aside.stuck {
+    position: fixed;
+    top: 2rem;
+    /*width: inherit;*/
+}
+
+footer {
+    height: 6rem;
+    background: #333;
+    color: #fff;
+}
+
+#sidebar .sub-nav li {
+    float: none;
+}
+
+#sidebar .sub-nav li.active a {
+    background: #A4B9CE
 }
