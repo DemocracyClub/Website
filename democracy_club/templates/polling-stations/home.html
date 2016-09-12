@@ -2,20 +2,25 @@
 {% load django_markdown %}
 
 {% block main_content %}
-<h1>Where Do I Vote</h1>
+<h1>Polling station finder</h1>
 {% filter markdown %}
+
+<h3>All you need to help people in your area to find their polling station.</h3>
 
 <img src="/static/images/where_screenshot.png" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
 
-*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+*A screenshot from Democracy Club's WhereDoIVote.co.uk service, embeddable in council websites.*
 
-One of the most common questions from voters on election day is “_where do I vote?_”. We answer this question with our polling station finder platform that can be used by voters searching on the internet, or on embedded versions on local authority web sites.
+One of the most common questions from voters on election day is “_where do I vote?_”. We try to get people answers. 
 
-We work with local government to establish internal best practice for publishing open data on polling stations — which means it becomes incredibly easy for voters to find it. Voters don’t need to know which ward or constituency they’re in, who manages their elections — we just get them the answer they’re searching for, in seconds.
+Our polling station finder can be used by voters searching on the internet or on their local council website. 
+
+We work with local government to establish internal best practice for publishing open data on polling stations — which means it becomes incredibly easy for voters to find it. Voters don’t need to know which ward or constituency they’re in or who manages their elections — we just get them the answer they’re searching for, in seconds.
 
 ## Features
 
 * Finds the polling station assigned to a property, not the closest one
+* Doesn't require voters to know their way around local government
 * Supports postcode areas that overlap district boundaries
 * Updates automatically when the underlying data changes*
 * Supports last minute changes, in the case of emergencies and closed polling stations
@@ -25,9 +30,7 @@ We work with local government to establish internal best practice for publishing
 * High performance and scalability ensures uptime on the busiest of elections
 * Fully featured API
 
-
-\* For Gold+ and Silver+ data only
-
+\* If the data is provided to Gold+ and Silver+ standards (see Technical specification)
 
 
 {% endfilter %}
@@ -35,14 +38,16 @@ We work with local government to establish internal best practice for publishing
 <div class="row">
     <div class="columns large-6 text-center">
         <a href="{% url "polling_data_upload" %}" class="button success">Upload your data</a>
-        <p>If you're in a local authority, you can upload your data to the
-            platform and help your electorate find where to vote</p>
+        <p>Work for local government? Upload your data to the
+            platform and help people find out where to vote</p>
     </div>
     <div class="columns large-6 text-center">
         <a href="{% url "polling_embed_code"%}" class="button success">Embed on your web site</a>
         <p>Get the embed code to add a polling station finder to your own site</p>
     </div>
 </div>
+
+*Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
 
 {% endblock main_content %}
 
