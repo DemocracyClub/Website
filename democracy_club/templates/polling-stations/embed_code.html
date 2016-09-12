@@ -1,0 +1,34 @@
+{% extends "polling-stations/polling_stations_base.html" %}
+{% load django_markdown %}
+
+{% block main_content %}
+<h1>Embedding 'Where Do I Vote' on your web site</h1>
+{% filter markdown %}
+
+*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+
+We'd love you to use our polling station finder on your web site. If you do, we kindly ask that you:
+
+1. Credit Democracy Club, linking to our home page at https://democracyclub.org.uk along side the embedded widget.
+2. Let us know you're using it. We don't limit use, but it's great to know who has used the embed feature.
+3. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
+
+To embed the site, use the following code:
+
+
+    <iframe src="https://wheredoivote.co.uk/embed/"
+        style="width:100%; height:1100px"
+        frameborder="0"
+        scrolling="no"></iframe>
+
+## Custom designs, white label and API
+
+If you would like something other than the default design on your pages, we can
+provide a white label or custom version. For software developers we have an API that allows
+you to use our service in your bespoke applications.
+
+Please [contact us]({% url "contact"%}) for more information about this.
+
+{% endfilter %}
+{% endblock main_content %}
+

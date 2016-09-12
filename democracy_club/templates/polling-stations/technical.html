@@ -1,10 +1,8 @@
-{% extends "base.html" %}
+{% extends "polling-stations/polling_stations_base.html" %}
 {% load markdown_deux_tags %}
 
-{% block content %}
-
-<section class="large-8">
-<h1>Open Polling Station data</h1>
+{% block main_content %}
+<h1>Polling Station data</h1>
 {% filter markdown %}
 *If you would like to talk to us about this project, please email
 [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk)
@@ -19,12 +17,12 @@ or call Sym on [07742079314](tel:07742079314)*
   <tbody>
     <tr>
       <td>Gold</td>
-      <td>Address to Station lookup table</td>
+      <td>Geo data for polling district with explicit district id to station id lookup</td>
       <td>Address, Grid ref</td>
     </tr>
     <tr>
       <td>Silver</td>
-      <td>Geo data for polling district with explicit district id to station id lookup (issues with postcodes that cross boundaries)</td>
+      <td>Address to Station lookup table</td>
       <td>Address, Grid ref</td>
     </tr>
     <tr>
@@ -48,62 +46,12 @@ or call Sym on [07742079314](tel:07742079314)*
 
 ## Gold standard
 
-### Polling Districts
-
-List of all registered addresses in local authority with polling station explicitly assigned to each one.
-
-For each address it should contain:
-
-* Address,
-* Postcode,
-* Polling Station ID
-* (optional UPRN)
-
-
-### Polling Station locations
-
-**Either** all polling station addresses in local authority (in a format like CSV, TSV, Excel, JSON)
-
-**Or**  Spatial dataset describing locations of polling stations in an open geographic format (e.g: KML, GeoJSON, SHP).
-
-Should contain for each station:
-
-* Address
-* Postcode
-* At least one unique ID
-* Grid reference (lat/lng or UK national grid)
-* A name (optional but nice)
-
-### Advantages
-
-Users will be directed to the correct polling station for their district, not their nearest station
-
-* Full coverage of the local authority will be available
-* All addresses will map to a polling station correctly, even if different addresses in the same postcode map to different stations
-* No geocoding/processing will be done on the data
-* No assumptions will need to be made about the data
-
-### Disadvantages
-
-Postcodes not in the dataset (e.g: those assigned to business addresses) will
-not map to anything.
-
-### Gold+ standard
-
-This data published via an API or at a predictable URL
-
-### Advantages
-
-If Democracy Club are made aware of updated data, the website can be updated within 48 hours.
-
-
-## Silver standard
-
 
 ### Polling Districts
 
 Spatial dataset describing boundaries of polling districts in an open
-geographic format (e.g: KML, GeoJSON, SHP)
+geographic format (e.g: KML, GeoJSON, SHP). This is often produced by GIS teams
+in local authorities.
 
 For each district it should contain:
 
@@ -139,15 +87,60 @@ Should contain for each station:
 * Any postcode in the local authority will map to a polling station
 * Full coverage of the local authority will be available
 
+### Gold+ standard
+
+Gold standard data published via an API or at a predictable URL.
+
+### Advantages
+
+If Democracy Club are made aware of updated data, the website can be updated within 48 hours.
+
+## Silver standard
+
+### Polling Districts
+
+List of all registered addresses in local authority with polling station explicitly
+assigned to each one. This can be derived from the electoral register, with all personal
+information removed.
+
+For each address it should contain:
+
+* Address,
+* Postcode,
+* Polling Station ID
+* (optional UPRN)
+
+
+### Polling Station locations
+
+**Either** all polling station addresses in local authority (in a format like CSV, TSV, Excel, JSON)
+
+**Or**  Spatial dataset describing locations of polling stations in an open geographic format (e.g: KML, GeoJSON, SHP).
+
+Should contain for each station:
+
+* Address
+* Postcode
+* At least one unique ID
+* Grid reference (lat/lng or UK national grid)
+* A name (optional but nice)
+
+### Advantages
+
+* Users will be directed to the correct polling station for their district, not their nearest station
+* Full coverage of the local authority will be available
+* All addresses will map to a polling station correctly, even if different addresses in the same postcode map to different stations
+* No geocoding/processing will be done on the data
+* No assumptions will need to be made about the data
+
 ### Disadvantages
 
-Users who enter a postcode which crosses a polling district boundary may be
-assigned to the wrong polling station. This represents a low but non-zero
-error rate.
+Postcodes not in the dataset (e.g: those assigned to business addresses) will
+not map to anything.
 
 ### Silver+ standard
 
-This data published via an API or at a predictable URL.
+This data published via an API or at a predictable URL
 
 ### Advantages
 
@@ -157,7 +150,7 @@ If Democracy Club are made aware of updated data, the website can be updated wit
 ## Below silver standard
 
 * Geocoding may need be done on the data
-* Assumptions may need to be made about the data
+* Assumptions may need to be made about the data (although we _never_ assume that the closest polling station is the correct one)
 * It may not be possible to deliver full coverage of the local authority
 
 
@@ -169,5 +162,4 @@ If Democracy Club are made aware of updated data, the website can be updated wit
 
 {% endfilter %}
 
-</section>
-{% endblock content %}
+{% endblock main_content %}

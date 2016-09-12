@@ -1,0 +1,30 @@
+{% extends "polling-stations/polling_stations_base.html" %}
+{% load django_markdown %}
+
+{% block main_content %}
+<h1>Upload data</h1>
+{% filter markdown %}
+
+**To send us data, please email the data or a link to the hosted version to [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
+
+
+Before sending us data, please make sure you have read our
+[technical guide]({% url "polling_technical_explainer" %}).
+
+## 'Plus' standard data
+
+If you're able to send us either Silver+ or Gold+ data, then all we need are the URLs for the data.
+
+Please make sure that these URLs will be updated as the data changes though. We have systems for checking
+updates and flagging when we think
+the data should have changed, but it's best to double check the internet IT process in your authority too.
+
+## Gold and Silver standard data
+
+We only use data sent to us for a specific election, so please send us data even if you
+think we might already have had it for a previous election.
+
+
+{% endfilter %}
+{% endblock main_content %}
+

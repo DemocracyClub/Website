@@ -1,0 +1,54 @@
+{% extends "polling-stations/polling_stations_base.html" %}
+{% load django_markdown %}
+
+{% block main_content %}
+<h1>Where Do I Vote</h1>
+{% filter markdown %}
+
+*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+
+
+## What if the data changes?
+
+One of the advantages of digital data is that it is easier to update than
+paper polling cards. If you publish to a web address, we will regularly check
+the address. So all you need to do is ensure that when the data changes, you
+republish to the same web address. Alternatively, you can email us with the
+updates and we will make the changes within 48 hours.
+
+
+## Isn’t this personal data?
+
+No, we are not asking for the full Electoral Register, only property IDs or
+shapefiles. Neither shapefiles nor UPRN data are personal data according to
+the Data Protection Act.
+
+
+## Are we allowed to publish the shapefiles?
+
+Yes, shapefiles created from OS BaseMaps are allowed to be published under
+‘presumption to publish’. [You can read more about this here](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf).
+
+
+## Do you have a licence for UPRN data?
+Yes, we have partnered with the Electoral Commission to use the data under
+the OS PSMA end user licence.
+
+
+## Why do you need UPRNs or shapefiles, can’t we just provide polling station locations?
+
+Some postcodes can refer to more than one district, so we cannot just use
+postcode data linked to stations for this task.
+
+
+## Could we have a version of your polling station finder on our site?
+
+Yes! This is relatively easy to do. [Please email us](mailto:pollingstations@democracyclub.org.uk).
+
+{% endfilter %}
+
+<p><a href="{% url "polling_technical_explainer" %}">Read a more in-depth technical explanation about how we plan to do this,
+  and how you can help</a></p>
+
+{% endblock main_content %}
+

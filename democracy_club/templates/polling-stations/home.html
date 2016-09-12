@@ -1,95 +1,48 @@
-{% extends "base.html" %}
+{% extends "polling-stations/polling_stations_base.html" %}
 {% load django_markdown %}
 
-{% block content %}
-<section class="large-8">
-<h1>Open Polling Stations</h1>
+{% block main_content %}
+<h1>Where Do I Vote</h1>
 {% filter markdown %}
+
+<img src="/static/images/where_screenshot.png" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
+
 *If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
 
-## Who are Democracy Club?
+One of the most common questions from voters on election day is “_where do I vote?_”. We answer this question with our polling station finder platform that can be used by voters searching on the internet, or on embedded versions on local authority web sites.
 
-Democracy Club is a large group of volunteers assisted by two full-time
-coordinators: Sym Roe and Joe Mitchell. We’ve received funding from Rowntree
-Trust and Google.org to make this project happen. Democracy Club is a
-community interest company (#09461226)
+We work with local government to establish internal best practice for publishing open data on polling stations — which means it becomes incredibly easy for voters to find it. Voters don’t need to know which ward or constituency they’re in, who manages their elections — we just get them the answer they’re searching for, in seconds.
 
+## Features
 
-## What do we want to do?
-
-We want to create an open dataset of polling station locations matched to
-addresses. We intend to encourage leading media organisations (e.g. Google,
-Facebook) and councils to use the data and we will also provide an easy-to-use
-website for the public to access directly.
-
-## What’s our experience?
-
-Democracy Club created [yournextmp.com](https://yournextmp.com) for the General Election,
-crowdsourced the most accurate and comprehensive dataset of candidates and
-received a million unique visitors. We also provided an API to allow media
-groups like Google and most of the UK newspapers to use the data - reaching
-millions more people. We built a prototype polling-station-finder for 2015,
-which was used by West Berkshire Council.
+* Finds the polling station assigned to a property, not the closest one
+* Supports postcode areas that overlap district boundaries
+* Updates automatically when the underlying data changes*
+* Supports last minute changes, in the case of emergencies and closed polling stations
+* Embeddable in your web site
+* Fully customisable and white-label versions on request
+* Almost any data format supported
+* High performance and scalability ensures uptime on the busiest of elections
+* Fully featured API
 
 
-## Why is this important?
-
-One of the top search terms inputted into Google on the day of the 2015
-general election was ‘Where do I vote?’ This information is rarely online.
-Councils send citizens a polling card, but citizens might lose it or not have
-it available at the time they want to vote. We believe that thousands of people
-are disenfranchised by the lack of this information. It should be online.
-
-## How do we propose to do it?
-We will use shape files from the councils to plot house addresses against
-polling stations - as councils do currently. We will make this data open so
-anyone can use it. We have begun working with some partner councils, and have
-a working prototype that we tested at the 2015 general election. We will begin
-full time work on this project for the 2016 elections in Nov 2015.
+\* For Gold+ and Silver+ data only
 
 
-## What if the data changes?
-
-One of the advantages of digital data is that it is easier to update than
-paper polling cards. If you publish to a web address, we will regularly check
-the address. So all you need to do is ensure that when the data changes, you
-republish to the same web address. Alternatively, you can email us with the
-updates and we will make the changes within 48 hours.
-
-
-## Isn’t this personal data?
-
-No, we are not asking for the full Electoral Register, only property IDs or
-shapefiles. Neither shapefiles nor UPRN data are personal data according to
-the Data Protection Act.
-
-
-## Are we allowed to publish the shapefiles?
-
-Yes, shapefiles created from OS BaseMaps are allowed to be published under
-‘presumption to publish’. [You can read more about this here](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf).
-
-
-## Do you have a licence for UPRN data?
-Yes, we have partnered with the Electoral Commission to use the data under
-the OS PSMA end user licence.
-
-
-## Why do you need UPRNs or shapefiles, can’t we just provide polling station locations?
-
-Some postcodes can refer to more than one district, so we cannot just use
-postcode data linked to stations for this task.
-
-
-## Could we have a version of your polling station finder on our site?
-
-Yes! This is relatively easy to do. [Please email us](mailto:pollingstations@democracyclub.org.uk).
 
 {% endfilter %}
 
-<p><a href="{% url "polling_technical_explainer" %}">Read a more in-depth technical explanation about how we plan to do this,
-  and how you can help</a></p>
-</section>
+<div class="row">
+    <div class="columns large-6 text-center">
+        <a href="{% url "polling_data_upload" %}" class="button success">Upload your data</a>
+        <p>If you're in a local authority, you can upload your data to the
+            platform and help your electorate find where to vote</p>
+    </div>
+    <div class="columns large-6 text-center">
+        <a href="{% url "polling_embed_code"%}" class="button success">Embed on your web site</a>
+        <p>Get the embed code to add a polling station finder to your own site</p>
+    </div>
+</div>
 
+{% endblock main_content %}
 
-{% endblock content %}

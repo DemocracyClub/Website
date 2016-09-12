@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block content %}
+<article class="columns large-8 main-content">
+{% block main_content %}
+{% endblock main_content %}
+</article>
+
+
+<div class="columns large-4">
+{% block side_content %}
+    <aside id="sidebar">
+      <ul class="side-nav sub-nav">
+        <li><a href="{% url "polling_one_pager" %}">Overview</a></li>
+        <li><a href="{% url "polling_faqs" %}">FAQs</a></li>
+        <li><a href="{% url "polling_technical_explainer" %}">Technical specification</a></li>
+        <li><a href="{% url "polling_embed_code" %}">Embed code</a></li>
+        <li><a href="{% url "polling_data_upload" %}">Upload Data</a></li>
+      </ul>
+    </aside>
+{% endblock side_content %}
+</div>
+
+
+{% endblock content %}
+

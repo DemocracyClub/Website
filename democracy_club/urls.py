@@ -34,6 +34,18 @@ urlpatterns = [
         TemplateView.as_view(template_name="polling-stations/technical.html"),
         name="polling_technical_explainer"
         ),
+    url(r'^projects/polling-stations/faqs/$',
+        TemplateView.as_view(template_name="polling-stations/faqs.html"),
+        name="polling_faqs"
+        ),
+    url(r'^projects/polling-stations/embed/$',
+        TemplateView.as_view(template_name="polling-stations/embed_code.html"),
+        name="polling_embed_code"
+        ),
+    url(r'^projects/polling-stations/upload/$',
+        TemplateView.as_view(template_name="polling-stations/upload_data.html"),
+        name="polling_data_upload"
+        ),
     url(r'^projects/polling-stations/techincal/$',
         RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
         ),
