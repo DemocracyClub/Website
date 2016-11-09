@@ -772,3 +772,23 @@ footer {
 #sidebar .sub-nav li.active a {
     background: #A4B9CE
 }
+
+
+@media print {
+    body > section.nav {
+        display:none;
+    }
+
+    a[href]:after {
+        content: "";
+    }
+
+    .hide_for_print {
+        display:none;
+    }
+    #report_2016 section {
+        page-break-before: always;
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+}
