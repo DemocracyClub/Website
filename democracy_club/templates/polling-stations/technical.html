@@ -49,8 +49,10 @@ We've put together this handy guide to polling district and station data. Go for
 ### 1. Polling districts
 
 Gold standard data looks like a spatial dataset describing the boundaries of polling districts in an open
-geographic format (e.g: KML, GeoJSON, SHP). This is often produced by GIS teams
-in local authorities.
+geographic format (e.g: [KML](https://developers.google.com/kml/),
+[GeoJSON](http://geojson.org/),
+[SHP](https://en.wikipedia.org/wiki/Shapefile)).
+This is often produced by GIS teams in local authorities.
 
 For each district it should contain:
 
@@ -62,18 +64,23 @@ For each district it should contain:
 
 ### 2. Polling station locations
 
-**Either** A list of all polling station addresses in a local authority (in a
-format like CSV, TSV, Excel, JSON)
+**Either** A list of all polling station addresses in a local authority
+(in a format like
+[CSV](https://en.wikipedia.org/wiki/Comma-separated_values),
+[TSV](https://en.wikipedia.org/wiki/Tab-separated_values),
+Excel, [JSON](http://www.json.org/)),
 
 **Or** A spatial dataset describing the locations of polling stations in an open
-geographic format (e.g: KML, GeoJSON, SHP).
+geographic format (e.g: [KML](https://developers.google.com/kml/),
+[GeoJSON](http://geojson.org/),
+[SHP](https://en.wikipedia.org/wiki/Shapefile)).
 
 The data for each station should include:
 
 * An address,
 * A postcode,
 * At least one unique ID,
-* A grid reference (lat/lng or UK national grid),
+* A grid reference (latitude/longitude or [UK national grid](https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid)),
 * A name (optional but nice), and
 * An explicit mapping to a polling district (polling district id)[^polling-ids].
 
@@ -106,20 +113,27 @@ For each address it should contain:
 * A complete address,
 * A postcode,
 * A polling Station ID,
-* A UPRN (optional). 
+* (Optional) A Unique Property Reference Number ([UPRN](https://www.geoplace.co.uk/addresses/uprn)).
 
 ### 2. Polling station locations
 
-**Either** all polling station addresses in local authority (in a format like CSV, TSV, Excel, JSON),
+**Either** all polling station addresses in local authority
+(in a format like
+[CSV](https://en.wikipedia.org/wiki/Comma-separated_values),
+[TSV](https://en.wikipedia.org/wiki/Tab-separated_values),
+Excel, [JSON](http://www.json.org/)),
 
-**Or** A spatial dataset describing locations of polling stations in an open geographic format (e.g: KML, GeoJSON, SHP).
+**Or** A spatial dataset describing locations of polling stations in an open geographic format
+(e.g: [KML](https://developers.google.com/kml/),
+[GeoJSON](http://geojson.org/),
+[SHP](https://en.wikipedia.org/wiki/Shapefile)).
 
 The data for each station should include:
 
 * An address,
 * A postcode,
 * At least one unique ID,
-* A grid reference (lat/lng or UK national grid),
+* A grid reference (latitude/longitude or [UK national grid](https://en.wikipedia.org/wiki/Ordnance_Survey_National_Grid)),
 * A name (optional but nice). 
 
 ### Advantages
