@@ -2,10 +2,11 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.core.urlresolvers import reverse_lazy
 from django.conf.urls.static import static
 from django.views.generic import TemplateView, RedirectView
+from django.contrib.auth import views as auth_views
 
 from core.views import HomeView
 
@@ -17,7 +18,7 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^logout/$', 'django.contrib.auth.views.logout',
+    url(r'^logout/$', auth_views.logout,
         {'next_page': '/'}, name='auth_logout'),
     url(r'^$', HomeView.as_view(), name="home"),
     url(r'thanks/$', TemplateView.as_view(template_name="thanks.html")),
