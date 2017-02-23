@@ -39,11 +39,15 @@
       <div class="grid">
         {% if post.hero %}
         <div style="height:160px;overflow:hidden;">
-            <img src="{{ MEDIA_URL }}{{ post.hero }}" style="object-fit:cover;height:160px; min-width:100%">
+            <a href="{{ post.get_absolute_url }}">
+                <img src="{{ MEDIA_URL }}{{ post.hero }}" style="object-fit:cover;height:160px; min-width:100%">
+            </a>
         </div>
         {% endif %}
         <div>
-          <h3 style="margin-top:0;"><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
+          <h3 style="margin-top:0;">
+              <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
+          </h3>
           {{ post.short|safe }}
         </div>
       </div>
