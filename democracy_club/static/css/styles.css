@@ -13,9 +13,12 @@ header, main, footer {
         margin: 0 auto; } }
 
 main .container > article {
-  max-width: 80%;
-  float: left;
-  overflow: auto; }
+  overflow: hidden; }
+  @media (min-width: 710px) {
+    main .container > article {
+      max-width: 80%;
+      float: left;
+      overflow: auto; } }
 
 body > header {
   background-color: white;
@@ -90,7 +93,7 @@ body {
   font-smoothing: antialiased;
   font-variant-ligatures: common-ligatures;
   color: #58595B;
-  font-size: calc(112.5% + 0.3vw);
+  font-size: calc(1.14em + 0.3vw);
   line-height: 1.58; }
 
 h1, h2, h3, h4, nav {

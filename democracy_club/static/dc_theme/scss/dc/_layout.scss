@@ -18,7 +18,10 @@ header, main, footer {
 }
 
 main .container > article {
-    max-width:80%;
-    float:left;
-    overflow:auto;
+    @include media(710px) {
+        max-width:80%;
+        float:left;
+        overflow:auto;
+    }
+    overflow:hidden;
 }
