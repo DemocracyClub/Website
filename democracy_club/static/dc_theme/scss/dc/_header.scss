@@ -1,10 +1,15 @@
 body > header {
   background-color:$header_bg;
-//  border:1px solid red;
+  height:7em;
+  @include media(710px) {
+    height:5em;
+  }
+
+  padding:0.3em;
 
   & .container {
     height:5em;
-    padding:0;
+    box-sizing:border-box;
     position:relative;
     width:100%;
 

@@ -2,6 +2,8 @@ footer {
   color:$white;
   background-color: $off-black;
   font-family:$sanserif-font;
+  margin-bottom:0;
+  padding-bottom:0;
 
   & h2 {
     color:$dc-bright-pink;
@@ -23,7 +25,6 @@ footer {
     list-style: none;
     font-weight: normal;
     color: #fff;
-    padding: 3rem 0 2rem;
     margin: 0;
 
     &::after {
