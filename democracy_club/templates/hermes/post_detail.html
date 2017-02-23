@@ -2,14 +2,15 @@
 {% load typogrify_tags %}
 {% load staticfiles %}
 
-{% block body_class %}class="blog"{% endblock %}
+{% block title %}{{ post.subject }} | {{ site_title }}{% endblock title %}
 
-{% block title %}{{ post.subject }} | {% endblock title %}
 {% block og_tags %}
     <meta property="og:title" content="{{ post.subject }}" />
     <meta property="og:description" content="{{ post.summary }}" />
     <meta property="og:type"   content="article" />
+    <meta property="og:image" content="https://democracyclub.org.uk{{ MEDIA_URL }}{{ post.hero }}" />
 {% endblock og_tags %}
+
 {% block content %}
 
     <article class="columns large-8">
