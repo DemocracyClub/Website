@@ -67,3 +67,5 @@ node_modules/
 # bower packages
 democracy_club/assets-src/vendor/
 .sass-cache/
+democracy_club/assets
+democracy_club/static/uploads
