@@ -1,0 +1,42 @@
+//@font-face {
+//    font-family: 'BrandonText';
+//    src: url('../dc_theme/fonts/BrandonText.eot');
+//    src: url('../dc_theme/fonts/BrandonText.eot?#iefix') format('embedded-opentype'),
+//         url('../dc_theme/fonts/BrandonText.woff') format('woff'),
+//         url('../dc_theme/fonts/BrandonText.ttf') format('truetype'),
+//         url('../dc_theme/fonts/BrandonText.svg#wf') format('svg');
+//    font-weight: normal;
+//    font-style: normal;
+//
+//}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-variant-ligatures: common-ligatures;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    font-smoothing: antialiased;
+    font-variant-ligatures: common-ligatures;
+    color:$body-text-colour;
+    font-size: calc(112.5% + 0.3vw);
+    line-height: 1.58;
+}
+
+h1, h2, h3, h4, nav {
+    color:$heading-text-colour;
+    font-family: $sanserif-font;
+    margin-bottom:0;
+    padding-bottom:0;
+    + p {
+        padding-top:0;
+        margin-top:0.5em;
+    }
+}
+
+main {
+    font-family: $serif-font;
+    a {
+        color:$dc-bright-pink;
+        text-decoration:none;
+    }
+}

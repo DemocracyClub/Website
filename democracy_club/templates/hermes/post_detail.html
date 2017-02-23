@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load typogrify_tags %}
+{% load staticfiles %}
 
 {% block body_class %}class="blog"{% endblock %}
 
@@ -16,15 +17,13 @@
         <header>
             <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
             <div role="contentinfo">
-              <span class="date"><time datetime="{{post.modified_on|date:"c"}}">{{post.created_on}}</time></span>,
+              <span class="date">
+                  <time datetime="{{post.modified_on|date:"c"}}">{{post.created_on|date:"jS E Y"}}</time>
+              </span>
+              by
               <span rel="author">
                 {% if post.author.first_name == "Sym" %}
                 <a href="https://twitter.com/symroe">
-                {{post.author.first_name}}
-                {{post.author.last_name}}
-                </a>
-                {% elif post.author.first_name == "Will" %}
-                <a href="https://twitter.com/puzzlesthewill">
                 {{post.author.first_name}}
                 {{post.author.last_name}}
                 </a>
@@ -40,7 +39,9 @@
               </span>
             </div>
         </header>
-
+        {% if post.hero %}
+        <img src="{{ MEDIA_URL }}{{ post.hero }}">
+        {% endif %}
         <div class="entry">{{ post.rendered|safe|typogrify }}</div>
 
       <aside>

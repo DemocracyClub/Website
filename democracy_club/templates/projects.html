@@ -1,113 +1,112 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
-  <div class="columns large-8">
-      <h1>Projects</h1>
+<article>
+  <h1>Projects</h1>
 
-      <section class="project">
-        <header>
-          <h3><a href="https://whocanivotefor.co.uk/">WhoCanIVoteFor</a></h3>
-        </header>
-        <p>
-          Used by over 1.5 million people to date and bringing together all of our
-          other projects, WhoCanIVoteFor tells UK voters
-          about their elections, candidates, polling stations, press mentions and more.
-        </p>
-        <a href="https://whocanivotefor.co.uk/" class="read_more">
-          Find who you can vote for</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3><a href="{% url "polling_one_pager" %}">Where Do I Vote</a></h3>
+    </header>
+    <p>
+      Our <a href="https://wheredoivote.co.uk/">polling station finder</a>
+      provides a platform that can answer one of the most Googled terms on election days in the UK:
+      "Where do I vote"
+      </p>
+    <a href="{% url "polling_one_pager" %}" class="read_more">
+      Find out how</a>
+  </section>
 
-      <section class="project">
-        <header>
-          <h3><a href="https://candidates.democracyclub.org.uk/">Democracy Club Candidates</a></h3>
-        </header>
-        <p>
-          We crowd source all the candidates in all UK elections, and provide
-          them as an <a href="/data/#candidates">API and data feed</a>
-        </p>
-        <a href="https://candidates.democracyclub.org.uk/" class="read_more">
-          Help with the crowd sourcing</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3><a href="https://whocanivotefor.co.uk/">WhoCanIVoteFor</a></h3>
+    </header>
+    <p>
+      Used by over 1.5 million people to date and bringing together all of our
+      other projects, WhoCanIVoteFor tells UK voters
+      about their elections, candidates, polling stations, press mentions and more.
+    </p>
+    <a href="https://whocanivotefor.co.uk/" class="read_more">
+      Find who you can vote for</a>
+  </section>
 
-      <section class="project">
-        <header>
-          <h3><a href="{% url "polling_one_pager" %}">Where Do I Vote</a></h3>
-        </header>
-        <p>
-          Our <a href="https://wheredoivote.co.uk/">polling station finder</a>
-          provides a platform that can answer one of the most Googled terms on election days in the UK:
-          "Where do I vote"
-          </p>
-        <a href="{% url "polling_one_pager" %}" class="read_more">
-          Find out how</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3><a href="https://candidates.democracyclub.org.uk/">Democracy Club Candidates</a></h3>
+    </header>
+    <p>
+      We crowd source all the candidates in all UK elections, and provide
+      them as an <a href="/data/#candidates">API and data feed</a>
+    </p>
+    <a href="https://candidates.democracyclub.org.uk/" class="read_more">
+      Help with the crowd sourcing</a>
+  </section>
 
-      <section class="project">
-        <header>
-          <h3><a href="{% url "election_ids" %}">Election IDs</a></h3>
-        </header>
-        <p>
-            We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters.
-        </p>
-        <a href="{% url "election_ids" %}" class="read_more">Read more</a>
-      </section>
 
-      <section class="project">
-        <header>
-          <h3>Election Leaflets</h3>
-        </header>
-        <p>
-          <a href="https://electionleaflets.org/">Election Leaflets</a> asks you to
-          photograph the leaflets that get put through your door and share them
-          with the world.
-          </p>
-        <p>We have a huge archive of election leaflets that is ready for anyone to
-          analyse.  Please <a href="/contact/">contact us</a> if you would like to know more</p>
+  <section class="project">
+    <header>
+      <h3><a href="{% url "election_ids" %}">Election IDs</a></h3>
+    </header>
+    <p>
+        We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters.
+    </p>
+    <a href="{% url "election_ids" %}" class="read_more">Read more</a>
+  </section>
 
-        <a href="https://electionleaflets.org" class="read_more">Snap a leaflet</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3>Election Leaflets</h3>
+    </header>
+    <p>
+      <a href="https://electionleaflets.org/">Election Leaflets</a> asks you to
+      photograph the leaflets that get put through your door and share them
+      with the world.
+      </p>
+    <p>We have a huge archive of election leaflets that is ready for anyone to
+      analyse.  Please <a href="/contact/">contact us</a> if you would like to know more</p>
 
-      <section class="project">
-        <header>
-          <h3>Election Mentions</h3>
-        </header>
-        <p>
-          <a href="http://ElectionMentions.com">Election Mentions</a>
-          presents press articles that we think are relevant in an attractive
-          and simple list, facilitating further research, and ultimately helping to
-          inform your vote. You can also add articles you find for other people to read.
-          </p>
-        <a href="http://ElectionMentions.com" class="read_more">Start reading</a>
-      </section>
+    <a href="https://electionleaflets.org" class="read_more">Snap a leaflet</a>
+  </section>
 
-      <section class="project">
-        <header>
-          <h3>Read your candidates' CVs</h3>
-        </header>
-        <p>
-          Use <a href="http://cv.democracyclub.org.uk">MPCV</a> to read the CV of your
-          candidates, or ask them to make it public so you can decide if you should
-          give them a job.
-        </p>
-        <a href="http://cv.democracyclub.org.uk" class="read_more">Read their CVs</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3>Election Mentions</h3>
+    </header>
+    <p>
+      <a href="http://ElectionMentions.com">Election Mentions</a>
+      presents press articles that we think are relevant in an attractive
+      and simple list, facilitating further research, and ultimately helping to
+      inform your vote. You can also add articles you find for other people to read.
+      </p>
+    <a href="http://ElectionMentions.com" class="read_more">Start reading</a>
+  </section>
 
-      <section class="project">
-        <header>
-          <h3>MeetYourNextMP</h3>
-        </header>
-        <p>
-          MeetYourNextMP was a project run in 2015 to crowdsource a list of
-          public hustings events (where candidates take questions from a local
-          audience).
+  <section class="project">
+    <header>
+      <h3>Read your candidates' CVs</h3>
+    </header>
+    <p>
+      Use <a href="http://cv.democracyclub.org.uk">MPCV</a> to read the CV of your
+      candidates, or ask them to make it public so you can decide if you should
+      give them a job.
+    </p>
+    <a href="http://cv.democracyclub.org.uk" class="read_more">Read their CVs</a>
+  </section>
 
-        </p>
-        <a href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="read_more">Read more about it</a>
-      </section>
+  <section class="project">
+    <header>
+      <h3>MeetYourNextMP</h3>
+    </header>
+    <p>
+      MeetYourNextMP was a project run in 2015 to crowdsource a list of
+      public hustings events (where candidates take questions from a local
+      audience).
 
-  </div>
-</div>
+    </p>
+    <a href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="read_more">Read more about it</a>
+  </section>
+
+</article>
 
 
 {% endblock content %}

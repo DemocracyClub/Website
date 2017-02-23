@@ -12,8 +12,8 @@
     <p id="subhead">Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
     <p id="byline">Democracy Club, May 2016</p>
 </div></header>
-
-<article class="columns large-8 main-content">
+</div>
+<article>
 {% filter markdown %}
 <section id="block_section_summary" markdown="1">
 <header><a name="section_summary"></a><h2 data-magellan-destination="section_summary">Summary</h2></header>
@@ -594,55 +594,21 @@ Up to date data can be found at the [polling stations league table](http://polli
 {% endfilter %}
 </article>
 
-<div class="columns large-4 hide_for_print"><div style="position: absolute;">
-<aside class="unstuck show-for-large-up" id="sidebar">
-  <ul class="side-nav sub-nav" data-magellan-expedition>
-    <li data-magellan-arrival="section_summary"><a href="#section_summary">Summary</a></li>
-    <li data-magellan-arrival="section_vision"><a href="#section_vision">1. Our vision, mission, and an invitation</a></li>
-    <li data-magellan-arrival="section_review"><a href="#section_review">2. Review of May 2016 elections</a></li>
-    <li data-magellan-arrival="section_process"><a href="#section_process">3. The process: how we did it</a></li>
-    <li data-magellan-arrival="section_four_year_plan"><a href="#section_four_year_plan">4. The four year plan</a></li>
-    <li data-magellan-arrival="section_after_may"><a href="#section_after_may">5. After May 2020</a></li>
-    <li data-magellan-arrival="section_making_it_happen"><a href="#section_making_it_happen">6. Making it happen</a></li>
-    <li data-magellan-arrival="section_acknowledgements"><a href="#section_acknowledgements">7. Acknowledgements</a></li>
-    <li data-magellan-arrival="section_annexes"><a href="#section_annexes">8. Annexes</a></li>
+{# <div class="columns large-4 hide_for_print"><div style="position: absolute;"> #}
+{# <aside class="unstuck show-for-large-up" id="sidebar"> #}
+{#   <ul class="side-nav sub-nav" data-magellan-expedition> #}
+{#     <li data-magellan-arrival="section_summary"><a href="#section_summary">Summary</a></li> #}
+{#     <li data-magellan-arrival="section_vision"><a href="#section_vision">1. Our vision, mission, and an invitation</a></li> #}
+{#     <li data-magellan-arrival="section_review"><a href="#section_review">2. Review of May 2016 elections</a></li> #}
+{#     <li data-magellan-arrival="section_process"><a href="#section_process">3. The process: how we did it</a></li> #}
+{#     <li data-magellan-arrival="section_four_year_plan"><a href="#section_four_year_plan">4. The four year plan</a></li> #}
+{#     <li data-magellan-arrival="section_after_may"><a href="#section_after_may">5. After May 2020</a></li> #}
+{#     <li data-magellan-arrival="section_making_it_happen"><a href="#section_making_it_happen">6. Making it happen</a></li> #}
+{#     <li data-magellan-arrival="section_acknowledgements"><a href="#section_acknowledgements">7. Acknowledgements</a></li> #}
+{#     <li data-magellan-arrival="section_annexes"><a href="#section_annexes">8. Annexes</a></li> #}
+{#  #}
+{#   </ul> #}
+{# </aside> #}
+{# </div></div> #}
 
-  </ul>
-</aside>
-</div></div>
-</div>
-
-<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
-
-<script>
-var stickySidebar = $('#sidebar');
-
-if (stickySidebar.length > 0) {
-  var stickyHeight = stickySidebar.height(),
-      sidebarTop = stickySidebar.offset().top;
-}
-
-// on scroll move the sidebar
-$(window).scroll(function () {
-  if (stickySidebar.length > 0) {
-    var scrollTop = $(window).scrollTop();
-
-    if (sidebarTop < scrollTop) {
-      stickySidebar.addClass('stuck');
-      stickySidebar.removeClass('unstuck');
-
-    } else {
-      stickySidebar.addClass('unstuck');
-      stickySidebar.removeClass('stuck');
-    }
-  }
-});
-
-$(window).resize(function () {
-  if (stickySidebar.length > 0) {
-    stickyHeight = stickySidebar.height();
-  }
-});
-
-</script>
 {% endblock content %}

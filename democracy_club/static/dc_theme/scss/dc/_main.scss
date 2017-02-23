@@ -1,0 +1,11 @@
+main {
+    clear: both;
+}
+
+*:focus {
+  outline: 3px solid $focus-colour;
+}
+
+main img {
+    max-width:100%;
+}

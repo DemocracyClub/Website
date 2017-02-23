@@ -5,6 +5,7 @@
 
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
+git+https://github.com/mysociety/django-pipeline-csscompressor.git
 beautifulsoup4
 django-allauth==0.24.1
 django-braces

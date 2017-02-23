@@ -1,11 +1,8 @@
 {% extends "base.html" %}
 {% load django_markdown %}
 
-{% block content %}
+{% block page_content %}
 <h1>About</h1>
-<div class="large-8">
-
-
 {% filter markdown %}
 
 
@@ -30,9 +27,9 @@ Some of the things we do are:
   vote, online. We work with local government to publish the data that powers
   it.
 
-* Build voter information services, like 2015’s YourNextMP and 2016's [WhoCanIVoteFor](https://whocanivotefor.co.uk). Together our services and data have helped over 1.3m people learn about their local candidates. 
+* Build voter information services, like 2015’s YourNextMP and 2016's [WhoCanIVoteFor](https://whocanivotefor.co.uk). Together our services and data have helped over 1.3m people learn about their local candidates.
 
-* Run a [register of elections](https://democracyclub.org.uk/projects/election-ids/). Elections - especially by-elections - are happening regularly across the UK. But until now, nobody had developed an ID system that would allow us to capture them all and to run tools that work across many elections. 
+* Run a [register of elections](https://democracyclub.org.uk/projects/election-ids/). Elections - especially by-elections - are happening regularly across the UK. But until now, nobody had developed an ID system that would allow us to capture them all and to run tools that work across many elections.
 
 * Collect [election leaflets](https://electionleaflets.org/) in a public archive. We ask the public to snap a
   photo of leaflets put through their door so the world can see them.
@@ -88,7 +85,7 @@ Currently, the club is coordinated by Sym and Joe.
 Sym is a developer and has worked in the open/government space for years. He runs Democracy Club partly by writing code and partly by working with others to build a community of organisations who want to work together.
 
 #### [Joe Mitchell](https://twitter.com/j0e_m)
-Joe thinks that our most tricky political problems are systemically linked by weak democratic engagement. He thinks digital tools can begin to empower everyone — even those who don’t use them directly — to make democracy better. He has a background in public engagement, advocacy and public sector marketing. 
+Joe thinks that our most tricky political problems are systemically linked by weak democratic engagement. He thinks digital tools can begin to empower everyone — even those who don’t use them directly — to make democracy better. He has a background in public engagement, advocacy and public sector marketing.
 
 There are also ten to twenty core individuals who volunteer to make Democracy Club happen, two of whom are highlighted here:
 
@@ -103,6 +100,4 @@ Mark is a developer working for mySociety on their parliaments team. He's been w
 
 {% endfilter %}
 
-</div>
-
-{% endblock %}
+{% endblock page_content %}
