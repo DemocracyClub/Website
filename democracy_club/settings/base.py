@@ -11,6 +11,8 @@ sys.path.insert(0, root('apps'))
 
 
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+THUMBNAIL_DEBUG = DEBUG
 
 ADMINS = ()
 
@@ -115,6 +117,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'dc_theme',
     'pipeline',
+    'sorl.thumbnail',
 )
 
 PROJECT_APPS = (

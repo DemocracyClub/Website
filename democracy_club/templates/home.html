@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load markdown_deux_tags %}
 {% load typogrify_tags %}
+{% load thumbnail %}
 
 
 {% block content %}
@@ -38,9 +39,11 @@
     <div class="block">
       <div class="grid">
         {% if post.hero %}
-        <div style="height:160px;overflow:hidden;">
+        <div>
             <a href="{{ post.get_absolute_url }}">
-                <img src="{{ MEDIA_URL }}{{ post.hero }}" style="object-fit:cover;height:160px; min-width:100%">
+                {% thumbnail post.hero "300x300" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
             </a>
         </div>
         {% endif %}
