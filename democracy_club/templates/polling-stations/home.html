@@ -35,17 +35,11 @@ We work with local government to establish internal best practice for publishing
 
 {% endfilter %}
 
-<div class="row">
-    <div class="columns large-6 text-center">
-        <a href="{% url "polling_data_upload" %}" class="button success">Upload your data</a>
-        <p>Work for local government? Upload your data to the
-            platform and help people find out where to vote</p>
-    </div>
-    <div class="columns large-6 text-center">
-        <a href="{% url "polling_embed_code"%}" class="button success">Embed on your web site</a>
-        <p>Get the embed code to add a polling station finder to your own site</p>
-    </div>
-</div>
+<a href="{% url "polling_data_upload" %}" class="link-button">Upload your data</a>
+<p>Work for local government? Upload your data to the
+    platform and help people find out where to vote</p>
+<a href="{% url "polling_embed_code"%}" class="link-button">Embed on your web site</a>
+<p>Get the embed code to add a polling station finder to your own site</p>
 
 {% filter markdown %}
 *Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*

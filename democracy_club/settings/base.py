@@ -113,6 +113,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'corsheaders',
+    'dc_theme',
+    'pipeline',
 )
 
 PROJECT_APPS = (
@@ -139,11 +141,18 @@ ALLAUTH_APPS = (
 INSTALLED_APPS += PROJECT_APPS
 INSTALLED_APPS += ALLAUTH_APPS
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+from dc_theme.settings import (
+    get_pipeline_settings,
+    STATICFILES_STORAGE,
+    STATICFILES_FINDERS
+)
+
+PIPELINE = get_pipeline_settings(
+    extra_css=['css/styles.scss', ],
+    extra_js=['js/date.format.js', ],
+)
+
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -185,8 +194,9 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
+                'dc_theme.context_processors.dc_theme_context'
 
-                "democracy_club.context_processors.days_to_election",
+                # "democracy_club.context_processors.days_to_election",
             ],
             'debug': DEBUG
         },
@@ -257,3 +267,6 @@ CORS_ORIGIN_WHITELIST = (
         'pollingstations.democracyclub.org.uk',
         'democracyclub.org.uk',
     )
+
+
+SITE_TITLE = "Democracy Club"
