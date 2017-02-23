@@ -1,10 +1,29 @@
 nav[role=navigation] {
 
+  top:110%;
+  width:90%;
+  left:-0.5em;
+  font-size:0.8em;
+
     position:absolute;
-    top:50%;
+    ul li:first-child {
+        display:none;
+    }
+
+
+    @include media(710px) {
     right:0;
     margin-top:-0.5em;
     margin-bottom:1em;
+    top:50%;
+    width:50%;
+    left:auto;
+      ul li:first-child {
+          display:inline-block;
+      }
+    }
+
+
     ul {
         list-style-type:none;
         margin:0;

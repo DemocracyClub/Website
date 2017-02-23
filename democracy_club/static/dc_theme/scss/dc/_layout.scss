@@ -8,7 +8,12 @@ header, main, footer {
     clear:both;
     > .container {
         max-width:960px;
-        margin:0 auto;
+        margin:0 0.3em;
+
+        @include media(710px) {
+          margin: 0 auto;
+        }
+
     }
 }
 

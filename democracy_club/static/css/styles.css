@@ -7,7 +7,10 @@ header, main, footer {
   clear: both; }
   header > .container, main > .container, footer > .container {
     max-width: 960px;
-    margin: 0 auto; }
+    margin: 0 0.3em; }
+    @media (min-width: 710px) {
+      header > .container, main > .container, footer > .container {
+        margin: 0 auto; } }
 
 main .container > article {
   max-width: 80%;
@@ -15,10 +18,15 @@ main .container > article {
   overflow: auto; }
 
 body > header {
-  background-color: white; }
+  background-color: white;
+  height: 7em;
+  padding: 0.3em; }
+  @media (min-width: 710px) {
+    body > header {
+      height: 5em; } }
   body > header .container {
     height: 5em;
-    padding: 0;
+    box-sizing: border-box;
     position: relative;
     width: 100%; }
     body > header .container img {
@@ -33,7 +41,9 @@ body > header {
 footer {
   color: white;
   background-color: #403F41;
-  font-family: Avenir, sans-serif; }
+  font-family: Avenir, sans-serif;
+  margin-bottom: 0;
+  padding-bottom: 0; }
   footer h2 {
     color: #EC008C; }
   footer .social a {
@@ -50,7 +60,6 @@ footer {
     list-style: none;
     font-weight: normal;
     color: #fff;
-    padding: 3rem 0 2rem;
     margin: 0; }
     footer a::after {
       content: "•";
@@ -176,11 +185,23 @@ main img {
   max-width: 100%; }
 
 nav[role=navigation] {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -0.5em;
-  margin-bottom: 1em; }
+  top: 110%;
+  width: 90%;
+  left: -0.5em;
+  font-size: 0.8em;
+  position: absolute; }
+  nav[role=navigation] ul li:first-child {
+    display: none; }
+  @media (min-width: 710px) {
+    nav[role=navigation] {
+      right: 0;
+      margin-top: -0.5em;
+      margin-bottom: 1em;
+      top: 50%;
+      width: 50%;
+      left: auto; }
+      nav[role=navigation] ul li:first-child {
+        display: inline-block; } }
   nav[role=navigation] ul {
     list-style-type: none;
     margin: 0;
@@ -383,7 +404,7 @@ input[type="number"] {
 .fukol-grid {
   display: flex;
   flex-wrap: wrap;
-  margin: -0.5em; }
+  margin: -0.3em; }
   .fukol-grid > * {
     flex: 1 0 13em;
     margin: 0.5em; }
