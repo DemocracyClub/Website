@@ -24,3 +24,4 @@ Pillow
 plotly==1.9.10
 psycopg2
 typogrify==2.0.7
+sorl-thumbnail==12.3
