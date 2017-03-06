@@ -63,6 +63,5 @@ urlpatterns = [
     url(r'^blog/', include('hermes.urls')),
     url(r'^research/', include('research.urls', namespace="research")),
     url(r'^donate/', include('donations.urls', namespace="donations")),
-    url(r'^everyelection/', include('everyelection.urls', namespace="everyelection")),
     url(r'^report_2016/', include('report_2016.urls', namespace="report_2016")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

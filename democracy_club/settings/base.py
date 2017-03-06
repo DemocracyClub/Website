@@ -127,7 +127,6 @@ PROJECT_APPS = (
     'django_markdown',
     'research',
     'authorities',
-    'everyelection',
     'report_2016',
 )
 
