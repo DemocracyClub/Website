@@ -1,11 +1,11 @@
-import unittest
+from django.test import TestCase
 
 from django.contrib.auth.models import User
 
 from dc_members.models import Member
 
 
-class ModelTests(unittest.TestCase):
+class ModelTests(TestCase):
     """
     Tests for the Member model
     """
