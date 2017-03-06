@@ -11,7 +11,6 @@ sys.path.insert(0, root('apps'))
 
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = DEBUG
 
 ADMINS = ()
@@ -65,6 +64,7 @@ TEMPLATES = [
         'DIRS': [
             root('templates'),
         ],
+        'TEMPLATE_DEBUG': DEBUG,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -143,11 +143,9 @@ ALLAUTH_APPS = (
 INSTALLED_APPS += PROJECT_APPS
 INSTALLED_APPS += ALLAUTH_APPS
 
-from dc_theme.settings import (
-    get_pipeline_settings,
-    STATICFILES_STORAGE,
-    STATICFILES_FINDERS
-)
+from dc_theme.settings import get_pipeline_settings
+from dc_theme.settings import STATICFILES_STORAGE, STATICFILES_FINDERS  # noqa
+
 
 PIPELINE = get_pipeline_settings(
     extra_css=['css/styles.scss', ],
@@ -231,14 +229,14 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # .local.py overrides all the common settings.
 try:
-    from .local import *
+    from .local import *  # noqa
 except ImportError:
     pass
 
 
 # importing test settings file if necessary (TODO could be done better)
 if len(sys.argv) > 1 and 'test' in sys.argv[1]:
-    from .testing import *
+    from .testing import *  # noqa
 
 
 MARKDOWN_DEUX_STYLES = {
