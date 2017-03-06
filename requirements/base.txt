@@ -3,6 +3,7 @@
 # to each package in each requirements/*.txt.
 
 
+-e git+git@github.com:DemocracyClub/dc_base_theme.git@6ec7cb5c0abfa01c0044025167db4b04b1b95dcc#egg=dc_base_theme
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
 git+https://github.com/mysociety/django-pipeline-csscompressor.git
@@ -25,3 +26,4 @@ plotly==1.9.10
 psycopg2
 typogrify==2.0.7
 sorl-thumbnail==12.3
+

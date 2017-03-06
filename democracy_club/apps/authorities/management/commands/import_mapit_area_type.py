@@ -4,18 +4,12 @@ MTW
 UTW
 """
 
-import time
-
 import requests
-from bs4 import BeautifulSoup
 
 from django.core.management.base import BaseCommand
-from django.contrib.gis.geos import GEOSGeometry
-from django.contrib.gis.geos import Point
 
 from authorities.models import Authority, MapitArea
 from authorities import constants
-from authorities.helpers import geocode
 from authorities.constants import AREA_TYPES
 
 
