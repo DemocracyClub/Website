@@ -65,7 +65,7 @@
         <p>We need your help, here's the most important thing you can do:</p>
         <div class="card">
             <h3>{{ card.title }}</h3>
-            <p>{{ card.text }}</p>
+            <p>{{ card.text|markdown }}</p>
             <a class="link-button" href="{{ card.url }}">Help out</a>
         </div>
         <p><a href="/backlog/" class="read_more">See more things to do</a></p>
