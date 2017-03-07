@@ -129,6 +129,7 @@ PROJECT_APPS = (
     'research',
     'authorities',
     'report_2016',
+    'backlog',
 )
 
 ALLAUTH_APPS = (

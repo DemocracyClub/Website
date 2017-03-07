@@ -7,6 +7,7 @@
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
 git+https://github.com/mysociety/django-pipeline-csscompressor.git
+git+https://github.com/chrisdrackett/django-typogrify.git
 beautifulsoup4
 django-allauth==0.24.1
 django-braces
@@ -24,6 +25,6 @@ markdown==2.6.2
 Pillow
 plotly==1.9.10
 psycopg2
-typogrify==2.0.7
+
 sorl-thumbnail==12.3
 
