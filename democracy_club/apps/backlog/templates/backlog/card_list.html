@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load typogrify_tags %}
+{% load markdown_deux_tags %}
+
+
+{% block content %}
+<h1>Democracy Club Backlog</h1>
+{% for card in object_list %}
+<div class="card" style="position:relative">
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.text|markdown }}</p>
+    <ul>
+        {% for label in card.labels.all %}
+            <li style="background-color:{{ label.colour }};display:inline-block;padding:0.3em;text-shadow: 0 0 5px rgba(0,0,0,.2),0 0 2px #000;color:#FFF;border-radius: 3px;">
+                {{ label }}</li>
+        {% endfor %}
+    </ul>
+    {% if card.comment_count %}
+    <div style="position:absolute; bottom:1em;right:1em">
+        <a href="{{ card.url }}">
+            {{ card.comment_count }} comment{{ card.comment_count|pluralize }}</a>
+    </div>
+    {% endif %}
+    <a class="link-button" href="{{ card.get_cta_url }}">Help out</a>
+    <p></p>
+
+</div>
+
+<div style="margin-bottom:2em"></div>
+{% endfor %}
+{% endblock content %}
+

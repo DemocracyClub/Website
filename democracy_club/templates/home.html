@@ -58,13 +58,22 @@
   {% endfor %}
 </div>
 
-<!--
+{% if request.GET.backlog %}
 <div class="grid">
     <div class="block">
-        <h1>USE OUR DATA!</h1>
-        <p>(You know you want to)</p>
+        <h1>Help out</h1>
+        <p>We need your help, here's the most important thing you can do:</p>
+        <div class="card">
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.text }}</p>
+            <a class="link-button" href="{{ card.url }}">Help out</a>
+        </div>
+        <p><a href="/backlog/" class="read_more">See more things to do</a></p>
     </div>
 </div>
+<div style="margin-bottom:2em"></div>
+{% endif %}
+<!--
 
 <div class="grid">
     <div class="block">
