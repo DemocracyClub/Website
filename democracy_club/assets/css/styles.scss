@@ -158,9 +158,11 @@ article figure figcaption {
     margin: 0 5rem 0 0;
 }
 
-article img {
+.hero_image img, article img {
     width:100%;
 }
+
+
 
 section ol, section ul {
     font-size: 1.2rem;

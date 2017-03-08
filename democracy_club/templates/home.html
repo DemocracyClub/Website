@@ -39,10 +39,10 @@
     <div class="block">
       <div class="grid">
         {% if post.hero %}
-        <div>
+        <div class="hero_image">
             <a href="{{ post.get_absolute_url }}">
                 {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    <img src="{{ im.url }}">
                 {% endthumbnail %}
             </a>
         </div>
