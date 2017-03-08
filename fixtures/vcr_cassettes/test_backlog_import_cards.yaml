@@ -7,7 +7,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.13.0]
     method: GET
-    uri: https://api.trello.com/1/lists/58bd618abc9a825bd64b5d8f/cards?key=a5e8f0ad2087452d3439e657357c5088&token=d1c52c15d0409c6d1e2940b98d3b6bce57371b84b010dfae8e632b776160fdd4
+    uri: https://api.trello.com/1/lists/58bd618abc9a825bd64b5d8f/cards
   response:
     body:
       string: !!binary |
@@ -48,16 +48,16 @@ interactions:
       Content-Encoding: [gzip]
       Content-Length: ['1579']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 12:33:42 GMT']
+      Date: ['Wed, 08 Mar 2017 13:40:26 GMT']
       ETag: [W/"F6tB3K/WqsIDqCWOERnV3Q=="]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=b45fa1bc82dfb422c96a0a0a28c6291211b4bdab5aeaa313cf58189ba7e6172d;
-          Path=/; Expires=Sat, 11 Mar 2017 12:33:42 GMT; Secure']
+      Set-Cookie: ['dsc=75a980a862b4b86f4dbcd09bb4b11552add8999d3e6a2bfdcb944fea7dfcdd04;
+          Path=/; Expires=Sat, 11 Mar 2017 13:40:26 GMT; Secure']
       Strict-Transport-Security: [max-age=15768000]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
       X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488976422559']
+      X-Server-Time: ['1488980426851']
       X-Trello-Environment: [Production]
       X-Trello-Version: [1.906.0]
       X-XSS-Protection: [1; mode=block]
@@ -84,16 +84,16 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['500']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 12:33:43 GMT']
+      Date: ['Wed, 08 Mar 2017 13:40:27 GMT']
       ETag: [W/"1f4-3de04b3a"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=29ebe88a337dda0f58f5f41c98120068d04a433f02db8b67c1ca471b732af638;
-          Path=/; Expires=Sat, 11 Mar 2017 12:33:42 GMT; Secure']
+      Set-Cookie: ['dsc=4c3a98f9a29cfd90f5d920b7629242a55486413388a4735c40f9fbf6f896bcf7;
+          Path=/; Expires=Sat, 11 Mar 2017 13:40:27 GMT; Secure']
       Strict-Transport-Security: [max-age=15768000]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
       X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488976422967']
+      X-Server-Time: ['1488980427613']
       X-Trello-Environment: [Production]
       X-Trello-Version: [1.906.0]
       X-XSS-Protection: [1; mode=block]
@@ -106,7 +106,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.13.0]
     method: GET
-    uri: https://api.trello.com/1/cards/58bed66f42b34409ae9ce57d/pluginData?key=a5e8f0ad2087452d3439e657357c5088&token=d1c52c15d0409c6d1e2940b98d3b6bce57371b84b010dfae8e632b776160fdd4
+    uri: https://api.trello.com/1/cards/58bed66f42b34409ae9ce57d/pluginData
   response:
     body: {string: '[{"id":"58bfea1beba5b16fa230c552","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58bed66f42b34409ae9ce57d","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"qENman\",\"O00ATMzS-tWOnUg\":\"https://docs.google.com/spreadsheets/d/1qGCVPuIoGqevcjzFOxT7ypoerVZae-SngN9XrxVBPyQ/edit#gid=2062206390\"}}","access":"shared"}]'}
     headers:
@@ -117,16 +117,16 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['327']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 12:33:43 GMT']
+      Date: ['Wed, 08 Mar 2017 13:40:28 GMT']
       ETag: [W/"147-979486aa"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=b26f11c4068b2919702e2e544b817bfe8808f6177db5f5004d10df32b34c3925;
-          Path=/; Expires=Sat, 11 Mar 2017 12:33:43 GMT; Secure']
+      Set-Cookie: ['dsc=bcaf297948fc54bf6350b519626b96f7e88b9c633b9cbe6e57a9eadf7089992b;
+          Path=/; Expires=Sat, 11 Mar 2017 13:40:28 GMT; Secure']
       Strict-Transport-Security: [max-age=15768000]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
       X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488976423348']
+      X-Server-Time: ['1488980428081']
       X-Trello-Environment: [Production]
       X-Trello-Version: [1.906.0]
       X-XSS-Protection: [1; mode=block]
@@ -139,7 +139,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.13.0]
     method: GET
-    uri: https://api.trello.com/1/cards/58be7ff43c25778b1b467057/pluginData?key=a5e8f0ad2087452d3439e657357c5088&token=d1c52c15d0409c6d1e2940b98d3b6bce57371b84b010dfae8e632b776160fdd4
+    uri: https://api.trello.com/1/cards/58be7ff43c25778b1b467057/pluginData
   response:
     body: {string: '[{"id":"58bff96aee80624dbfab1ec0","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58be7ff43c25778b1b467057","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"ZhlTUp\"}}","access":"shared"}]'}
     headers:
@@ -150,16 +150,16 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['199']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 12:33:43 GMT']
+      Date: ['Wed, 08 Mar 2017 13:40:28 GMT']
       ETag: [W/"c7-33b5bbb5"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=6be3db8bb7e40b59c40ad9f87d825f0b0504c8295369287bab0dbccdf2012f3e;
-          Path=/; Expires=Sat, 11 Mar 2017 12:33:43 GMT; Secure']
+      Set-Cookie: ['dsc=f812951d4a93ab7fe7520f3b6a0f9d1737135927a6cabd06e746954fd473ef4e;
+          Path=/; Expires=Sat, 11 Mar 2017 13:40:28 GMT; Secure']
       Strict-Transport-Security: [max-age=15768000]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
       X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488976423785']
+      X-Server-Time: ['1488980428681']
       X-Trello-Environment: [Production]
       X-Trello-Version: [1.906.0]
       X-XSS-Protection: [1; mode=block]
@@ -172,7 +172,7 @@ interactions:
       Connection: [keep-alive]
       User-Agent: [python-requests/2.13.0]
     method: GET
-    uri: https://api.trello.com/1/cards/58beae71f3aa095ede7ddf2d/pluginData?key=a5e8f0ad2087452d3439e657357c5088&token=d1c52c15d0409c6d1e2940b98d3b6bce57371b84b010dfae8e632b776160fdd4
+    uri: https://api.trello.com/1/cards/58beae71f3aa095ede7ddf2d/pluginData
   response:
     body: {string: '[{"id":"58bff948f4e12a91d9a6bba2","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58beae71f3aa095ede7ddf2d","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"ZhlTUp\",\"O00ATMzS-tWOnUg\":\"https://docs.google.com/document/d/1yz75EPaahQ8t68qLJ6D8l2-m0dpDTsTMo6-LSGslBIE/edit?usp=sharing\"}}","access":"shared"}]'}
     headers:
@@ -183,16 +183,16 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['320']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 12:33:44 GMT']
+      Date: ['Wed, 08 Mar 2017 13:40:29 GMT']
       ETag: [W/"140-4f7eb5b6"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=6cf3def1a88fceaf6de75ceaf8dfe1f4b9f885982586b20f696e6cb25ebeb95e;
-          Path=/; Expires=Sat, 11 Mar 2017 12:33:44 GMT; Secure']
+      Set-Cookie: ['dsc=85b8d9085d3140c724511f8ea5ee0b736c2d7e443c27c70baf010bf57ec6ea40;
+          Path=/; Expires=Sat, 11 Mar 2017 13:40:29 GMT; Secure']
       Strict-Transport-Security: [max-age=15768000]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
       X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488976424194']
+      X-Server-Time: ['1488980429808']
       X-Trello-Environment: [Production]
       X-Trello-Version: [1.906.0]
       X-XSS-Protection: [1; mode=block]
