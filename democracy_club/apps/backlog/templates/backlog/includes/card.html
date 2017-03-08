@@ -1,0 +1,27 @@
+{% load typogrify_tags %}
+{% load markdown_deux_tags %}
+
+<div class="backlog_card card">
+    <h3>{{ card.title }}</h3>
+    {% if card.time_required %}
+    <div class="time_required">Time required: <strong>{{ card.time_required }}</strong></div>
+    {% endif %}
+    {% if card.comment_count %}
+    <div class="backlog_card_comments">
+        <a href="{{ card.url }}">
+            {{ card.comment_count }} comment{{ card.comment_count|pluralize }}</a>
+    </div>
+    {% endif %}
+    <div class="backlog_card_text">
+        {{ card.text|markdown }}
+    </div>
+    <ul class="labels">
+        {% for label in card.labels.all %}
+            <li style="background-color:{{ label.colour }};">{{ label }}</li>
+        {% endfor %}
+    </ul>
+    <a class="link-button" href="{{ card.get_cta_url }}" target="_blank">
+        Help out</a>
+    <p></p>
+
+</div>
