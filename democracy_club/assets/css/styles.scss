@@ -138,6 +138,20 @@ footer {
     color: #fff;
 }
 
+#signup_form {
+    font-size:1em;
+    input {
+        padding:3px;
+        font-size:0.9em;
+    }
+    label {
+        width:4em;
+        display:inline-block;
+    }
+    button {
+        color:#FFF;
+    }
+}
 
 
 @media print {
