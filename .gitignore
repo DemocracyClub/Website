@@ -68,4 +68,4 @@ node_modules/
 democracy_club/assets-src/vendor/
 .sass-cache/
 democracy_club/assets
-democracy_club/static/uploads
+democracy_club/static
