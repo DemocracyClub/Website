@@ -2,8 +2,7 @@
 
 {% block content %}
 
-<section class="row" id="data_elections">
-  <div class="columns large-6">
+<section class="card" id="data_elections">
     <h2>Elections</h2>
 
     <p>Upcoming UK elections at all levels, with postcode lookup. Ward-level granularity for local authority elections. Identifiers are issued under our <a href="{% url "election_ids" %}">election identifiers</a> project.</p>
@@ -14,8 +13,7 @@
     </ul>
 
     <p><a class="link-button" href="https://elections.democracyclub.org.uk">Read More</a></p>
-  </div>
-  <div class="columns large-6">
+
     <dl>
         <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
         <dt>Availability</dt> <dd>REST API endpoint</dd>
@@ -34,11 +32,9 @@
         </dd>
         <dt>NB</dt> <dd>Needs your help to catch all by-elections</dd>
     </dl>
-  </div>
 </section>
 
-<section class="row" id="data_candidates">
-  <div class="columns large-6">
+<section class="card" id="data_candidates">
     <h2 id="candidates">Candidates</h2>
 
     <p>Candidates in recent and upcoming UK elections. Name, email, photos and social media links are provided for every candidate.</p>
@@ -50,15 +46,13 @@
     </ul>
 
     <p><a class="link-button" href="https://candidates.democracyclub.org.uk/help/api">Read More</a></p>
-  </div>
-  <div class="columns large-6">
     <dl>
         <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
-        <dt>Availability</dt> <dd>REST API endpoint and Microsoft Excel&trade; compatible CSV</dd>
+        <dt>Availability</dt> <dd>REST API endpoint and Microsoft Excel compatible CSV</dd>
         <dt>Elections covered</dt>
         <dd>
             <ul>
-                <li>All 2016 UK elections</li>
+                <li>All major UK elections from 2016</li>
                 <li>General Election 2015</li>
                 <li>General Election 2010</li>
             </ul>
@@ -70,9 +64,33 @@
                 <li>Police and crime commissioner 2012</li>
             </ul>
         </dd>-->
-        <dt>NB</dt> <dd>Currently does not include by-elections</dd>
+        <dt>NB</dt> <dd>Currently does not include all by-elections</dd>
     </dl>
-  </div>
+</section>
+
+<section class="card" id="data_polling_stations">
+    <h2 id="polling_stations">Polling Stations</h2>
+
+    <p>API that returns a polling station for a given postcode, optionally asking for an address if needed.</p>
+
+    <ul>
+        <li>Include a polling station finder on your web site</li>
+        <li>Mail merge with an existing list containing postcodes to give polling station location in a mailout</li>
+    </ul>
+
+    <p><a class="link-button" href="https://wheredoivote.co.uk/api/">Read More</a></p>
+    <dl>
+        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+        <dt>Availability</dt> <dd>REST API endpoint</dd>
+        <dt>Elections covered</dt>
+        <dd>
+            <ul>
+                <li>Coverage depends on data we are given. We hope for around 50% coverage in 2017.</li>
+            </ul>
+        </dd>
+        <dt>NB</dt> <dd>If you work at a local authority you can help us by
+            <a href="{% url "polling_one_pager"%}">providing your data to us.</a> </dd>
+    </dl>
 </section>
 
 
