@@ -1,8 +1,12 @@
 {% extends "polling-stations/polling_stations_base.html" %}
 {% load django_markdown %}
 
-{% block main_content %}
+
+{% block page_title %}
 <h1>Embedding 'Where Do I Vote' on your web site</h1>
+{% endblock page_title %}
+
+{% block main_content %}
 {% filter markdown %}
 
 *If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*

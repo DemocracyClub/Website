@@ -9,6 +9,24 @@ article + article {
     margin-bottom:1.5em;
 }
 
+nav.inline_page_nav {
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        li {
+            display:inline-block;
+        }
+        > * {
+            flex: 1 0 6em;
+            font-size:0.8em;
+            list-style-type:none;
+            margin:0;
+            padding:0 0.4em;
+        }
+
+    }
+}
 
 .page_nav {
     float:left;

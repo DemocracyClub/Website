@@ -2,20 +2,20 @@
 {% load django_markdown %}
 
 {% block content %}
-<article>
-{% block main_content %}
-{% endblock main_content %}
-</article>
-{% block page_menu %}
-    <nav class="page_nav">
+    {% block page_title %}{% endblock page_title %}
+    <nav class="inline_page_nav">
       <ul>
         <li><a href="{% url "polling_one_pager" %}">Overview</a></li>
         <li><a href="{% url "polling_faqs" %}">FAQs</a></li>
         <li><a href="{% url "polling_technical_explainer" %}">Technical specification</a></li>
         <li><a href="{% url "polling_embed_code" %}">Embed code</a></li>
-        <li><a href="{% url "polling_data_upload" %}">Upload Data</a></li>
+        <li><a class="link-button" href="{% url "polling_data_upload" %}">Upload Data</a></li>
       </ul>
     </nav>
+
+{% block main_content %}
+{% endblock main_content %}
+{% block page_menu %}
 {% endblock page_menu %}
 
 

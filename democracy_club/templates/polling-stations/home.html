@@ -1,8 +1,12 @@
 {% extends "polling-stations/polling_stations_base.html" %}
 {% load django_markdown %}
 
-{% block main_content %}
+
+{% block page_title %}
 <h1>Polling station finder</h1>
+{% endblock page_title %}
+
+{% block main_content %}
 {% filter markdown %}
 
 <h3>All you need to help people in your area to find their polling station.</h3>

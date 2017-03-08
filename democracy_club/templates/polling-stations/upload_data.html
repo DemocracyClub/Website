@@ -1,8 +1,12 @@
 {% extends "polling-stations/polling_stations_base.html" %}
 {% load django_markdown %}
 
-{% block main_content %}
+{% block page_title %}
 <h1>Upload data</h1>
+{% endblock page_title %}
+
+
+{% block main_content %}
 {% filter markdown %}
 
 **To send us data, please email the data or a link to the hosted version to [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
