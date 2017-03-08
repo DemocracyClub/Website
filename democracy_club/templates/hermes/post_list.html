@@ -6,8 +6,7 @@
 {% block content %}
     <h2>Democracy Club Blog</h2>
     {% for post in posts %}
-    <article class="row">
-      <div class="columns large-8">
+    <article>
         <header>
             <h3><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
             <div role="contentinfo">
@@ -22,7 +21,6 @@
 
         {{ post.rendered_summary|safe|typogrify }}
         <a href="{{ post.get_absolute_url }}" class="read_more">Read more</a>
-      </div>
     </article>
     {% endfor %}
 {% endblock %}

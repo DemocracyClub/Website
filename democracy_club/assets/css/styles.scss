@@ -5,6 +5,11 @@ section {
     margin-bottom:1em;
 }
 
+article + article {
+    margin-bottom:1.5em;
+}
+
+
 .page_nav {
     float:left;
     margin:0;
