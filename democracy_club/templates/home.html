@@ -63,11 +63,7 @@
     <div class="block">
         <h1>Help out</h1>
         <p>We need your help, here's the most important thing you can do:</p>
-        <div class="card">
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.text|markdown }}</p>
-            <a class="link-button" href="{{ card.url }}">Help out</a>
-        </div>
+        {% include "backlog/includes/card.html" %}
         <p><a href="/backlog/" class="read_more">See more things to do</a></p>
     </div>
 </div>
