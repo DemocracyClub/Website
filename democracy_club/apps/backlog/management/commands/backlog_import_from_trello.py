@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from django.core.management.base import BaseCommand
@@ -14,6 +16,7 @@ class Command(BaseCommand):
         self.key = settings.BACKLOG_TRELLO_KEY
         self.token = settings.BACKLOG_TRELLO_TOKEN
         self.base_url = "https://api.trello.com/1"
+        self.custom_field_plugin_id = "56d5e249a98895a9797bebb9"
         url_fmt = "{}/lists/{}/cards?key={}&token={}"
         url = url_fmt.format(self.base_url, self.list_id, self.key, self.token)
         list_data = requests.get(url).json()
@@ -21,10 +24,24 @@ class Command(BaseCommand):
         self.initial_ids = set(Card.objects.values_list('pk', flat=True))
         self.seen_ids = set()
 
+        self.setup_board_info()
+
         for card_dict in list_data:
             self.import_card(card_dict)
 
         self.clean_up()
+
+    def setup_board_info(self):
+        req = requests.get("{}/boards/{}/pluginData".format(
+            self.base_url, settings.BACKLOG_TRELLO_BOARD_ID
+        ))
+        self.plugin_field_map = {}
+        for plugin in req.json():
+            if plugin['idPlugin'] == self.custom_field_plugin_id:
+                pluginData_values = json.loads(plugin['value'])
+                for field in pluginData_values['fields']:
+                    for o in field.get('o', []):
+                        self.plugin_field_map[o['id']] = o['value']
 
     def import_card(self, card_dict):
         labels = []
@@ -54,12 +71,18 @@ class Command(BaseCommand):
         card_detail_url = "{}/cards/{}/pluginData?key={}&token={}".format(
             self.base_url, card.pk, self.key, self.token
         )
-        x = requests.get(card_detail_url)
-        import ipdb; ipdb.set_trace()
-
-        # TODO get pluginData too
+        card_detail_dict = requests.get(card_detail_url).json()
+        for plugin in card_detail_dict:
+            if plugin['idPlugin'] == self.custom_field_plugin_id:
+                # Custom fields plugin
+                pluginData_values = json.loads(plugin['value'])
+                for key, value in pluginData_values['fields'].items():
+                    if key == "O00ATMzS-tWOnUg":
+                        card.cta_url = value
+                    if key == "O00ATMzS-jUK8AT":
+                        card.time_required = self.plugin_field_map.get(value)
+        card.save()
 
     def clean_up(self):
-        print(self.seen_ids.difference(self.initial_ids))
         unpublish_ids = self.initial_ids.difference(self.seen_ids)
         Card.objects.filter(pk__in=unpublish_ids).update(published=False)
