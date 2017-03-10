@@ -64,5 +64,5 @@ urlpatterns = [
     url(r'^research/', include('research.urls', namespace="research")),
     url(r'^donate/', include('donations.urls', namespace="donations")),
     url(r'^report_2016/', include('report_2016.urls', namespace="report_2016")),
-    url(r'^backlog/', include('backlog.urls', namespace="backlog")),
+    url(r'^quests/', include('backlog.urls', namespace="backlog")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

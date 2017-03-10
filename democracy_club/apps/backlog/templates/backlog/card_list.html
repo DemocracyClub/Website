@@ -2,9 +2,14 @@
 
 
 {% block content %}
-<h1>Democracy Club Backlog</h1>
+<h1>Democracy Club Quests</h1>
+<p>Democracy needs you! Join thousands of people helping to make democracy
+    better by completing small&nbsp;quests.</p>
+<p>Get stuck in below.</p>
 {% for card in object_list %}
     {% include "backlog/includes/card.html" %}
 {% endfor %}
+<p>Not enough tasks? Have your own ideas? Join our online chat in Slack.
+    <a href="{% url "contact" %}">Get in touch for an invite</a>.</p>
 {% endblock content %}
 
