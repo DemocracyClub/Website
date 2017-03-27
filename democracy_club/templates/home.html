@@ -58,17 +58,15 @@
   {% endfor %}
 </div>
 
-{% if request.GET.backlog %}
 <div class="grid">
     <div class="block">
-        <h1>Help out</h1>
-        <p>We need your help, here's the most important thing you can do:</p>
+        <h1>Quests</h1>
+        <p>Democracy needs you! Join thousands of people helping to make democracy better by completing small quests.</p>
         {% include "backlog/includes/card.html" %}
-        <p><a href="{% url "backlog:backlog_view"%}" class="read_more">See more things to do</a></p>
+        <p><a href="{% url "backlog:backlog_view"%}" class="read_more">See more quests</a></p>
     </div>
 </div>
 <div style="margin-bottom:2em"></div>
-{% endif %}
 <!--
 
 <div class="grid">
