@@ -17,7 +17,7 @@
             <li {% if request.path == "/data/" %}class="active"{% endif %}><a href="/data/">Data</a></li>
             <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
             <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
-            <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/">Donate</a></li>
+            <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/?utm_source=menu">Donate</a></li>
           </ul>
         </nav>
 {% endblock site_menu %}
@@ -46,7 +46,11 @@
       <h2>
         <a href="https://democracyclub.org.uk/blog/2017/04/18/its-ge2017/">#GE2017 update</a>
       </h2>
-      <p>There’s going to be a general election on 8 June. <a href="https://democracyclub.org.uk/blog/2017/04/18/its-ge2017/">Read about how you can help</a>, or <a href="https://democracyclub.org.uk/donate/">donate now</a> to support our work.</p>
+      <p>
+          There’s going to be a general election on 8 June.
+          <a href="https://democracyclub.org.uk/blog/2017/04/18/its-ge2017/">Read about how you can help</a>, or 
+          <a href="https://democracyclub.org.uk/donate/?utm_source=banner">donate now</a> to support our work.
+        </p>
     </div>
 
   </div>
