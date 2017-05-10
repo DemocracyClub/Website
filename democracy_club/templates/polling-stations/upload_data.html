@@ -2,25 +2,16 @@
 {% load django_markdown %}
 
 {% block page_title %}
-<h1>Upload data</h1>
+<h1>Send us data</h1>
 {% endblock page_title %}
 
 
 {% block main_content %}
 {% filter markdown %}
 
-**To send us data, please email the data or a link to the hosted version to [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
+**To send us data, please email the data to [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
 
-Please read our
-[technical guide]({% url "polling_technical_explainer" %}) before sending the data over.
-
-## 'Plus'-standard data
-
-If you're able to publish Gold Plus or Silver Plus data, then all we need are the URLs for the data.
-
-Please make sure that these URLs will be updated as the data changes. We have systems for checking
-updates and flagging when we think
-the data should have changed, but it's best to double check the internet IT process in your authority too.
+Please send us new data for each election, or confirm that it has not changed.
 
 ## Exporting from your EMS
 
@@ -32,23 +23,18 @@ There is a Knowledge Base Article (KBA) about how to export data. Click on "Demo
 
 ### Xpress
 
-The Democracy Club report is in "Express Management" under "Elections/Exports" and the report is called ‘EC & Democracy Club Polling Place Lookup’.
+The Democracy Club report is in "Express Management" under "Elections/Exports" and the report is called "EC &amp; Democracy Club Polling Place Lookup".
 
 ### Democracy Counts / Elector8
 
-For Elector8 Users, go to Planning & Reporting > Category Searches and select both of the following:
+For Elector8 Users, go to "Planning &amp; Reporting" then "Category Searches" and select both of the following:
 
-* Democracy Club - Polling  Districts
+* Democracy Club - Polling Districts
 * Democracy Club - Polling Stations
 
 ### Idox
 
-Unfortunately Idox haven't provided an easy export yet, but they are working on it. It's worth <a href="{% url "contact" %}">getting in touch with us</a> anyway, as we might be able to work with your GIS team on getting Gold or Gold+ standard data.
-
-
-## Gold and Silver standard data
-
-For accuracy, we only use data for one election. Please send us new data for each election, or confirm that it has not changed.
+Unfortunately Idox haven't provided an easy export yet, but they are working on it. It's worth <a href="{% url "contact" %}">getting in touch with us</a> anyway, as we might be able to work with your GIS team on getting data.
 
 
 {% endfilter %}
