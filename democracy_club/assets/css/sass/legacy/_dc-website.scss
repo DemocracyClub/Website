@@ -1,0 +1,219 @@
+//
+// Legacy website styles (To be refactored + removed)
+//
+//***********************************************************************
+
+section {
+    margin-bottom:1em;
+}
+
+article + article {
+    margin-bottom:1.5em;
+}
+
+
+table {
+    font-size:0.8em;
+    thead {
+        font-weight:bold;
+    }
+    tr {
+      margin-line-height:0.5em;
+    }
+    th,
+    td {
+      padding: 0em 0.5em 1em 0;
+      text-align: left;
+      vertical-align: top;
+    }
+}
+
+nav.inline_page_nav {
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        li {
+            display:inline-block;
+        }
+        > * {
+            flex: 1 0 6em;
+            font-size:0.8em;
+            list-style-type:none;
+            margin:0;
+            padding:0 0.4em;
+        }
+
+    }
+}
+
+.page_nav {
+    float:left;
+    margin:0;
+    padding:0;
+    width:19%;
+    > * {
+        flex: 1 0 5em;
+        font-size:0.8em;
+        list-style-type:none;
+        margin:0;
+        padding:0;
+    }
+
+
+}
+
+.link-button, .read_more {
+    display:inline-block;
+    border: 2px solid $button-background;
+    color: $button-background;
+    font-size: 1rem;
+    font-family: $sanserif-font;
+    margin: 0;
+    padding: 1rem 2rem 1.0625rem 2rem;
+    text-decoration: none;
+    &:hover {
+        background-color: lighten($button-background, 52);
+    }
+}
+
+#report_2016 header.intro_panel, #home_block_report_2016 {
+    background: url("/static/images/report/old_bridge_pontypridd.jpg");
+    background-position: center center;
+    padding: 0;
+}
+
+#home_block_report_2016 {
+    & .link-button {
+        border: 2px solid #FFF;
+        color: #FFF;
+    }
+
+    margin-top:1em;
+    position:relative;
+    & > div {
+        padding:1em;
+        margin:0;
+        background: rgba(0, 91, 154, 0.25);
+    }
+    color:#FFF;
+    & h2 {
+        margin-top:0;
+        color:#FFF;
+    }
+    & p {
+        margin-top:0;
+    }
+    & footer {
+        background:none;
+        position:absolute;
+        bottom:0;
+        right:0.5em;
+        font-size:0.6em;
+        margin:0;
+        padding:0;
+    }
+}
+
+#report_2016 header.intro_panel > div.wrap {
+    padding: 2rem;
+    background: rgba(4, 37, 59, 0.5);
+}
+
+#report_2016 header.intro_panel h1, #report_2016 header.intro_panel h2, #report_2016 header.intro_panel h3, #report_2016 header.intro_panel h4, #report_2016 header.intro_panel h5 {
+    color: white;
+}
+
+#report_2016 header.intro_panel h1 {
+    margin: 0.5rem 0rem 1rem 0;
+}
+
+#report_2016 header.intro_panel p#subhead {
+    margin:0.5em 0;
+    line-height:1.6em;
+    color: white;
+    font-size: 1.4rem;
+}
+
+#report_2016 header.intro_panel p#byline {
+    margin:0.5em 0;
+    line-height:1.6em;
+    color: white;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+main section:first-of-type {
+    margin-top: 2rem;
+}
+
+main section {
+    margin-top: 5rem;
+}
+
+
+article figure {
+    margin: 2rem 0 2rem 0;
+}
+
+article figure figcaption {
+    text-align:center;
+    font-size:0.8em;
+    margin: 0 5rem 0 0;
+}
+
+.hero_image img, article img {
+    width:100%;
+}
+
+
+
+section ol, section ul {
+    font-size: 1.2rem;
+    margin-right: 5rem;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    margin-top:2em;
+    ul {
+        margin-top:2em;
+        padding:0;
+        list-style-type:none;
+    }
+}
+
+#signup_form {
+    font-size:1em;
+    input {
+        padding:3px;
+        font-size:0.9em;
+        max-width:70%;
+    }
+    label {
+        width:4em;
+        display:inline-block;
+    }
+}
+
+
+@media print {
+    body > section.nav {
+        display:none;
+    }
+
+    a[href]:after {
+        content: "";
+    }
+
+    .hide_for_print {
+        display:none;
+    }
+    #report_2016 section {
+        page-break-before: always;
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+}
