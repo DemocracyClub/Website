@@ -13,8 +13,8 @@
           <ul class="fukol-grid menu">
             <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
             <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
-            <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects/">Projects</a></li>
-            <li {% if request.path == "/data/" %}class="active"{% endif %}><a href="/data/">Data</a></li>
+            <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects-and-data/">Projects &amp; Data</a></li>
+            <li {% if request.path == "/quests/" %}class="active"{% endif %}><a href="/quests/">Quests</a></li>
             <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
             <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
             <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/?utm_source=menu">Donate</a></li>
@@ -50,7 +50,7 @@
 
 
 {% block site_footer %}
-<footer class="hide_for_print">
+<footer class="site-footer hide_for_print">
   <div class="container">
     <h2>Join our mailing list</h2>
     <form action="https://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
@@ -84,7 +84,7 @@
     </ul>
     <p>Copyright &copy; 2017 Democracy Club Community Interest Company Company No: <a href="https://beta.companieshouse.gov.uk/company/09461226">09461226</a></p>
   </div>
-</footer>
+</footer><!-- /.site-footer -->
 {% endblock site_footer %}
 
 
