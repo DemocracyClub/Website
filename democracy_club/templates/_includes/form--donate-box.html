@@ -1,0 +1,20 @@
+{#  										#}
+{# Include: Donate box 	#}
+{#  										#}
+<div class="donate-box">
+	<h3 class="donate-box__title">Democracy needs you!</h3>
+	<div class="donate-box__copy">
+		<p>We're a tiny team on a big mission to make it easy to get more and better information on election candidates and the democratic process.</p>
+		<p>But this costs money! We need developers, designers, hosting, email servers...as well as people to talk to the press and work with other organisations.</p>
+		<p>Please help us to do this with a donation.</p>
+	</div>
+	<div class="donate-box__form">
+		<form method=post class="donate_form">
+
+      {% csrf_token %}
+			{{ donation_form }}
+
+			<button type="submit" class="button">Next</button>
+		</form>
+	</div>
+</div><!-- /.donate-box -->
