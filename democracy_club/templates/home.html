@@ -19,12 +19,12 @@
   </div>
 </div>
 
-  <h3><a href="/projects-and-data/">Our Projects &amp; Data</a></h3>
-  <p>The data we create is open and free-to-use. Google, Buzzfeed, The Guardian and more have used our data to reach millions.</p>
+<h3><a href="/projects-and-data/">Our Projects &amp; Data</a></h3>
+<p>The data we create is open and free-to-use. Google, Buzzfeed, The Guardian and more have used our data to reach millions.</p>
 
 <div class="fukol-grid">
 
-  <div class="project-area">
+  <div class="homepage__fukol-grid__col homepage__project-area">
 
     <div class="feature-card-wrapper">
 
@@ -62,62 +62,69 @@
 
     <p><a href="/projects-and-data/" class="buttonNew buttonNew--outline">See more projects</a></p>
 
-  </div><!-- /.project-area -->
-  <div class="donate-area">
+  </div><!-- /.homepage__project-area -->
+  <div class="homepage__fukol-grid__col homepage__donate-area">
 
     {% include "_includes/form--donate-box.html" %}
 
-  </div><!-- /.donate-area -->
-</div>
+  </div><!-- /.homepage__donate-area -->
+</div><!-- /.fukol-grid -->
+
+{# <div class="fukol-grid"> #}
+    {# <div class="block" id="home_block_report_2016"> #}
+      {# <div class="fukol-grid"> #}
+        {# <div> #}
+          {# <h2>Towards better elections</h2> #}
+        {# </div> #}
+        {# <div> #}
+          {# <p>Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p> #}
+          {# <p><a class="link-button" href="{% url "report_2016:report_2016" %}">Read the report</a></p> #}
+          {# <footer>Photo credit: <a href="https://commons.wikimedia.org/wiki/File:The_Old_Bridge,_Pontypridd.jpg">Varitek</a>, CC-BY-SA 3.0</footer> #}
+        {# </div> #}
+
+      {# </div> #}
+    {# </div> #}
+{# </div> #}
 
 <div class="fukol-grid">
-    <div class="block" id="home_block_report_2016">
-      <div class="fukol-grid">
-        <div>
-          <h2>Towards better elections</h2>
-        </div>
-        <div>
-          <p>Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
-          <p><a class="link-button" href="{% url "report_2016:report_2016" %}">Read the report</a></p>
-          <footer>Photo credit: <a href="https://commons.wikimedia.org/wiki/File:The_Old_Bridge,_Pontypridd.jpg">Varitek</a>, CC-BY-SA 3.0</footer>
-        </div>
 
-      </div>
-    </div>
-</div>
-
-<div class="fukol-grid">
-  {% for post in latest_posts %}
-    <div class="block">
-      <div class="grid">
-        {% if post.hero %}
-        <div class="hero_image">
-            <a href="{{ post.get_absolute_url }}">
-                {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
-                    <img src="{{ im.url }}">
-                {% endthumbnail %}
-            </a>
-        </div>
-        {% endif %}
-        <div>
-          <h3 style="margin-top:0;">
-              <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
-          </h3>
-          {{ post.short|safe }}
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
-<div class="grid">
+  <div class="homepage__fukol-grid__col homepage__quests-area">
     <div class="block">
         <h1>Quests</h1>
         <p>Democracy needs you! Join thousands of people helping to make democracy better by completing small quests.</p>
         {% include "backlog/includes/card.html" %}
         <p><a href="{% url "backlog:backlog_view"%}" class="read_more">See more quests</a></p>
     </div>
-</div>
+  </div><!-- /.homepage__quests-area -->
+
+  <div class="homepage__fukol-grid__col homepage__blog-area">
+
+    <div class="fukol-grid">
+      {% for post in latest_posts %}
+        <div class="block">
+          <div class="grid">
+            {% if post.hero %}
+            <div class="hero_image">
+                <a href="{{ post.get_absolute_url }}">
+                    {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
+                        <img src="{{ im.url }}">
+                    {% endthumbnail %}
+                </a>
+            </div>
+            {% endif %}
+            <div>
+              <h3 style="margin-top:0;">
+                  <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
+              </h3>
+              {{ post.short|safe }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div><!-- /.homepage__blog-area -->
+
+</div><!-- /.fukol-grid -->
 <div style="margin-bottom:2em"></div>
 
 {% endblock %}

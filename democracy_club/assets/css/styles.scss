@@ -5,7 +5,7 @@
 @import 'sass/legacy/dc-website';
 
 // Site Base
-// @import 'sass/base/';
+@import 'sass/base/base';
 
 // Layout
 @import 'sass/layout/site-footer';
@@ -15,3 +15,6 @@
 @import 'sass/components/donate-box';
 @import 'sass/components/feature-card';
 @import 'sass/components/buttonNew';
+
+// Individual page styles
+@import 'sass/pages/homepage';
