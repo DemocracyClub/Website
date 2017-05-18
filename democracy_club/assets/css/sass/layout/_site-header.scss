@@ -1,0 +1,30 @@
+//
+// Site header (.site-header [TODO: Refactor header area HTML in DC_theme])
+//
+//***********************************************************************
+
+// Reset header styles
+body > header { height: auto; padding: 0 0.5em; }
+
+	// Header container styles
+	body > header .container {
+		height: auto;
+		@include media(tablet) {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+	}
+
+		// Reset site logo styles
+		body > header .container img {
+			margin: 0;
+			position: static;
+			width: auto;
+			top: auto;
+			left: auto;
+			vertical-align: bottom;
+
+			max-width: 200px;
+			margin: 0.5em 0;
+		}
