@@ -1,0 +1,8 @@
+//
+// Fukol Grid Override (.fukol-grid)
+//
+//***********************************************************************
+// This grid is designed to be used with a container element that has padding/margin on it.
+// As the website currently does not have this, we must remove the left/right negative margin
+// to stop a horizontal scroll bar being added at smaller widths.
+.fukol-grid { margin: -0.5em 0; }
