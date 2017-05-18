@@ -19,8 +19,14 @@
   </div>
 </div>
 
-<h3><a href="/projects-and-data/">Our Projects &amp; Data</a></h3>
-<p>The data we create is open and free-to-use. Google, Buzzfeed, The Guardian and more have used our data to reach millions.</p>
+<div class="fukol-grid">
+  <div class="section-header">
+    <h3 class="section-header__title"><a href="/projects-and-data/">Our Projects &amp; Data</a></h3>
+    <div class="section-header__body">
+      <p>The data we create is open and free-to-use. Google, Buzzfeed, The Guardian and more have used our data to reach millions.</p>
+    </div>
+  </div><!-- /.section-header -->
+</div>
 
 <div class="fukol-grid">
 
@@ -89,39 +95,47 @@
 <div class="fukol-grid">
 
   <div class="homepage__fukol-grid__col homepage__quests-area">
-    <div class="block">
-        <h1>Quests</h1>
+    <div class="section-header">
+      <h3 class="section-header__title"><a href="{% url "backlog:backlog_view"%}">Quests</a></h3>
+      <div class="section-header__body">
         <p>Democracy needs you! Join thousands of people helping to make democracy better by completing small quests.</p>
-        {% include "backlog/includes/card.html" %}
-        <p><a href="{% url "backlog:backlog_view"%}" class="read_more">See more quests</a></p>
-    </div>
+      </div>
+    </div><!-- /.section-header -->
+    {% include "backlog/includes/card.html" %}
+    <p><a href="{% url "backlog:backlog_view"%}" class="buttonNew buttonNew--outline">See more quests</a></p>
   </div><!-- /.homepage__quests-area -->
 
   <div class="homepage__fukol-grid__col homepage__blog-area">
 
-    <div class="fukol-grid">
-      {% for post in latest_posts %}
-        <div class="block">
-          <div class="grid">
-            {% if post.hero %}
-            <div class="hero_image">
-                <a href="{{ post.get_absolute_url }}">
-                    {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
-                        <img src="{{ im.url }}">
-                    {% endthumbnail %}
-                </a>
-            </div>
-            {% endif %}
-            <div>
-              <h3 style="margin-top:0;">
-                  <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
-              </h3>
+    {% for post in latest_posts %}
+
+      {% if forloop.first %}
+      <div class="section-header">
+        <h3 class="section-header__title"><a href="/blog/">Our Blog</a></h3>
+      </div><!-- /.section-header -->
+      {% endif %}
+
+      <div class="media-card">
+        {% if post.hero %}
+        <div class="media-card__img">
+          <a href="{{ post.get_absolute_url }}">
+            {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
+              <img src="{{ im.url }}">
+            {% endthumbnail %}
+          </a>
+        </div><!-- /.media-card -->
+        {% endif %}
+        <div class="media-card__content">
+            <h4 class="media-card__title">
+                <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
+            </h4>
+            <div class="media-card__body">
               {{ post.short|safe }}
             </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+        </div><!-- /.media-card__body -->
+      </div><!-- /.media-card -->
+    {% endfor %}
+
   </div><!-- /.homepage__blog-area -->
 
 </div><!-- /.fukol-grid -->
