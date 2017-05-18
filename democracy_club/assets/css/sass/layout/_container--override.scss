@@ -1,0 +1,17 @@
+//
+// Container Override (.container)
+//
+//***********************************************************************
+// To increase the width of the site
+// the dc_base container needs to be overridden.
+header, main, footer {
+	> .container { @extend .site-wrapper; }
+}
+
+// Reduce size of article container as we have a wider site now
+main .container > article {
+    @include media(710px) {
+        max-width: 70%;
+        float: none;
+    }
+}
