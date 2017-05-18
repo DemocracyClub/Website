@@ -18,9 +18,10 @@
 		.feature-card__icon { font-size: 16px; }
 
 	// Body area
-	.feature-card__body { }
-		.feature-card__copy { font-size: 16px; }
-			.feature-card__copy p { margin: 0 0 16px; }
+	.feature-card__body { font-size: 16px; }
+		.feature-card__body p { margin: 0 0 16px; }
+
+		.feature-card__copy { }
 
 	// Control area
 	.feature-card__ctrl { }
