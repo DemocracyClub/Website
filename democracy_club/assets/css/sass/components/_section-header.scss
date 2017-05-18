@@ -1,0 +1,13 @@
+//
+// Section header (.section-header)
+//
+//***********************************************************************
+.section-header { margin-bottom: 0; }
+
+	// Title
+	.section-header__title { font-size: 26px; line-height: 1.2; margin-bottom: 6px; }
+
+	// Body copy
+	.section-header__body { font-size: 16px; }
+		.section-header__body p { margin: 0; }
+		.section-header__body p + p { margin: 0 16px; }
