@@ -9,12 +9,15 @@
 
 // Layout
 @import 'sass/layout/site-footer';
+@import 'sass/layout/fukol-grid--override';
 
 // Components and modules
 @import 'sass/components/backlog';
 @import 'sass/components/donate-box';
 @import 'sass/components/feature-card';
 @import 'sass/components/buttonNew';
+@import 'sass/components/section-header';
+@import 'sass/components/media-card';
 
 // Individual page styles
 @import 'sass/pages/homepage';
