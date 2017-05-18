@@ -1,0 +1,32 @@
+//
+// Feature card (.feature-card)
+//
+//***********************************************************************
+// Optional wrapper
+.feature-card-wrapper { }
+
+
+.feature-card {
+	background-color: white;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+	// Title
+	.feature-card__title { margin: 0 0 12px; font-size: 22px; line-height: 1; }
+		.feature-card__icon { font-size: 16px; }
+
+	// Body area
+	.feature-card__body { }
+		.feature-card__copy { font-size: 16px; }
+			.feature-card__copy p { margin: 0 0 16px; }
+
+	// Control area
+	.feature-card__ctrl { }
+
+
+	//
+	//	Background colour modifier
+	//
+	.feature-card--grey { background-color: #F6F6F6; }
