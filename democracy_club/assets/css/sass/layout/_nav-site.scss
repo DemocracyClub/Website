@@ -32,11 +32,12 @@ nav[role="navigation"] {
 	.nav-site__item {
 		flex: 0 1 auto;
 
+		&:hover { border-bottom: 2px solid $dc-bright-pink; }
 		// Links
 		a {
 			font-size: 14px;
 			line-height: 1;
-			padding: 5px 15px;
+			padding: 10px 15px;
 			display: block;
 
 			@include media(desktop) {
