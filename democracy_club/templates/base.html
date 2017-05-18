@@ -10,15 +10,15 @@
 {% endblock extra_site_css %}
 
 {% block site_menu %}
-        <nav role="navigation">
-          <ul class="fukol-grid menu">
-            <li {% if request.path == "/" %}class="active"{% endif %}><a href="/">Home</a></li>
-            <li {% if request.path == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
-            <li {% if request.path|slice:":10" == "/projects/" %}class="active"{% endif %}><a href="/projects-and-data/">Projects &amp; Data</a></li>
-            <li {% if request.path == "/quests/" %}class="active"{% endif %}><a href="/quests/">Quests</a></li>
-            <li {% if request.path == "/blog/" %}class="active"{% endif %}><a href="/blog/">Blog</a></li>
-            <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
-            <li {% if request.path == "/donate/" %}class="active"{% endif %}><a href="/donate/?utm_source=menu">Donate</a></li>
+        <nav role="navigation" class="nav-site-wrap">
+          <ul class="nav-site">
+            <li class="nav-site__item{% if request.path == "/" %} active{% endif %}"><a href="/">Home</a></li>
+            <li class="nav-site__item{% if request.path == "/about/" %} active{% endif %}"><a href="/about/">About</a></li>
+            <li class="nav-site__item{% if request.path|slice:":10" == "/projects/" %} active{% endif %}"><a href="/projects-and-data/">Projects &amp; Data</a></li>
+            <li class="nav-site__item{% if request.path == "/quests/" %} active{% endif %}"><a href="/quests/">Quests</a></li>
+            <li class="nav-site__item{% if request.path == "/blog/" %} active{% endif %}"><a href="/blog/">Blog</a></li>
+            <li class="nav-site__item{% if request.path == "/contact/" %} active{% endif %}"><a href="/contact/">Contact</a></li>
+            <li class="nav-site__item{% if request.path == "/donate/" %} active{% endif %}"><a href="/donate/?utm_source=menu">Donate</a></li>
           </ul>
         </nav>
 {% endblock site_menu %}
