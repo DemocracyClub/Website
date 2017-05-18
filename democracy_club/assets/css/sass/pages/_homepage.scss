@@ -40,5 +40,17 @@
 }
 
 // Quests area
+.homepage__quests-area {
+	@include media(desktop) {
+		max-width: 60%;
+		flex-basis: 60%;
+	}
+}
 
 // Blog area
+.homepage__blog-area {
+	@include media(desktop) {
+		max-width: 40%;
+		flex-basis: 40%;
+	}
+}
