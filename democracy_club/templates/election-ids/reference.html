@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load django_markdown %}
 
-{% block content %}
+{% block page_content %}
 
 <section class="large-8">
 <h1>Election identifier reference</h1>
@@ -33,7 +33,7 @@ If an assembly, such as the Scottish Parliament, elects members by two different
 </tr>
 </table>
 
-## Election types 
+## Election types
 
 <table>
 <tr>
@@ -133,4 +133,4 @@ Slugification should be done following [Django's slugify function](https://githu
 {% endfilter %}
 
 </section>
-{% endblock content %}
+{% endblock %}

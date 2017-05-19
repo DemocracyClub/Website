@@ -5,9 +5,9 @@
 .super-header {
 	background-color: #3e3e58;
 	color: #fff;
-	padding: 50px 0.5em;
+	padding: 50px 0;
 	@include media(desktop) {
-		padding: 100px 0.5em;
+		padding: 100px 0;
 	}
 }
 

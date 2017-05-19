@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load django_markdown %}
 
-{% block content %}
+{% block page_content %}
 <section class="large-8">
 <h1>Election IDs</h1>
 {% filter markdown %}
@@ -15,7 +15,7 @@ In order to build tools around elections, Democracy Club has found a really basi
 
 ## How are they defined?
 
-You can read the [reference definition](/projects/election-ids/reference/) here.
+You can read the [reference definition](/projects-and-data/election-ids/reference/) here.
 
 ## Can I see a comprehensive list somewhere?
 
@@ -24,4 +24,4 @@ Not yet. You should be able to derive the election ID yourself from the referenc
 </section>
 
 
-{% endblock content %}
+{% endblock %}
