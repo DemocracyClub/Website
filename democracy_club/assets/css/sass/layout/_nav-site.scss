@@ -2,19 +2,6 @@
 // Site navigation (.nav-site)
 //
 //***********************************************************************
-// As this component is hardcoded into the dc_base, we must remove some styles before
-// we can change it
-
-// Reset Navigation styles
-nav[role="navigation"] {
-	position: static;
-	top: auto;
-	left: auto;
-	right: auto;
-	margin: 0;
-	width: auto;
-}
-
 // Wrapper element
 .nav-site-wrap { }
 
@@ -25,92 +12,50 @@ nav[role="navigation"] {
 	padding: 0;
 	@include media(tablet) {
 		display: flex;
+		align-items: flex-end;
 	}
+}
 
-
-	// Reset to default
-	.nav-site__item {
-		flex: 0 1 auto;
-
-		&:hover { border-bottom: 2px solid $dc-bright-pink; }
-		// Links
-		a {
+	// Navigation items
+	.nav-site__item { text-align: center; }
+		.nav-site__item a {
 			font-size: 14px;
 			line-height: 1;
 			padding: 10px 15px;
 			display: block;
+			border-bottom: 2px solid transparent;
+			text-decoration: none;
+			color: #000;
+
+			// Hover styles
+			&:hover {
+				background-color: $menu-background-hover;
+				color: $menu-text-hover;
+				border-bottom: 2px solid $dc-bright-pink;
+			}
 
 			@include media(desktop) {
 				font-size: 16px;
 			}
 		}
-	}
 
-}
+		// Active styles
+		.nav-site__item--active { }
+			.nav-site__item--active a {
+				border-bottom:2px solid $dc-bright-pink;
 
+				// Hover styles
+				&:hover {
+					color: #000;
+					background-color: transparent;
+					border-bottom:2px solid $dc-bright-blue;
+				}
+			}
 
-
-
-
-// nav[role=navigation] {
-
-//   top:110%;
-//   width:90%;
-//   left:-0.5em;
-//   font-size:0.8em;
-
-//     position:absolute;
-//     ul li:first-child {
-//         display:none;
-//     }
-
-
-//     @include media(710px) {
-//     right:0;
-//     margin-top:-0.5em;
-//     margin-bottom:1em;
-//     top:50%;
-//     width:50%;
-//     left:auto;
-//       ul li:first-child {
-//           display:inline-block;
-//       }
-//     }
-
-
-//     ul {
-//         list-style-type:none;
-//         margin:0;
-//         padding:0;
-//         li {
-//             flex: 1 0 2em;
-//             text-align:center;
-//             margin: 0;
-//             a {
-//                 &:hover {
-//                   background-color:$menu-background-hover;
-//                   color:$menu-text-hover;
-//                 }
-//                 padding:0.5em;
-//                 line-height:1em;
-//                 font-size:0.9em;
-//                 color:#000;
-//                 text-decoration:none;
-//                 &.highlight {
-//                     background-color:$dc-bright-blue;
-//                     color:$menu-text-hover;
-//                 }
-//             }
-//             &.active {
-//                 &:hover{
-//                     border-bottom:2px solid $dc-bright-blue;
-//                 }
-//                 a:hover {
-//                     background:none;
-//                     color:$body-text-colour;
-//                 }
-//                 border-bottom:2px solid $dc-bright-pink;
-//             }
-//         }
-//     }
-// }
+		// Hide 'home' link for mobile/tablet
+		.nav-site__item--home {
+			display: none;
+			@include media(desktop) {
+				display: block;
+			}
+		}
