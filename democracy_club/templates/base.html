@@ -53,39 +53,54 @@
 
 {% block site_footer %}
 <footer class="site-footer hide_for_print">
-  <div class="container">
-    <h2>Join our mailing list</h2>
-    <form action="https://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
-        <div class="form-group">
-            <label for="name">
-                Name
-            </label>
-            <input type="text" name="name" id="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email" >
-                Email
-            </label>
-            <input type="email" name="email" id="email" required size=50>
-        </div>
-        <input type="hidden" name="list" value="uFrDEpP6B892qUiD2KwEI892Pg"/>
-        <button type="submit" name="submit" id="submit">Join</button>
-    </form>
+  <div class="site-wrapper">
 
+    <div class="fukol-grid">
+      <div class="fukol-grid__col">
+        <div class="site-footer__mailing-list">
+          <h2 class="site-footer__form-title">Join our mailing list</h2>
+          <form action="https://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form">
+              <div class="form-group">
+                  <label class="form-label" for="name">Name</label>
+                  <input class="form-input-text" type="text" name="name" id="name" required />
+              </div>
+              <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-input-text" type="email" name="email" id="email" required />
+              </div>
+              <div class="form-group">
+                <input type="hidden" name="list" value="uFrDEpP6B892qUiD2KwEI892Pg"/>
+                <button class="buttonNew" type="submit" name="submit" id="submit">Join us</button>
+              </div>
+          </form>
+        </div><!-- /.site-footer__mailing-list -->
+      </div><!-- /.fukol-grid__col -->
+      <div class="fukol-grid__col site-footer__right-col">
+        <nav class="nav-footer-wrap">
+          <ul class="nav-footer">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
+            <li><a href="{% url "hermes_post_feed" %}">Blog RSS/Atom feed</a></li>
+          </ul>
+          <ul class="nav-footer">
+            <li><a href="https://twitter.com/democlub">Twitter</a></li>
+            <li><a href="https://facebook.com/DemocracyClub">Facebook</a></li>
+            <li><a href="https://github.com/DemocracyClub">GitHub</a></li>
+          </ul>
+        </nav><!-- /.nav-footer-wrap -->
 
-    <ul>
-      <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="{% url 'contact' %}">Contact Us</a></li>
-      <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
-      <li><a href="{% url "hermes_post_feed" %}">Blog RSS/Atom feed</a></li>
-      <li>
-          <a href="https://twitter.com/democlub">Twitter</a>
-          | <a href="https://facebook.com/DemocracyClub">Facebook</a>
-          | <a href="https://github.com/DemocracyClub">GitHub</a>
-      </li>
-    </ul>
-    <p>Copyright &copy; 2017 Democracy Club Community Interest Company Company No: <a href="https://beta.companieshouse.gov.uk/company/09461226">09461226</a></p>
-  </div>
+        <div class="site-footer__credits">
+          <a href="/">
+            <img class="site-footer__logo" src="{% static 'images/logo-with-text-2017--inverted.png' %}" alt="{{ site_title }}">
+          </a>
+          <p>Copyright &copy; 2017 Democracy Club</p>
+          <p>Community Interest Company</p>
+          <p>Company No: <a href="https://beta.companieshouse.gov.uk/company/09461226">09461226</a></p>
+        </div><!-- /.site-footer__credits -->
+      </div><!-- /.fukol-grid__col -->
+    </div><!-- /.fukol-grid -->
+  </div><!-- /.site-wrapper -->
 </footer><!-- /.site-footer -->
 
 <script src="{% static 'js/global.js' %}"></script>

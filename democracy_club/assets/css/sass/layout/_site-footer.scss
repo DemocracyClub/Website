@@ -3,69 +3,67 @@
 //
 //***********************************************************************
 .site-footer {
-
-	font-size: 0.8em;
-
-
-  // color:$white;
-  // background-color: $off-black;
-  // font-family:$sanserif-font;
-  // margin-bottom:0;
-  // padding-bottom:0;
-
-  // & h2 {
-  //   color:$dc-bright-pink;
-  // }
-
-  // .social a {
-  //   display: inline-block;
-  //   width: 2rem;
-  //   height: 2rem;
-  //   border-radius: 2px;
-  //   font-size: 1.5rem;
-  //   color: #fff;
-  //   text-align: center;
-  //   line-height: 2rem;
-  //   margin: 0 3px 0 0;
-  // }
-
-  // a {
-  //   list-style: none;
-  //   font-weight: normal;
-  //   color: #fff;
-  //   margin: 0;
-
-  //   &:last-child::after {
-  //     content: "";
-  //     padding: 0 0.4rem 0 0.8rem;
-  //   }
-  // }
-
-  // @media only screen and (min-width: 40.063em) {
-  //   padding: 4rem;
-
-  //   p {
-  //     text-align: left;
-  //   }
-
-  //   .social {
-  //     text-align: left;
-  //     margin: 0;
-  //   }
-
-  //   .footer-form {
-  //     .contact {
-  //       position: absolute;
-  //       left: -45%;
-  //       top: 10%;
-  //     }
-  //   }
-
-  // }
-
-  // & .block-label {
-  //   background:none;
-  // }
-
-
+  margin: 40px 0 0;
+  padding: 40px 0;
+  color: #fff;
+  background-color: $off-black;
 }
+  // Override DC Theme
+  footer.site-footer a::after { padding: 0; content: normal; }
+
+  // Mailing list form
+  .site-footer__mailing-list {
+    margin: 0 0 40px 0;
+    font-size: 16px;
+
+    .form-label { display: block; }
+
+    .form-input-text {
+      width: 100%;
+      margin: 0;
+      border: 1px solid rgba(0,0,0,1);
+      padding: 5.6px 6px 5px;
+      font-size: 16px;
+      font-family: $sanserif-font;
+
+      @include media(tablet) {
+        max-width: 300px;
+      }
+    }
+  }
+
+    // Form title
+    .site-footer__form-title {
+      font-size: 24px;
+      margin: 0 0 10px;
+      padding: 0;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    // Footer Navigation
+    .nav-footer-wrap { }
+      .nav-footer { margin: 0; padding: 0; list-style: none; font-size: 16px; }
+        .nav-footer + .nav-footer { margin: 20px 0 0; }
+
+        .nav-footer a { color: #fff; }
+
+
+    // Footer credit list
+    .site-footer__credits { margin: 40px 0 0; font-size: 14px; }
+      // Footer logo
+      .site-footer__logo { max-width: 120px; }
+      .site-footer__credits p {
+        margin: 0; padding: 0;
+
+        @include media(tablet) {
+          text-align: right;
+        }
+      }
+
+    // Right hand footer column, align content to right hand side
+    .site-footer__right-col {
+      @include media(tablet) {
+        text-align: right;
+      }
+    }
