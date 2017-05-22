@@ -1,203 +1,280 @@
 {% extends "base.html" %}
 
 {% block content %}
-<article>
   <h1>Projects</h1>
+  <p>The data we create is open and free-to-use. Google, Buzzfeed, The Guardian and more have used our data to reach millions.</p>
 
-  <section class="project">
-    <header>
-      <h3><a href="{% url "polling_one_pager" %}">Where Do I Vote</a></h3>
-    </header>
-    <p>
-      Our <a href="https://wheredoivote.co.uk/">polling station finder</a>
-      provides a platform that can answer one of the most Googled terms on election days in the UK:
-      "Where do I vote"
-      </p>
-    <a href="{% url "polling_one_pager" %}" class="read_more">
-      Find out how</a>
-  </section>
+<div class="fukol-grid">
 
-  <section class="project">
-    <header>
-      <h3><a href="https://whocanivotefor.co.uk/">WhoCanIVoteFor</a></h3>
-    </header>
-    <p>
-      Used by over 1.5 million people to date and bringing together all of our
-      other projects, WhoCanIVoteFor tells UK voters
-      about their elections, candidates, polling stations, press mentions and more.
-    </p>
-    <a href="https://whocanivotefor.co.uk/" class="read_more">
-      Find who you can vote for</a>
-  </section>
+  <div class="fukol-grid__col fukol-grid__col--60-70">
 
-  <section class="project">
-    <header>
-      <h3><a href="https://candidates.democracyclub.org.uk/">Democracy Club Candidates</a></h3>
-    </header>
-    <p>
-      We crowd source all the candidates in all UK elections, and provide
-      them as an <a href="/data/#candidates">API and data feed</a>
-    </p>
-    <a href="https://candidates.democracyclub.org.uk/" class="read_more">
-      Help with the crowd sourcing</a>
-  </section>
+    <div class="section-header">
+      <h1 class="section-header__title">Our Projects</h1>
+    </div><!-- /.section-header -->
 
+    <div class="feature-card-wrapper">
 
-  <section class="project">
-    <header>
-      <h3><a href="{% url "election_ids" %}">Election IDs</a></h3>
-    </header>
-    <p>
-        We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters.
-    </p>
-    <a href="{% url "election_ids" %}" class="read_more">Read more</a>
-  </section>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--wheredoivote">
+        <h3 class="feature-card__title" itemprop="name"><a href="https://wheredoivote.co.uk/" itemprop="url" target="_blank">Where Do I Vote? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>Our <a href="https://wheredoivote.co.uk/">polling station finder</a> provides a platform that can answer one of the most Googled terms on election days in the UK: "Where do I vote".</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="{% url "polling_one_pager" %}" class="feature-card__link buttonNew buttonNew--outline">Find out how</a>
+          <a href="https://wheredoivote.co.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Polling stations API</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-  <section class="project">
-    <header>
-      <h3>Election Leaflets</h3>
-    </header>
-    <p>
-      <a href="https://electionleaflets.org/">Election Leaflets</a> asks you to
-      photograph the leaflets that get put through your door and share them
-      with the world.
-      </p>
-    <p>We have a huge archive of election leaflets that is ready for anyone to
-      analyse.  Please <a href="/contact/">contact us</a> if you would like to know more</p>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--whocanivotefor">
+        <h3 class="feature-card__title" itemprop="name"><a href="https://whocanivotefor.co.uk/" itemprop="url" target="_blank">Who Can I Vote For? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>Used by over 1.5 million people to date and bringing together all of our other projects, WhoCanIVoteFor tells UK voters about their elections, candidates, polling stations, press mentions and more.</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="https://whocanivotefor.co.uk/" class="feature-card__link buttonNew buttonNew--outline">Find who you can vote for</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-    <a href="https://electionleaflets.org" class="read_more">Snap a leaflet</a>
-  </section>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--candidates">
+        <h3 class="feature-card__title" itemprop="name"><a href="https://candidates.democracyclub.org.uk/" itemprop="url" target="_blank">Democracy Club Candidates <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>We crowd source all the candidates in all UK elections, and provide them as an <a href="/projects-and-data/#data--candidates">API and data feed</a>.</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="https://candidates.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Help with crowd sourcing</a>
+          <a href="https://candidates.democracyclub.org.uk/help/api" class="feature-card__link buttonNew buttonNew--outline">Candidates API</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-  <section class="project">
-    <header>
-      <h3>Election Mentions</h3>
-    </header>
-    <p>
-      <a href="http://ElectionMentions.com">Election Mentions</a>
-      presents press articles that we think are relevant in an attractive
-      and simple list, facilitating further research, and ultimately helping to
-      inform your vote. You can also add articles you find for other people to read.
-      </p>
-    <a href="http://ElectionMentions.com" class="read_more">Start reading</a>
-  </section>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-ids">
+        <h3 class="feature-card__title" itemprop="name"><a href="{% url "election_ids" %}" itemprop="url">Election IDs</a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters.</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="{% url "election_ids" %}" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-  <section class="project">
-    <header>
-      <h3>Read your candidates' CVs</h3>
-    </header>
-    <p>
-      Use <a href="http://cv.democracyclub.org.uk">MPCV</a> to read the CV of your
-      candidates, or ask them to make it public so you can decide if you should
-      give them a job.
-    </p>
-    <a href="http://cv.democracyclub.org.uk" class="read_more">Read their CVs</a>
-  </section>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-leaflets">
+        <h3 class="feature-card__title" itemprop="name"><a href="https://electionleaflets.org/" itemprop="url" target="_blank">Election Leaflets <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p><a href="https://electionleaflets.org/">Election Leaflets</a> asks you to photograph the leaflets that get put through your door and share them with the world.<p>
+            <p>We have a huge archive of election leaflets that is ready for anyone to analyse. Please <a href="/contact/">contact us</a> if you would like to know more</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="https://electionleaflets.org/" class="feature-card__link buttonNew buttonNew--outline">Snap a leaflet</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-  <section class="project">
-    <header>
-      <h3>MeetYourNextMP</h3>
-    </header>
-    <p>
-      MeetYourNextMP was a project run in 2015 to crowdsource a list of
-      public hustings events (where candidates take questions from a local
-      audience).
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-mentions">
+        <h3 class="feature-card__title" itemprop="name"><a href="http://electionmentions.com" itemprop="url" target="_blank">Election Mentions <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p><a href="http://electionmentions.com">Election Mentions</a> presents press articles that we think are relevant in an attractive and simple list, facilitating further research, and ultimately helping to inform your vote. You can also add articles you find for other people to read.</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="http://electionmentions.com" class="feature-card__link buttonNew buttonNew--outline">Start reading</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-    </p>
-    <a href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="read_more">Read more about it</a>
-  </section>
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--mpcv">
+        <h3 class="feature-card__title" itemprop="name"><a href="http://cv.democracyclub.org.uk/" itemprop="url" target="_blank">Read your candidates' CVs <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>Use <a href="http://cv.democracyclub.org.uk">MPCV</a> to read the CV of your candidates, or ask them to make it public so you can decide if you should give them a job.</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="http://cv.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Read their CVs</a>
+        </div>
+      </article><!-- /.feature-card -->
 
-</article>
+    </div><!-- /.feature-card-wrapper -->
 
-<section class="card" id="data_elections">
-    <h2>Elections</h2>
+  </div><!-- ./fukol-grid__col -->
+  <div class="fukol-grid__col fukol-grid__col--40-30">
 
-    <p>Upcoming UK elections at all levels, with postcode lookup. Ward-level granularity for local authority elections. Identifiers are issued under our <a href="{% url "election_ids" %}">election identifiers</a> project.</p>
+    {% include "_includes/form--donate-box.html" %}
 
-    <ul>
-        <li>Inform people about upcoming elections</li>
-        <li>Use election identifiers to organise your data about elections</li>
-    </ul>
+  </div><!-- /.fukol-grid__col -->
+</div><!-- /.fukol-grid -->
 
-    <p><a class="link-button" href="https://elections.democracyclub.org.uk">Read More</a></p>
+<div class="section-header">
+  <h1 class="section-header__title">Our Data</h1>
+</div><!-- /.section-header -->
 
-    <dl>
-        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
-        <dt>Availability</dt> <dd>REST API endpoint</dd>
-        <dt>Includes elections for</dt>
-        <dd>
+<div class="feature-card-wrapper">
+
+  <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="data--elections">
+    <h3 class="feature-card__title" itemprop="name">Elections</h3>
+    <div class="feature-card__body feature-card__body--2col">
+      <div class="fukol-grid">
+        <div class="fukol-grid__col fukol-grid__col--60-70">
+          <div class="feature-card__copy">
+            <p>Upcoming UK elections at all levels, with postcode lookup. Ward-level granularity for local authority elections. Identifiers are issued under our <a href="{% url "election_ids" %}">election identifiers</a> project.</p>
+
             <ul>
-                <li>UK Parliament</li>
-                <li>Scottish Parliament</li>
-                <li>National Assembly for Wales</li>
-                <li>Northern Ireland Assembly</li>
-                <li>Greater London Assembly</li>
-                <li>Mayors</li>
-                <li>Local authorities</li>
-                <li>Police and crime commissioners</li>
+                <li>Inform people about upcoming elections</li>
+                <li>Use election identifiers to organise your data about elections</li>
             </ul>
-        </dd>
-        <dt>NB</dt> <dd>Needs your help to catch all by-elections</dd>
-    </dl>
-</section>
 
-<section class="card" id="data_candidates">
-    <h2 id="candidates">Candidates</h2>
+            <div class="feature-card__ctrl">
+              <a itemprop="url" href="https://elections.democracyclub.org.uk" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+            </div>
+          </div>
+        </div>
+        <div class="fukol-grid__col fukol-grid__col--40-30">
+          <div class="feature-card__meta">
+            <dl class="feature-card__data-list">
+              <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+              <dt>Availability</dt> <dd>REST API endpoint</dd>
+              <dt>Includes elections for</dt>
+              <dd>
+                  <ul>
+                      <li>UK Parliament</li>
+                      <li>Scottish Parliament</li>
+                      <li>National Assembly for Wales</li>
+                      <li>Northern Ireland Assembly</li>
+                      <li>Greater London Assembly</li>
+                      <li>Mayors</li>
+                      <li>Local authorities</li>
+                      <li>Police and crime commissioners</li>
+                  </ul>
+              </dd>
+              <dt>NB</dt> <dd>Needs your help to catch all by-elections</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article><!-- /.feature-card -->
 
-    <p>Candidates in recent and upcoming UK elections. Name, email, photos and social media links are provided for every candidate.</p>
+  <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="data--candidates">
+    <h3 class="feature-card__title" itemprop="name">Candidates</h3>
+    <div class="feature-card__body feature-card__body--2col">
+      <div class="fukol-grid">
+        <div class="fukol-grid__col fukol-grid__col--60-70">
+          <div class="feature-card__copy">
+            <p>Candidates in recent and upcoming UK elections. Name, email, photos and social media links are provided for every candidate.</p>
 
-    <ul>
-        <li>Inform people about their candidates</li>
-        <li>Help your users contact their candidates about issues they care about</li>
-        <li>Monitor the public presence of candidates during and after the campaign</li>
-    </ul>
-
-    <p><a class="link-button" href="https://candidates.democracyclub.org.uk/help/api">Read More</a></p>
-    <dl>
-        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
-        <dt>Availability</dt> <dd>REST API endpoint and Microsoft Excel compatible CSV</dd>
-        <dt>Elections covered</dt>
-        <dd>
             <ul>
-                <li>All major UK elections from 2016</li>
-                <li>General Election 2015</li>
-                <li>General Election 2010</li>
+                <li>Inform people about their candidates</li>
+                <li>Help your users contact their candidates about issues they care about</li>
+                <li>Monitor the public presence of candidates during and after the campaign</li>
             </ul>
-        </dd>
-        <!--<dt>Historical elections covered (as dumps)</dt>
-        <dd>
+
+            <div class="feature-card__ctrl">
+              <a itemprop="url" href="https://candidates.democracyclub.org.uk/help/api" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+            </div>
+          </div>
+        </div>
+        <div class="fukol-grid__col fukol-grid__col--40-30">
+          <div class="feature-card__meta">
+            <dl class="feature-card__data-list">
+              <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+              <dt>Availability</dt> <dd>REST API endpoint and Microsoft Excel compatible CSV</dd>
+              <dt>Elections covered</dt>
+              <dd>
+                  <ul>
+                      <li>All major UK elections from 2016</li>
+                      <li>General Election 2015</li>
+                      <li>General Election 2010</li>
+                  </ul>
+              </dd>
+              <!--<dt>Historical elections covered (as dumps)</dt>
+              <dd>
+                  <ul>
+                      <li>European Parliament 2014</li>
+                      <li>Police and crime commissioner 2012</li>
+                  </ul>
+              </dd>-->
+              <dt>NB</dt> <dd>Currently does not include all by-elections</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article><!-- /.feature-card -->
+
+  <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="data--polling-stations">
+    <h3 class="feature-card__title" itemprop="name">Polling Stations</h3>
+    <div class="feature-card__body feature-card__body--2col">
+      <div class="fukol-grid">
+        <div class="fukol-grid__col fukol-grid__col--60-70">
+          <div class="feature-card__copy">
+            <p>API that returns a polling station for a given postcode, optionally asking for an address if needed.</p>
+
             <ul>
-                <li>European Parliament 2014</li>
-                <li>Police and crime commissioner 2012</li>
+                <li>Include a polling station finder on your web site</li>
+                <li>Mail merge with an existing list containing postcodes to give polling station location in a mailout</li>
             </ul>
-        </dd>-->
-        <dt>NB</dt> <dd>Currently does not include all by-elections</dd>
-    </dl>
-</section>
 
-<section class="card" id="data_polling_stations">
-    <h2 id="polling_stations">Polling Stations</h2>
+            <div class="feature-card__ctrl">
+              <a itemprop="url" href="https://wheredoivote.co.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+            </div>
+          </div>
+        </div>
+        <div class="fukol-grid__col fukol-grid__col--40-30">
+          <div class="feature-card__meta">
+            <dl class="feature-card__data-list">
+              <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
+              <dt>Availability</dt> <dd>REST API endpoint</dd>
+              <dt>Elections covered</dt>
+              <dd>
+                  <ul>
+                      <li>Coverage depends on data we are given. We hope for around 50% coverage in 2017.</li>
+                  </ul>
+              </dd>
+              <dt>NB</dt> <dd>If you work at a local authority you can help us by
+                  <a href="{% url "polling_one_pager"%}">providing your data to us.</a> </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article><!-- /.feature-card -->
 
-    <p>API that returns a polling station for a given postcode, optionally asking for an address if needed.</p>
+</div><!-- /.feature-card-wrapper -->
 
-    <ul>
-        <li>Include a polling station finder on your web site</li>
-        <li>Mail merge with an existing list containing postcodes to give polling station location in a mailout</li>
-    </ul>
+<div class="fukol-grid">
 
-    <p><a class="link-button" href="https://wheredoivote.co.uk/api/">Read More</a></p>
-    <dl>
-        <dt>License</dt> <dd><a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA 3.0</a></dd>
-        <dt>Availability</dt> <dd>REST API endpoint</dd>
-        <dt>Elections covered</dt>
-        <dd>
-            <ul>
-                <li>Coverage depends on data we are given. We hope for around 50% coverage in 2017.</li>
-            </ul>
-        </dd>
-        <dt>NB</dt> <dd>If you work at a local authority you can help us by
-            <a href="{% url "polling_one_pager"%}">providing your data to us.</a> </dd>
-    </dl>
-</section>
+  <div class="fukol-grid__col fukol-grid__col--60-70">
+
+    <div class="section-header">
+      <h1 class="section-header__title">Past Projects</h1>
+    </div><!-- /.section-header -->
+
+    <div class="feature-card-wrapper">
+
+      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="past-project--meetyournextmp">
+        <h3 class="feature-card__title" itemprop="name">MeetYourNextMP</h3>
+        <div class="feature-card__body">
+          <div class="feature-card__copy">
+            <p>MeetYourNextMP was a project run in 2015 to crowdsource a list of public hustings events (where candidates take questions from a local audience).</p>
+          </div>
+        </div>
+        <div class="feature-card__ctrl">
+          <a itemprop="url" href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="feature-card__link buttonNew buttonNew--outline">Read more about it</a>
+        </div>
+      </article><!-- /.feature-card -->
+
+    </div><!-- /.feature-card-wrapper -->
+
+  </div><!-- /.fukol-grid__col -->
+
+</div><!-- /.fukol-grid -->
 
 
 {% endblock content %}
