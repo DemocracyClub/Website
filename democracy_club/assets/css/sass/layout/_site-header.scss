@@ -9,9 +9,11 @@ body > header { height: auto; padding: 0; }
 	// Header container styles
 	body > header .container {
 		height: auto;
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		@include media(tablet) {
-			display: flex;
-			justify-content: space-between;
 			align-items: flex-end;
 		}
 	}
@@ -24,7 +26,12 @@ body > header { height: auto; padding: 0; }
 			top: auto;
 			left: auto;
 			vertical-align: bottom;
+			min-width: 0;
 
-			max-width: 200px;
+			// New styles
 			margin: 0.5em 0;
+			max-width: 175px;
+			@include media(tablet) {
+				max-width: 200px;
+			}
 		}
