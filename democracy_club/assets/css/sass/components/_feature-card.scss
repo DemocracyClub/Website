@@ -3,7 +3,7 @@
 //
 //***********************************************************************
 // Optional wrapper
-.feature-card-wrapper { }
+.feature-card-wrapper { margin-bottom: 20px; }
 
 
 .feature-card {
@@ -23,8 +23,22 @@
 
 		.feature-card__copy { }
 
+	// Meta information (Used on data cards)
+	.feature-card__meta { }
+
+		// Data list
+		.feature-card__data-list {
+			font-size: 14px; margin: 0;
+
+			dt { font-weight: 600; }
+			dd { margin: 0 0 8px; }
+		}
+
 	// Control area
 	.feature-card__ctrl { }
+
+		// Feature card control link
+		.feature-card__link { margin-right: 10px; }
 
 
 	//
