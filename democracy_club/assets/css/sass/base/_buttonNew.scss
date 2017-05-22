@@ -36,7 +36,9 @@
         color: $button-background;
         background: #fff;
 
+        &:focus { color: #fff; }
         &:hover {
+            color: $button-background;
             background-color: lighten($button-background, 52);
         }
     }
