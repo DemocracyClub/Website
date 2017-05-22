@@ -15,7 +15,7 @@
           <ul class="nav-site js-nav-site">
             <li class="nav-site__item nav-site__item--home{% if request.path == "/" %} nav-site__item--active{% endif %}"><a href="/">Home</a></li>
             <li class="nav-site__item{% if request.path == "/about/" %} nav-site__item--active{% endif %}"><a href="/about/">About</a></li>
-            <li class="nav-site__item{% if request.path|slice:":10" == "/projects-and-data/" %} nav-site__item--active{% endif %}"><a href="/projects-and-data/">Projects &amp; Data</a></li>
+            <li class="nav-site__item{% if request.path|slice:":10" == "/projects/" %} nav-site__item--active{% endif %}"><a href="/projects/">Projects</a></li>
             <li class="nav-site__item{% if request.path == "/quests/" %} nav-site__item--active{% endif %}"><a href="/quests/">Quests</a></li>
             <li class="nav-site__item{% if request.path == "/blog/" %} nav-site__item--active{% endif %}"><a href="/blog/">Blog</a></li>
             <li class="nav-site__item{% if request.path == "/contact/" %} nav-site__item--active{% endif %}"><a href="/contact/">Contact</a></li>
