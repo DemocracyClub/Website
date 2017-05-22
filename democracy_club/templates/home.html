@@ -31,7 +31,7 @@
 
 <div class="fukol-grid">
 
-  <div class="homepage__fukol-grid__col homepage__project-area">
+  <div class="fukol-grid__col fukol-grid__col--60-70">
 
     <div class="feature-card-wrapper">
 
@@ -41,6 +41,8 @@
           <div class="feature-card__copy">
             <p>Our <a href="https://wheredoivote.co.uk/">polling station finder</a> provides a platform that can answer one of the most Googled terms on election days in the UK: "Where do I vote".</p>
           </div>
+        </div>
+        <div class="feature-card__ctrl">
           <a href="/projects-and-data/#project--wheredoivote" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
         </div>
       </article><!-- /.feature-card -->
@@ -51,6 +53,8 @@
           <div class="feature-card__copy">
             <p>Used by over 1.5 million people to date and bringing together all of our other projects, WhoCanIVoteFor tells UK voters about their elections, candidates, polling stations, press mentions and more.</p>
           </div>
+        </div>
+        <div class="feature-card__ctrl">
           <a href="/projects-and-data/#project--whocanivotefor" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
         </div>
       </article><!-- /.feature-card -->
@@ -59,9 +63,11 @@
         <h3 class="feature-card__title" itemprop="name"><a href="https://candidates.democracyclub.org.uk/" itemprop="url" target="_blank">Democracy Club Candidates <i class="fa fa-external-link feature-card__icon"></i></a></h3>
         <div class="feature-card__body">
           <div class="feature-card__copy">
-            <p>We crowd source all the candidates in all UK elections, and provide them as an <a href="/projects-and-data/#candidates">API and data feed</a>.</p>
+            <p>We crowd source all the candidates in all UK elections, and provide them as an <a href="/projects-and-data/#data--candidates">API and data feed</a>.</p>
           </div>
-          <a href="/projects-and-data/#project--dc-candidates" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
+        </div>
+        <div class="feature-card__ctrl">
+          <a href="/projects-and-data/#project--candidates" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
         </div>
       </article><!-- /.feature-card -->
 
@@ -69,12 +75,12 @@
 
     <p><a href="/projects-and-data/" class="buttonNew buttonNew--outline">See more projects</a></p>
 
-  </div><!-- /.homepage__project-area -->
-  <div class="homepage__fukol-grid__col homepage__donate-area">
+  </div><!-- /.fukol-grid__col -->
+  <div class="fukol-grid__col fukol-grid__col--40-30">
 
     {% include "_includes/form--donate-box.html" %}
 
-  </div><!-- /.homepage__donate-area -->
+  </div><!-- /.fukol-grid__col -->
 </div><!-- /.fukol-grid -->
 
 {# <div class="fukol-grid"> #}
@@ -95,7 +101,7 @@
 
 <div class="fukol-grid">
 
-  <div class="homepage__fukol-grid__col homepage__quests-area">
+  <div class="fukol-grid__col fukol-grid__col--50-60">
     <div class="section-header">
       <h3 class="section-header__title"><a href="{% url "backlog:backlog_view"%}">Quests</a></h3>
       <div class="section-header__body">
@@ -104,9 +110,9 @@
     </div><!-- /.section-header -->
     {% include "backlog/includes/card.html" %}
     <p><a href="{% url "backlog:backlog_view"%}" class="buttonNew buttonNew--outline">See more quests</a></p>
-  </div><!-- /.homepage__quests-area -->
+  </div><!-- /.fukol-grid__col -->
 
-  <div class="homepage__fukol-grid__col homepage__blog-area">
+  <div class="fukol-grid__col fukol-grid__col--50-40">
 
     {% for post in latest_posts %}
 
@@ -137,7 +143,7 @@
       </div><!-- /.media-card -->
     {% endfor %}
 
-  </div><!-- /.homepage__blog-area -->
+  </div><!-- /.fukol-grid__col -->
 
 </div><!-- /.fukol-grid -->
 
