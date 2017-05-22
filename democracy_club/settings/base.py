@@ -154,6 +154,7 @@ PIPELINE = get_pipeline_settings(
     extra_js=['js/date.format.js', ],
 )
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 LOGGING = {
     'version': 1,
