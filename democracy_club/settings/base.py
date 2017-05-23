@@ -87,6 +87,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'donations.middleware.DonationFormMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = [
@@ -198,9 +199,6 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
                 'dc_theme.context_processors.dc_theme_context',
-                'donations.context_processors.donation_form',
-
-                # "democracy_club.context_processors.days_to_election",
             ],
             'debug': DEBUG
         },
