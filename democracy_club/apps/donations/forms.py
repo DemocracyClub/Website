@@ -17,8 +17,6 @@ class DonationForm(forms.Form):
         choices=FRIENDLY_INTERVALS,
         widget=forms.RadioSelect())
 
-
-
     payment_type = forms.ChoiceField(
         choices=PAYMENT_TYPES,
         widget=forms.HiddenInput())
