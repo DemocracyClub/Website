@@ -29,13 +29,15 @@ class GoCardlessHelper(object):
             merchant_id=settings.GOCARDLESS_MERCHANT_ID,
         )
 
-    def get_payment_url(self, amount, payment_type="bill",
-        interval_length=None, interval_unit=None, name=None, description=None):
+    def get_payment_url(self, amount, other_amount, payment_type="bill",
+        name=None, description=None):
         """
         A bill is one off, a subscription is repeating
         """
 
         assert payment_type in [i[0] for i in PAYMENT_TYPES]
+        if other_amount:
+            amount = other_amount
         amount = Decimal(amount)
 
         if not name:

@@ -6,12 +6,11 @@
   <h3 class="feature-card__title">Join the club</h3>
   <div class="feature-card__body">
     <div class="feature-card__copy">
-      <p>We're a tiny team on a big mission to make it easy to get more and better information on election candidates and the democratic process.</p>
-      <p>But this costs money! We need developers, designers, hosting, email servers...as well as people to talk to the press and work with other organisations.</p>
-      <p>Please help us to do this with a donation.</p>
+      <p>
+        We know democracy can work better. We have an ambitious goal to provide accurate, non-partisan information on every election and candidate in the UK, unbiased and unfiltered. We need your help to make it happen. Join the club.</p>
     </div>
     <div class="donate-box__form">
-      <form method="post" class="donate_form">
+      <form method="post" class="donate_form inline_radios">
         {% csrf_token %}
         {{ request.donation_form.errors }}
         {{ request.donation_form|dc_form }}

@@ -6,3 +6,39 @@
 
 	// [TODO] Find out a way to add classes to this area
 	.donate-box__form ul { margin: 16px 0; padding: 0; list-style: none; }
+
+.donate-box__form {
+  .form-group + .form-group {
+    margin-top:0;
+  }
+  label[for^='id_donation_form-amount']:nth-of-type(2) {
+    background-color:$dc-bright-pink;
+    font-weight:bold;
+    color:#FFF;
+  }
+  label[for^='id_donation_form-payment_type'] {
+    font-size:0.8em;
+    background-color: transparent;
+    border:none;
+    padding:0;
+    input {
+      position:relative;
+      margin:none;
+      padding:none;
+      left:0;
+      top:8px;
+    }
+  }
+  label[for^='id_donation_form-other_amount'] {
+    padding:0;
+    display:inline-block;
+    width:40%;
+    & + div {
+      display:inline-block;
+    }
+    & + div input {
+      max-width:6em;
+    }
+  }
+
+}
