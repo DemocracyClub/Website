@@ -16,3 +16,13 @@ class DonationForm(forms.Form):
         choices=PAYMENT_UNITS,
         widget=forms.RadioSelect()
     )
+    other_amount = forms.CharField(
+        required=False,
+        label="Other amount",
+        widget=forms.NumberInput(
+            attrs={
+                'size':5,
+                'class': 'other_amount',
+            }
+        )
+    )
