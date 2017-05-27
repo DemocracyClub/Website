@@ -16,24 +16,13 @@
 
     <p>Please help us to do this with a one-off or regular donation.</p>
 
-
-    <form method=post class="donate_form">
+    <form method="post" class="donate_form">
       {% csrf_token %}
-      {{ form.errors }}
-      <div class="donation_amount">
-        {{ form.amount.label_tag }}
-        <div>£{{ form.amount }}</div>
-      </div>
-
-      {{ form.payment_interval }}
-      {{ form.payment_type }}
-      {{ form.interval_length }}
-      {{ form.interval_unit }}
-
-
-
-      <button type=submit class="button">Next</button>
+      {{ request.donation_form.errors }}
+      {{ request.donation_form|dc_form }}
+      <button type="submit" class="buttonNew">Next</button>
     </form>
+
 
     <h3>Alternatives</h3>
 

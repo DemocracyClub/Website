@@ -1,20 +1,5 @@
-from django.views.generic import FormView
+from django.views.generic import TemplateView
 
-from .forms import DonationForm
-from .helpers import GoCardlessHelper
 
-class DonateFormView(FormView):
-    form_class = DonationForm
+class DonateFormView(TemplateView):
     template_name = "donate.html"
-
-    def get_initial(self):
-        return {
-            'payment_type': 'bill',
-            'amount': '3',
-            'payment_interval': 'monthly',
-        }
-
-    def form_valid(self, form):
-        gc = GoCardlessHelper()
-        self.success_url =  gc.get_payment_url(**form.cleaned_data)
-        return super(DonateFormView, self).form_valid(form)

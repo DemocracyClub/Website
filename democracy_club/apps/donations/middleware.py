@@ -7,9 +7,8 @@ from .helpers import GoCardlessHelper
 class DonationFormMiddleware(object):
     def get_initial(self):
         return {
-            'payment_type': 'bill',
-            'amount': '3',
-            'payment_interval': 'monthly',
+            'payment_type': 'subscription',
+            'amount': 10,
         }
 
     def form_valid(self, form):
