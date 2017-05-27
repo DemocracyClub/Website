@@ -4,22 +4,18 @@ from django.conf import settings
 
 import gocardless
 
-FRIENDLY_INTERVALS = (
-    ("once", 'One off'),
-    ("weekly", 'Once a week'),
-    ("monthly", 'Once a month'),
-)
-
 PAYMENT_TYPES = (
-    ('bill', 'Once'),
-    ('subscription', 'Repeating')
+    ('subscription', 'Monthly donation'),
+    ('bill', 'Single donation'),
 )
 
-INTERVAL_UNITS = (
-    ("day", 'Days'),
-    ("week", 'Weeks'),
-    ("month", 'Months'),
+PAYMENT_UNITS = (
+    (3, '£3'),
+    (10, '£10'),
+    (25, '£25'),
+    (50, '£50'),
 )
+
 
 class GoCardlessHelper(object):
     def __init__(self):
@@ -50,13 +46,10 @@ class GoCardlessHelper(object):
         if payment_type == "bill":
             return gocardless.client.new_bill_url(amount, name=name)
 
-
-        assert interval_unit in [i[0] for i in INTERVAL_UNITS]
-
         return gocardless.client.new_subscription_url(
             amount=amount,
-            interval_length=interval_length,
-            interval_unit=interval_unit,
+            interval_length=1,
+            interval_unit="month",
             name=name,
             description=description)
 

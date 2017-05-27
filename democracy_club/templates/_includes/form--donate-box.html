@@ -1,6 +1,7 @@
 {#                      #}
 {# Include: Donate box  #}
 {#                      #}
+{% load dc_forms %}
 <div class="feature-card feature-card--grey donate-box">
   <h3 class="feature-card__title">Join the club</h3>
   <div class="feature-card__body">
@@ -11,19 +12,9 @@
     </div>
     <div class="donate-box__form">
       <form method="post" class="donate_form">
-
         {% csrf_token %}
         {{ request.donation_form.errors }}
-        <div class="donation_amount">
-          {{ request.donation_form.amount.label_tag }}
-          <div>£{{ request.donation_form.amount }}</div>
-        </div>
-
-        {{ request.donation_form.payment_interval }}
-        {{ request.donation_form.payment_type }}
-        {{ request.donation_form.interval_length }}
-        {{ request.donation_form.interval_unit }}
-
+        {{ request.donation_form|dc_form }}
         <button type="submit" class="buttonNew">Next</button>
       </form>
     </div>
