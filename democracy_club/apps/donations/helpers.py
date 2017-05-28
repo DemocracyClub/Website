@@ -53,7 +53,8 @@ class GoCardlessHelper(object):
             interval_length=1,
             interval_unit="month",
             name=name,
-            description=description)
+            description=description,
+            redirect_uri=settings.GOCARDLESS_REDIRECT_URL)
 
 
 
