@@ -34,12 +34,47 @@ We work with local government to establish internal best practice for publishing
 * Fully featured API
 
 
+## Data changes
+
+We only use data sent to us for the elections you tell us it's valid for.
+If we're not sure we don't re-use data between elections, and we will email you asking
+for updates.
+
+
+For last minute changes, including on polling day, you can email us and we will make
+changes to the data on the live site. In the worse case we can remove all your data from
+the site very quickly, just get in touch.
+
+
+## Data restrictions
+
+We don't need personal data to run the polling station finder but we do need
+UPRNs or data that from some of OS's products depending on the type of data you are
+able to provide us with.
+
+We have an agreement with The Electoral Commission under the Public Sector Mapping Agreement
+that allows us to receive data that's in AddressBase including UPRNs.
+
+If you send us geospatial data that's created from OS's BaseMap then this can be made public
+under ‘presumption to publish’.
+[You can read more about this here](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf).
+
+We suggest that you publish Geo data as a WFS layer from your GIS software.
+
+
+## Using the finder on your website
+
+If you provide data to us then you can embed out polling station directly on
+your website, free of charge.
+
+You'll need to add a bit of code to your site.
+[Find out how]({% url "polling_embed_code" %}).
+
+
 {% endfilter %}
 
-<a href="{% url "polling_data_upload" %}" class="link-button">Send us data</a>
-<p>Work for local government? Send us your data to help people find out where to vote</p>
+<a href="{% url "polling_data_upload" %}" class="link-button">How to send us data</a>
 <a href="{% url "polling_embed_code"%}" class="link-button">Embed on your web site</a>
-<p>Get the embed code to add a polling station finder to your own site</p>
 
 {% filter markdown %}
 *Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
