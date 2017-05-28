@@ -43,6 +43,9 @@ nav.inline_page_nav {
             margin:0;
             padding:0 0.4em;
         }
+        *:first-child {
+            padding-left:0;
+        }
 
     }
 }
