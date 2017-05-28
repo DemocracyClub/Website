@@ -7,9 +7,9 @@
     {% block page_title %}{% endblock page_title %}
     <nav class="inline_page_nav">
       <ul>
-        <li><a href="{% url "polling_one_pager" %}">Overview</a></li>
-        <li><a href="{% url "polling_embed_code" %}">Use on your website</a></li>
-        <li><a href="{% url "polling_data_upload" %}">How to send us data</a></li>
+        <li {% if request.path == "/projects/polling-stations/" %}class="selected"{% endif %}><a href="{% url "polling_one_pager" %}">Overview</a></li>
+        <li {% if request.path == "/projects/polling-stations/embed/" %}class="selected"{% endif %}><a href="{% url "polling_embed_code" %}">Use on your website</a></li>
+        <li {% if request.path == "/projects/polling-stations/upload/" %}class="selected"{% endif %}><a href="{% url "polling_data_upload" %}">How to send us data</a></li>
       </ul>
     </nav>
 
