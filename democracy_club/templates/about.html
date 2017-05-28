@@ -3,9 +3,14 @@
 
 {% block title %}About | {{ block.super }}{% endblock title %}
 
-{% block page_content %}
+{% block content %}
 <h1>About</h1>
-{% filter markdown %}
+
+<div class="fukol-grid">
+
+  <div class="fukol-grid__col fukol-grid__col--60-70">
+
+      {% filter markdown %}
 
 
 ### Democracy Club aims to make the process of democracy better for everyone.
@@ -102,6 +107,15 @@ Mark is a developer working for mySociety on their parliaments team. He's been w
 
 
 
-{% endfilter %}
+      {% endfilter %}
 
-{% endblock page_content %}
+  </div><!-- ./fukol-grid__col -->
+  <div class="fukol-grid__col fukol-grid__col--40-30">
+
+    {% include "_includes/form--donate-box.html" %}
+
+  </div><!-- /.fukol-grid__col -->
+</div><!-- /.fukol-grid -->
+
+
+{% endblock content %}
