@@ -56,12 +56,12 @@ class GoCardlessHelper(object):
             description=description,
             redirect_uri=settings.GOCARDLESS_REDIRECT_URL)
 
-
-
-
-# # client.new_subscription_url(
-# amount=10,
-# interval_length=1,
-# interval_unit="month",
-# name="Premium Subscription",
-# description="A premium subscription for my site",)
+    def confirm_payment(self, resource_uri, resource_id, resource_type):
+        params = {
+            'resource_uri': resource_uri,
+            'resource_id': resource_id,
+            'resource_type': resource_type,
+        }
+        params['signature'] = gocardless.utils.generate_signature(params,
+                settings.GOCARDLESS_APP_SECRET)
+        self.gocardless.client.confirm_resource(params)
