@@ -130,6 +130,7 @@ PROJECT_APPS = (
     'research',
     'authorities',
     'report_2016',
+    'report_2017',
     'backlog',
 )
 
