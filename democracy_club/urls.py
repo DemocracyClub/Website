@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^thanks/finished$', TemplateView.as_view(template_name="thanks_finished.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html"), name="about"),
     url(r'^privacy/$', TemplateView.as_view(template_name="privacy.html"), name="privacy"),
+    url(r'^code-of-conduct/$', TemplateView.as_view(template_name="code-of-conduct.html"), name="coc"),
     url(r'^projects/$', TemplateView.as_view(template_name="projects.html"), name="projects"),
     url(r'^projects/polling-stations/$',
         TemplateView.as_view(template_name="polling-stations/home.html"),
