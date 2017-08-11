@@ -66,23 +66,11 @@ Come join us.
 
 Joe Mitchell &amp; Sym Roe
 
-<form action="https://mail.democracyclub.org.uk/subscribe" method="POST" accept-charset="utf-8" id="signup_form" class="hide_for_print">
-  <input type="hidden" name="list" value="uFrDEpP6B892qUiD2KwEI892Pg"/>
-
-  <div class="row">
-      <div class="large-12 columns">
-        <div class="row collapse">
-          <div class="small-10 columns">
-            <input name="email" placeholder="email" type="text"/>
-          </div>
-          <div class="small-2 columns">
-            <button type="submit" name="submit">Join</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</form>
+{% endfilter %}
+{% if not messages %}
+    {% include "email_form/mailing_list_form.html" %}
+{% endif %}
+{% filter markdown %}
 
 </section>
 
