@@ -100,6 +100,8 @@ INSTALLED_APPS = (
     'dc_theme',
     'pipeline',
     'sorl.thumbnail',
+    'dc_signup_form',
+    'dc_signup_form.signup_server',
 )
 
 PROJECT_APPS = (
@@ -112,6 +114,7 @@ PROJECT_APPS = (
     'report_2016',
     'report_2017',
     'backlog',
+    'mailing_list',
 )
 
 ALLAUTH_APPS = (
@@ -181,6 +184,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
                 'dc_theme.context_processors.dc_theme_context',
+                'dc_signup_form.context_processors.signup_form',
             ],
             'debug': DEBUG
         },

@@ -4,6 +4,7 @@
 
 
 -e git+https://github.com/DemocracyClub/dc_base_theme.git@03fd17844d922fec2aa1b088f75e652813093574#egg=dc_base_theme
+git+https://github.com/DemocracyClub/dc_signup_form.git
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
 git+https://github.com/mysociety/django-pipeline-csscompressor.git

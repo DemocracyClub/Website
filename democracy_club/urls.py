@@ -69,4 +69,5 @@ urlpatterns = [
     url(r'^data/$',
         RedirectView.as_view(url=reverse_lazy("projects")),
     ),
+    url(r'^mailing_list/', include('mailing_list.urls', namespace="dc_signup_form")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
