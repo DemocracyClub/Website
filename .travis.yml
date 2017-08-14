@@ -1,12 +1,17 @@
+dist: trusty
 sudo: false
 language: python
 python:
   - '3.4'
 addons:
-  - postgresql: '9.3'
+  postgresql: '9.3'
+  apt:
+    packages:
+      - postgresql-9.3-postgis-2.3
 before_script:
-  - psql --version
   - psql -c 'create database dc_website_test;' -U postgres
+  - psql -U postgres -c "create extension postgis"
+  - psql --version
 cache:
   pip: true
   directories:
