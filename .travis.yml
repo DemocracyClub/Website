@@ -5,6 +5,7 @@ python:
 addons:
   - postgresql: '9.3'
 before_script:
+  - psql --version
   - psql -c 'create database dc_website_test;' -U postgres
 cache:
   pip: true
