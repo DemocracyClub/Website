@@ -12,5 +12,5 @@ urlpatterns = [
             backend='local_db'
         ),
         name='mailing_list_signup_view'),
-    url(r'^api_signup/', include('dc_signup_form.signup_server.urls')),
+    url(r'^api_signup/v1/', include('dc_signup_form.signup_server.urls')),
 ]
