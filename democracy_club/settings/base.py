@@ -59,26 +59,6 @@ STATICFILES_FINDERS = (
 
 SECRET_KEY = 'CHANGE THIS!!!'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            root('templates'),
-        ],
-        'TEMPLATE_DEBUG': DEBUG,
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.contrib.auth.context_processors.auth',
-
-                # `allauth` needs this from django
-                'django.template.context_processors.request',
-            ],
-        },
-    },
-]
-
-
 MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -120,6 +100,8 @@ INSTALLED_APPS = (
     'dc_theme',
     'pipeline',
     'sorl.thumbnail',
+    'dc_signup_form',
+    'dc_signup_form.signup_server',
 )
 
 PROJECT_APPS = (
@@ -132,6 +114,7 @@ PROJECT_APPS = (
     'report_2016',
     'report_2017',
     'backlog',
+    'mailing_list',
 )
 
 ALLAUTH_APPS = (
@@ -201,6 +184,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
                 'dc_theme.context_processors.dc_theme_context',
+                'dc_signup_form.context_processors.signup_form',
             ],
             'debug': DEBUG
         },
