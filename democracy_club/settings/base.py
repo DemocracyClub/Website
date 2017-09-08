@@ -113,6 +113,7 @@ PROJECT_APPS = (
     'authorities',
     'report_2016',
     'report_2017',
+    'wheredoivote_user_feedback',
     'backlog',
     'mailing_list',
 )

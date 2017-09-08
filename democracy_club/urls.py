@@ -65,6 +65,7 @@ urlpatterns = [
     url(r'^donate/', include('donations.urls', namespace="donations")),
     url(r'^report_2016/', include('report_2016.urls', namespace="report_2016")),
     url(r'^report_2017/', include('report_2017.urls', namespace="report_2017")),
+    url(r'^wheredoivote_user_feedback/', include('wheredoivote_user_feedback.urls', namespace="wheredoivote_user_feedback")),
     url(r'^quests/', include('backlog.urls', namespace="backlog")),
     url(r'^data/$',
         RedirectView.as_view(url=reverse_lazy("projects")),
