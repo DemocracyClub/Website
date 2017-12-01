@@ -244,7 +244,7 @@ MARKDOWN_DEUX_STYLES = {
 GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
 GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club "\
 "increase the quality of information on elections & the democratic processes"
-GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/thanks/"
+GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
 CORS_URLS_REGEX = r'^/research/answers/*|/members/api/members/*$'
 CORS_ORIGIN_WHITELIST = (
