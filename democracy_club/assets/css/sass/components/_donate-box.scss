@@ -11,7 +11,7 @@
   .form-group + .form-group {
     margin-top:0;
   }
-  label[for^='id_donation_form-amount']:nth-of-type(2) {
+  label[for^='id_donation_form-amount']:nth-of-type(1) {
     background-color:$dc-bright-pink;
     font-weight:bold;
     color:#FFF;
