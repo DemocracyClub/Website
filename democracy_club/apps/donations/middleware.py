@@ -11,10 +11,18 @@ class DonationFormMiddleware(object):
             'amount': 10,
         }
 
-    def form_valid(self, form):
-        gc = GoCardlessHelper()
-        url = gc.get_payment_url(**form.cleaned_data)
-        return HttpResponseRedirect(url)
+    def form_valid(self, request, form):
+        # Add the form info to the session
+        request.session['donation_form'] = form.cleaned_data
+
+        # Start the GoCardless process
+        gc = GoCardlessHelper(request)
+
+        # Make a customer object at GC's site first.
+        redirect_url = gc.get_redirect_url()
+
+        # Redirect to GoCardless
+        return HttpResponseRedirect(redirect_url)
 
     def process_request(self, request):
         form_prefix = "donation_form"
@@ -23,7 +31,7 @@ class DonationFormMiddleware(object):
         if request.method == 'POST' and key_to_check in request.POST:
             form = DonationForm(data=request.POST, prefix=form_prefix)
             if form.is_valid():
-                return self.form_valid(form)
+                return self.form_valid(request, form)
         else:
             form = DonationForm(
                 initial=self.get_initial(), prefix=form_prefix)

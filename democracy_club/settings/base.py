@@ -242,9 +242,9 @@ MARKDOWN_DEUX_STYLES = {
 }
 
 GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
-GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club increase the quantity,"\
-" quality and accessibility of information on election candidates, politicians and democratic processes"
-GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/thanks/"
+GO_CARDLESS_PAYMENT_DESCRIPTION = "Helping Democracy Club "\
+"increase the quality of information on elections & the democratic processes"
+GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
 CORS_URLS_REGEX = r'^/research/answers/*|/members/api/members/*$'
 CORS_ORIGIN_WHITELIST = (
@@ -263,3 +263,5 @@ SITE_TITLE = "Democracy Club"
 
 BACKLOG_TRELLO_BOARD_ID = "O00ATMzS"
 BACKLOG_TRELLO_DEFAULT_LIST_ID = "58bd618abc9a825bd64b5d8f"
+
+

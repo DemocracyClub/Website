@@ -1,8 +1,6 @@
-from decimal import Decimal
-
 from django.conf import settings
 
-import gocardless
+import gocardless_pro
 
 PAYMENT_TYPES = (
     ('subscription', 'Monthly donation'),
@@ -18,50 +16,72 @@ PAYMENT_UNITS = (
 
 
 class GoCardlessHelper(object):
-    def __init__(self):
-        self.gocardless = gocardless
+    def __init__(self, request):
+        self.request = request
+        # We need the session to be saved before it gets a session_key
+        # This is because the code is called from a middleware
+        self.request.session.save()
+
         if getattr(settings, 'GOCARDLESS_USE_SANDBOX', False):
-            self.gocardless.environment = "sandbox"
-        self.gocardless.set_details(
-            app_id=settings.GOCARDLESS_APP_ID,
-            app_secret=settings.GOCARDLESS_APP_SECRET,
+            gc_environment = "sandbox"
+        else:
+            gc_environment = "live"
+
+        self.client = gocardless_pro.Client(
             access_token=settings.GOCARDLESS_ACCESS_TOKEN,
-            merchant_id=settings.GOCARDLESS_MERCHANT_ID,
+            environment=gc_environment
         )
 
-    def get_payment_url(self, amount, other_amount, payment_type="bill",
-        name=None, description=None):
+    def get_redirect_url(self):
         """
-        A bill is one off, a subscription is repeating
+        Get a URL for creating a customer object.
         """
+        redirect_flow = self.client.redirect_flows.create(
+            params={
+                "description": settings.GO_CARDLESS_PAYMENT_DESCRIPTION,
+                "session_token": self.request.session.session_key,
+                "success_redirect_url": settings.GOCARDLESS_REDIRECT_URL
+            }
+        )
 
+        # Save the flow ID on the session
+        self.request.session['GC_REDIRECT_FLOW_ID'] = redirect_flow.id
+        self.request.session.save()
+        return redirect_flow.redirect_url
+
+    def confirm_redirect_flow(self):
+        redirect_flow = self.client.redirect_flows.complete(
+            self.request.GET.get('redirect_flow_id'),
+            params={
+                "session_token": self.request.session.session_key
+            }
+        )
+        self.request.session['GC_CUSTOMER_ID'] = redirect_flow.links.customer
+        self.request.session['GC_MANDATE_ID'] = redirect_flow.links.mandate
+        self.request.session.save()
+
+    def create_payment(self):
+        form = self.request.session['donation_form']
+        payment_type = form['payment_type']
         assert payment_type in [i[0] for i in PAYMENT_TYPES]
-        if other_amount:
-            amount = other_amount
-        amount = Decimal(amount)
+        amount = form['amount']
+        if form['other_amount']:
+            amount = form['other_amount']
+        amount = int(float(amount) * 100)
 
-        if not name:
-            name = settings.GO_CARDLESS_PAYMENT_NAME
-        if not description:
-            description = settings.GO_CARDLESS_PAYMENT_DESCRIPTION
-
-        if payment_type == "bill":
-            return gocardless.client.new_bill_url(amount, name=name)
-
-        return gocardless.client.new_subscription_url(
-            amount=amount,
-            interval_length=1,
-            interval_unit="month",
-            name=name,
-            description=description,
-            redirect_uri=settings.GOCARDLESS_REDIRECT_URL)
-
-    def confirm_payment(self, resource_uri, resource_id, resource_type):
         params = {
-            'resource_uri': resource_uri,
-            'resource_id': resource_id,
-            'resource_type': resource_type,
+            "amount": amount,
+            "currency": "GBP",
+            "links": {
+                "mandate": self.request.session['GC_MANDATE_ID']
+            },
         }
-        params['signature'] = gocardless.utils.generate_signature(params,
-                settings.GOCARDLESS_APP_SECRET)
-        self.gocardless.client.confirm_resource(params)
+        if payment_type == "bill":
+            # One off donation
+            return self.client.payments.create(params)
+
+        if payment_type == "subscription":
+            # Monthly donation
+            params['interval_unit'] = "monthly"
+            params["day_of_month"] = "1"
+            return self.client.subscriptions.create(params)
