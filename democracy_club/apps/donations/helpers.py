@@ -24,9 +24,13 @@ class GoCardlessHelper(object):
 
         if getattr(settings, 'GOCARDLESS_USE_SANDBOX', False):
             gc_environment = "sandbox"
-            gc_token = settings.GOCARDLESS_ACCESS_TOKEN
+        else:
+            gc_environment = "live"
+
         self.client = gocardless_pro.Client(
-            access_token=gc_token, environment=gc_environment)
+            access_token=settings.GOCARDLESS_ACCESS_TOKEN,
+            environment=gc_environment
+        )
 
     def get_redirect_url(self):
         """
