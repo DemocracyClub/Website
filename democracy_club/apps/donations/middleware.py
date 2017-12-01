@@ -1,15 +1,21 @@
 from django.http import HttpResponseRedirect
 
 from .forms import DonationForm
-from .helpers import GoCardlessHelper
+from .helpers import GoCardlessHelper, PAYMENT_UNITS
 
 
 class DonationFormMiddleware(object):
-    def get_initial(self):
-        return {
+    def get_initial(self, request):
+        suggested_donation = request.GET.get('suggested_donation', 3)
+        form_initial = {
             'payment_type': 'subscription',
-            'amount': 10,
         }
+        if int(suggested_donation) in [x[0] for x in PAYMENT_UNITS]:
+            form_initial['amount'] = suggested_donation
+        else:
+            form_initial['other_amount'] = suggested_donation
+
+        return form_initial
 
     def form_valid(self, request, form):
         # Add the form info to the session
@@ -34,5 +40,7 @@ class DonationFormMiddleware(object):
                 return self.form_valid(request, form)
         else:
             form = DonationForm(
-                initial=self.get_initial(), prefix=form_prefix)
+                initial=self.get_initial(request),
+                prefix=form_prefix
+            )
         request.donation_form = form
