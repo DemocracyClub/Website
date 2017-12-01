@@ -1,3 +1,4 @@
+import re
 from django.http import HttpResponseRedirect
 
 from .forms import DonationForm
@@ -6,10 +7,16 @@ from .helpers import GoCardlessHelper, PAYMENT_UNITS
 
 class DonationFormMiddleware(object):
     def get_initial(self, request):
-        suggested_donation = request.GET.get('suggested_donation', 3)
         form_initial = {
             'payment_type': 'subscription',
         }
+        default_donation = 3
+        suggested_donation = request.GET.get(
+            'suggested_donation', default_donation
+        )
+        if re.search('[^0-9]', str(suggested_donation)):
+            suggested_donation = default_donation
+
         if int(suggested_donation) in [x[0] for x in PAYMENT_UNITS]:
             form_initial['amount'] = suggested_donation
         else:
