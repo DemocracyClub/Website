@@ -3,6 +3,20 @@
 
 {% block title %}About | {{ block.super }}{% endblock title %}
 
+{% block extra_page_css %}
+<style>
+blockquote {
+  font-style: italic;
+  font-size: 1em;
+  margin: 0;
+  color: #999;
+  padding: 0rem 1rem;
+  border-left: .25rem solid #999;
+  display: block;
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <h1>About</h1>
 
@@ -10,7 +24,7 @@
 
   <div class="fukol-grid__col fukol-grid__col--60-70">
 
-      {% filter markdown %}
+{% filter markdown %}
 
 ### Democracy Club’s vision is of a society in which democracy thrives through knowledge, participation and openness.
 
@@ -43,18 +57,42 @@ Our data has reached over 12m people. Here’s what some of them say:
 
 > “Amazing accessible website that encourages people to vote by its sheer simplicity.”
 
+<!---->
+
 > “This was a very quick and precise answer to my question. Well Done!”
+
+<!---->
 
 > “Exactly what I was looking for. I appreciate the work of democracyclub and its supporters in providing this resource.”
 
 ### People who work on democracy trust us
+{% endfilter %}
 
-> “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.” **Stuart Harrison, Senior Communication Officer, The Electoral Commission**
+<p>
+<blockquote>
+    “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.”
+</blockquote>
 
-> “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.” **Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics**
+<strong>— Stuart Harrison, Senior Communication Officer, The Electoral Commission</strong>
+</p>
 
-> “...making this information available centrally will become an invaluable service for citizens...” **Chris Skidmore MP, Minister for the Constitution**
+<p>
+<blockquote>
+    “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.”
+</blockquote>
 
+<strong>— Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics</strong>
+</p>
+
+<p>
+<blockquote>
+        “...making this information available centrally will become an invaluable service for citizens...”
+</blockquote>
+
+<strong>— Chris Skidmore MP, Minister for the Constitution</strong>
+</p>
+
+{% filter markdown %}
 ### Here’s a roundup of articles about us
 
 - Oxford City Council (2017) *[“Collaboration, Not Reinvention”](http://digital.oxford.gov.uk/blog/2017/05/17/collaboration-not-reinvention)*
@@ -112,7 +150,7 @@ We also seek institutional funding. We're grateful to our existing and previous 
 - Google.org
 
 
-      {% endfilter %}
+{% endfilter %}
 
   </div><!-- ./fukol-grid__col -->
   <div class="fukol-grid__col fukol-grid__col--40-30">
