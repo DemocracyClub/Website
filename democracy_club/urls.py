@@ -32,11 +32,11 @@ urlpatterns = [
         name="polling_one_pager"
         ),
     url(r'^projects/polling-stations/technical/$',
-        TemplateView.as_view(template_name="polling-stations/technical.html"),
+        RedirectView.as_view(url=reverse_lazy("polling_data_upload")),
         name="polling_technical_explainer"
         ),
     url(r'^projects/polling-stations/faqs/$',
-        TemplateView.as_view(template_name="polling-stations/faqs.html"),
+        RedirectView.as_view(url=reverse_lazy("polling_one_pager")),
         name="polling_faqs"
         ),
     url(r'^projects/polling-stations/embed/$',
