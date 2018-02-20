@@ -51,7 +51,7 @@ urlpatterns = [
         RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
         ),
     url(r'^projects/election-ids/reference/$',
-        TemplateView.as_view(template_name="election-ids/reference.html"),
+        RedirectView.as_view(url="https://elections.democracyclub.org.uk/reference_definition"),
         name="election_ids_reference"
         ),
     url(r'^projects/election-ids/$',
