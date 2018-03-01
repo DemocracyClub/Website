@@ -3,7 +3,6 @@ omit =
     */tests/*
     */apps.py
     */migrations/*
-    */migrations/*
     democracy_club/wsgi.py
     */lib/python3.4/site-packages/*
     src/*
