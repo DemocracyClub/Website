@@ -110,7 +110,6 @@ PROJECT_APPS = (
     'typogrify',
     'django_markdown',
     'research',
-    'authorities',
     'report_2016',
     'report_2017',
     'wheredoivote_user_feedback',
