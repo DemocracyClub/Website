@@ -1,0 +1,10 @@
+{% load dc_forms %}
+{% if not messages %}
+  <form id="mailing_list_form" method="post"
+    action="{% url 'dc_signup_form:mailing_list_signup_view' %}?{{ request.META.QUERY_STRING }}">
+    <div class="form-group">
+      {{ mailing_list_form|dc_form }}
+    </div>
+    <button type="submit" class="button">Join us</button>
+  </form>
+{% endif %}
