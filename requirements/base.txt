@@ -6,25 +6,27 @@ git+https://github.com/DemocracyClub/dc_signup_form.git@2.0.0
 -e git+https://github.com/DemocracyClub/dc_base_theme.git@0.3.6#egg=dc_base_theme
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
-git+https://github.com/mysociety/django-pipeline-csscompressor.git
 git+https://github.com/chrisdrackett/django-typogrify.git
-beautifulsoup4
+beautifulsoup4==4.6.0
 django-allauth==0.24.1
-django-braces
+django-braces==1.12.0
 django-cors-headers==1.1.0
 django-extensions==1.7.6
 django-localflavor==1.1
 django-markdown-deux==1.0.5
 django-model-utils==2.3.1
 django-ratelimit==0.6.0
-Django>=1.10,<1.11
+Django==1.10.8  # pyup: >=1.11,<2.0
 djangorestframework==3.5.4
 gocardless_pro==1.1.0
 jsonfield==1.0.3
 markdown==2.6.2
-Pillow
+Pillow==4.3.0
 plotly==1.9.10
 psycopg2-binary==2.7.4
 
 sorl-thumbnail==12.3
 
+
+django-storages==1.6.5
+libsass==0.13.7
