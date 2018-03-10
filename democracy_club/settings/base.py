@@ -46,15 +46,10 @@ USE_TZ = True
 MEDIA_ROOT = root('assets', 'uploads')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = root('static')
+STATIC_ROOT = root('static_files')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     root('assets'),
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 SECRET_KEY = 'CHANGE THIS!!!'
@@ -133,6 +128,7 @@ INSTALLED_APPS += ALLAUTH_APPS
 
 from dc_theme.settings import get_pipeline_settings
 from dc_theme.settings import STATICFILES_FINDERS  # noqa
+from dc_theme.settings import SASS_INCLUDE_PATHS  # noqa
 
 
 PIPELINE = get_pipeline_settings(
