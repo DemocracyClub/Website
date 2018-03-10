@@ -212,12 +212,6 @@ LOGIN_REDIRECT_URL = "/everyelection/"
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-# .local.py overrides all the common settings.
-try:
-    from .local import *  # noqa
-except ImportError:
-    pass
-
 
 # importing test settings file if necessary (TODO could be done better)
 if len(sys.argv) > 1 and 'test' in sys.argv[1]:
@@ -261,3 +255,13 @@ BACKLOG_TRELLO_BOARD_ID = "O00ATMzS"
 BACKLOG_TRELLO_DEFAULT_LIST_ID = "58bd618abc9a825bd64b5d8f"
 
 
+
+# .local.py overrides all the common settings.
+import os
+try:
+    if os.environ.get('SERVERTYPE', None) == 'AWS Lambda':
+        from .zappa import *  # noqa
+    else:
+        from .local import *  # noqa
+except ImportError:
+    pass
