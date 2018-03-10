@@ -1,0 +1,45 @@
+{
+    "dev": {
+        "aws_region": "eu-west-1",
+        "domain": "staging.democracyclub.org.uk",
+        "memory_size": 1536,
+        "keep_warm": false,
+        "django_settings": "democracy_club.settings.zappa",
+        "profile_name": "dc",
+        "project_name": "democracy-club",
+        "runtime": "python3.6",
+        "exclude": [
+            "boto3*",
+            "*.pyc",
+            "__pycache__",
+            "botocore*",
+            "*.gz",
+            "*.rar",
+            "*.log",
+            "*.csv",
+            "static_files",
+            "*.svg",
+            "sphinx",
+            "babel",
+            "pygments",
+            "faker",
+            "IPython",
+            "bower_components",
+            "foundation-sites"
+        ],
+        "s3_bucket": "dc-website-test-dev",
+        "remote_env": "s3://zappa-electionleaflets-eu-west-1/zapper-dc-website-stage.json",
+        "extra_permissions": [
+            {
+                "Effect": "Allow",
+                "Action": ["s3:*"],
+                "Resource": "arn:aws:s3:::static.dev.democracyclub.org.uk"
+            }
+        ],
+        "timeout_seconds": 300,
+        "events": [{
+            "function": "zappa_commands.backlog_import_from_trello",
+            "expression": "rate(10 minutes)"
+        }]
+    }
+}
