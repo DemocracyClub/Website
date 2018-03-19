@@ -12,3 +12,10 @@ header, main, footer {
 main .container > article {
     @extend .site-wrapper__body-text;
 }
+
+// TODO undo this when we update the design – this undoes the base theme
+// 0.3.6 style
+.container {
+  box-sizing: border-box;
+  overflow:visible;
+}
