@@ -22,12 +22,6 @@ blockquote {
   display: block;
 }
 
-table {
-  margin: auto;
-}
-tr {
-  background-color: #EEE;
-}
 </style>
 {% endblock %}
 
@@ -47,12 +41,28 @@ From introducing the form until close of polls on 8th June, we served 480,000 un
 
 <table>
     <thead>
-        <tr><th>Found useful</th><th>Number</th><th>Percent</th></tr>
+      <tr>
+        <th>Found useful</th>
+        <th class="number">Number</th>
+        <th class="number">Percent</th>
+      </tr>
     </thead>
     <tbody>
-        <tr><td>Yes</td><td style="text-align:right">17,197</td><td style="text-align:right">93.49%</td></tr>
-        <tr><td>No</td><td style="text-align:right">1,197</td><td style="text-align:right">6.51%</td></tr>
-        <tr><td>&nbsp;</td><td style="text-align:right">18,394</td><td>&nbsp;</td></tr>
+      <tr>
+        <td>Yes</td>
+        <td class="number">17,197</td>
+        <td class="number">93.49%</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td class="number">1,197</td>
+        <td class="number">6.51%</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td class="number">18,394</td>
+        <td class="number">&nbsp;</td>
+      </tr>
     </tbody>
 </table>
 
