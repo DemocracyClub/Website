@@ -30,3 +30,9 @@
 
 // Utilities
 @import 'sass/utilities/_responsive-video';
+
+// TODO undo this when we update the design – this undoes the base theme
+// 0.3.6 style
+body {
+  background-color:#FFF;
+}
