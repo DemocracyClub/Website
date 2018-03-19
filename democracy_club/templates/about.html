@@ -14,6 +14,20 @@ blockquote {
   border-left: .25rem solid #999;
   display: block;
 }
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 </style>
 {% endblock %}
 
@@ -36,8 +50,10 @@ We don’t have a view of ‘the perfect democracy’. Instead, we try to make c
 
 In this video from March 2016, Joe Mitchell — a co-ordinator at Democracy Club - explains how we try to do this.
 
+<div class="videoWrapper">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/efA1l9q7a1M" frameborder="0" allowfullscreen></iframe>
-    
+</div>
+
 ## What we do
 
 ### The club
