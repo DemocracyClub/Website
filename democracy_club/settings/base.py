@@ -128,15 +128,12 @@ INSTALLED_APPS += ALLAUTH_APPS
 
 from dc_theme.settings import get_pipeline_settings
 from dc_theme.settings import STATICFILES_FINDERS  # noqa
-from dc_theme.settings import SASS_INCLUDE_PATHS  # noqa
 
 
 PIPELINE = get_pipeline_settings(
     extra_css=['css/styles.scss', ],
     extra_js=['js/date.format.js', ],
 )
-PIPELINE['SASS_BINARY'] = 'sassc'
-
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 LOGGING = {
