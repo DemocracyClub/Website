@@ -1,35 +1,14 @@
-{% extends "base.html" %}
+{% extends "wheredoivote_user_feedback/report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
 
-{% block title %}Where Do I Vote - User Feedback{% endblock title %}
-
-{% block extra_page_css %}
-<style>
-blockquote {
-  font-style: italic;
-  font-size: 1.2em;
-  margin: 0;
-  color: #999;
-  padding: 0rem 1rem;
-  border-left: .25rem solid #999;
-  display: block;
-}
-
-.screenshot {
-  width: auto;
-  margin: auto;
-  display: block;
-}
-
-</style>
-{% endblock %}
+{% block title %}Where Do I Vote - User Feedback June 2017{% endblock title %}
 
 {% block content %}
 <article id="report">
 {% filter markdown %}
 
-# Where Do I Vote - User Feedback
+# Where Do I Vote - User Feedback June 2017
 
 ## Introduction
 
