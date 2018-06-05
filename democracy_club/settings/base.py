@@ -112,6 +112,7 @@ PROJECT_APPS = (
     'research',
     'report_2016',
     'report_2017',
+    'report_2018',
     'wheredoivote_user_feedback',
     'backlog',
     'mailing_list',
