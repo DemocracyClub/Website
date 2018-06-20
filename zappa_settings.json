@@ -36,9 +36,15 @@
             }
         ],
         "timeout_seconds": 300,
-        "events": [{
-            "function": "zappa_commands.backlog_import_from_trello",
-            "expression": "rate(10 minutes)"
-        }]
+        "events": [
+            {
+                "function": "zappa_commands.backlog_import_from_trello",
+                "expression": "rate(2 minutes)"
+            },
+            {
+                "function": "zappa_commands.sync_to_sendgrid",
+                "expression": "rate(2 hours)"
+            }
+        ]
     }
 }
