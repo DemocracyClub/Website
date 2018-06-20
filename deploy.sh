@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-# set -x
+set -e
 
 die () {
     echo >&2 "$@"
@@ -16,7 +15,11 @@ fi
 DEPLOY_ENV=$1
 [ $DEPLOY_ENV == "dev" ] || [ $DEPLOY_ENV == "prod" ] || die "Env not valid. Must be dev or prod"
 
+echo "Performing Django checks"
+FRAMEWORK="Zappa" python manage.py check
 
+echo "Running collectstatic locally to check for errors"
+FRAMEWORK="Zappa" python manage.py collectstatic --noinput
 
 echo "Deploying to $DEPLOY_ENV"
 
