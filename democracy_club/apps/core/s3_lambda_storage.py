@@ -38,6 +38,13 @@ class ReadOnlySourceFileSystemFinder(FileSystemFinder):
     """
 
     def list(self, ignore_patterns):
+        for origin_path, dest_path in settings.READ_ONLY_PATHS:
+            if dest_path.endswith('/'):
+                raise ValueError(
+                    "dest_path '{}' can't end with trailing /".format(
+                        dest_path)
+                )
+
         super_list = list(super(
             ReadOnlySourceFileSystemFinder, self).list(ignore_patterns))
 
@@ -50,6 +57,7 @@ class ReadOnlySourceFileSystemFinder(FileSystemFinder):
                     file_storage.location = new_location
 
         return super_list
+
 
 class MediaStorage(PipelineMixin, ManifestFilesMixin, S3Boto3Storage):
     """
@@ -77,6 +85,9 @@ class LambdaSASSCompiler(SASSCompiler):
     """
 
     def compile_file(self, infile, outfile, outdated=False, force=False):
+        for origin_path, dest_path in settings.READ_ONLY_PATHS:
+            if outfile.startswith(origin_path):
+                outfile = outfile.replace(origin_path, dest_path)
         import sass
         out_value = sass.compile(
             filename=infile,

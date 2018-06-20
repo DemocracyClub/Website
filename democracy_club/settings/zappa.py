@@ -20,7 +20,7 @@ DATABASES = {
     }
 }
 
-TMP_ASSETS_ROOT = "/tmp/assets_root/"
+TMP_ASSETS_ROOT = "/tmp/assets_root"
 STATIC_ROOT = '/tmp/static_root/'
 
 # Make the tmp static dirs whenever django is started

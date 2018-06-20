@@ -127,7 +127,10 @@ INSTALLED_APPS += PROJECT_APPS
 INSTALLED_APPS += ALLAUTH_APPS
 
 from dc_theme.settings import get_pipeline_settings
-from dc_theme.settings import STATICFILES_FINDERS  # noqa
+from dc_theme.settings import (
+    STATICFILES_FINDERS,
+    SASS_INCLUDE_PATHS,
+)  # noqa
 
 
 PIPELINE = get_pipeline_settings(
