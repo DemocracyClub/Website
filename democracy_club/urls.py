@@ -14,6 +14,8 @@ from core.views import HomeView
 from django.contrib import admin
 admin.autodiscover()
 
+handler500 = 'dc_theme.urls.dc_server_error'
+
 urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
