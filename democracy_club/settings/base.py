@@ -259,7 +259,7 @@ BACKLOG_TRELLO_DEFAULT_LIST_ID = "58bd618abc9a825bd64b5d8f"
 # .local.py overrides all the common settings.
 import os
 try:
-    if os.environ.get('SERVERTYPE', None) == 'AWS Lambda':
+    if os.environ.get('FRAMEWORK', None) == 'Zappa':
         from .zappa import *  # noqa
     else:
         from .local import *  # noqa

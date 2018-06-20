@@ -2,11 +2,12 @@ import os
 
 from .base import *  # noqa
 
-if os.environ.get('SERVERTYPE', None) == 'AWS Lambda':
-    GEOS_LIBRARY_PATH = '/var/task/libgeos_c.so'
 FORCE_SCRIPT_NAME = '/'
 
 ALLOWED_HOSTS = ['8yx8ogttjk.execute-api.eu-west-1.amazonaws.com']
+
+if os.environ.get('SERVERTYPE', None) == 'AWS Lambda':
+    GEOS_LIBRARY_PATH = '/var/task/libgeos_c.so'
 
 # Override the database name and user if needed
 DATABASES = {
