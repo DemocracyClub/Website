@@ -113,15 +113,6 @@
       {% endif %}
 
       <div class="media-card">
-        {% if post.hero %}
-        <div class="media-card__img">
-          <a href="{{ post.get_absolute_url }}">
-            {% thumbnail post.hero "300x300" crop="center" format="PNG" as im %}
-              <img src="{{ im.url }}">
-            {% endthumbnail %}
-          </a>
-        </div><!-- /.media-card -->
-        {% endif %}
         <div class="media-card__content">
             <h4 class="media-card__title">
                 <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
