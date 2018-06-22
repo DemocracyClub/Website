@@ -2,9 +2,15 @@ import os
 
 from .base import *  # noqa
 
+ZAPPA_STAGE = os.environ['STAGE']
+assert ZAPPA_STAGE in ('dev', 'prod')
+
 FORCE_SCRIPT_NAME = '/'
 
-ALLOWED_HOSTS = ['8yx8ogttjk.execute-api.eu-west-1.amazonaws.com']
+ALLOWED_HOSTS = [
+    '8yx8ogttjk.execute-api.eu-west-1.amazonaws.com',  # Dev
+    'qwhhmkhcfk.execute-api.eu-west-1.amazonaws.com',  # Prod
+]
 
 if os.environ.get('SERVERTYPE', None) == 'AWS Lambda':
     GEOS_LIBRARY_PATH = '/var/task/libgeos_c.so'
@@ -42,11 +48,16 @@ READ_ONLY_PATHS = (
 
 PIPELINE['COMPILERS'] = ('core.s3_lambda_storage.LambdaSASSCompiler', )   # noqa
 
-AWS_STORAGE_BUCKET_NAME = "static.dev.democracyclub.org.uk"
 AWS_S3_SECURE_URLS = True
 AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
-AWS_S3_CUSTOM_DOMAIN = "static-dev.democracyclub.org.uk"
 AWS_S3_USE_SSL = False
+
+if ZAPPA_STAGE == "dev":
+    AWS_STORAGE_BUCKET_NAME = "static.dev.democracyclub.org.uk"
+    AWS_S3_CUSTOM_DOMAIN = "static-dev.democracyclub.org.uk"
+else:
+    AWS_STORAGE_BUCKET_NAME = "static.democracyclub.org.uk"
+    AWS_S3_CUSTOM_DOMAIN = "static.democracyclub.org.uk"
 
 STATICFILES_LOCATION = 'static'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
@@ -56,7 +67,10 @@ MEDIAFILES_LOCATION = 'media'
 MEDIA_URL = "https://{}/{}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = 'core.s3_lambda_storage.MediaStorage'
 
-CSRF_TRUSTED_ORIGINS = ['stage.democracyclub.org.uk']
+CSRF_TRUSTED_ORIGINS = [
+    'stage.democracyclub.org.uk',
+    'democracyclub.org.uk',
+]
 
 DEBUG = False
 GOCARDLESS_ACCESS_TOKEN = os.environ.get('GOCARDLESS_ACCESS_TOKEN')

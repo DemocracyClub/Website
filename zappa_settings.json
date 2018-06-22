@@ -46,5 +46,18 @@
                 "expression": "rate(2 hours)"
             }
         ]
+    },
+    "prod": {
+        "extends": "dev",
+        "domain": "democracyclub.org.uk",
+        "s3_bucket": "dc-website-prod",
+        "extra_permissions": [
+            {
+                "Effect": "Allow",
+                "Action": ["s3:*"],
+                "Resource": "arn:aws:s3:::static.democracyclub.org.uk"
+            }
+        ]
     }
+
 }

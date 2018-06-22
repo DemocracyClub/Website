@@ -14,6 +14,7 @@ fi
 
 DEPLOY_ENV=$1
 [ $DEPLOY_ENV == "dev" ] || [ $DEPLOY_ENV == "prod" ] || die "Env not valid. Must be dev or prod"
+export STAGE=$1
 
 echo "Performing Django checks"
 FRAMEWORK="Zappa" python manage.py check
@@ -28,7 +29,7 @@ echo "Deploying to $DEPLOY_ENV"
 mkdir -p `echo $VIRTUAL_ENV `/lib/python3.6/site-packages/{pillow,libsass}
 
 # Update Zappa
-zappa update
+zappa update $DEPLOY_ENV
 
 # Migrate the Django DB
 zappa manage $DEPLOY_ENV "migrate --noinput"
