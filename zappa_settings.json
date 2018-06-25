@@ -22,6 +22,7 @@
             "faker",
             "foundation-sites"
             "IPython",
+            "local.py",
             "pygments",
             "sphinx",
             "static_files",
