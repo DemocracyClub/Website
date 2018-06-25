@@ -1,0 +1,12 @@
+{% load markdown_deux_tags %}
+{% load thumbnail %}
+{% load typogrify_tags %}
+
+{% if post.hero %}
+  {% thumbnail post.hero "690" as im %}
+      <img src="{{ im.url }}">
+  {% endthumbnail %}
+{% endif %}
+
+
+{{ obj.rendered|safe|typogrify }}

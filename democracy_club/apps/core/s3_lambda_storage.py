@@ -59,7 +59,7 @@ class ReadOnlySourceFileSystemFinder(FileSystemFinder):
         return super_list
 
 
-class MediaStorage(PipelineMixin, ManifestFilesMixin, S3Boto3Storage):
+class MediaStorage(S3Boto3Storage):
     """
     Store media files at MEDIAFILES_LOCATION, post-process with pipeline
     and then create manifest files for them.
