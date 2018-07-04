@@ -1,3 +1,4 @@
 -r base.txt
 
-gunicorn
+gunicorn==19.7.1
+zappa==0.46.1

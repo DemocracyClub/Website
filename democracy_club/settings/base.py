@@ -46,15 +46,10 @@ USE_TZ = True
 MEDIA_ROOT = root('assets', 'uploads')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = root('static')
+STATIC_ROOT = root('static_files')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     root('assets'),
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 SECRET_KEY = 'CHANGE THIS!!!'
@@ -132,15 +127,16 @@ INSTALLED_APPS += PROJECT_APPS
 INSTALLED_APPS += ALLAUTH_APPS
 
 from dc_theme.settings import get_pipeline_settings
-from dc_theme.settings import STATICFILES_FINDERS  # noqa
+from dc_theme.settings import (
+    STATICFILES_FINDERS,
+    SASS_INCLUDE_PATHS,
+)  # noqa
 
 
 PIPELINE = get_pipeline_settings(
     extra_css=['css/styles.scss', ],
     extra_js=['js/date.format.js', ],
 )
-PIPELINE['SASS_BINARY'] = 'sassc'
-
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 LOGGING = {
@@ -216,12 +212,6 @@ LOGIN_REDIRECT_URL = "/everyelection/"
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-# .local.py overrides all the common settings.
-try:
-    from .local import *  # noqa
-except ImportError:
-    pass
-
 
 # importing test settings file if necessary (TODO could be done better)
 if len(sys.argv) > 1 and 'test' in sys.argv[1]:
@@ -265,3 +255,13 @@ BACKLOG_TRELLO_BOARD_ID = "O00ATMzS"
 BACKLOG_TRELLO_DEFAULT_LIST_ID = "58bd618abc9a825bd64b5d8f"
 
 
+
+# .local.py overrides all the common settings.
+import os
+try:
+    if os.environ.get('FRAMEWORK', None) == 'Zappa':
+        from .zappa import *  # noqa
+    else:
+        from .local import *  # noqa
+except ImportError:
+    pass

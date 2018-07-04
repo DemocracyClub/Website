@@ -69,3 +69,5 @@ democracy_club/assets-src/vendor/
 .sass-cache/
 democracy_club/static
 democracy_club/assets/uploads
+
+.cache

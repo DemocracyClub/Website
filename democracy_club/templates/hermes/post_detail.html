@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load typogrify_tags %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block title %}{{ post.subject }} | {{ site_title }}{% endblock title %}
 
@@ -8,7 +9,9 @@
     <meta property="og:title" content="{{ post.subject }}" />
     <meta property="og:description" content="{{ post.summary }}" />
     <meta property="og:type"   content="article" />
-    <meta property="og:image" content="https://democracyclub.org.uk{{ MEDIA_URL }}{{ post.hero }}" />
+    {% thumbnail post.hero "690" as im %}
+      <meta property="og:image" content="{{ im.url }}" />
+    {% endthumbnail %}
 {% endblock og_tags %}
 
 {% block page_content %}
@@ -42,7 +45,9 @@
             </div>
         </header>
         {% if post.hero %}
-        <img src="{{ MEDIA_URL }}{{ post.hero }}">
+          {% thumbnail post.hero "690" as im %}
+              <img src="{{ im.url }}">
+          {% endthumbnail %}
         {% endif %}
         <div class="entry">{{ post.rendered|safe|typogrify }}</div>
 

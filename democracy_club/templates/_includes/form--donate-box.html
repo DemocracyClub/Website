@@ -11,7 +11,6 @@
     </div>
     <div class="donate-box__form">
       <form method="post" class="donate_form inline_radios">
-        {% csrf_token %}
         {{ request.donation_form.errors }}
         {{ request.donation_form|dc_form }}
         <button type="submit" class="buttonNew">Next</button>
