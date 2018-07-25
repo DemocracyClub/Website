@@ -1,5 +1,6 @@
 {% extends "polling-stations/polling_stations_base.html" %}
 {% load django_markdown %}
+{% load staticfiles %}
 
 
 {% block page_title %}
@@ -11,7 +12,7 @@
 
 <h3>All you need to help people in your area to find their polling station.</h3>
 <figure>
-<img src="/static/images/where-on-phone.jpg" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
+<img src="{% static 'images/where-on-phone.jpg' %}" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
 <figcaption>A screenshot from Democracy Club's WhereDoIVote.co.uk service</figcaption>
 </figure>
 
