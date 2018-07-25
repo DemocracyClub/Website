@@ -27,7 +27,10 @@ region = eu-west-2
 
 Zappa requires an active, local virtualenv. It's best to make one for production and one for local dev. A production env will be smaller and wont deploy all the testing packages.
 
-To deploy, run `deploy.sh [dev|prod]`
+To deploy:
+
+* `export AWS_PROFILE=dc`
+* `deploy.sh [dev|prod]`
 
 This will:
 
@@ -35,6 +38,7 @@ This will:
 2. runs `zappa update`
 3. Migrates Django and collects static
 
+If the build fails, run `zappa tail [dev|prod] --since SINCE` to [tail the log](https://github.com/Miserlou/Zappa#tailing-logs) and debug the build.
 
 ## Cron / scheduling / events
 
