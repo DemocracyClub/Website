@@ -1,14 +1,64 @@
+import mimetypes
 import os
 from distutils.dir_util import copy_tree
 
 from pipeline.compilers.sass import SASSCompiler
 
 from django.conf import settings
+from django.core.files.base import File
 from storages.backends.s3boto3 import S3Boto3Storage
 from django.contrib.staticfiles.storage import ManifestFilesMixin
 from pipeline.storage import PipelineMixin
 
 from django.contrib.staticfiles.finders import FileSystemFinder
+
+
+class PatchedS3Boto3Storage(S3Boto3Storage):
+
+    """
+    Note: We need to patch S3Boto3Storage
+    to apply a fix which stops botocore from throwing
+
+    Invalid type for parameter ContentType, value: b'text/javascript',
+    type: <class 'bytes'>, valid types: <class 'str'>: ParamValidationError
+
+    Unfortunately this lives in the middle of quite a long method
+    so we've got a big old chunk of copy+pasted code here :(
+
+    Also we need to be really careful we don't upgrade the
+    django-storages package while this monkey-patch is in place
+    as this may yield unexpected behaviour.
+    """
+
+    def _save(self, name, content):
+        cleaned_name = self._clean_name(name)
+        name = self._normalize_name(cleaned_name)
+        parameters = self.object_parameters.copy()
+        _type, encoding = mimetypes.guess_type(name)
+        content_type = getattr(content, 'content_type', None)
+        content_type = content_type or _type or self.default_content_type
+        if type(content_type) == bytes:
+            content_type = content_type.decode('utf8')
+
+        # setting the content_type in the key object is not enough.
+        parameters.update({'ContentType': content_type})
+
+        if self.gzip and content_type in self.gzip_content_types:
+            content = self._compress_content(content)
+            parameters.update({'ContentEncoding': 'gzip'})
+        elif encoding:
+            parameters.update({'ContentEncoding': encoding})
+
+        encoded_name = self._encode_name(name)
+        obj = self.bucket.Object(encoded_name)
+        if self.preload_metadata:
+            self._entries[encoded_name] = obj
+
+        if isinstance(content, File):
+            content = content.file
+
+        self._save_content(obj, content, parameters=parameters)
+        return cleaned_name
 
 
 class ReadOnlySourceFileSystemFinder(FileSystemFinder):
@@ -59,7 +109,7 @@ class ReadOnlySourceFileSystemFinder(FileSystemFinder):
         return super_list
 
 
-class MediaStorage(S3Boto3Storage):
+class MediaStorage(PatchedS3Boto3Storage):
     """
     Store media files at MEDIAFILES_LOCATION, post-process with pipeline
     and then create manifest files for them.
@@ -67,7 +117,7 @@ class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
 
 
-class StaticStorage(PipelineMixin, ManifestFilesMixin, S3Boto3Storage):
+class StaticStorage(PipelineMixin, ManifestFilesMixin, PatchedS3Boto3Storage):
     """
     Store static files at STATICFILES_LOCATION, post-process with pipeline
     and then create manifest files for them.
