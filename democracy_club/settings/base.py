@@ -99,6 +99,7 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = (
+    'core',
     'dc_members',
     'hermes',
     'typogrify',
