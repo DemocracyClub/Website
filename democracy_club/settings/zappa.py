@@ -48,6 +48,7 @@ PIPELINE['COMPILERS'] = ('core.s3_lambda_storage.LambdaSASSCompiler', )   # noqa
 AWS_S3_SECURE_URLS = True
 AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
 AWS_S3_USE_SSL = False
+AWS_S3_REGION_NAME = "eu-west-2"
 
 if ZAPPA_STAGE == "dev":
     AWS_STORAGE_BUCKET_NAME = "static.dev.democracyclub.org.uk"
