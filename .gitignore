@@ -71,3 +71,5 @@ democracy_club/static
 democracy_club/assets/uploads
 
 .cache
+.pytest_cache/
+
