@@ -6,7 +6,8 @@
   <nav class="inline_page_nav">
     <ul>
       <li class="{% if request.path|slice:"-7:" == "/about/" %} nav-site__item--active{% endif %}"><a href="{% url "about" %}">About</a></li> ·
-      <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">The Team</a></li>
+      <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">The Team</a></li> ·
+      <li class="{% if request.path|slice:"-6:" == "/jobs/" %} nav-site__item--active{% endif %}"><a href="{% url "jobs" %}">Jobs</a></li>
     </ul>
   </nav>
 

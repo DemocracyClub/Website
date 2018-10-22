@@ -28,9 +28,12 @@ urlpatterns = [
     url(r'^thanks/finished$',
         TemplateView.as_view(template_name="thanks_finished.html")),
 
+
     # About URLs
     url(r'^about/$',
         TemplateView.as_view(template_name="about/index.html"), name="about"),
+    url(r'^about/jobs/$',
+        TemplateView.as_view(template_name="about/jobs.html"), name="jobs"),
     url(r'^about/team/$',
         TemplateView.as_view(template_name="about/team.html"), name="team"),
 
