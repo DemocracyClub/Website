@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="site-wrapper__body-text">
+  {% block page_heading %}{% endblock page_heading %}
+
+  <nav class="inline_page_nav">
+    <ul>
+      <li class="{% if request.path|slice:"-7:" == "/about/" %} nav-site__item--active{% endif %}"><a href="{% url "about" %}">About</a></li> ·
+      <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">The Team</a></li>
+    </ul>
+  </nav>
+
+  {% block main_content %}
+
+  {% endblock main_content %}
+
+
+</div>
+
+{% endblock %}

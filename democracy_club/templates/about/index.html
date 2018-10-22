@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "about/about_base.html" %}
 {% load django_markdown %}
 
 {% block title %}About | {{ block.super }}{% endblock title %}
@@ -31,12 +31,11 @@ blockquote {
 </style>
 {% endblock %}
 
-{% block content %}
-<h1>About</h1>
+{% block page_heading %}<h1>About</h1>{% endblock page_heading %}
 
-<div class="fukol-grid">
+{% block main_content %}
 
-  <div class="fukol-grid__col fukol-grid__col--60-70">
+<article>
 
 {% filter markdown %}
 
@@ -124,39 +123,7 @@ Our data has reached over 12m people. Here’s what some of them say:
 - The Electoral Commission (2017) *[“Partnerships”](https://www.electoralcommission.org.uk/find-information-by-subject/electoral-registration/2017-uk-general-election-campaign/partnerships)*
 - TechPresident (2015) *[“Democracy Club Finally Lets Brits Know Who Is Running For Parliament”](http://techpresident.com/news/25519/democracy-club-brings-transparency-uks-obscure-election-procedures)*
 
-## Who we are
 
-We’re a 10,000 strong digital community who work online via Slack and Trello. Club members put in hundreds of hours of work to help build the databases that help inform voters. They sometimes get points for doing so: here's the [leaderboard](https://candidates.democracyclub.org.uk/leaderboard).
-
-The club is supported by a core team of three coordinators:
-
-![From left: Sym, Joe and Chris — Democracy Club coordinators](https://static.democracyclub.org.uk/media/hermes/heroes/now-we-are-three_hero.jpg "Sym, Joe and Chris")
-
-
-**Sym Roe ([@symroe](https://twitter.com/symroe))**
-
-Sym has 15 years experience in open data, government and technology, for folks like Government Digital Service, Ministry of Justice and FarmSubsidy.org. He has never knowingly set foot in a school. He lives in Stroud and has still not been a candidate on the Great British Bake Off.
-
-**Joe Mitchell ([@j0e_m](https://twitter.com/j0e_m))**
-
-Joe has a decade of experience in advocacy, communications and marketing, including with the UK Civil Service and United Nations. He went to many universities. He lives in Bristol, even though he is probably not cool enough to do so.
-
-**Chris Shaw**
-
-Chris has over 10 years of experience in software development and data wrangling in the research and education sectors. He studied Computer Science in Swansea, where he now lives. He started working on Democracy Club projects as a volunteer. We haven't worked out how to make him stop yet.
-
-The core team is overseen by an experienced board of directors:
-
-- Alice Casey
-- Alison Walters
-- Ian Watt
-- Mevan Babakar
-- Olly Benson
-- Rebecca Eligon
-- Rebecca Kemp
-- Sarah Hartley
-
-[Read about the board here.](https://democracyclub.org.uk/blog/2017/12/01/weve-got-board/)
 
 ## Who funds us
 
@@ -173,13 +140,5 @@ We also seek institutional funding. We're grateful to our existing and previous 
 
 {% endfilter %}
 
-  </div><!-- ./fukol-grid__col -->
-  <div class="fukol-grid__col fukol-grid__col--40-30">
-
-    {% include "_includes/form--donate-box.html" %}
-
-  </div><!-- /.fukol-grid__col -->
-</div><!-- /.fukol-grid -->
-
-
-{% endblock content %}
+</article>
+{% endblock main_content %}
