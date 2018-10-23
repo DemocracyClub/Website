@@ -1,0 +1,43 @@
+{% extends "about/about_base.html" %}
+{% load markdown_deux_tags %}
+
+
+{% block page_heading %}<h1>The Team</h1>{% endblock page_heading %}
+
+{% block main_content %}
+{% filter markdown %}
+
+We’re a 10,000 strong digital community who work online via Slack and Trello. Club members put in hundreds of hours of work to help build the databases that help inform voters. They sometimes get points for doing so: here's the [leaderboard](https://candidates.democracyclub.org.uk/leaderboard).
+
+The club is supported by a core team of three coordinators:
+
+![From left: Sym, Joe and Chris — Democracy Club coordinators](https://static.democracyclub.org.uk/media/hermes/heroes/now-we-are-three_hero.jpg "Sym, Joe and Chris")
+
+
+**Sym Roe ([@symroe](https://twitter.com/symroe))**
+
+Sym has 15 years experience in open data, government and technology, for folks like Government Digital Service, Ministry of Justice and FarmSubsidy.org. He has never knowingly set foot in a school. He lives in Stroud and has still not been a candidate on the Great British Bake Off.
+
+**Joe Mitchell ([@j0e_m](https://twitter.com/j0e_m))**
+
+Joe has a decade of experience in advocacy, communications and marketing, including with the UK Civil Service and United Nations. He went to many universities. He lives in Bristol, even though he is probably not cool enough to do so.
+
+**Chris Shaw**
+
+Chris has over 10 years of experience in software development and data wrangling in the research and education sectors. He studied Computer Science in Swansea, where he now lives. He started working on Democracy Club projects as a volunteer. We haven't worked out how to make him stop yet.
+
+The core team is overseen by an experienced board of directors:
+
+- Alice Casey
+- Alison Walters
+- Ian Watt
+- Mevan Babakar
+- Olly Benson
+- Rebecca Eligon
+- Rebecca Kemp
+- Sarah Hartley
+
+[Read about the board here.](https://democracyclub.org.uk/blog/2017/12/01/weve-got-board/)
+
+{% endfilter %}
+{% endblock %}

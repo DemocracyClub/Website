@@ -27,8 +27,17 @@ urlpatterns = [
         TemplateView.as_view(template_name="thanks.html")),
     url(r'^thanks/finished$',
         TemplateView.as_view(template_name="thanks_finished.html")),
+
+
+    # About URLs
     url(r'^about/$',
-        TemplateView.as_view(template_name="about.html"), name="about"),
+        TemplateView.as_view(template_name="about/index.html"), name="about"),
+    url(r'^about/jobs/$',
+        TemplateView.as_view(template_name="about/jobs.html"), name="jobs"),
+    url(r'^about/team/$',
+        TemplateView.as_view(template_name="about/team.html"), name="team"),
+
+
     url(r'^privacy/$',
         TemplateView.as_view(template_name="privacy.html"), name="privacy"),
     url(r'^code-of-conduct/$',
