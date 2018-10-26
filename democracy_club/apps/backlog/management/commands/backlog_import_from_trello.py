@@ -17,7 +17,7 @@ class Command(BaseCommand):
         self.token = settings.BACKLOG_TRELLO_TOKEN
         self.base_url = "https://api.trello.com/1"
         self.custom_field_plugin_id = "56d5e249a98895a9797bebb9"
-        url_fmt = "{}/lists/{}/cards?key={}&token={}"
+        url_fmt = "{}/lists/{}/cards?customFieldItems=true&key={}&token={}"
         url = url_fmt.format(self.base_url, self.list_id, self.key, self.token)
         list_data = requests.get(url).json()
 
@@ -25,26 +25,21 @@ class Command(BaseCommand):
         self.seen_ids = set()
 
         self.setup_board_info()
-
         for card_dict in list_data:
             self.import_card(card_dict)
 
         self.clean_up()
 
     def setup_board_info(self):
-        req = requests.get("{}/boards/{}/pluginData?key={}&token={}".format(
+        req = requests.get("{}/boards/{}/customFields?key={}&token={}".format(
             self.base_url,
             settings.BACKLOG_TRELLO_BOARD_ID,
             self.key,
             self.token,
         ))
-        self.plugin_field_map = {}
-        for plugin in req.json():
-            if plugin['idPlugin'] == self.custom_field_plugin_id:
-                pluginData_values = json.loads(plugin['value'])
-                for field in pluginData_values['fields']:
-                    for o in field.get('o', []):
-                        self.plugin_field_map[o['id']] = o['value']
+        self.customfield_map = {}
+        for field in req.json():
+            self.customfield_map[field['id']] = field
 
     def import_card(self, card_dict):
         labels = []
@@ -71,19 +66,18 @@ class Command(BaseCommand):
         self.seen_ids.add(card.pk)
         card.labels.add(*labels)
 
-        card_detail_url = "{}/cards/{}/pluginData?key={}&token={}".format(
-            self.base_url, card.pk, self.key, self.token
-        )
-        card_detail_dict = requests.get(card_detail_url).json()
-        for plugin in card_detail_dict:
-            if plugin['idPlugin'] == self.custom_field_plugin_id:
-                # Custom fields plugin
-                pluginData_values = json.loads(plugin['value'])
-                for key, value in pluginData_values['fields'].items():
-                    if key == "O00ATMzS-tWOnUg":
-                        card.cta_url = value
-                    if key == "O00ATMzS-jUK8AT":
-                        card.time_required = self.plugin_field_map.get(value)
+        for custom_field_value in card_dict['customFieldItems']:
+            for field_id, field in self.customfield_map.items():
+                if field['id'] == custom_field_value['idCustomField']:
+                    if field['id'] == "5a986717d6afbd6de1d24563":
+                        # CTA_URL
+                        card.cta_url = custom_field_value['value']['text']
+                    if field['id'] == "5a986717d6afbd6de1d2455c":
+                        # Time Required
+                        for option in field['options']:
+                            if option["id"] == custom_field_value['idValue']:
+                                card.time_required = option['value']['text']
+
         card.save()
 
     def clean_up(self):
