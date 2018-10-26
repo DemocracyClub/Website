@@ -32,8 +32,8 @@ class Command(BaseCommand):
         self.clean_up()
 
     def setup_board_info(self):
-        req = requests.get("{}/boards/{}/pluginData".format(
-            self.base_url, settings.BACKLOG_TRELLO_BOARD_ID
+        req = requests.get("{}/boards/{}/pluginData?key={}&token={}".format(
+            self.base_url, settings.BACKLOG_TRELLO_BOARD_ID, self.key, self.token
         ))
         self.plugin_field_map = {}
         for plugin in req.json():

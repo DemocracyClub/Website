@@ -1,0 +1,94 @@
+{% extends "projects/projects_base.html" %}
+
+{% block page_heading %}
+<h1>Projects</h1>
+{% endblock %}
+
+{% block main_content %}
+  <div class="card feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--wheredoivote">
+    <h3 class="feature-card__title" itemprop="name"><a href="https://wheredoivote.co.uk/" itemprop="url" target="_blank">Where Do I Vote? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
+    <div class="feature-card__body">
+      <div class="feature-card__copy">
+        <p>Find out where to vote. Two million uses in 2017.</p>
+      </div>
+    </div>
+    <div class="feature-card__ctrl">
+      <a href="https://wheredoivote.co.uk/" class="feature-card__link buttonNew buttonNew--outline">Try it now</a>
+      <a href="{% url "projects:polling_one_pager" %}" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
+      <a href="{% url "projects:polling_data_upload" %}" class="feature-card__link buttonNew buttonNew--outline">Add your council area</a>
+      <a href="https://wheredoivote.co.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+    </div>
+  </div><!-- /.feature-card -->
+
+  <div class="card">
+    <h3><a href="{% url 'projects:wcivf' %}">Who Can I Vote For?</a></h3>
+    <p>Find out about elections and candidates in your area. Over 1.5m users so far.</p>
+  </div><!-- /.feature-card -->
+
+  <div class="card">
+    <h3><a href="https://candidates.democracyclub.org.uk/">Candidates data</a></h3>
+    <p>The UK's election candidates database. Available via an API or CSV.</p>
+    <div class="feature-card__ctrl">
+      <a href="https://candidates.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Add or update data</a>
+      <a href="https://candidates.democracyclub.org.uk/help/api" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://elections.democracyclub.org.uk" itemprop="url">Every Election</a></h3>
+    <p>The crowdsourced database of UK elections.</p>
+    <div class="feature-card__ctrl">
+      <a href="https://elections.democracyclub.org.uk" class="feature-card__link buttonNew buttonNew--outline">Learn More</a>
+      <a href="https://elections.democracyclub.org.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
+      <a href="https://elections.democracyclub.org.uk/id_creator/date_known/" class="feature-card__link buttonNew buttonNew--outline">Add an election</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><a href="/projects/election-ids/" itemprop="url">Election Identifiers</a></h3>
+    <p>We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters..</p>
+    <div class="feature-card__ctrl">
+      <a href="/projects/election-ids/" class="feature-card__link buttonNew buttonNew--outline">Learn More</a>
+      <a href="https://elections.democracyclub.org.uk/reference_definition" class="feature-card__link buttonNew buttonNew--outline">Reference Definition</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://electionleaflets.org/">Election Leaflets</a></h3>
+        <p>Photograph the leaflets that get put through your door and share them with the world.<p>
+    <div class="feature-card__ctrl">
+      <a href="https://electionleaflets.org/leaflets/add/front/" class="feature-card__link buttonNew buttonNew--outline">Add a leaflet</a>
+      <a href="https://electionleaflets.org/" class="feature-card__link buttonNew buttonNew--outline">Learn more</a>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h3><a href="http://cv.democracyclub.org.uk/">Candidates' CVs</a></h3>
+    <p>MPCV helped voters read (or request to see) their candidates' CVs to help inform their vote.</p>
+    <div class="feature-card__ctrl">
+      <a href="http://cv.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Read their CVs</a>
+    </div>
+  </div>
+
+
+  <h2>Past Projects</h2>
+
+
+  <div class="card">
+    <h3>Election Mentions</a></h3>
+        <p>Presented news coverage on candidates to help inform voters.</p>
+    <div class="feature-card__ctrl">
+      <a href="http://electionmentions.com" class="feature-card__link buttonNew buttonNew--outline">Start reading</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>MeetYourNextMP</h3>
+    <p>MeetYourNextMP was a project run in 2015 to crowdsource a list of public hustings events (where candidates take questions from a local audience).</p>
+    <div class="feature-card__ctrl">
+      <a itemprop="url" href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="feature-card__link buttonNew buttonNew--outline">Read more about it</a>
+    </div>
+  </div>
+
+{% endblock main_content %}
