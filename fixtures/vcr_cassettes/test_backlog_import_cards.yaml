@@ -5,40 +5,47 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      User-Agent: [python-requests/2.13.0]
+      User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: https://api.trello.com/1/lists/58bd618abc9a825bd64b5d8f/cards
+    uri: https://api.trello.com/1/lists/58bd618abc9a825bd64b5d8f/cards?customFieldItems=true
   response:
     body:
       string: !!binary |
-        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
+        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
     headers:
       Access-Control-Allow-Headers: ['Authorization, Accept, Content-Type']
       Access-Control-Allow-Methods: ['GET, PUT, POST, DELETE']
@@ -46,20 +53,34 @@ interactions:
       Cache-Control: ['max-age=0, must-revalidate, no-cache, no-store']
       Connection: [keep-alive]
       Content-Encoding: [gzip]
-      Content-Length: ['1579']
+      Content-Length: ['1993']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 13:40:26 GMT']
-      ETag: [W/"F6tB3K/WqsIDqCWOERnV3Q=="]
+      Date: ['Fri, 26 Oct 2018 15:56:40 GMT']
+      ETag: [W/"1a24-ZuF6YyDkptS5GxOYoauYFaoB1uI"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=75a980a862b4b86f4dbcd09bb4b11552add8999d3e6a2bfdcb944fea7dfcdd04;
-          Path=/; Expires=Sat, 11 Mar 2017 13:40:26 GMT; Secure']
-      Strict-Transport-Security: [max-age=15768000]
+      Pragma: [no-cache]
+      Referrer-Policy: [strict-origin-when-cross-origin]
+      Set-Cookie: ['dsc=bde9d4e2f4b70f41761c3a8ea72aad3d26783abe018c094e8658359cf7760811;
+          Path=/; Expires=Mon, 29 Oct 2018 15:56:40 GMT; Secure']
+      Strict-Transport-Security: [max-age=15552000]
+      Surrogate-Control: [no-store]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
-      X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488980426851']
+      X-DNS-Prefetch-Control: ['off']
+      X-Download-Options: [noopen]
+      X-Frame-Options: [DENY]
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-KEY-MAX: ['300']
+      X-RATE-LIMIT-API-KEY-REMAINING: ['299']
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-TOKEN-MAX: ['100']
+      X-RATE-LIMIT-API-TOKEN-REMAINING: ['99']
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-MEMBER-MAX: ['200']
+      X-RATE-LIMIT-MEMBER-REMAINING: ['199']
+      X-Server-Time: ['1540569400059']
       X-Trello-Environment: [Production]
-      X-Trello-Version: [1.906.0]
+      X-Trello-Version: [1.1427.0]
       X-XSS-Protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
@@ -68,34 +89,82 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      User-Agent: [python-requests/2.13.0]
+      User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: https://api.trello.com/1/boards/O00ATMzS/pluginData
+    uri: https://api.trello.com/1/lists/58bd618abc9a825bd64b5d8f/cards?customFieldItems=true
   response:
-    body: {string: '[{"id":"58bdcf9ca319c23f1136fb9b","idPlugin":"56d5e249a98895a9797bebb9","scope":"board","idModel":"58bd617ff04f88665a94c21a","value":"{\"fields\":[{\"n\":\"Time
-        Required\",\"t\":4,\"b\":1,\"o\":[{\"id\":\"qENman\",\"value\":\"10 minutes\"},{\"id\":\"np4DiU\",\"value\":\"Under
-        an hour\"},{\"id\":\"ZhlTUp\",\"value\":\"A couple of hours\"},{\"id\":\"0AXpSu\",\"value\":\"About
-        a day\"}],\"id\":\"O00ATMzS-jUK8AT\"},{\"n\":\"CTA_URL\",\"t\":0,\"b\":1,\"id\":\"O00ATMzS-tWOnUg\"}]}","access":"shared"}]'}
+    body:
+      string: !!binary |
+        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
     headers:
       Access-Control-Allow-Headers: ['Authorization, Accept, Content-Type']
       Access-Control-Allow-Methods: ['GET, PUT, POST, DELETE']
       Access-Control-Allow-Origin: ['*']
       Cache-Control: ['max-age=0, must-revalidate, no-cache, no-store']
       Connection: [keep-alive]
-      Content-Length: ['500']
+      Content-Encoding: [gzip]
+      Content-Length: ['1993']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 13:40:27 GMT']
-      ETag: [W/"1f4-3de04b3a"]
+      Date: ['Fri, 26 Oct 2018 15:56:40 GMT']
+      ETag: [W/"1a24-ZuF6YyDkptS5GxOYoauYFaoB1uI"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=4c3a98f9a29cfd90f5d920b7629242a55486413388a4735c40f9fbf6f896bcf7;
-          Path=/; Expires=Sat, 11 Mar 2017 13:40:27 GMT; Secure']
-      Strict-Transport-Security: [max-age=15768000]
+      Pragma: [no-cache]
+      Referrer-Policy: [strict-origin-when-cross-origin]
+      Set-Cookie: ['dsc=baafc47b309df9df29d11fd089fd643fc927b2160a41ef5a197322f46ee203bb;
+          Path=/; Expires=Mon, 29 Oct 2018 15:56:40 GMT; Secure']
+      Strict-Transport-Security: [max-age=15552000]
+      Surrogate-Control: [no-store]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
-      X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488980427613']
+      X-DNS-Prefetch-Control: ['off']
+      X-Download-Options: [noopen]
+      X-Frame-Options: [DENY]
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-KEY-MAX: ['300']
+      X-RATE-LIMIT-API-KEY-REMAINING: ['298']
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-TOKEN-MAX: ['100']
+      X-RATE-LIMIT-API-TOKEN-REMAINING: ['98']
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-MEMBER-MAX: ['200']
+      X-RATE-LIMIT-MEMBER-REMAINING: ['198']
+      X-Server-Time: ['1540569400297']
       X-Trello-Environment: [Production]
-      X-Trello-Version: [1.906.0]
+      X-Trello-Version: [1.1427.0]
       X-XSS-Protection: [1; mode=block]
     status: {code: 200, message: OK}
 - request:
@@ -104,97 +173,55 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      User-Agent: [python-requests/2.13.0]
+      User-Agent: [python-requests/2.18.4]
     method: GET
-    uri: https://api.trello.com/1/cards/58bed66f42b34409ae9ce57d/pluginData
+    uri: https://api.trello.com/1/boards/O00ATMzS/customFields
   response:
-    body: {string: '[{"id":"58bfea1beba5b16fa230c552","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58bed66f42b34409ae9ce57d","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"qENman\",\"O00ATMzS-tWOnUg\":\"https://docs.google.com/spreadsheets/d/1qGCVPuIoGqevcjzFOxT7ypoerVZae-SngN9XrxVBPyQ/edit#gid=2062206390\"}}","access":"shared"}]'}
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA63TzWrjMBAA4FcxOvtg/Uu5lUL20l5KeiplkUejRmBbXlsuLSXvvnIWFnpIvJAF
+        XzwaW98MMy9fJHqyI9JZozTVXrnQeuWReiakBFKX88fksVuTTDmiOoRGBGOUKh8JYNSVpH5NOXyO
+        WNLa5CZfYiFi539MaRlL0BswOhjpgAdEJxiAssoIDFRSjZZDQCYBLEflWi0FuAZsgIZjEMa05X8+
+        zmPnPsnui0C5YT+lIZNdnhY81WRw/Xr3IfZYPeGvJU64GsY0kx1V3IiapDHHNJT3l+tF+3PR98uc
+        U79fa7jen3fXLbiiMn4UD9nHd6z6OCwZZ1JkkLo0lfiQBvwmOtXXHXib44DDFoMzrcwWI9zGeMB5
+        rvLRDVV5jmmZLmGEpZJtYFRzG+augjKOHVYpnC0XO6Ok5GoLQ2/DPMa3Y64GRF+5ypfBvmAx1LLm
+        9FqT/Ge/ujhnsmXj/21zWWAOAmiHCCII27ZcqYaVHUWQNCiw1DRcai6E1FJZ4N5ZH5pWgaYS1D9u
+        7v3h7ufz08O30fxb8rljp9ffMPdLha4EAAA=
     headers:
       Access-Control-Allow-Headers: ['Authorization, Accept, Content-Type']
       Access-Control-Allow-Methods: ['GET, PUT, POST, DELETE']
       Access-Control-Allow-Origin: ['*']
       Cache-Control: ['max-age=0, must-revalidate, no-cache, no-store']
       Connection: [keep-alive]
-      Content-Length: ['327']
+      Content-Encoding: [gzip]
+      Content-Length: ['425']
       Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 13:40:28 GMT']
-      ETag: [W/"147-979486aa"]
+      Date: ['Fri, 26 Oct 2018 15:56:40 GMT']
+      ETag: [W/"4ae-t4NYdy2wTX9+r58xLhaH5wewjBY"]
       Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=bcaf297948fc54bf6350b519626b96f7e88b9c633b9cbe6e57a9eadf7089992b;
-          Path=/; Expires=Sat, 11 Mar 2017 13:40:28 GMT; Secure']
-      Strict-Transport-Security: [max-age=15768000]
+      Pragma: [no-cache]
+      Referrer-Policy: [strict-origin-when-cross-origin]
+      Set-Cookie: ['dsc=3d69a49c3c0c074b323831a552601e068e3fe14f5a5d63b94518596849531cf9;
+          Path=/; Expires=Mon, 29 Oct 2018 15:56:40 GMT; Secure']
+      Strict-Transport-Security: [max-age=15552000]
+      Surrogate-Control: [no-store]
       Vary: [Accept-Encoding]
       X-Content-Type-Options: [nosniff]
-      X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488980428081']
+      X-DNS-Prefetch-Control: ['off']
+      X-Download-Options: [noopen]
+      X-Frame-Options: [DENY]
+      X-RATE-LIMIT-API-KEY-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-KEY-MAX: ['300']
+      X-RATE-LIMIT-API-KEY-REMAINING: ['297']
+      X-RATE-LIMIT-API-TOKEN-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-API-TOKEN-MAX: ['100']
+      X-RATE-LIMIT-API-TOKEN-REMAINING: ['97']
+      X-RATE-LIMIT-MEMBER-INTERVAL-MS: ['10000']
+      X-RATE-LIMIT-MEMBER-MAX: ['200']
+      X-RATE-LIMIT-MEMBER-REMAINING: ['197']
+      X-Server-Time: ['1540569400531']
       X-Trello-Environment: [Production]
-      X-Trello-Version: [1.906.0]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.13.0]
-    method: GET
-    uri: https://api.trello.com/1/cards/58be7ff43c25778b1b467057/pluginData
-  response:
-    body: {string: '[{"id":"58bff96aee80624dbfab1ec0","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58be7ff43c25778b1b467057","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"ZhlTUp\"}}","access":"shared"}]'}
-    headers:
-      Access-Control-Allow-Headers: ['Authorization, Accept, Content-Type']
-      Access-Control-Allow-Methods: ['GET, PUT, POST, DELETE']
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: ['max-age=0, must-revalidate, no-cache, no-store']
-      Connection: [keep-alive]
-      Content-Length: ['199']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 13:40:28 GMT']
-      ETag: [W/"c7-33b5bbb5"]
-      Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=f812951d4a93ab7fe7520f3b6a0f9d1737135927a6cabd06e746954fd473ef4e;
-          Path=/; Expires=Sat, 11 Mar 2017 13:40:28 GMT; Secure']
-      Strict-Transport-Security: [max-age=15768000]
-      Vary: [Accept-Encoding]
-      X-Content-Type-Options: [nosniff]
-      X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488980428681']
-      X-Trello-Environment: [Production]
-      X-Trello-Version: [1.906.0]
-      X-XSS-Protection: [1; mode=block]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.13.0]
-    method: GET
-    uri: https://api.trello.com/1/cards/58beae71f3aa095ede7ddf2d/pluginData
-  response:
-    body: {string: '[{"id":"58bff948f4e12a91d9a6bba2","idPlugin":"56d5e249a98895a9797bebb9","scope":"card","idModel":"58beae71f3aa095ede7ddf2d","value":"{\"fields\":{\"O00ATMzS-jUK8AT\":\"ZhlTUp\",\"O00ATMzS-tWOnUg\":\"https://docs.google.com/document/d/1yz75EPaahQ8t68qLJ6D8l2-m0dpDTsTMo6-LSGslBIE/edit?usp=sharing\"}}","access":"shared"}]'}
-    headers:
-      Access-Control-Allow-Headers: ['Authorization, Accept, Content-Type']
-      Access-Control-Allow-Methods: ['GET, PUT, POST, DELETE']
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: ['max-age=0, must-revalidate, no-cache, no-store']
-      Connection: [keep-alive]
-      Content-Length: ['320']
-      Content-Type: [application/json; charset=utf-8]
-      Date: ['Wed, 08 Mar 2017 13:40:29 GMT']
-      ETag: [W/"140-4f7eb5b6"]
-      Expires: ['Thu, 01 Jan 1970 00:00:00']
-      Set-Cookie: ['dsc=85b8d9085d3140c724511f8ea5ee0b736c2d7e443c27c70baf010bf57ec6ea40;
-          Path=/; Expires=Sat, 11 Mar 2017 13:40:29 GMT; Secure']
-      Strict-Transport-Security: [max-age=15768000]
-      Vary: [Accept-Encoding]
-      X-Content-Type-Options: [nosniff]
-      X-FRAME-OPTIONS: [DENY]
-      X-Server-Time: ['1488980429808']
-      X-Trello-Environment: [Production]
-      X-Trello-Version: [1.906.0]
+      X-Trello-Version: [1.1427.0]
       X-XSS-Protection: [1; mode=block]
     status: {code: 200, message: OK}
 version: 1

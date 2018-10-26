@@ -14,4 +14,4 @@ class TestBacklogImporter(TestCase):
     def test_backlog_import_cards(self):
         assert Card.objects.count() == 0
         call_command('backlog_import_from_trello')
-        assert Card.objects.count() == 3
+        assert Card.objects.count() == 4
