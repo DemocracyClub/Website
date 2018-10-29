@@ -20,9 +20,14 @@ nav.inline_page_nav {
             display:block;
         }
 
-				@include media(desktop) {
+        @include media(desktop) {
           li {
               display:inline-block;
+              + li:before {
+                  content: "·";
+                  padding-right:1em;
+
+              }
           }
           > * {
               flex: 1 0 6em;
