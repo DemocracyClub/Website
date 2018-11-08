@@ -99,7 +99,7 @@ INSTALLED_APPS = (
 )
 
 PROJECT_APPS = (
-    'core',
+    'core.apps.CoreConfig',
     'dc_members',
     'hermes',
     'typogrify',
