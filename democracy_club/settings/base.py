@@ -111,6 +111,7 @@ PROJECT_APPS = (
     'wheredoivote_user_feedback',
     'backlog',
     'mailing_list',
+    'projects',
 )
 
 ALLAUTH_APPS = (

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="site-wrapper__body-text">
+  {% block page_heading %}{% endblock page_heading %}
+
+  <nav class="inline_page_nav">
+    <ul>
+      <li class="{% if request.path|slice:"-10:" == "/projects/" %} nav-site__item--active{% endif %}"><a href="{% url "projects:projects" %}">Projects</a></li> ·
+      <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">Past Projects</a></li>
+    </ul>
+  </nav>
+
+  {% block main_content %}
+
+  {% endblock main_content %}
+
+
+
+{% endblock %}
