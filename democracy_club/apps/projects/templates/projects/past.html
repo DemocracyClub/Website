@@ -1,0 +1,67 @@
+{% extends "projects/projects_base.html" %}
+{% load markdown_deux_tags %}
+{% block page_heading %}
+<h1>Past projects</h1>
+{% endblock %}
+
+{% block main_content %}
+
+<ul class="card-list">
+
+  <li class="link-card">
+    <div class="text">
+    <h3><a href="{% url "projects:election_leaflets" %}">Election Leaflets</a></h3>
+    <p>Photograph the leaflets that get put through your door and share them with the world.</p>
+    </div>
+  </li>
+
+
+  <li class="link-card">
+    <div class="text">
+    <h3><a href="{% url "projects:cvs" %}">Candidates' CVs</a></h3>
+    <p>MPCV helped voters read (or request to see) their candidates' CVs to help inform their vote.</p>
+    </div>
+  </li>
+
+
+
+  <li class="link-card">
+    <div class="text">
+      <!-- TODO -->
+      <h3>TakePart London</h3>
+      {% filter markdown %}
+On the run up to the 2016 EU referendum we [plotted the electoral register for
+      the whole of London](https://democracyclub.org.uk/blog/2016/06/03/8-out-10-cats-have-registered-vote-your-area/) against
+      population estimates. From this we made a heatmap
+      and tool for looking up registration rates by postcode. This included pictures of the area
+      taken from [Scenic Or Not](http://scenicornot.datasciencelab.co.uk/) and passed through
+      a [DeepDream](https://en.wikipedia.org/wiki/DeepDream) generator.
+
+[View the code on GitHub](https://github.com/DemocracyClub/TakePart.london)
+      {% endfilter %}
+    </div>
+  </li>
+
+  <li class="link-card">
+    <div class="text">
+      <h3>Election Mentions</h3>
+      <p>Project for monitoring mentions of candidates, constituencies and parties in the news using
+      webscraping and machine learning to extract names, placees and quotes.</p>
+    </div>
+  </li>
+
+  <li class="link-card">
+    <div class="text">
+      <h3>MeetYourNextMP</h3>
+      {% filter markdown %}
+MeetYourNextMP was a project run in 2015 to [crowdsource a list of public
+        hustings events](https://jarofgreen.co.uk/category/meetyournextmp/)
+        (where candidates take questions from a local audience).
+
+      {% endfilter %}
+
+    </div>
+  </li>
+</ul>
+
+{% endblock %}

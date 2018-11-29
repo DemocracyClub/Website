@@ -9,12 +9,29 @@
 {% block main_content %}
 {% filter markdown %}
 
-*If you would like to talk to us about this project, please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+
+### Example widget
+<figure>
+  <noscript>
+    <iframe src="https://wheredoivote.co.uk/embed/"
+      style="width:100%; height:1100px" frameborder="0" scrolling="no">
+    </iframe>
+  </noscript>
+  <div id="dc_wdiv"></div>
+  <script type="text/javascript"
+    src="https://widget.wheredoivote.co.uk/wdiv.js">
+  </script>
+  <figcaption>
+    Live data varies, so results might not show for example postcodes.
+    We tend not to have data outside of major elections, <a href="{% url "contact" %}">contact us</a>
+    if you'd like a demo.
+  </figcaption>
+</figure>
 
 We'd love you to use our polling station finder on your web site. If you do, we kindly ask that you:
 
 1. Credit Democracy Club, linking to our home page at [https://democracyclub.org.uk/](https://democracyclub.org.uk/) along side the embedded widget.
-2. Let us know you're using it. We don't limit use, but it's great to know who has used the embed feature.
+2. <a href="{% url "contact" %}">Let us know</a> you're using it. We don't limit use, but it's great to know who has used the embed feature.
 3. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
 
 To embed the site, use the following code:
@@ -29,6 +46,10 @@ To embed the site, use the following code:
     <script type="text/javascript"
       src="https://widget.wheredoivote.co.uk/wdiv.js">
     </script>
+
+## Adding your data
+Work in a council and want your polling stations to work in the widget?
+See our <a href="{% url 'projects:polling_data_upload' %}">plans page</a> for more info.
 
 ## Custom designs, white label and API
 

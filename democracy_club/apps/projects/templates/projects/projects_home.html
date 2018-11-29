@@ -1,160 +1,57 @@
-{% extends "base.html" %}
+{% extends "projects/projects_base.html" %}
 
-{% block content %}
-<section>
-  <h1>Projects</h1>
-</section>
+{% block page_heading %}
+<h1>Projects</h1>
+{% endblock %}
 
-<div class="fukol-grid">
+{% block main_content %}
 
-  <div class="fukol-grid__col fukol-grid__col--60-70">
+<ul class="card-list">
 
-    <div class="feature-card-wrapper">
+  <li class="link-card">
+{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
+    <div class="text">
+      <h3><a href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h3>
+      <p>Helps millions of people to find out where to vote in the UK</p>
+    </div>
+  </li>
 
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--wheredoivote">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://wheredoivote.co.uk/" itemprop="url" target="_blank">Where Do I Vote? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Find out where to vote. Two million uses in 2017.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="https://wheredoivote.co.uk/" class="feature-card__link buttonNew buttonNew--outline">Try it now</a>
-          <a href="{% url "polling_one_pager" %}" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
-          <a href="{% url "polling_data_upload" %}" class="feature-card__link buttonNew buttonNew--outline">Add your council area</a>
-          <a href="https://wheredoivote.co.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
-        </div>
-      </article><!-- /.feature-card -->
+<li class="link-card">
+{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
+    <div class="text">
+      <h3><a href="{% url "projects:whocanivotefor" %}">Who Can I Vote For?</a></h3>
+      <p>Helps people learn about elections, candidates and results in their area</p>
+    </div>
+  </li>
 
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--whocanivotefor">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://whocanivotefor.co.uk/" itemprop="url" target="_blank">Who Can I Vote For? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Find out about elections and candidates in your area. Over 1.5m users so far.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="https://whocanivotefor.co.uk/" class="feature-card__link buttonNew buttonNew--outline">Try it now</a>
-        </div>
-      </article><!-- /.feature-card -->
+  <li class="link-card">
+    <div class="text">
+    <h3><a href="{% url "projects:candidates" %}">Candidates Wiki</a></h3>
+    <p>The crowdsourced database of candidates</p>
+    </div>
+  </li>
 
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--candidates">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://candidates.democracyclub.org.uk/" itemprop="url" target="_blank">Candidates data <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>The UK's election candidates database. Available via an API or CSV.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="https://candidates.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Add or update data</a>
-          <a href="https://candidates.democracyclub.org.uk/help/api" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--elections">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://elections.democracyclub.org.uk" itemprop="url">Every Election <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>The crowdsourced database of UK elections.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="https://elections.democracyclub.org.uk" class="feature-card__link buttonNew buttonNew--outline">Learn More</a>
-          <a href="https://elections.democracyclub.org.uk/api/" class="feature-card__link buttonNew buttonNew--outline">Use the data</a>
-          <a href="https://elections.democracyclub.org.uk/id_creator/date_known/" class="feature-card__link buttonNew buttonNew--outline">Add an election</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-ids">
-        <h3 class="feature-card__title" itemprop="name"><a href="/projects/election-ids/" itemprop="url">Election Identifiers <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>We've developed a standard, with community input, on how to refer to elections in the UK. We hope these standard IDs will make it easier to build tools for voters..</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="/projects/election-ids/" class="feature-card__link buttonNew buttonNew--outline">Learn More</a>
-          <a href="https://elections.democracyclub.org.uk/reference_definition" class="feature-card__link buttonNew buttonNew--outline">Reference Definition</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-leaflets">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://electionleaflets.org/" itemprop="url" target="_blank">Election Leaflets <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Photograph the leaflets that get put through your door and share them with the world.<p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="https://electionleaflets.org/leaflets/add/front/" class="feature-card__link buttonNew buttonNew--outline">Add a leaflet</a>
-          <a href="https://electionleaflets.org/" class="feature-card__link buttonNew buttonNew--outline">Learn more</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--mpcv">
-        <h3 class="feature-card__title" itemprop="name"><a href="http://cv.democracyclub.org.uk/" itemprop="url" target="_blank">Candidates' CVs <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>MPCV helped voters read (or request to see) their candidates' CVs to help inform their vote.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="http://cv.democracyclub.org.uk/" class="feature-card__link buttonNew buttonNew--outline">Read their CVs</a>
-        </div>
-      </article><!-- /.feature-card -->
+  <li class="link-card">
+    <div class="text">
+      <h3><a href="{% url "projects:data" %}">Election data and APIs</a></h3>
+      <p>Open data on:</p>
+      <ul>
+        <li>Elections</li>
+        <li>Polling locations</li>
+        <li>Candidates</li>
+        <li>Results</li>
+      </ul>
 
 
 
-    </div><!-- /.feature-card-wrapper -->
-
-  </div><!-- ./fukol-grid__col -->
-  <div class="fukol-grid__col fukol-grid__col--40-30">
-
-    {% include "_includes/form--donate-box.html" %}
-
-  </div><!-- /.fukol-grid__col -->
-</div><!-- /.fukol-grid -->
-
-<div class="fukol-grid">
-
-  <div class="fukol-grid__col fukol-grid__col--60-70">
-
-    <div class="section-header">
-      <h1 class="section-header__title">Past Projects</h1>
-    </div><!-- /.section-header -->
-
-    <div class="feature-card-wrapper">
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="project--election-mentions">
-        <h3 class="feature-card__title" itemprop="name"><a href="http://electionmentions.com" itemprop="url" target="_blank">Election Mentions <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Presented news coverage on candidates to help inform voters.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="http://electionmentions.com" class="feature-card__link buttonNew buttonNew--outline">Start reading</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite" id="past-project--meetyournextmp">
-        <h3 class="feature-card__title" itemprop="name">MeetYourNextMP</h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>MeetYourNextMP was a project run in 2015 to crowdsource a list of public hustings events (where candidates take questions from a local audience).</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a itemprop="url" href="https://docs.google.com/document/d/1_zH9K8K3IWQ3PhaKFQAgZNVW5tn0MCONh9yCwoO43KM/edit#heading=h.dv7v3s2oyci8" class="feature-card__link buttonNew buttonNew--outline">Read more about it</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-    </div><!-- /.feature-card-wrapper -->
-
-  </div><!-- /.fukol-grid__col -->
-
-</div><!-- /.fukol-grid -->
+      <ul>
 
 
-{% endblock content %}
+      </ul>
+    </div>
+  </li>
+
+</ul>
+
+
+{% endblock main_content %}
