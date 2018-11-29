@@ -37,3 +37,13 @@
 body {
   background-color:#FFF;
 }
+
+blockquote {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0;
+  color: #999;
+  padding: 0rem 1rem;
+  border-left: .25rem solid #999;
+  display: block;
+}
