@@ -198,21 +198,96 @@ section ol, section ul {
 // }
 
 
+@page {
+    margin: 1cm;
+    size: A4;
+    widows: 3;
+    orphans: 3;
+    border: 4mm ridge red;
+}
+
+@page :first {
+    margin: 4cm;
+    text-align: center;
+}
+
+@page :left {
+    margin-right: 5cm;
+}
+
+@page :right {
+    margin-left: 5cm;
+    border-left:40px solid #3e3e58;
+    border-right:40px solid #3e3e58;
+}
+
 @media print {
+    #mailing_list_form {
+        display:none;
+    }
+
+    @page {
+        margin: 1cm;
+        size: A4;
+        widows: 4;
+    }
+
+    @page :first {
+        margin: 4cm;
+    }
+
+    @page :left {
+        margin-right: 4cm;
+    }
+
+    @page :right {
+        margin-left: 4cm;
+    }
+
+
+    .report {
+        text-align:justify;
+        widows: 4;
+
+        nav, .nav-site-ctrl {
+            display:none;
+        }
+        .container {
+            width:100%;
+            max-width:100%;
+            &>article {
+                max-width:100%;
+
+            }
+        }
+        h1:first-of-type {
+            page-break-after: avoid;
+            page-break-before: avoid;
+        }
+        h1, h2, section {
+            page-break-before: always;
+            //page-break-after: always;
+            //page-break-inside: avoid;
+        }
+        table {
+            page-break-inside: avoid;
+        }
+        h3 + p {
+            page-break-after: avoid;
+            page-break-before: avoid;
+        }
+        h3 + img, h2 + img, h1 + img{
+            page-break-after: avoid;
+            page-break-before: always;
+        }
+
+
+    }
     body > section.nav {
         display:none;
     }
 
-    a[href]:after {
-        content: "";
-    }
-
-    .hide_for_print {
+    footer .site-footer__mailing-list {
         display:none;
-    }
-    #report_2016 section {
-        page-break-before: always;
-        page-break-after: always;
-        page-break-inside: avoid;
     }
 }
