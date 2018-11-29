@@ -40,7 +40,7 @@ urlpatterns = [
         TemplateView.as_view(template_name="privacy.html"), name="privacy"),
     url(r'^code-of-conduct/$',
         TemplateView.as_view(template_name="code-of-conduct.html"), name="coc"),
-    url(r'^projects/', include('projects.urls'), name="projects"),
+    url(r'^projects/', include('projects.urls', namespace="projects")),
     url(r'^contact/$',
         TemplateView.as_view(template_name="contact.html"), name="contact"),
     url(r'^members/', include('dc_members.urls')),
