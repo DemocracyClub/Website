@@ -1,16 +1,14 @@
 import mimetypes
 import os
-from distutils.dir_util import copy_tree
 
 from pipeline.compilers.sass import SASSCompiler
 
 from django.conf import settings
 from django.core.files.base import File
-from storages.backends.s3boto3 import S3Boto3Storage
+from storages.backends.s3boto3 import S3Boto3Storage, SpooledTemporaryFile
 from django.contrib.staticfiles.storage import ManifestFilesMixin
+from django.contrib.staticfiles.storage import staticfiles_storage
 from pipeline.storage import PipelineMixin
-
-from django.contrib.staticfiles.finders import FileSystemFinder
 
 
 class PatchedS3Boto3Storage(S3Boto3Storage):
@@ -35,19 +33,19 @@ class PatchedS3Boto3Storage(S3Boto3Storage):
         name = self._normalize_name(cleaned_name)
         parameters = self.object_parameters.copy()
         _type, encoding = mimetypes.guess_type(name)
-        content_type = getattr(content, 'content_type', None)
+        content_type = getattr(content, "content_type", None)
         content_type = content_type or _type or self.default_content_type
         if type(content_type) == bytes:
-            content_type = content_type.decode('utf8')
+            content_type = content_type.decode("utf8")
 
         # setting the content_type in the key object is not enough.
-        parameters.update({'ContentType': content_type})
+        parameters.update({"ContentType": content_type})
 
         if self.gzip and content_type in self.gzip_content_types:
             content = self._compress_content(content)
-            parameters.update({'ContentEncoding': 'gzip'})
+            parameters.update({"ContentEncoding": "gzip"})
         elif encoding:
-            parameters.update({'ContentEncoding': encoding})
+            parameters.update({"ContentEncoding": encoding})
 
         encoded_name = self._encode_name(name)
         obj = self.bucket.Object(encoded_name)
@@ -60,53 +58,28 @@ class PatchedS3Boto3Storage(S3Boto3Storage):
         self._save_content(obj, content, parameters=parameters)
         return cleaned_name
 
+    def _save_content(self, obj, content, parameters):
+        """
+        We create a clone of the content file as when this is passed to boto3
+        it wrongly closes the file upon upload where as the storage backend
+        expects it to still be open
+        """
+        # Seek our content back to the start
+        content.seek(0, os.SEEK_SET)
 
-class ReadOnlySourceFileSystemFinder(FileSystemFinder):
-    """
-    A Django storage class for finding static files on a read only file system
-    or directory.
+        # Create a temporary file that will write to disk after a specified
+        # size
+        content_autoclose = SpooledTemporaryFile()
 
-    ## Why is this needed?
+        # Write our original content into our copy that will be closed by boto3
+        content_autoclose.write(content.read())
+        # Upload the object which will auto close the content_autoclose
+        # instance
+        super()._save_content(obj, content_autoclose, parameters)
 
-    Finding files doesn't require write permissions, however 3rd party
-    projects like Django Pipeline can implement a `post_process` step.
-
-    This step takes the list of files returned by `list` and processes them,
-    in pipeline's case by converting them from scss to css etc.
-
-    The `post_process` step can change the file name, but if the file isn't
-    written to a path that a finder can find then it's ignored in later steps.
-
-    For example, ManifestFilesMixin won't know about that file.
-
-    To make everything work this Finder runs exactly like the normal
-    FileSystemFinder, but then copies the whole assets tree to a writable
-    location. It then updates the paths for all the files to that new location,
-    meaning all other processing of that file can happen as normal.
-
-    Manuel Both-Hanz pulled his hair out to bring you this information.
-    """
-
-    def list(self, ignore_patterns):
-        for origin_path, dest_path in settings.READ_ONLY_PATHS:
-            if dest_path.endswith('/'):
-                raise ValueError(
-                    "dest_path '{}' can't end with trailing /".format(
-                        dest_path)
-                )
-
-        super_list = list(super(
-            ReadOnlySourceFileSystemFinder, self).list(ignore_patterns))
-
-        for filename, file_storage in super_list:
-            location = file_storage.location
-            for origin_path, dest_path in settings.READ_ONLY_PATHS:
-                if location.startswith(origin_path):
-                    new_location = location.replace(origin_path, dest_path)
-                    copy_tree(location, new_location)
-                    file_storage.location = new_location
-
-        return super_list
+        # Cleanup if this is fixed upstream our duplicate should always close
+        if not content_autoclose.closed:
+            content_autoclose.close()
 
 
 class MediaStorage(PatchedS3Boto3Storage):
@@ -114,6 +87,7 @@ class MediaStorage(PatchedS3Boto3Storage):
     Store media files at MEDIAFILES_LOCATION, post-process with pipeline
     and then create manifest files for them.
     """
+
     location = settings.MEDIAFILES_LOCATION
 
 
@@ -122,7 +96,10 @@ class StaticStorage(PipelineMixin, ManifestFilesMixin, PatchedS3Boto3Storage):
     Store static files at STATICFILES_LOCATION, post-process with pipeline
     and then create manifest files for them.
     """
+
     location = settings.STATICFILES_LOCATION
+    max_post_process_passes = 10
+    manifest_strict = False
 
 
 class LambdaSASSCompiler(SASSCompiler):
@@ -135,17 +112,18 @@ class LambdaSASSCompiler(SASSCompiler):
     """
 
     def compile_file(self, infile, outfile, outdated=False, force=False):
-        for origin_path, dest_path in settings.READ_ONLY_PATHS:
-            if outfile.startswith(origin_path):
-                outfile = outfile.replace(origin_path, dest_path)
+        for path in settings.STATICFILES_DIRS:
+            outfile = outfile.replace(path, "").strip("/")
         import sass
+
         out_value = sass.compile(
             filename=infile,
-            output_style='compressed',
-            include_paths=settings.SASS_INCLUDE_PATHS
+            output_style="compressed",
+            include_paths=settings.SASS_INCLUDE_PATHS,
         )
         if type(out_value) == bytes:
-            out_value = out_value.decode('utf8')
-        os.makedirs(os.path.dirname(outfile), exist_ok=True)
-        with open(outfile, 'w') as out:
+            out_value = out_value.decode("utf8")
+
+        with staticfiles_storage.open(outfile, "w") as out:
             out.write(out_value)
+        return out_value

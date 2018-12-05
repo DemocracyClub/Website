@@ -24,24 +24,12 @@ DATABASES = {
     }
 }
 
-TMP_ASSETS_ROOT = "/tmp/assets_root"
-STATIC_ROOT = '/tmp/static_root/'
-
-# Make the tmp static dirs whenever django is started
-os.makedirs(TMP_ASSETS_ROOT, exist_ok=True)
-os.makedirs(STATIC_ROOT, exist_ok=True)
-
 STATICFILES_FINDERS = (
-    'core.s3_lambda_storage.ReadOnlySourceFileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.CachedFileFinder',
     'pipeline.finders.PipelineFinder',
 )
 
-# Used by ReadOnlySourceFileSystemFinder
-READ_ONLY_PATHS = (
-    (root('assets'), TMP_ASSETS_ROOT),  # noqa
-)
 
 PIPELINE['COMPILERS'] = ('core.s3_lambda_storage.LambdaSASSCompiler', )   # noqa
 
