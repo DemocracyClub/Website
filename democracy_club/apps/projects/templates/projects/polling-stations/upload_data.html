@@ -1,0 +1,146 @@
+{% extends "projects/polling-stations/polling_stations_base.html" %}
+{% load django_markdown %}
+{% load static %}
+
+{% block page_title %}
+<h1>Polling station finder</h1>
+{% endblock page_title %}
+
+
+{% block main_content %}
+{% filter markdown %}
+<h3>All you need to help people in your area to find their polling station.</h3>
+
+
+Our polling station finder uses data sent to us from councils.
+
+## Plans
+
+<div class="card">
+<h3>Basic: free</h3>
+<ul>
+<li>Finds the polling station assigned to a property</li>
+<li>Support postcosts that overlap polling district boundaries</li>
+<li>Data export from your EMS (where supported)</li>
+<li>Data included on the Electoral Commission’s YourVoteMatters lookup as well as other sites we partner with</li>
+<li>Embeddable widget on your website</li>
+</ul>
+</div>
+<div class="card highlight_card">
+<h3>Pro: £450 per year</h3>
+All basic feautres, plus:
+<ul>
+<li>Coverage for all scheduled elections, and all national elections</li>
+<li><a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">Approved on the Government’s Digital Marketplace (G-Cloud 10)</a></li>
+<li>Personal contact for support queries</li>
+<li>Rapid response to last minute changes, including on polling day</li>
+<li>Customizable embedded widget to match your council colours</li>
+<li>Detailed usage reporting</li>
+<li>Early warning of errors</li>
+</ul>
+<a class="link-button" href="{% url 'contact' %}">Get in touch</a>
+</div>
+<div class="card">
+<h3>Bespoke: £contact us</h3>
+<ul>
+<li>Support for all by-elections</li>
+<li>Custom information about each polling station, for example accessibility information, photos</li>
+<li>Bespoke integration in to your website</li>
+</ul>
+<a class="link-button" href="{% url 'contact' %}">Get in touch</a>
+</div>
+
+#### Existing customers
+
+
+**If you work in a council you can send us data by emailing
+[pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
+
+Please send us new data for each election, or confirm that it has not changed.
+
+<a id="exporting"></a>
+## Exporting from your EMS
+
+Some suppliers have added exports in their software to make it easy to email us the data.
+Ideally this export would also include property and/or polling station UPRNS, but this is not essential.
+
+### Halarose
+
+There is a Knowledge Base Article (KBA) about how to export data. Click on
+"Democracy Club" in the tag cloud or use this link:
+[https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384](https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384)
+
+### Xpress
+
+The Democracy Club report is in "Express Management" under "Elections/Exports"
+and the report is called "EC &amp; Democracy Club Polling Place Lookup".
+
+### Democracy Counts / Elector8
+
+For Elector8 Users, go to "Planning &amp; Reporting" then "Category Searches"
+and select both of the following:
+
+* Democracy Club - Polling Districts
+* Democracy Club - Polling Stations
+
+Right click on the data grid and click "export".
+
+### Idox
+
+Unfortunately Idox haven't provided an easy export yet, but they are working on it.
+It's worth emailing [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk)
+anyway, as we might be able to work with your GIS team on getting data.
+
+
+## Data changes
+
+We only use data sent to us for the elections you tell us it's valid for.
+If we're not sure we don't re-use data between elections, and we will email you asking
+for updates.
+
+
+For last minute changes, including on polling day, you can email us and we will make
+changes to the data on the live site. In the worse case we can remove all your data from
+the site very quickly, just get in touch.
+
+
+## Data restrictions
+
+We don't need personal data to run the polling station finder but we do need
+UPRNs or data that from some of OS's products depending on the type of data you are
+able to provide us with.
+
+We have an agreement with The Electoral Commission under the Public Sector Mapping Agreement
+that allows us to receive data that's in AddressBase including UPRNs.
+
+If you send us geospatial data that's created from OS's BaseMap then this can be made public
+under ‘presumption to publish’.
+[You can read more about this here](http://www.ordnancesurvey.co.uk/docs/public-disclosures/presumption-to-publish-guidance-march-2015.pdf).
+
+We suggest that you publish Geo data as a WFS layer from your GIS software.
+
+
+## Using the finder on your website
+
+If you provide data to us then you can embed out polling station directly on
+your website, free of charge.
+
+You'll need to add a bit of code to your site.
+[Find out how]({% url "projects:polling_embed_code" %}).
+
+
+<div class="logo-list">
+  <div class="logo-list__list">
+  <div class="logo-list__img"><a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
+  <img src="{% static "ccs-certificate.png" %}">
+</a></div>
+<div class="logo-list__img"><img src="{% static "images/reusers/logo--the-electoral-commission.jpg" %}"></div>
+</div>
+</div>
+
+*Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call Sym on [07742079314](tel:07742079314)*
+
+
+{% endfilter %}
+{% endblock main_content %}
+

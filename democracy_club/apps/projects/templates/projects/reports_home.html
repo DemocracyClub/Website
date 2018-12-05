@@ -1,0 +1,43 @@
+{% extends "projects/projects_base.html" %}
+{% load static %}
+
+{% block page_heading %}
+<h1>Reports</h1>
+{% endblock %}
+
+
+{% block main_content %}
+
+  <ul class="card-list">
+
+    <li class="link-card">
+      <img src="{% static "images/report/old_bridge_pontypridd.jpg" %}">
+      <div class="text">
+      <h3>Towards better elections</h3>
+      <p>Our yearly report on elections and the future of digital services for democracy.</p>
+        <ul>
+          <li><a href="{% url "report_2016:report_2016" %}">2016</a></li>
+          <li><a href="{% url "report_2017:report_2017" %}">2017</a></li>
+          <li><a href="{% url "report_2018:report_2018" %}">2018</a></li>
+        </ul>
+      </div>
+
+    </li>
+    <li class="link-card">
+      <img src="{% static "report_2018/images/benjamin-elliott-670761-unsplash.png" %}">
+
+      <div class="text">
+      <h3>Where Do I Vote User Feedback</h3>
+      <p>Our yearly report on elections and the future of digital services for democracy.</p>
+        <ul>
+          <li><a href="{% url "wheredoivote_user_feedback:wheredoivote_user_feedback_2017" %}">2017</a></li>
+          <li><a href="{% url "wheredoivote_user_feedback:wheredoivote_user_feedback_2018" %}">2018</a></li>
+        </ul>
+      </div>
+
+
+    </li>
+
+  </ul>
+
+{% endblock %}

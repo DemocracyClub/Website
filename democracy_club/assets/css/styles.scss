@@ -20,6 +20,7 @@
 @import 'sass/components/backlog';
 @import 'sass/components/donate-box';
 @import 'sass/components/feature-card';
+@import 'sass/components/link-card';
 @import 'sass/components/section-header';
 @import 'sass/components/media-card';
 @import 'sass/components/super-header';
@@ -35,4 +36,14 @@
 // 0.3.6 style
 body {
   background-color:#FFF;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0;
+  color: #999;
+  padding: 0rem 1rem;
+  border-left: .25rem solid #999;
+  display: block;
 }

@@ -36,45 +36,11 @@ urlpatterns = [
         TemplateView.as_view(template_name="about/jobs.html"), name="jobs"),
     url(r'^about/team/$',
         TemplateView.as_view(template_name="about/team.html"), name="team"),
-
-
     url(r'^privacy/$',
         TemplateView.as_view(template_name="privacy.html"), name="privacy"),
     url(r'^code-of-conduct/$',
         TemplateView.as_view(template_name="code-of-conduct.html"), name="coc"),
-    url(r'^projects/$',
-        TemplateView.as_view(template_name="projects.html"), name="projects"),
-    url(r'^projects/polling-stations/$',
-        TemplateView.as_view(template_name="polling-stations/home.html"),
-        name="polling_one_pager"
-        ),
-    url(r'^projects/polling-stations/technical/$',
-        RedirectView.as_view(url=reverse_lazy("polling_data_upload")),
-        name="polling_technical_explainer"
-        ),
-    url(r'^projects/polling-stations/faqs/$',
-        RedirectView.as_view(url=reverse_lazy("polling_one_pager")),
-        name="polling_faqs"
-        ),
-    url(r'^projects/polling-stations/embed/$',
-        TemplateView.as_view(template_name="polling-stations/embed_code.html"),
-        name="polling_embed_code"
-        ),
-    url(r'^projects/polling-stations/upload/$',
-        TemplateView.as_view(template_name="polling-stations/upload_data.html"),
-        name="polling_data_upload"
-        ),
-    url(r'^projects/polling-stations/techincal/$',
-        RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
-        ),
-    url(r'^projects/election-ids/reference/$',
-        RedirectView.as_view(url="https://elections.democracyclub.org.uk/reference_definition"),
-        name="election_ids_reference"
-        ),
-    url(r'^projects/election-ids/$',
-        TemplateView.as_view(template_name="election-ids/home.html"),
-        name="election_ids"
-        ),
+    url(r'^projects/', include('projects.urls', namespace="projects")),
     url(r'^contact/$',
         TemplateView.as_view(template_name="contact.html"), name="contact"),
     url(r'^members/', include('dc_members.urls')),

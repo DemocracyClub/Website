@@ -1,0 +1,61 @@
+.card-list {
+  padding:0
+}
+
+.link-card {
+  position: relative;
+  list-style: none;
+  @extend .feature-card;
+  padding:0;
+  overflow: auto;
+  margin-right:3px;
+
+  .text {
+    padding:15px;
+  }
+
+  &:focus-within {
+      border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  &:focus-within a:focus {
+    text-decoration: none;
+  }
+
+  h2 a, h3 a, a.cta {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  //a {
+  //
+  //}
+
+  &:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+}
+
+
+.side-image {
+  img {
+    float:left;
+    width:40%;
+  }
+
+  .text {
+    float:left;
+    width:60%;
+  }
+
+}

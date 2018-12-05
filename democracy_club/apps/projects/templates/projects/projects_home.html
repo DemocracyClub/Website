@@ -1,0 +1,57 @@
+{% extends "projects/projects_base.html" %}
+
+{% block page_heading %}
+<h1>Projects</h1>
+{% endblock %}
+
+{% block main_content %}
+
+<ul class="card-list">
+
+  <li class="link-card">
+{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
+    <div class="text">
+      <h3><a href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h3>
+      <p>Helps millions of people to find out where to vote in the UK</p>
+    </div>
+  </li>
+
+<li class="link-card">
+{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
+    <div class="text">
+      <h3><a href="{% url "projects:whocanivotefor" %}">Who Can I Vote For?</a></h3>
+      <p>Helps people learn about elections, candidates and results in their area</p>
+    </div>
+  </li>
+
+  <li class="link-card">
+    <div class="text">
+    <h3><a href="{% url "projects:candidates" %}">Candidates Wiki</a></h3>
+    <p>The crowdsourced database of candidates</p>
+    </div>
+  </li>
+
+  <li class="link-card">
+    <div class="text">
+      <h3><a href="{% url "projects:data" %}">Election data and APIs</a></h3>
+      <p>Open data on:</p>
+      <ul>
+        <li>Elections</li>
+        <li>Polling locations</li>
+        <li>Candidates</li>
+        <li>Results</li>
+      </ul>
+
+
+
+      <ul>
+
+
+      </ul>
+    </div>
+  </li>
+
+</ul>
+
+
+{% endblock main_content %}

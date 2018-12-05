@@ -111,6 +111,7 @@ PROJECT_APPS = (
     'wheredoivote_user_feedback',
     'backlog',
     'mailing_list',
+    'projects',
 )
 
 ALLAUTH_APPS = (
@@ -134,6 +135,8 @@ PIPELINE = get_pipeline_settings(
     extra_css=['css/styles.scss', ],
     extra_js=['js/date.format.js', ],
 )
+PIPELINE['STYLESHEETS']['styles']['extra_context']['media'] = "screen,projection,print"
+
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 LOGGING = {
