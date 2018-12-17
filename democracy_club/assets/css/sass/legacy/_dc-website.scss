@@ -198,6 +198,43 @@ section ol, section ul {
 // }
 
 
+.report .numbered {
+
+    .toc ul {
+        list-style-type: none; // because we make a custom one below
+        counter-reset: item;
+
+    }
+    .toc li:before {
+        content: counters(item, ".") ". ";
+        counter-increment: item;
+    }
+
+    // Header counters
+
+    counter-reset: h2counter;
+
+    h2 {
+        counter-reset: h3counter;
+    }
+    h2:before {
+        content: counter(h2counter) ". ";
+        counter-increment: h2counter;
+        counter-reset: h3counter;
+    }
+    h3:before {
+        content: counter(h2counter) "." counter(h3counter) ". ";
+        counter-increment: h3counter;
+        counter-reset: h4counter;
+    }
+    h4:before {
+        content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+        counter-increment: h4counter;
+    }
+
+
+}
+
 @page {
     margin: 1cm;
     size: A4;
