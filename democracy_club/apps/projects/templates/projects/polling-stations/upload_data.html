@@ -50,32 +50,28 @@ All basic feautres, plus:
 <a class="link-button" href="{% url 'contact' %}">Get in touch</a>
 </div>
 
-#### Existing customers
+<a id="exporting"></a>
+## Existing customers
 
 
-**If you work in a council you can send us data by emailing
+**If you work for a council you can send us data by emailing
 [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
 
 Please send us new data for each election, or confirm that it has not changed.
 
-<a id="exporting"></a>
-## Exporting from your EMS
+By default we direct users to their polling station using the polling station postcode.
+Providing co-ordinates or UPRNs for the polling stations allows us to provide more accurate directions.
+
+### Exporting from your EMS
 
 Some suppliers have added exports in their software to make it easy to email us the data.
-Ideally this export would also include property and/or polling station UPRNS, but this is not essential.
 
-### Halarose
-
-There is a Knowledge Base Article (KBA) about how to export data. Click on
-"Democracy Club" in the tag cloud or use this link:
-[https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384](https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384)
-
-### Xpress
+#### Xpress
 
 The Democracy Club report is in "Express Management" under "Elections/Exports"
 and the report is called "EC &amp; Democracy Club Polling Place Lookup".
 
-### Democracy Counts / Elector8
+#### Democracy Counts Elector8
 
 For Elector8 Users, go to "Planning &amp; Reporting" then "Category Searches"
 and select both of the following:
@@ -85,14 +81,21 @@ and select both of the following:
 
 Right click on the data grid and click "export".
 
-### Idox
+#### Idox Eros (formerly Halarose)
 
-Unfortunately Idox haven't provided an easy export yet, but they are working on it.
+There is a Knowledge Base Article (KBA) about how to export data. Click on
+"Democracy Club" in the tag cloud or use this link:
+[https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384](https://www.halarose.co.uk/helpspot/index.php?pg=kb.page&id=384)
+
+#### Idox Strand
+
+Unfortunately Idox haven't provided an easy export from Strand yet,
+but they are working on it.
 It's worth emailing [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk)
 anyway, as we might be able to work with your GIS team on getting data.
 
 
-## Data changes
+### Data changes
 
 We only use data sent to us for the elections you tell us it's valid for.
 If we're not sure we don't re-use data between elections, and we will email you asking
@@ -104,11 +107,11 @@ changes to the data on the live site. In the worse case we can remove all your d
 the site very quickly, just get in touch.
 
 
-## Data restrictions
+### Data restrictions
 
-We don't need personal data to run the polling station finder but we do need
-UPRNs or data that from some of OS's products depending on the type of data you are
-able to provide us with.
+We don't need personal data to run the polling station finder but we may need
+UPRNs or data from some of Ordnance Survey's products depending on the type of
+data you are able to provide us with.
 
 We have an agreement with The Electoral Commission under the Public Sector Mapping Agreement
 that allows us to receive data that's in AddressBase including UPRNs.
@@ -120,9 +123,9 @@ under ‘presumption to publish’.
 We suggest that you publish Geo data as a WFS layer from your GIS software.
 
 
-## Using the finder on your website
+### Using the finder on your website
 
-If you provide data to us then you can embed out polling station directly on
+If you provide data to us then you can embed our polling station finder directly on
 your website, free of charge.
 
 You'll need to add a bit of code to your site.
