@@ -20,13 +20,14 @@
             "botocore*",
             "bower_components",
             "faker",
-            "foundation-sites"
+            "foundation-sites",
             "IPython",
             "local.py",
             "pygments",
             "sphinx",
             "static_files",
             "__pycache__",
+            ".tox"
         ],
         "s3_bucket": "dc-website-test-dev",
         "extra_permissions": [

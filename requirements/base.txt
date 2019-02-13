@@ -30,3 +30,5 @@ sorl-thumbnail==12.3
 
 
 django-storages==1.6.5
+
+boto3==1.7.74
