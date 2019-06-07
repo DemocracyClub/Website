@@ -34,6 +34,8 @@ urlpatterns = [
         TemplateView.as_view(template_name="about/index.html"), name="about"),
     url(r'^about/jobs/$',
         TemplateView.as_view(template_name="about/jobs.html"), name="jobs"),
+    url(r'^about/funding/$',
+        TemplateView.as_view(template_name="about/funding.html"), name="funding"),
     url(r'^about/team/$',
         TemplateView.as_view(template_name="about/team.html"), name="team"),
     url(r'^privacy/$',

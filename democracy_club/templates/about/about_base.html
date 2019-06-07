@@ -8,6 +8,7 @@
       <li class="{% if request.path|slice:"-7:" == "/about/" %} nav-site__item--active{% endif %}"><a href="{% url "about" %}">About</a></li>
       <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">The Team</a></li>
       <li class="{% if request.path|slice:"-6:" == "/jobs/" %} nav-site__item--active{% endif %}"><a href="{% url "jobs" %}">Jobs</a></li>
+      <li class="{% if request.path|slice:"-9:" == "/funding/" %} nav-site__item--active{% endif %}"><a href="{% url "funding" %}">Funding</a></li>
     </ul>
   </nav>
 
