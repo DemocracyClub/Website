@@ -50,6 +50,7 @@ urlpatterns = [
     url(r'^report_2016/', include('report_2016.urls', namespace="report_2016")),
     url(r'^report_2017/', include('report_2017.urls', namespace="report_2017")),
     url(r'^report_2018/', include('report_2018.urls', namespace="report_2018")),
+    url(r'^report_2019/', include('report_2019.urls', namespace="report_2019")),
     url(r'^reports/whos_missing/', include('report_whos_missing.urls', namespace="report_whos_missing")),
     url(r'^wheredoivote_user_feedback/',
         include('wheredoivote_user_feedback.urls',
