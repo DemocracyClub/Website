@@ -9,4 +9,4 @@ pytest-pep8
 pytest-flakes
 pytest-cov
 factory_boy
-vcrpy
+vcrpy==2.0.1
