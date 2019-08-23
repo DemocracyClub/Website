@@ -5,6 +5,7 @@ from jsonfield import JSONField
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Member(models.Model):
     """
@@ -21,9 +22,8 @@ class Member(models.Model):
     source = models.CharField(blank=True, max_length=800)
 
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('view_member', (), {})
+        return reverse('view_member')
 
     def generate_token(self):
         joiner = "--".encode('utf8')
