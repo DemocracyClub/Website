@@ -5,7 +5,7 @@ from django_extensions.db.models import TimeStampedModel
 from everyelection.models import AuthorityElection
 
 class ElectionResultSet(TimeStampedModel):
-    election = models.ForeignKey(AuthorityElection)
+    election = models.ForeignKey(AuthorityElection, on_delete=models.CASCADE)
     reported_turnout = models.IntegerField(blank=True, null=True)
     calculated_turnout = models.IntegerField(blank=True, null=True)
 

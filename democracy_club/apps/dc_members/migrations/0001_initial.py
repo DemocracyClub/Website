@@ -25,8 +25,14 @@ class Migration(migrations.Migration):
                 ('postcode', models.CharField(max_length=20, blank=True)),
                 ('token', models.CharField(
                     db_index=True, max_length=255, blank=True)),
-                ('user', models.ForeignKey(
-                    to=settings.AUTH_USER_MODEL, unique=True)),
+                (
+                    'user',
+                    models.ForeignKey(
+                        to=settings.AUTH_USER_MODEL,
+                        unique=True,
+                        on_delete=models.CASCADE,
+                    )
+                ),
             ],
             options={
             },
