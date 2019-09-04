@@ -1,7 +1,7 @@
 from django.views.generic.edit import UpdateView
 from django.views.generic import DetailView, RedirectView
 from django.contrib.auth import login, authenticate
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.http import is_safe_url
 
 from ratelimit.mixins import RatelimitMixin

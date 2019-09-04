@@ -3,7 +3,7 @@
 # to each package in each requirements/*.txt.
 
 git+https://github.com/DemocracyClub/dc_signup_form.git@2.0.0
--e git+https://github.com/DemocracyClub/dc_base_theme.git@0.3.7#egg=dc_base_theme
+-e git+https://github.com/DemocracyClub/dc_base_theme.git@0.3.9#egg=dc_base_theme
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=hermes
 -e git+https://github.com/klen/django_markdown.git#egg=django_markdown
 git+https://github.com/chrisdrackett/django-typogrify.git

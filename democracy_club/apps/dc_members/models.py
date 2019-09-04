@@ -5,13 +5,14 @@ from jsonfield import JSONField
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Member(models.Model):
     """
     Members are people who have done tasks in the past.  They are added when
     someone gives us their information with the intent of "joining" DC.
     """
-    user = models.OneToOneField(User, null=True)
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     name = models.CharField(blank=True, max_length=255)
     email = models.EmailField()
     constituency = models.CharField(blank=True, max_length=255)
@@ -21,9 +22,8 @@ class Member(models.Model):
     source = models.CharField(blank=True, max_length=800)
 
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('view_member', (), {})
+        return reverse('view_member')
 
     def generate_token(self):
         joiner = "--".encode('utf8')
