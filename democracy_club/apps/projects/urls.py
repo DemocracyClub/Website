@@ -71,6 +71,11 @@ urlpatterns = [
         name="whocanivotefor",
     ),
     url(
+        r"^election-widget/$",
+        TemplateView.as_view(template_name="projects/election-widget.html"),
+        name="election_widget",
+    ),
+    url(
         r"^candidates-wiki/$",
         TemplateView.as_view(template_name="projects/candidates.html"),
         name="candidates",
