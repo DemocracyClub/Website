@@ -14,45 +14,6 @@
 
 Our polling station finder uses data sent to us from councils.
 
-## Plans
-
-<div class="card">
-<h3>Basic: free</h3>
-<ul>
-<li>Finds the polling station assigned to a property</li>
-<li>Support postcodes that overlap polling district boundaries</li>
-<li>Data export from your EMS (where supported)</li>
-<li>Data included on the Electoral Commission’s YourVoteMatters lookup as well as other sites we partner with</li>
-<li>Embeddable widget on your website</li>
-</ul>
-</div>
-<div class="card highlight_card">
-<h3>Pro: £450 per year</h3>
-All basic feautres, plus:
-<ul>
-<li>Coverage for all scheduled elections, and all national elections</li>
-<li><a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">Approved on the Government’s Digital Marketplace (G-Cloud 10)</a></li>
-<li>Personal contact for support queries</li>
-<li>Rapid response to last minute changes, including on polling day</li>
-<li>Customizable embedded widget to match your council colours</li>
-<li>Detailed usage reporting</li>
-<li>Early warning of errors</li>
-</ul>
-<a class="link-button" href="{% url 'contact' %}">Get in touch</a>
-</div>
-<div class="card">
-<h3>Bespoke: £contact us</h3>
-<ul>
-<li>Support for all by-elections</li>
-<li>Custom information about each polling station, for example accessibility information, photos</li>
-<li>Bespoke integration in to your website</li>
-</ul>
-<a class="link-button" href="{% url 'contact' %}">Get in touch</a>
-</div>
-
-<a id="exporting"></a>
-## Existing customers
-
 
 **If you work for a council you can send us data by emailing
 [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk).**
@@ -133,12 +94,16 @@ You'll need to add a bit of code to your site.
 
 
 <div class="logo-list">
-  <div class="logo-list__list">
-  <div class="logo-list__img"><a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
-  <img src="{% static "ccs-certificate.png" %}">
-</a></div>
-<div class="logo-list__img"><img src="{% static "images/reusers/logo--the-electoral-commission.jpg" %}"></div>
-</div>
+  <ul class="fukol-grid logo-list">
+    <li>
+      <a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
+        <img src="{% static "ccs-certificate.png" %}">
+      </a>
+    </li>
+    <li>
+      <img src="{% static "images/reusers/logo--the-electoral-commission.jpg" %}">
+    </li>
+  </ul>
 </div>
 
 *Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call on [03331 122450](tel:443331122450)*
