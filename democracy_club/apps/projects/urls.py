@@ -19,6 +19,11 @@ urlpatterns = [
         name="reports",
     ),
     url(
+        r"^reports/registers/$",
+        TemplateView.as_view(template_name="projects/report_odi_registers.html"),
+        name="reports_registers",
+    ),
+    url(
         r"^polling-stations/$",
         TemplateView.as_view(
             template_name="projects/polling-stations/home.html"
