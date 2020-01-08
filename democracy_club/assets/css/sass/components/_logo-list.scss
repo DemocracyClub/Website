@@ -8,46 +8,16 @@
 	.logo-list__title { text-align: center; }
 
 	// Logo list list
-	.logo-list__list {
-		display: flex;
-		flex-wrap: wrap;
+	.logo-list {
 		justify-content: space-between;
-
-		@include media(desktop) {
-			margin: 0 -20px;
-			flex-wrap: nowrap;
-			align-items: center;
+		flex: 1 0 8em;
+		li {
+			list-style-type: none;
+			line-height:150px;
+			text-align: center;
+			img {
+				max-width: 180px;
+				vertical-align: middle;
+			}
 		}
 	}
-		// Individual images
-	    .logo-list__img {
-	    	width: 50%;
-	    	padding: 20px;
-	    	text-align: center;
-	    	@include media(tablet) {
-		    	flex-basis: calc(100%/3);
-		    	width: calc(100%/3);
-		    }
-		    @include media(desktop) {
-		    	flex-basis: auto;
-		    	width: auto;
-		    }
-		}
-		    .logo-list__img img {
-		    	max-width: 120px;
-		    	width: 100%;
-		    	vertical-align: bottom;
-
-		    	@include media(desktop) {
-		    		max-width: 170px;
-		    	}
-		    }
-
-		    // Square logo extra padding
-		    .logo-list__img--square-logo img {
-		    	max-width: 80px;
-
-		    	@include media(desktop) {
-		    		max-width: 100px;
-		    	}
-		    }

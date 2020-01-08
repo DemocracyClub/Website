@@ -1,32 +1,28 @@
 {% load typogrify_tags %}
 {% load markdown_deux_tags %}
 
-<div class="backlog_card card feature-card">
-    <h3 class="feature-card__title">{{ card.title }}</h3>
-    <div class="feature-card__body">
-        {% if card.time_required %}
-        <div class="time_required"><p>Time required: <strong>{{ card.time_required }}</strong></p></div>
-        {% endif %}
-        {% if card.comment_count %}
-        <div class="backlog_card_comments">
-            <a href="{{ card.url }}">
-                {{ card.comment_count }} comment{{ card.comment_count|pluralize }}</a>
-        </div>
-        {% endif %}
-        <div class="backlog_card_text">
-            {{ card.text|markdown }}
-        </div>
-        {% for label in card.labels.all %}
-            {% if forloop.first %}
-            <ul class="labels">
-            {% endif %}
-                <li style="background-color:{{ label.colour }};">{{ label }}</li>
-            {% if forloop.last %}
-            </ul>
-            {% endif %}
-        {% endfor %}
+<div class="backlog_card">
+    <h4>{{ card.title }}</h4>
+    {% if card.time_required %}
+    <div class="time_required"><p>Time required: <strong>{{ card.time_required }}</strong></p></div>
+    {% endif %}
+    {% if card.comment_count %}
+    <div class="backlog_card_comments">
+        <a href="{{ card.url }}">
+            {{ card.comment_count }} comment{{ card.comment_count|pluralize }}</a>
     </div>
-    <div class="feature-card__ctrl">
-        <a class="link-button buttonNew buttonNew--outline" href="{{ card.get_cta_url }}" target="_blank">Help out</a>
+    {% endif %}
+    <div class="backlog_card_text">
+        {{ card.text|markdown }}
     </div>
+    {% for label in card.labels.all %}
+        {% if forloop.first %}
+        <ul class="labels">
+        {% endif %}
+            <li style="background-color:{{ label.colour }};">{{ label }}</li>
+        {% if forloop.last %}
+        </ul>
+        {% endif %}
+    {% endfor %}
+    <a class="link-button" href="{{ card.get_cta_url }}" target="_blank">Help out</a>
 </div>

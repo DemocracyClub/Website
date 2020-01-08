@@ -23,141 +23,85 @@
 
 {% block content %}
 
-    <style>
-      .ge2019-banner h2 { font-size:1em;}
-    </style>
-  <div class="ge2019-banner">
+{#    <style>#}
+{#      .ge2019-banner h2 { font-size:1em;}#}
+{#    </style>#}
+{#  <div class="ge2019-banner">#}
+{##}
+{#    <section class="link-card">#}
+{#      <img src="{% static "images/maze_illustration.png" %}">#}
+{#      <div class="text">#}
+{#      <h2>UK Parliamentary Election: Thursday 12 December</h2>#}
+{#      <p>We're providing vital information for the elections, such as <a href="https://WhoCanIVoteFor.co.uk">Who Can I Vote For?</a> and <a href="https://WhereDoIVote.co.uk">Where Do I Vote?</a></p>#}
+{#    </div>#}
+{#    </section>#}
+{#  </div>#}
 
-    <section class="link-card">
-      <img src="{% static "images/maze_illustration.png" %}">
-      <div class="text">
-      <h2>UK Parliamentary Election: Thursday 12 December</h2>
-      <p>We're providing vital information for the elections, such as <a href="https://WhoCanIVoteFor.co.uk">Who Can I Vote For?</a> and <a href="https://WhereDoIVote.co.uk">Where Do I Vote?</a></p>
-    </div>
-    </section>
-  </div>
-
-{#   <section class="link-card"> #}
-{#   <img src="{% static "images/maze_illustration.png" %}"> #}
-{#   <div class="text"> #}
-{#     <h2><a href="{% url "report_2019:report_2019" %}">Towards better elections</a></h2> #}
-{#     <p>Read our report on Democracy Club’s work on the 2019 elections and the future of digital services for democracy</p> #}
-{#   </div> #}
-{# </section> #}
+ <section class="card link-card" style="line-height:0;">
+   <img src="{% static "images/maze_illustration_no_text.png" %}">
+ </section>
 
 
 
 
-<div class="section-header">
-  <h3 class="section-header__title"><a href="/projects/">Our Projects</a></h3>
-  <div class="section-header__body">
-    <p>The data we create is open and free to use. Google, Buzzfeed, The Guardian and others have used our data to reach millions of people.</p>
-  </div>
-</div><!-- /.section-header -->
+<div class="card">
+  <h3><a href="/projects/">Our Projects</a></h3>
+  <p>
+     We build digital tools to support everyone’s participation in UK democracy.
+     Our services  are trusted by organisations in government, charities and the media,
+     and have reached millions of people since 2015.
+  </p>
 
-<div class="fukol-grid">
+  <h4><a href="{% url "projects:whocanivotefor" %}">Who Can I Vote For?</a></h4>
+  <p>A one-stop shop for everything voters need to know about their candidates. Used by 2.5m people since 2015.</p>
 
-  <div class="fukol-grid__col fukol-grid__col--60-70">
+  <h4><a href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h4>
+  <p>Our polling station finder answers one of the most popular questions on election days in the UK.</p>
 
-    <div class="feature-card-wrapper">
+  <h4><a href="{% url "projects:candidates" %}">Candidates Wiki</a></h4>
+  <p>Our members crowdsource data on every candidate for every election. We make it free and open for anyone to use.</p>
 
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://wheredoivote.co.uk/" itemprop="url" target="_blank">Where Do I Vote? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Our polling station finder answers one of the most popular questions on election days in the UK.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="{% url "projects:polling_one_pager" %}" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
-        </div>
-      </article><!-- /.feature-card -->
+  <p><a href="{% url "projects:home" %}" class="link-button">See more projects</a></p>
+</div>
 
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://whocanivotefor.co.uk/" itemprop="url" target="_blank">Who Can I Vote For? <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>A one-stop shop for everything voters need to know about their candidates. Used by 1.5m people since 2015.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="/projects/#project--whocanivotefor" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-      <article class="feature-card" itemscope itemtype="http://schema.org/WebSite">
-        <h3 class="feature-card__title" itemprop="name"><a href="https://candidates.democracyclub.org.uk/" itemprop="url" target="_blank">Candidates database <i class="fa fa-external-link feature-card__icon"></i></a></h3>
-        <div class="feature-card__body">
-          <div class="feature-card__copy">
-            <p>Our members crowdsource data on every candidate for every election. We make it free and open for anyone to use.</a>.</p>
-          </div>
-        </div>
-        <div class="feature-card__ctrl">
-          <a href="/projects/#project--candidates" class="feature-card__link buttonNew buttonNew--outline">Read more</a>
-        </div>
-      </article><!-- /.feature-card -->
-
-    </div><!-- /.feature-card-wrapper -->
-
-    <p><a href="/projects/" class="buttonNew buttonNew--outline">See more projects</a></p>
-
-  </div><!-- /.fukol-grid__col -->
-  <div class="fukol-grid__col fukol-grid__col--40-30">
-
-    {% include "_includes/form--donate-box.html" %}
-
-  </div><!-- /.fukol-grid__col -->
-</div><!-- /.fukol-grid -->
 
 <div class="fukol-grid">
 
-  <div class="fukol-grid__col fukol-grid__col--50-60">
-    <div class="section-header">
-      <h3 class="section-header__title"><a href="{% url "backlog:backlog_view"%}">Quests</a></h3>
-      <div class="section-header__body">
-        <p>Democracy needs you! Join thousands of people helping to make democracy better by completing small quests.</p>
-      </div>
-    </div><!-- /.section-header -->
+  <div class="card">
+    <h3>
+      <a href="{% url "backlog:backlog_view"%}">Quests</a>
+    </h3>
+    <p>Democracy needs you! Join thousands of people helping to make democracy better by completing small quests.</p>
     {% include "backlog/includes/card.html" %}
-    <p><a href="{% url "backlog:backlog_view"%}" class="buttonNew buttonNew--outline">See more quests</a></p>
-  </div><!-- /.fukol-grid__col -->
-
-  <div class="fukol-grid__col fukol-grid__col--50-40">
-
-    {% for post in latest_posts %}
-
-      {% if forloop.first %}
-      <div class="section-header">
-        <h3 class="section-header__title"><a href="/blog/">Our Blog</a></h3>
-      </div><!-- /.section-header -->
-      {% endif %}
-
-      <div class="media-card">
-        <div class="media-card__content">
-            <h4 class="media-card__title">
-                <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
-            </h4>
-            <div class="media-card__body">
-              {{ post.short|safe }}
-            </div>
-        </div><!-- /.media-card__body -->
-      </div><!-- /.media-card -->
-    {% endfor %}
-
-  </div><!-- /.fukol-grid__col -->
-
-</div><!-- /.fukol-grid -->
-
-<div class="logo-list">
-  <h4 class="logo-list__title">Our data powers services and stories by</h4>
-  <div class="logo-list__list">
-    <div class="logo-list__img"><img src="{% static 'images/reusers/logo--google.svg' %}" alt="Google" /></div>
-    <div class="logo-list__img"><img src="{% static 'images/reusers/logo--the-electoral-commission.jpg' %}" alt="The Electoral Commission" /></div>
-    <div class="logo-list__img"><img src="{% static 'images/reusers/logo--the-daily-telegraph.svg' %}" alt="The Telegraph" /></div>
-    <div class="logo-list__img"><img src="{% static 'images/reusers/logo--the-guardian.svg' %}" alt="The Guardian" /></div>
-    <div class="logo-list__img"><img src="{% static 'images/reusers/logo--coventry-city-council.jpg' %}" alt="Coventry City Council" /></div>
-    <div class="logo-list__img logo-list__img--square-logo"><img src="{% static 'images/reusers/logo--terrence-higgins-trust.jpg' %}" alt="Terrence Higgins Trust" /></div>
+    <p><a href="{% url "backlog:backlog_view"%}" class="link-button">See more quests</a></p>
   </div>
+
+  <div class="card">
+    <h3><a href="/blog/">Our Blog</a></h3>
+    {% for post in latest_posts %}
+      <h4>
+        <a href="{{ post.get_absolute_url }}">{{ post.subject }}</a>
+      </h4>
+      {{ post.short|safe }}
+    {% endfor %}
+    <p><a href="/blog/" class="link-button">See more quests</a></p>
+  </div>
+
+</div>
+
+<div class="card">
+  <h3>Trusted by</h3>
+  <ul class="fukol-grid logo-list">
+    <li><img src="{% static 'images/reusers/logo--google.svg' %}" alt="Google" /></li>
+    <li><img src="{% static 'images/reusers/logo--the-electoral-commission.jpg' %}" alt="The Electoral Commission" /></li>
+    <li><img src="{% static 'images/reusers/logo--the-daily-telegraph.svg' %}" alt="The Telegraph" /></li>
+    <li><img src="{% static 'images/reusers/logo--the-times.jpg' %}" alt="The Times" /></li>
+    <li><img src="{% static 'images/reusers/logo--reach.png' %}" alt="Reach PLC" /></li>
+    <li><img src="{% static 'images/reusers/logo--fawcett.webp' %}" alt="Fawcett Society" /></li>
+    <li><img src="{% static 'images/reusers/logo--facebook.png' %}" alt="Facebook" /></li>
+    <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" focusable="false" width="260" height="70" viewBox="0 0 260 70"><path d="M110.09,15.37h4.34V29.46h-4.34V15.37Zm-6.66,3.36V18.68A4.62,4.62,0,0,0,107,14.16c0-4.46-3.91-5.22-7.5-5.22H91.82V29.46h8.4c3.65,0,7.7-1.42,7.7-5.71A4.91,4.91,0,0,0,103.43,18.74Zm-7.09-6H99.4c1.42,0,3,.43,3,2.14s-1.45,2.23-2.84,2.23H96.33V12.77Zm4.05,12.87H96.33V21h3.42c1.48,0,3.65.32,3.65,2.26S101.81,25.63,100.39,25.63ZM112.26,8.42a2.52,2.52,0,1,1-2.52,2.52,2.52,2.52,0,0,1,2.52-2.52h0Zm5.3,7h4.34v2.26H122A4.3,4.3,0,0,1,126,15a5.7,5.7,0,0,1,1.45.15v4a6.69,6.69,0,0,0-1.85-.29c-3.3,0-3.71,1.91-3.71,4.72v5.88h-4.34V15.37Zm11.79,0h4.17v1.91h0.06A4.56,4.56,0,0,1,137.69,15,4.41,4.41,0,0,1,142,17.55,4.57,4.57,0,0,1,146.49,15c3.82,0,5,2.69,5,6.11v8.32h-4.34v-8.2c0-1.3-.49-2.4-1.91-2.4-2,0-2.64,1.42-2.64,3.16v7.45h-4.34V22c0-1,.06-3.16-1.94-3.16-2.26,0-2.61,1.77-2.61,3.59v7h-4.34V15.37Zm25.25,0h4.34V29.46H154.6V15.37Zm2.17-7a2.52,2.52,0,1,1-2.52,2.52,2.52,2.52,0,0,1,2.52-2.52h0Zm5.3,7h4.17v1.91h0.06A4.56,4.56,0,0,1,170.42,15c4.4,0,5.21,2.9,5.21,6.66v7.77h-4.34v-6.9c0-1.62,0-3.71-2.26-3.71s-2.61,1.77-2.61,3.59v7h-4.34V15.37Zm26.82,0v1.85h-0.06A5.75,5.75,0,0,0,184,15c-4,0-6.43,3.59-6.43,7.33,0,4.26,2.75,7.27,6.92,7.27a4.92,4.92,0,0,0,4-1.85h0.06v1.36c0,2-1.25,3.45-3.88,3.45a6.91,6.91,0,0,1-4.58-1.83l-2.4,3.59a11,11,0,0,0,7.07,2.06c5.44,0,8.14-2.84,8.14-8.14V15.37h-4Zm-3.48,10.43a3.48,3.48,0,1,1,3.48-3.48A3.5,3.5,0,0,1,185.42,25.81ZM200.71,7.55v9.74h0.06A4.07,4.07,0,0,1,204.7,15c4.4,0,5.21,2.9,5.21,6.66v7.77h-4.34v-6.9c0-1.62,0-3.71-2.26-3.71s-2.61,1.77-2.61,3.59v7h-4.34V7.55h4.34ZM219.39,15a9.08,9.08,0,0,0-6.2,2.26l2.32,2.38A4.64,4.64,0,0,1,219,18a2.59,2.59,0,0,1,2.78,2.52c-3.62,0-9.53.09-9.53,5,0,2.84,2.37,4.35,5,4.35a5.07,5.07,0,0,0,4.46-2.12h0.06v1.77h4V22.3C225.82,17.61,224.46,15,219.39,15Zm2.43,9.19c0,1.74-1.59,2.64-3.3,2.64-1,0-2.06-.49-2.06-1.54,0-1.91,3-2,4.29-2h1.07v0.93Zm6.76-8.84h4.17v1.91h0.06A4.56,4.56,0,0,1,236.92,15a4.41,4.41,0,0,1,4.34,2.52A4.57,4.57,0,0,1,245.72,15c3.82,0,5,2.69,5,6.11v8.32h-4.34v-8.2c0-1.3-.49-2.4-1.91-2.4-2,0-2.64,1.42-2.64,3.16v7.45h-4.34V22c0-1,.06-3.16-1.94-3.16-2.26,0-2.61,1.77-2.61,3.59v7h-4.34V15.37ZM110.17,52.25A9,9,0,0,1,102.58,56,10.44,10.44,0,0,1,91.89,45.24a10.44,10.44,0,0,1,10.69-10.78,8.92,8.92,0,0,1,7.09,3.25l-1.82,1.36a6.77,6.77,0,0,0-5.27-2.69c-5.27,0-8.43,4.14-8.43,8.87s3.16,8.87,8.43,8.87A6.57,6.57,0,0,0,108.46,51Zm4.55,3.25H112.8V41.93h1.91V55.49Zm-1-17.39a1.39,1.39,0,1,1,1.39-1.39,1.41,1.41,0,0,1-1.39,1.39h0Zm11.38,5.56h-3.91v8c0,2,.78,2.43,2,2.43a4.25,4.25,0,0,0,2-.52l0.09,1.77a6.38,6.38,0,0,1-2.58.49c-1.45,0-3.36-.64-3.36-3.62V43.67h-2.87V41.93h2.87V38.11h1.91v3.82h3.91v1.74Zm8.2,9.48,4.14-11.21h2.32L133,59c-0.81,2.09-1.91,3.42-4.26,3.42a6.13,6.13,0,0,1-1.77-.2l0.2-1.85a3,3,0,0,0,1.45.32c1.33,0,2-.9,2.61-2.43l1-2.61-5.56-13.73h2.4Zm31.6-.9A9,9,0,0,1,157.34,56a10.44,10.44,0,0,1-10.69-10.78,10.44,10.44,0,0,1,10.69-10.78,8.92,8.92,0,0,1,7.1,3.25l-1.82,1.36a6.77,6.77,0,0,0-5.27-2.69c-5.27,0-8.43,4.14-8.43,8.87s3.16,8.87,8.43,8.87A6.57,6.57,0,0,0,163.22,51Zm9.27-10.66a7.13,7.13,0,1,0,7.21,7.13A6.92,6.92,0,0,0,174.2,41.59Zm0,12.52c-3.13,0-5.1-2.35-5.1-5.39s2-5.39,5.1-5.39,5.13,2.35,5.13,5.39S177.36,54.1,174.2,54.1Zm19.87,1.39a18.18,18.18,0,0,1-.09-2.17h-0.06a5.46,5.46,0,0,1-4.55,2.52c-3.45,0-5.1-1.94-5.1-5.3V41.93h1.91v7.51c0,3,.84,4.67,3.68,4.67,0.41,0,4.11-.26,4.11-5.22v-7h1.91V52.51c0,0.72.09,2,.14,3h-2Zm8.11-13.56a18.18,18.18,0,0,1,.09,2.17h0.06a5.46,5.46,0,0,1,4.55-2.52c3.45,0,5.1,1.94,5.1,5.3v8.61h-1.91V48c0-3-.84-4.67-3.68-4.67-0.41,0-4.11.26-4.11,5.22v7h-1.91V44.92c0-.72-0.09-2-0.15-3h2Zm24.12,3.19a4.07,4.07,0,0,0-3.39-1.8c-3.16-.06-5.1,2.29-5.1,5.39s1.94,5.45,5.1,5.39a4.06,4.06,0,0,0,3.39-1.8l1.56,1.19a6.56,6.56,0,0,1-5,2.35,6.77,6.77,0,0,1-7.18-7.13,6.77,6.77,0,0,1,7.18-7.13,6.56,6.56,0,0,1,5,2.35Zm6.4,10.37h-1.91V41.93h1.91V55.49Zm-1-17.39a1.39,1.39,0,1,1,1.39-1.39,1.41,1.41,0,0,1-1.39,1.39h0Zm7.62,17.39h-1.91V33.59h1.91V55.49Zm-157.12.07H80.33V8.92h1.91V55.57ZM71,14.49a5.59,5.59,0,0,0-5.16-5.57H55.36a5.54,5.54,0,0,0-4.08,1.8L22.07,39.92,36.21,54.07a5.55,5.55,0,0,0,7.8.06L69.31,28.84l0.11-.11h0A5.55,5.55,0,0,0,71,24.85V14.49ZM37,18.67l-8-7.95a5.54,5.54,0,0,0-4.08-1.8H14.46A5.59,5.59,0,0,0,9.3,14.49V24.85a5.55,5.55,0,0,0,1.57,3.87l8,8Z" fill="#8b2388"></path></svg></li>
+    <li><svg aria-hidden="true" height="54" viewBox="0 0 269 68" width="214" xmlns="http://www.w3.org/2000/svg"><title>UK Parliament</title><g data-icon="portcullis" fill="#373151"><path d="M52.9 4.1L52.2 4.5C53 6 53.2 7.9 52.7 9.6 51.8 8.9 51.2 8 51 7L50.3 7.4C49.8 9.4 48.9 11.4 47.7 13.2L47.9 13.9C48.6 13.5 49.4 13.3 50.2 13.4 50.5 13.4 50.7 13.4 51 13.4 50.3 15.1 48.7 16.2 46.9 16.2 45.1 16.3 43.5 15.3 42.7 13.7 43.2 13.5 43.6 13 43.8 12.4 44 11.5 43.4 11.1 43.6 10.2 43.8 9.4 44.5 8.9 45.2 8.9 46 9 46.7 9.5 46.8 10.3 47.5 9.9 47.9 9.1 47.8 8.3 47.7 7.5 47.2 6.8 46.4 6.6 45.7 6.3 44.8 6.5 44.3 7.1 44.6 6.6 44.8 6.1 44.9 5.6 45.1 4.3 44.9 3 44.1 2 42.9 2.6 42 3.7 41.8 5 41.6 5.5 41.6 6.1 41.7 6.6 41.4 5.9 40.7 5.3 39.9 5.3 39.1 5.2 38.4 5.6 38 6.3 37.6 7 37.6 7.8 38.1 8.5 38.5 7.8 39.3 7.6 40 7.9 40.7 8.2 41.1 8.9 41 9.7 40.8 10.5 40.1 10.7 39.9 11.6 39.8 12.1 39.9 12.6 40.2 13L40.3 13.2C38.7 14.4 36.5 14.7 34.7 13.8 32.8 12.9 31.7 11 31.7 9L31.7 8.5C33.3 8.8 34.8 9.6 35.9 10.9L36.5 10.3 36.5 3.9 35.9 3.3C34.8 4.5 33.3 5.3 31.7 5.6 31.6 3.3 33.2 1.3 35.4 0.8L34.8 0.2C33.2 0.1 31.6 0 30 0 28.4 0 26.8 0.1 25.2 0.2L24.6 0.8C26.8 1.3 28.4 3.3 28.4 5.6 26.7 5.3 25.2 4.5 24.1 3.3L23.5 3.9 23.5 10.3 24.1 10.8C25.2 9.6 26.7 8.8 28.4 8.5L28.4 9C28.3 11 27.2 12.9 25.4 13.8 23.5 14.7 21.4 14.5 19.7 13.2L19.8 13.1C20.1 12.6 20.2 12.1 20.1 11.6 19.9 10.7 19.2 10.6 19 9.7 18.8 9 19.2 8.2 20 7.9 20.7 7.6 21.5 7.8 22 8.5 22.4 7.8 22.4 7 22 6.3 21.6 5.6 20.9 5.2 20.1 5.3 19.3 5.3 18.6 5.9 18.3 6.6 18.4 6.1 18.4 5.5 18.2 5 18 3.7 17.1 2.6 15.9 2 15.1 3 14.8 4.4 15.1 5.7 15.2 6.2 15.4 6.7 15.7 7.2 15.1 6.6 14.3 6.4 13.5 6.7 12.8 6.9 12.2 7.6 12.2 8.4 12.1 9.2 12.5 10 13.2 10.4 13.3 9.6 13.9 9.1 14.7 9 15.5 9 16.2 9.5 16.4 10.3 16.6 11.2 16 11.6 16.2 12.4 16.3 13 16.7 13.5 17.3 13.8 16.5 15.4 14.8 16.3 13 16.3 11.3 16.2 9.7 15.1 9 13.5 9.3 13.4 9.5 13.4 9.8 13.4 10.6 13.4 11.4 13.6 12.1 14L12.3 13.2C11.1 11.4 10.2 9.5 9.6 7.4L9 7C8.8 8 8.2 8.9 7.3 9.6 6.8 7.9 7 6 7.8 4.5L7.1 4.1C6 4.5 4.3 5.2 3.1 5.7L10 21.1C22.7 15.5 37.2 15.5 50 21.1L56.8 5.7C55.7 5.2 54.1 4.5 52.9 4.1Z"></path><path d="M59 33C59.1 31.2 57.8 29.5 56 29.1L56 26.9C58 26.4 59.3 24.5 59 22.5 58.8 20.5 57 19 55 19 53.2 18.9 51.5 20.2 51.1 22L8.9 22C8.5 20.2 6.8 18.9 5 19 3.9 19 2.9 19.4 2.1 20.1 1.4 20.9 1 21.9 1 23 0.9 24.8 2.2 26.5 4 26.9L4 29.1C2.2 29.6 1 31.2 1 33 1 34.8 2.2 36.5 4 36.9L4 39.1C2.2 39.6 1 41.2 1 43 1 44.8 2.2 46.5 4 46.9L4 49.1C2.2 49.6 1 51.2 1 53 1 54.8 2.2 56.5 4 56.9L4 59.1C2 59.6 0.7 61.5 1 63.5 1.3 65.5 3 67 5 67 7 67 8.8 65.5 9 63.5 9.3 61.5 8 59.6 6 59.1L6 56.9C7.8 56.5 9 54.8 9 53 9 51.2 7.8 49.6 6 49.1L6 46.9C7.8 46.5 9 44.8 9 43 9 41.2 7.8 39.6 6 39.1L6 36.9C7.8 36.5 9 34.8 9 33 9 31.2 7.8 29.6 6 29.1L6 26.9C7.4 26.6 8.6 25.4 8.9 24L11 24 11 67 11.5 67C12.5 63.9 14 61.1 16 58.5L16 58 14 58 14 52 19 52 19 58 18 58 18 58.6C19.3 61.2 20.3 64.1 20.8 67L21.2 67C21.7 64.1 22.7 61.2 24 58.6L24 58 23 58 23 52 28 52 28 58 27 58 27 58.6C28.3 61.2 29.3 64.1 29.8 67L30.2 67C30.7 64.1 31.7 61.2 33 58.6L33 58 32 58 32 52 37 52 37 58 36 58 36 58.6C37.3 61.2 38.3 64.1 38.8 67L39.2 67C39.7 64.1 40.7 61.2 42 58.6L42 58 41 58 41 52 46 52 46 58 44 58 44 58.5C46 61.1 47.5 63.9 48.5 67L49 67 49 24 51.1 24C51.4 25.4 52.6 26.6 54 26.9L54 29.1C52.2 29.6 51 31.2 51 33 51 34.8 52.2 36.5 54 36.9L54 39.1C52.2 39.6 51 41.2 51 43 51 44.8 52.2 46.5 54 46.9L54 49.1C52.2 49.6 51 51.2 51 53 51 54.8 52.2 56.5 54 56.9L54 59.1C52 59.6 50.8 61.5 51 63.5 51.3 65.5 53 67 55 67 57 67 58.7 65.5 59 63.5 59.2 61.5 58 59.6 56 59.1L56 56.9C57.8 56.5 59 54.8 59 53 59 51.2 57.8 49.6 56 49.1L56 46.9C57.8 46.5 59 44.8 59 43 59 41.2 57.8 39.6 56 39.1L56 36.9C57.8 36.5 59.1 34.8 59 33ZM7 63C7 63.5 6.8 64.1 6.4 64.4 6.1 64.8 5.5 65 5 65 4.1 65 3.2 64.4 3 63.5 2.7 62.6 3.2 61.6 4 61.2 4.1 61.7 4.5 62 5 62 5.5 62 5.9 61.7 6 61.2 6.7 61.6 7 62.3 7 63ZM7 53C7 53.7 6.7 54.4 6 54.8 5.9 54.3 5.5 54 5 54 4.5 54 4.1 54.3 4 54.8 3.4 54.4 3 53.7 3 53 3 52.3 3.4 51.6 4 51.2 4.1 51.7 4.5 52 5 52 5.5 52 5.9 51.7 6 51.2 6.7 51.6 7 52.3 7 53ZM7 43C7 43.7 6.7 44.4 6 44.8 5.9 44.3 5.5 44 5 44 4.5 44 4.1 44.3 4 44.8 3.4 44.4 3 43.7 3 43 3 42.3 3.4 41.6 4 41.2 4.1 41.7 4.5 42 5 42 5.5 42 5.9 41.7 6 41.2 6.7 41.6 7 42.3 7 43ZM6 24.8C5.9 24.3 5.5 24 5 24 4.5 24 4.1 24.3 4 24.8 3.2 24.4 2.7 23.4 3 22.5 3.2 21.6 4.1 21 5 21 5.9 21 6.8 21.6 7 22.5 7.3 23.4 6.8 24.4 6 24.8ZM19 49L14 49 14 43 19 43 19 49ZM19 40L14 40 14 34 19 34 19 40ZM19 31L14 31 14 25 19 25 19 31ZM28 49L23 49 23 43 28 43 28 49ZM28 40L23 40 23 34 28 34 28 40ZM28 31L23 31 23 25 28 25 28 31ZM37 49L32 49 32 43 37 43 37 49ZM37 40L32 40 32 34 37 34 37 40ZM37 31L32 31 32 25 37 25 37 31ZM46 49L41 49 41 43 46 43 46 49ZM46 40L41 40 41 34 46 34 46 40ZM46 31L41 31 41 25 46 25 46 31ZM53 23C53 22 53.7 21.2 54.7 21.1 55.6 20.9 56.6 21.5 56.9 22.4 57.2 23.3 56.8 24.3 56 24.8 56 24.2 55.6 23.8 55 23.8 54.4 23.8 54 24.2 54 24.8 53.3 24.4 53 23.7 53 23ZM57 63C57 64 56.3 64.8 55.3 64.9 54.4 65.1 53.4 64.5 53.1 63.6 52.8 62.7 53.2 61.7 54 61.2 54 61.8 54.4 62.2 55 62.2 55.6 62.2 56 61.8 56 61.2 56.7 61.6 57 62.3 57 63ZM57 53C57 53.7 56.7 54.4 56 54.8 56 54.2 55.6 53.8 55 53.8 54.4 53.8 54 54.2 54 54.8 53.4 54.4 53 53.7 53 53 53 52.3 53.4 51.6 54 51.2 54 51.8 54.4 52.2 55 52.2 55.6 52.2 56 51.8 56 51.2 56.7 51.6 57 52.3 57 53ZM57 43C57 43.7 56.7 44.4 56 44.8 56 44.2 55.6 43.8 55 43.8 54.4 43.8 54 44.2 54 44.8 53.4 44.4 53 43.7 53 43 53 42.3 53.4 41.6 54 41.2 54 41.8 54.4 42.2 55 42.2 55.6 42.2 56 41.8 56 41.2 56.7 41.6 57 42.3 57 43ZM7 33C7 33.7 6.7 34.4 6 34.8 5.9 34.3 5.5 34 5 34 4.5 34 4.1 34.3 4 34.8 3.4 34.4 3 33.7 3 33 3 32.3 3.4 31.6 4 31.2 4.1 31.7 4.5 32 5 32 5.5 32 5.9 31.7 6 31.2 6.7 31.6 7 32.3 7 33ZM57 33C57 33.7 56.7 34.4 56 34.8 56 34.2 55.6 33.8 55 33.8 54.4 33.8 54 34.2 54 34.8 53.4 34.4 53 33.7 53 33 53 32.3 53.4 31.6 54 31.2 54 31.8 54.4 32.2 55 32.2 55.6 32.2 56 31.8 56 31.2 56.7 31.6 57 32.3 57 33Z"></path></g><g data-icon="uk-parliament" fill="#373151" transform="translate(74 5)"><path d="M22.3 0.7L22.3 19.7C22.3 27.2 17 29.6 11.2 29.6 5.3 29.6 0 27.1 0 19.7L0 0.7 5.1 0.7 5.1 18.3C5.1 23.1 7.1 25.4 11.1 25.4 15.2 25.4 17.2 23 17.2 18.4L17.2 0.7 22.3 0.7Z"></path><polygon points="41.6 29 33.2 16.9 31.2 16.9 31.2 29 26 29 26 0.7 31.1 0.7 31.1 12.4 33.3 12.4 41.1 0.7 47.1 0.7 37.6 14.4 47.9 29"></polygon><path d="M0 62L0 33.7 9.1 33.7C16.1 33.7 19.2 37 19.2 42.7 19.2 48.4 15.8 52.1 9.6 52.1L5.1 52.1 5.1 62 0 62ZM5.1 47.8L9 47.8C12.7 47.8 14 46 14 42.9 14 39.7 12.3 38 9 38L5.1 38 5.1 47.8Z"></path><path d="M38.7 56.3C38.7 57.9 39.5 58.3 40.4 58.3 40.8 58.3 41.3 58.2 41.7 58L41.7 61.8C40.8 62.2 39.8 62.4 38.9 62.4 36.2 62.4 34.6 61.3 34.1 58.8 33 61.6 30.5 62.6 27.6 62.6 23.7 62.6 21 60.3 21 56.5 21 51.6 24.8 48.8 33.8 49.3L33.8 46.8C33.8 44.3 32.4 43.2 30.2 43.2 29.2 43.1 28.3 43.5 27.6 44.1 26.9 44.8 26.6 45.7 26.6 46.7L21.7 45.9C22 41.1 26.1 39.3 30.5 39.3 35.3 39.3 38.8 41.3 38.8 46.3L38.7 56.3ZM33.7 52.3C28.3 52.2 26 53.5 26 56 26 56.8 26.3 57.6 26.9 58.2 27.5 58.7 28.4 59 29.2 58.9 31.3 58.9 33.7 57.7 33.7 55.2L33.7 52.3Z"></path><path d="M72.3 30.4C73.1 30.3 74 30.6 74.6 31.2 75.2 31.8 75.6 32.7 75.6 33.6 75.5 35.3 74 36.6 72.3 36.6 70.6 36.6 69.1 35.3 69 33.6 69 32.7 69.3 31.9 70 31.3 70.6 30.7 71.4 30.3 72.3 30.4ZM74.8 39.8L74.8 62 69.8 62 69.8 39.8 74.8 39.8Z"></path><path d="M95.5 56.3C95.5 57.9 96.2 58.3 97.1 58.3 97.6 58.3 98 58.2 98.4 58L98.4 61.8C97.5 62.2 96.6 62.4 95.6 62.4 93 62.4 91.4 61.3 90.8 58.8 89.7 61.6 87.2 62.6 84.3 62.6 80.4 62.6 77.7 60.3 77.7 56.5 77.7 51.6 81.6 48.8 90.5 49.3L90.5 46.8C90.5 44.3 89.1 43.2 87 43.2 86 43.1 85.1 43.5 84.4 44.1 83.7 44.8 83.3 45.7 83.4 46.7L78.5 45.9C78.8 41.1 82.9 39.3 87.3 39.3 92.1 39.3 95.5 41.3 95.5 46.3L95.5 56.3ZM90.5 52.3C85 52.2 82.8 53.5 82.8 56 82.7 56.8 83.1 57.6 83.7 58.2 84.3 58.7 85.1 59 85.9 58.9 88 58.9 90.5 57.7 90.5 55.2L90.5 52.3Z"></path><path d="M125.6 39.3C129.3 39.3 132 41.3 132 46.1L132 62 127 62 127 47.8C127 45.2 126 43.6 123.6 43.6 121.2 43.6 119 45.2 119 49.4L119 62 114 62 114 47.8C114 45.2 113 43.6 110.5 43.6 108.1 43.6 106 45.2 106 49.5L106 62 101 62 101 39.8 105 39.8 105.6 44.1C106.5 41.1 109.4 39.1 112.5 39.3 115.6 39.3 117.9 40.6 118.5 44.2 119.7 40.7 122.4 39.3 125.6 39.3Z"></path><path d="M150 55.2L154.4 56.5C153.4 61.1 149.6 62.6 145.3 62.6 139.2 62.6 135.1 58.5 135.1 51.2 135.1 43.7 139.1 39.3 145.5 39.3 151.4 39.3 154.5 43.3 154.5 48.9 154.5 49.9 154.4 50.9 154.1 51.9L140 51.9C140.2 55.9 142.1 58.7 145.5 58.7 147.7 58.9 149.6 57.4 150 55.2ZM149.6 48.6C149.6 48.3 149.6 48 149.6 47.7 149.7 46.5 149.2 45.3 148.4 44.5 147.6 43.6 146.4 43.1 145.2 43.1 142.3 43.1 140.4 45.2 140.1 48.6L149.6 48.6Z"></path><path d="M162.4 44.1C163.6 40.8 166.2 39.3 169.5 39.3 173.1 39.3 176.2 41.3 176.2 46.2L176.2 62 171.2 62 171.2 47.9C171.2 45.2 170.2 43.6 167.6 43.6 165.1 43.6 162.8 44.9 162.8 49.5L162.8 62 157.8 62 157.8 39.8 161.9 39.8 162.4 44.1Z"></path><path d="M194.3 61.2C192.5 62.2 190.4 62.6 188.4 62.6 184.3 62.6 181.7 60.5 181.7 56L181.7 43.8 178.5 43.8 178.5 39.8 181.7 39.8 182.9 33.7 186.8 33.7 186.8 39.8 193.4 39.8 193.4 43.8 186.8 43.8 186.8 55C186.8 57.4 187.8 58.3 189.6 58.3 191 58.3 192.3 57.8 193.4 57L194.3 61.2Z"></path><path d="M49.1 45.9L48.5 39.8 44.2 39.8 44.2 62 49.2 62 49.2 51.1C49.2 46.7 52.2 44.7 55.2 44.7L55.9 44.7 55.9 39.4C51.9 39.8 49.9 42.4 49.1 45.9Z"></path><path d="M65.5 58C65 58.1 64.5 57.9 64.1 57.5 63.7 57.2 63.5 56.6 63.5 56.1L63.5 31.2 58.5 31.2 58.5 57.3C58.5 60.9 61 62.4 64 62.4 65 62.4 66 62.2 67 61.9L67 57.9C66.5 58 66 58 65.5 58Z"></path></g></svg></li>
+  </ul>
 </div>
 
 {% endblock %}

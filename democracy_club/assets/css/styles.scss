@@ -47,3 +47,8 @@ blockquote {
   border-left: .25rem solid #999;
   display: block;
 }
+
+.fukol-grid > .card, .fukol-grid + .card {
+  margin-top: 40px;
+}
+
