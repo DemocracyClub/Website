@@ -9,7 +9,7 @@
 {% endblock extra_site_css %}
 
 {% block site_menu %}
-        <a href="#" class="buttonNew buttonNew--outline nav-site-ctrl js-nav-site-ctrl">Menu</a>
+        <a href="#footer_nav" class="buttonNew buttonNew--outline nav-site-ctrl js-nav-site-ctrl">Menu</a>
         <nav class="nav-site-wrap">
           <ul class="nav-site js-nav-site">
             <li class="nav-site__item nav-site__item--home{% if request.path == "/" %} nav-site__item--active{% endif %}"><a href="/">Home</a></li>
@@ -65,8 +65,12 @@
       </div><!-- /.fukol-grid__col -->
       <div class="fukol-grid__col site-footer__right-col">
         <nav class="nav-footer-wrap">
-          <ul class="nav-footer">
+          <ul class="nav-footer" id="footer_nav">
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'projects:home' %}">Our work</a></li>
+            <li><a href="{% url 'backlog:backlog_view' %}">Quests</a></li>
+            <li><a href="{% url 'hermes_post_list' %}">Blog</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
             <li><a href="{% url 'jobs' %}">Jobs</a></li>
             <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
