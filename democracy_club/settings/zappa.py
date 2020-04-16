@@ -73,6 +73,20 @@ GOCARDLESS_MERCHANT_ID = os.environ.get('GOCARDLESS_MERCHANT_ID')
 
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn=os.environ.get("SENTRY_DSN"),
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
+
+
 if ZAPPA_STAGE == "prod":
     AWS_CLOUD_FRONT_ID = "E3E7Y3O7VH1EMS"
 else:
