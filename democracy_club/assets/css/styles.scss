@@ -52,3 +52,6 @@ blockquote {
   margin-top: 40px;
 }
 
+table.text_only td:last-child, table.text_only th:last-child {
+  text-align:left;
+}
