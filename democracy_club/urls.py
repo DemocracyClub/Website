@@ -46,7 +46,6 @@ urlpatterns = [
     url(r'^contact/$',
         TemplateView.as_view(template_name="contact.html"), name="contact"),
     url(r'^blog/', include('hermes.urls')),
-    url(r'^research/', include('research.urls', namespace="research")),
     url(r'^donate/', include('donations.urls', namespace="donations")),
     url(r'^report_2016/', include('report_2016.urls', namespace="report_2016")),
     url(r'^report_2017/', include('report_2017.urls', namespace="report_2017")),

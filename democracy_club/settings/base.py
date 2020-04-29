@@ -102,7 +102,6 @@ PROJECT_APPS = (
     'hermes',
     'typogrify',
     'django_markdown',
-    'research',
     'report_2016',
     'report_2017',
     'report_2018',
