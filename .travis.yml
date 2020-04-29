@@ -13,7 +13,7 @@ before_script:
   - psql -U postgres -c "create extension postgis"
   - psql --version
 cache:
-  pip: true
+  pip: false
   directories:
     - /home/travis/virtualenv
     - $HOME/.pip-cache/
