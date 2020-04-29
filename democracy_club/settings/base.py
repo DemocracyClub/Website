@@ -68,7 +68,6 @@ MIDDLEWARE_CLASSES = (
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     "django.contrib.auth.backends.ModelBackend",
-    "dc_members.authentication.MemberTokenBackend",
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
@@ -100,7 +99,6 @@ INSTALLED_APPS = (
 
 PROJECT_APPS = (
     'core.apps.CoreConfig',
-    'dc_members',
     'hermes',
     'typogrify',
     'django_markdown',
@@ -191,7 +189,6 @@ TEMPLATES = [
 ]
 
 
-AUTH_PROFILE_MODULE = 'dc_members.Member'
 LOGIN_REDIRECT_URL = "/members/"
 SOCIALACCOUNT_AUTO_SIGNUP = True
 SOCIALACCOUNT_QUERY_EMAIL=True
