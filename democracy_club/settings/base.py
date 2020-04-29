@@ -63,12 +63,6 @@ MIDDLEWARE_CLASSES = (
     "donations.middleware.DonationFormMiddleware",
 )
 
-AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
-    "django.contrib.auth.backends.ModelBackend",
-    # `allauth` specific authentication methods, such as login by e-mail
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
 
 ROOT_URLCONF = "democracy_club.urls"
 
@@ -112,18 +106,7 @@ PROJECT_APPS = (
     "projects",
 )
 
-ALLAUTH_APPS = (
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    # 'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.tumblr',
-    "allauth.socialaccount.providers.twitter",
-    "allauth.socialaccount.providers.facebook",
-)
-
 INSTALLED_APPS += PROJECT_APPS
-INSTALLED_APPS += ALLAUTH_APPS
 
 from dc_theme.settings import get_pipeline_settings
 from dc_theme.settings import STATICFILES_FINDERS, SASS_INCLUDE_PATHS  # noqa

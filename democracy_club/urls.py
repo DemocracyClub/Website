@@ -20,7 +20,6 @@ handler500 = "dc_theme.urls.dc_server_error"
 urlpatterns = [
     # Uncomment the next line to enable the admin:
     url(r"^admin/", admin.site.urls),
-    url(r"^accounts/", include("allauth.urls")),
     url(
         r"^logout/$", auth_views.logout, {"next_page": "/"}, name="auth_logout"
     ),
