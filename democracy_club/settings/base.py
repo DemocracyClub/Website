@@ -91,7 +91,6 @@ PROJECT_APPS = (
     "core.apps.CoreConfig",
     "hermes",
     "typogrify",
-    "django_markdown",
     "report_2016",
     "report_2017",
     "report_2018",
