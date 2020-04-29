@@ -80,8 +80,6 @@ INSTALLED_APPS = (
     "localflavor",
     "markdown_deux",
     "django_extensions",
-    "rest_framework",
-    "corsheaders",
     "dc_theme",
     "pipeline",
     "sorl.thumbnail",
@@ -167,28 +165,6 @@ TEMPLATES = [
 ]
 
 
-LOGIN_REDIRECT_URL = "/members/"
-SOCIALACCOUNT_AUTO_SIGNUP = True
-SOCIALACCOUNT_QUERY_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
-SOCIALACCOUNT_PROVIDERS = {
-    "google": {
-        "SCOPE": ["https://www.googleapis.com/auth/userinfo.profile"],
-        "AUTH_PARAMS": {"access_type": "online"},
-    },
-    "facebook": {
-        "SCOPE": ["email",],
-        # 'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        "METHOD": "oauth2",
-    },
-}
-ACCOUNT_EMAIL_VERIFICATION = "optional"
-ACCOUNT_EMAIL_REQUIRED = True
-LOGIN_REDIRECT_URL = "/everyelection/"
-
-
-# EMAILS
-
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
 
@@ -217,19 +193,6 @@ GO_CARDLESS_PAYMENT_DESCRIPTION = (
     "increase the quality of information on elections & the democratic processes"
 )
 GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
-
-CORS_URLS_REGEX = r"^/research/answers/*|/members/api/members/*$"
-CORS_ORIGIN_WHITELIST = (
-    "localhost:8000",
-    "localhost:4000",
-    "yournextmp.com",
-    "meetyournextmp.com",
-    "electionmentions.com",
-    "cv.democracyclub.org.uk",
-    "pollingstations.democracyclub.org.uk",
-    "democracyclub.org.uk",
-)
-
 
 SITE_TITLE = "Democracy Club"
 
