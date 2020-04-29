@@ -55,3 +55,10 @@ blockquote {
 table.text_only td:last-child, table.text_only th:last-child {
   text-align:left;
 }
+
+.image-grid figure {
+  figcaption {
+    margin:0.5em;
+    overflow:auto
+  }
+}

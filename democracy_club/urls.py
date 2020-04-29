@@ -73,7 +73,7 @@ urlpatterns = [
     url(r"^report_2018/", include("report_2018.urls", namespace="report_2018")),
     url(r"^report_2019/", include("report_2019.urls", namespace="report_2019")),
     url(
-        r"^report_parl.2019/",
+        r"^report_2019_general_election/",
         include(
             "report_2019_general_election.urls",
             namespace="report_2019_general_election",
