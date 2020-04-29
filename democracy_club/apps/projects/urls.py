@@ -39,7 +39,7 @@ urlpatterns = [
     ),
     url(
         r"^projects/polling-stations/faqs/$",
-        RedirectView.as_view(url=reverse_lazy("polling_one_pager")),
+        RedirectView.as_view(url=reverse_lazy("projects:polling_one_pager")),
         name="polling_faqs",
     ),
     url(
@@ -58,7 +58,7 @@ urlpatterns = [
     ),
     url(
         r"^polling-stations/techincal/$",
-        RedirectView.as_view(url=reverse_lazy("polling_technical_explainer")),
+        RedirectView.as_view(url=reverse_lazy("projects:polling_technical_explainer")),
     ),
     url(
         r"^election-ids/reference/$",
