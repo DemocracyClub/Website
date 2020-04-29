@@ -8,13 +8,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backlog', '0002_auto_20170306_2043'),
+        ("backlog", "0002_auto_20170306_2043"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='cardlabel',
-            old_name='color',
-            new_name='colour',
+            model_name="cardlabel", old_name="color", new_name="colour",
         ),
     ]

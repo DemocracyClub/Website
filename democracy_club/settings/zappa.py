@@ -2,25 +2,25 @@ import os
 
 from .base import *  # noqa
 
-ZAPPA_STAGE = os.environ['STAGE']
-assert ZAPPA_STAGE in ('dev', 'prod')
+ZAPPA_STAGE = os.environ["STAGE"]
+assert ZAPPA_STAGE in ("dev", "prod")
 
-FORCE_SCRIPT_NAME = '/'
+FORCE_SCRIPT_NAME = "/"
 
 ALLOWED_HOSTS = [
-    '8yx8ogttjk.execute-api.eu-west-1.amazonaws.com',  # Dev
-    'qwhhmkhcfk.execute-api.eu-west-1.amazonaws.com',  # Prod
+    "8yx8ogttjk.execute-api.eu-west-1.amazonaws.com",  # Dev
+    "qwhhmkhcfk.execute-api.eu-west-1.amazonaws.com",  # Prod
 ]
 
 # Override the database name and user if needed
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PORT': '5432',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'PASSWORD': os.environ.get('DATABASE_PASS')
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "HOST": os.environ.get("DATABASE_HOST"),
+        "USER": os.environ.get("DATABASE_USER"),
+        "PORT": "5432",
+        "NAME": os.environ.get("DATABASE_NAME"),
+        "PASSWORD": os.environ.get("DATABASE_PASS"),
     }
 }
 
@@ -32,10 +32,10 @@ STATICFILES_FINDERS = (
 )
 
 
-PIPELINE['COMPILERS'] = ('core.s3_lambda_storage.LambdaSASSCompiler', )   # noqa
+PIPELINE["COMPILERS"] = ("core.s3_lambda_storage.LambdaSASSCompiler",)  # noqa
 
 AWS_S3_SECURE_URLS = True
-AWS_S3_HOST = 's3-eu-west-1.amazonaws.com'
+AWS_S3_HOST = "s3-eu-west-1.amazonaws.com"
 AWS_S3_USE_SSL = False
 AWS_S3_REGION_NAME = "eu-west-2"
 
@@ -46,32 +46,32 @@ else:
     AWS_STORAGE_BUCKET_NAME = "static.democracyclub.org.uk"
     AWS_S3_CUSTOM_DOMAIN = "static.democracyclub.org.uk"
 
-STATICFILES_LOCATION = 'static'
+STATICFILES_LOCATION = "static"
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-STATICFILES_STORAGE = 'core.s3_lambda_storage.StaticStorage'
+STATICFILES_STORAGE = "core.s3_lambda_storage.StaticStorage"
 
-MEDIAFILES_LOCATION = 'media'
+MEDIAFILES_LOCATION = "media"
 MEDIA_URL = "https://{}/{}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = 'core.s3_lambda_storage.MediaStorage'
+DEFAULT_FILE_STORAGE = "core.s3_lambda_storage.MediaStorage"
 
 CSRF_TRUSTED_ORIGINS = [
-    'stage.democracyclub.org.uk',
-    'democracyclub.org.uk',
+    "stage.democracyclub.org.uk",
+    "democracyclub.org.uk",
 ]
 
 DEBUG = False
-GOCARDLESS_ACCESS_TOKEN = os.environ.get('GOCARDLESS_ACCESS_TOKEN')
+GOCARDLESS_ACCESS_TOKEN = os.environ.get("GOCARDLESS_ACCESS_TOKEN")
 
-BACKLOG_TRELLO_KEY = os.environ.get('BACKLOG_TRELLO_KEY')
-BACKLOG_TRELLO_TOKEN = os.environ.get('BACKLOG_TRELLO_TOKEN')
+BACKLOG_TRELLO_KEY = os.environ.get("BACKLOG_TRELLO_KEY")
+BACKLOG_TRELLO_TOKEN = os.environ.get("BACKLOG_TRELLO_TOKEN")
 
 
-GOCARDLESS_APP_ID = os.environ.get('GOCARDLESS_APP_ID')
-GOCARDLESS_APP_SECRET = os.environ.get('GOCARDLESS_APP_SECRET')
-GOCARDLESS_ACCESS_TOKEN = os.environ.get('GOCARDLESS_ACCESS_TOKEN')
-GOCARDLESS_MERCHANT_ID = os.environ.get('GOCARDLESS_MERCHANT_ID')
+GOCARDLESS_APP_ID = os.environ.get("GOCARDLESS_APP_ID")
+GOCARDLESS_APP_SECRET = os.environ.get("GOCARDLESS_APP_SECRET")
+GOCARDLESS_ACCESS_TOKEN = os.environ.get("GOCARDLESS_ACCESS_TOKEN")
+GOCARDLESS_MERCHANT_ID = os.environ.get("GOCARDLESS_MERCHANT_ID")
 
-SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 
 
 import sentry_sdk
@@ -80,10 +80,9 @@ from sentry_sdk.integrations.django import DjangoIntegration
 sentry_sdk.init(
     dsn=os.environ.get("SENTRY_DSN"),
     integrations=[DjangoIntegration()],
-
     # If you wish to associate users to errors (assuming you are using
     # django.contrib.auth) you may enable sending PII data.
-    send_default_pii=True
+    send_default_pii=True,
 )
 
 

@@ -3,6 +3,7 @@ from django.template.loader import get_template
 
 import markdown_deux
 
+
 class ReportView(TemplateView):
     template_name = "report_whos_missing/report.html"
 

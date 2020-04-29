@@ -8,18 +8,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backlog', '0005_card_comment_count'),
+        ("backlog", "0005_card_comment_count"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='card',
-            name='cta_url',
+            model_name="card",
+            name="cta_url",
             field=models.URLField(blank=True, max_length=800),
         ),
         migrations.AddField(
-            model_name='card',
-            name='time_required',
+            model_name="card",
+            name="time_required",
             field=models.CharField(blank=True, max_length=100),
         ),
     ]

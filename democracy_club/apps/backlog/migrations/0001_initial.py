@@ -10,31 +10,49 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Card',
+            name="Card",
             fields=[
-                ('trello_id', models.CharField(blank=True, max_length=100, primary_key=True, serialize=False)),
-                ('title', models.CharField(blank=True, max_length=800)),
-                ('text', models.TextField(blank=True)),
-                ('weight', models.FloatField()),
-                ('url', models.URLField(blank=True)),
+                (
+                    "trello_id",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("title", models.CharField(blank=True, max_length=800)),
+                ("text", models.TextField(blank=True)),
+                ("weight", models.FloatField()),
+                ("url", models.URLField(blank=True)),
             ],
         ),
         migrations.CreateModel(
-            name='CardLabel',
+            name="CardLabel",
             fields=[
-                ('trello_id', models.CharField(blank=True, max_length=100, primary_key=True, serialize=False)),
-                ('name', models.CharField(blank=True, max_length=100)),
-                ('color', models.CharField(blank=True, max_length=100)),
+                (
+                    "trello_id",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("name", models.CharField(blank=True, max_length=100)),
+                ("color", models.CharField(blank=True, max_length=100)),
             ],
         ),
         migrations.AddField(
-            model_name='card',
-            name='labels',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='backlog.CardLabel'),
+            model_name="card",
+            name="labels",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="backlog.CardLabel",
+            ),
         ),
     ]

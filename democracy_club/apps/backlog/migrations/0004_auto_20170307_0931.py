@@ -8,17 +8,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backlog', '0003_auto_20170306_2045'),
+        ("backlog", "0003_auto_20170306_2045"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='card',
-            options={'ordering': ('weight',)},
+            name="card", options={"ordering": ("weight",)},
         ),
         migrations.AddField(
-            model_name='card',
-            name='published',
+            model_name="card",
+            name="published",
             field=models.BooleanField(default=True),
         ),
     ]

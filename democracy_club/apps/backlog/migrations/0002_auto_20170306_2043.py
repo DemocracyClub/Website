@@ -8,17 +8,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backlog', '0001_initial'),
+        ("backlog", "0001_initial"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='card',
-            name='labels',
-        ),
+        migrations.RemoveField(model_name="card", name="labels",),
         migrations.AddField(
-            model_name='card',
-            name='labels',
-            field=models.ManyToManyField(to='backlog.CardLabel'),
+            model_name="card",
+            name="labels",
+            field=models.ManyToManyField(to="backlog.CardLabel"),
         ),
     ]

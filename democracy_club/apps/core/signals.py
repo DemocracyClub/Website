@@ -8,6 +8,6 @@ from core.cloudfront import invalidate_paths
 
 @receiver(post_save, sender=Post)
 def blog_url_invalidation_handler(sender, **kwargs):
-    instance = kwargs['instance']
+    instance = kwargs["instance"]
     path = instance.get_absolute_url()
     invalidate_paths([path, "/blog/"])

@@ -8,13 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backlog', '0004_auto_20170307_0931'),
+        ("backlog", "0004_auto_20170307_0931"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='card',
-            name='comment_count',
+            model_name="card",
+            name="comment_count",
             field=models.IntegerField(blank=True, null=True),
         ),
     ]

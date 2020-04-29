@@ -10,12 +10,12 @@ class DonateFormView(TemplateView):
 
 class ProcessDonationView(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        redirect_flow_id = self.request.GET.get('redirect_flow_id')
+        redirect_flow_id = self.request.GET.get("redirect_flow_id")
         if redirect_flow_id:
             gc = GoCardlessHelper(self.request)
             gc.confirm_redirect_flow()
             gc.create_payment()
-        return reverse('donations:donate_thanks')
+        return reverse("donations:donate_thanks")
 
 
 class DonateThanksView(TemplateView):
