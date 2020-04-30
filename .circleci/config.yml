@@ -14,8 +14,8 @@ jobs:
           PGHOST: 127.0.0.1
       - image: circleci/postgres:10-alpine-ram
         environment:
-          POSTGRES_USER: wcivf
-          POSTGRES_DB: wcivf
+          POSTGRES_USER: postgres
+          POSTGRES_DB: democracy_club
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
