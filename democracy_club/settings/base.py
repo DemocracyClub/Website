@@ -23,7 +23,7 @@ DATABASES = {
         "NAME": "democracy_club",
         "USER": "postgres",
         "PASSWORD": "",
-        "HOST": "",
+        "HOST": "localhost",
         "PORT": "",
     }
 }
