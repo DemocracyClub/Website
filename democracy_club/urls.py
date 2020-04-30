@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 
 from django.conf import settings
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.urls import reverse_lazy
 from django.conf.urls.static import static
 from django.views.generic import TemplateView, RedirectView
@@ -17,83 +16,83 @@ admin.autodiscover()
 
 handler500 = "dc_theme.urls.dc_server_error"
 
+
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    url(r"^admin/", admin.site.urls),
-    url(
-        r"^logout/$", auth_views.logout, {"next_page": "/"}, name="auth_logout"
+    path("admin/", admin.site.urls),
+    path(
+        "logout/", auth_views.LogoutView.as_view(next_page="/"), name="auth_logout"
     ),
-    url(r"^$", HomeView.as_view(), name="home"),
-    url(r"^thanks/$", TemplateView.as_view(template_name="thanks.html")),
-    url(
+    path("", HomeView.as_view(), name="home"),
+    path("thanks/", TemplateView.as_view(template_name="thanks.html")),
+    path(
         r"^thanks/finished$",
         TemplateView.as_view(template_name="thanks_finished.html"),
     ),
     # About URLs
-    url(
-        r"^about/$",
+    path(
+        "about/",
         TemplateView.as_view(template_name="about/index.html"),
         name="about",
     ),
-    url(
-        r"^about/jobs/$",
+    path(
+        "about/jobs/",
         TemplateView.as_view(template_name="about/jobs.html"),
         name="jobs",
     ),
-    url(
-        r"^about/funding/$",
+    path(
+        "about/funding/",
         TemplateView.as_view(template_name="about/funding.html"),
         name="funding",
     ),
-    url(
-        r"^about/team/$",
+    path(
+        "about/team/",
         TemplateView.as_view(template_name="about/team.html"),
         name="team",
     ),
-    url(
-        r"^privacy/$",
+    path(
+        "privacy/",
         TemplateView.as_view(template_name="privacy.html"),
         name="privacy",
     ),
-    url(
-        r"^code-of-conduct/$",
+    path(
+        "code-of-conduct/",
         TemplateView.as_view(template_name="code-of-conduct.html"),
         name="coc",
     ),
-    url(r"^projects/", include("projects.urls", namespace="projects")),
-    url(
-        r"^contact/$",
+    path("projects/", include("projects.urls", "projects")),
+    path("contact/",
         TemplateView.as_view(template_name="contact.html"),
         name="contact",
     ),
-    url(r"^blog/", include("hermes.urls")),
-    url(r"^donate/", include("donations.urls", namespace="donations")),
-    url(r"^report_2016/", include("report_2016.urls", namespace="report_2016")),
-    url(r"^report_2017/", include("report_2017.urls", namespace="report_2017")),
-    url(r"^report_2018/", include("report_2018.urls", namespace="report_2018")),
-    url(r"^report_2019/", include("report_2019.urls", namespace="report_2019")),
-    url(
-        r"^report_2019_general_election/",
+    path("blog/", include("hermes.urls")),
+    path("donate/", include("donations.urls", namespace="donations")),
+    path("report_2016/", include("report_2016.urls", namespace="report_2016")),
+    path("report_2017/", include("report_2017.urls", namespace="report_2017")),
+    path("report_2018/", include("report_2018.urls", namespace="report_2018")),
+    path("report_2019/", include("report_2019.urls", namespace="report_2019")),
+    path(
+        "report_2019_general_election/",
         include(
             "report_2019_general_election.urls",
             namespace="report_2019_general_election",
         ),
     ),
-    url(
-        r"^reports/whos_missing/",
+    path(
+        "reports/whos_missing/",
         include("report_whos_missing.urls", namespace="report_whos_missing"),
     ),
-    url(
-        r"^wheredoivote_user_feedback/",
+    path(
+        "wheredoivote_user_feedback/",
         include(
             "wheredoivote_user_feedback.urls",
             namespace="wheredoivote_user_feedback",
         ),
     ),
-    url(r"^quests/", include("backlog.urls", namespace="backlog")),
-    url(r"^data/$", RedirectView.as_view(url=reverse_lazy("projects")),),
-    url(
-        r"^mailing_list/",
-        include("mailing_list.urls", namespace="dc_signup_form"),
+    path("quests/", include("backlog.urls", namespace="backlog")),
+    path("data/", RedirectView.as_view(url=reverse_lazy("projects")), ),
+    path(
+        "mailing_list/",
+        include(("mailing_list.urls", "dc_signup_form")),
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,9 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 
 from .views import DonateFormView, DonateThanksView, ProcessDonationView
 
+app_name = "donations"
+
 urlpatterns = [
-    url(r"thanks", DonateThanksView.as_view(), name="donate_thanks"),
-    url(r"process", ProcessDonationView.as_view(), name="donate_process"),
-    url(r"", DonateFormView.as_view(), name="donate"),
+    path("thanks", DonateThanksView.as_view(), name="donate_thanks"),
+    path("process", ProcessDonationView.as_view(), name="donate_process"),
+    path("", DonateFormView.as_view(), name="donate"),
 ]

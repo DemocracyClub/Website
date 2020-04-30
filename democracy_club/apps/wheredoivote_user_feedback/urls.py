@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
+app_name = "report_wheredoivote_user_feedback"
+
 urlpatterns = [
     # TODO: once we've got a research/reports list view
     # map this URL to there

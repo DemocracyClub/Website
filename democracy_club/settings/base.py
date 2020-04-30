@@ -52,8 +52,7 @@ STATICFILES_DIRS = (root("assets"),)
 
 SECRET_KEY = "CHANGE THIS!!!"
 
-MIDDLEWARE_CLASSES = (
-    "corsheaders.middleware.CorsMiddleware",
+MIDDLEWARE = (
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",

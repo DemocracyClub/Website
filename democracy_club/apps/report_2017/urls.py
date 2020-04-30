@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
+app_name = "report_2017"
+
 urlpatterns = [
     url(
         r"^$",

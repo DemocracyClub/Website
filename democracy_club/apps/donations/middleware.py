@@ -5,7 +5,12 @@ from .forms import DonationForm
 from .helpers import GoCardlessHelper, PAYMENT_UNITS
 
 
-class DonationFormMiddleware(object):
+class DonationFormMiddleware:
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+        # One-time configuration and initialization.
+
     def get_initial(self, request):
         form_initial = {
             "payment_type": "subscription",
@@ -37,7 +42,7 @@ class DonationFormMiddleware(object):
         # Redirect to GoCardless
         return HttpResponseRedirect(redirect_url)
 
-    def process_request(self, request):
+    def __call__(self, request):
         form_prefix = "donation_form"
         key_to_check = "{}-amount".format(form_prefix)
 
@@ -50,3 +55,4 @@ class DonationFormMiddleware(object):
                 initial=self.get_initial(request), prefix=form_prefix
             )
         request.donation_form = form
+        return self.get_response(request)
