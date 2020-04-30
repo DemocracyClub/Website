@@ -10,4 +10,4 @@ from core.cloudfront import invalidate_paths
 def blog_url_invalidation_handler(sender, **kwargs):
     instance = kwargs["instance"]
     path = instance.get_absolute_url()
-    invalidate_paths([path, "/blog/"])
+    invalidate_paths([path, "/blog/", "/"])
