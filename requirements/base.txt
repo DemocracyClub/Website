@@ -17,7 +17,7 @@ django-model-utils==2.3.1
 django-ratelimit==0.6.0
 Django==2.2.12
 djangorestframework==3.5.4
-gocardless_pro==1.1.0
+gocardless_pro==1.19.0
 jsonfield==1.0.3
 markdown==2.6.2
 Pillow==4.3.0
