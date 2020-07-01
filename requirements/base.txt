@@ -29,7 +29,7 @@ sorl-thumbnail==12.6.3
 
 django-storages==1.6.5
 
-boto3==1.7.74
+boto3==1.14.14
 
 sentry-sdk==0.14.3
 
