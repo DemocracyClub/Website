@@ -22,7 +22,7 @@ jsonfield==1.0.3
 markdown==2.6.2
 Pillow==4.3.0
 plotly==1.9.10
-psycopg2-binary==2.7.4
+psycopg2-binary==2.8.6
 
 sorl-thumbnail==12.6.3
 
