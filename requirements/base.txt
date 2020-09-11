@@ -21,7 +21,7 @@ gocardless_pro==1.1.0
 jsonfield==1.0.3
 markdown==2.6.2
 Pillow==4.3.0
-plotly==1.9.10
+plotly==4.10.0
 psycopg2-binary==2.8.6
 
 sorl-thumbnail==12.6.3
