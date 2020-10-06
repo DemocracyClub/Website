@@ -1,0 +1,18 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - symroe
+  ignore:
+  - dependency-name: boto3
+    versions:
+    - ">= 1.15.a"
+    - "< 1.16"
+  - dependency-name: django
+    versions:
+    - ">= 3.0.a"
+    - "< 3.1"
