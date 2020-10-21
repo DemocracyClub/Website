@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RenameField(
-            model_name="cardlabel", old_name="color", new_name="colour",
+            model_name="cardlabel",
+            old_name="color",
+            new_name="colour",
         ),
     ]

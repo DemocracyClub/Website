@@ -41,7 +41,9 @@ class YNREditsOverTimeGraph(BaseGraph):
             "2016-05-06": "Results coming in overnight",
         }
         data_file = os.path.join(
-            self.reports_root, "data", "logged_actions.csv",
+            self.reports_root,
+            "data",
+            "logged_actions.csv",
         )
         data = defaultdict(int)
         for line in csv.reader(open(data_file)):
@@ -80,7 +82,9 @@ class YNRPagesOverTime(BaseGraph):
         }
 
         data_file = os.path.join(
-            self.reports_root, "data", "ynr_pages_over_time.log",
+            self.reports_root,
+            "data",
+            "ynr_pages_over_time.log",
         )
         data = defaultdict(int)
         for line in csv.reader(open(data_file)):
