@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name="card", options={"ordering": ("weight",)},
+            name="card",
+            options={"ordering": ("weight",)},
         ),
         migrations.AddField(
             model_name="card",

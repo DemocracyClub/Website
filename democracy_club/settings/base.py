@@ -109,7 +109,12 @@ from dc_theme.settings import STATICFILES_FINDERS, SASS_INCLUDE_PATHS  # noqa
 
 
 PIPELINE = get_pipeline_settings(
-    extra_css=["css/styles.scss",], extra_js=["js/date.format.js",],
+    extra_css=[
+        "css/styles.scss",
+    ],
+    extra_js=[
+        "js/date.format.js",
+    ],
 )
 PIPELINE["STYLESHEETS"]["styles"]["extra_context"][
     "media"

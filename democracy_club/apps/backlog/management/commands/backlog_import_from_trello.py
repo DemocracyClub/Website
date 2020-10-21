@@ -47,7 +47,10 @@ class Command(BaseCommand):
             labels.append(
                 CardLabel.objects.update_or_create(
                     trello_id=label["id"],
-                    defaults={"name": label["name"], "colour": label["color"],},
+                    defaults={
+                        "name": label["name"],
+                        "colour": label["color"],
+                    },
                 )[0]
             )
 

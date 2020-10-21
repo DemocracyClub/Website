@@ -12,7 +12,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="card", name="labels",),
+        migrations.RemoveField(
+            model_name="card",
+            name="labels",
+        ),
         migrations.AddField(
             model_name="card",
             name="labels",

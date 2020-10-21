@@ -93,6 +93,12 @@ urlpatterns = [
         ),
     ),
     path("quests/", include("backlog.urls", namespace="backlog")),
-    path("data/", RedirectView.as_view(url=reverse_lazy("projects")),),
-    path("mailing_list/", include(("mailing_list.urls", "dc_signup_form")),),
+    path(
+        "data/",
+        RedirectView.as_view(url=reverse_lazy("projects")),
+    ),
+    path(
+        "mailing_list/",
+        include(("mailing_list.urls", "dc_signup_form")),
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
