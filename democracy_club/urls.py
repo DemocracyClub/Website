@@ -21,7 +21,9 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     path("admin/", admin.site.urls),
     path(
-        "logout/", auth_views.LogoutView.as_view(next_page="/"), name="auth_logout"
+        "logout/",
+        auth_views.LogoutView.as_view(next_page="/"),
+        name="auth_logout",
     ),
     path("", HomeView.as_view(), name="home"),
     path("thanks/", TemplateView.as_view(template_name="thanks.html")),
@@ -61,7 +63,8 @@ urlpatterns = [
         name="coc",
     ),
     path("projects/", include("projects.urls", "projects")),
-    path("contact/",
+    path(
+        "contact/",
         TemplateView.as_view(template_name="contact.html"),
         name="contact",
     ),
@@ -90,9 +93,6 @@ urlpatterns = [
         ),
     ),
     path("quests/", include("backlog.urls", namespace="backlog")),
-    path("data/", RedirectView.as_view(url=reverse_lazy("projects")), ),
-    path(
-        "mailing_list/",
-        include(("mailing_list.urls", "dc_signup_form")),
-    ),
+    path("data/", RedirectView.as_view(url=reverse_lazy("projects")),),
+    path("mailing_list/", include(("mailing_list.urls", "dc_signup_form")),),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

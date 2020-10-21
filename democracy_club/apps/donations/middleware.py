@@ -6,7 +6,6 @@ from .helpers import GoCardlessHelper, PAYMENT_UNITS
 
 
 class DonationFormMiddleware:
-
     def __init__(self, get_response):
         self.get_response = get_response
         # One-time configuration and initialization.

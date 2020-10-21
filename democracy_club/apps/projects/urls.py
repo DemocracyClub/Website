@@ -60,7 +60,9 @@ urlpatterns = [
     ),
     path(
         "polling-stations/techincal/",
-        RedirectView.as_view(url=reverse_lazy("projects:polling_technical_explainer")),
+        RedirectView.as_view(
+            url=reverse_lazy("projects:polling_technical_explainer")
+        ),
     ),
     path(
         "election-ids/reference/",
