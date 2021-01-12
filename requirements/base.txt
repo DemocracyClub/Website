@@ -20,7 +20,7 @@ gocardless_pro==1.1.0
 jsonfield==1.0.3
 markdown==3.3.3
 Pillow==4.3.0
-plotly==1.9.10
+plotly==4.14.2
 psycopg2-binary==2.8.6
 
 requests==2.25.0
