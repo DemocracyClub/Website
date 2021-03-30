@@ -25,7 +25,7 @@ psycopg2-binary==2.8.6
 
 requests==2.25.1
 
-sorl-thumbnail==12.6.3
+sorl-thumbnail==12.7.0
 
 
 django-storages==1.6.5
