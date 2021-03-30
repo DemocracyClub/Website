@@ -188,7 +188,24 @@ MARKDOWN_DEUX_STYLES = {
         },
         "safe_mode": False,
     },
+    "blog": {
+        "extras": {
+            "markdown-in-html": True,
+            "footnotes": True,
+            "header-ids": True,
+            "smarty-pants": True,
+            "toc": {},
+        },
+        "safe_mode": False,
+    }
 }
+
+def blog_markdown(value):
+    import markdown_deux
+    return markdown_deux.markdown(value, style="blog")
+
+
+MARKUP_RENDERER = blog_markdown
 
 GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
 GO_CARDLESS_PAYMENT_DESCRIPTION = (
