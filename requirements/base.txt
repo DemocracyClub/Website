@@ -32,6 +32,6 @@ django-storages==1.6.5
 
 boto3==1.7.74
 
-sentry-sdk==0.19.1
+sentry-sdk==1.1.0
 
 black==20.8b1
