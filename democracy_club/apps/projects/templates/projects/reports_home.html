@@ -5,34 +5,37 @@
 <h1>Reports</h1>
 {% endblock %}
 
-
 {% block main_content %}
 
-  <ul class="card-list">
+<div class="ds-stack-smaller">
 
-    <li class="link-card">
+  <div class="ds-card">
+    <div class="ds-card-image">
       <img src="{% static "report_whos_missing/images/robin-hoods-bay_thumb.jpg" %}">
-      <div class="text">
-      <h3><a href="{% url "report_whos_missing:report_whos_missing" %}">Who’s missing, and why?</a></h3>
+    </div>
+    <div class="ds-card-body">
+      <h3><a class="ds-card-link" href="{% url "report_whos_missing:report_whos_missing" %}">Who’s missing, and why?</a></h3>
       <p>Underrepresentation in voter registration, candidacy, informedness and turnout</p>
       <p>Not everyone takes part in elections. Around 15% of people are not registered to vote, elections candidates do not reflect the diversity of the population, not everyone can access good information about elections, turnout rarely nudges above two-thirds of eligible voters in general elections and around one-third in local elections. Understanding who is missing, and why, is a perpetual challenge for any society that considers itself democratic.</p>
-      </div>
+    </div>
+  </div>
 
-    </li>
-
-    <li class="link-card">
+  <div class="ds-card">
+    <div class="ds-card-image">
       <img src="{% static "images/report/register-report-banner.jpg" %}">
-      <div class="text">
-      <h3><a href="{% url "projects:reports_registers" %}">Registers and collaboration: making lists we can trust</a></h3>
+    </div>
+    <div class="ds-card-body">
+      <h3><a class="ds-card-link" href="{% url "projects:reports_registers" %}">Registers and collaboration: making lists we can trust</a></h3>
       <p>This report is about registers or lists, and ways of publishing and maintaining them. We examine models of stewarding registers and review case studies of different registers. We argue that transparency is necessary, and collaboration desirable, in managing registers that are trusted by their users.</p>
       <p>Commissioned and <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">initially published by the ODI</a></p>
-      </div>
+    </div>
+  </div>
 
-    </li>
-
-    <li class="link-card">
+  <div class="ds-card">
+    <div class="ds-card-image">
       <img src="{% static "images/report/old_bridge_pontypridd.jpg" %}">
-      <div class="text">
+    </div>
+    <div class="ds-card-body">
       <h3>Towards better elections</h3>
       <p>Our yearly report on elections and the future of digital services for democracy.</p>
         <ul>
@@ -41,14 +44,16 @@
           <li><a href="{% url "report_2018:report_2018" %}">2018</a></li>
           <li><a href="{% url "report_2019:report_2019" %}">2019</a></li>
           <li><a href="{% url "report_2019_general_election:report_2019_general_election" %}">2019 General election</a></li>
+          <!-- <li><a href="{% url "report_2021:report_2021" %}">2021</a></li> -->
         </ul>
-      </div>
-
-    </li>
-    <li class="link-card">
+    </div>
+  </div>
+  
+  <div class="ds-card">
+    <div class="ds-card-image">
       <img src="{% static "report_2018/images/benjamin-elliott-670761-unsplash.png" %}">
-
-      <div class="text">
+    </div>
+    <div class="ds-card-body">
       <h3>Where Do I Vote User Feedback</h3>
       <p>Summaries of feedback provided by users of our polling station finder, WhereDoIVote.co.uk.</p>
         <ul>
@@ -57,11 +62,8 @@
           <li><a href="https://democracyclub.org.uk/blog/2019/06/27/users-have-spoken/">2019 (local and European elections)</a></li>
           <li><a href="https://democracyclub.org.uk/blog/2020/01/30/vox-user-vox-dei-ge2019/">2019 (general election)</a></li>
         </ul>
-      </div>
-
-
-    </li>
-
-  </ul>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -1,5 +1,9 @@
 import sys
 from os.path import join, abspath, dirname
+import dc_design_system
+
+from dc_utils.settings.pipeline import *  # noqa
+from dc_utils.settings.whitenoise import whitenoise_add_middleware
 
 # PATH vars
 
@@ -79,7 +83,7 @@ INSTALLED_APPS = (
     "localflavor",
     "markdown_deux",
     "django_extensions",
-    "dc_theme",
+    "dc_design_system",
     "pipeline",
     "sorl.thumbnail",
     "dc_signup_form",
@@ -95,32 +99,33 @@ PROJECT_APPS = (
     "report_2018",
     "report_2019",
     "report_2019_general_election",
+    "report_2021",
     "report_whos_missing",
     "wheredoivote_user_feedback",
     "backlog",
     "mailing_list",
     "projects",
+    "dc_utils",
 )
 
 INSTALLED_APPS += PROJECT_APPS
 
-from dc_theme.settings import get_pipeline_settings
-from dc_theme.settings import STATICFILES_FINDERS, SASS_INCLUDE_PATHS  # noqa
+from dc_utils.settings.pipeline import *  # noqa
+from dc_utils.settings.whitenoise import whitenoise_add_middleware
 
+MIDDLEWARE = whitenoise_add_middleware(MIDDLEWARE)
 
 PIPELINE = get_pipeline_settings(
     extra_css=[
-        "css/styles.scss",
+        "scss/styles.scss",
     ],
     extra_js=[
         "js/date.format.js",
     ],
+    extra_include_paths=[
+        dc_design_system.DC_SYSTEM_PATH + "/system",
+    ],
 )
-PIPELINE["STYLESHEETS"]["styles"]["extra_context"][
-    "media"
-] = "screen,projection,print"
-
-STATICFILES_STORAGE = "pipeline.storage.PipelineCachedStorage"
 
 LOGGING = {
     "version": 1,
@@ -151,15 +156,9 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.media",
-                "django.template.context_processors.static",
-                "django.template.context_processors.request",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
-                "dc_theme.context_processors.dc_theme_context",
                 "dc_signup_form.context_processors.signup_form",
             ],
             "debug": DEBUG,
@@ -197,11 +196,13 @@ MARKDOWN_DEUX_STYLES = {
             "toc": {},
         },
         "safe_mode": False,
-    }
+    },
 }
+
 
 def blog_markdown(value):
     import markdown_deux
+
     return markdown_deux.markdown(value, style="blog")
 
 

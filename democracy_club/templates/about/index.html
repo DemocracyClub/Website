@@ -5,15 +5,7 @@
 
 {% block extra_page_css %}
 <style>
-blockquote {
-  font-style: italic;
-  font-size: 1em;
-  margin: 0;
-  color: #999;
-  padding: 0rem 1rem;
-  border-left: .25rem solid #999;
-  display: block;
-}
+
 
 .videoWrapper {
   position: relative;
@@ -35,7 +27,7 @@ blockquote {
 
 {% block main_content %}
 
-<article>
+<div class="ds-stack-smaller">
 
 {% filter markdown %}
 
@@ -146,5 +138,5 @@ Our data has reached millions of people since 2015. Here’s what some of them s
 
 {% endfilter %}
 
-</article>
+</div>
 {% endblock main_content %}

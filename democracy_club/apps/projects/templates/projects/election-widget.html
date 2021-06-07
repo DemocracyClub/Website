@@ -4,32 +4,32 @@ Election widget
 {% endblock %}
 
 {% block content %}
-  <article>
-  <h1>Election widget</h1>
-    <p>You can add Democracy Club’s election widget to any website.</p>
-  <figure>
-    <noscript>
-      <a href="https://whocanivotefor.co.uk">Find election information at
-        <span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk</span></a>
-    </noscript>
-    <div id="widget-area">
-      <div id="dc_wdiv" aria-live="polite" role="region" data-candidates="true"></div>
-      <script type="text/javascript"
-        src="https://widget.wheredoivote.co.uk/wdiv.js">
-      </script>
-    </div>
-    <figcaption>
-      Live data varies, so results might not show for example postcodes.
-      We tend not to have data outside of major elections, <a href="{% url "contact" %}">contact us</a>
-      if you'd like a demo.
-    </figcaption>
-  </figure>
+<div class="ds-stack-smaller">
+    <h1>Election widget</h1>
+      <p>You can add Democracy Club’s election widget to any website.</p>
+    <figure>
+      <noscript>
+        <a href="https://whocanivotefor.co.uk">Find election information at
+          <span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk</span></a>
+      </noscript>
+      <div id="widget-area">
+        <div id="dc_wdiv" aria-live="polite" role="region" data-candidates="true"></div>
+        <script type="text/javascript"
+          src="https://widget.wheredoivote.co.uk/wdiv.js">
+        </script>
+      </div>
+      <div class="ds-padded">
+        Live data varies, so results might not show for example postcodes.
+        We tend not to have data outside of major elections, <a href="{% url "contact" %}">contact us</a>
+        if you'd like a demo.
+      </div>
+    </figure>
 
     <p>First, choose from the options below and hit ‘Generate’.</p>
 
 
 
-<form id="widget-options" class="form form-inline">
+  <form id="widget-options" class="form form-inline">
     <div class="form-group">
       <fieldset>
         <label for="no-lang" class="block-label selection-button-radio">
@@ -47,12 +47,12 @@ Election widget
       </fieldset>
     </div>
     <button>Generate</button>
-</form>
+  </form>
 
-    <p>Second, use the code to embed the widget in your website.</p>
+  <p>Second, use the code to embed the widget in your website.</p>
 
-<div id="code-area">
-  <pre><code>&lt;noscript&gt;
+<pre class="ds-codeblock"><code>
+&lt;noscript&gt;
 &lt;a href="https://whocanivotefor.co.uk">Find election information at
 &lt;span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;
 &lt;/noscript&gt;
@@ -60,8 +60,8 @@ Election widget
 &lt;script type="text/javascript"
   src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
 &lt;/script&gt;
-  </code></pre>
-</div>
+</code></pre>
+
 
   <script>
   var form = document.querySelector('#widget-options');
@@ -127,5 +127,5 @@ Election widget
 </script>
 
 
-  </article>
+</div>
 {% endblock %}

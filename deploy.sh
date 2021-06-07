@@ -33,6 +33,3 @@ zappa update $DEPLOY_ENV
 
 # Migrate the Django DB
 zappa manage $DEPLOY_ENV "migrate --noinput"
-
-# Collect static files
-zappa manage $DEPLOY_ENV "collectstatic --noinput"

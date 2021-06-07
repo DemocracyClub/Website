@@ -5,7 +5,7 @@
 {% block title %}Towards better elections, report on Democracy Club’s work on the 2019 general election{% endblock title %}
 
 {% block content %}
-<article id="report_2019ge">
+<div id="report_2019ge" class="ds-stack-smaller">
 {% filter markdown %}
 
 # Report on the 2019 General Election
@@ -119,30 +119,27 @@ of the voting age population. This is our highest ever UK-wide coverage, and
 represents a good increase on the EU vote (58%). Within the constituent nations,
 our general election coverage breaks down as follows:
 
+<div class="ds-table">
+  <table>
+    <tr>
+    <th>Nation</th>
+    <th>Coverage (% Voting Age Population)</th>
+    </tr>
 
-<table>
-<thead>
-<tr>
-<th>Nation</th>
-<th>Coverage (% Voting Age Population)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>England</td>
-<td>75%</td>
-</tr>
-<tr>
-<td>Scotland</td>
-<td>73%</td>
-</tr>
-<tr>
-<td>Wales</td>
-<td>50%</td>
-</tr>
-</tbody>
-</table>
-
+    <tr>
+    <td>England</td>
+    <td>75%</td>
+    </tr>
+    <tr>
+    <td>Scotland</td>
+    <td>73%</td>
+    </tr>
+    <tr>
+    <td>Wales</td>
+    <td>50%</td>
+    </tr>
+  </table>
+</div>
 
 Some caveats should be added to these headline figures. A number of councils,
 including Sheffield, Liverpool and the majority of Scotland, were only added on
@@ -177,24 +174,23 @@ traffic we have ever experienced, almost three times more than during the
 European elections. In addition to WhereDoIVote.co.uk, our polling station data
 was accessed across the following platforms (rounded to the nearest thousand):
 
-<table>
-<thead>
-<tr>
-<th>Source</th>
-<th>Searches</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>WhoCanIVoteFor.co.uk</td><td>629,000</td></tr>
-<tr><td>tactical.vote</td><td>480,000</td></tr>
-<tr><td>Electoral Commission</td><td>320,000</td></tr>
-<tr><td>Labour Party polling station finder</td><td>164,000</td></tr>
-<tr><td>Democracy Club Widget</td><td>108,000</td></tr>
-<tr><td>votesavvy.co.uk</td><td>18,000</td></tr>
-<tr><td>Ready10.media (JustPark.com)</td><td>7,000</td></tr>
-<tr><td>Others</td><td>19,000</td></tr>
-</tbody>
-</table>
+<div class="ds-table">
+  <table>
+    <tr>
+    <th>Source</th>
+    <th>Searches</th>
+    </tr>
+
+    <tr><td>WhoCanIVoteFor.co.uk</td><td>629,000</td></tr>
+    <tr><td>tactical.vote</td><td>480,000</td></tr>
+    <tr><td>Electoral Commission</td><td>320,000</td></tr>
+    <tr><td>Labour Party polling station finder</td><td>164,000</td></tr>
+    <tr><td>Democracy Club Widget</td><td>108,000</td></tr>
+    <tr><td>votesavvy.co.uk</td><td>18,000</td></tr>
+    <tr><td>Ready10.media (JustPark.com)</td><td>7,000</td></tr>
+    <tr><td>Others</td><td>19,000</td></tr>
+  </table>
+</div>
 
 
 
@@ -279,37 +275,35 @@ who completed their compilation well after Democracy Club.
 We are pleased to say that by polling day itself, our detail on individual
 parliamentary  candidates was also high:
 
-<table>
-<thead>
-<tr>
-<th>Data field</th>
-<th>Candidate coverage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Profile Picture</td><td>97%</td>
-</tr>
-<tr>
-<td>Email Address</td><td>86%</td>
-</tr>
-<tr>
-<td>Personal or PPC Website</td><td>74%</td>
-</tr>
-<tr>
-<td>Twitter handle</td><td>82%</td>
-</tr>
-<tr>
-<td>Facebook Page (personal or campaign)</td><td>68%</td>
-</tr>
-<tr>
-<td>Statement to Voters</td><td>36% </td>
-</tr>
-<tr>
-<td>Favourite Biscuit</td><td>10%</td>
-</tr>
-</tbody>
-</table>
+<div class="ds-table">
+  <table>
+    <tr>
+    <th>Data field</th>
+    <th>Candidate coverage</th>
+    </tr>
+    <tr>
+    <td>Profile Picture</td><td>97%</td>
+    </tr>
+    <tr>
+    <td>Email Address</td><td>86%</td>
+    </tr>
+    <tr>
+    <td>Personal or PPC Website</td><td>74%</td>
+    </tr>
+    <tr>
+    <td>Twitter handle</td><td>82%</td>
+    </tr>
+    <tr>
+    <td>Facebook Page (personal or campaign)</td><td>68%</td>
+    </tr>
+    <tr>
+    <td>Statement to Voters</td><td>36% </td>
+    </tr>
+    <tr>
+    <td>Favourite Biscuit</td><td>10%</td>
+    </tr>
+  </table>
+</div>
 
 
 Comparing this coverage with the data we acquired during the 2017 general
@@ -777,5 +771,5 @@ in 2021.
 
 
   {% endfilter %}
-</article>
+</div>
 {%  endblock %}
