@@ -5,28 +5,25 @@
 {% endblock %}
 
 {% block main_content %}
+<div class="ds-stack-smaller">
 
-<ul class="card-list">
-
-  <li class="link-card">
-    <div class="text">
-    <h3><a href="{% url "projects:election_leaflets" %}">Election Leaflets</a></h3>
-    <p>Photograph the leaflets that get put through your door and share them with the world.</p>
+  <div class="ds-card">
+    <div class="ds-card-body">
+      <h3><a class="ds-card-link" href="{% url "projects:election_leaflets" %}">Election Leaflets</a></h3>
+      <p>Photograph the leaflets that get put through your door and share them with the world.</p>
     </div>
-  </li>
+  </div>
 
 
-  <li class="link-card">
-    <div class="text">
-    <h3><a href="{% url "projects:cvs" %}">Candidates' CVs</a></h3>
-    <p>MPCV helped voters read (or request to see) their candidates' CVs to help inform their vote.</p>
+  <div class="ds-card">
+    <div class="ds-card-body">
+      <h3><a class="ds-card-link" href="{% url "projects:cvs" %}">Candidates' CVs</a></h3>
+      <p>MPCV helped voters read (or request to see) their candidates' CVs to help inform their vote.</p>
     </div>
-  </li>
+  </div>
 
-
-
-  <li class="link-card">
-    <div class="text">
+  <div class="ds-card">
+    <div class="ds-card-body">
       <!-- TODO -->
       <h3>TakePart London</h3>
       {% filter markdown %}
@@ -40,18 +37,18 @@ On the run up to the 2016 EU referendum we [plotted the electoral register for
 [View the code on GitHub](https://github.com/DemocracyClub/TakePart.london)
       {% endfilter %}
     </div>
-  </li>
+  </div>
 
-  <li class="link-card">
-    <div class="text">
+  <div class="ds-card">
+    <div class="ds-card-body">
       <h3>Election Mentions</h3>
       <p>Project for monitoring mentions of candidates, constituencies and parties in the news using
       webscraping and machine learning to extract names, placees and quotes.</p>
     </div>
-  </li>
+  </div>
 
-  <li class="link-card">
-    <div class="text">
+  <div class="ds-card">
+    <div class="ds-card-body">
       <h3>MeetYourNextMP</h3>
       {% filter markdown %}
 MeetYourNextMP was a project run in 2015 to [crowdsource a list of public
@@ -59,9 +56,7 @@ MeetYourNextMP was a project run in 2015 to [crowdsource a list of public
         (where candidates take questions from a local audience).
 
       {% endfilter %}
-
     </div>
-  </li>
-</ul>
-
+  </div>
+</div>
 {% endblock %}

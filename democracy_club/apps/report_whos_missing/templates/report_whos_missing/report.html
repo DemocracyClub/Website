@@ -11,7 +11,7 @@ candidacy, informedness and turnout
 
 
 {% block content %}
-  <article id="report_whos_missing" class="numbered">
+  <div id="report_whos_missing" class="numbered ds-stack-smaller">
 
 {%  markdown %}
 
@@ -26,15 +26,18 @@ candidacy, informedness and turnout
 
 **Joe Mitchell, Democracy Club, December 2018**
 
-
-*Draft: This report is in draft form. We welcome comments, questions and references
-to things we should have read. We aim to come back and update it, in response to comments,
-in early 2019. Please comment directly on the Google Doc version, or [email us](hello@democracyclub.org.uk) . Pun-based
-title suggestions for the report warmly welcomed.*
-
-<div class="toc">
-{{ toc|safe }}
-</div>
+<ul class="ds-details">
+  <li>
+    <details>
+      <summary>
+        <h2>Table of Contents</h2>
+      </summary>
+      <div class="toc ds-padded-large">
+        {{ toc|safe }} 
+      </div>
+    </details>
+  </li>
+</ul>
 
 ## Introduction
 
@@ -792,5 +795,5 @@ Runymede Trust, *Diversity and Democracy: Race and the 2015 General Election*, J
 
 
 
-  </article>
+</div>
 {% endblock %}

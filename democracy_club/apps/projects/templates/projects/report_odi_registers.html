@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
 
-<article>
+<div class="ds-stack-smaller">
 <aside>
   <p><em>This is an HTML version of the
     <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">report pubished
@@ -149,85 +149,81 @@ Linkable: the list is published in a machine-readable, computable format, with i
 
 Many lists are published in ways that span more than one of these list technologies; the Companies House register can be downloaded in a machine-readable format[^11] and is also published as a linkable online service.[^12]
 
-
-<table>
-  <thead>
-    <tr>
-     <th>List</th>
-     <th>Source</th>
-     <th>Contents</th>
-     <th>Technology</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-     <td>Register of Shipping
-     </td>
-     <td>Primary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Paper
-     </td>
-    </tr>
-    <tr>
-     <td>Democracy Club Candidates
-     </td>
-     <td>Secondary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Linkable
-     </td>
-    </tr>
-    <tr>
-     <td>Council candidate notifications
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Digital paper
-     </td>
-    </tr>
-    <tr>
-     <td>Countries Register
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Linkable
-     </td>
-    </tr>
-    <tr>
-     <td>Register of pupils in a class
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Paper
-     </td>
-    </tr>
-    <tr>
-     <td>Historic England’s list of listed buildings
-     </td>
-     <td>Primary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Machine-readable
-     </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ds-table">
+     <table>
+          <tr>
+               <th>List</th>
+               <th>Source</th>
+               <th>Contents</th>
+               <th>Technology</th>
+          </tr>
 
 
+          <tr>
+               <td>Register of Shipping
+               </td>
+               <td>Primary
+               </td>
+               <td>Broad dataset
+               </td>
+               <td>Paper
+               </td>
+          </tr>
+          <tr>
+               <td>Democracy Club Candidates
+               </td>
+               <td>Secondary
+               </td>
+               <td>Broad dataset
+               </td>
+               <td>Linkable
+               </td>
+          </tr>
+          <tr>
+               <td>Council candidate notifications
+               </td>
+               <td>Primary
+               </td>
+               <td>Minimum viable dataset
+               </td>
+               <td>Digital paper
+               </td>
+          </tr>
+          <tr>
+               <td>Countries Register
+               </td>
+               <td>Primary
+               </td>
+               <td>Minimum viable dataset
+               </td>
+               <td>Linkable
+               </td>
+          </tr>
+          <tr>
+               <td>Register of pupils in a class
+               </td>
+               <td>Primary
+               </td>
+               <td>Minimum viable dataset
+               </td>
+               <td>Paper
+               </td>
+          </tr>
+          <tr>
+               <td>Historic England’s list of listed buildings
+               </td>
+               <td>Primary
+               </td>
+               <td>Broad dataset
+               </td>
+               <td>Machine-readable
+               </td>
+          </tr>
+
+     </table>
+</div>
 
 Taken from the full list of lists used to make this system[^13].
-
 
 ## 2. Authority
 
@@ -289,71 +285,66 @@ A list may also be accurate only at a certain granularity. For instance, Open St
 
 Some lists contain pieces of information which can never really be entirely accurate; they are opinions rather than facts, as in the Shipping Register example discussed above.
 
+<div class="ds-table">
+     <table>
+          <tr>
+               <th>List</th>
+               <th>Source of authority</th>
+               <th>Reality</th>
+               <th>Completeness</th>
+               <th>Accuracy</th>
+          </tr>
 
-<table>
-  <thead>
-    <tr>
-     <th>List</th>
-     <th>Source of authority</th>
-     <th>Reality</th>
-     <th>Completeness</th>
-     <th>Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-     <td>Pupils in a class
-     </td>
-     <td>Institutional
-     </td>
-     <td>Defining
-     </td>
-     <td>Complete
-     </td>
-     <td>Accurate
-     </td>
-    </tr>
-    <tr>
-     <td>Open Street Map
-     </td>
-     <td>Verifiable Observations
-     </td>
-     <td>Describing
-     </td>
-     <td>Incomplete
-     </td>
-     <td>Sometimes accurate
-     </td>
-    </tr>
-    <tr>
-     <td>General Medical Council Register
-     </td>
-     <td>Legislative
-     </td>
-     <td>Defining
-     </td>
-     <td>Complete
-     </td>
-     <td>Accurate
-     </td>
-    </tr>
-    <tr>
-     <td>First thousand prime numbers
-     </td>
-     <td>A priori
-     </td>
-     <td>Describing
-     </td>
-     <td>Provably complete
-     </td>
-     <td>Provably accurate
-     </td>
-    </tr>
-  </tbody>
-</table>
-
-
+          <tr>
+               <td>Pupils in a class
+               </td>
+               <td>Institutional
+               </td>
+               <td>Defining
+               </td>
+               <td>Complete
+               </td>
+               <td>Accurate
+               </td>
+          </tr>
+          <tr>
+               <td>Open Street Map
+               </td>
+               <td>Verifiable Observations
+               </td>
+               <td>Describing
+               </td>
+               <td>Incomplete
+               </td>
+               <td>Sometimes accurate
+               </td>
+          </tr>
+          <tr>
+               <td>General Medical Council Register
+               </td>
+               <td>Legislative
+               </td>
+               <td>Defining
+               </td>
+               <td>Complete
+               </td>
+               <td>Accurate
+               </td>
+          </tr>
+          <tr>
+               <td>First thousand prime numbers
+               </td>
+               <td>A priori
+               </td>
+               <td>Describing
+               </td>
+               <td>Provably complete
+               </td>
+               <td>Provably accurate
+               </td>
+          </tr>
+     </table>
+</div>
 
 ## 3. Stewardship
 
@@ -812,5 +803,5 @@ All internet links in footnotes were active at the time of publication. Should t
      Internet Archive, [https://archive.org](https://archive.org/)
 
 {% endfilter %}
-</article>
+</div>
 {% endblock %}

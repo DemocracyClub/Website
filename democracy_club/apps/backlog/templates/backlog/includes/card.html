@@ -15,14 +15,15 @@
     <div class="backlog_card_text">
         {{ card.text|markdown }}
     </div>
-    {% for label in card.labels.all %}
-        {% if forloop.first %}
-        <ul class="labels">
-        {% endif %}
-            <li style="background-color:{{ label.colour }};">{{ label }}</li>
-        {% if forloop.last %}
-        </ul>
-        {% endif %}
-    {% endfor %}
-    <a class="link-button" href="{{ card.get_cta_url }}" target="_blank">Help out</a>
+{% for label in card.labels.all %}
+    {% if forloop.first %}
+    <ul class="labels">
+    {% endif %}
+        <li style="background-color:{{ label.colour }};">{{ label }}</li>
+    {% if forloop.last %}
+    </ul>
+    {% endif %}
+{% endfor %}
+    <a class="ds-cta ds-cta-blue" href="{{ card.get_cta_url }}" target="_blank">Help out</a>
 </div>
+

@@ -3,45 +3,40 @@
 {% block title %}Contact | {{ block.super }}{% endblock title %}
 
 {% block page_content %}
-<div class="row">
-  <div class="columns large-8">
+<div class="ds-stack-smaller">
+  <h1>Contact Democracy Club</h1>
+  
+  <h4>Updating candidate information</h4>
+  <p>You can edit our candidates database by going <a href="https://candidates.democracyclub.org.uk">
+    to this link</a>. If you get stuck, please email <a href="mailto:hello@democracyclub.org.uk">
+    hello@democracyclub.org.uk</a>.</p>
 
-    <h2>Contact Democracy Club</h2>
+  <h4><a href="{% url "projects:polling_one_pager" %}">Polling Station Finder</a></h4>
+  <p>Read <a href="https://democracyclub.org.uk/projects/polling-stations/upload/">our instructions</a>
+    about how to send data to
+    <a href="mailto:pollingstations@democracyclub.org.uk">pollingstations@democracyclub.org.uk</a>.</p>
 
-    <h3>Updating candidate information</h3>
-    <p>You can edit our candidates database by going <a href="https://candidates.democracyclub.org.uk">
-      to this link</a>. If you get stuck, please email <a href="mailto:hello@democracyclub.org.uk">
-      hello@democracyclub.org.uk</a>.</p>
+  <h4>Press enquiries</h4>
+  <p>For all press enquiries, please email <a href="mailto:hello@democracyclub.org.uk">
+    hello@democracyclub.org.uk</a> or call <a href="tel:+443331122450">03331 122450</a>.</p>
 
-    <h3><a href="{% url "projects:polling_one_pager" %}">Polling Station Finder</a></h3>
-    <p>Read <a href="https://democracyclub.org.uk/projects/polling-stations/upload/">our instructions</a>
-      about how to send data to
-       <a href="mailto:pollingstations@democracyclub.org.uk">pollingstations@democracyclub.org.uk</a>.</p>
+  <h4>New project ideas</h4>
+  <p>
+    If you have an idea for a new project, the best thing to do is to email
+    <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>, or else <a href="https://slack.democracyclub.org.uk/">join our Slack</a> and post about it there.
+  </p>
 
-    <h3>Press enquiries</h3>
-    <p>For all press enquiries, please email <a href="mailto:hello@democracyclub.org.uk">
-      hello@democracyclub.org.uk</a> or call <a href="tel:+443331122450">03331 122450</a>.</p>
+  <h4>Problems with sites</h4>
+  <p>
+    If you've found a problem with one of our sites, please let us know on
+    <a href="https://twitter.com/democlub">Twitter</a> or by emailing
+    <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.
+  </p>
 
-    <h3>New project ideas</h3>
-    <p>
-      If you have an idea for a new project, the best thing to do is to email
-      <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>, or else <a href="https://slack.democracyclub.org.uk/">join our Slack</a> and post about it there.
-    </p>
-
-    <h3>Problems with sites</h3>
-    <p>
-      If you've found a problem with one of our sites, please let us know on
-      <a href="https://twitter.com/democlub">Twitter</a> or by emailing
-      <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.
-    </p>
-
-    <h3>Slack</h3>
-    <p>
-        If you want to get more involved with the day to day of
-        Democracy Club you can <a href="https://slack.democracyclub.org.uk/">join our Slack</a>.
-    </p>
-  </div>
+  <h4>Slack</h4>
+  <p>
+      If you want to get more involved with the day to day of
+      Democracy Club you can <a href="https://slack.democracyclub.org.uk/">join our Slack</a>.
+  </p>
 </div>
-
-
 {% endblock %}

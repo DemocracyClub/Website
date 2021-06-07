@@ -1,26 +1,27 @@
 {% extends "base.html" %}
-{% load typogrify_tags %}
+{% load typogrify_tags %}}
 
 {% block body_class %}class="blog"{% endblock %}
-
 {% block page_content %}
-    <h2>Democracy Club Blog</h2>
-    {% for post in posts %}
-    <article>
-        <header>
-            <h3><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
-            <div role="contentinfo">
-              <span class="date">
-                <time datetime="{{post.created_on|date:"c"}}" itemprop="published">
-                  {{post.created_on}}
-                </time>
-              </span>
-              <span rel="author" itemprop="fn">{{post.author.first_name}} {{post.author.last_name}}</span>
-            </div>
-        </header>
 
-        {{ post.rendered_summary|safe|typogrify }}
-        <a href="{{ post.get_absolute_url }}" class="read_more">Read more</a>
-    </article>
-    {% endfor %}
+<div class="ds-stack-smaller">
+  <h2>Democracy Club Blog</h2>
+  {% for post in posts %}
+    <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
+    <div role="contentinfo">
+      <span class="date">
+        <time datetime="{{post.created_on|date:"c"}}" itemprop="published">
+          {{post.created_on}}
+        </time>
+      </span>
+      <h5><span rel="author" itemprop="fn">{{post.author.first_name}} {{post.author.last_name}}</span></h5>
+    </div>
+    <div class="ds-stack-smaller">
+      {{ post.rendered_summary|safe|typogrify }}
+    </div>
+    <div>
+      <a class="ds-cta ds-cta-blue" href="{{ post.get_absolute_url }}">Read more</a>
+    </div>
+  {% endfor %}
 {% endblock %}
+</div>
