@@ -42,7 +42,6 @@ $scope: false;
   @include breadcrumbs;
   @include table;
   @include language;
-  @include language;
   @include header;
   @include subnav;
   @include footer;
@@ -61,7 +60,6 @@ $scope: false;
     @include forms;
     @include stack;
     @include optional-styles;
-    @include dark;
     @include page;
     @include utilities;
   }
@@ -74,6 +72,7 @@ $scope: false;
 } @else {
   :root {
     @include fontMain;
+    font-size: clamp(#{$s2}, 2vw, #{$s3});
   }
 
   :root *,
@@ -96,5 +95,5 @@ $scope: false;
 }
 
 blockquote p {
-  font-size: clamp(#{$s1}, 2vw, #{$s2})
+  font-size: clamp(#{$s2}, 2vw, #{$s3})
 }
