@@ -95,6 +95,6 @@ $scope: false;
   @include utilities;
 }
 
-body, blockquote {
-  font-size: $s2;
+blockquote p {
+  font-size: clamp(#{$s1}, 2vw, #{$s2})
 }
