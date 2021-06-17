@@ -1,14 +1,10 @@
 import mimetypes
 import os
 
-from pipeline.compilers.sass import SASSCompiler
 
 from django.conf import settings
 from django.core.files.base import File
 from storages.backends.s3boto3 import S3Boto3Storage, SpooledTemporaryFile
-from django.contrib.staticfiles.storage import ManifestFilesMixin
-from django.contrib.staticfiles.storage import staticfiles_storage
-from pipeline.storage import PipelineMixin
 
 
 class PatchedS3Boto3Storage(S3Boto3Storage):
