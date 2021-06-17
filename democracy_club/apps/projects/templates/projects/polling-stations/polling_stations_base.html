@@ -3,26 +3,25 @@
 
 {% block content %}
 <div class="ds-stack-smaller">
-  <nav class="ds-subnav">
-    <ul>
-      <li>
-        <a href="{% url "projects:polling_one_pager" %}" aria-current="true">Overview</a>
-      </li>
-      <li>
-        <a href="{% url "projects:polling_embed_code" %}">Use on your Website</a>
-      </li>
-      <li>
-        <a href="{% url "projects:polling_data_upload" %}">For councils</a>
-      </li>
-    </ul>
-  </nav>
-  {% block page_title %}{% endblock page_title %}
+    <nav class="ds-subnav">
+        <ul>
+            <li>
+                <a href="{% url "projects:polling_one_pager" %}" aria-current="true">Overview</a>
+            </li>
+            <li>
+                <a href="{% url "projects:polling_embed_code" %}">Use on your Website</a>
+            </li>
+            <li>
+                <a href="{% url "projects:polling_data_upload" %}">For councils</a>
+            </li>
+        </ul>
+    </nav>
+    {% block page_title %}{% endblock page_title %}
 
-{% block main_content %}
-{% endblock main_content %}
-{% block page_menu %}
-{% endblock page_menu %}
+    {% block main_content %}
+    {% endblock main_content %}
+    {% block page_menu %}
+    {% endblock page_menu %}
 
 </div>
 {% endblock content %}
-

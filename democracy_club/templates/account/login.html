@@ -9,38 +9,35 @@
 
 
 <section class="row">
-  <div class="columns large-12">
-    <h1>{% trans "Sign In" %}</h1>
-  </div>
+    <div class="columns large-12">
+        <h1>{% trans "Sign In" %}</h1>
+    </div>
 </section>
 
 <section class="row">
 
-  <div class="columns large-12">
+    <div class="columns large-12">
 
-    {% get_providers as socialaccount_providers %}
+        {% get_providers as socialaccount_providers %}
 
-    {% if socialaccount_providers %}
-    <p>{% blocktrans with site.name as site_name %}Please sign in with one
-    of of the following:{% endblocktrans %}</p>
+        {% if socialaccount_providers %}
+        <p>{% blocktrans with site.name as site_name %}Please sign in with one
+            of of the following:{% endblocktrans %}</p>
 
-    <div class="socialaccount_ballot">
+        <div class="socialaccount_ballot">
 
-      <ul class="socialaccount_providers">
-        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-      </ul>
+            <ul class="socialaccount_providers">
+                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+            </ul>
+        </div>
+
+        {% include "socialaccount/snippets/login_extra.html" %}
+        {% endif %}
+        </form>
+
+        {% endblock %}
+
+
+
     </div>
-
-    {% include "socialaccount/snippets/login_extra.html" %}
-    {% endif %}
-    </form>
-
-    {% endblock %}
-
-
-
-  </div>
 </section>
-
-
-

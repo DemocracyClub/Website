@@ -7,65 +7,65 @@ Data and APIs
 {% endblock %}
 
 {% block content %}
-  <div class="ds-stack-smaller">
-  <h1>Data and APIs</h1>
-{% filter markdown %}
+<div class="ds-stack-smaller">
+    <h1>Data and APIs</h1>
+    {% filter markdown %}
 
-We provide APIs and data for almost all our services.
-
-
-
-### Elections
-
-[Data on UK elections](https://elections.democracyclub.org.uk/) from council by-elections to general elections. We provide an API
-  for looking up elections and ballot papers by postcode as well as tracknig boundary changes
-  and Electoral Change Orders.
-
-Each election and ballot paper is
-[given an ID that we use in our other projects](https://elections.democracyclub.org.uk/reference_definition/).
-
-We track canceled polls, and provide additional data where needed, for example information
-  on the recent voter ID pilots.
+    We provide APIs and data for almost all our services.
 
 
-### Polling locations
 
-The API for our [polling station finder]({% url "projects:polling_one_pager" %}), providing
-  polling station information for UK addresses.
+    ### Elections
 
-Used by The Electoral Commission, hundreds of councils, political parties and newspapers, this API.
+    [Data on UK elections](https://elections.democracyclub.org.uk/) from council by-elections to general elections. We provide an API
+    for looking up elections and ballot papers by postcode as well as tracknig boundary changes
+    and Electoral Change Orders.
 
-[Read the API docs](https://wheredoivote.co.uk/api/)
+    Each election and ballot paper is
+    [given an ID that we use in our other projects](https://elections.democracyclub.org.uk/reference_definition/).
 
-### Candidates
+    We track canceled polls, and provide additional data where needed, for example information
+    on the recent voter ID pilots.
 
-[Data on candidates](https://candidates.democracyclub.org.uk/help/api)
-for every election for district councils and above. We provide nomination data
-(name, party and area) information as a minumum, with contact info, statements, photos and more
-depending on how well crowdsourced the data is.
 
-Nomination data is verified by at least two people and sources are required for all edits.
+    ### Polling locations
 
-The API provides postcode lookup for currnet elections as well as historical
-data back to 2010.
+    The API for our [polling station finder]({% url "projects:polling_one_pager" %}), providing
+    polling station information for UK addresses.
 
-This API has been used by The Electoral Commission's YourVoteMatters site, Democratic Dashboard, Google.
+    Used by The Electoral Commission, hundreds of councils, political parties and newspapers, this API.
 
-<figure>
-  <img src="{% static "images/google-2015.png" %}">
-  <figcaption>Google used our candidates data in the 2015 General Election</figcaption>
-</figure>
+    [Read the API docs](https://wheredoivote.co.uk/api/)
 
-### Results
+    ### Candidates
 
-Our candidates sourcer also stores results for all candiadtes we list on the site. This
-is <a href="https://candidates.democracyclub.org.uk/uk_results/">availible as an Atom feed and CSV download</a>, as well as in the candidates API.
+    [Data on candidates](https://candidates.democracyclub.org.uk/help/api)
+    for every election for district councils and above. We provide nomination data
+    (name, party and area) information as a minumum, with contact info, statements, photos and more
+    depending on how well crowdsourced the data is.
 
-General election results were used by mySociety in 2015 and 2017 to set up
-<a href="https://www.mysociety.org/2015/05/05/were-up-all-night-to-get-mps/">newly elected MPs on
-TheyWorkForYou</a>.
+    Nomination data is verified by at least two people and sources are required for all edits.
 
-{% endfilter %}
+    The API provides postcode lookup for currnet elections as well as historical
+    data back to 2010.
+
+    This API has been used by The Electoral Commission's YourVoteMatters site, Democratic Dashboard, Google.
+
+    <figure>
+        <img src="{% static "images/google-2015.png" %}">
+        <figcaption>Google used our candidates data in the 2015 General Election</figcaption>
+    </figure>
+
+    ### Results
+
+    Our candidates sourcer also stores results for all candiadtes we list on the site. This
+    is <a href="https://candidates.democracyclub.org.uk/uk_results/">availible as an Atom feed and CSV download</a>, as well as in the candidates API.
+
+    General election results were used by mySociety in 2015 and 2017 to set up
+    <a href="https://www.mysociety.org/2015/05/05/were-up-all-night-to-get-mps/">newly elected MPs on
+        TheyWorkForYou</a>.
+
+    {% endfilter %}
 </div>
 
 {% endblock %}

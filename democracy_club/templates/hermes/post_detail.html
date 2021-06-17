@@ -6,60 +6,60 @@
 {% block title %}{{ post.subject }} | {{ site_title }}{% endblock title %}
 
 {% block og_tags %}
-    <meta property="og:title" content="{{ post.subject }}" />
-    <meta property="og:description" content="{{ post.summary }}" />
-    <meta property="og:type"   content="article" />
-    {% thumbnail post.hero "690" as im %}
-      <meta property="og:image" content="{{ im.url }}" />
-    {% endthumbnail %}
+<meta property="og:title" content="{{ post.subject }}" />
+<meta property="og:description" content="{{ post.summary }}" />
+<meta property="og:type" content="article" />
+{% thumbnail post.hero "690" as im %}
+<meta property="og:image" content="{{ im.url }}" />
+{% endthumbnail %}
 {% endblock og_tags %}
 
 {% block page_content %}
 <div class="ds-stack-smaller">
-  <header>
-    <h2>{{ post.subject }}</h2>
-    <div role="contentinfo">
-        <p>
-          <h5>
-            <span class="date">
-              <time datetime="{{post.modified_on|date:"c"}}">{{post.created_on|date:"jS E Y"}}</time>
-            </span>
-          </h5>
-          by
-          <span rel="author">
-            {% if post.author.first_name == "Sym" %}
-            <a href="https://twitter.com/symroe">
-            {{post.author.first_name}}
-            {{post.author.last_name}}
-            </a>
-            {% elif post.author.first_name == "Joe" %}
-            <a href="https://twitter.com/j0e_m">
-            {{post.author.first_name}}
-            {{post.author.last_name}}
-            </a>
-            {% else %}
-            {{post.author.first_name}}
-            {{post.author.last_name}}
-            {% endif %}
-          </span>
-        </p>
-    </div>
-  </header>
-  {% if post.hero %}
+    <header>
+        <h2>{{ post.subject }}</h2>
+        <div role="contentinfo">
+            <p>
+                <h5>
+                    <span class="date">
+                        <time datetime="{{post.modified_on|date:"c"}}">{{post.created_on|date:"jS E Y"}}</time>
+                    </span>
+                </h5>
+                by
+                <span rel="author">
+                    {% if post.author.first_name == "Sym" %}
+                    <a href="https://twitter.com/symroe">
+                        {{post.author.first_name}}
+                        {{post.author.last_name}}
+                    </a>
+                    {% elif post.author.first_name == "Joe" %}
+                    <a href="https://twitter.com/j0e_m">
+                        {{post.author.first_name}}
+                        {{post.author.last_name}}
+                    </a>
+                    {% else %}
+                    {{post.author.first_name}}
+                    {{post.author.last_name}}
+                    {% endif %}
+                </span>
+            </p>
+        </div>
+    </header>
+    {% if post.hero %}
     {% thumbnail post.hero "690" as im %}
-        <img src="{{ im.url }}">
+    <img src="{{ im.url }}">
     {% endthumbnail %}
-  {% endif %}
-  <div class="entry ds-stack-smaller">{{ post.rendered|safe|typogrify }}</div>
-  </div>
-  <div class="entry ds-stack-smaller">
+    {% endif %}
+    <div class="entry ds-stack-smaller">{{ post.rendered|safe|typogrify }}</div>
+</div>
+<div class="entry ds-stack-smaller">
     <h3>Get in touch:</h3>
     <p>
-      Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
-      <a href="https://twitter.com/democlub">tweet us</a>,
-      post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
-      email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
-  </div> 
+        Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
+        <a href="https://twitter.com/democlub">tweet us</a>,
+        post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
+        email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
+</div>
 </div>
 
 {% endblock %}
