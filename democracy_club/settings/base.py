@@ -2,9 +2,6 @@ import sys
 from os.path import join, abspath, dirname
 import dc_design_system
 
-from dc_utils.settings.pipeline import *  # noqa
-from dc_utils.settings.whitenoise import whitenoise_add_middleware
-
 # PATH vars
 
 here = lambda *x: join(abspath(dirname(__file__)), *x)
@@ -111,6 +108,7 @@ PROJECT_APPS = (
 INSTALLED_APPS += PROJECT_APPS
 
 from dc_utils.settings.pipeline import *  # noqa
+from dc_utils.settings.pipeline import get_pipeline_settings
 from dc_utils.settings.whitenoise import whitenoise_add_middleware
 
 MIDDLEWARE = whitenoise_add_middleware(MIDDLEWARE)
