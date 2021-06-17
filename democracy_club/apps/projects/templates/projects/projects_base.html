@@ -2,23 +2,23 @@
 {% block content %}
 
 <div class="ds-stack-smaller">
-  <nav class="ds-subnav" aria-label="true">
-    <ul>
-      <li>
-        <a href="{% url "projects:home" %}">Projects</a>
-      </li>
-      <li>
-        <a href="{% url "projects:reports" %}">Reports</a>
-      </li>
-      <li>
-        <a href="{% url "projects:past" %}">Past Projects</a>
-      </li>
-    </ul>
-  </nav>
-{% block page_heading %}{% endblock page_heading %}
-{% block main_content %}
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "projects:home" %}">Projects</a>
+            </li>
+            <li>
+                <a href="{% url "projects:reports" %}">Reports</a>
+            </li>
+            <li>
+                <a href="{% url "projects:past" %}">Past Projects</a>
+            </li>
+        </ul>
+    </nav>
+    {% block page_heading %}{% endblock page_heading %}
+    {% block main_content %}
 
-{% endblock main_content %}
+    {% endblock main_content %}
 
-{% endblock %}
+    {% endblock %}
 </div>
