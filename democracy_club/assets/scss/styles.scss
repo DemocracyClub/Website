@@ -72,7 +72,7 @@ $scope: false;
 } @else {
   :root {
     @include fontMain;
-    font-size: clamp(#{$s2}, 2vw, #{$s3});
+    font-size: clamp(#{$s1}, 2vw, #{$s2});
   }
 
   :root *,
@@ -94,6 +94,6 @@ $scope: false;
   @include utilities;
 }
 
-blockquote p {
-  font-size: clamp(#{$s2}, 2vw, #{$s3})
+blockquote {
+  font-size: clamp(#{$s1}, 2vw, #{$s2})
 }
