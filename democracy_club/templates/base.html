@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body class="ds-width-full">
     <div class="ds-page">
         <p><a class="ds-skip-link" href="#main">skip to content</a></p>
         {% block site_menu %}
@@ -44,7 +44,7 @@
             </nav>
         </header>
         {% endblock site_menu %}
-        <main id="main" tabindex="-1" class="ds-stack ds-width-full">
+        <main id="main" tabindex="-1" class="ds-stack">
 
             {% block site_meta %}
             <title>{% block title %}{% endblock title %}{{ site_title }}</title>
