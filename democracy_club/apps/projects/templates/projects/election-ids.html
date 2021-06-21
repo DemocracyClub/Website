@@ -4,32 +4,32 @@
 {% block page_content %}
 <section class="large-8">
     <h1>Election IDs</h1>
-    {% filter markdown %}
-    ## What are election IDs?
+{% filter markdown %}
+## What are election IDs?
 
-    Election IDs are unique identifiers for any state-run election in the UK.
+Election IDs are unique identifiers for any state-run election in the UK.
 
-    ## Why do we need election IDs?
+## Why do we need election IDs?
 
-    In order to build tools around elections, Democracy Club has found a really basic problem: naming them! It's easy when you're handling just, for example, a General Election, but if you're making a site that has to handle hundreds of different local elections and regional elections, we need a standard way to refer to them. This then allows datasets, such as upcoming elections, candidates, polling stations, leaflets, or news mentions, to be joined up to serve the needs of voters.
+In order to build tools around elections, Democracy Club has found a really basic problem: naming them! It's easy when you're handling just, for example, a General Election, but if you're making a site that has to handle hundreds of different local elections and regional elections, we need a standard way to refer to them. This then allows datasets, such as upcoming elections, candidates, polling stations, leaflets, or news mentions, to be joined up to serve the needs of voters.
 
-    ## How are they defined?
+## How are they defined?
 
-    You can read the [reference definition](https://elections.democracyclub.org.uk/reference_definition) here.
+You can read the [reference definition](https://elections.democracyclub.org.uk/reference_definition) here.
 
-    ## Where are Election IDs used?
+## Where are Election IDs used?
 
-    We create election ids using our [Every Election](https://elections.democracyclub.org.uk/) platform and consume them in our public-facing projects. Elections are referenced using these identifiers in our [Candidate data](https://candidates.democracyclub.org.uk/help/api).
+We create election ids using our [Every Election](https://elections.democracyclub.org.uk/) platform and consume them in our public-facing projects. Elections are referenced using these identifiers in our [Candidate data](https://candidates.democracyclub.org.uk/help/api).
 
-    ## How can I create an election ID?
+## How can I create an election ID?
 
-    You can create election IDs interactively using our [Every Election](https://elections.democracyclub.org.uk/) platform.
+You can create election IDs interactively using our [Every Election](https://elections.democracyclub.org.uk/) platform.
 
-    If you need to generate election identifiers in your software, we supply a [python package](https://github.com/DemocracyClub/uk-election-ids).
+If you need to generate election identifiers in your software, we supply a [python package](https://github.com/DemocracyClub/uk-election-ids).
 
-    You can derive election IDs using the [reference](https://elections.democracyclub.org.uk/reference_definition).
+You can derive election IDs using the [reference](https://elections.democracyclub.org.uk/reference_definition).
 
-    {% endfilter %}
+{% endfilter %}
 </section>
 
 

@@ -6,376 +6,376 @@
 
 {% block content %}
 <div id="report_2017" class="ds-stack-smaller">
-    {% filter markdown %}
+{% filter markdown %}
 
-    # Towards better elections
+# Towards better elections
 
-    <img src="{% static "report_2017/images/bridge.jpg" %}">
+<img src="{% static "report_2017/images/bridge.jpg" %}">
 
-    **Democracy Club’s annual report — June 2016 - June 2017**
+**Democracy Club’s annual report — June 2016 - June 2017**
 
-    This report is a work in progress, [you can comment on the Google Documents version of it](https://docs.google.com/document/d/1NdEx4U_LbNw6p_RNQu9ItQEgDd1Daur4npDJvxu9Z4o/edit#heading=h.hmung4c8csqe).
+This report is a work in progress, [you can comment on the Google Documents version of it](https://docs.google.com/document/d/1NdEx4U_LbNw6p_RNQu9ItQEgDd1Daur4npDJvxu9Z4o/edit#heading=h.hmung4c8csqe).
 
-    # Introduction
-    Democracy Club’s vision is of a society in which democracy thrives through knowledge, participation and openness. Our mission is to use open data, design and technology to give every citizen the information and participation opportunities they need, in a way that suits them. We are non-partisan and we work openly.
+# Introduction
+Democracy Club’s vision is of a society in which democracy thrives through knowledge, participation and openness. Our mission is to use open data, design and technology to give every citizen the information and participation opportunities they need, in a way that suits them. We are non-partisan and we work openly.
 
-    We do not pursue a particular view of an ideal democracy — we merely aim to make constant iterative improvements based on what citizens as individuals and as a group or groups need to make an informed choice. We judge those needs based on what voters search for online, public research and the feedback we receive directly from voters.
+We do not pursue a particular view of an ideal democracy — we merely aim to make constant iterative improvements based on what citizens as individuals and as a group or groups need to make an informed choice. We judge those needs based on what voters search for online, public research and the feedback we receive directly from voters.
 
-    This report breaks our work over the last year into four areas: Data, Apps, Labs and the Club. For each of these we give a detailed breakdown of the actual activities and outcomes against the goals we set ourselves. These are accompanied by initial thoughts on what we could do differently. A new plan for the next year — allowing for the possibility of a general election at any time — will be realised over the summer.
+This report breaks our work over the last year into four areas: Data, Apps, Labs and the Club. For each of these we give a detailed breakdown of the actual activities and outcomes against the goals we set ourselves. These are accompanied by initial thoughts on what we could do differently. A new plan for the next year — allowing for the possibility of a general election at any time — will be realised over the summer.
 
-    We would like to take this opportunity to thank everyone who took part in Democracy Club’s work over the past year — none of the achievements that are described below would have been possible without some heroic work by hundreds of volunteers — and by the work of partners in the Electoral Commission, many local authorities, political parties, media and campaigning organisations and in academia.
+We would like to take this opportunity to thank everyone who took part in Democracy Club’s work over the past year — none of the achievements that are described below would have been possible without some heroic work by hundreds of volunteers — and by the work of partners in the Electoral Commission, many local authorities, political parties, media and campaigning organisations and in academia.
 
-    This report is a work in progress — please send feedback on it, or send us your thoughts and ideas, to [hello@democracyclub.org.uk](mailto:hello@democracyclub.org.uk) or via [Twitter](https://twitter.com/democlub).
+This report is a work in progress — please send feedback on it, or send us your thoughts and ideas, to [hello@democracyclub.org.uk](mailto:hello@democracyclub.org.uk) or via [Twitter](https://twitter.com/democlub).
 
-    Joe Mitchell
-    Sym Roe
-    Chris Shaw
+Joe Mitchell
+Sym Roe
+Chris Shaw
 
 
-    # Executive summary
-    This report covers Democracy Club’s work from the May 2016 local elections to the May local elections and June 2017 general election.
+# Executive summary
+This report covers Democracy Club’s work from the May 2016 local elections to the May local elections and June 2017 general election.
 
-    ## Data
+## Data
 
-    ### Elections
+### Elections
 
-    We are near to meeting our goal of covering every election in the UK, with the capability of collecting candidates, for 100% of district council elections and above. Barriers to this include the absence of open data on new political area boundaries and the difficulty of finding every by-election notice. In future we hope that all data on all boundaries in the UK will be published and updated under an open licence by the organisation that creates the data. Our elections API was not used by any partners, so we will promote this more over the next year.
+We are near to meeting our goal of covering every election in the UK, with the capability of collecting candidates, for 100% of district council elections and above. Barriers to this include the absence of open data on new political area boundaries and the difficulty of finding every by-election notice. In future we hope that all data on all boundaries in the UK will be published and updated under an open licence by the organisation that creates the data. Our elections API was not used by any partners, so we will promote this more over the next year.
 
-    ### Polling locations
+### Polling locations
 
-    We reached 44% coverage for the local elections in May and 61% for the general election across England and Wales. Thanks to many partners for all their help with this. We should find new ways to reach electoral staff who may not be aware of our approach. Over the last year, two political parties developed their own polling location datasets, so we will urge them and our partners to work together to create one comprehensive dataset to serve everyone.
+We reached 44% coverage for the local elections in May and 61% for the general election across England and Wales. Thanks to many partners for all their help with this. We should find new ways to reach electoral staff who may not be aware of our approach. Over the last year, two political parties developed their own polling location datasets, so we will urge them and our partners to work together to create one comprehensive dataset to serve everyone.
 
-    The polling locations API served 200k uses for the local elections and 1.8m uses for the June general election. We had two partners use the API in June. We will continue to try to engage similar consumer mapping or transport services to make use of the API in future.
+The polling locations API served 200k uses for the local elections and 1.8m uses for the June general election. We had two partners use the API in June. We will continue to try to engage similar consumer mapping or transport services to make use of the API in future.
 
-    ### Candidates
+### Candidates
 
-    We listed every candidate for the May local elections (over 16,000) and June general election (over 3,000), but missed a few local by-election candidates. We are confident that our data remains the most comprehensive and accurate available. Our volunteers gathered a significant amount of data on candidates and we should set more specific targets for emails, photos and social media contacts in future.
+We listed every candidate for the May local elections (over 16,000) and June general election (over 3,000), but missed a few local by-election candidates. We are confident that our data remains the most comprehensive and accurate available. Our volunteers gathered a significant amount of data on candidates and we should set more specific targets for emails, photos and social media contacts in future.
 
-    We may be able to increase the automation of gathering candidate data and aim to trial this over the next year.
+We may be able to increase the automation of gathering candidate data and aim to trial this over the next year.
 
-    The candidates API served over 300,000 uses at the local elections, beating our expectations. At the general election it was used by at least five partners for over 660,000 lookups. Many more partners are likely to have used the spreadsheet download of candidates data and we should introduce a way to track this in future.
+The candidates API served over 300,000 uses at the local elections, beating our expectations. At the general election it was used by at least five partners for over 660,000 lookups. Many more partners are likely to have used the spreadsheet download of candidates data and we should introduce a way to track this in future.
 
-    ### Results
+### Results
 
-    We met our goal to record 50% of first-past-the-post vote shares, but did not make an attempt to model more complex results, such as that used in Scottish local elections. We need to decide whether we have the resources to improve the results recording infrastructure or whether it is better to press the UK Government to meet its Open Government Partnership commitment on this.
+We met our goal to record 50% of first-past-the-post vote shares, but did not make an attempt to model more complex results, such as that used in Scottish local elections. We need to decide whether we have the resources to improve the results recording infrastructure or whether it is better to press the UK Government to meet its Open Government Partnership commitment on this.
 
-    For the general election, we marked candidates as ‘elected’ throughout results night, which powered an update for all facebook users the morning after, creating an exemplar fast feedback loop. We will encourage other popular platforms to borrow this approach.
+For the general election, we marked candidates as ‘elected’ throughout results night, which powered an update for all facebook users the morning after, creating an exemplar fast feedback loop. We will encourage other popular platforms to borrow this approach.
 
-    ### Partners
+### Partners
 
-    On data partners more broadly, we were disappointed by the absence of some big players who chose not fulfil their civic responsibility. We will try to better understand the barriers to action in such organisations and commit to undertaking more research and advocacy in this space.
+On data partners more broadly, we were disappointed by the absence of some big players who chose not fulfil their civic responsibility. We will try to better understand the barriers to action in such organisations and commit to undertaking more research and advocacy in this space.
 
-    ## Apps — *things we run to serve voter needs.*
+## Apps — *things we run to serve voter needs.*
 
-    Who Can I Vote For? is our candidate lookup service. This was used by 27,000 people at the May local elections and we need to learn whether this reflects a lack of voter demand or lack of marketing spend. The service was used by 350,000 people at the general election with most traffic coming from facebook’s addition of an ‘election card’ into users’ newsfeeds.
+Who Can I Vote For? is our candidate lookup service. This was used by 27,000 people at the May local elections and we need to learn whether this reflects a lack of voter demand or lack of marketing spend. The service was used by 350,000 people at the general election with most traffic coming from facebook’s addition of an ‘election card’ into users’ newsfeeds.
 
-    This year we introduced a ‘statement to voters’ for candidates to use. Take up was tiny at the local elections, but just over a third of all candidates made use of this at the general election. We should seek opportunities for other ways in which to encourage candidates to provide data, perhaps by working more closely with local authorities.
+This year we introduced a ‘statement to voters’ for candidates to use. Take up was tiny at the local elections, but just over a third of all candidates made use of this at the general election. We should seek opportunities for other ways in which to encourage candidates to provide data, perhaps by working more closely with local authorities.
 
-    Where Do I Vote? is our voter-facing service that uses the polling location data. At the May local elections it was used 45,000 times. At the general election it was used nearly 600,000 times, with 93% of people saying they found it useful (only surveyed in areas where we had data).
+Where Do I Vote? is our voter-facing service that uses the polling location data. At the May local elections it was used 45,000 times. At the general election it was used nearly 600,000 times, with 93% of people saying they found it useful (only surveyed in areas where we had data).
 
-    Election Leaflets is a service for volunteers to upload photos of printed election materials. In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service.
+Election Leaflets is a service for volunteers to upload photos of printed election materials. In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service.
 
-    No work was done on our stretch goal to prototype an election alerts service.
+No work was done on our stretch goal to prototype an election alerts service.
 
-    ## Labs — *new projects or prototypes*
+## Labs — *new projects or prototypes*
 
-    Our quick prototype project this year, led by a committed volunteer, was a polling location finder widget that was used by several councils and a leading newspaper website. For other projects, we will consider opportunities to prototype a non-election service and seek to more adequately resource Labs over the next year.
+Our quick prototype project this year, led by a committed volunteer, was a polling location finder widget that was used by several councils and a leading newspaper website. For other projects, we will consider opportunities to prototype a non-election service and seek to more adequately resource Labs over the next year.
 
-    ## The Club
+## The Club
 
-    We set significant goals for the overall organisation this year. We met a funding goal to receive £50,000 from the Electoral Commission. We did not obtain a commitment to future funding from the Cabinet Office and need to establish a clear request for this. We did not develop an organisational membership of the club and hope to begin to build this over the next year. Membership by individuals grew, but by smaller amounts than we had hoped — we need to review this approach over the next year. As part of plans to improve our finance and governance, we are recruiting for a board and so hope to gain experience in membership models and further develop our funding plans.
+We set significant goals for the overall organisation this year. We met a funding goal to receive £50,000 from the Electoral Commission. We did not obtain a commitment to future funding from the Cabinet Office and need to establish a clear request for this. We did not develop an organisational membership of the club and hope to begin to build this over the next year. Membership by individuals grew, but by smaller amounts than we had hoped — we need to review this approach over the next year. As part of plans to improve our finance and governance, we are recruiting for a board and so hope to gain experience in membership models and further develop our funding plans.
 
-    ## What’s next?
+## What’s next?
 
-    We will continue to focus on elections as the main point of contact with democracy for most people in the UK. Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information. There’s also more we can do to improve voter engagement with candidates before an election.
+We will continue to focus on elections as the main point of contact with democracy for most people in the UK. Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information. There’s also more we can do to improve voter engagement with candidates before an election.
 
-    We need to be aware of the possibility of another general election over the next year and there are local elections planned in May 2018, including all-out elections across 32 London boroughs, Birmingham and Manchester. We will work with members of the club over the summer to develop our goals and plans for the year.
+We need to be aware of the possibility of another general election over the next year and there are local elections planned in May 2018, including all-out elections across 32 London boroughs, Birmingham and Manchester. We will work with members of the club over the summer to develop our goals and plans for the year.
 
-    More broadly, much of the work we do helps us see the limits of civic education in the UK. Over the next year, we hope to research both the public understanding of democracy and the state and civil society’s current civic education efforts, with a view to proposing a large-scale multiplier of our collective efforts.
+More broadly, much of the work we do helps us see the limits of civic education in the UK. Over the next year, we hope to research both the public understanding of democracy and the state and civil society’s current civic education efforts, with a view to proposing a large-scale multiplier of our collective efforts.
 
 
-    # Democracy Club: Data
+# Democracy Club: Data
 
-    <img src="{% static "report_2017/images/tube.jpg" %}">
-    Data refers to the datasets we manage and the Application Programming Interfaces (APIs) we provide (the things that computers use to talk to each other). We assume it is better to take information to where the people are, rather than try to bring people to a new place, so we provide accurate and comprehensive open data in order to make it easy for organisations of all shapes and sizes to provide civic information tailored to their audience.
+<img src="{% static "report_2017/images/tube.jpg" %}">
+Data refers to the datasets we manage and the Application Programming Interfaces (APIs) we provide (the things that computers use to talk to each other). We assume it is better to take information to where the people are, rather than try to bring people to a new place, so we provide accurate and comprehensive open data in order to make it easy for organisations of all shapes and sizes to provide civic information tailored to their audience.
 
-    ## Election data
-    ### Goals
+## Election data
+### Goals
 
-    We set ourselves the goal of 100% coverage of UK elections from district council level and above[^1]. That is, we would have an election ID and be able to record candidates as standing in an election for every local, devolved, combined authority, police area and parliamentary election on 4 May and onwards. As with all the data we work on, no state institution provides a centralised list of elections.
+We set ourselves the goal of 100% coverage of UK elections from district council level and above[^1]. That is, we would have an election ID and be able to record candidates as standing in an election for every local, devolved, combined authority, police area and parliamentary election on 4 May and onwards. As with all the data we work on, no state institution provides a centralised list of elections.
 
 
 
-    We also hoped to have three partners use this data to reach 100,000 people. We had imagined that online news media or councils might want to serve election reminders, or create a ‘Do I have an election tomorrow?’ widget in a news story, for example.
+We also hoped to have three partners use this data to reach 100,000 people. We had imagined that online news media or councils might want to serve election reminders, or create a ‘Do I have an election tomorrow?’ widget in a news story, for example.
 
-    ### Outcomes
+### Outcomes
 
-    We think it is fair to assume that we are near to meeting this goal, but recognise that there is more we can do to ensure it is complete. Since we are the only organisation to curate a list of elections in a consistent, open way it is difficult to ensure we have not missed an election. We are probably now the best baseline for what 100% coverage of elections looks like.
+We think it is fair to assume that we are near to meeting this goal, but recognise that there is more we can do to ensure it is complete. Since we are the only organisation to curate a list of elections in a consistent, open way it is difficult to ensure we have not missed an election. We are probably now the best baseline for what 100% coverage of elections looks like.
 
-    We do know we nearly missed a few by-elections, which present the most difficult challenge to find, but on the whole it seems members of the club monitored enough UK election message boards to identify each one. We did miss a Scottish Parliament by-election in Ettrick, Roxburgh and Berwickshire thanks to a boundary issue that we judged would demand too much time to fix.
+We do know we nearly missed a few by-elections, which present the most difficult challenge to find, but on the whole it seems members of the club monitored enough UK election message boards to identify each one. We did miss a Scottish Parliament by-election in Ettrick, Roxburgh and Berwickshire thanks to a boundary issue that we judged would demand too much time to fix.
 
-    New efforts to reach 100% of elections could include convincing electoral teams across the country to let us know when an election is taking place, and/or we could create a tool to automatically monitor council websites to spot newly published Notices of Election. This will push us further towards 100% but in the longer term the process of giving notice should be digitised so that central aggregation is easier. We see this as a task that only central government can achieve.
+New efforts to reach 100% of elections could include convincing electoral teams across the country to let us know when an election is taking place, and/or we could create a tool to automatically monitor council websites to spot newly published Notices of Election. This will push us further towards 100% but in the longer term the process of giving notice should be digitised so that central aggregation is easier. We see this as a task that only central government can achieve.
 
-    Even if we know about an election we might not be able to provide any useful service to voters because the boundaries are not published. We have continued to lobby for Ordnance Survey to allow the boundary commissions to publish electoral boundaries and this year we made good progress. After refusing a freedom of information request for the data, Ordnance Survey allowed the Local Government Boundary Commission for England to publish the boundaries the LGBCE creates. It is thanks to the help of LGBCE that we were able to cover these elections. We have an open freedom of information request appeal against Ordnance Survey filed with the Information Commissioner’s Office.
+Even if we know about an election we might not be able to provide any useful service to voters because the boundaries are not published. We have continued to lobby for Ordnance Survey to allow the boundary commissions to publish electoral boundaries and this year we made good progress. After refusing a freedom of information request for the data, Ordnance Survey allowed the Local Government Boundary Commission for England to publish the boundaries the LGBCE creates. It is thanks to the help of LGBCE that we were able to cover these elections. We have an open freedom of information request appeal against Ordnance Survey filed with the Information Commissioner’s Office.
 
-    **In future we hope that all data on all boundaries in the UK will be published and updated under an open licence by the organisation that created the data.** This publication should not be prevented or blocked in anyway by Ordnance Survey, as is currently the case.
+**In future we hope that all data on all boundaries in the UK will be published and updated under an open licence by the organisation that created the data.** This publication should not be prevented or blocked in anyway by Ordnance Survey, as is currently the case.
 
-    There were no uses of the Elections API by partner organisations to reach more people, as we had hoped would occur. For the future, we do know that a few councils run an election reminder service via email alerts. This could be an API-powered service that we could offer to councils in future. **We should also promote the elections API to a wider range of partners.**
+There were no uses of the Elections API by partner organisations to reach more people, as we had hoped would occur. For the future, we do know that a few councils run an election reminder service via email alerts. This could be an API-powered service that we could offer to councils in future. **We should also promote the elections API to a wider range of partners.**
 
-    ## Polling location data
-    ### Goals
+## Polling location data
+### Goals
 
-    We set the following goals for local authority coverage for 4 May local elections:
+We set the following goals for local authority coverage for 4 May local elections:
 
-    * 75% coverage of Scotland’s local authorities.
-    * 50% coverage of England and Wales’ local authorities.
-    * API used by Electoral Commission’s Your Vote Matters page: 50,000.
-    * API used by two partners to reach 25,000.
+* 75% coverage of Scotland’s local authorities.
+* 50% coverage of England and Wales’ local authorities.
+* API used by Electoral Commission’s Your Vote Matters page: 50,000.
+* API used by two partners to reach 25,000.
 
-    We did not publish new goals for the general election, but informally we imagined that we would see perhaps ten times the reach of the API use, i.e. a total of 750,000 people would be reached. Northern Ireland is covered by the work of the Electoral Office of Northern Ireland, which provides its own finder. Its data is not yet open.
+We did not publish new goals for the general election, but informally we imagined that we would see perhaps ten times the reach of the API use, i.e. a total of 750,000 people would be reached. Northern Ireland is covered by the work of the Electoral Office of Northern Ireland, which provides its own finder. Its data is not yet open.
 
-    ### Outcomes
+### Outcomes
 
-    #### Coverage of local authority areas
+#### Coverage of local authority areas
 
-    In Scotland, we had coverage for 20 out of 32 councils for the local elections, falling to 14 for the general election. Much of this was enabled by the Scottish Improvement Service’s Spatial Hub and we would like to extend our thanks to them. They worked with Geographic Information Systems (GIS) experts in local authorities to provide geographic data, where in most of the rest of Great Britain we were using home-address-to-poll-location lookup tables. These numbers are not the 75% of local authorities we were hoping for, partly because sometimes the data quality was not high enough to use and partly because the update for the general election came too late to be fully used. As we had not developed individual relationships with the councils it was harder to move faster. We have provided feedback on the data to the Spatial Hub, which will hopefully benefit everyone who wants to use the data.
+In Scotland, we had coverage for 20 out of 32 councils for the local elections, falling to 14 for the general election. Much of this was enabled by the Scottish Improvement Service’s Spatial Hub and we would like to extend our thanks to them. They worked with Geographic Information Systems (GIS) experts in local authorities to provide geographic data, where in most of the rest of Great Britain we were using home-address-to-poll-location lookup tables. These numbers are not the 75% of local authorities we were hoping for, partly because sometimes the data quality was not high enough to use and partly because the update for the general election came too late to be fully used. As we had not developed individual relationships with the councils it was harder to move faster. We have provided feedback on the data to the Spatial Hub, which will hopefully benefit everyone who wants to use the data.
 
-    In England and Wales, we had coverage of 134 of 304 councils — 44% — with local elections in May. We had 214 of 350 for the general election — 61% — our best coverage yet.
+In England and Wales, we had coverage of 134 of 304 councils — 44% — with local elections in May. We had 214 of 350 for the general election — 61% — our best coverage yet.
 
-    Our efforts to boost coverage were helped by several partners. We were grateful for the invitation of the Association of Electoral Administrators (AEA) to speak at their annual conference to make the case for opening the data to hundreds of local authority staff. We followed up by attending several regional AEA groups to answer any local questions. We are also grateful for the partnership with the electoral management system suppliers: Xpress, Halarose and Democracy Counts for creating the functionality for councils to export their data quickly and easily. And the public support of, and encouragement to local authorities by the Electoral Commission was also invaluable.
+Our efforts to boost coverage were helped by several partners. We were grateful for the invitation of the Association of Electoral Administrators (AEA) to speak at their annual conference to make the case for opening the data to hundreds of local authority staff. We followed up by attending several regional AEA groups to answer any local questions. We are also grateful for the partnership with the electoral management system suppliers: Xpress, Halarose and Democracy Counts for creating the functionality for councils to export their data quickly and easily. And the public support of, and encouragement to local authorities by the Electoral Commission was also invaluable.
 
-    There is still more we can do to increase coverage. Two or three councils sent us data for the first time after our cut-off date (Thurs 1 June), so we may assume that there are still some electoral services teams who have not heard of us and **we should continue to find new ways to reach electoral staff**.
+There is still more we can do to increase coverage. Two or three councils sent us data for the first time after our cut-off date (Thurs 1 June), so we may assume that there are still some electoral services teams who have not heard of us and **we should continue to find new ways to reach electoral staff**.
 
-    Moreover, the Labour Party and Scottish National Party both collated their own polling location data, thanks to their statutory access to the closed electoral roll (the list of every voter alongside a polling district code, which could be matched to the polling station address lists published by councils in the Situation of Polling Stations).
+Moreover, the Labour Party and Scottish National Party both collated their own polling location data, thanks to their statutory access to the closed electoral roll (the list of every voter alongside a polling district code, which could be matched to the polling station address lists published by councils in the Situation of Polling Stations).
 
-    We understand that this meant that the Labour Party had greater data coverage than we did. They may also, with their on-the-ground networks, have been able to spot errors in the data earlier, thus boosting accuracy on the day. That the best data is not open for anyone to use is a problem, particularly given the visitor numbers to our finder (see below).
+We understand that this meant that the Labour Party had greater data coverage than we did. They may also, with their on-the-ground networks, have been able to spot errors in the data earlier, thus boosting accuracy on the day. That the best data is not open for anyone to use is a problem, particularly given the visitor numbers to our finder (see below).
 
-    In future we will urge local authorities, the Electoral Commission and political parties to work together to create one holistic, comprehensive dataset to serve everyone. This is not an area over which rival organisations should be able to gain a competitive advantage. Lastly, we aim to work with the Electoral Office of Northern Ireland to ensure that their data is included, which will allow UK-wide coverage.
+In future we will urge local authorities, the Electoral Commission and political parties to work together to create one holistic, comprehensive dataset to serve everyone. This is not an area over which rival organisations should be able to gain a competitive advantage. Lastly, we aim to work with the Electoral Office of Northern Ireland to ensure that their data is included, which will allow UK-wide coverage.
 
-    #### Polling location API usage
+#### Polling location API usage
 
-    At the local elections, we had only one API partner — the Electoral Commission — who served 160,000 searches on Your Vote Matters. Our Where Do I Vote? service served 45,000 searches. Getting to two API partners for the polling location data at non-parliamentary elections will be part of a general challenge to encourage partners to take local elections seriously.
+At the local elections, we had only one API partner — the Electoral Commission — who served 160,000 searches on Your Vote Matters. Our Where Do I Vote? service served 45,000 searches. Getting to two API partners for the polling location data at non-parliamentary elections will be part of a general challenge to encourage partners to take local elections seriously.
 
-    At the general election, our API served the polling location data at the Electoral Commission’s Your Vote Matters website, Labour’s polling station finder, and our own Where Do I Vote? service[^2]. We served 250,000 at Your Vote Matters, 740,000 via Labour’s finder, and 600,000 at Where Do I Vote?
+At the general election, our API served the polling location data at the Electoral Commission’s Your Vote Matters website, Labour’s polling station finder, and our own Where Do I Vote? service[^2]. We served 250,000 at Your Vote Matters, 740,000 via Labour’s finder, and 600,000 at Where Do I Vote?
 
-    We also spoke with transport apps Waze and Moovit about using the data, but time was perhaps too short for them to build something that could manage the data model correctly (many people are surprised that UK voters are allocated a specific polling location and cannot vote anywhere else). It seems likely that only a general election will motivate such companies — in advance of the next one **we should continue to try to engage similar consumer maps or transport services to make use of the API**.
+We also spoke with transport apps Waze and Moovit about using the data, but time was perhaps too short for them to build something that could manage the data model correctly (many people are surprised that UK voters are allocated a specific polling location and cannot vote anywhere else). It seems likely that only a general election will motivate such companies — in advance of the next one **we should continue to try to engage similar consumer maps or transport services to make use of the API**.
 
-    #### Dealing with location errors
+#### Dealing with location errors
 
-    We did not set ourselves any targets as to how we would deal with errors, but it is worth reviewing at least the general election experience here. On 7 and 8 June, as traffic was taking off and we started to receive error reports, we responded as quickly as possible to as many reports as possible.
+We did not set ourselves any targets as to how we would deal with errors, but it is worth reviewing at least the general election experience here. On 7 and 8 June, as traffic was taking off and we started to receive error reports, we responded as quickly as possible to as many reports as possible.
 
-    The most significant errors pointed voters at the wrong polling location. We were alerted to this in fewer than twenty cases, but this could have affected hundreds of voters. We think this was sometimes due to using outdated geographic data and sometimes due to a bug in exporting files from electoral management software. In at least three council areas where we were alerted to this, and were concerned that our accuracy might have dropped below 99.5%, we removed the data for those areas so that voters saw a ‘call your council’ message instead.
+The most significant errors pointed voters at the wrong polling location. We were alerted to this in fewer than twenty cases, but this could have affected hundreds of voters. We think this was sometimes due to using outdated geographic data and sometimes due to a bug in exporting files from electoral management software. In at least three council areas where we were alerted to this, and were concerned that our accuracy might have dropped below 99.5%, we removed the data for those areas so that voters saw a ‘call your council’ message instead.
 
-    Another common error report, less important, but reported in tens of cases, was that the pinpoint was not accurate enough when pointing to the precise location of the polling location. This occurs where we only have a postcode for a polling station, rather than a Unique Property Reference Number or grid coordinates for the stations, because postcodes can cover a large area and we have to simply use the central point in that area. We will encourage authorities to provide the best data they can, but where precise data is not forthcoming, **we could mobilise online mapping volunteers (e.g. the OpenStreetMap community) to help us find the precise locations**.
+Another common error report, less important, but reported in tens of cases, was that the pinpoint was not accurate enough when pointing to the precise location of the polling location. This occurs where we only have a postcode for a polling station, rather than a Unique Property Reference Number or grid coordinates for the stations, because postcodes can cover a large area and we have to simply use the central point in that area. We will encourage authorities to provide the best data they can, but where precise data is not forthcoming, **we could mobilise online mapping volunteers (e.g. the OpenStreetMap community) to help us find the precise locations**.
 
 
-    ## Candidate data
-    ### Goals
+## Candidate data
+### Goals
 
-    Our goal was to have at least the name and party (or ‘Independent’ status) of every candidate in every election in the elections database. At the local elections, we hoped that the candidates API would be used by three partners to reach 50,000 people and the CSV of candidates to be used by another two partners to reach 50,000 more. We might have expected ten times this number at the general election.
+Our goal was to have at least the name and party (or ‘Independent’ status) of every candidate in every election in the elections database. At the local elections, we hoped that the candidates API would be used by three partners to reach 50,000 people and the CSV of candidates to be used by another two partners to reach 50,000 more. We might have expected ten times this number at the general election.
 
-    The data on candidates’ names and parties is statutorily provided by local authorities in the Statement of Persons Nominated — so if we know there is an election taking place, there should be no reason not to be able to find at least this basic data. Looking back, we could and perhaps **should have set targets for the percentage of candidates for whom we had an email address, photo or social media details — the data that our volunteers go out and find**.
+The data on candidates’ names and parties is statutorily provided by local authorities in the Statement of Persons Nominated — so if we know there is an election taking place, there should be no reason not to be able to find at least this basic data. Looking back, we could and perhaps **should have set targets for the percentage of candidates for whom we had an email address, photo or social media details — the data that our volunteers go out and find**.
 
-    ### Outcomes
+### Outcomes
 
-    #### Candidates coverage
+#### Candidates coverage
 
-    We believe that we had the details of every candidate for 4 May local elections — all 16,075 of them. Our initial aggregation of every candidate for 8 June was complete within 26 hours of the nomination papers being published, but included three errors that managed to get through the double check process. This is a 0.09% error rate. Two of these were corrected by the Electoral Commission themselves — the advantage of an open database — after being alerted to them by a local authority. One was corrected by us immediately upon receipt of the email notifying us. The database was thus complete within 72 hours of nomination papers being published. As in 2015, the ‘crowd’, working in the open, was quicker and more accurate than Press Association’s commercial product.
+We believe that we had the details of every candidate for 4 May local elections — all 16,075 of them. Our initial aggregation of every candidate for 8 June was complete within 26 hours of the nomination papers being published, but included three errors that managed to get through the double check process. This is a 0.09% error rate. Two of these were corrected by the Electoral Commission themselves — the advantage of an open database — after being alerted to them by a local authority. One was corrected by us immediately upon receipt of the email notifying us. The database was thus complete within 72 hours of nomination papers being published. As in 2015, the ‘crowd’, working in the open, was quicker and more accurate than Press Association’s commercial product.
 
-    We did, however, miss out on candidates for a few local by-elections that fell on the same day as the general election, for example in Luton, Hatfield, Stockport and Broxtowe. This reflects an ongoing issue about our ability to be aware of by-elections with sufficient notice — elsewhere in this document we set out a couple of ideas as to how to improve here.
+We did, however, miss out on candidates for a few local by-elections that fell on the same day as the general election, for example in Luton, Hatfield, Stockport and Broxtowe. This reflects an ongoing issue about our ability to be aware of by-elections with sufficient notice — elsewhere in this document we set out a couple of ideas as to how to improve here.
 
-    We now see a possibility of automating the collection of the basic candidate data, freeing up hundreds of hours of volunteer time. While for both 4 May and 8 June our volunteers had to transcribe data from hundreds of PDFs, it may be work with electoral management software suppliers to create a process for local authorities to provide machine-readable data in the same manner as they do with polling location data. **Testing this approach to candidate data gathering should be a priority for May 2018**.
+We now see a possibility of automating the collection of the basic candidate data, freeing up hundreds of hours of volunteer time. While for both 4 May and 8 June our volunteers had to transcribe data from hundreds of PDFs, it may be work with electoral management software suppliers to create a process for local authorities to provide machine-readable data in the same manner as they do with polling location data. **Testing this approach to candidate data gathering should be a priority for May 2018**.
 
-    #### API usage
+#### API usage
 
-    For the local elections, we had one partner use the candidates API: the Electoral Commission’s Your Vote Matters website. This saw 312,217 lookups — so outdid our expectations. We believe that the LSE’s Democratic Dashboard — and perhaps several others who did not let us know — also used the data via a one-off spreadsheet download, but obviously we cannot track the number of people reached here.
+For the local elections, we had one partner use the candidates API: the Electoral Commission’s Your Vote Matters website. This saw 312,217 lookups — so outdid our expectations. We believe that the LSE’s Democratic Dashboard — and perhaps several others who did not let us know — also used the data via a one-off spreadsheet download, but obviously we cannot track the number of people reached here.
 
-    The general election saw much more use of both the API and spreadsheet (CSV). The API was used by at least five partners to serve 664,219 lookups. Organisations like the Guardian, 38 Degrees, School Cuts and Explaain, the people behind GE2017.com, which was used 2m times, ensured that the candidate data reached many more people than we could have done alone. We do not know how many organisations downloaded the CSV of candidates **and will aim to ensure that we can know this figure in future**, but given the number of emails we received — and the occasions on which we saw people outside of our network pointing other campaigners or journalists at the CSV — we can be confident that tens of organisations used this data — to reach an unknown additional number of people.
+The general election saw much more use of both the API and spreadsheet (CSV). The API was used by at least five partners to serve 664,219 lookups. Organisations like the Guardian, 38 Degrees, School Cuts and Explaain, the people behind GE2017.com, which was used 2m times, ensured that the candidate data reached many more people than we could have done alone. We do not know how many organisations downloaded the CSV of candidates **and will aim to ensure that we can know this figure in future**, but given the number of emails we received — and the occasions on which we saw people outside of our network pointing other campaigners or journalists at the CSV — we can be confident that tens of organisations used this data — to reach an unknown additional number of people.
 
-    ## Election results data
-    ### Goals
+## Election results data
+### Goals
 
-    For this year we had set ourselves two goals relating to results data. First, to capture results data for at least 50% of the First-Past-The-Post (FPTP) local elections in England and Wales. Second, to attempt to produce a data model for capturing non-FPTP elections (i.e. all the Scottish local elections).
+For this year we had set ourselves two goals relating to results data. First, to capture results data for at least 50% of the First-Past-The-Post (FPTP) local elections in England and Wales. Second, to attempt to produce a data model for capturing non-FPTP elections (i.e. all the Scottish local elections).
 
-    Results data has consistently been a lower priority for Democracy Club due to its after-the-fact nature, that is, it does not seem like an important element of helping to inform voters about an upcoming election. However, if we can build up a historical database of results, they will be helpful for next time around. We are also regularly asked for this data by volunteers and partners.
+Results data has consistently been a lower priority for Democracy Club due to its after-the-fact nature, that is, it does not seem like an important element of helping to inform voters about an upcoming election. However, if we can build up a historical database of results, they will be helpful for next time around. We are also regularly asked for this data by volunteers and partners.
 
-    Relatedly, with our involvement, the UK Government has made the [following commitment](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18#commitment-7-elections-data) as part of its membership of the Open Government Partnership:
+Relatedly, with our involvement, the UK Government has made the [following commitment](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18#commitment-7-elections-data) as part of its membership of the Open Government Partnership:
 
-    > “Working with interested parties from government, Parliament and civil society, we will develop a common data standard for reporting election results in the UK faster and more efficiently, and develop a plan to support electoral administrators to voluntarily adopt the standard.”
+> “Working with interested parties from government, Parliament and civil society, we will develop a common data standard for reporting election results in the UK faster and more efficiently, and develop a plan to support electoral administrators to voluntarily adopt the standard.”
 
-    After the snap general election was announced, we added the goal of marking every parliamentary candidate as ‘elected / not elected’ in near real-time throughout the night of 8/9 June.
+After the snap general election was announced, we added the goal of marking every parliamentary candidate as ‘elected / not elected’ in near real-time throughout the night of 8/9 June.
 
-    ### Outcomes
+### Outcomes
 
-    For the local elections, we were approached by the Local Government Information Unit, who share our interest in open election results, to repeat our 2016 on-the-night results recording, simply in terms of which party (or none) took control of councils that had elections. We produced the infrastructure to do this and to record vote counts — as we had in 2016. LGiU used this on the night to record all ‘control’ results and many volunteers made exceptional efforts to record most ward-level vote counts too. However, with the general election approaching, we did not have time to ensure the results recorder was bug-free, resulting in some frustration for volunteers — particularly where the same ward had had an election last year.
+For the local elections, we were approached by the Local Government Information Unit, who share our interest in open election results, to repeat our 2016 on-the-night results recording, simply in terms of which party (or none) took control of councils that had elections. We produced the infrastructure to do this and to record vote counts — as we had in 2016. LGiU used this on the night to record all ‘control’ results and many volunteers made exceptional efforts to record most ward-level vote counts too. However, with the general election approaching, we did not have time to ensure the results recorder was bug-free, resulting in some frustration for volunteers — particularly where the same ward had had an election last year.
 
-    We probably did meet the 50% results goal, with thanks to all the volunteers who worked their way through so many areas. We could have put more effort into results had a general election not been called by this point. **For the future, we will need to decide whether we will have enough time to respect the volunteers’ efforts by improving the results recording infrastructure, or whether it is better to press the UK Government to meet its Open Government Partnership commitment**.
+We probably did meet the 50% results goal, with thanks to all the volunteers who worked their way through so many areas. We could have put more effort into results had a general election not been called by this point. **For the future, we will need to decide whether we will have enough time to respect the volunteers’ efforts by improving the results recording infrastructure, or whether it is better to press the UK Government to meet its Open Government Partnership commitment**.
 
-    Throughout the night of the general election results, we marked candidates as having been elected or not elected. We did not add vote counts. Particular thanks are due to Mark Longair of mySociety for a marathon effort here. The data populated mySociety’s theyworkforyou.com/mps, which gradually filled with newly elected MPs throughout the night. This data also enabled Facebook’s ‘You have newly elected representatives’ notification to their users the following morning. Facebook users could then also choose to follow news from their new MP. This kind of feedback loop — you voted, here’s what happened, now here’s how you connect with them — is an exemplar of the use of open democracy data and we hope Facebook will continue this practice for other elections. **We will encourage other popular platforms to borrow this approach**.
+Throughout the night of the general election results, we marked candidates as having been elected or not elected. We did not add vote counts. Particular thanks are due to Mark Longair of mySociety for a marathon effort here. The data populated mySociety’s theyworkforyou.com/mps, which gradually filled with newly elected MPs throughout the night. This data also enabled Facebook’s ‘You have newly elected representatives’ notification to their users the following morning. Facebook users could then also choose to follow news from their new MP. This kind of feedback loop — you voted, here’s what happened, now here’s how you connect with them — is an exemplar of the use of open democracy data and we hope Facebook will continue this practice for other elections. **We will encourage other popular platforms to borrow this approach**.
 
-    ### A note on partners
-    Our theory of change relies heavily on the idea that we will be able to partner with organisations with significant reach (or particularly unique reach) to turn the open democracy data into bespoke *information* that gets to all voters in a way that suits them.
+### A note on partners
+Our theory of change relies heavily on the idea that we will be able to partner with organisations with significant reach (or particularly unique reach) to turn the open democracy data into bespoke *information* that gets to all voters in a way that suits them.
 
-    We thus expect that organisations with a significant ability to communicate to millions of voters will do this, as part of their corporate social responsibility — or simply their self-interest in ensuring that democracy continues to function well. In last year’s report, we outlined how the then 2020 deadline for the next general election would give us sufficient time to build relationships with those organisations, from large consumer companies e.g. Tesco Clubcard or Vodafone, to giant membership organisations e.g. the Co-operative, National Trust or RSPB. Unfortunately, we did not have the time to build those relationships.
-    The partnership approach did work relatively well with Facebook this time around. Facebook wanted to help inform their users, so they added links to Who Can I Vote For? and Where Do I Vote? directly in users’ timelines. In future, with more notice of an election, we hope we can do more — and have the information directly in users’ timelines, rather than asking users to visit a new website. If you think you might be one of these partners, now is the time to get in touch.
+We thus expect that organisations with a significant ability to communicate to millions of voters will do this, as part of their corporate social responsibility — or simply their self-interest in ensuring that democracy continues to function well. In last year’s report, we outlined how the then 2020 deadline for the next general election would give us sufficient time to build relationships with those organisations, from large consumer companies e.g. Tesco Clubcard or Vodafone, to giant membership organisations e.g. the Co-operative, National Trust or RSPB. Unfortunately, we did not have the time to build those relationships.
+The partnership approach did work relatively well with Facebook this time around. Facebook wanted to help inform their users, so they added links to Who Can I Vote For? and Where Do I Vote? directly in users’ timelines. In future, with more notice of an election, we hope we can do more — and have the information directly in users’ timelines, rather than asking users to visit a new website. If you think you might be one of these partners, now is the time to get in touch.
 
-    We were disappointed that Google could not arrange to even reproduce the same candidate-lookup tool as was prominently available on Google Search for the 2015 general election. We were told that there was not sufficient time (seven weeks) or resource to reuse that code — or indeed to do anything new. Twitter also suggested the short timeline was not enough to replicate for the UK some of the services they provided in the US in 2016, including a in-app polling station finder.
+We were disappointed that Google could not arrange to even reproduce the same candidate-lookup tool as was prominently available on Google Search for the 2015 general election. We were told that there was not sufficient time (seven weeks) or resource to reuse that code — or indeed to do anything new. Twitter also suggested the short timeline was not enough to replicate for the UK some of the services they provided in the US in 2016, including a in-app polling station finder.
 
-    In a democracy, everyone — and every organisation — has a civic responsibility to take part, to ensure that the process continues to function well. Using our data to inform voters is an easy way to meet this responsibility. There are no excuses to be made in terms of technical ability any more. It comes down to whether an organisation appreciates this social responsibility. It is not controversial, it is not ‘political’ to add a voting reminder to an email that is scheduled to go to millions of people already. **We will try to understand the barriers to action in such organisations and commit to undertaking more research and advocacy in this space**.
+In a democracy, everyone — and every organisation — has a civic responsibility to take part, to ensure that the process continues to function well. Using our data to inform voters is an easy way to meet this responsibility. There are no excuses to be made in terms of technical ability any more. It comes down to whether an organisation appreciates this social responsibility. It is not controversial, it is not ‘political’ to add a voting reminder to an email that is scheduled to go to millions of people already. **We will try to understand the barriers to action in such organisations and commit to undertaking more research and advocacy in this space**.
 
 
 
-    # Democracy Club: Apps
+# Democracy Club: Apps
 
-    <img src="{% static "report_2017/images/bridge-2.jpg" %}">
+<img src="{% static "report_2017/images/bridge-2.jpg" %}">
 
-    Apps — or applications — are the services we run for voters’ direct use. And, perhaps in future, candidates’ use too.
+Apps — or applications — are the services we run for voters’ direct use. And, perhaps in future, candidates’ use too.
 
-    ## Who Can I Vote For?
+## Who Can I Vote For?
 
-    Who Can I Vote For? is our candidate lookup service. Users enter their postcode and we tell them when their next election is, who their candidates are, and we also borrow data from Where Do I Vote? to show their polling location, if we have coverage. The site also grabs other data on candidates from around the web and presents it in one place.
+Who Can I Vote For? is our candidate lookup service. Users enter their postcode and we tell them when their next election is, who their candidates are, and we also borrow data from Where Do I Vote? to show their polling location, if we have coverage. The site also grabs other data on candidates from around the web and presents it in one place.
 
-    ### Goals
-    Our goals for Who Can I Vote For? were as follows:
+### Goals
+Our goals for Who Can I Vote For? were as follows:
 
-    * 50,000 users on 4 May.
-    * 50% would recommend to a friend / ‘found site useful’.
-    * 25% ‘feel better informed’.
-    * 10% take a call-to-action (e.g. ‘Ask this candidate a question’).
-    * 5% of candidates upload a statement to voters.
-    * 0.5% of candidates upload a video.
+* 50,000 users on 4 May.
+* 50% would recommend to a friend / ‘found site useful’.
+* 25% ‘feel better informed’.
+* 10% take a call-to-action (e.g. ‘Ask this candidate a question’).
+* 5% of candidates upload a statement to voters.
+* 0.5% of candidates upload a video.
 
-    The planned introduction of the ‘statement to voters’ was a response to the most-received feedback from 2016: the request for more information about what a candidate stands for. The fairest approach we could take to this was to give every candidate an opportunity to explain in their own words why voters should choose them for the post.
+The planned introduction of the ‘statement to voters’ was a response to the most-received feedback from 2016: the request for more information about what a candidate stands for. The fairest approach we could take to this was to give every candidate an opportunity to explain in their own words why voters should choose them for the post.
 
-    Once the general election was called, we imagined that we would see perhaps ten times the number of users for the site. We were hoping for something like 50% of candidates to have a statement to voters.
+Once the general election was called, we imagined that we would see perhaps ten times the number of users for the site. We were hoping for something like 50% of candidates to have a statement to voters.
 
-    ### Outcomes
-    Who Can I Vote For? was used by 27,000 people in the week up to 4 May local elections. This was disappointing and **we need to learn whether this is lack of voter demand or lack of marketing spend on our part**.
+### Outcomes
+Who Can I Vote For? was used by 27,000 people in the week up to 4 May local elections. This was disappointing and **we need to learn whether this is lack of voter demand or lack of marketing spend on our part**.
 
-    The site was used by 350,000 people in the week up to 8 June. Most of the traffic for the latter date was driven by Facebook’s link to the site in their News Feed. Unsurprisingly, this meant the general election drove a lot more traffic than for any local elections, but 2017’s traffic is considerably less than the 1m+ users in 2015, which was a result of Google’s knowledge graph candidate-lookup.
+The site was used by 350,000 people in the week up to 8 June. Most of the traffic for the latter date was driven by Facebook’s link to the site in their News Feed. Unsurprisingly, this meant the general election drove a lot more traffic than for any local elections, but 2017’s traffic is considerably less than the 1m+ users in 2015, which was a result of Google’s knowledge graph candidate-lookup.
 
-    In terms of ‘would recommend’ and ‘feel better informed’, we only ended up using one feedback form on the website, which asked ‘Did you find what you were looking for?’ 13,454 said they had, and 4,316 said they had not. This is self-reported and does not tell us whether we actually helped voters to take a more informed decision. **We will need to consider the feedback form’s usefulness as part of a larger discussion of how we evaluate the success (or not) of what we do**.
+In terms of ‘would recommend’ and ‘feel better informed’, we only ended up using one feedback form on the website, which asked ‘Did you find what you were looking for?’ 13,454 said they had, and 4,316 said they had not. This is self-reported and does not tell us whether we actually helped voters to take a more informed decision. **We will need to consider the feedback form’s usefulness as part of a larger discussion of how we evaluate the success (or not) of what we do**.
 
-    In terms of the call-to-action to users, we did not introduce any more interactive element, such as a public Q&A. This is more difficult to research and design than we had anticipated. Voters could have made use of the contact details on the site to contact candidates privately, which we obviously could not track. Users were invited to try to add more information on candidates — the click-through rate to our candidates database from Who Can I Vote For? was tiny. Some of the qualitative feedback suggests that it was not always clear to users that the information they were seeing was crowdsourced.
+In terms of the call-to-action to users, we did not introduce any more interactive element, such as a public Q&A. This is more difficult to research and design than we had anticipated. Voters could have made use of the contact details on the site to contact candidates privately, which we obviously could not track. Users were invited to try to add more information on candidates — the click-through rate to our candidates database from Who Can I Vote For? was tiny. Some of the qualitative feedback suggests that it was not always clear to users that the information they were seeing was crowdsourced.
 
-    For the local elections, very few candidates provided a ‘statement to voters’. This is partly due to the number of ‘paper candidates’ (those people standing just to ensure their party has its name on the ballot paper and can measure any change in vote count, but who do not actively campaign) — but partly due to a lack of digital awareness by local candidates[^3]. The situation was much improved for the general election, where 34% of candidates provided statements. These were mostly added by candidates themselves, their agents or by local party officers. Surprisingly, it seemed that many candidates did not have such a statement already prepared, despite giving such a statement in local press interviews, hustings and on the doorstep. Once all candidates, and the top ten parties by candidates, had received an email invitation to supply the statements, but had still not responded, our volunteers added statements borrowed from candidate websites or about pages on the candidate’s Facebook pages, where they existed.
+For the local elections, very few candidates provided a ‘statement to voters’. This is partly due to the number of ‘paper candidates’ (those people standing just to ensure their party has its name on the ballot paper and can measure any change in vote count, but who do not actively campaign) — but partly due to a lack of digital awareness by local candidates[^3]. The situation was much improved for the general election, where 34% of candidates provided statements. These were mostly added by candidates themselves, their agents or by local party officers. Surprisingly, it seemed that many candidates did not have such a statement already prepared, despite giving such a statement in local press interviews, hustings and on the doorstep. Once all candidates, and the top ten parties by candidates, had received an email invitation to supply the statements, but had still not responded, our volunteers added statements borrowed from candidate websites or about pages on the candidate’s Facebook pages, where they existed.
 
-    Candidates and parties hopefully increasingly recognise that a central candidate-lookup platform (in this case Who Can I Vote For?) is likely to receive far more visitors than their personal websites and that completing their candidacy profile on an open database should be their first digital communication priority. **We should seek opportunities for other ways in which to encourage candidates to provide data, perhaps by working with local authorities at the moment when candidates come into their offices with nomination papers**.
+Candidates and parties hopefully increasingly recognise that a central candidate-lookup platform (in this case Who Can I Vote For?) is likely to receive far more visitors than their personal websites and that completing their candidacy profile on an open database should be their first digital communication priority. **We should seek opportunities for other ways in which to encourage candidates to provide data, perhaps by working with local authorities at the moment when candidates come into their offices with nomination papers**.
 
-    The last of our goals for this year referred to video content. We did not introduce this facility following some light research at the general election, where in a couple of constituencies we found less than a third of candidates had publicly provided a short video introducing themselves. Again, we would argue that a short online video is an essential piece of content that candidates should prioritise. **We will come up with a policy for including video introductions on Who Can I Vote For? in addition to the written statements**.
+The last of our goals for this year referred to video content. We did not introduce this facility following some light research at the general election, where in a couple of constituencies we found less than a third of candidates had publicly provided a short video introducing themselves. Again, we would argue that a short online video is an essential piece of content that candidates should prioritise. **We will come up with a policy for including video introductions on Who Can I Vote For? in addition to the written statements**.
 
-    Finally, though we had not outlined any goals to do this, we were able to take advantage of the enthusiasm around the general election to make several rapid iterations of Who Can I Vote For? in the weeks before 8 June. This included adding: details of hustings events, as well as videos or blog posts relating to past hustings; links to candidates’ company directorships (powered by a search against the Companies House database, which resulted in a couple of false positive matches that we will need to avoid in future); a twitter widget showing a candidate’s latest tweets; past candidacies; improved explanatory narrative text at the top of the page and general navigation improvements.
+Finally, though we had not outlined any goals to do this, we were able to take advantage of the enthusiasm around the general election to make several rapid iterations of Who Can I Vote For? in the weeks before 8 June. This included adding: details of hustings events, as well as videos or blog posts relating to past hustings; links to candidates’ company directorships (powered by a search against the Companies House database, which resulted in a couple of false positive matches that we will need to avoid in future); a twitter widget showing a candidate’s latest tweets; past candidacies; improved explanatory narrative text at the top of the page and general navigation improvements.
 
-    ## Where Do I Vote?
-    ### Goals
+## Where Do I Vote?
+### Goals
 
-    Where Do I Vote? is our app that uses the polling location data mentioned above. We imagined that 10,000 people would use it in May and that the feedback would be 50% positive. We did not set a target for the number of users or positive feedback at the general election.
+Where Do I Vote? is our app that uses the polling location data mentioned above. We imagined that 10,000 people would use it in May and that the feedback would be 50% positive. We did not set a target for the number of users or positive feedback at the general election.
 
-    There is an embeddable version of the finder available, but we did not set targets for the number of partners making use of it.
+There is an embeddable version of the finder available, but we did not set targets for the number of partners making use of it.
 
-    ### Outcomes
+### Outcomes
 
-    For 4 May, there were 45,000 uses of the finder. We had not developed the feedback form by this time, but can assume largely positive results based on the lack of error feedback over email. There were 4,000 uses of an embedded version of the finder — typically via a council website.
+For 4 May, there were 45,000 uses of the finder. We had not developed the feedback form by this time, but can assume largely positive results based on the lack of error feedback over email. There were 4,000 uses of an embedded version of the finder — typically via a council website.
 
-    For 8 June, we received 593,000 uses, of which 67% were given an answer. We assumed that the 33% would have negative feedback and did not display the feedback form. For the 67% who were shown the form, 93% of those who completed it said they found it useful, which meets our target. Some 45,000 people used an embedded version, which could be seen on more than 20 council websites as well as the Best for Britain campaign website.
+For 8 June, we received 593,000 uses, of which 67% were given an answer. We assumed that the 33% would have negative feedback and did not display the feedback form. For the 67% who were shown the form, 93% of those who completed it said they found it useful, which meets our target. Some 45,000 people used an embedded version, which could be seen on more than 20 council websites as well as the Best for Britain campaign website.
 
-    ## Election alerts
-    We outlined a stretch goal to create a system that would deliver SMS/email alerts for elections in your area using the Elections API. We were not able to get to this in time, but remain interested in prototyping this product working with a local authority. Some councils, e.g. Rochford, already offer this service as part of their general council email alerts.
+## Election alerts
+We outlined a stretch goal to create a system that would deliver SMS/email alerts for elections in your area using the Elections API. We were not able to get to this in time, but remain interested in prototyping this product working with a local authority. Some councils, e.g. Rochford, already offer this service as part of their general council email alerts.
 
-    ## Election leaflets
-    ElectionLeaflets.org is a service for users to upload photos of election leaflets or fliers that come through their letterbox. We had no goals for development or use of the service, which has been difficult to keep maintained. Considerable work was done by volunteers to ensure it remained working for the 2017 elections, but this may not be sustainable in future. The app is valuable both in terms of creating a research archive of leaflets for academics and journalists, but also for providing additional information on candidates to voters who might not have received the leaflets.
+## Election leaflets
+ElectionLeaflets.org is a service for users to upload photos of election leaflets or fliers that come through their letterbox. We had no goals for development or use of the service, which has been difficult to keep maintained. Considerable work was done by volunteers to ensure it remained working for the 2017 elections, but this may not be sustainable in future. The app is valuable both in terms of creating a research archive of leaflets for academics and journalists, but also for providing additional information on candidates to voters who might not have received the leaflets.
 
-    We have previously tried to encourage academic libraries that collect physical election leaflets to help with the website, to no avail. **In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service**.
+We have previously tried to encourage academic libraries that collect physical election leaflets to help with the website, to no avail. **In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service**.
 
 
 
-    # Democracy Club: Labs
+# Democracy Club: Labs
 
-    <img src="{% static "report_2017/images/england.jpg" %}">
+<img src="{% static "report_2017/images/england.jpg" %}">
 
-    Labs is the label we give to prototype projects created in-house or donated to us by others.
+Labs is the label we give to prototype projects created in-house or donated to us by others.
 
-    The goals we set were as follows:
+The goals we set were as follows:
 
-    * One non-election project (EU legislation crowd tagger)
-    * Adopting the online postal voter maker
-    * Polling station finder widget
+* One non-election project (EU legislation crowd tagger)
+* Adopting the online postal voter maker
+* Polling station finder widget
 
-    We managed to achieve one of these labs ideas, largely thanks to Alex Wilson’s terrific volunteering efforts over two weeks to produce a polling station finder widget. This had been requested by councils who had had problems embedding the full finder and was an attractive offer to make to partner organisations. Despite such a short delivery time-frame, the widget was popular and appeared on Manchester Evening News’ website and several council websites.
+We managed to achieve one of these labs ideas, largely thanks to Alex Wilson’s terrific volunteering efforts over two weeks to produce a polling station finder widget. This had been requested by councils who had had problems embedding the full finder and was an attractive offer to make to partner organisations. Despite such a short delivery time-frame, the widget was popular and appeared on Manchester Evening News’ website and several council websites.
 
-    We looked at Brexit as a possibility for a project not relating to elections. We created a [prototype API of EU regulations](https://eu-regulation.labs.democracyclub.org.uk/) that could be used to make corresponding reports or digital tools. The importance of this issue means **we could look at this again as part of our plans for 2017/2018**. We did not get anywhere in adopting [Alex Parsons’ online postal vote application service](http://postalvote.inkleby.com), but this is also a possibility for the coming year.
+We looked at Brexit as a possibility for a project not relating to elections. We created a [prototype API of EU regulations](https://eu-regulation.labs.democracyclub.org.uk/) that could be used to make corresponding reports or digital tools. The importance of this issue means **we could look at this again as part of our plans for 2017/2018**. We did not get anywhere in adopting [Alex Parsons’ online postal vote application service](http://postalvote.inkleby.com), but this is also a possibility for the coming year.
 
-    In terms of the civic tech sector at large, it seems likely that a lot of the enthusiasm for the general election will have resulted in projects that now get abandoned. Our idea with Labs is to attempt to at least provide an archive for some of these things and ideally some lessons learned so that the enthusiasm at the next election can be directed more effectively. **We should seek to develop and adequately resource this idea over 2017/2018**.
+In terms of the civic tech sector at large, it seems likely that a lot of the enthusiasm for the general election will have resulted in projects that now get abandoned. Our idea with Labs is to attempt to at least provide an archive for some of these things and ideally some lessons learned so that the enthusiasm at the next election can be directed more effectively. **We should seek to develop and adequately resource this idea over 2017/2018**.
 
 
 
-    # Democracy Club: The Club
-    <img src="{% static "report_2017/images/severn-bridge.jpg" %}">
+# Democracy Club: The Club
+<img src="{% static "report_2017/images/severn-bridge.jpg" %}">
 
-    The ‘club’ is everyone involved in making every database and project mentioned in this report happen. At June 2017, we are three full time staff and tens of closely involved volunteers and thousands of people who add data, as well as a mailing list of 10,000 people.
+The ‘club’ is everyone involved in making every database and project mentioned in this report happen. At June 2017, we are three full time staff and tens of closely involved volunteers and thousands of people who add data, as well as a mailing list of 10,000 people.
 
-    ### Goals
+### Goals
 
-    We set the following goals for developing the club over the year.
+We set the following goals for developing the club over the year.
 
-    * Secure £50,000/yr funding from the Electoral Commission.
-    * Obtain commitment to future funding from Cabinet Office.
-    * Crowdfund £20,000 from organisations.
-    * 50 new monthly donors.
-    * 100 new volunteers add data.
-    * 500 new email subscribers.
-    * Web and brand refresh.
+* Secure £50,000/yr funding from the Electoral Commission.
+* Obtain commitment to future funding from Cabinet Office.
+* Crowdfund £20,000 from organisations.
+* 50 new monthly donors.
+* 100 new volunteers add data.
+* 500 new email subscribers.
+* Web and brand refresh.
 
-    ### Outcomes
-    The Electoral Commission provided £50,000 funding for this May’s elections in order to be able to include candidate and polling location data on their Your Vote Matters website. We were grateful for an additional amount of £18,000 to do the same for the general election, which enabled us to bring on board some much needed extra support.
+### Outcomes
+The Electoral Commission provided £50,000 funding for this May’s elections in order to be able to include candidate and polling location data on their Your Vote Matters website. We were grateful for an additional amount of £18,000 to do the same for the general election, which enabled us to bring on board some much needed extra support.
 
-    We did not gain any funding commitment from the Cabinet Office. **We need to draw up a clear ask and work out to whom it should be presented**. We have received positive mentions from Chris Skidmore MP, Minister for the Constitution (in the Cabinet Office) on several occasions this year and hope to arrange a meeting with him over the summer.
+We did not gain any funding commitment from the Cabinet Office. **We need to draw up a clear ask and work out to whom it should be presented**. We have received positive mentions from Chris Skidmore MP, Minister for the Constitution (in the Cabinet Office) on several occasions this year and hope to arrange a meeting with him over the summer.
 
-    We also failed to run a crowdfunder this year. While the urgent nature of the snap election might have leant itself to this approach, it was not obvious how much money we would need nor how we would spend it. The Electoral Commission covered the essential requirements through their additional payment. We still believe that an important part of the sustainable model of funding includes ‘crowd’ funding from organisations — and will be approaching several large campaigns and charities for a £500 - £2,000 annual donation.
+We also failed to run a crowdfunder this year. While the urgent nature of the snap election might have leant itself to this approach, it was not obvious how much money we would need nor how we would spend it. The Electoral Commission covered the essential requirements through their additional payment. We still believe that an important part of the sustainable model of funding includes ‘crowd’ funding from organisations — and will be approaching several large campaigns and charities for a £500 - £2,000 annual donation.
 
-    We gained 16 new individual donors over the period; hundreds of new volunteers signed up to add data, and we signed up several hundred new email subscribers. We might have expected these numbers to be higher thanks to the general election, but in terms of donors in particular, we face several problems: the feeling that this is done already or should be done already by the state; the free-rider problem of open data; and that we have no experience in creating a membership organisation. **We will seek to gain some board level experience in this area in future**.
+We gained 16 new individual donors over the period; hundreds of new volunteers signed up to add data, and we signed up several hundred new email subscribers. We might have expected these numbers to be higher thanks to the general election, but in terms of donors in particular, we face several problems: the feeling that this is done already or should be done already by the state; the free-rider problem of open data; and that we have no experience in creating a membership organisation. **We will seek to gain some board level experience in this area in future**.
 
-    Our goal to refresh the brand and website did mostly occur. The new round logo and colour scheme can be seen everywhere except on Where Do I Vote? as we ran out of time to update it. The corporate website was refreshed in a short time to attempt to drive better donations and to more clearly direct traffic to useful information, though this had no discernable effect on donor conversions. The corporate website receives light traffic: 35,000 uniques across the last year with significant spikes on election days. Traffic mostly heads to the Projects, About and Blog pages.
+Our goal to refresh the brand and website did mostly occur. The new round logo and colour scheme can be seen everywhere except on Where Do I Vote? as we ran out of time to update it. The corporate website was refreshed in a short time to attempt to drive better donations and to more clearly direct traffic to useful information, though this had no discernable effect on donor conversions. The corporate website receives light traffic: 35,000 uniques across the last year with significant spikes on election days. Traffic mostly heads to the Projects, About and Blog pages.
 
-    The development of a sustainable funding model for Democracy Club — or the adoption of everything we do by an already well-funded organisation — will remain one of our top priorities in the election ‘off-season’. We imagine this to be a major role of a new board of directors that we will seek to convene over the next six months.
+The development of a sustainable funding model for Democracy Club — or the adoption of everything we do by an already well-funded organisation — will remain one of our top priorities in the election ‘off-season’. We imagine this to be a major role of a new board of directors that we will seek to convene over the next six months.
 
 
-    ## Governance and finance
-    Democracy Club is a community interest company limited by guarantee. It currently has three directors: Sym Roe, Joe Mitchell and Tim Green. Throughout the rest of the year, **we aim to bring new directors on board to help us develop**. Please get in touch if you would be interested in joining this board or if you have suggestions.
+## Governance and finance
+Democracy Club is a community interest company limited by guarantee. It currently has three directors: Sym Roe, Joe Mitchell and Tim Green. Throughout the rest of the year, **we aim to bring new directors on board to help us develop**. Please get in touch if you would be interested in joining this board or if you have suggestions.
 
-    The executive team is three-strong: Sym Roe, Joe Mitchell and Chris Shaw. We were six-strong in the weeks up to the general election, which enabled us to move much faster and respond to much more feedback. **We will seek to raise money to allow us to add research, community management and design roles**, which we estimate will require an income of around £250,000 per year.
+The executive team is three-strong: Sym Roe, Joe Mitchell and Chris Shaw. We were six-strong in the weeks up to the general election, which enabled us to move much faster and respond to much more feedback. **We will seek to raise money to allow us to add research, community management and design roles**, which we estimate will require an income of around £250,000 per year.
 
-    Our income for the past year was £125,000. Our expenditure is considerably less as we have only paid staff from March. Assuming we receive the same level of support from the Electoral Commission for 2018, as well as the second part of our grant from Unbound Philanthropy, we will be able to continue on three staff until the end of 2018.
+Our income for the past year was £125,000. Our expenditure is considerably less as we have only paid staff from March. Assuming we receive the same level of support from the Electoral Commission for 2018, as well as the second part of our grant from Unbound Philanthropy, we will be able to continue on three staff until the end of 2018.
 
-    Ideally, we would be funded by voters to serve voters, separately from government or local authorities. A similar organisation in Germany, Abgeordnetenwatch (Parliament Watch), has made crowdfunding work, largely by creating popular viral petitions about transparency in parliament and then converting a good percentage of signatories into donors. They have a near full-time team of six, paid for in this way. In the UK, 38 Degrees has a team of 40, paid for in this way. If Democracy Club were to copy this model, we would need to identify some possible viral petitions on related issues — and hope that the model of converting signatories into donors has not been exhausted by the rest of the civil society sector. **For the immediate future, we plan to continue to pursue five sources of revenue: central taxpayer funds, local government funds, philanthropic grants, campaigns/non-profit joint membership and direct-from-citizen membership or donations**. We will probably rely on philanthropic funding for a while longer before we can raise the other shares.
+Ideally, we would be funded by voters to serve voters, separately from government or local authorities. A similar organisation in Germany, Abgeordnetenwatch (Parliament Watch), has made crowdfunding work, largely by creating popular viral petitions about transparency in parliament and then converting a good percentage of signatories into donors. They have a near full-time team of six, paid for in this way. In the UK, 38 Degrees has a team of 40, paid for in this way. If Democracy Club were to copy this model, we would need to identify some possible viral petitions on related issues — and hope that the model of converting signatories into donors has not been exhausted by the rest of the civil society sector. **For the immediate future, we plan to continue to pursue five sources of revenue: central taxpayer funds, local government funds, philanthropic grants, campaigns/non-profit joint membership and direct-from-citizen membership or donations**. We will probably rely on philanthropic funding for a while longer before we can raise the other shares.
 
-    # What’s next?
+# What’s next?
 
-    <img src="{% static "report_2017/images/canal.jpg" %}">
+<img src="{% static "report_2017/images/canal.jpg" %}">
 
-    Last year, we outlined a four-year plan. The snap general election dealt with that — and forces us to reconsider how we plan for the future. Several elements are still basically the same:
+Last year, we outlined a four-year plan. The snap general election dealt with that — and forces us to reconsider how we plan for the future. Several elements are still basically the same:
 
-    * We will continue to focus on elections as the main point of contact with democracy for most people in the UK.
-    * Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information.
-    * There’s still more we can do to improve voter engagement with candidates before an election.
+* We will continue to focus on elections as the main point of contact with democracy for most people in the UK.
+* Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information.
+* There’s still more we can do to improve voter engagement with candidates before an election.
 
-    As well as remaining aware of and ready for another general election, there are many local elections scheduled for May 2018. These include all-out elections, i.e. every seat in every ward, in every London borough, Birmingham and Manchester. These are large local authorities that make a significant difference to people’s lives. Locals elections have tended to be overlooked recently, but we are confident that a push for comprehensive candidate and polling location information, working closely with the local authorities, can yield significant improvements. We are keen to partner with local authorities to try to prove this hypothesis.
+As well as remaining aware of and ready for another general election, there are many local elections scheduled for May 2018. These include all-out elections, i.e. every seat in every ward, in every London borough, Birmingham and Manchester. These are large local authorities that make a significant difference to people’s lives. Locals elections have tended to be overlooked recently, but we are confident that a push for comprehensive candidate and polling location information, working closely with the local authorities, can yield significant improvements. We are keen to partner with local authorities to try to prove this hypothesis.
 
-    Everything in this report, particularly where we have failed to meet our goals, will be used to focus our minds on setting new goals for 2017/2018 — either making them more realistic or coming up with new tactics. An open working session on setting goals is planned and we will publish a draft set of goals for 17/18 as soon as possible. Your suggestions are welcome.
+Everything in this report, particularly where we have failed to meet our goals, will be used to focus our minds on setting new goals for 2017/2018 — either making them more realistic or coming up with new tactics. An open working session on setting goals is planned and we will publish a draft set of goals for 17/18 as soon as possible. Your suggestions are welcome.
 
-    Lastly, we are aware that the work we do is relatively small in comparison to the need and potential for democratic improvement. The user feedback on Who Can I Vote For?, the top searches on Google Search Insights, and some anecdotal evidence from electoral staff suggests a need for considerably greater civic education across the UK. We consider Democracy Club’s work to be part of a systemic effort by a range of civic organisations to improve democracy. These organisations typically punch above their weight, but struggle to achieve their aims and to do so while becoming financially sustainable. Aside from notable examples, most obviously mySociety, the sector appears to have many proofs of concept, but not the ability to scale up and to evaluable its effect properly. We believe there may be a better approach. To help us understand what that approach might be — and to advocate for it, **Democracy Club aims to develop a research project on both the public understanding of democracy and the state and civil society’s current civic education efforts**, with a view to proposing a large-scale multiplier of our collective efforts.
+Lastly, we are aware that the work we do is relatively small in comparison to the need and potential for democratic improvement. The user feedback on Who Can I Vote For?, the top searches on Google Search Insights, and some anecdotal evidence from electoral staff suggests a need for considerably greater civic education across the UK. We consider Democracy Club’s work to be part of a systemic effort by a range of civic organisations to improve democracy. These organisations typically punch above their weight, but struggle to achieve their aims and to do so while becoming financially sustainable. Aside from notable examples, most obviously mySociety, the sector appears to have many proofs of concept, but not the ability to scale up and to evaluable its effect properly. We believe there may be a better approach. To help us understand what that approach might be — and to advocate for it, **Democracy Club aims to develop a research project on both the public understanding of democracy and the state and civil society’s current civic education efforts**, with a view to proposing a large-scale multiplier of our collective efforts.
 
-    [^1]: Currently the micro-level geographic data — and possibly ID system — to be able to aggregate and provide data on parish, town or community elections does not exist.
+[^1]: Currently the micro-level geographic data — and possibly ID system — to be able to aggregate and provide data on parish, town or community elections does not exist.
 
-    [^2]: All political parties were welcome to take advantage of the polling location API — Labour was the only one to do so.
+[^2]: All political parties were welcome to take advantage of the polling location API — Labour was the only one to do so.
 
-    [^3]: One of our directors wrote in the Guardian on this subject on the day before the local elections: [https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils](https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils)
+[^3]: One of our directors wrote in the Guardian on this subject on the day before the local elections: [https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils](https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils)
 
 
 
 
 
-    {% endfilter %}
+{% endfilter %}
 </div>
 
 {% endblock content %}
