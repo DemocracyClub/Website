@@ -27,73 +27,69 @@
 @import 'partials/_page.scss';
 @import 'partials/_utilities.scss';
 @import 'partials/_status.scss';
-
 $scope: false;
-
 @mixin optional-styles {
-  @include description-lists;
-  @include button;
-  @include cta;
-  @include cluster;
-  @include grid;
-  @include sidebar;
-  @include details;
-  @include card;
-  @include breadcrumbs;
-  @include table;
-  @include language;
-  @include header;
-  @include subnav;
-  @include footer;
-  @include radio;
-  @include checkbox;
-  @include filter;
-  @include codeblock;
-  @include status;
+    @include description-lists;
+    @include button;
+    @include cta;
+    @include cluster;
+    @include grid;
+    @include sidebar;
+    @include details;
+    @include card;
+    @include breadcrumbs;
+    @include table;
+    @include language;
+    @include header;
+    @include subnav;
+    @include footer;
+    @include radio;
+    @include checkbox;
+    @include filter;
+    @include codeblock;
+    @include status;
 }
 
-
 @if $scope {
-  .ds-scope {
-    @include fontMain;
+    .ds-scope {
+        @include fontMain;
+        @include type;
+        @include forms;
+        @include stack;
+        @include optional-styles;
+        @include page;
+        @include utilities;
+    }
+    .ds-scope *,
+    .ds-scope *::before,
+    .ds-scope *::after {
+        box-sizing: border-box;
+    }
+}
+
+@else {
+     :root {
+        @include fontMain;
+        font-size: clamp(#{$s1}, 2vw, #{$s2});
+    }
+     :root *,
+     :root *::before,
+     :root *::after {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
     @include type;
     @include forms;
     @include stack;
     @include optional-styles;
+    @include dark;
     @include page;
     @include utilities;
-  }
-
-  .ds-scope *,
-  .ds-scope *::before,
-  .ds-scope *::after {
-    box-sizing: border-box;
-  }
-} @else {
-  :root {
-    @include fontMain;
-    font-size: clamp(#{$s1}, 2vw, #{$s2});
-  }
-
-  :root *,
-  :root *::before,
-  :root *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-  }
-
-  @include type;
-  @include forms;
-  @include stack;
-  @include optional-styles;
-  @include dark;
-  @include page;
-  @include utilities;
 }
 
-blockquote {
-  font-size: clamp(#{$s1}, 2vw, #{$s2})
+blockquote,
+p {
+    font-size: clamp(#{$s1}, 1vw, #{$s2})
 }
