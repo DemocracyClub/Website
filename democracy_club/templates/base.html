@@ -9,10 +9,12 @@
     <meta charset="utf-8">
 
     {% block extra_site_css %}
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% stylesheet 'styles' %}
     {% endblock extra_site_css %}
 
+    <script src="{% static 'js/global.js' %}"></script>
+    <script src="{% static 'js/foundation.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
 </head>
 
 <body class="ds-width-full">
@@ -88,8 +90,6 @@
         {% endblock site_footer %}
     </div>
 </body>
-<script src="{% static 'js/global.js' %}"></script>
-
 
 {% block ga_tracking_code %}
 {% if request.META.HTTP_HOST != "localhost:8000" %}
