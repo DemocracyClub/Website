@@ -1,2 +1,51 @@
 {% extends "base.html" %}
 {% block body_class_attr %}class="report"{% endblock body_class_attr %}
+
+{% block content %}
+  <style>
+      #toc.sticky details {
+          position: fixed;
+          top: 0;
+          width: 70ch;
+          background-color: white;
+          z-index: 100;
+      }
+      #toc.sticky + article {
+          padding-top: 6.5em;
+      }
+  </style>
+
+  <ul class="ds-details" id="toc">
+    <li>
+      <details>
+        <summary>
+          <h2>Table of Contents</h2>
+        </summary>
+        {{ toc|safe }}
+      </details>
+    </li>
+  </ul>
+  <article class="ds-stack">
+    {{ html_content|safe }}
+  </article>
+  <script>
+    window.onscroll = function() {PinToc()};
+
+    var toc = document.getElementById("toc");
+    var details = document.getElementById("toc").getElementsByTagName("details")[0];
+    var sticky = toc.offsetTop;
+
+
+    function PinToc() {
+      if (window.pageYOffset >= sticky) {
+        toc.classList.add("sticky")
+      } else {
+        toc.classList.remove("sticky");
+      }
+    }
+
+    details.onclick = function(e){
+      details.removeAttribute("open");
+    }
+  </script>
+{% endblock %}
