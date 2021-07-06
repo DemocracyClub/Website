@@ -181,7 +181,7 @@ MARKDOWN_DEUX_STYLES = {
             "footnotes": True,
             "header-ids": True,
             "smarty-pants": True,
-            "toc": {},
+            "toc": {"depth": 3},
         },
         "safe_mode": False,
     },

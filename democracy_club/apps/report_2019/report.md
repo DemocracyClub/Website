@@ -1,20 +1,12 @@
-{% extends "report_base.html" %}
 {% load static %}
-{% load markdown_deux_tags %}
-
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of
-digital services for democracy{% endblock title %}
-
-{% block content %}
-<div id="report_2018" class="ds-stack-smaller">
-{% filter markdown %}
-
 # Towards better elections — 2019
 
 
 
 
 <img src={% static "report_2019/images/humber_bridge_card_title.jpg" %} alt="">
+
+
 
 
 ## Executive Summary
@@ -29,28 +21,28 @@ scheduled elections at the beginning of May.
 Our achievements included:
 
 * maintaining national data infrastructure on elections for another 12 months, coping with an enormous set of local
-election candidates and making nearly 100,000 edits to candidate data over the year;
+  election candidates and making nearly 100,000 edits to candidate data over the year;
 * introducing automated data capture from official nomination papers, which sped up the volunteering process;
 * building a combined API to make it easier to reuse elections data — with new partners such as Reach PLC’s In Your Area
-website;
+  website;
 * covering over 75% of the May local elections electorate with polling location data (though this was down on last
-year);
+  year);
 * serving data over 2,000,000 times across our own websites and those of partners, in order to help people take part in
-the democratic process;
+  the democratic process;
 * establishing and demonstrating the feasibility of producing open data on elected representatives (notably
-councillors);
+  councillors);
 * our highest ever user satisfaction ratings for WhoCanIVoteFor.co.uk at the European elections, and a 16-point rise in
-user satisfaction for the local elections.
+  user satisfaction for the local elections.
 
 We had some notable failures this year too:
 
 * not convincing the BBC to use our polling location data to run a finder on the BBC website, despite innumerable
-meetings, (and the BBC also continued to use inaccurate election data);
+  meetings, (and the BBC also continued to use inaccurate election data);
 * the rate at which we could provide information to voters beyond simply a name and party for local election candidates
-was not much different than last year (though impressive in absolute figures) — and user satisfaction on
-WhoCanIVoteFor.co.uk is still relatively low;
+  was not much different than last year (though impressive in absolute figures) — and user satisfaction on
+  WhoCanIVoteFor.co.uk is still relatively low;
 * we were unable to convert any significant number of the hundreds of thousands of people who viewed our donation
-requests on WhoCanIVoteFor.co.uk and WhereDoIVote.co.uk
+  requests on WhoCanIVoteFor.co.uk and WhereDoIVote.co.uk
 
 Our plans for 2019-2020 are detailed below. In brief, assuming a similar level of resourcing to this year, they include
 maintaining election data throughout the year and through the scheduled local, mayoral, devolved and police area
@@ -99,7 +91,7 @@ Our goals are meant to contribute to our overall social impact, which we list as
 * Sustainable improvement in trust in democracy; and a
 * Sustainable increase in engagement of groups less likely to take part in democratic process.
 * While we cannot show that our efforts this year lead to those outcomes, they serve as a reminder of our purpose. We
-hope to continue to work with evaluation and research experts to better understand our social impact.
+  hope to continue to work with evaluation and research experts to better understand our social impact.
 
 ### Goals met or partially met
 
@@ -649,7 +641,7 @@ Our goals for the election year 2019-2020 are as follows. This assumes funding r
 * 1.5m people reached with voter information for 2020 local / mayoral / Police and Crime Commissioner (PCC) elections
 * 10m people reached with voter information in the event of a snap general election or nationwide referendum
 * 100% coverage of elections and basic candidate information for all by-elections and scheduled elections through May
-2020
+  2020
 * 90% coverage of polling location data for the electorate with scheduled local elections in May 2020
 * At least one new consumer of our by-election data
 * Five-point rise in % of candidates for whom we have information beyond name and party affiliation
@@ -659,7 +651,7 @@ Our goals for the election year 2019-2020 are as follows. This assumes funding r
 * We provide better opportunities for club members
 * We better understand the user needs of underrepresented audiences
 * A statement is made by an institution of the UK state, which confirms that it plans to take on some election data
-provision
+  provision
 
 You can view our [outcomes, goals and inputs for 2019-2020 in this
 matrix](https://docs.google.com/spreadsheets/d/1xGS1KPeLeyEZicnLPDjPTFAt7T91gnxBrMbKLYnGAnw/edit#gid=0) and we welcome
@@ -694,12 +686,3 @@ donation](https://democracyclub.org.uk/donate/).
 
 
 *Humber bridge photo credit: [darrenflinders](https://www.flickr.com/photos/darrenflinders/16392247548/in/photolist-qYwy6J-p93hyD-kjsbX-nvAC68-jRaed-eLMoiK-e9Ex9f-6X4mKD-4Qzorv-4QDxcu-ogWqkq-8zk7m4-kWdoL-9wRqW-nvTwHe-pTBQ9j-jR9TF-pscSPJ-gAaXWy-8DwmaS-2cUYTub-r9qvMb-edG9E6-2cCbuxZ-kjsp4-dywKio-2cb3bj-dULEU-8EbuJ5-2coa8X-WFHkJG-5bpSWP-6zTrfh-neoZ9j-7foVyM-6eCrqN-ocpB2-bBPDqc-egLptL-CxC4VN-keBc61-y8GVC2-52SqG5-9S61Pg-byhw2B-dWz99q-siv3fp-2cWo7WF-qWVz6n-oU18dh)*
-
-
-{% endfilter %}
-
-
-
-</div>
-
-{% endblock content %}
