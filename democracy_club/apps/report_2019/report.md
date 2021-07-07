@@ -95,7 +95,7 @@ Our goals are meant to contribute to our overall social impact, which we list as
 
 ### Goals met or partially met
 
-#### “Better use of volunteer time; more diverse volunteer-base, and more data… [and a] five percentage-point increase in satisfaction at WhoCanIVoteFor.co.uk”
+**Better use of volunteer time; more diverse volunteer-base, and more data… [and a] five percentage-point increase in satisfaction at WhoCanIVoteFor.co.uk***
 
 In terms of better use of volunteer time, the year included a significant amount of technical work to improve the
 codebase of Candidates, our candidate-data crowdsourcing website.
@@ -119,7 +119,7 @@ For the local elections, the satisfaction score for Who Can I Vote For? was 38%,
 At the European elections, the satisfaction score was 52%, which may be partially explained by the fact we had
 information beyond name and party on nearly 90% of around 600 candidates.
 
-#### “Two million uses of data via API-partners/our websites/widget at May 2019”
+>**Two million uses of data via API-partners/our websites/widget at May 2019**
 
 We did meet this target, but largely because we there were over a million requests around each set of elections: local
 and European. Of the outputs we thought would get us there, we worked to develop partners to reuse the data. Another
@@ -127,7 +127,7 @@ planned output was an ‘ElectionEverything widget’ (i.e. a combined polling s
 for any website), but this did not happen, due to an over-reliance on volunteers and pro-bono work. It remains on this
 year’s goals list with a different approach.
 
-#### “90% coverage of 18+ population with polling location data for elections in May 2019”
+**90% coverage of 18+ population with polling location data for elections in May 2019**
 
 For the local elections, 178 councils sent us their polling location data. We imported it all, but this number was some
 way short of the total number of councils holding elections. This meant that we covered 76% of the 18+ population for
@@ -137,7 +137,7 @@ For the European elections, more councils sent us data than we had a chance to i
 meant we could cover 58% of the 18+ population. We will consider the lessons from this for any snap general election and
 for the long-term goal of achieving 100% coverage.
 
-#### “Several outcomes relating to the ‘club’: better public understanding; 15,000 on the mailing list; 500 volunteers adding data; better funding; 75 monthly small donors; a more diverse group of volunteers”
+**Several outcomes relating to the ‘club’: better public understanding; 15,000 on the mailing list; 500 volunteers adding data; better funding; 75 monthly small donors; a more diverse group of volunteers**
 
 Various outputs were planned to meet this goal. In brief, we did clarify the club’s vision and mission, create greater
 board involvement and we did successfully fundraise to support the status quo, though not for expansion. The mailing
@@ -148,14 +148,14 @@ information websites, nor did we sell a polling location finder to a council. We
 judge diversity, though some progress was made with the survey design and this would be a priority for any new
 ‘organiser’ hire.
 
-#### “Better awareness of issues facing groups currently less likely to take part in democratic process”
+**Better awareness of issues facing groups currently less likely to take part in democratic process**
 
 The output here was to [produce a report on under-participating
 groups](https://democracyclub.org.uk/reports/whos_missing/), a draft of which was published. This work is guiding some
 of the suggestions we provide to other organisations and funders, and we plan to develop an executive summary of tasks
 or tactics from it over the next year.
 
-#### “50,000 uses of a lookup-your-representative tool; 500 downloads of a representatives CSV”
+**50,000 uses of a lookup-your-representative tool; 500 downloads of a representatives CSV**
 
 This was a stretch goal. The main planned output was a discovery process on councillor data, which we carried out in
 October 2018. We identified an appetite for open representatives data and established that it could be produced and
@@ -164,7 +164,7 @@ accessible and sustainable.
 
 ### Goals not met
 
-#### “Polling station finder on BBC News homepage on May 2019 election day”
+**Polling station finder on BBC News homepage on May 2019 election day**
 
 This goal was not achieved, though not for want of trying. While there were many meetings with BBC News staff, nobody
 took the lead to arrange the small amount of development work necessary to add it to the BBC website. Relatedly, in [a
@@ -172,13 +172,13 @@ blog at the time of the local elections](https://democracyclub.org.uk/blog/2019/
 examples of where the BBC published wrong information to voters. Our WhereDoIVote.co.uk website was at least linked to
 from the BBC News liveblog on the election days.
 
-#### “10,000 reminders sent for May elections; 20% survey respondents say they wouldn’t have voted without it”
+**10,000 reminders sent for May elections; 20% survey respondents say they wouldn’t have voted without it**
 
 We had hoped to begin work on an Election Reminders service, but little progress was made here. We planned to start with
 a discovery process on user needs, technical requirements and sustainability. We remain cautious about the project
 without a plan to measure its effect and without a route to sustainable funding.
 
-#### “Help improve other institutions working on democratic engagement in the UK”
+**Help improve other institutions working on democratic engagement in the UK**
 
 The outputs we hoped to produce here were a report or event on The Electoral Commission and voter information, as well
 as a report on ‘what good looks like for digital+democracy in the UK’. Neither of these were produced, but importantly,
@@ -189,7 +189,7 @@ Better](https://www.ucl.ac.uk/constitution-unit/news/2019/mar/new-report-doing-d
 
 ### Goals that did not apply
 
-#### “In the event of a general election, help 10m people gain knowledge about election”
+**In the event of a general election, help 10m people gain knowledge about election**
 
 There was no general election, but we maintained a plan for an unscheduled election, which included listing and
 preparing potential freelance hires and sources of funding. This work will continue through next election year as
@@ -339,6 +339,11 @@ Rounded to the nearest five thousand, the API use at the local elections was mad
 
 <div class="ds-table">
     <table>
+    <caption>Local Elections</caption>
+        <tr>
+          <th>API</th>
+          <th>Users</th>
+        </tr>
         <tr>
             <td>WhoCanIVoteFor.co.uk</td>
             <td>255,000</td>
@@ -374,6 +379,11 @@ Rounded to the nearest five thousand, the API use at the European elections was 
 
 <div class="ds-table">
     <table>
+    <caption>European Elections</caption>
+        <tr>
+          <th>API</th>
+          <th>Users</th>
+        </tr>
         <tr>
             <td>Your Vote Matters</td>
             <td>340,000</td>
