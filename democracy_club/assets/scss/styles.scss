@@ -92,4 +92,7 @@ $scope: false;
 blockquote,
 p {
     font-size: clamp(#{$s1}, 1vw, #{$s2})
+}.entry table {
+  @extend .ds-table;
+  width:100%;
 }
