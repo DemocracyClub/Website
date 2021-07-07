@@ -25,7 +25,6 @@ class MarkdownFileView(TemplateView):
         )
         context["toc"] = markdown_doc.toc_html
 
-
         context["html_content"] = markdown_doc
 
         return context

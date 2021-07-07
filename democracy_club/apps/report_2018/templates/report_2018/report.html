@@ -1,26 +1,29 @@
 {% extends "report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
+{# fmt:off #}
+
 
 {% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of
 digital services for democracy{% endblock title %}
 
 {% block content %}
 <style>
-    .met {
-        color: rgb(77, 179, 20)
-    }
+.met {
+color: rgb(77, 179, 20)
+}
 
-    .partial {
-        color: #e62e1a;
-    }
+.partial {
+color: #e62e1a;
+}
 
-    .not-met {
-        color: #e62e1a;
-    }
+.not-met {
+color: #e62e1a;
+}
 </style>
 
 <div id="report_2018" class="ds-stack-smaller">
+
 {% filter markdown %}
 
 # Towards better elections
@@ -30,7 +33,7 @@ digital services for democracy{% endblock title %}
 Democracy Club’s annual report — 2017–2018
 </figcaption>
 </figure>
-
+{# fmt:off #}
 
 This report is a work in progress, [you can comment on the Google Documents version of
 it](https://docs.google.com/document/d/19K08IW6PLstuoRvKDSfKVjBMYM4zK5jZbc_wOZ_op7Y/edit#).
@@ -238,7 +241,6 @@ The relatively high numbers of searches ‘not found’, given that we had 87% c
 areas without elections tried to use the finder. If we filter the above data to only the 152 areas with scheduled
 elections:
 
-
 <div class="ds-table">
 <table class="ds-card">
 <tr>
@@ -272,7 +274,7 @@ elections:
 </table>
 </div>
 
-
+{# fmt:off #}
 We have <a href="https://democracyclub.github.io/wheredoivote-usage-may-2018/data/wheredoivote-usage-may-2018">separately
 published a table</a> with the numbers of searches per local authority area.
 ### Analysis
@@ -378,12 +380,10 @@ Last year, a volunteer developed an embeddable polling location finder (or widge
 This year, we particularly encouraged councils and news sites to use it: at least 15 councils did so, including
 Birmingham City Council, as well as several Trinity Mirror sites and the Evening Standard. The widget was used 25,000
 times.
-
 <figure>
 <img src="{% static "report_2018/images/Manchester-Evening-News.png" %}" alt="">
 <figcaption>The polling location finder widget on Manchester Evening News’ website<br>3 May 2018.</figcaption>
 </figure>
-
 # Labs
 
 <img src="{% static "report_2018/images/anjana-menon-220008-unsplash.jpg" %}">
@@ -492,7 +492,6 @@ democracyclub.org.uk/donate</a>.
 In June 2017 [we set ourselves a range of
 goals](https://docs.google.com/spreadsheets/d/16-rpTcMVa1bHHrRu6KI6xvXKbhue3vftOSb06WxHUKg/edit#gid=0).
 The table below reviews our progress against those goals.
-
 <div class="ds-table">
 <table class="ds-card">
 <caption>General Election</caption>
@@ -506,10 +505,10 @@ The table below reviews our progress against those goals.
 <td>n/a</td>
 <td><em>Phew.</em></td>
 </tr>
-<table class="ds-card">
+</table>
 </div>
 
-<h4>Data</h4>
+<h2>Data</h2>
 
 <div class="ds-table">
 <table class="ds-card">
@@ -525,7 +524,7 @@ The table below reviews our progress against those goals.
 </td>
 <td class="partial">Partially met</td>
 <td>We know we missed some by-elections in the months following the general election, but believe we've had full
-    coverage since late Autumn 2017.
+coverage since late Autumn 2017.
 </td>
 </tr>
 <tr>
@@ -537,7 +536,7 @@ The table below reviews our progress against those goals.
 <td>Explore mechanisms to increase accuracy of notification &amp; confirmation of election</td>
 <td class="met">Met?</td>
 <td>We developed an 'election radar' tool to help automate notification and work closely with leading
-    election-spotters to increase our accuracy
+election-spotters to increase our accuracy
 </td>
 </tr>
 </table>
@@ -555,7 +554,7 @@ The table below reviews our progress against those goals.
 <td>Publish names and party information for 100% of candidates in above elections</td>
 <td class="partial">Partially met</td>
 <td>We had at least one by-election with no candidates listed. We developed a bot to point to elections where we
-    don't have candidates to help direct volunteer efforts. We think we're on top of this now.
+don't have candidates to help direct volunteer efforts. We think we're on top of this now.
 </td>
 </tr>
 <tr>
@@ -567,7 +566,7 @@ The table below reviews our progress against those goals.
 <td>Publish at least one social media profile for XX% of candidates</td>
 <td>n/a</td>
 <td>We also forgot to set a target here, but 12.7% had a twitter; 23.6% candidates had at least one contact
-    detail
+detail
 </td>
 </tr>
 </table>
@@ -622,7 +621,7 @@ The table below reviews our progress against those goals.
 <td>Run improved Where Do I Vote? service</td>
 <td class="met">Met</td>
 <td>We made improvements based on 2017 user feedback. 96% users found what they were looking for (three-point
-    improvement on 2017)
+improvement on 2017)
 </td>
 </tr>
 <tr>
@@ -637,7 +636,7 @@ The table below reviews our progress against those goals.
 </tr>
 <tr>
 <td>Find support for ElectionLeaflets.org (talk to five academic, cultural or heritage institutions and media
-    companies) or close it down
+companies) or close it down
 </td>
 <td class="not-met">Not met</td>
 <td>Chats with academics, reached out to museums, no chance of financial support, need to shut it down</td>
@@ -672,7 +671,7 @@ The table below reviews our progress against those goals.
 </table>
 </div>
 
-<h4>Club</h4>
+<h2>Club</h2>
 
 <div class="ds-table">
 <table class="ds-card">
@@ -706,8 +705,8 @@ The table below reviews our progress against those goals.
 <td>Make sales to local authorities or Cabinet Office</td>
 <td class="not-met">Not met</td>
 <td>We met the Cabinet Office, but it's unclear as to whether they could fund; local authorities responses
-    varied,
-    but did not seem promising (yet)
+varied,
+but did not seem promising (yet)
 </td>
 </tr>
 <tr>
@@ -821,7 +820,7 @@ The table below reviews our progress against those goals.
 
 <div class="ds-table">
 <table class="ds-card">
-<caption>>Additional data sources</caption>
+<caption>Additional data sources</caption>
 <tr>
 <th>Goal</th>
 <th>Met?</th>
@@ -837,10 +836,10 @@ The table below reviews our progress against those goals.
 <td>Ensure 50% of May 2018 candidate pages on Who Can I Vote For? are linked to local manifestos</td>
 <td class="not-met">Not met</td>
 <td>Over 6,000 candidate pages linked to a local manifesto, but this represented only 39% of all candidates.
-    Over
-    11,000 candidates (72%) could be linked to at least one piece of information on a local party, which is a
-    step
-    forward.
+Over
+11,000 candidates (72%) could be linked to at least one piece of information on a local party, which is a
+step
+forward.
 </td>
 </tr>
 </table>

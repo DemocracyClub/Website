@@ -3,7 +3,7 @@
 {% load markdown_deux_tags %}
 
 {% block title %}Where Do I Vote - User Feedback June 2017{% endblock title %}
-
+{# fmt:off #}
 {% block content %}
 <div id="report" class="ds-stack-smaller">
 {% filter markdown %}
@@ -17,32 +17,31 @@ On 29th May 2017, we introduced a feedback form asking a Yes/No question: “Did
 From introducing the form until close of polls on 8th June, we served 480,000 unique users on the site and collected 18,394 responses from them. Of the 18,394 responses:
 
 {% endfilter %}
-
 <div class="ds-table">
-    <table>
-        <tr>
-            <th>Found useful</th>
-            <th class="number">Number</th>
-            <th class="number">Percent</th>
-        </tr>
-        <tr>
-            <td>Yes</td>
-            <td class="number">17,197</td>
-            <td class="number">93.49%</td>
-        </tr>
-        <tr>
-            <td>No</td>
-            <td class="number">1,197</td>
-            <td class="number">6.51%</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td class="number">18,394</td>
-            <td class="number">&nbsp;</td>
-        </tr>
-    </table>
+<table>
+<tr>
+<th>Found useful</th>
+<th>Number</th>
+<th>Percent</th>
+</tr>
+<tr>
+<td>Yes</td>
+<td>17,197</td>
+<td>93.49%</td>
+</tr>
+<tr>
+<td>No</td>
+<td>1,197</td>
+<td>6.51%</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>18,394</td>
+<td>&nbsp;</td>
+</tr>
+</table>
 </div>
-
+{# fmt:off #}
 {% filter markdown %}
 
 It is important to understand what people liked and found useful so we can keep doing it, and also why people found it unhelpful and what we can do to improve. To drill down into this, we will examine some text comments in greater detail.
@@ -193,6 +192,7 @@ While the opening hours are at the top of the page in desktop layout, on mobile 
 {% endfilter %}
 <img class="screenshot" src="{% static "wheredoivote_user_feedback/image2.png" %}">
 {% filter markdown %}
+
 <em>Screenshot of [wheredoivote.co.uk](https://wheredoivote.co.uk/) in a mobile browser</em>
 
 The vast majority of users on Where Do I Vote were using mobile devices (74% over the study period, rising to 79% on polling day itself). Note that 2 of the people who did find the opening hours useful reference this info being “on the right” (i.e: they were using the desktop layout).
