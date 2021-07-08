@@ -5,26 +5,27 @@
 {% block title %}Towards better elections, report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy{% endblock title %}
 
 {% block content %}
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<div id="report_2016" class="ds-stack-smaller">
-<header class="panel intro_panel" markdown="1">
-<div class="wrap" style="page-break-before: avoid;page-break-after: always;">
-<h1>Towards better elections <sup style="font-size: 0.5em;">beta</sup></h1>
-<div class="ds-card-image">
-<img src="{% static 'images/report/old_bridge_pontypridd.jpg'%}" alt="">
-</div>
-<p id="subhead">Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
-<p id="byline">Democracy Club, May 2016</p>
-</div>
-</header>
-</div>
-<div class="ds-stack">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-<section id="block_section_summary" markdown="1" class="ds-stack-smaller">
-<header><a name="section_summary"></a>
-<h1 data-magellan-destination="section_summary">Summary</h1>
-</header>
+    <div id="report_2016" class="ds-stack-smaller">
+        <header class="panel intro_panel" markdown="1">
+            <div class="wrap" style="page-break-before: avoid;page-break-after: always;">
+                <h1>Towards better elections <sup style="font-size: 0.5em;">beta</sup></h1>
+                <div class="ds-card-image">
+                    <img src="{% static 'images/report/old_bridge_pontypridd.jpg'%}" alt="">
+                </div>
+                <p id="subhead">Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
+                <p id="byline">Democracy Club, May 2016</p>
+            </div>
+        </header>
+    </div>
+    <div class="ds-stack">
+
+        <section id="block_section_summary" markdown="1" class="ds-stack-smaller">
+            <header><a name="section_summary"></a>
+                <h1 data-magellan-destination="section_summary">Summary</h1>
+            </header>
 
 {% filter markdown %}
 Elections took place across the UK in May 2016: the most varied set of elections seen here for decades. Everyone had a vote in at least one election.
@@ -50,24 +51,26 @@ Ideally, all of this data will remain open for anyone to use. In the long run, p
 To continue to provide a credible, accurate and reliable source of data for partners, and to continue to test new digital features for voters, Democracy Club needs to find sustainable funding. We estimate that we require just £250,000 per year for a small agile project team to deliver this. Everyone benefits from better political decision making. We are therefore seeking grant funding from governmental and philanthropic institutions, and we encourage partners who benefit from the data to help us in any way they can.
 
 We predict that demand for digital services for democracy will only increase over the next few years, and that by 2020, a majority of voters will expect to be able to engage with their candidates online before deciding who to vote for. Democracy Club can deliver this: efficiently, inexpensively and — crucially — in a non-partisan and fair fashion. Help us make it happen.
+{% endfilter %}
+	</section>
+	<section id="block_section_vision" markdown="1" class="ds-stack-smaller">
+		<header>
+		<a name="section_vision"></a>
+		<h1 data-magellan-destination="section_vision">1. Our vision, mission, and an invitation</h1>
+		</header>
 
-</section>
-<section id="block_section_vision" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_vision"></a>
-<h1 data-magellan-destination="section_vision">1. Our vision, mission, and an invitation</h1>
-</header>
 
-
+{% filter markdown %}
 
 **Our vision is of a society in which democracy thrives through knowledge, participation and openness.**
 
+{% endfilter %}
 
-<figure>
-<img src="{% static '/images/report/somerset_house.jpg' %}" alt="Somerset House">
-</figure>
+                    <figure>
+                        <img src="{% static '/images/report/somerset_house.jpg' %}" alt="Somerset House">
+                    </figure>
 
-
+{% filter markdown %}
 This can only happen if people’s experience of democracy reflects their expectations of 21st century interaction.
 
 Building on our experience of recent elections — this report covers May 2016 in detail — we will test and iterate products and services over the next four years to culminate in the provision of world-leading digital infrastructure for a modern democratic experience at the 2020 General Election. That experience will embrace the best of open data, design and technology to give every voter the information and participation opportunities they need, in a way that suits them.
@@ -87,13 +90,17 @@ Joe Mitchell &amp; Sym Roe
 {% include "email_form/mailing_list_form.html" %}
 {% filter markdown %}
 
-</section>
+{% endfilter %}
 
-<section id="block_section_review" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_review"></a>
-<h1 data-magellan-destination="section_review">2. Review of May 2016 elections</h1>
-</header>
+                </section>
+
+                <section id="block_section_review" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_review"></a>
+                        <h1 data-magellan-destination="section_review">2. Review of May 2016 elections</h1>
+                    </header>
+
+{% filter markdown %}
 
 ## Summary
 
@@ -119,10 +126,15 @@ We provided an online lookup tool, WhoCanIVoteFor, used by over 180,000 people a
 
 Our polling station tool was included in the WhoCanIVoteFor website and provided as a micro-site for NUS Wales. Our tool was also embedded in one council’s website and linked to by several other councils via their election webpages.
 
-<figure>
-<img src="{% static '/images/report/dam_whirlpool.jpg' %}" alt="">
-<figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></caption>
-</figure>
+{% endfilter %}
+
+                    <figure>
+                        <img src="{% static '/images/report/dam_whirlpool.jpg' %}" alt="">
+                        <figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></caption>
+                    </figure>
+
+{% filter markdown%}
+
 # Candidates data
 
 ## Data quality and coverage
@@ -194,14 +206,21 @@ We made no predictions as to the extent of data we would receive, but in the end
 At a ward level, an army of online volunteers has nearly entered all votes data. Verification of the data against an official council source is likely to be complete by June 2016. This will be the first time that open elections data has existed on such a granular scale. *[It can be accessed via the results page of candidates.democracyclub.org.uk](https://candidates.democracyclub.org.uk/uk_results/).*
 
 Thanks partially to our efforts, the UK Government has committed to ‘develop a common data standard for reporting election results in the UK faster and more efficiently, and develop a plan to support electoral administrators to voluntarily adopt the standard’. This is [commitment #7](https://www.google.com/url?q=https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18%23commitment-7-elections-data&sa=D&ust=1463423062513000&usg=AFQjCNGFrk_VFOAaz2-Y66CWZKDAiUoEaQ) in the UK’s National Action Plan as part of the UK’s membership of the Open Government Partnership.
-</section>
 
-<section id="block_section_process" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_process"></a>
-<h1 data-magellan-destination="section_process">3. The process: how we did it</h1>
-<img src="{% static 'images/report/data_wombles.jpg' %}">
-</header>
+
+{% endfilter %}
+
+                </section>
+
+                <section id="block_section_process" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_process"></a>
+                        <h1 data-magellan-destination="section_process">3. The process: how we did it</h1>
+                        <img src="{% static 'images/report/data_wombles.jpg' %}">
+                    </header>
+
+{% filter markdown %}
+
 ## Finding and identifying elections
 
 There is no national UK record of when elections are happening. While general elections are now predictable due to the Fixed-Term Parliaments Act — and enter the public’s common consciousness through media reporting — local elections are not.
@@ -218,12 +237,17 @@ To the rescue came Tim Green, who designed a robust system for issuing election 
 
 ## Building a database of candidates
 
-<figure style="page-break-inside: avoid;">
-{% include "report_2016/includes/_ynr_edits_over_time_graph.html" %}
-<figcaption>
-Edits over time to <a href="https://candidates.democracyclub.org.uk">candidates.democracyclub.org.uk</a>
-</figcaption>
-</figure>
+{% endfilter %}
+
+                    <figure style="page-break-inside: avoid;">
+                        {% include "report_2016/includes/_ynr_edits_over_time_graph.html" %}
+                        <figcaption>
+                            Edits over time to <a href="https://candidates.democracyclub.org.uk">candidates.democracyclub.org.uk</a>
+                        </figcaption>
+                    </figure>
+
+{% filter markdown %}
+
 In 2015, volunteers accurately crowdsourced 4,000 candidates in advance of the publication of the Statement of Persons Nominated (SOPN). This is the document published by electoral teams in councils once the deadline has past and all the candidates have paid the deposit, completed the requisite paperwork, and achieved the necessary nomination.
 
 This year, we did not achieve the same level of coverage before the official SOPNs were published. This was partly due to building the crowdsourcing website later than planned, and there being vastly less media coverage of candidates to use.
@@ -256,17 +280,22 @@ For the local elections in England, we joined with the Local Government Informat
 
 From 11pm on the night, LGiU rota-ed staff over the subsequent three days while results were announced. We focused initially on council control, as a change in council control makes the biggest difference to a council’s work. We are continuing to collect results data at an individual ward level: votes per candidate, winner, spoil ballot and turnout recorded. We allow anyone to add ‘unverified’ data and then a team of trusted volunteers and staff at LGiU confirm these submissions in order to ‘verify’. **Full results data should be available by June 2016.**
 
-</section>
-<section id="block_section_four_year_plan" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_four_year_plan"></a>
-<h1 data-magellan-destination="section_four_year_plan">4. The four year plan</h1>
-</header>
+{% endfilter %}
 
-<figure>
-<img src="{% static '/images/report/old_bridge_pontypridd.jpg' %}">
-<figcaption>Credit: Varitek via Wikipedia</figcaption>
-</figure>
+                </section>
+                <section id="block_section_four_year_plan" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_four_year_plan"></a>
+                        <h1 data-magellan-destination="section_four_year_plan">4. The four year plan</h1>
+                    </header>
+
+                    <figure>
+                        <img src="{% static '/images/report/old_bridge_pontypridd.jpg' %}">
+                        <figcaption>Credit: Varitek via Wikipedia</figcaption>
+                    </figure>
+
+{% filter markdown %}
+
 ##1 A. We want to cover every election
 
 While we’ve solved election identifiers — and we encourage everyone to adopt this — we still need a way to know an election is happening, including by-elections. There exist people with good local expertise who know this for their patch, but we need a way to scale this process nationally.
@@ -309,10 +338,15 @@ The Tooting by-election on the 16th of June is too soon for us to work with, so 
 Another way to test this approach is with lab experiments. We could run an imaginary election, and test mock statements, pledges, perhaps even video pitches on participants, and see if they decide differently, how they used the information, and what else would help them decide.
 
 Lastly, it’s worth pointing out that Google have been testing one approach for the US Presidential election, providing highlighted search results based on statements from candidates. We plan to meet with the elections team at Google after the US election on the 8th of November.
-<figure>
-<img alt="Google topic search results" src="{% static 'images/report/google_hilary.png' %}" />
-<figcaption>Google Search with ‘issue stances’.</figcaption>
-</figure>
+
+{% endfilter %}
+
+                    <figure>
+                        <img alt="Google topic search results" src="{% static 'images/report/google_hilary.png' %}" />
+                        <figcaption>Google Search with ‘issue stances’.</figcaption>
+                    </figure>
+
+{% filter markdown %}
 
 ## E. We want to vastly improve coverage of the polling station finder
 
@@ -339,16 +373,21 @@ We may have been too officious in setting a two-step verify process for data. It
 We want to do all of the above until (to the extent appropriate) government delivers it. It is hard to imagine government providing this data and these services before 2020. As a result, we plan to take advantage of local government elections in 2017 and 2018, and the possible European Parliamentary elections in 2019 to test and iterate services up to the next scheduled general election in 2020. By doing this year in year out, we aim to build trust, credibility and raise awareness that this data will exist and can be relied upon to build voter information tools.
 
 We hope that by 2020, digital media companies, charities and governmental institutions will be, as a norm, creating better and better tools for their audiences, members or citizens. This way we can reach millions of people to create a better informed electorate.
-</section>
 
-<section id="block_section_after_may" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_after_may"></a>
-<h1 data-magellan-destination="section_after_may">5. After May 2020</h1>
-</header>
-<figure>
-<figcaption>Credit <a href="https://www.flickr.com/photos/22691568@N04/26052152400/in/photolist-FG96go-FELpEC-5SKmAN-dhBVrA-89UKtz-df3XHr-dfyatb-bgL5t-dhBWK1-wedU3q-dfzZaF-bMa9E4-deVnZr-dmjm5F-3bxY6n-oxhLEQ-dhBSen-dnNYH4-dobYEz-dmgNHn-dmF7Zd-dhZo6W-pvpzgp-dscjzW-eWmWF9-3cSprM-2CrkVp-hhqb3g-vS8rwM-4iMPCb-o7X3sL-s7Mq7d-owp1pq-nPSdGv-8nHwqN-7LuQYd-oRhwX4-oF7ffc-CFKriU-y5QVmd-aRDvMZ-dPnrf1-y2hWaZ-4wvT47-5evUL2-AnNphU-2TPVG-cYnxJ7-yUwqNi-4mMNPs">Bill Higham</a></figcaption>
-</figure>
+{% endfilter %}
+
+                </section>
+
+                <section id="block_section_after_may" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_after_may"></a>
+                        <h1 data-magellan-destination="section_after_may">5. After May 2020</h1>
+                    </header>
+                    <figure>
+                        <figcaption>Credit <a href="https://www.flickr.com/photos/22691568@N04/26052152400/in/photolist-FG96go-FELpEC-5SKmAN-dhBVrA-89UKtz-df3XHr-dfyatb-bgL5t-dhBWK1-wedU3q-dfzZaF-bMa9E4-deVnZr-dmjm5F-3bxY6n-oxhLEQ-dhBSen-dnNYH4-dobYEz-dmgNHn-dmF7Zd-dhZo6W-pvpzgp-dscjzW-eWmWF9-3cSprM-2CrkVp-hhqb3g-vS8rwM-4iMPCb-o7X3sL-s7Mq7d-owp1pq-nPSdGv-8nHwqN-7LuQYd-oRhwX4-oF7ffc-CFKriU-y5QVmd-aRDvMZ-dPnrf1-y2hWaZ-4wvT47-5evUL2-AnNphU-2TPVG-cYnxJ7-yUwqNi-4mMNPs">Bill Higham</a></figcaption>
+                    </figure>
+
+{% filter markdown %}
 
 Over time, we expect to see to see governmental bodies produce nationwide level election, candidate and polling station location data. This kind of data, perhaps combined with GOV.UK’s new Notify platform, will allow push notifications to occur when an election is announced or on polling day itself.
 
@@ -364,14 +403,20 @@ This will give civic technology groups such as Democracy Club the chance to focu
 * Tactical voting tools: if you want to achieve this outcome, vote this way
 
 We have many more ideas for making democracy easier, more user-friendly and perhaps even more fun through digital services. **These exciting projects can only begin to be realised once the basic data infrastructure is there, which remains our goal for the next few years.**
-</section>
 
-<section id="block_section_making_it_happen" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_making_it_happen"></a>
-<h1 data-magellan-destination="section_making_it_happen">6. Making it happen</h1>
-<img src="{% static 'images/report/postits.jpg' %}">
-</header>
+{% endfilter %}
+
+                </section>
+
+                <section id="block_section_making_it_happen" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_making_it_happen"></a>
+                        <h1 data-magellan-destination="section_making_it_happen">6. Making it happen</h1>
+                        <img src="{% static 'images/report/postits.jpg' %}">
+                    </header>
+
+
+{% filter markdown %}
 
 ## What we need
 
@@ -401,12 +446,16 @@ As economists talk about lighthouses, roads or clean air, we should talk about o
 
 **We are grateful for every donation, grant and connection to funders.**
 
-</section>
-<section id="block_section_acknowledgements" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_acknowledgements"></a>
-<h1 data-magellan-destination="section_acknowledgements">7. Acknowledgements</h1>
-</header>
+{% endfilter %}
+
+                </section>
+                <section id="block_section_acknowledgements" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_acknowledgements"></a>
+                        <h1 data-magellan-destination="section_acknowledgements">7. Acknowledgements</h1>
+                    </header>
+
+{% filter markdown %}
 Thanks are due to many individuals and organisations who have helped us make significant progress over the last 18 months.
 
 First, to the volunteers across the UK whose willingness to spend hours writing code, providing feedback and inputting data is testament to the power of the crowd.
@@ -432,20 +481,31 @@ The consistent enthusiasm of our friends in LocalGovDigital has helped push the 
 Lastly, thanks to every user that left feedback, tweeted or emailed us, every candidate that updated their profile, and our band of twitter followers who have pushed and retweeted all our news, blog posts and services to a wider audience.
 
 Together, we will make democracy work better for everyone.
-</section>
 
-<section id="block_section_annexes" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_annexes"></a>
-<h1 data-magellan-destination="section_annexes">8. Annexes</h1>
-</header>
+{% endfilter %}
+
+                </section>
+
+                <section id="block_section_annexes" markdown="1" class="ds-stack-smaller">
+                    <header>
+                        <a name="section_annexes"></a>
+                        <h1 data-magellan-destination="section_annexes">8. Annexes</h1>
+                    </header>
+
+{% filter markdown %}
+
 ## Annex 1: Theory of change and evaluation
 
 We believe that the work we do will ultimately increase societal wellbeing. Earlier this year we sketched out that happens.
 
-<figure>
-<img src="{% static '/images/report/draft_theory_of_change.jpg' %}" alt="Draft theory of Change" />
-</figure>
+{% endfilter %}
+
+                    <figure>
+                        <img src="{% static '/images/report/draft_theory_of_change.jpg' %}" alt="Draft theory of Change" />
+                    </figure>
+
+{% filter markdown %}
+
 There is much existing evidence that enhanced trust in politics and feelings of empowerment lead to greater human wellbeing (for a summary of the literature, see the Legatum Institute’s Commission on Wellbeing and Policy, 2014).
 
 We are looking for support in measuring the effects of the work we do to test for an increase in trust and empowerment. We also make an assumption that a better informed, more participative electorate will make better decisions that in turn also contribute to greater wellbeing.
@@ -459,126 +519,131 @@ You can read more about these IDs on the <a href="{% url "projects:election_ids_
 
 ## Annex 3: Councils providing polling station data for May 2016
 
-<div class="ds-table">
-<table>
-<caption>The 17 councils that provided data to Democracy Club for the May 2016 elections.</caption>
-<tr>
-<th>Council</th>
-<th class="number">Polling Stations</th>
-<th class="number">Polling Districts</th>
-<th class="number">Addresses</th>
-</tr>
+{% endfilter %}
 
-<tr>
-<td>Camden Borough Council</td>
-<td class="number">60</td>
-<td class="number">60</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Cardiff Council</td>
-<td class="number">203</td>
-<td class="number">205</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Ceredigion Council</td>
-<td class="number">94</td>
-<td class="number">0</td>
-<td class="number">35,197</td>
-</tr>
-<tr>
-<td>City of Edinburgh Council</td>
-<td class="number">155</td>
-<td class="number">156</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>City of London Corporation</td>
-<td class="number">4</td>
-<td class="number">4</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Conwy Council</td>
-<td class="number">92</td>
-<td class="number">91</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Denbighshire Council</td>
-<td class="number">67</td>
-<td class="number">0</td>
-<td class="number">34,442</td>
-</tr>
-<tr>
-<td>Ealing Borough Council</td>
-<td class="number">141</td>
-<td class="number">136</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Gwynedd Council</td>
-<td class="number">154</td>
-<td class="number">154</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Haringey Borough Council</td>
-<td class="number">82</td>
-<td class="number">0</td>
-<td class="number">64,145</td>
-</tr>
-<tr>
-<td>Merthyr Tydfil Council</td>
-<td class="number">65</td>
-<td class="number">0</td>
-<td class="number">27,373</td>
-</tr>
-<tr>
-<td>Neath Port Talbot Council</td>
-<td class="number">136</td>
-<td class="number">0</td>
-<td class="number">65,655</td>
-</tr>
-<tr>
-<td>Pembrokeshire Council</td>
-<td class="number">129</td>
-<td class="number">0</td>
-<td class="number">62,920</td>
-</tr>
-<tr>
-<td>Rhondda Cynon Taf Council</td>
-<td class="number">179</td>
-<td class="number">0</td>
-<td class="number">108,478</td>
-</tr>
-<tr>
-<td>South Cambridgeshire District Council</td>
-<td class="number">111</td>
-<td class="number">110</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>Vale of Glamorgan Council</td>
-<td class="number">125</td>
-<td class="number">125</td>
-<td class="number">0</td>
-</tr>
-<tr>
-<td>West Berkshire Council</td>
-<td class="number">115</td>
-<td class="number">115</td>
-<td class="number">0</td>
-</tr>
-</table>
-</div>
+                    <div class="ds-table">
+                        <table>
+                            <caption>The 17 councils that provided data to Democracy Club for the May 2016 elections.</caption>
+                            <tr>
+                                <th>Council</th>
+                                <th class="number">Polling Stations</th>
+                                <th class="number">Polling Districts</th>
+                                <th class="number">Addresses</th>
+                            </tr>
+
+                            <tr>
+                                <td>Camden Borough Council</td>
+                                <td class="number">60</td>
+                                <td class="number">60</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Cardiff Council</td>
+                                <td class="number">203</td>
+                                <td class="number">205</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Ceredigion Council</td>
+                                <td class="number">94</td>
+                                <td class="number">0</td>
+                                <td class="number">35,197</td>
+                            </tr>
+                            <tr>
+                                <td>City of Edinburgh Council</td>
+                                <td class="number">155</td>
+                                <td class="number">156</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>City of London Corporation</td>
+                                <td class="number">4</td>
+                                <td class="number">4</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Conwy Council</td>
+                                <td class="number">92</td>
+                                <td class="number">91</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Denbighshire Council</td>
+                                <td class="number">67</td>
+                                <td class="number">0</td>
+                                <td class="number">34,442</td>
+                            </tr>
+                            <tr>
+                                <td>Ealing Borough Council</td>
+                                <td class="number">141</td>
+                                <td class="number">136</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Gwynedd Council</td>
+                                <td class="number">154</td>
+                                <td class="number">154</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Haringey Borough Council</td>
+                                <td class="number">82</td>
+                                <td class="number">0</td>
+                                <td class="number">64,145</td>
+                            </tr>
+                            <tr>
+                                <td>Merthyr Tydfil Council</td>
+                                <td class="number">65</td>
+                                <td class="number">0</td>
+                                <td class="number">27,373</td>
+                            </tr>
+                            <tr>
+                                <td>Neath Port Talbot Council</td>
+                                <td class="number">136</td>
+                                <td class="number">0</td>
+                                <td class="number">65,655</td>
+                            </tr>
+                            <tr>
+                                <td>Pembrokeshire Council</td>
+                                <td class="number">129</td>
+                                <td class="number">0</td>
+                                <td class="number">62,920</td>
+                            </tr>
+                            <tr>
+                                <td>Rhondda Cynon Taf Council</td>
+                                <td class="number">179</td>
+                                <td class="number">0</td>
+                                <td class="number">108,478</td>
+                            </tr>
+                            <tr>
+                                <td>South Cambridgeshire District Council</td>
+                                <td class="number">111</td>
+                                <td class="number">110</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>Vale of Glamorgan Council</td>
+                                <td class="number">125</td>
+                                <td class="number">125</td>
+                                <td class="number">0</td>
+                            </tr>
+                            <tr>
+                                <td>West Berkshire Council</td>
+                                <td class="number">115</td>
+                                <td class="number">115</td>
+                                <td class="number">0</td>
+                            </tr>
+                        </table>
+                    </div>
+
+{% filter markdown %}
 
 Up to date data can be found at the [polling stations league table](http://pollingstations.democracyclub.org.uk/league_table).
 
-</section>
-
 {% endfilter %}
-</div>
+
+                </section>
+
+        </div>
 
 {% endblock content %}
