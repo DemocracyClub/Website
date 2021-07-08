@@ -28,7 +28,7 @@
 @import 'partials/_utilities.scss';
 @import 'partials/_status.scss';
 @import 'partials/_logo.scss';
-$scope: false;
+$scope: true;
 @mixin optional-styles {
     @include description-lists;
     @include button;
@@ -67,6 +67,10 @@ $scope: false;
     .ds-scope *::before,
     .ds-scope *::after {
         box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
     }
 }
 
