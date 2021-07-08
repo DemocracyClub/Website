@@ -5,29 +5,21 @@
 
 {% block extra_page_css %}
 <style>
-blockquote {
-  font-style: italic;
-  font-size: 1em;
-  margin: 0;
-  color: #999;
-  padding: 0rem 1rem;
-  border-left: .25rem solid #999;
-  display: block;
-}
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+    }
 
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-}
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+    .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 {% endblock %}
 
@@ -35,11 +27,11 @@ blockquote {
 
 {% block main_content %}
 
-<article>
+<div class="ds-stack-smaller">
 
 {% filter markdown %}
 
-### Our vision is of a country with the digital foundations to support everyone’s participation in democratic life.
+##### Our vision is of a country with the digital foundations to support everyone’s participation in democratic life.
 
 Our mission is to create those foundations by:
 
@@ -54,7 +46,7 @@ We don’t have a view of ‘the perfect democracy’. Instead, we try to make c
 In this video from March 2016, Joe Mitchell — a co-ordinator at Democracy Club - explains how we try to do this.
 
 <div class="videoWrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/efA1l9q7a1M" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/efA1l9q7a1M" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## What we do
@@ -92,27 +84,27 @@ Our data has reached millions of people since 2015. Here’s what some of them s
 {% endfilter %}
 
 <p>
-<blockquote>
-    “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.”
-</blockquote>
+    <blockquote>
+        “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.”
+    </blockquote>
 
-<strong>— Stuart Harrison, Senior Communication Officer, The Electoral Commission</strong>
+    <p>— Stuart Harrison, Senior Communication Officer, The Electoral Commission</p>
 </p>
 
 <p>
-<blockquote>
-    “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.”
-</blockquote>
+    <blockquote>
+        “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.”
+    </blockquote>
 
-<strong>— Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics</strong>
+    <p>— Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics</p>
 </p>
 
 <p>
-<blockquote>
+    <blockquote>
         “...making this information available centrally will become an invaluable service for citizens...”
-</blockquote>
+    </blockquote>
 
-<strong>— The Minister for the Constitution</strong>
+    <p>— The Minister for the Constitution</p>
 </p>
 
 {% filter markdown %}
@@ -146,5 +138,5 @@ Our data has reached millions of people since 2015. Here’s what some of them s
 
 {% endfilter %}
 
-</article>
+</div>
 {% endblock main_content %}

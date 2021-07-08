@@ -12,9 +12,10 @@ from core.views import HomeView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 
+
 admin.autodiscover()
 
-handler500 = "dc_theme.urls.dc_server_error"
+handler500 = "dc_utils.urls.dc_server_error"
 
 
 urlpatterns = [
@@ -81,6 +82,7 @@ urlpatterns = [
             namespace="report_2019_general_election",
         ),
     ),
+    path("report_2021/", include("report_2021.urls", namespace="report_2021")),
     path(
         "reports/whos_missing/",
         include("report_whos_missing.urls", namespace="report_whos_missing"),
@@ -102,3 +104,9 @@ urlpatterns = [
         include(("mailing_list.urls", "dc_signup_form")),
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    from dc_utils.urls import dc_utils_testing_patterns
+
+    urlpatterns += dc_utils_testing_patterns

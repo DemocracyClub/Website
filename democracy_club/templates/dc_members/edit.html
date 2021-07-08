@@ -14,8 +14,8 @@
 <section id="linked_accounts">
     <h2>Linked accounts</h2>
     <p>Accounts that you have linked to Democracy Club - use these to log
-        in to your account.  We will never use these account to post
-        messages, read your information or anything else.  They are simply
+        in to your account. We will never use these account to post
+        messages, read your information or anything else. They are simply
         for logging in.</p>
     <ul>
         {% for account_name, account in linked_accounts.items %}
@@ -29,12 +29,11 @@
         {% endfor %}
     </ul>
     <h4>Add new accounts</h4>
-        {% for provider in socialaccount.providers %}
-        {% if provider.name not in linked_accounts.keys %}
-    <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
-         href="{% provider_login_url provider.id process=connect %}">{{provider.name}}</a>
-        {% endif %}
-        {% endfor %}
+    {% for provider in socialaccount.providers %}
+    {% if provider.name not in linked_accounts.keys %}
+    <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" href="{% provider_login_url provider.id process=connect %}">{{provider.name}}</a>
+    {% endif %}
+    {% endfor %}
 </section>
 {% endif %}
 

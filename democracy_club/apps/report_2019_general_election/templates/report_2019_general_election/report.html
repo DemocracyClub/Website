@@ -1,11 +1,11 @@
 {% extends "report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
-
+{# fmt:off #}
 {% block title %}Towards better elections, report on Democracy Club’s work on the 2019 general election{% endblock title %}
 
 {% block content %}
-<article id="report_2019ge">
+<div id="report_2019ge" class="ds-stack-smaller">
 {% filter markdown %}
 
 # Report on the 2019 General Election
@@ -41,9 +41,9 @@ We also experienced some disappointments:
 Sheffield, and much of Scotland, was added late (10 or 11 December), missing a
 lot of potential users, while our Welsh coverage was comparatively poor.
 * Our results data operation was poorly organised, meaning that a small
- number of volunteers had to shoulder much of the overnight burden.
+number of volunteers had to shoulder much of the overnight burden.
 * Failed to convince any journalists or media organisations to report on the
- UK’s lack of digital democratic infrastructure.
+UK’s lack of digital democratic infrastructure.
 * Google didn’t use our data, despite huge success in 2015
 
 # Introduction
@@ -79,15 +79,15 @@ complicated by the fact that we are unable to track how organisations make use
 of our candidate data downloads.
 
 Nevertheless, what we do know suggests that we came relatively close to
-achieving  this goal. The number of direct users of Democracy Club’s services
-was at least  three times larger than at any previous election: between
+achieving this goal. The number of direct users of Democracy Club’s services
+was at least three times larger than at any previous election: between
 dissolution of parliament and election day itself, our database processed around
 four million postcode searches, including 800,000 via the website of the
 Electoral Commission. Meanwhile, our candidate data powered stories and tools on
 websites with a combined reach of millions, including *The Guardian*, *The
- Times*,
+Times*,
 and *Sky News*; regional news websites like *Cambridgeshire Live*; and social
- media
+media
 accounts such as *Britain Elects*. Combined, all of these stories and tools
 undoubtedly received more than ten million views.
 
@@ -119,30 +119,27 @@ of the voting age population. This is our highest ever UK-wide coverage, and
 represents a good increase on the EU vote (58%). Within the constituent nations,
 our general election coverage breaks down as follows:
 
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>Nation</th>
+            <th>Coverage (% Voting Age Population)</th>
+        </tr>
 
-<table>
-<thead>
-<tr>
-<th>Nation</th>
-<th>Coverage (% Voting Age Population)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>England</td>
-<td>75%</td>
-</tr>
-<tr>
-<td>Scotland</td>
-<td>73%</td>
-</tr>
-<tr>
-<td>Wales</td>
-<td>50%</td>
-</tr>
-</tbody>
-</table>
-
+        <tr>
+            <td>England</td>
+            <td>75%</td>
+        </tr>
+        <tr>
+            <td>Scotland</td>
+            <td>73%</td>
+        </tr>
+        <tr>
+            <td>Wales</td>
+            <td>50%</td>
+        </tr>
+    </table>
+</div>
 
 Some caveats should be added to these headline figures. A number of councils,
 including Sheffield, Liverpool and the majority of Scotland, were only added on
@@ -177,24 +174,47 @@ traffic we have ever experienced, almost three times more than during the
 European elections. In addition to WhereDoIVote.co.uk, our polling station data
 was accessed across the following platforms (rounded to the nearest thousand):
 
-<table>
-<thead>
-<tr>
-<th>Source</th>
-<th>Searches</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>WhoCanIVoteFor.co.uk</td><td>629,000</td></tr>
-<tr><td>tactical.vote</td><td>480,000</td></tr>
-<tr><td>Electoral Commission</td><td>320,000</td></tr>
-<tr><td>Labour Party polling station finder</td><td>164,000</td></tr>
-<tr><td>Democracy Club Widget</td><td>108,000</td></tr>
-<tr><td>votesavvy.co.uk</td><td>18,000</td></tr>
-<tr><td>Ready10.media (JustPark.com)</td><td>7,000</td></tr>
-<tr><td>Others</td><td>19,000</td></tr>
-</tbody>
-</table>
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Searches</th>
+        </tr>
+
+        <tr>
+            <td>WhoCanIVoteFor.co.uk</td>
+            <td>629,000</td>
+        </tr>
+        <tr>
+            <td>tactical.vote</td>
+            <td>480,000</td>
+        </tr>
+        <tr>
+            <td>Electoral Commission</td>
+            <td>320,000</td>
+        </tr>
+        <tr>
+            <td>Labour Party polling station finder</td>
+            <td>164,000</td>
+        </tr>
+        <tr>
+            <td>Democracy Club Widget</td>
+            <td>108,000</td>
+        </tr>
+        <tr>
+            <td>votesavvy.co.uk</td>
+            <td>18,000</td>
+        </tr>
+        <tr>
+            <td>Ready10.media (JustPark.com)</td>
+            <td>7,000</td>
+        </tr>
+        <tr>
+            <td>Others</td>
+            <td>19,000</td>
+        </tr>
+    </table>
+</div>
 
 
 
@@ -277,39 +297,44 @@ councils. Encouragingly, this dataset contained only a tiny number of errors
 who completed their compilation well after Democracy Club.
 
 We are pleased to say that by polling day itself, our detail on individual
-parliamentary  candidates was also high:
+parliamentary candidates was also high:
 
-<table>
-<thead>
-<tr>
-<th>Data field</th>
-<th>Candidate coverage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Profile Picture</td><td>97%</td>
-</tr>
-<tr>
-<td>Email Address</td><td>86%</td>
-</tr>
-<tr>
-<td>Personal or PPC Website</td><td>74%</td>
-</tr>
-<tr>
-<td>Twitter handle</td><td>82%</td>
-</tr>
-<tr>
-<td>Facebook Page (personal or campaign)</td><td>68%</td>
-</tr>
-<tr>
-<td>Statement to Voters</td><td>36% </td>
-</tr>
-<tr>
-<td>Favourite Biscuit</td><td>10%</td>
-</tr>
-</tbody>
-</table>
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>Data field</th>
+            <th>Candidate coverage</th>
+        </tr>
+        <tr>
+            <td>Profile Picture</td>
+            <td>97%</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>86%</td>
+        </tr>
+        <tr>
+            <td>Personal or PPC Website</td>
+            <td>74%</td>
+        </tr>
+        <tr>
+            <td>Twitter handle</td>
+            <td>82%</td>
+        </tr>
+        <tr>
+            <td>Facebook Page (personal or campaign)</td>
+            <td>68%</td>
+        </tr>
+        <tr>
+            <td>Statement to Voters</td>
+            <td>36% </td>
+        </tr>
+        <tr>
+            <td>Favourite Biscuit</td>
+            <td>10%</td>
+        </tr>
+    </table>
+</div>
 
 
 Comparing this coverage with the data we acquired during the 2017 general
@@ -331,9 +356,9 @@ we also know that our CSV was used by a number of charities and other bodies to
 run campaigns emailing candidates.
 
 <figure>
-<img src="{% static "report_2019_general_election/images/sky.png" %}">
-<figcaption>*Sky News*’ Candidate Search powered by
-Democracy Club data</figcaption>
+    <img src="{% static "report_2019_general_election/images/sky.png" %}">
+    <figcaption>*Sky News*’ Candidate Search powered by
+        Democracy Club data</figcaption>
 </figure>
 
 
@@ -349,7 +374,7 @@ circulated among other newspapers.
 The strength of Democracy Club’s database lies in the speed, accuracy and
 openness with which it is constructed. Its widespread use by media
 organisations, in preference to other commercially available candidate lists,
-reflects this.  On the other hand, speed and openness can have its problems.
+reflects this. On the other hand, speed and openness can have its problems.
 Because a one-time anonymous CSV download remains the most popular way for
 organisations to access our data (rather than our live online feed), we are
 unable to alert users to subsequent corrections. For example, a small, initial
@@ -403,8 +428,9 @@ Our key partner in this area was the data visualisation company Flourish, who
 created a [fantastic range of maps and graphs depicting the results](https://flourish.studio/2019/11/26/charts-for-the-uk-elections-2019/).
 
 <figure>
-<div class="flourish-bar_race flourish-embed" data-src="visualisation/1089442?149111"></div><script src="https://public.flourish.studio/resources/embed.js"></script>
-<figcaption>Flourish’s Bar race results chart</figcaption>
+    <div class="flourish-bar_race flourish-embed" data-src="visualisation/1089442?149111"></div>
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <figcaption>Flourish’s Bar race results chart</figcaption>
 </figure>
 
 
@@ -448,16 +474,18 @@ and WhoCanIVoteFor.co.uk, combined with Widget use, totalled almost four million
 over the entire election period from 6 November (dissolution of parliament) to
 13 December (results day).
 
-
-
-
-<figure>
-<div class="fukol-grid">
-<img src="{% static "report_2019_general_election/images/grm_daily.jpg" %}">
-<img src="{% static "report_2019_general_election/images/grm_daily_text.jpg" %}">
+<div class="ds-grid">
+    <ul>
+        <li>
+            <img src="{% static "report_2019_general_election/images/grm_daily.jpg" %}">
+        </li>
+        <li>
+            <img src="{% static "report_2019_general_election/images/grm_daily_text.jpg" %}">
+        </li>
+    </ul>
+    <figcaption>Election prompt and text delivered to visitors of GRM Daily</figcaption>
 </div>
-<figcaption>Election prompt and text delivered to visitors of GRM Daily</figcaption>
-</figure>
+
 
 
 
@@ -479,24 +507,25 @@ during election periods. As far as we are aware, Democracy Club is the only UK
 company to have worked directly with the four largest social media platforms in
 this way.
 
-
-<div class="fukol-grid image-grid">
-<figure>
-  <img src="{% static "report_2019_general_election/images/twitter.png" %}">
-  <figcaption>Twitter placed a link in the feed of every UK user</figcaption>
-</figure>
-<figure>
-<img src="{% static "report_2019_general_election/images/snapchat.png" %}">
-<figcaption>Snapchat sent a message to all of its UK users of voting age</figcaption>
-</figure>
-<figure>
-<img src="{% static "report_2019_general_election/images/fb.png" %}">
-<figcaption>Facebook placed a prompt in the timeline of every UK user </figcaption>
-</figure>
-<figure>
-<img src="{% static "report_2019_general_election/images/instagram.JPG" %}">
-<figcaption>Instagram created a special sticker</figcaption>
-</figure>
+<div class="ds-grid">
+    <ul class="ds-stack">
+        <li>
+            <img src="{% static "report_2019_general_election/images/snapchat.png" %}">
+            <figcaption>Snapchat sent a message to all of its UK users of voting age</figcaption>
+        </li>
+        <li>
+            <img src="{% static "report_2019_general_election/images/fb.png" %}">
+            <figcaption>Facebook placed a prompt in the timeline of every UK user </figcaption>
+        </li>
+        <li>
+            <img src="{% static "report_2019_general_election/images/twitter.png" %}">
+            <figcaption>Twitter placed a link in the feed of every UK user</figcaption>
+        </li>
+        <li>
+            <img src="{% static "report_2019_general_election/images/instagram.JPG" %}">
+            <figcaption>Instagram created a special sticker</figcaption>
+        </li>
+    </ul>
 </div>
 
 
@@ -562,11 +591,11 @@ likelihood of this happening is relatively low.
 
 
 <figure>
-<img src="{% static "report_2019_general_election/images/wychavon.png" %}">
-<figcaption>
-Tweet from Wychavon Council, using WhereDoIVote to inform voters of a
-station change
-</figcaption>
+    <img src="{% static "report_2019_general_election/images/wychavon.png" %}">
+    <figcaption>
+        Tweet from Wychavon Council, using WhereDoIVote to inform voters of a
+        station change
+    </figcaption>
 </figure>
 
 
@@ -588,7 +617,7 @@ database, Companies House information, and the Facebook advertising library.
 However, these last three data sources were found to contain some errors and
 resulted in a small number of complaints and requests to amend or take-down
 information: it is clear that we should take care to arrange more methodical
-checks when using  this information in the future.
+checks when using this information in the future.
 
 ### Reach
 
@@ -611,22 +640,22 @@ Nevertheless, a bare majority (51%) of WCIVF users reach the site by searching
 online, indicating that we are now well positioned for search engine
 optimisation.
 
-As indicated above,  WhoCanIVoteFor.co.uk saw 629,000 postcode searches between
+As indicated above, WhoCanIVoteFor.co.uk saw 629,000 postcode searches between
 9 and 12 December - our highest-ever user numbers. This translates into 405,000
 unique visitors over the four days - almost as many as the entire period from
 January to June 2019. In total, Google Analytics reports 864,000 people visited
 WhoCanIVoteFor.co.uk between 6 November and 13 December.
 
 Between the close of nominations on 14 November and election day on 12 December,
-we received  13,386 pieces of feedback on WCIVF, of which 53% were positive - an
+we received 13,386 pieces of feedback on WCIVF, of which 53% were positive - an
 approval rate slightly up on the European elections, and a very good result
 compared to longer-term trends. [Read more on this feedback](https://democracyclub.org.uk/blog/2020/02/06/The-Users-Strike-Back/).
 
 
 
 <figure>
-<img src="{% static "report_2019_general_election/images/hoc.png" %}">
-<figcaption>WhoCanIVoteFor promoted by the official House of Commons Facebook page</figcaption>
+    <img src="{% static "report_2019_general_election/images/hoc.png" %}">
+    <figcaption>WhoCanIVoteFor promoted by the official House of Commons Facebook page</figcaption>
 </figure>
 
 
@@ -643,7 +672,7 @@ stations.
 
 During the election our widgets were embedded on 145 pages across almost a
 hundred different websites, receiving 108,000 searches in the final four days of
-the campaign alone.  These included local authorities, newspapers (e.g.
+the campaign alone. These included local authorities, newspapers (e.g.
 Manchester Evening News), londoncouncils.gov.uk, and the website of Plaid Cymru
 (sadly, the party did not make use of our Welsh language toggle, although a
 number of Welsh councils did). As in previous elections, we received high praise
@@ -651,8 +680,8 @@ from council elections officers, many of whom would otherwise be unable to
 provide voters with a polling station look-up on their own websites.
 
 <figure>
-<img src="{% static "report_2019_general_election/images/london_councils.png" %}">
-<figcaption>Democracy Club’s polling station Widget on the London Councils Website</figcaption>
+    <img src="{% static "report_2019_general_election/images/london_councils.png" %}">
+    <figcaption>Democracy Club’s polling station Widget on the London Councils Website</figcaption>
 </figure>
 
 
@@ -776,6 +805,6 @@ elections. We are now well prepared for the anticipated resumption of elections
 in 2021.
 
 
-  {% endfilter %}
-</article>
+{% endfilter %}
+</div>
 {%  endblock %}

@@ -1,20 +1,12 @@
-{% extends "report_base.html" %}
 {% load static %}
-{% load markdown_deux_tags %}
-
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of
-digital services for democracy{% endblock title %}
-
-{% block content %}
-<article id="report_2018">
-{% filter markdown %}
-
 # Towards better elections — 2019
 
 
 
 
 <img src={% static "report_2019/images/humber_bridge_card_title.jpg" %} alt="">
+
+
 
 
 ## Executive Summary
@@ -29,28 +21,28 @@ scheduled elections at the beginning of May.
 Our achievements included:
 
 * maintaining national data infrastructure on elections for another 12 months, coping with an enormous set of local
-election candidates and making nearly 100,000 edits to candidate data over the year;
+  election candidates and making nearly 100,000 edits to candidate data over the year;
 * introducing automated data capture from official nomination papers, which sped up the volunteering process;
 * building a combined API to make it easier to reuse elections data — with new partners such as Reach PLC’s In Your Area
-website;
+  website;
 * covering over 75% of the May local elections electorate with polling location data (though this was down on last
-year);
+  year);
 * serving data over 2,000,000 times across our own websites and those of partners, in order to help people take part in
-the democratic process;
-* establishing and demonstrating the feasibility of producing open data on elected  representatives (notably
-councillors);
+  the democratic process;
+* establishing and demonstrating the feasibility of producing open data on elected representatives (notably
+  councillors);
 * our highest ever user satisfaction ratings for WhoCanIVoteFor.co.uk at the European elections, and a 16-point rise in
-user satisfaction for the local elections.
+  user satisfaction for the local elections.
 
 We had some notable failures this year too:
 
 * not convincing the BBC to use our polling location data to run a finder on the BBC website, despite innumerable
-meetings, (and the BBC also continued to use inaccurate election data);
+  meetings, (and the BBC also continued to use inaccurate election data);
 * the rate at which we could provide information to voters beyond simply a name and party for local election candidates
-was not much different than last year (though impressive in absolute figures) — and user satisfaction on
-WhoCanIVoteFor.co.uk is still relatively low;
+  was not much different than last year (though impressive in absolute figures) — and user satisfaction on
+  WhoCanIVoteFor.co.uk is still relatively low;
 * we were unable to convert any significant number of the hundreds of thousands of people who viewed our donation
-requests on  WhoCanIVoteFor.co.uk and WhereDoIVote.co.uk
+  requests on WhoCanIVoteFor.co.uk and WhereDoIVote.co.uk
 
 Our plans for 2019-2020 are detailed below. In brief, assuming a similar level of resourcing to this year, they include
 maintaining election data throughout the year and through the scheduled local, mayoral, devolved and police area
@@ -81,10 +73,10 @@ Our mission is to create those foundations by:
 ## Review of the Year
 
 <figure>
-<img src="{% static "report_2019/images/VineStYork.jpg" %}" alt="">
-<figcaption>
-Are we nearly there yet?
-</figcaption>
+    <img src="{% static "report_2019/images/VineStYork.jpg" %}" alt="">
+    <figcaption>
+        Are we nearly there yet?
+    </figcaption>
 </figure>
 
 
@@ -99,11 +91,11 @@ Our goals are meant to contribute to our overall social impact, which we list as
 * Sustainable improvement in trust in democracy; and a
 * Sustainable increase in engagement of groups less likely to take part in democratic process.
 * While we cannot show that our efforts this year lead to those outcomes, they serve as a reminder of our purpose. We
-hope to continue to work with evaluation and research experts to better understand our social impact.
+  hope to continue to work with evaluation and research experts to better understand our social impact.
 
 ### Goals met or partially met
 
-#### “Better use of volunteer time; more diverse volunteer-base, and more data… [and a] five percentage-point increase in satisfaction at WhoCanIVoteFor.co.uk”
+**Better use of volunteer time; more diverse volunteer-base, and more data… [and a] five percentage-point increase in satisfaction at WhoCanIVoteFor.co.uk***
 
 In terms of better use of volunteer time, the year included a significant amount of technical work to improve the
 codebase of Candidates, our candidate-data crowdsourcing website.
@@ -127,7 +119,7 @@ For the local elections, the satisfaction score for Who Can I Vote For? was 38%,
 At the European elections, the satisfaction score was 52%, which may be partially explained by the fact we had
 information beyond name and party on nearly 90% of around 600 candidates.
 
-#### “Two million uses of data via API-partners/our websites/widget at May 2019”
+>**Two million uses of data via API-partners/our websites/widget at May 2019**
 
 We did meet this target, but largely because we there were over a million requests around each set of elections: local
 and European. Of the outputs we thought would get us there, we worked to develop partners to reuse the data. Another
@@ -135,7 +127,7 @@ planned output was an ‘ElectionEverything widget’ (i.e. a combined polling s
 for any website), but this did not happen, due to an over-reliance on volunteers and pro-bono work. It remains on this
 year’s goals list with a different approach.
 
-#### “90% coverage of 18+ population with polling location data for elections in May 2019”
+**90% coverage of 18+ population with polling location data for elections in May 2019**
 
 For the local elections, 178 councils sent us their polling location data. We imported it all, but this number was some
 way short of the total number of councils holding elections. This meant that we covered 76% of the 18+ population for
@@ -145,7 +137,7 @@ For the European elections, more councils sent us data than we had a chance to i
 meant we could cover 58% of the 18+ population. We will consider the lessons from this for any snap general election and
 for the long-term goal of achieving 100% coverage.
 
-#### “Several outcomes relating to the ‘club’: better public understanding; 15,000 on the mailing list; 500 volunteers adding data; better funding; 75 monthly small donors; a more diverse group of volunteers”
+**Several outcomes relating to the ‘club’: better public understanding; 15,000 on the mailing list; 500 volunteers adding data; better funding; 75 monthly small donors; a more diverse group of volunteers**
 
 Various outputs were planned to meet this goal. In brief, we did clarify the club’s vision and mission, create greater
 board involvement and we did successfully fundraise to support the status quo, though not for expansion. The mailing
@@ -156,14 +148,14 @@ information websites, nor did we sell a polling location finder to a council. We
 judge diversity, though some progress was made with the survey design and this would be a priority for any new
 ‘organiser’ hire.
 
-#### “Better awareness of issues facing groups currently less likely to take part in democratic process”
+**Better awareness of issues facing groups currently less likely to take part in democratic process**
 
 The output here was to [produce a report on under-participating
 groups](https://democracyclub.org.uk/reports/whos_missing/), a draft of which was published. This work is guiding some
 of the suggestions we provide to other organisations and funders, and we plan to develop an executive summary of tasks
 or tactics from it over the next year.
 
-#### “50,000 uses of a lookup-your-representative tool; 500 downloads of a representatives CSV”
+**50,000 uses of a lookup-your-representative tool; 500 downloads of a representatives CSV**
 
 This was a stretch goal. The main planned output was a discovery process on councillor data, which we carried out in
 October 2018. We identified an appetite for open representatives data and established that it could be produced and
@@ -172,7 +164,7 @@ accessible and sustainable.
 
 ### Goals not met
 
-#### “Polling station finder on BBC News homepage on May 2019 election day”
+**Polling station finder on BBC News homepage on May 2019 election day**
 
 This goal was not achieved, though not for want of trying. While there were many meetings with BBC News staff, nobody
 took the lead to arrange the small amount of development work necessary to add it to the BBC website. Relatedly, in [a
@@ -180,24 +172,24 @@ blog at the time of the local elections](https://democracyclub.org.uk/blog/2019/
 examples of where the BBC published wrong information to voters. Our WhereDoIVote.co.uk website was at least linked to
 from the BBC News liveblog on the election days.
 
-#### “10,000 reminders sent for May elections; 20% survey respondents say they wouldn’t have voted without it”
+**10,000 reminders sent for May elections; 20% survey respondents say they wouldn’t have voted without it**
 
 We had hoped to begin work on an Election Reminders service, but little progress was made here. We planned to start with
 a discovery process on user needs, technical requirements and sustainability. We remain cautious about the project
 without a plan to measure its effect and without a route to sustainable funding.
 
-#### “Help improve other institutions working on democratic engagement in the UK”
+**Help improve other institutions working on democratic engagement in the UK**
 
 The outputs we hoped to produce here were a report or event on The Electoral Commission and voter information, as well
 as a report on ‘what good looks like for digital+democracy in the UK’. Neither of these were produced, but importantly,
 we maintained conversations with the commission and contributed to some of their internal documents throughout the year.
 The Constitution Unit at University College London published a report on voter information that is highly relevant to
-our work:  [Doing Democracy
+our work: [Doing Democracy
 Better](https://www.ucl.ac.uk/constitution-unit/news/2019/mar/new-report-doing-democracy-better).
 
 ### Goals that did not apply
 
-#### “In the event of a general election, help 10m people gain knowledge about election”
+**In the event of a general election, help 10m people gain knowledge about election**
 
 There was no general election, but we maintained a plan for an unscheduled election, which included listing and
 preparing potential freelance hires and sources of funding. This work will continue through next election year as
@@ -221,10 +213,10 @@ live feed.
 
 
 <figure>
-<img src="{% static "report_2019/images/in_your_area.png" %}" alt="">
-<figcaption>
-In Your Area already knows its users’ postcodes, so it called our API to determine whether to show them election data
-</figcaption>
+    <img src="{% static "report_2019/images/in_your_area.png" %}" alt="">
+    <figcaption>
+        In Your Area already knows its users’ postcodes, so it called our API to determine whether to show them election data
+    </figcaption>
 </figure>
 
 
@@ -345,34 +337,39 @@ WhereDoIVote.co.uk and from API users.
 
 Rounded to the nearest five thousand, the API use at the local elections was made up of:
 
-<table>
-<tbody>
-<tr>
-<td>WhoCanIVoteFor.co.uk</td>
-<td>255,000</td>
-</tr>
-<tr>
-<td>Your Vote Matters</td>
-<td>155,000</td>
-</tr>
-<tr>
-<td>In Your Area</td>
-<td>110,000</td>
-</tr>
-<tr>
-<td>Labour Party</td>
-<td>30,000</td>
-</tr>
-<tr>
-<td>Widget</td>
-<td>20,000</td>
-</tr>
-<tr>
-<td>Others</td>
-<td>5,000</td>
-</tr>
-</tbody>
-</table>
+<div class="ds-table">
+    <table>
+    <caption>Local Elections</caption>
+        <tr>
+          <th>API</th>
+          <th>Users</th>
+        </tr>
+        <tr>
+            <td>WhoCanIVoteFor.co.uk</td>
+            <td>255,000</td>
+        </tr>
+        <tr>
+            <td>Your Vote Matters</td>
+            <td>155,000</td>
+        </tr>
+        <tr>
+            <td>In Your Area</td>
+            <td>110,000</td>
+        </tr>
+        <tr>
+            <td>Labour Party</td>
+            <td>30,000</td>
+        </tr>
+        <tr>
+            <td>Widget</td>
+            <td>20,000</td>
+        </tr>
+        <tr>
+            <td>Others</td>
+            <td>5,000</td>
+        </tr>
+    </table>
+</div>
 
 Around the European elections, the total number of uses of the data was nearly 1,300,000, of which 900,000 uses were
 between 10pm on 22 May and 10pm on 23 May. This time, the split between WhereDoIVote.co.uk and the API users was around
@@ -380,34 +377,39 @@ between 10pm on 22 May and 10pm on 23 May. This time, the split between WhereDoI
 
 Rounded to the nearest five thousand, the API use at the European elections was made up of:
 
-<table>
-<tbody>
-<tr>
-<td>Your Vote Matters</td>
-<td>340,000</td>
-</tr>
-<tr>
-<td>WhoCanIVoteFor.co.uk</td>
-<td>220,000</td>
-</tr>
-<tr>
-<td>In Your Area</td>
-<td>170,000</td>
-</tr>
-<tr>
-<td>Labour Party</td>
-<td>40,000</td>
-</tr>
-<tr>
-<td>Widget</td>
-<td>20,000</td>
-</tr>
-<tr>
-<td>Others</td>
-<td>10,000</td>
-</tr>
-</tbody>
-</table>
+<div class="ds-table">
+    <table>
+    <caption>European Elections</caption>
+        <tr>
+          <th>API</th>
+          <th>Users</th>
+        </tr>
+        <tr>
+            <td>Your Vote Matters</td>
+            <td>340,000</td>
+        </tr>
+        <tr>
+            <td>WhoCanIVoteFor.co.uk</td>
+            <td>220,000</td>
+        </tr>
+        <tr>
+            <td>In Your Area</td>
+            <td>170,000</td>
+        </tr>
+        <tr>
+            <td>Labour Party</td>
+            <td>40,000</td>
+        </tr>
+        <tr>
+            <td>Widget</td>
+            <td>20,000</td>
+        </tr>
+        <tr>
+            <td>Others</td>
+            <td>10,000</td>
+        </tr>
+    </table>
+</div>
 
 #### Analysis
 
@@ -501,10 +503,10 @@ From midnight Monday 20 May through Thursday 23 May, the week of the European el
 visitors, again with most traffic from Facebook.
 
 <figure>
-<img src="{% static "report_2019/images/facebook-newsfeed.png" %}" alt="">
-<figcaption>
-The link as it appeared in Facebook newsfeeds
-</figcaption>
+    <img src="{% static "report_2019/images/facebook-newsfeed.png" %}" alt="">
+    <figcaption>
+        The link as it appeared in Facebook newsfeeds
+    </figcaption>
 </figure>
 
 
@@ -547,10 +549,10 @@ This widget allows any website owner to help their users find out where to vote.
 This year, we recorded 18,524 uses at the local elections and 19,526 uses at the European elections.
 
 <figure>
-<img src="{% static "report_2019/images/rugby-widget.png" %}" alt="">
-<figcaption>
-An example of the widget in use on Rugby Council’s website
-</figcaption>
+    <img src="{% static "report_2019/images/rugby-widget.png" %}" alt="">
+    <figcaption>
+        An example of the widget in use on Rugby Council’s website
+    </figcaption>
 </figure>
 
 
@@ -649,7 +651,7 @@ Our goals for the election year 2019-2020 are as follows. This assumes funding r
 * 1.5m people reached with voter information for 2020 local / mayoral / Police and Crime Commissioner (PCC) elections
 * 10m people reached with voter information in the event of a snap general election or nationwide referendum
 * 100% coverage of elections and basic candidate information for all by-elections and scheduled elections through May
-2020
+  2020
 * 90% coverage of polling location data for the electorate with scheduled local elections in May 2020
 * At least one new consumer of our by-election data
 * Five-point rise in % of candidates for whom we have information beyond name and party affiliation
@@ -659,7 +661,7 @@ Our goals for the election year 2019-2020 are as follows. This assumes funding r
 * We provide better opportunities for club members
 * We better understand the user needs of underrepresented audiences
 * A statement is made by an institution of the UK state, which confirms that it plans to take on some election data
-provision
+  provision
 
 You can view our [outcomes, goals and inputs for 2019-2020 in this
 matrix](https://docs.google.com/spreadsheets/d/1xGS1KPeLeyEZicnLPDjPTFAt7T91gnxBrMbKLYnGAnw/edit#gid=0) and we welcome
@@ -694,12 +696,3 @@ donation](https://democracyclub.org.uk/donate/).
 
 
 *Humber bridge photo credit: [darrenflinders](https://www.flickr.com/photos/darrenflinders/16392247548/in/photolist-qYwy6J-p93hyD-kjsbX-nvAC68-jRaed-eLMoiK-e9Ex9f-6X4mKD-4Qzorv-4QDxcu-ogWqkq-8zk7m4-kWdoL-9wRqW-nvTwHe-pTBQ9j-jR9TF-pscSPJ-gAaXWy-8DwmaS-2cUYTub-r9qvMb-edG9E6-2cCbuxZ-kjsp4-dywKio-2cb3bj-dULEU-8EbuJ5-2coa8X-WFHkJG-5bpSWP-6zTrfh-neoZ9j-7foVyM-6eCrqN-ocpB2-bBPDqc-egLptL-CxC4VN-keBc61-y8GVC2-52SqG5-9S61Pg-byhw2B-dWz99q-siv3fp-2cWo7WF-qWVz6n-oU18dh)*
-
-
-{% endfilter %}
-
-
-
-</article>
-
-{% endblock content %}

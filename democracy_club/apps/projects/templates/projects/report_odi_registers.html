@@ -3,19 +3,19 @@
 {% load static %}
 {% block content %}
 
-<article>
+<div class="ds-stack-smaller">
 <aside>
-  <p><em>This is an HTML version of the
-    <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">report pubished
-      on the ODI website</a>.
+    <p><em>This is an HTML version of the
+            <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">report pubished
+                on the ODI website</a>.
 
-  </em></p>
-<p>
-  <em>The CC BY-SA licence applies to this HTML version, as the original. For other formats, see the ODI website.</em></p>
+        </em></p>
+    <p>
+        <em>The CC BY-SA licence applies to this HTML version, as the original. For other formats, see the ODI website.</em></p>
 </aside>
 
 
-  {% filter markdown %}
+{% filter markdown %}
 
 
 # About
@@ -26,7 +26,7 @@ This report is about registers or lists, and ways of publishing and maintaining 
 This report has been researched and produced by the Open Data Institute, and published in May 2018. Its lead authors were David Miller and Sym Roe. If you want to share feedback by email or would like to get in touch, contact the Registers project lead Leigh Dodds at [Leigh.Dodds@theodi.org](mailto:Leigh.Dodds@theodi.org).
 
 
-# What are registers and why are they important?
+## What are registers and why are they important?
 
 Registers are accurate, complete lists. However, not all lists are registers. This document explores some of the key properties of registers and discusses the implications of these. It does not provide a hard definition or set of criteria for what is or is not a register. Such exercises have tended to produce criteria that exclude lists that it is helpful for maintainers and users to consider as registers, or the criteria have been so vague that they cease to be meaningful.
 
@@ -40,7 +40,7 @@ Almost all registers use some degree of collaboration. Embracing that collaborat
 
 We define the process of maintaining a register through collaboration as stewarding. This is the process of maintaining a list by a group or institution and the promise they make to maintain that list. That process is co-ordinated by a custodian. Transparent stewarding of a list means being clear and open about how it is maintained.
 
-# An introduction to registers
+## An introduction to registers
 
 The word register is both a noun and a verb. The word register also implies that there is an official quality to the list or act of listing.
 
@@ -73,7 +73,7 @@ Much of the Register of Shipping is a list of opinions that underwriters and own
 The design of the Register of Shipping meant that it could never be completely accurate. It would be legitimate for two people to hold different opinions about a single value in the register. Even with these potential discrepancies, it proved immensely useful to the shipping industry. This official list, which different parties agreed to use as the standard, allowed owners to insure their ships.
 
 
-# How the internet has changed registers
+## How the internet has changed registers
 
 The internet and the web introduced new possibilities for registers.
 
@@ -104,14 +104,14 @@ Reliable data of a known provenance is critical to people who build services usi
 When registers can be easily accessed by other products or services, they are more widely useful than when they were books in council basements. Combining internet technology for publication with a commitment from the state to maintain registers means society can reap increased benefits from these official lists of things, consuming and using them in ways that were not previously possible.
 
 
-# Registers and abstractions
+## Registers and abstractions
 
 Before exploring the details of specific registers, it is worth looking at some of the abstract aspects of lists. We are deliberately examining the more general case of lists rather than only registers. This helps establish ways of talking and thinking about different kinds of registers as well as allowing us to consider which of these properties are required for us to think of a list as a register.
 
 We have grouped the features of registers into three related categories: type of list, authority and stewardship. We created the categories by examining a sample of 20 registers of varying forms, how they were similar, how they differed and by noting how people discuss them and describe their key features. The results of this analysis are available as open data.[^4] When people make lists, they often create hybrid forms that cross these boundaries.
 
 
-## 1. Type of list
+### 1. Type of list
 
 The first group of features allows us to understand what kind of list we are dealing with.
 
@@ -149,87 +149,83 @@ Linkable: the list is published in a machine-readable, computable format, with i
 
 Many lists are published in ways that span more than one of these list technologies; the Companies House register can be downloaded in a machine-readable format[^11] and is also published as a linkable online service.[^12]
 
-
-<table>
-  <thead>
-    <tr>
-     <th>List</th>
-     <th>Source</th>
-     <th>Contents</th>
-     <th>Technology</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-     <td>Register of Shipping
-     </td>
-     <td>Primary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Paper
-     </td>
-    </tr>
-    <tr>
-     <td>Democracy Club Candidates
-     </td>
-     <td>Secondary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Linkable
-     </td>
-    </tr>
-    <tr>
-     <td>Council candidate notifications
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Digital paper
-     </td>
-    </tr>
-    <tr>
-     <td>Countries Register
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Linkable
-     </td>
-    </tr>
-    <tr>
-     <td>Register of pupils in a class
-     </td>
-     <td>Primary
-     </td>
-     <td>Minimum viable dataset
-     </td>
-     <td>Paper
-     </td>
-    </tr>
-    <tr>
-     <td>Historic England’s list of listed buildings
-     </td>
-     <td>Primary
-     </td>
-     <td>Broad dataset
-     </td>
-     <td>Machine-readable
-     </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>List</th>
+            <th>Source</th>
+            <th>Contents</th>
+            <th>Technology</th>
+        </tr>
 
 
+        <tr>
+            <td>Register of Shipping
+            </td>
+            <td>Primary
+            </td>
+            <td>Broad dataset
+            </td>
+            <td>Paper
+            </td>
+        </tr>
+        <tr>
+            <td>Democracy Club Candidates
+            </td>
+            <td>Secondary
+            </td>
+            <td>Broad dataset
+            </td>
+            <td>Linkable
+            </td>
+        </tr>
+        <tr>
+            <td>Council candidate notifications
+            </td>
+            <td>Primary
+            </td>
+            <td>Minimum viable dataset
+            </td>
+            <td>Digital paper
+            </td>
+        </tr>
+        <tr>
+            <td>Countries Register
+            </td>
+            <td>Primary
+            </td>
+            <td>Minimum viable dataset
+            </td>
+            <td>Linkable
+            </td>
+        </tr>
+        <tr>
+            <td>Register of pupils in a class
+            </td>
+            <td>Primary
+            </td>
+            <td>Minimum viable dataset
+            </td>
+            <td>Paper
+            </td>
+        </tr>
+        <tr>
+            <td>Historic England’s list of listed buildings
+            </td>
+            <td>Primary
+            </td>
+            <td>Broad dataset
+            </td>
+            <td>Machine-readable
+            </td>
+        </tr>
+
+    </table>
+</div>
 
 Taken from the full list of lists used to make this system[^13].
 
-
-## 2. Authority
+### 2. Authority
 
 The second group of features are reasons to consider a list authoritative.
 
@@ -289,73 +285,68 @@ A list may also be accurate only at a certain granularity. For instance, Open St
 
 Some lists contain pieces of information which can never really be entirely accurate; they are opinions rather than facts, as in the Shipping Register example discussed above.
 
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>List</th>
+            <th>Source of authority</th>
+            <th>Reality</th>
+            <th>Completeness</th>
+            <th>Accuracy</th>
+        </tr>
 
-<table>
-  <thead>
-    <tr>
-     <th>List</th>
-     <th>Source of authority</th>
-     <th>Reality</th>
-     <th>Completeness</th>
-     <th>Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
+        <tr>
+            <td>Pupils in a class
+            </td>
+            <td>Institutional
+            </td>
+            <td>Defining
+            </td>
+            <td>Complete
+            </td>
+            <td>Accurate
+            </td>
+        </tr>
+        <tr>
+            <td>Open Street Map
+            </td>
+            <td>Verifiable Observations
+            </td>
+            <td>Describing
+            </td>
+            <td>Incomplete
+            </td>
+            <td>Sometimes accurate
+            </td>
+        </tr>
+        <tr>
+            <td>General Medical Council Register
+            </td>
+            <td>Legislative
+            </td>
+            <td>Defining
+            </td>
+            <td>Complete
+            </td>
+            <td>Accurate
+            </td>
+        </tr>
+        <tr>
+            <td>First thousand prime numbers
+            </td>
+            <td>A priori
+            </td>
+            <td>Describing
+            </td>
+            <td>Provably complete
+            </td>
+            <td>Provably accurate
+            </td>
+        </tr>
+    </table>
+</div>
 
-    <tr>
-     <td>Pupils in a class
-     </td>
-     <td>Institutional
-     </td>
-     <td>Defining
-     </td>
-     <td>Complete
-     </td>
-     <td>Accurate
-     </td>
-    </tr>
-    <tr>
-     <td>Open Street Map
-     </td>
-     <td>Verifiable Observations
-     </td>
-     <td>Describing
-     </td>
-     <td>Incomplete
-     </td>
-     <td>Sometimes accurate
-     </td>
-    </tr>
-    <tr>
-     <td>General Medical Council Register
-     </td>
-     <td>Legislative
-     </td>
-     <td>Defining
-     </td>
-     <td>Complete
-     </td>
-     <td>Accurate
-     </td>
-    </tr>
-    <tr>
-     <td>First thousand prime numbers
-     </td>
-     <td>A priori
-     </td>
-     <td>Describing
-     </td>
-     <td>Provably complete
-     </td>
-     <td>Provably accurate
-     </td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-## 3. Stewardship
+### 3. Stewardship
 
 Stewarding is the process of maintaining a register. This includes how and when information is added, removed or changed and who does those things. Understanding how a custodian stewards a register allows people who are thinking about using it to make informed decisions about how much they can trust it.
 
@@ -384,7 +375,7 @@ Making sure a register remains accurate and complete over time requires work. Th
 Understanding who pays for such work is important. Funders often maintain a register for a particular purpose. Considering what these purposes are can help us understand how the register is governed.
 
 
-## Communicating stewarding
+### Communicating stewarding
 
 The benefits of register infrastructure come from the contents of the register being used by many people, systems or institutions. To achieve this, the register needs to be seen as trustworthy and authoritative by those users.
 
@@ -399,8 +390,8 @@ The register website simply lists the government department responsible for main
 
 
 <figure>
-<img src="{% static "images/report/gds-register-page.png" %}">
-<figcaption>Gov.uk, ‘Country register’</figcaption>
+    <img src="{% static "images/report/gds-register-page.png" %}">
+    <figcaption>Gov.uk, ‘Country register’</figcaption>
 </figure>
 
 Without understanding how and why a country has an entry on the register, it is hard for anyone considering using the register to decide whether or not it is an appropriate list of countries. This in turn influences what you can use the register for. A service in the UK recognising passports or visas could not use this country register as it does not include Taiwan (the UK does not formally recognise Taiwan). However, Taiwan issues passports to citizens, and they are granted visas to travel to the UK.
@@ -425,15 +416,15 @@ For registers designed as data infrastructure (due to the social, legal. environ
 Those processes should be both transparent and open. The criteria by which decisions are made, and also individual decisions, should be public. Where such decisions are potentially controversial, or subjective, someone who disagrees with the contents of a register should at least be able to understand why the maintainer of a register has made their decision.
 
 
-## Funding registers
+### Funding registers
 
 Understanding who is paying for something can give valuable insights into the governance of the register. It also may help us to make judgements about things like
 
 
 
-*   is it likely to be sustained in the long term?
-*   is it likely to be unbiased?
-*   are its operations likely to be well-funded?
+* is it likely to be sustained in the long term?
+* is it likely to be unbiased?
+* are its operations likely to be well-funded?
 
 Traditionally, registers were often maintained by an organ of the state (although there are exceptions, such as Lloyd’s Register). This is related to practical aspects of running a state, such as taxation, and to the fact that the creating and maintaining registers was both time-consuming and expensive.
 
@@ -441,9 +432,9 @@ Today, there are three main ways that registers are funded:
 
 
 
-*   State funding
-*   Service revenue
-*   Grants and donations
+* State funding
+* Service revenue
+* Grants and donations
 
 Registers are often funded through a mixture of these.
 
@@ -458,20 +449,20 @@ Registers operated by the state are generally funded by taxation. This These reg
 Sometimes, institutions who are paid to maintain a register are also instructed to generate revenues from the register. This supports the maintenance of the register itself and sometimes provides additional revenue for the Treasury. There are three typical models: charging for updates to the register, selling commercial services related to that data, or charging for access to the data within the register. These three models have differing levels of tension between providing that data for free at the point of use and revenue maximisation.
 
 
-## Case study: HM Land Registry
+### Case study: HM Land Registry
 
 HM Land Registry was established by the Land Registry Act 1862.[^30] Since then, it has registered ownership of land and property in England and Wales. Registration of land was initially voluntary, though compulsory registration was gradually introduced and extended over the next 140 years.
 
 The registry took from 1862 to 1963 to collect two million entries.[^31] Since then, the process has accelerated. The Land Registry now contains more than 24 million titles. This acceleration has been driven by the increasing speed of processing introduced by digitisation of the registry.
 
-Registration is only compulsory under certain circumstances, such as when property is sold or inherited. Therefore, the registry still does not cover the whole of England and Wales. As of 2017,  HM Land Registry claimed to have 85% coverage.[^32]
+Registration is only compulsory under certain circumstances, such as when property is sold or inherited. Therefore, the registry still does not cover the whole of England and Wales. As of 2017, HM Land Registry claimed to have 85% coverage.[^32]
 
 While HM Land Registry is a department of the government of the United Kingdom, they do not receive public funding. Rather, they generate revenue by charging people who want to change or query the register. In 2016, this revenue was more than £300M. This allows HM Land Registry to operate in the way that it does: backed by legislative authority without needing to be funded by taxes.
 
 
 
 <figure>
-<img src="{%  static "images/report/land-registry.png" %}">
+    <img src="{%  static "images/report/land-registry.png" %}">
 </figure>
 
 
@@ -493,18 +484,18 @@ Transparent stewarding means being clear and open about the answers to the four 
 
 
 
-*   Who maintains this register and why?
-*   How are entries added to the register?
-*   How are errors in the register corrected?
-*   Who pays for the maintenance of this register?
+* Who maintains this register and why?
+* How are entries added to the register?
+* How are errors in the register corrected?
+* Who pays for the maintenance of this register?
 
 
-# Models for collaboration
+## Models for collaboration
 
 We have observed a number of different models for collaboration to make and maintain registers. We have examined some of these models as case studies to show how they work.
 
 
-## Custodial discretion
+### Custodial discretion
 
 For some registers, there is an obvious decision maker who unilaterally operates upon the contents of the register. They most commonly have either legislative custodians or institutional authority.
 
@@ -517,7 +508,7 @@ While errors can be fixed or changes made by the right person in the organisatio
 Custodial discretion can be effective for reality-altering registers when the custodian is always involved in the change process.
 
 
-## Suggested edits
+### Suggested edits
 
 In other cases, the custodian will make suggested alterations to the register when another another party requests them, but the custodian verifies the accuracy of the alteration before making a change. This allows a broad collaboration with many parties on the contents of the register, while maintaining a narrow responsibility for accuracy.
 
@@ -539,7 +530,7 @@ The publication technology makes the complete register available online. It also
 By abstracting the data standards required in the surveillance system as their own register, the FSA has decoupled data collection from classification. This gives sampling laboratories a choice of how to collect and submit this data. They can innovate with their own data collection and audit processes without being tied to a single monopoly supplier.
 
 
-## Direct access
+### Direct access
 
 The most permissive change model is providing tools that allow anyone to directly alter the register. These tools may be an online service (like a wiki), or paper forms that anyone can fill in and send to the custodian responsible for compiling or publishing the register.
 
@@ -565,7 +556,7 @@ As it is an official register, the company directors have a duty to correct any 
 Companies House receives no taxpayer funds. It is mostly funded by charging fees for company registrations. A smaller proportion of its income comes from charging people who want to receive information from the register on paper or in bulk, and by renting buildings they own to other parts of government.[^43]
 
 
-## Aggregator registers
+### Aggregator registers
 
 A secondary register is a list created from other registers, for instance by aggregating other smaller registers.
 
@@ -574,7 +565,7 @@ In this model, many different custodians create separate registers, which are th
 Separate custodians are also found where there is a division of the register that makes logical or administrative sense. In this manner, book publishers are allocated blocks of ISBN numbers[^44] to use for books they publish.
 
 <figure>
-<img src="{% static "images/report/aggregator-registers.png" %}">
+    <img src="{% static "images/report/aggregator-registers.png" %}">
 </figure>
 
 Due to the range of ways in which current custodians make registers they are responsible for available, automating the transformation of primary registers into a secondary register is not always possible.
@@ -599,9 +590,9 @@ The list technology is machine-readable but not linkable. The data is only publi
 As a reality-describing, secondary register that is very large with a lot of updates, AddressBase is prone to a lot of errors and will always be slightly out of date. It is possible that no list of this sort could ever be considered “complete”. Because of this, easy and transparent error reporting is vital.
 
 
-## Crowdsourcing
+### Crowdsourcing
 
-Crowdsourcing is a model of sourcing information from a community.  Typically, the total information required has been broken down into small chunks. These can be sourced with relatively little effort and then the results are aggregated. This model typically employs a strategy to prevent abuse or vandalism. One such strategy is post-moderation or version control combined with tooling like the ability to monitor content changes or being notified of edits, allowing the community to maintain quality. Another is to require multiple people to provide the same information – providing a form of verified observation.
+Crowdsourcing is a model of sourcing information from a community. Typically, the total information required has been broken down into small chunks. These can be sourced with relatively little effort and then the results are aggregated. This model typically employs a strategy to prevent abuse or vandalism. One such strategy is post-moderation or version control combined with tooling like the ability to monitor content changes or being notified of edits, allowing the community to maintain quality. Another is to require multiple people to provide the same information – providing a form of verified observation.
 
 An editable Google Document is a simple tool for crowdsourcing, with fewer features for community maintenance, while Wikipedia and OpenStreetMap are example of large scale, moderation-based crowdsourcing platforms.
 
@@ -634,7 +625,7 @@ Org-id.guide provides a contributor’s handbook[^48] for people looking to sugg
 This is an official way for people to either request or propose changes. The process is managed using the Github platform. Requests are raised as Github issues, and proposals as Github pull requests. There are clear guidelines for the details a request or proposal should include. The results of decisions made in reaction to requests or proposals are made in the open, and can be reviewed by anyone. Each decision has a URI. This also contains information about the discussions that contributed to any given decision, and the names of the people who eventually accepted or rejected a suggested alteration. The decision-making process is also outlined, clarifying whose responsibility it is to decide on a proposal, how to provide feedback on somebody else’s proposal and the amount of time available to provide such feedback.
 
 
-## Mixed models
+### Mixed models
 
 In practice, many registers operate a mixed governance model. This allows maintainers to spend their time more effectively. They can focus on particularly complex or sensitive tasks or areas, while allowing other people to effectively collaborate on maintaining the register.
 
@@ -644,7 +635,7 @@ Similarly, with crowdsourced lists such as Wikidata, the default is direct acces
 
 
 
-# Appendix 1: report methodology
+## Appendix 1: report methodology
 
 This report has been written by David Miller and Sym Roe in partnership with the ODI.
 
@@ -662,155 +653,155 @@ All internet links in footnotes were active at the time of publication. Should t
 ## Notes
 
 [^1]:
-     Open Data Institute, 2018, ‘Data Infrastructure’, [https://theodi.org/topic/data-infrastructure](https://theodi.org/topic/data-infrastructure)
+Open Data Institute, 2018, ‘Data Infrastructure’, [https://theodi.org/topic/data-infrastructure](https://theodi.org/topic/data-infrastructure)
 
 [^2]:
-     Michael Palmer (1999), ‘Lloyds Register of Shipping’,  [http://www.mariners-l.co.uk/ResLloydsRegister.htm](http://www.mariners-l.co.uk/ResLloydsRegister.htm)
+Michael Palmer (1999), ‘Lloyds Register of Shipping’, [http://www.mariners-l.co.uk/ResLloydsRegister.htm](http://www.mariners-l.co.uk/ResLloydsRegister.htm)
 
 [^3]:
-     University of Glasgow Archive Services (2011). ‘Lloyd’s Register of Shipping’, https://www.gla.ac.uk/media/media_67062_en.pdf
+University of Glasgow Archive Services (2011). ‘Lloyd’s Register of Shipping’, https://www.gla.ac.uk/media/media_67062_en.pdf
 
 [^4]:
-     David Miller, Sym Roe (2018), ‘Registers and collaboration - describing lists’, [https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit](https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit)
+David Miller, Sym Roe (2018), ‘Registers and collaboration - describing lists’, [https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit](https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit)
 
 [^5]:
-     Companies House, ‘Search the register’, [https://beta.companieshouse.gov.uk/](https://beta.companieshouse.gov.uk/)
+Companies House, ‘Search the register’, [https://beta.companieshouse.gov.uk/](https://beta.companieshouse.gov.uk/)
 
 [^6]:
-     ‘Open Corporates’, [http://opencorporates.com/](http://opencorporates.com/). Open Corporates reuse data published by Companies House and other sources.
+‘Open Corporates’, [http://opencorporates.com/](http://opencorporates.com/). Open Corporates reuse data published by Companies House and other sources.
 
 [^7]:
-     Gov.uk, ‘Country register’, [https://country.register.gov.uk/](https://country.register.gov.uk/)
+Gov.uk, ‘Country register’, [https://country.register.gov.uk/](https://country.register.gov.uk/)
 
 [^8]:
-     OpenStreetmap, [https://www.openstreetmap.org](https://www.openstreetmap.org)
+OpenStreetmap, [https://www.openstreetmap.org](https://www.openstreetmap.org)
 
 [^9]:
-     Ordnance Survey, ‘AddressBase’, [https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase.html](https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase.html)
+Ordnance Survey, ‘AddressBase’, [https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase.html](https://www.ordnancesurvey.co.uk/business-and-government/products/addressbase.html)
 
 [^10]:
-     Gov.uk, ‘Government service register’, [https://government-service.register.gov.uk/](https://government-service.register.gov.uk/)
+Gov.uk, ‘Government service register’, [https://government-service.register.gov.uk/](https://government-service.register.gov.uk/)
 
 [^11]:
-     Companies House, ‘Free Companies Data Product’, [http://download.companieshouse.gov.uk/en_output.html](http://download.companieshouse.gov.uk/en_output.html)
+Companies House, ‘Free Companies Data Product’, [http://download.companieshouse.gov.uk/en_output.html](http://download.companieshouse.gov.uk/en_output.html)
 
 [^12]:
-     Companies House, ‘Open Data Institute’, [https://beta.companieshouse.gov.uk/company/08030289](https://beta.companieshouse.gov.uk/company/08030289)
+Companies House, ‘Open Data Institute’, [https://beta.companieshouse.gov.uk/company/08030289](https://beta.companieshouse.gov.uk/company/08030289)
 
 [^13]:
-     David Miller, Sym Roe (2018), ‘Registers and collaboration - describing lists’, [https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit](https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit)
+David Miller, Sym Roe (2018), ‘Registers and collaboration - describing lists’, [https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit](https://docs.google.com/spreadsheets/d/1eLmRzkKFJx6hpOcVTv6WmcFYOULCB0SWSOCN0lF5O1Q/edit)
 
 [^14]:
-     Wikipedia, ‘List of rivers longer than 1000 km’, [https://en.wikipedia.org/wiki/List_of_rivers_by_length#List_of_rivers_longer_than_1000_km](https://en.wikipedia.org/wiki/List_of_rivers_by_length#List_of_rivers_longer_than_1000_km)
+Wikipedia, ‘List of rivers longer than 1000 km’, [https://en.wikipedia.org/wiki/List_of_rivers_by_length#List_of_rivers_longer_than_1000_km](https://en.wikipedia.org/wiki/List_of_rivers_by_length#List_of_rivers_longer_than_1000_km)
 
 [^15]:
-     Wikipedia, ‘Observer-expectancy effect’, [https://en.wikipedia.org/wiki/Observer-expectancy_effect](https://en.wikipedia.org/wiki/Observer-expectancy_effect)
+Wikipedia, ‘Observer-expectancy effect’, [https://en.wikipedia.org/wiki/Observer-expectancy_effect](https://en.wikipedia.org/wiki/Observer-expectancy_effect)
 
 [^16]:
-     Microsoft, ‘Search product lifecycle’, [https://support.microsoft.com/en-gb/lifecycle/search?ts=-3](https://support.microsoft.com/en-gb/lifecycle/search?ts=-3)
+Microsoft, ‘Search product lifecycle’, [https://support.microsoft.com/en-gb/lifecycle/search?ts=-3](https://support.microsoft.com/en-gb/lifecycle/search?ts=-3)
 
 [^17]:
-     Electoral Commission, ‘Where can I find a list of all political parties?’, [http://www.electoralcommission.org.uk/faq/donations-to-political-parties/where-can-i-find-a-list-of-all-political-parties](http://www.electoralcommission.org.uk/faq/donations-to-political-parties/where-can-i-find-a-list-of-all-political-parties)
+Electoral Commission, ‘Where can I find a list of all political parties?’, [http://www.electoralcommission.org.uk/faq/donations-to-political-parties/where-can-i-find-a-list-of-all-political-parties](http://www.electoralcommission.org.uk/faq/donations-to-political-parties/where-can-i-find-a-list-of-all-political-parties)
 
 [^18]:
-     Legislation.gov.uk (2018), ‘Political Parties, Elections and Referendums Act 2000’, [https://www.legislation.gov.uk/ukpga/2000/41/contents](https://www.legislation.gov.uk/ukpga/2000/41/contents)
+Legislation.gov.uk (2018), ‘Political Parties, Elections and Referendums Act 2000’, [https://www.legislation.gov.uk/ukpga/2000/41/contents](https://www.legislation.gov.uk/ukpga/2000/41/contents)
 
 [^19]:
-     Opencorporates, [http://opencorporates.com/](http://opencorporates.com/)
+Opencorporates, [http://opencorporates.com/](http://opencorporates.com/)
 
 [^20]:
-     Thomson Reuters (2018), ‘Company Data’, [https://financial.thomsonreuters.com/en/products/data-analytics/company-data.html](https://financial.thomsonreuters.com/en/products/data-analytics/company-data.html)
+Thomson Reuters (2018), ‘Company Data’, [https://financial.thomsonreuters.com/en/products/data-analytics/company-data.html](https://financial.thomsonreuters.com/en/products/data-analytics/company-data.html)
 
 [^21]:
-     Dun and Bradstreet (2018), ‘Our data differentiators’, [https://www.dnb.co.uk/about-us/our-data.html](https://www.dnb.co.uk/about-us/our-data.html)
+Dun and Bradstreet (2018), ‘Our data differentiators’, [https://www.dnb.co.uk/about-us/our-data.html](https://www.dnb.co.uk/about-us/our-data.html)
 
 [^22]:
-     General Medical Council (2018), ‘Registration and licensing’, [https://www.gmc-uk.org/doctors/medical_register.asp](https://www.gmc-uk.org/doctors/medical_register.asp)
+General Medical Council (2018), ‘Registration and licensing’, [https://www.gmc-uk.org/doctors/medical_register.asp](https://www.gmc-uk.org/doctors/medical_register.asp)
 
 [^23]:
-     Wikipedia (2018), ‘Member state of the European Union’, [https://en.wikipedia.org/wiki/Member_state_of_the_European_Union](https://en.wikipedia.org/wiki/Member_state_of_the_European_Union)
+Wikipedia (2018), ‘Member state of the European Union’, [https://en.wikipedia.org/wiki/Member_state_of_the_European_Union](https://en.wikipedia.org/wiki/Member_state_of_the_European_Union)
 
 [^24]:
-     Wikipedia (2018), ‘1989’, [https://en.wikipedia.org/wiki/1989#Deaths](https://en.wikipedia.org/wiki/1989#Deaths)
+Wikipedia (2018), ‘1989’, [https://en.wikipedia.org/wiki/1989#Deaths](https://en.wikipedia.org/wiki/1989#Deaths)
 
 [^25]:
-     Peter Wells (2016), ‘UK Government cats’, [https://peterkwells.github.io/uk-government-cats/](https://peterkwells.github.io/uk-government-cats/)
+Peter Wells (2016), ‘UK Government cats’, [https://peterkwells.github.io/uk-government-cats/](https://peterkwells.github.io/uk-government-cats/)
 
 [^26]:
-     OpenStreetMap, [https://www.openstreetmap.org](https://www.openstreetmap.org)
+OpenStreetMap, [https://www.openstreetmap.org](https://www.openstreetmap.org)
 
 [^27]:
-     Ordnance Survey (2018), ‘OS MasterMap’, [https://www.ordnancesurvey.co.uk/business-and-government/products/mastermap-products.html](https://www.ordnancesurvey.co.uk/business-and-government/products/mastermap-products.html)
+Ordnance Survey (2018), ‘OS MasterMap’, [https://www.ordnancesurvey.co.uk/business-and-government/products/mastermap-products.html](https://www.ordnancesurvey.co.uk/business-and-government/products/mastermap-products.html)
 
 [^28]:
-     Gov.uk, ‘Country register’, [https://country.register.gov.uk](https://country.register.gov.uk)
+Gov.uk, ‘Country register’, [https://country.register.gov.uk](https://country.register.gov.uk)
 
 [^29]:
-     Open Data Institute (2018), ‘Exploring the development and impact of open standards for data report’, [https://docs.google.com/document/d/1Sab5YMVj4PVqLjZD35hX8FTnMeeP6gLGG0xszuRMIaM/edit#heading=h.zenpzz1aus85](https://docs.google.com/document/d/1Sab5YMVj4PVqLjZD35hX8FTnMeeP6gLGG0xszuRMIaM/edit#heading=h.zenpzz1aus85)
+Open Data Institute (2018), ‘Exploring the development and impact of open standards for data report’, [https://docs.google.com/document/d/1Sab5YMVj4PVqLjZD35hX8FTnMeeP6gLGG0xszuRMIaM/edit#heading=h.zenpzz1aus85](https://docs.google.com/document/d/1Sab5YMVj4PVqLjZD35hX8FTnMeeP6gLGG0xszuRMIaM/edit#heading=h.zenpzz1aus85)
 
 [^30]:
-     Legislation.gov.uk, ‘Land Registry Act 1862’, [http://www.legislation.gov.uk/ukpga/Vict/25-26/53](http://www.legislation.gov.uk/ukpga/Vict/25-26/53)
+Legislation.gov.uk, ‘Land Registry Act 1862’, [http://www.legislation.gov.uk/ukpga/Vict/25-26/53](http://www.legislation.gov.uk/ukpga/Vict/25-26/53)
 
 [^31]:
-     Land Registry (2000), ‘A Short History of Land Registration in England and Wales’, [http://webarchive.nationalarchives.gov.uk/20101213175739/http:/www.landreg.gov.uk/assets/library/documents/bhist-lr.pdf](http://webarchive.nationalarchives.gov.uk/20101213175739/http:/www.landreg.gov.uk/assets/library/documents/bhist-lr.pdf)
+Land Registry (2000), ‘A Short History of Land Registration in England and Wales’, [http://webarchive.nationalarchives.gov.uk/20101213175739/http:/www.landreg.gov.uk/assets/library/documents/bhist-lr.pdf](http://webarchive.nationalarchives.gov.uk/20101213175739/http:/www.landreg.gov.uk/assets/library/documents/bhist-lr.pdf)
 
 [^32]:
-     Land Registry (2018), ‘About Us’, [https://www.gov.uk/government/organisations/land-registry/about](https://www.gov.uk/government/organisations/land-registry/about)
+Land Registry (2018), ‘About Us’, [https://www.gov.uk/government/organisations/land-registry/about](https://www.gov.uk/government/organisations/land-registry/about)
 
 [^33]:
-     Eg Democracy Club, ‘Democracy Club Candidates’, [https://candidates.democracyclub.org.uk/](https://candidates.democracyclub.org.uk/)
+Eg Democracy Club, ‘Democracy Club Candidates’, [https://candidates.democracyclub.org.uk/](https://candidates.democracyclub.org.uk/)
 
 [^34]:
-     Eg mySociety, ‘TheyWorkForYou All MPs’, [https://www.theyworkforyou.com/mps/](https://www.theyworkforyou.com/mps/)
+Eg mySociety, ‘TheyWorkForYou All MPs’, [https://www.theyworkforyou.com/mps/](https://www.theyworkforyou.com/mps/)
 
 [^35]:
-     Wikipedia (2018), ‘List of U.S. state birds’, [https://en.wikipedia.org/wiki/List_of_U.S._state_birds](https://en.wikipedia.org/wiki/List_of_U.S._state_birds)
+Wikipedia (2018), ‘List of U.S. state birds’, [https://en.wikipedia.org/wiki/List_of_U.S._state_birds](https://en.wikipedia.org/wiki/List_of_U.S._state_birds)
 
 [^36]:
-     Food Standards Agency (2018), ‘UK Food Surveillance System’, [https://www.food.gov.uk/enforcement/sampling/fss](http://webarchive.nationalarchives.gov.uk/20180411152558tf_/https://www.food.gov.uk/enforcement/sampling/fss)
+Food Standards Agency (2018), ‘UK Food Surveillance System’, [https://www.food.gov.uk/enforcement/sampling/fss](http://webarchive.nationalarchives.gov.uk/20180411152558tf_/https://www.food.gov.uk/enforcement/sampling/fss)
 
 [^37]:
-     Food Standards Agency (2018), ‘Register: Classifications’, [https://data.food.gov.uk/codes/enforcement-monitoring/sampling/_classifications](https://data.food.gov.uk/codes/enforcement-monitoring/sampling/_classifications)
+Food Standards Agency (2018), ‘Register: Classifications’, [https://data.food.gov.uk/codes/enforcement-monitoring/sampling/_classifications](https://data.food.gov.uk/codes/enforcement-monitoring/sampling/_classifications)
 
 [^38]:
-     Companies House (2018), ‘About Us’, [https://www.gov.uk/government/organisations/companies-house/about](https://www.gov.uk/government/organisations/companies-house/about)
+Companies House (2018), ‘About Us’, [https://www.gov.uk/government/organisations/companies-house/about](https://www.gov.uk/government/organisations/companies-house/about)
 
 [^39]:
-     Companies House (2018), ‘Web Filing’, [https://ewf.companieshouse.gov.uk//seclogin?tc=1](https://ewf.companieshouse.gov.uk//seclogin?tc=1)
+Companies House (2018), ‘Web Filing’, [https://ewf.companieshouse.gov.uk//seclogin?tc=1](https://ewf.companieshouse.gov.uk//seclogin?tc=1)
 
 [^40]:
-     Gov.uk (2018), ‘Register a private or public company (IN01)’, [https://www.gov.uk/government/publications/register-a-private-or-public-company-in01](https://www.gov.uk/government/publications/register-a-private-or-public-company-in01)
+Gov.uk (2018), ‘Register a private or public company (IN01)’, [https://www.gov.uk/government/publications/register-a-private-or-public-company-in01](https://www.gov.uk/government/publications/register-a-private-or-public-company-in01)
 
 [^41]:
-     Gov.uk (2018), ‘Set up a private limited company’, [https://www.gov.uk/limited-company-formation/choose-company-name](https://www.gov.uk/limited-company-formation/choose-company-name)
+Gov.uk (2018), ‘Set up a private limited company’, [https://www.gov.uk/limited-company-formation/choose-company-name](https://www.gov.uk/limited-company-formation/choose-company-name)
 
 [^42]:
-     Companies House (2015), ‘Inconsistencies on the public register’, [https://www.gov.uk/government/publications/inconsistencies-on-the-public-register/inconsistencies-on-the-public-register](https://www.gov.uk/government/publications/inconsistencies-on-the-public-register/inconsistencies-on-the-public-register)
+Companies House (2015), ‘Inconsistencies on the public register’, [https://www.gov.uk/government/publications/inconsistencies-on-the-public-register/inconsistencies-on-the-public-register](https://www.gov.uk/government/publications/inconsistencies-on-the-public-register/inconsistencies-on-the-public-register)
 
 [^43]:
-     Companies House (2016), ‘Annual Report and Accounts 2015/16’,  [https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/540443/AnnualReport_201516.pdf](https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/540443/AnnualReport_201516.pdf)
+Companies House (2016), ‘Annual Report and Accounts 2015/16’, [https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/540443/AnnualReport_201516.pdf](https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/540443/AnnualReport_201516.pdf)
 
 [^44]:
-     Wikipedia (2018), ‘International Standard Book Number’, [https://en.wikipedia.org/wiki/International_Standard_Book_Number#Registrant_element](https://en.wikipedia.org/wiki/International_Standard_Book_Number#Registrant_element)
+Wikipedia (2018), ‘International Standard Book Number’, [https://en.wikipedia.org/wiki/International_Standard_Book_Number#Registrant_element](https://en.wikipedia.org/wiki/International_Standard_Book_Number#Registrant_element)
 
 [^45]:
-     Wikipedia (2018), ‘Local Land and Property Gazetteer’,  [https://en.wikipedia.org/wiki/Local_Land_and_Property_Gazetteer](https://en.wikipedia.org/wiki/Local_Land_and_Property_Gazetteer)
+Wikipedia (2018), ‘Local Land and Property Gazetteer’, [https://en.wikipedia.org/wiki/Local_Land_and_Property_Gazetteer](https://en.wikipedia.org/wiki/Local_Land_and_Property_Gazetteer)
 
 [^46]:
-     DemocracyClub (2018), ‘Candidates’, [http://candidates.democracyclub.org.uk/](http://candidates.democracyclub.org.uk/)
+DemocracyClub (2018), ‘Candidates’, [http://candidates.democracyclub.org.uk/](http://candidates.democracyclub.org.uk/)
 
 [^47]:
-     Open Data Services Co-op, ‘Org-id.guide’, [http://org-id.guide/](http://org-id.guide/)
+Open Data Services Co-op, ‘Org-id.guide’, [http://org-id.guide/](http://org-id.guide/)
 
 [^48]:
-     Open Data Services Co-op, ‘Org-id.guide contributors handbook’, [http://docs.org-id.guide/en/latest/contribute/](http://docs.org-id.guide/en/latest/contribute/)
+Open Data Services Co-op, ‘Org-id.guide contributors handbook’, [http://docs.org-id.guide/en/latest/contribute/](http://docs.org-id.guide/en/latest/contribute/)
 
 [^49]:
-     Wikidata (2018), ‘Wikidata:Page protection policy’, [https://www.wikidata.org/wiki/Wikidata:Page_protection_policy](https://www.wikidata.org/wiki/Wikidata:Page_protection_policy)
+Wikidata (2018), ‘Wikidata:Page protection policy’, [https://www.wikidata.org/wiki/Wikidata:Page_protection_policy](https://www.wikidata.org/wiki/Wikidata:Page_protection_policy)
 
 [^50]:
-     Internet Archive, [https://archive.org](https://archive.org/)
+Internet Archive, [https://archive.org](https://archive.org/)
 
 {% endfilter %}
-</article>
+</div>
 {% endblock %}

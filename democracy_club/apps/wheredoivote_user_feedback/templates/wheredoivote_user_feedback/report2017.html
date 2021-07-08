@@ -3,9 +3,9 @@
 {% load markdown_deux_tags %}
 
 {% block title %}Where Do I Vote - User Feedback June 2017{% endblock title %}
-
+{# fmt:off #}
 {% block content %}
-<article id="report">
+    <div id="report" class="ds-stack-smaller">
 {% filter markdown %}
 
 # Where Do I Vote - User Feedback June 2017
@@ -17,34 +17,30 @@ On 29th May 2017, we introduced a feedback form asking a Yes/No question: “Did
 From introducing the form until close of polls on 8th June, we served 480,000 unique users on the site and collected 18,394 responses from them. Of the 18,394 responses:
 
 {% endfilter %}
-
-<table>
-    <thead>
-      <tr>
-        <th>Found useful</th>
-        <th class="number">Number</th>
-        <th class="number">Percent</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Yes</td>
-        <td class="number">17,197</td>
-        <td class="number">93.49%</td>
-      </tr>
-      <tr>
-        <td>No</td>
-        <td class="number">1,197</td>
-        <td class="number">6.51%</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="number">18,394</td>
-        <td class="number">&nbsp;</td>
-      </tr>
-    </tbody>
-</table>
-
+        <div class="ds-table">
+            <table>
+                <tr>
+                    <th>Found useful</th>
+                    <th>Number</th>
+                    <th>Percent</th>
+                </tr>
+                <tr>
+                    <td>Yes</td>
+                    <td>17,197</td>
+                    <td>93.49%</td>
+                </tr>
+                <tr>
+                    <td>No</td>
+                    <td>1,197</td>
+                    <td>6.51%</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>18,394</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
 {% filter markdown %}
 
 It is important to understand what people liked and found useful so we can keep doing it, and also why people found it unhelpful and what we can do to improve. To drill down into this, we will examine some text comments in greater detail.
@@ -177,7 +173,7 @@ Also a few people left positive comments that they found the opening times usefu
 
 <!---->
 
-> I actually wanted to check when the polls are open until, but that was clearly stated on the right (and of course I guess the opening times are the same for everyone).  So thank you!
+> I actually wanted to check when the polls are open until, but that was clearly stated on the right (and of course I guess the opening times are the same for everyone). So thank you!
 
 <!---->
 
@@ -195,6 +191,7 @@ While the opening hours are at the top of the page in desktop layout, on mobile 
 {% endfilter %}
 <img class="screenshot" src="{% static "wheredoivote_user_feedback/image2.png" %}">
 {% filter markdown %}
+
 <em>Screenshot of [wheredoivote.co.uk](https://wheredoivote.co.uk/) in a mobile browser</em>
 
 The vast majority of users on Where Do I Vote were using mobile devices (74% over the study period, rising to 79% on polling day itself). Note that 2 of the people who did find the opening hours useful reference this info being “on the right” (i.e: they were using the desktop layout).
@@ -236,7 +233,7 @@ A number of people submitted comments which indicate that they didn't understand
 
 <!---->
 
-> I want a polling station between station road Cwmbran and Avondale road  but don’t know relevant postcodes
+> I want a polling station between station road Cwmbran and Avondale road but don’t know relevant postcodes
 
 <!---->
 
@@ -266,7 +263,7 @@ Feedback on mapping and directions was mixed. Many people who were shown map/dir
 
 <!---->
 
-> I think the map feature is brilliant.  Such an easy tool to use.
+> I think the map feature is brilliant. Such an easy tool to use.
 
 <!---->
 
@@ -367,7 +364,7 @@ Another of the most common reasons for people to leave negative feedback about m
 
 <!---->
 
-> Highly inaccurate! This map shows the Polling Station to be at Skipton Auction Market not the swimming pool.  It's a good job that I already know where to go as this load of rubbish would have sent me on a wild goose chase.
+> Highly inaccurate! This map shows the Polling Station to be at Skipton Auction Market not the swimming pool. It's a good job that I already know where to go as this load of rubbish would have sent me on a wild goose chase.
 
 This was quite a common cause of negative comments and we did update the site with more accurate grid references throughout the day in many cases where we received complaints. People clearly want maps when we don't provide them but also expect a higher level of accuracy than we can sometimes realistically achieve with the supplied data. There is scope to deliver additional value here by exploring whether we can crowdsource more accurate points in cases where we do not have exact grid references or UPRNs.
 
@@ -406,7 +403,7 @@ Another strong theme of negative comments was people using the form to report pr
 
 <!---->
 
-> the map location shown was incorrect, by quite a long way.  SM5 4NP is not on Wrythe Lane as shown but on Nightingale Road, the other side of both Carshalton and Carshalton Beeches stations.
+> the map location shown was incorrect, by quite a long way. SM5 4NP is not on Wrythe Lane as shown but on Nightingale Road, the other side of both Carshalton and Carshalton Beeches stations.
 
 <!---->
 
@@ -598,7 +595,6 @@ In reading through the feedback comments, there were a few nice ‘human interes
 > Very clear, simple, comprehensive. It's a wonderful voting tool and it definitely influenced positively my decision to vote. Thank you for providing such informative and easy-to-follow pre-voting platform.
 
 {% endfilter %}
-</article>
+</div>
 
 {% endblock content %}
-

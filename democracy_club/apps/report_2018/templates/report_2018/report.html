@@ -1,67 +1,42 @@
 {% extends "report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
+{# fmt:off #}
 
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy{% endblock title %}
+
+{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of
+digital services for democracy{% endblock title %}
 
 {% block content %}
 <style>
-.scorecard td {
-  vertical-align: top;
-}
-tbody tr th {
-  border-bottom: none;
+.met {
+color: rgb(77, 179, 20)
 }
 
-.scorecard tbody tr th:only-child {
-  text-align: left;
-  font-weight: bold;
-  border-bottom: none;
+.partial {
+color: #e62e1a;
 }
 
-/* We don't want the last column right aligned on this table */
-.scorecard td:last-child, .scorecard th:last-child {
-  text-align: left !important;
+.not-met {
+color: #e62e1a;
 }
-.scorecard tbody tr th:only-child {
-  border-top: #e5e5e5 1px solid;
-}
-.scorecard tbody tr:first-child th:only-child {
-  border-top: none;
-}
-
-.scorecard td:first-child {
-  width:45%
-}
-
-.scorecard .met {
-  color: rgb(77,179,20)
-}
-
-.scorecard .partial {
-  color: #e62e1a;
-}
-
-.scorecard .not-met {
-  color: #e62e1a;
-}
-
 </style>
 
+<div id="report_2018" class="ds-stack-smaller">
 
-<article id="report_2018">
 {% filter markdown %}
 
 # Towards better elections
 <figure>
-  <img src="{% static "report_2018/images/andy-kelly-401397-unsplash.jpg" %}" alt="">
-  <figcaption>
-    Democracy Club’s annual report — 2017–2018
-  </figcaption>
+<img src="{% static "report_2018/images/andy-kelly-401397-unsplash.jpg" %}">
+<figcaption>
+Democracy Club’s annual report — 2017–2018
+</figcaption>
 </figure>
+{# fmt:off #}
 
-
-This report is a work in progress, [you can comment on the Google Documents version of it](https://docs.google.com/document/d/19K08IW6PLstuoRvKDSfKVjBMYM4zK5jZbc_wOZ_op7Y/edit#).
+This report is a work in progress, [you can comment on the Google Documents version of
+it](https://docs.google.com/document/d/19K08IW6PLstuoRvKDSfKVjBMYM4zK5jZbc_wOZ_op7Y/edit#).
 
 Democracy Club’s vision is of a society in which democracy thrives through knowledge, participation and openness.
 Our mission is to use open data, design and technology to give every citizen the information and participation
@@ -74,7 +49,7 @@ citizens’ needs. We judge those needs based on publicly available research, fe
 data.
 
 This report covers our 2017/2018 ‘election year’. This is covers the 11 months after the
-  [2017 general election]({% url "report_2017:report_2017" %}) up to
+[2017 general election]({% url "report_2017:report_2017" %}) up to
 and including the local elections on 3 May 2018. It aims to explain the effects of the club’s work.
 
 # Summary
@@ -87,7 +62,7 @@ This year, we:
 * Developed systems to record by-elections and their candidates
 * Ran well-attended events in London, Birmingham and Manchester to crowdsource candidate data
 * Created the conditions for two new organisations to use our data to encourage pre-election engagement between
-  candidates and voters
+candidates and voters
 
 This year may have marked the point at which the work we do became ‘normal’. Electoral officers knew to send their
 polling station data to us, local political parties knew that we’d be collecting candidate information, and media
@@ -98,7 +73,7 @@ we have worked on. This is our third set of scheduled local elections and the on
 referendum or general election.
 
 The task remains to expand our capacity so we can deliver on the many and varied ideas we have and that are submitted
-to us, to keep improving voters’ experience of elections and to  bring our approach to new areas of democratic
+to us, to keep improving voters’ experience of elections and to bring our approach to new areas of democratic
 engagement beyond elections.
 
 Thanks, as always, to hundreds of volunteers who put in the time to make this all possible as well as funders,
@@ -166,7 +141,8 @@ service.
 ## Candidates data
 ### Coverage
 We recorded candidates data for every scheduled election and by-election on 3 May 2018, totalling 16,106 candidates.
-We also collected candidate data for every by-election we knew about outside 3 May 2018, totalling 1,231 candidates[^1].
+We also collected candidate data for every by-election we knew about outside 3 May 2018, totalling 1,231
+candidates[^1].
 
 [^1]: These numbers may include some double-counting if candidates stood in more than one election over this period.
 
@@ -201,7 +177,7 @@ for the general election, but slightly better than the 2017 local elections.
 We will continue to investigate the potential for automating more of the data collection process, perhaps by working
 with local authorities or electoral management software suppliers on the names and party affiliations. This year we
 also launched a <a href="https://democracyclub.org.uk/blog/2018/03/12/machine-learning-help-elections/">
-  machine-learning challenge</a> to see whether automation was possible even without any changes to the
+machine-learning challenge</a> to see whether automation was possible even without any changes to the
 current process. Any automation would free up volunteer time to boost the depth of candidate information.
 
 Another approach to improving the quality or depth of the candidates information is to go via political parties. We
@@ -220,88 +196,87 @@ We were able to provide users in 126 of the 152 local authorities with scheduled
 location. That means we covered 87% of the 18+ population in areas with a scheduled election, up from 61% at the 2017
 general election.
 ### Partners
-The data was used by: The Electoral Commission’s Your Vote Matters website, the Labour Party, and Democratic Dashboard (a project from the London School of Economics / Democratic Audit).
+The data was used by: The Electoral Commission’s Your Vote Matters website, the Labour Party, and Democratic Dashboard
+(a project from the London School of Economics / Democratic Audit).
 ### Reach/use
 There were 615,995 searches for polling locations at the May elections. These were mostly served by partners via our
 API.
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th class="number">Total</th>
-      <th class="number">Website</th>
-      <th class="number">API</th>
-      <th class="number">Embed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Searches</th>
-      <td class="number">615,995</td>
-      <td class="number">72,920</td>
-      <td class="number">514,462</td>
-      <td class="number">28,613</td>
-    </tr>
-    <tr>
-      <th>Found</th>
-      <td class="number">340,384</td>
-      <td class="number">56,206</td>
-      <td class="number">259,141</td>
-      <td class="number">25,037</td>
-    </tr>
-    <tr>
-      <th>% Found</th>
-      <td class="number">55.26%</td>
-      <td class="number">77.08%</td>
-      <td class="number">50.37%</td>
-      <td class="number">87.50%</td>
-    </tr>
-  </tbody>
+<div class="ds-table">
+<caption></caption>
+<table class="ds-card">
+<tr>
+<th></th>
+<th>Total</th>
+<th>Website</th>
+<th>API</th>
+<th>Embed</th>
+</tr>
+<tr>
+<th>Searches</th>
+<td>615,995</td>
+<td>72,920</td>
+<td>514,462</td>
+<td>28,613</td>
+</tr>
+<tr>
+<th>Found</th>
+<td>340,384</td>
+<td>56,206</td>
+<td>259,141</td>
+<td>25,037</td>
+</tr>
+<tr>
+<th>% Found</th>
+<td>55.26%</td>
+<td>77.08%</td>
+<td>50.37%</td>
+<td>87.50%</td>
+</tr>
 </table>
+</div>
+
 
 The relatively high numbers of searches ‘not found’, given that we had 87% coverage, suggests that a lot of people in
 areas without elections tried to use the finder. If we filter the above data to only the 152 areas with scheduled
 elections:
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th class="number">Total</th>
-      <th class="number">Website</th>
-      <th class="number">API</th>
-      <th class="number">Embed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Searches</th>
-      <td class="number">388,755</td>
-      <td class="number">61,744</td>
-      <td class="number">300,358</td>
-      <td class="number">26,653</td>
-    </tr>
-    <tr>
-      <th>Found</th>
-      <td class="number">340,384</td>
-      <td class="number">56,206</td>
-      <td class="number">259,141</td>
-      <td class="number">25,037</td>
-    </tr>
-    <tr>
-      <th>% Found</th>
-      <td class="number">87.56%</td>
-      <td class="number">91.03%</td>
-      <td class="number">86.28%</td>
-      <td class="number">93.94%</td>
-    </tr>
-  </tbody>
+<div class="ds-table">
+<table class="ds-card">
+<tr>
+<th></th>
+<th>Total</th>
+<th>Website</th>
+<th>API</th>
+<th>Embed</th>
+</tr>
+<tr>
+<th>Searches</th>
+<td>388,755</td>
+<td>61,744</td>
+<td>300,358</td>
+<td>26,653</td>
+</tr>
+<tr>
+<th>Found</th>
+<td>340,384</td>
+<td>56,206</td>
+<td>259,141</td>
+<td>25,037</td>
+</tr>
+<tr>
+<th>% Found</th>
+<td>87.56%</td>
+<td>91.03%</td>
+<td>86.28%</td>
+<td>93.94%</td>
+</tr>
 </table>
+</div>
 
-
-
-We have <a href="https://democracyclub.github.io/wheredoivote-usage-may-2018/data/wheredoivote-usage-may-2018">separately published a table</a> with the numbers of searches per local authority area.
+{# fmt:off #}
+We have <a href="https://democracyclub.github.io/wheredoivote-usage-may-2018/data/wheredoivote-usage-may-2018">separately
+published a table</a> with the numbers of searches per local authority area.
 ### Analysis
 This year represents a significant step forward in coverage for the polling location data. We had feared that councils
 might have been less likely to provide data for a less popular election. In fact, the coverage level suggests that the
@@ -314,13 +289,14 @@ coverage for the 2019 elections.
 ## Results data
 
 ### Coverage
-In a first for Democracy Club, volunteers managed to collect the vote count for every candidate at the scheduled elections
+In a first for Democracy Club, volunteers managed to collect the vote count for every candidate at the scheduled
+elections
 in May. Where possible, volunteers also collected turnout data, but because this is not statutorily required, many
 councils do not publish it or there are differences in how councils report it.
 ### Partners / usage
 Results data was used to power several data visualisations, such as Russ Garrett’s <a href="https://russ.garrett.co.uk/election-2018/">nationwide results map</a> and
-  <a href="https://odileeds.org/projects/local-elections-2018/">Open
-    Data Leeds’ visualisation</a> of turnout across Leeds.
+<a href="https://odileeds.org/projects/local-elections-2018/">Open
+Data Leeds’ visualisation</a> of turnout across Leeds.
 
 We also know of anecdotal evidence that political party activists are using the data to identify significant shifts in
 the vote, in order to prioritise further research or campaign efforts. We assume that all parties create their own
@@ -380,7 +356,7 @@ results data, once it had been recorded.
 We had some complaints from people who had been given the wrong ward for their postcode. This is because postcodes
 don’t always exactly cover electoral areas, but there are more cases where it gives a wrong ward than, for example, a
 wrong parliamentary constituency. This is an area we hope to focus on in the next year. We also wrote about a
-  <a href="https://democracyclub.org.uk/blog/2017/03/20/4314-times-when-postcodes-arent-good-enough/">similar
+<a href="https://democracyclub.org.uk/blog/2017/03/20/4314-times-when-postcodes-arent-good-enough/">similar
 issue on our blog</a>.
 
 ## WhereDoIVote.co.uk
@@ -396,7 +372,7 @@ Most of the negative feedback related to errors in postcodes or the map location
 able to improve the data based on this feedback.
 
 <a href="https://democracyclub.org.uk/blog/2018/05/25/one-where-everyone-loves-polling-locations/">
-  We have published a more detailed report on the user feedback here</a>.
+We have published a more detailed report on the user feedback here</a>.
 
 ## Embeddable polling location finder (the&nbsp;widget)
 
@@ -404,13 +380,10 @@ Last year, a volunteer developed an embeddable polling location finder (or widge
 This year, we particularly encouraged councils and news sites to use it: at least 15 councils did so, including
 Birmingham City Council, as well as several Trinity Mirror sites and the Evening Standard. The widget was used 25,000
 times.
-
 <figure>
 <img src="{% static "report_2018/images/Manchester-Evening-News.png" %}" alt="">
 <figcaption>The polling location finder widget on Manchester Evening News’ website<br>3 May 2018.</figcaption>
 </figure>
-
-
 # Labs
 
 <img src="{% static "report_2018/images/anjana-menon-220008-unsplash.jpg" %}">
@@ -428,10 +401,11 @@ elections they had, and which type, and sent emails based on this. The lists wer
 were well-received: open rates were around 50% with click-through rates varying from 11% to 27%.
 
 ## ODI Registers Report
-  The <a href="https://theodi.org/">Open Data Institute</a> commissioned us and <a href="http://openhealthcare.org.uk/">Open Health Care</a>
-  to research and produce a report on collaborative
+The <a href="https://theodi.org/">Open Data Institute</a> commissioned us and <a href="http://openhealthcare.org.uk/">Open Health Care</a>
+to research and produce a report on collaborative
 registers (our candidates lists could be understood this way).
-  You can <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">read it here</a>.
+You can <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">read it
+here</a>.
 
 One of the main findings of the report was that the governance of data is important for trust and reuse. If third
 parties can’t trust data sources, they are unlikely to use them. They are more likely to trust data if there are clear
@@ -453,7 +427,8 @@ Our mailing list currently stands at just over 12,000 people. We have 46 monthly
 volunteers adding data for the 3 May elections.
 
 In late 2017 eight new non-executive directors from a range of background joined the board, to be chaired by Alice
-Casey. <a href="https://democracyclub.org.uk/blog/2017/12/01/weve-got-board/">You can read about them via this blog post</a>.
+Casey. <a href="https://democracyclub.org.uk/blog/2017/12/01/weve-got-board/">You can read about them via this blog
+post</a>.
 
 We currently have reserves to see us through the 2019 local elections assuming no new staff hires or general
 elections. Our 2017/2018 funders were The Electoral Commission and Unbound Philanthropy at around £50,000 each.
@@ -464,7 +439,8 @@ elections. Our 2017/2018 funders were The Electoral Commission and Unbound Phila
 We will now work to set a range of goals for the next election year, have a plan in place for a snap general election
 and also aim to think longer-term about our goals and our places in the civic participation ecosystem.
 
-As the scorecard appended below shows, the goals we set for 2017/2018 were mostly achieved — if we exclude the ideas we had for Labs — which suggests we had a relatively
+As the scorecard appended below shows, the goals we set for 2017/2018 were mostly achieved — if we exclude the ideas
+we had for Labs — which suggests we had a relatively
 good sense of what was realistic. However, there were elements left behind that clearly indicate the need for extra
 resource even in the short term: growing the community and club, research and diversity.
 
@@ -476,400 +452,442 @@ take our approach to other elements of the democratic process that need improvem
 to raise money to use our knowledge to become an effective funder of democratic innovation projects in the UK.
 
 As always, we welcome new ideas to consider or new problems to solve. We will host
-  <a href="https://attending.io/events/democracy-club-summer-2018-meetup">a summer get-together on Saturday
-    23 June in Manchester</a>: please come along with any ideas, reflections or just to hang out. Alternatively you can email
-  us, <a href="https://twitter.com/democlub">tweet us</a> or make specific issue requests about our products via <a href="https://github.com/DemocracyClub/">Github</a>.
+<a href="https://attending.io/events/democracy-club-summer-2018-meetup">a summer get-together on Saturday
+23 June in Manchester</a>: please come along with any ideas, reflections or just to hang out. Alternatively you can
+email
+us, <a href="https://twitter.com/democlub">tweet us</a> or make specific issue requests about our products via <a href="https://github.com/DemocracyClub/">Github</a>.
 
 # Acknowledgements
 <img src="{% static "report_2018/images/benjamin-elliott-670761-unsplash.png" %}">
 We owe many thanks to many people. To start with, the volunteers, such as the data wombles, who spend hours clearing
 up the UK’s election data mess into something everyone can use. You can see the
-  <a href="https://candidates.democracyclub.org.uk/leaderboard">top editors of our crowdsourcing site
-    here</a>. Other volunteers do essential work helping us keep our systems running or advising us on aspects of electoral
+<a href="https://candidates.democracyclub.org.uk/leaderboard">top editors of our crowdsourcing site
+here</a>. Other volunteers do essential work helping us keep our systems running or advising us on aspects of
+electoral
 arcania.
 
 Thanks to The Electoral Commission, the Association of Electoral Administrators, the Local Government Information
 Unit, many local authorities and other advocates that support and champion our work.
 
 We are grateful to Unbound Philanthropy, The Electoral Commission and many individual donors for their financial
-support; <a href="{% url "donations:donate" %}">you can join them here</a>!
+support; you can join them!
 
 # Help us out!
 Not yet a data womble? Interested in other plans to save democracy? Just want to follow along? Join our mailing list
 at <a href="{% url "home" %}">democracyclub.org.uk</a>.
 
-Join the open Google Group to start your own <a href="https://groups.google.com/forum/#!forum/democracy-club">email discussions here</a>.
+Join the open Google Group to start your own <a href="https://groups.google.com/forum/#!forum/democracy-club">email
+discussions here</a>.
 
 For more day-to-day chatter and calls for help, <a href="http://slack.democracyclub.org.uk/">join our Slack</a>.
 
-And of course, if you are able, please also support our work with a
-  <a href="{% url "donations:donate" %}">monthly donation at democracyclub.org.uk/donate</a>.
+And of course, if you are able, please also support our work with a monthly donation at
+democracyclub.org.uk/donate</a>.
 
 
 
 
 # Scorecard of 2017-2018 goals
 
-In June 2017 [we set ourselves a range of goals](https://docs.google.com/spreadsheets/d/16-rpTcMVa1bHHrRu6KI6xvXKbhue3vftOSb06WxHUKg/edit#gid=0).
+In June 2017 [we set ourselves a range of
+goals](https://docs.google.com/spreadsheets/d/16-rpTcMVa1bHHrRu6KI6xvXKbhue3vftOSb06WxHUKg/edit#gid=0).
 The table below reviews our progress against those goals.
-
-<table class="scorecard">
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th colspan="3">General Election</th>
-    </tr>
-    <tr>
-      <td>In the event of a general election during the year, do as we did in 2017 (or&nbsp;better!).</td>
-      <td>n/a</td>
-      <td><em>Phew.</em></td>
-    </tr>
-  </tbody>
+<div class="ds-table">
+<table class="ds-card">
+<caption>General Election</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>In the event of a general election during the year, do as we did in 2017 (or&nbsp;better!).</td>
+<td>n/a</td>
+<td><em>Phew.</em></td>
+</tr>
 </table>
+</div>
 
+<h2>Data</h2>
 
-<table class="scorecard">
-<caption>Data</caption>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Elections</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
 
-  <tbody>
-
-    <tr>
-      <th colspan="3">Elections</th>
-    </tr>
-    <tr>
-      <td>100% of elections at district council level or above, including by-elections, identified by an election ID
-      </td>
-      <td class="partial">Partially met</td>
-      <td>We know we missed some by-elections in the months following the general election, but believe we've had full
-        coverage since late Autumn 2017.
-      </td>
-    </tr>
-    <tr>
-      <td>Maintain a published list of these elections</td>
-      <td class="met">Met</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Explore mechanisms to increase accuracy of notification &amp; confirmation of election</td>
-      <td class="met">Met?</td>
-      <td>We developed an 'election radar' tool to help automate notification and work closely with leading
-        election-spotters to increase our accuracy
-      </td>
-    </tr>
-
-
-    <tr>
-      <th colspan="3">Candidates</th>
-    </tr>
-
-    <tr>
-      <td>Publish names and party information for 100% of candidates in above elections</td>
-      <td class="partial">Partially met</td>
-      <td>We had at least one by-election with no candidates listed. We developed a bot to point to elections where we
-        don't have candidates to help direct volunteer efforts. We think we're on top of this now.
-      </td>
-    </tr>
-    <tr>
-      <td>Publish email addresses for XX% of candidates</td>
-      <td>n/a</td>
-      <td>We forgot to set ourselves a target. We had email addresses for 17.5% of candidates for 3 May</td>
-    </tr>
-    <tr>
-      <td>Publish at least one social media profile for XX% of candidates</td>
-      <td>n/a</td>
-      <td>We also forgot to set a target here, but 12.7% had a twitter; 23.6% candidates had at least one contact
-        detail
-      </td>
-    </tr>
-
-
-    <tr>
-      <th colspan="3">Polling locations</th>
-    </tr>
-
-    <tr>
-      <td>Publish polling location data for 75% of councils with elections in May 2018</td>
-      <td class="met">Met</td>
-      <td>83% of councils (or 87% coverage of the 18+ population in areas with elections)</td>
-    </tr>
-    <tr>
-      <td>Publish polling location data for 100% of the 32 London boroughs, Birmingham and Manchester</td>
-      <td class="met">Nearly met</td>
-      <td>Missed one London borough due to technical issues</td>
-    </tr>
-
-
-
-    <tr>
-      <th colspan="3">Results</th>
-    </tr>
-    <tr>
-      <td>Publish winning candidate data and vote count for 100% of results at May 2018 elections</td>
-      <td class="met">Met</td>
-      <td>Astounding!</td>
-    </tr>
-  </tbody>
+<tr>
+<td>100% of elections at district council level or above, including by-elections, identified by an election ID
+</td>
+<td class="partial">Partially met</td>
+<td>We know we missed some by-elections in the months following the general election, but believe we've had full
+coverage since late Autumn 2017.
+</td>
+</tr>
+<tr>
+<td>Maintain a published list of these elections</td>
+<td class="met">Met</td>
+<td></td>
+</tr>
+<tr>
+<td>Explore mechanisms to increase accuracy of notification &amp; confirmation of election</td>
+<td class="met">Met?</td>
+<td>We developed an 'election radar' tool to help automate notification and work closely with leading
+election-spotters to increase our accuracy
+</td>
+</tr>
 </table>
+</div>
 
+<div class="ds-table">
+<table class="ds-card">
+<caption>Candidates</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Publish names and party information for 100% of candidates in above elections</td>
+<td class="partial">Partially met</td>
+<td>We had at least one by-election with no candidates listed. We developed a bot to point to elections where we
+don't have candidates to help direct volunteer efforts. We think we're on top of this now.
+</td>
+</tr>
+<tr>
+<td>Publish email addresses for XX% of candidates</td>
+<td>n/a</td>
+<td>We forgot to set ourselves a target. We had email addresses for 17.5% of candidates for 3 May</td>
+</tr>
+<tr>
+<td>Publish at least one social media profile for XX% of candidates</td>
+<td>n/a</td>
+<td>We also forgot to set a target here, but 12.7% had a twitter; 23.6% candidates had at least one contact
+detail
+</td>
+</tr>
+</table>
+</div>
 
+<div class="ds-table">
+<table class="ds-card">
+<caption>Polling Locations</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Publish polling location data for 75% of councils with elections in May 2018</td>
+<td class="met">Met</td>
+<td>83% of councils (or 87% coverage of the 18+ population in areas with elections)</td>
+</tr>
+<tr>
+<td>Publish polling location data for 100% of the 32 London boroughs, Birmingham and Manchester</td>
+<td class="met">Nearly met</td>
+<td>Missed one London borough due to technical issues</td>
+</tr>
+</table>
+</div>
 
-<table class="scorecard">
+<div class="ds-table">
+<table class="ds-card">
+<caption>Results</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Publish winning candidate data and vote count for 100% of results at May 2018 elections</td>
+<td class="met">Met</td>
+<td>Astounding!</td>
+</tr>
+</table>
+</div>
+
+<div class="ds-table">
+<table class="ds-card">
 <caption>Apps</caption>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>Run improved Where Do I Vote? service</td>
-      <td class="met">Met</td>
-      <td>We made improvements based on 2017 user feedback. 96% users found what they were looking for (three-point
-        improvement on 2017)
-      </td>
-    </tr>
-    <tr>
-      <td>Run improved Who Can I Vote For? service</td>
-      <td>Unknown</td>
-      <td>We don't have the satisfaction score for Who last year</td>
-    </tr>
-    <tr>
-      <td>Full set of statements from candidates in 20 marginal London borough wards for May 2018</td>
-      <td class="not-met">Not met</td>
-      <td>We lacked capacity to chase individual candidates here</td>
-    </tr>
-    <tr>
-      <td>Find support for ElectionLeaflets.org (talk to five academic, cultural or heritage institutions and media
-        companies) or close it down
-      </td>
-      <td class="not-met">Not met</td>
-      <td>Chats with academics, reached out to museums, no chance of financial support, need to shut it down</td>
-    </tr>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Run improved Where Do I Vote? service</td>
+<td class="met">Met</td>
+<td>We made improvements based on 2017 user feedback. 96% users found what they were looking for (three-point
+improvement on 2017)
+</td>
+</tr>
+<tr>
+<td>Run improved Who Can I Vote For? service</td>
+<td>Unknown</td>
+<td>We don't have the satisfaction score for Who last year</td>
+</tr>
+<tr>
+<td>Full set of statements from candidates in 20 marginal London borough wards for May 2018</td>
+<td class="not-met">Not met</td>
+<td>We lacked capacity to chase individual candidates here</td>
+</tr>
+<tr>
+<td>Find support for ElectionLeaflets.org (talk to five academic, cultural or heritage institutions and media
+companies) or close it down
+</td>
+<td class="not-met">Not met</td>
+<td>Chats with academics, reached out to museums, no chance of financial support, need to shut it down</td>
+</tr>
 </table>
+</div>
 
-
-
-<table class="scorecard">
+<div class="ds-table">
+<table class="ds-card">
 <caption>Reach/impact</caption>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
 
-  <tbody>
-    <tr>
-      <td>Help 250,000 people engage with election information across Data and Apps</td>
-      <td class="met">Met</td>
-      <td>1.1m total hits to the APIs (NB. This includes repeat uses by the same person.)</td>
-    </tr>
-    <tr>
-      <td>Greater percentage of users find Who and Where useful (vs 2016 previous comparable elections)</td>
-      <td class="partial">Partially met</td>
-      <td>96% on Where (up from 93.5% last year); 22% on Who (unknown in 2017)</td>
-    </tr>
-    <tr>
-      <td>Users on Who Can I Vote For? spend long enough on the pages to read the information</td>
-      <td class="partial">Partially met</td>
-      <td>The average user spent two-and-a-half minutes on the site in the week running up to 3 May.</td>
-    </tr>
-  </tbody>
+<tr>
+<td>Help 250,000 people engage with election information across Data and Apps</td>
+<td class="met">Met</td>
+<td>1.1m total hits to the APIs (NB. This includes repeat uses by the same person.)</td>
+</tr>
+<tr>
+<td>Greater percentage of users find Who and Where useful (vs 2016 previous comparable elections)</td>
+<td class="partial">Partially met</td>
+<td>96% on Where (up from 93.5% last year); 22% on Who (unknown in 2017)</td>
+</tr>
+<tr>
+<td>Users on Who Can I Vote For? spend long enough on the pages to read the information</td>
+<td class="partial">Partially met</td>
+<td>The average user spent two-and-a-half minutes on the site in the week running up to 3 May.</td>
+</tr>
+</table>
+</div>
+
+<h2>Club</h2>
+
+<div class="ds-table">
+<table class="ds-card">
+<caption>Board</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>New board of directors</td>
+<td class="met">Met</td>
+<td><a href="/blog/2017/12/01/weve-got-board/">News in this report</a></td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Funding</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Raise £150,000 of new funding beyond existing committed funds</td>
+<td class="not-met">Not met</td>
+<td>We've had a lot of chats, but nothing committed yet</td>
+</tr>
+<tr>
+<td>Make sales to local authorities or Cabinet Office</td>
+<td class="not-met">Not met</td>
+<td>We met the Cabinet Office, but it's unclear as to whether they could fund; local authorities responses
+varied,
+but did not seem promising (yet)
+</td>
+</tr>
+<tr>
+<td>Test new approaches to individual member donations</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Build better relationships with funders</caption>
+
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Publish weekly blog</td>
+<td class="partial">Partially met</td>
+<td></td>
+</tr>
+<tr>
+<td>Send monthly newsletter</td>
+<td class="partial">Partially met</td>
+<td></td>
+</tr>
+<tr>
+<td>Plan clear onboarding process</td>
+<td class="not-met">Not met</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Diversity</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Make effort to understand diversity of members, partners and end users</td>
+<td class="not-met">Not met</td>
+<td>We were offered some help here but that fell through â we need to pursue this harder</td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Make best efforts to ensure club is reflective of UK population</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Understand best practices through meeting with three well-regarded organisations</td>
+<td class="not-met">Not started</td>
+<td>Ditto</td>
+</tr>
+<tr>
+<td>Publish a code of conduct</td>
+<td class="met">Met</td>
+<td><a href="https://democracyclub.org.uk/code-of-conduct/">Read it here</a></td>
+</tr>
+<tr>
+<td>Design appropriate approach for the club [to improve its diversity]</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Research</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Write research plan to cover end users and partner organisations</td>
+<td class="partial">Partially met</td>
+<td>Several volunteers helped us begin to design this work, but time ran out</td>
+</tr>
+<tr>
+<td>React to research discoveries with new approach or prototype products</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Other</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Plan for personal development for staff</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+</table>
+</div>
+
+<div class="ds-table">
+<table class="ds-card">
+<caption>Additional data sources</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+
+<tr>
+<td>Start work on open historical results database</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+<tr>
+<td>Ensure 50% of May 2018 candidate pages on Who Can I Vote For? are linked to local manifestos</td>
+<td class="not-met">Not met</td>
+<td>Over 6,000 candidate pages linked to a local manifesto, but this represented only 39% of all candidates.
+Over
+11,000 candidates (72%) could be linked to at least one piece of information on a local party, which is a
+step
+forward.
+</td>
+</tr>
+</table>
+</div>
+<div class="ds-table">
+<table class="ds-card">
+<caption>Do something not related to an election</caption>
+<tr>
+<th>Goal</th>
+<th>Met?</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td>Begin work on the UK representatives database</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+<tr>
+<th>Do something offline, potentially</th>
+</tr>
+<tr>
+<td>London 2018 candidate debates in 20 wards</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+<tr>
+<td>Tools for door-to-door organising (could be awareness, issues, registration, GOTV)</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+<tr>
+<td>Member-organised meetups</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
+<tr>
+<td>Win new project grant to review UK civic education and design proposal for moonshot project</td>
+<td class="not-met">Not started</td>
+<td></td>
+</tr>
 </table>
 
-
-<table class="scorecard">
-<caption>Club</caption>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <th colspan="3">Board</th>
-    </tr>
-    <tr>
-      <td>New board of directors</td>
-      <td class="met">Met</td>
-      <td><a href="/blog/2017/12/01/weve-got-board/">News in this report</a></td>
-    </tr>
-    <tr>
-      <th colspan="3">Funding</th>
-    </tr>
-    <tr>
-      <td>Raise £150,000 of new funding beyond existing committed funds</td>
-      <td class="not-met">Not met</td>
-      <td>We've had a lot of chats, but nothing committed yet</td>
-    </tr>
-    <tr>
-      <td>Make sales to local authorities or Cabinet Office</td>
-      <td class="not-met">Not met</td>
-      <td>We met the Cabinet Office, but it's unclear as to whether they could fund; local authorities responses varied,
-        but did not seem promising (yet)
-      </td>
-    </tr>
-    <tr>
-      <td>Test new approaches to individual member donations</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="3">Build better relationship with members</th>
-    </tr>
-    <tr>
-      <td>Publish weekly blog</td>
-      <td class="partial">Partially met</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Send monthly newsletter</td>
-      <td class="partial">Partially met</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Plan clear onboarding process</td>
-      <td class="not-met">Not met</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="3">Diversity</th>
-    </tr>
-    <tr>
-      <td>Make effort to understand diversity of members, partners and end users</td>
-      <td class="not-met">Not met</td>
-      <td>We were offered some help here but that fell through â we need to pursue this harder</td>
-    </tr>
-    <tr>
-      <th colspan="3">Make best efforts to ensure club is reflective of UK population</th>
-    </tr>
-    <tr>
-      <td>Understand best practices through meeting with three well-regarded organisations</td>
-      <td class="not-met">Not started</td>
-      <td>Ditto</td>
-    </tr>
-    <tr>
-      <td>Publish a code of conduct</td>
-      <td class="met">Met</td>
-      <td><a href="https://democracyclub.org.uk/code-of-conduct/">Read it here</a></td>
-    </tr>
-    <tr>
-      <td>Design appropriate approach for the club [to improve its diversity]</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="3">Research</th>
-    </tr>
-    <tr>
-      <td>Write research plan to cover end users and partner organisations</td>
-      <td class="partial">Partially met</td>
-      <td>Several volunteers helped us begin to design this work, but time ran out</td>
-    </tr>
-    <tr>
-      <td>React to research discoveries with new approach or prototype products</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="3">Other</th>
-    </tr>
-    <tr>
-      <td>Plan for personal development for staff</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-<table class="scorecard">
-  <caption>Labs</caption>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Met?</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <th colspan="3">Additional data sources</th>
-    </tr>
-    <tr>
-      <td>Start work on open historical results database</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ensure 50% of May 2018 candidate pages on Who Can I Vote For? are linked to local manifestos</td>
-      <td class="not-met">Not met</td>
-      <td>Over 6,000 candidate pages linked to a local manifesto, but this represented only 39% of all candidates. Over
-        11,000 candidates (72%) could be linked to at least one piece of information on a local party, which is a step
-        forward.
-      </td>
-    </tr>
-    <tr>
-      <th colspan="3">Do something not related to an election</th>
-    </tr>
-    <tr>
-      <td>Begin work on the UK representatives database</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="3">Do something offline, potentially</th>
-    </tr>
-    <tr>
-      <td>London 2018 candidate debates in 20 wards</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tools for door-to-door organising (could be awareness, issues, registration, GOTV)</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Member-organised meetups</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Win new project grant to review UK civic education and design proposal for moonshot project</td>
-      <td class="not-met">Not started</td>
-      <td></td>
-    </tr>
-  </tbody>
-
-</table>
-
-We will seek to produce a similar list of goals for the next election year. Drafts for feedback and the final list will be published on the Democracy Club blog.
+We will seek to produce a similar list of goals for the next election year. Drafts for feedback and the final
+list
+will be published on the Democracy Club blog.
 
 
 {% endfilter %}
-</article>
+</div>
 
 {% endblock content %}

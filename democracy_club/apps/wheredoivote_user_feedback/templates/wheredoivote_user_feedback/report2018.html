@@ -1,11 +1,11 @@
 {% extends "wheredoivote_user_feedback/report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
-
+{# fmt:off #}
 {% block title %}Where Do I Vote - User Feedback May 2018{% endblock title %}
 
 {% block content %}
-<article id="report">
+<div id="report" class="ds-stack-smaller">
 {% filter markdown %}
 
 # Where Do I Vote - User Feedback May 2018
@@ -22,32 +22,30 @@ From midnight on Monday 30 May to close of polls on Thursday 3 May, we collected
 
 {% endfilter %}
 
-<table>
-    <thead>
-      <tr>
-        <th>Found useful</th>
-        <th class="number">Number</th>
-        <th class="number">Percent</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Yes</td>
-        <td class="number">1,645</td>
-        <td class="number">96.14%</td>
-      </tr>
-      <tr>
-        <td>No</td>
-        <td class="number">66</td>
-        <td class="number">3.86%</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td class="number">1,711</td>
-        <td class="number">&nbsp;</td>
-      </tr>
-    </tbody>
-</table>
+<div class="ds-table">
+    <table>
+        <tr>
+            <th>Found useful</th>
+            <th>Number</th>
+            <th>Percent</th>
+        </tr>
+        <tr>
+            <td>Yes</td>
+            <td>1,645</td>
+            <td>96.14%</td>
+        </tr>
+        <tr>
+            <td>No</td>
+            <td>66</td>
+            <td>3.86%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>1,711</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
 
 {% filter markdown %}
 
@@ -190,6 +188,6 @@ The most important thing we can do to provide value to users is to answer the qu
 
 
 {% endfilter %}
-</article>
+</div>
 
 {% endblock content %}

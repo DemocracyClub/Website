@@ -1,22 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="site-wrapper__body-text">
-  {% block page_heading %}{% endblock page_heading %}
-
-  <nav class="inline_page_nav">
+<nav class="ds-subnav" aria-label="true">
     <ul>
-      <li class="{% if request.path|slice:"-7:" == "/about/" %} nav-site__item--active{% endif %}"><a href="{% url "about" %}">About</a></li>
-      <li class="{% if request.path|slice:"-6:" == "/team/" %} nav-site__item--active{% endif %}"><a href="{% url "team" %}">The Team</a></li>
-      <li class="{% if request.path|slice:"-6:" == "/jobs/" %} nav-site__item--active{% endif %}"><a href="{% url "jobs" %}">Jobs</a></li>
-      <li class="{% if request.path|slice:"-9:" == "/funding/" %} nav-site__item--active{% endif %}"><a href="{% url "funding" %}">Funding</a></li>
+        <li>
+            <a href="{% url "about" %}">About</a>
+        </li>
+        <li>
+            <a href="{% url "team" %}">The Team</a>
+        </li>
+        <li>
+            <a href="{% url "jobs" %}">Jobs</a>
+        </li>
+        <li>
+            <a href="{% url "funding" %}">Funding</a>
+        </li>
     </ul>
-  </nav>
+</nav>
 
-  {% block main_content %}
+{% block page_heading %}{% endblock page_heading %}
 
-  {% endblock main_content %}
+{% block main_content %}
 
-
-</div>
+{% endblock main_content %}
 
 {% endblock %}

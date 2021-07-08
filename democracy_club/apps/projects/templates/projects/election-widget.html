@@ -4,55 +4,54 @@ Election widget
 {% endblock %}
 
 {% block content %}
-  <article>
-  <h1>Election widget</h1>
+<div class="ds-stack-smaller">
+    <h1>Election widget</h1>
     <p>You can add Democracy Club’s election widget to any website.</p>
-  <figure>
-    <noscript>
-      <a href="https://whocanivotefor.co.uk">Find election information at
-        <span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk</span></a>
-    </noscript>
-    <div id="widget-area">
-      <div id="dc_wdiv" aria-live="polite" role="region" data-candidates="true"></div>
-      <script type="text/javascript"
-        src="https://widget.wheredoivote.co.uk/wdiv.js">
-      </script>
-    </div>
-    <figcaption>
-      Live data varies, so results might not show for example postcodes.
-      We tend not to have data outside of major elections, <a href="{% url "contact" %}">contact us</a>
-      if you'd like a demo.
-    </figcaption>
-  </figure>
+    <figure>
+        <noscript>
+            <a href="https://whocanivotefor.co.uk">Find election information at
+                <span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk</span></a>
+        </noscript>
+        <div id="widget-area">
+            <div id="dc_wdiv" aria-live="polite" role="region" data-candidates="true"></div>
+            <script type="text/javascript" src="https://widget.wheredoivote.co.uk/wdiv.js">
+            </script>
+        </div>
+        <div class="ds-padded">
+            Live data varies, so results might not show for example postcodes.
+            We tend not to have data outside of major elections, <a href="{% url "contact" %}">contact us</a>
+            if you'd like a demo.
+        </div>
+    </figure>
 
     <p>First, choose from the options below and hit ‘Generate’.</p>
 
 
 
-<form id="widget-options" class="form form-inline">
-    <div class="form-group">
-      <fieldset>
-        <label for="no-lang" class="block-label selection-button-radio">
-          <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
-          In English only
-        </label>
-        <label for="en" class="block-label selection-button-radio">
-          <input type="radio" name="language" id="en" value="en">
-          With language toggle (Default English)
-        </label>
-        <label for="cy" class="block-label selection-button-radio">
-          <input type="radio" name="language" id="cy" value="cy">
-          With language toggle (Default Welsh)
-        </label>
-      </fieldset>
-    </div>
-    <button>Generate</button>
-</form>
+    <form id="widget-options" class="form form-inline">
+        <div class="form-group">
+            <fieldset>
+                <label for="no-lang" class="block-label selection-button-radio">
+                    <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
+                    In English only
+                </label>
+                <label for="en" class="block-label selection-button-radio">
+                    <input type="radio" name="language" id="en" value="en">
+                    With language toggle (Default English)
+                </label>
+                <label for="cy" class="block-label selection-button-radio">
+                    <input type="radio" name="language" id="cy" value="cy">
+                    With language toggle (Default Welsh)
+                </label>
+            </fieldset>
+        </div>
+        <button>Generate</button>
+    </form>
 
     <p>Second, use the code to embed the widget in your website.</p>
 
-<div id="code-area">
-  <pre><code>&lt;noscript&gt;
+    <pre class="ds-codeblock"><code>
+&lt;noscript&gt;
 &lt;a href="https://whocanivotefor.co.uk">Find election information at
 &lt;span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;
 &lt;/noscript&gt;
@@ -60,72 +59,72 @@ Election widget
 &lt;script type="text/javascript"
   src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
 &lt;/script&gt;
-  </code></pre>
+</code></pre>
+
+
+    <script>
+        var form = document.querySelector('#widget-options');
+        if (form) {
+            form.addEventListener('submit', handleWidgetOptions);
+        }
+
+        function handleWidgetOptions(event) {
+            event.preventDefault();
+            createWidgetVersion(form.elements.language.value);
+        }
+
+        function getEmbedCode(customAttributes) {
+            return '<pre><code>&lt;noscript&gt;\n' +
+                '&lt;a href=&quot;https://whocanivotefor.co.uk&quot;&gt;Find election information at\n' +
+                '&lt;span aria-label=&quot;Who Can I Vote For&quot;&gt;WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;' +
+                '&lt;/noscript&gt;\n' +
+                '&lt;div id="dc_wdiv" ' + customAttributes + '&gt;&lt;/div&gt;\n' +
+                '&lt;script type="text/javascript"\n' +
+                '  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;\n' +
+                '&lt;/script&gt;\n' +
+                '</code></pre>\n';
+        }
+
+        function makeAttributeList(language) {
+            var attrs = '';
+            if ((language === 'en') || (language === 'cy')) {
+                attrs = 'data-language="' + language + '" ';
+            }
+            return attrs + 'aria-live="polite" role="region" data-candidates="true"';
+        }
+
+        function makeWidget(language) {
+            var div = document.createElement('div');
+            div.setAttribute('id', 'dc_wdiv');
+            if ((language === 'en') || (language === 'cy')) {
+                div.setAttribute('data-language', language);
+            }
+            div.setAttribute('aria-live', 'polite');
+            div.setAttribute('role', 'region');
+            div.setAttribute('data-candidates', 'true');
+            return div;
+        }
+
+        function makeScript() {
+            var script = document.createElement('script');
+            script.type = "text/javascript";
+            script.src = "https://widget.wheredoivote.co.uk/wdiv.js";
+            return script;
+        }
+
+        function createWidgetVersion(language) {
+            var widgetArea = document.querySelector('#widget-area');
+            var codeArea = document.querySelector('#code-area');
+            var widget = makeWidget(language);
+            var script = makeScript();
+            var embedCode = getEmbedCode(makeAttributeList(language));
+            widgetArea.innerHTML = '';
+            widgetArea.appendChild(widget);
+            widgetArea.appendChild(script);
+            codeArea.innerHTML = embedCode;
+        }
+    </script>
+
+
 </div>
-
-  <script>
-  var form = document.querySelector('#widget-options');
-  if (form) {
-    form.addEventListener('submit', handleWidgetOptions);
-  }
-
-  function handleWidgetOptions(event) {
-    event.preventDefault();
-    createWidgetVersion(form.elements.language.value);
-  }
-
-  function getEmbedCode(customAttributes) {
-    return '<pre><code>&lt;noscript&gt;\n' +
-      '&lt;a href=&quot;https://whocanivotefor.co.uk&quot;&gt;Find election information at\n' +
-      '&lt;span aria-label=&quot;Who Can I Vote For&quot;&gt;WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;' +
-      '&lt;/noscript&gt;\n' +
-      '&lt;div id="dc_wdiv" '+ customAttributes + '&gt;&lt;/div&gt;\n' +
-      '&lt;script type="text/javascript"\n' +
-      '  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;\n' +
-      '&lt;/script&gt;\n' +
-      '</code></pre>\n';
-  }
-
-  function makeAttributeList(language) {
-    var attrs = '';
-    if ((language === 'en') || (language === 'cy')) {
-      attrs = 'data-language="' + language + '" ';
-    }
-    return attrs + 'aria-live="polite" role="region" data-candidates="true"';
-  }
-
-  function makeWidget(language) {
-    var div = document.createElement('div');
-    div.setAttribute('id', 'dc_wdiv');
-    if ((language === 'en') || (language === 'cy')) {
-      div.setAttribute('data-language', language);
-    }
-    div.setAttribute('aria-live', 'polite');
-    div.setAttribute('role', 'region');
-    div.setAttribute('data-candidates', 'true');
-    return div;
-  }
-
-  function makeScript() {
-    var script = document.createElement('script');
-    script.type = "text/javascript";
-    script.src = "https://widget.wheredoivote.co.uk/wdiv.js";
-    return script;
-  }
-
-  function createWidgetVersion(language) {
-    var widgetArea = document.querySelector('#widget-area');
-    var codeArea = document.querySelector('#code-area');
-    var widget = makeWidget(language);
-    var script = makeScript();
-    var embedCode = getEmbedCode(makeAttributeList(language));
-    widgetArea.innerHTML = '';
-    widgetArea.appendChild(widget);
-    widgetArea.appendChild(script);
-    codeArea.innerHTML = embedCode;
-  }
-</script>
-
-
-  </article>
 {% endblock %}
