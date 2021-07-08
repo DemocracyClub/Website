@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="ds-block-centered ds-text-centered ds-stack">
     <div class="ds-cluster-center">
         <ul>
@@ -18,7 +20,8 @@
     </div>
     <div class="ds-copyright ds-text-centered">
         <a href="https://democracyclub.org.uk/">
-            <img class="ds-padded" src="https://DemocracyClub.github.io/design-system/images/logo_white_text.svg" alt="Democracy Club Home" />
+            <img src="{%  static "images/logo_icon.svg" %}" alt="" />
+            <span>democracy club</span>
         </a>
         <p>Copyright &copy; {% now 'Y' %} Democracy Club</p>
         <p>Community Interest Company</p>
