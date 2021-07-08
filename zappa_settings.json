@@ -14,7 +14,6 @@
             "*.log",
             "*.pyc",
             "*.rar",
-            "*.svg",
             "babel",
             "boto3*",
             "botocore*",
