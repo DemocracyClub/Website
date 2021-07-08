@@ -1,7 +1,6 @@
 import markdown_deux
 from django.conf import settings
 from django.template import Template, RequestContext
-from django.template.loader import render_to_string
 from django.views.generic import TemplateView
 
 
