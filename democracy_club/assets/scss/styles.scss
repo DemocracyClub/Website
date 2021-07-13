@@ -105,3 +105,9 @@ p {
     @extend .ds-table;
     width: 100%;
 }
+
+// temp fix while scoped to center logo and copyright in footer
+.ds-copyright {
+    a {margin-right: 0rem !important;}
+    p {max-width: 90ch;}
+}
