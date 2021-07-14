@@ -10,9 +10,8 @@
             {% stylesheet 'styles' %}
         {% endblock extra_site_css %}
         {% block site_meta %}
-
+            <link rel="shortcut icon" href="{%  static 'images/logo_icon.svg' %}">
             <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
-
             <link rel="manifest" href="{% static "manifest.json" %}">
             <meta property="fb:pages" content="316731041785" />
         {% endblock site_meta %}
@@ -20,6 +19,7 @@
         {% block base_og_tags %}
             <meta property="fb:app_id" content="262795130596272" />
             <meta property="og:url" content="https://democracyclub.org.uk{{ request.path }}" />
+            <meta name="image" property="og:image" content="{% static 'images/logo_icon.svg' %}" />
         {% endblock base_og_tags %}
         <script src="{% static 'js/global.js' %}"></script>
     </head>
@@ -30,7 +30,7 @@
             {% block site_menu %}
                 <header class="ds-header">
                     <a class="ds-logo" href="/">
-                        <img src="{%  static "images/logo_icon.svg" %}" alt="" />
+                        <img src="{%  static 'images/logo_icon.svg' %}" alt="" />
                         <span>democracy<br>club</span>
                     </a>
 
