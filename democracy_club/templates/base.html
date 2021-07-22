@@ -17,9 +17,18 @@
         {% endblock site_meta %}
 
         {% block base_og_tags %}
+            <meta property="og:type" content="website">
             <meta property="fb:app_id" content="262795130596272" />
             <meta property="og:url" content="https://democracyclub.org.uk{{ request.path }}" />
-            <meta name="image" property="og:image" content="{% static 'images/logo_icon.png' %}" />
+            <meta property="og:title" content="{{ site_title }}" />
+            <meta property="og:description" content="We build digital tools to support everyone’s participation in UK democracy." />
+            <meta property="og:image" content="{% static 'images/logo_icon.png' %}" />
+            <!-- Twitter -->
+            <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://democracyclub.org.uk/">
+            <meta property="twitter:title" content="Democracy Club">
+            <meta property="twitter:description" content="We build digital tools to support everyone’s participation in UK democracy.">
+            <meta property="twitter:image" content="{% static 'images/logo_icon.png' %}">
         {% endblock base_og_tags %}
         <script src="{% static 'js/global.js' %}"></script>
     </head>
