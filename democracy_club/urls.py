@@ -18,8 +18,13 @@ admin.autodiscover()
 handler500 = "dc_utils.urls.dc_server_error"
 
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     # Uncomment the next line to enable the admin:
+    path("sentry-debug/", trigger_error),
     path("admin/", admin.site.urls),
     path(
         "logout/",
