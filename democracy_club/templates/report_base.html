@@ -45,8 +45,8 @@
         toc.classList.remove("sticky");
       }
     }
-
-    details.onclick = function(e){
+    var details_content = details.getElementsByTagName("ul")[0];
+    details_content.onclick = function(e){
       details.removeAttribute("open");
     }
   </script>
