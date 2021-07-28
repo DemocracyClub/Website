@@ -112,25 +112,25 @@ Within this context, we fully expected to fall short of our self-imposed target 
 
 Key to achieving this result was the fantastic team of people we were able to bring together. This included one full-time and two part-time developers, as well as two people handling the council communications (including one to focus on Scotland and Wales - see below). This gave us the capacity to handle the large amounts of data we gathered: we are especially pleased to say that, with the exception of two late submissions, all council areas were online by the end of April, meaning that the number of users met with a ‘look at your poll card’ message in election week was very low.
 
-**Improving our processes**
+#### Improving our processes
 
 During the Covid-enforced break in 2020, we made two significant changes to the way we handle polling station data internally. The first was the deployment of a bespoke uploading tool, which allows team members handling the data collection to add polling station files directly to GitHub without the hassle of first adding them to online cloud storage. This sped up the overall process while improving communication within the polling station finder team (ensuring, for example, that no files were able to fall through the cracks, which has happened on occasion in previous elections).
 
 The second change relates to our import process. We now lean heavily on the Unique Property Reference Number (UPRN) and Ordnance Survey’s Addressbase to make our checking process quicker while still catching issues in the council-supplied data. The result was a faster import process, with more errors and ‘edge cases’ (for example, postcodes which cross council ward or local authority boundaries) caught and mitigated. Relatedly, we have also put more work into feeding these issues back to councils themselves, hopefully improving the underlying data for future elections.
 
-**Expanding partnerships**
+#### Expanding partnerships
 
 The other notable development during 2021 was our much closer working relationship with external organisations, notably the Electoral Commission. We held weekly meetings with the Commission’s communications team, who were able to bring in their regional organisers to assist with the collection of polling station data. This had the effect of introducing a wide range of people within the Commission to the practical work of data collection, and we intend to build further upon this relationship in 2022.
 
 During the election we also received help from the Association of Electoral Administrators (who circulated our call for data among their members), as well as the election teams in a number of Combined Authorities - by 6 May, we had all council areas in four of the six CAs holding elections. We were also contracted by London Elects to provide data for their own polling station finder.
 
-<div>
+<figure>
   <img src="{% static 'report_2021/LondonElects.png' %}" alt="'London Elects’ polling station finder">
-  <p><i>London Elects’ polling station finder</i></p>
-</div>
+  <figcaption>London Elects’ polling station finder</figcaption>
+</figure>
 
 
-**Scotland and Wales**
+#### Scotland and Wales
 
 In terms of data collection and coverage, Scotland and Wales provided our most radical improvement: both nations had 100% voting age population coverage, up from 73% and 50% respectively during GE 2019. 
 
@@ -142,11 +142,11 @@ Furthermore, Scottish elections are organised on a different basis than in Engla
 
 Working alongside the Scottish Electoral Commission team, the strategy we adopted was to approach the problem via the VJBs, whose remit often covers more than one council area (for example, Renfrewshire VJB serves Inverclyde, Renfrewshire, and East Renfrewshire Councils). The benefit of this method was that we were able to acquire data for multiple council areas via one point of contact. However, this meant that If we found issues in the data of a specific council, we did not have a clear line to the council’s election team.We also found that multiple council areas were combined in single files, leading to complications when working with the data. Additionally, we had some complaints from councils that the file export process took a very long time, (six hours in one case).As such, although the overall project was a success, we still have some way to go to make Scottish data collection as efficient as in England and Wales.
 
-**Areas for improvement**
+#### Areas for improvement
 
 It is clear that, in terms of council engagement, we have convincingly won the battle: the vast majority of councils now provide us with data as part of their usual election preparation. However, the data collection, cleaning and publishing process remains cumbersome, lengthy and ad-hoc, with many councils experiencing delays of up to a month before their data is online. At present we do not hold databases of polling place venues between elections: finding an easy method to do this would substantially improve the speed with which we could deploy the finder.
 
-**Next Steps for 2022:**
+#### Next Steps for 2022:
 
 - Discuss data management options with councils, with the goal of compiling lists of polling stations which persist between elections.
 
@@ -181,22 +181,25 @@ Compared to WCIVF, WDIV underwent only modest changes for the 2021 elections. Mo
 
 Lastly, we also added some extra information to WDIV, relevant for the 2021 elections. Prior to the elections we added cards to the postcode look up which advised people that they would have multiple ballots on the day (with a link to WCIVF), as well as information on how to work at an election (an interesting experiment, which divided opinion among electoral administrators!). We also added information regarding Covid-safe voting to the front page.
 
-<div>
+<figure>
   <img src="{% static 'report_2021/Renfrewshire.png' %}" alt="Renfrewshire">
-</div>
-<div>
+
   <img src="{% static 'report_2021/Orkney.png' %}" alt="Orkney">
-</div>
-<div>
+
   <img src="{% static 'report_2021/Glamorgan.png' %}" alt="Glamorgan">
-</div>
-<div>
+
   <img src="{% static 'report_2021/NeathPortTalbot.png' %}" alt="Neath Port Talbot">
-</div>
-<p><i>From top to bottom: our widget on the front page of Renfrewshire VJB, Orkney council’s dedicated ‘election information’ page, social media posts from Vale of Glamorgan council promoting our services, and the widget on Neath Port Talbot’s polling station page.</i></p>
+<figcaption>
+From top to bottom: our widget on the front page of Renfrewshire VJB, 
+Orkney council’s dedicated ‘election information’ page, social media posts 
+from Vale of Glamorgan council promoting our services, and the widget on 
+Neath Port Talbot’s polling station page.
+</figcaption>
+</figure>
 
 
-**Users and impact**
+
+#### Users and impact
 
 With the decision of social media platforms to link to the Electoral Commission website instead, we saw our visitor numbers plummet.Between 3-6 May WDIV received 268,779 individual visitors. This represents 38% of the traffic received over the same period of the 2019 local elections, and a mere 9% of the comparable period for the 2019 general election. This is the first time that WDIV’s traffic has fallen below WCIVF.
 
@@ -204,7 +207,7 @@ In terms of our overall organisational goals of making change in the state, we a
 
 However, the Electoral Commission site itself experienced some trouble during the day, including suffering a crash for around 60 minutes in the morning. Furthermore, because the Commission site did not feature a method for users to report bugs and other issues with the data, we potentially failed to spot as many polling day errors as we might have. We will be working with the Commission over the next year to avoid these issues in the future.
 
-**Next steps for 2022**
+#### Next steps for 2022
 
 - Bring WDIV within the design system
 - Work with the Electoral Commission to implement feedback forms on their own site
@@ -219,7 +222,7 @@ For 2021 specifically, we made much greater use of our ‘explainer’ system, a
 
 These modifications to the site so close to an election did not go entirely smoothly, as the rate of change introduced a small number of issues which took time to fix - problems with text or party logos, for example. We also did not manage to introduce all the changes we would have liked. Notably, planned explanations of the electoral process, descriptions of the roles and responsibilities of elected officials, and an overview of each election type were not added for lack of time.
 
-**Hustings, referendums, and parishes**
+#### Hustings, referendums, and parishes
 
 As usual, we collected some hustings information in Google Sheets and displayed these on WCIVF. With all in-person events cancelled, we were able to offer users links to a wide range of online hustings, especially for the English mayoral elections. We had some good feedback on this, with some sites specifically linking to us for hustings information (see, for example, [Bristol Student’s Union](https://web.archive.org/web/20210407133055/https://www.bristolsu.org.uk/articles/your-guide-to-local-elections)).
 
@@ -229,7 +232,7 @@ We also embarked on two experiments in new election types for 2021: [referendums
 
 We learnt a lot during these experiments, and would like to expand upon them for future elections. We received a number of enquiries from people (including from some principal and district council employees) requesting the addition of more polls or councils, and our user feedback also suggests there is considerable demand for ‘local’ council information on WCIVF. 
 
-**Users and feedback**
+#### Users and feedback
 
 As highlighted in our report on the 2019 election, WhoCanIVoteFor.co.uk is now widely used and trusted by citizens, parties, and the UK state.The popularity of the site has grown enormously. Between January-May 2019 we received 264,000 unique visitors. For the same period in 2021 we received almost 1.2 million. Our by-election coverage also receives a respectable level of attention (the two Waltham forest council by-elections on 10 June 2021 each received over 300 unique page views between SoPN and election day, for example). Indeed, despite the suspension of all elections for most of 2020, Google Analytics reports over 230,000 individual visitors between 1 March 2020 and 1 January 2021!
 
@@ -244,7 +247,7 @@ Significantly, WCIVF is making converts among local government, too: councils sh
 
 We’re delighted to say that WCIVF’s ratings jumped 14% this year, with 67% of election-week users answering the question ‘did you find what you were looking for?’ in the positive. This is a clear endorsement of the changes we made to the site in the weeks before polling day.
 
-**Next steps for 2022**
+#### Next steps for 2022
 
 - Complete our site improvements to add more explanations (especially for STV elections).
 - Review our hustings collection methods with an eye for establishing a more robust database of these events.
@@ -255,41 +258,63 @@ We’re delighted to say that WCIVF’s ratings jumped 14% this year, with 67% o
 
 We’re delighted to say that roughly half of all GB council websites either hosted our widget or linked directly to WhereDoIVote.co.uk for the May 2021 elections. Our tracking identifies 60 council widget users (although this is imprecise, and certainly undercounts the number by a significant margin), while an analysis of Google Analytics data identifies at least an additional 90. We’re especially pleased to note that two combined authorities (Liverpool and West of England) embedded the widget, while two others (Tees Valley and West Midlands) linked directly to WDIV. A range of other organisations and political parties also used our API or shared our services, including the Labour Party, Plaid Cymru, The Scottish National Party, and London Real (the party of London mayoral candidate Brian Rose). At least two dozen media organisations linked to WDIV or used the widget. 
 
-**API use**
+### API use
 
 Our API use presents something of a mixed bag for 2021. On the one hand, we had four major users who provided us with over a million postcode searches on election day alone. These were: The Electoral Commission’s website look-up, the Labour Party’s [‘I Will Vote’](https://iwillvote.org.uk/) website, Reach PLC’s [InYourArea.co.uk](https://www.inyourarea.co.uk/news/the-story-of-the-2021-local-elections-in-numbers-and-how-inyourarea-has-joined-forces-to-bring-you-the-most-complete-information/), and London Elects’ polling station finder. Our widget also saw widespread use (see below), including from The Times, which ‘forked’ (copied) our tool and applied their own styling, which was then displayed to users of their mobile app during election week. As far as we’re aware, this is the first example of our open-source widget design being used in this way.
 
 Unfortunately, problems with our reporting mean that we are only able to provide API user breakdown for election day itself. 
 
-**Election day searches 2021/05/06 00:00-22:00**
+<table class="ds-table">
+<caption>Election day searches 2021/05/06 00:00-22:00</caption>
+<tr>
+<th>User</th>
+<th>API calls</th>
+</tr>
+<tr>
+<td>Electoral Commission</td>
+<td>521,632</td>
+</tr>
+<tr>
+<td>Labour Party (IWillVote.org.uk)</td>
+<td>276,516</td>
+</tr>
+<tr>
+<td>Reach (InYourArea.co.uk)</td>
+<td>175,418</td>
+</tr>
+<tr>
+<td>Democracy Club widgets</td>
+<td>124,668</td>
+</tr>
+<tr>
+<td>London Elects</td>
+<td>109,593</td>
+</tr>
+<tr>
+<td>Times (forked widget)</td>
+<td>1,286</td>
+</tr>
+<tr>
+<td>ElectionLeaflets.org</td>
+<td>44</td>
+</tr>
 
-Electoral Commission - 521,632
+</table>
 
-Labour Party (IWillVote.org.uk) - 276,516
-
-Reach (InYourArea.co.uk) - 175,418
-
-Democracy Club widgets - 124,668
-
-London Elects - 109,593
-
-Times (forked widget) - 1,286
-
-ElectionLeaflets.org - 44
-
-<div>
+<figure>
   <img src="{% static 'report_2021/IYA.png' %}" alt="West of England Combined Authority"> 
-  <p><i>Reach PLC’s In Your Area widget featured on almost all of their local media sites</i></p>
-</div>
+  <figcaption>Reach PLC’s In Your Area widget featured on almost all of their local 
+media sites</figcaption>
+</figure>
 
 
 Unfortunately, however, we didn’t see an increase in the number of API users, something we had hoped to achieve at the start of the year. We were unable to convince the Scottish or Welsh governments or parliaments to use the API (or our own widget), had no interest in the API from other political parties, and other inquiries from charities did not appear to come to anything. We are also disappointed that no other media organisations explored the possibility of building their own tools using our data, despite the complexity of the elections providing (to our minds) a powerful case for doing so.
 
-**CSV use**
+### CSV use
 
 We had no media users of our csv candidate download for this election. However, it was used by a number of charities and research groups. For example, the Electoral Reform Society and House of Commons Library both produced research using the data. Our results data was used similarly, although we were, again, unable to convince any organisations to make use of this (a number of media organisations we spoke to said that they relied on the Press Association for results - despite PA not being able to offer vote totals, by-elections, or the granular level of detail provided by our database.) We were able to put the data to good use ourselves, however, displaying an interactive graph of results on the front page of WCIVF in the weeks after the election. 
 
-**Widget**
+### Widget
 
 We’re pleased to say that use of both our widgets continues to grow at a rapid rate. The number of postcode searches processed by our two widgets has jumped from roughly 40,000 during May 2019, to 108,000 across the week of the 2019 general election, to 125,000 on election day alone in 2021.
 
@@ -297,14 +322,14 @@ Widget users this year included a wide range of civic engagement organisations, 
 
 
 
-<div>
+<figure>
   <img src="{% static 'report_2021/WECA.png' %}" alt="West of England Combined Authority"> 
-  <p><i>West of England Combined Authority’s election page</i></p>
-</div>
-<div>
+  <figcaption>West of England Combined Authority’s election page</figcaption>
+</figure>
+<figure>
   <img src="{% static 'report_2021/OagbyWigston.png' %}" alt="‘Nifty’ - Oadby and Wigston council">
-  <p><i>Oadby & Wigston council’s stellar endorsement of our work</i></p>
-</div>
+  <figcaption>Oadby & Wigston council’s stellar endorsement of our work</figcaption>
+</figure>
 
 
 
@@ -327,7 +352,7 @@ Following the departure of two core team members after the 2019 general election
 
 However, we were able to secure extensions from our funders, in particular a 12 month extension from JRCT to the value of £50k to continue with candidates and to spike a representatives project. This meant that the Company was in a strong financial position heading into the 2021 elections. This allowed us to scale up quickly for the 2021 elections, re-employing two former staff members and hiring four new people. Of these six, three were employed for the election itself (two developers to assist with writing polling station import scripts, and one elections assistant to help with communications), while the other three are now full-time members of the team for 2021/2022 (including two developers). This will allow us to make significant improvements to our services well in advance of next May’s elections.
 
-**Acknowledgements** 
+## Acknowledgements
 
 The fantastic success of our polling station finder would have been impossible without the sterling work of our temporary elections staff: Alex, Kate, and Sean, who ensured that we not only gathered more data than ever before, but had it all online a week before polling day.
 
