@@ -15,45 +15,40 @@
 {% endblock og_tags %}
 
 {% block page_content %}
-<div class="ds-stack-smaller">
+<article class="ds-stack entry">
     <header>
-        <h2>{{ post.subject }}</h2>
-        <div role="contentinfo">
-            <p>
-                <h5>
-                    <span class="date">
-                        <time datetime="{{post.modified_on|date:"c"}}">{{post.created_on|date:"jS E Y"}}</time>
-                    </span>
-                </h5>
-                by
-                <span rel="author">
-                    {% if post.author.first_name == "Sym" %}
-                    <a href="https://twitter.com/symroe">
-                        {{post.author.first_name}}
-                        {{post.author.last_name}}
-                    </a>
-                    {% elif post.author.first_name == "Joe" %}
-                    <a href="https://twitter.com/j0e_m">
-                        {{post.author.first_name}}
-                        {{post.author.last_name}}
-                    </a>
-                    {% else %}
-                    {{post.author.first_name}}
-                    {{post.author.last_name}}
-                    {% endif %}
-                </span>
-            </p>
+        <h1>{{ post.subject }}</h1>
+        <div class="byline">
+          <address class="author">
+            By
+            {% if post.author.username == "symroe" %}
+            <a rel="author" href="https://twitter.com/symroe">
+                {{post.author.first_name}}
+                {{post.author.last_name}}
+            </a>
+            {% elif post.author.first_name == "Joe" %}
+            <a rel="author" href="https://twitter.com/j0e_m">
+                {{post.author.first_name}}
+                {{post.author.last_name}}
+            </a>
+            {% else %}
+            {{post.author.first_name}}
+            {{post.author.last_name}}
+            {% endif %}
+          </address>
+          on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
         </div>
+
     </header>
     {% if post.hero %}
     {% thumbnail post.hero "690" as im %}
     <img src="{{ im.url }}">
     {% endthumbnail %}
     {% endif %}
-    <div class="entry ds-stack-smaller">{{ post.rendered|safe|typogrify }}</div>
-</div>
+    {{ post.rendered|safe|typogrify }}
+</article>
 <div class="entry ds-stack-smaller">
-    <h3>Get in touch:</h3>
+    <h2>Get in touch:</h2>
     <p>
         Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
         <a href="https://twitter.com/democlub">tweet us</a>,
