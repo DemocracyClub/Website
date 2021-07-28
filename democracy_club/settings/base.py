@@ -199,9 +199,19 @@ MARKDOWN_DEUX_STYLES = {
 
 
 def blog_markdown(value):
-    import markdown_deux
+    import markdown
 
-    return markdown_deux.markdown(value, style="blog")
+    config = {
+        "extra": {
+            "footnotes": {"UNIQUE_IDS": True},
+        },
+    }
+
+    return markdown.markdown(
+        value,
+        extensions=["mdx_headdown", "extra", "footnotes", "smarty", "nl2br"],
+        extension_configs=config,
+    )
 
 
 MARKUP_RENDERER = blog_markdown
