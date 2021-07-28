@@ -107,8 +107,13 @@ The first UK election held during a global pandemic since 1918 posed unique chal
 
 Within this context, we fully expected to fall short of our self-imposed target of 300 (of 371) council areas by 6 May. In reality, we’re delighted to say we completely surpassed it, processing and deploying data for [335 areas](https://docs.google.com/spreadsheets/d/1zbRINslQKsB_d2gN1jMNS7oHDo-bdEUS_z02r7039jU/edit#gid=1280460335), for a total coverage of 93% of the GB voting age population. We’re especially happy to note that his coverage included all areas in Scotland, Wales, and Greater London. This result smashed our previous record of 266 council areas achieved during the 2019 general election, and we see no reason why we will not be able to cover every single area taking part in the 2022 elections.
 
-![Map of council areas covered by the polling station finder on election day](https://dc-blog-images.s3.amazonaws.com/2021-05-07/WhereDoIVote.co.uk%20coverage%206%20May%202021.png)
-*Map of council areas covered by the polling station finder on election day*
+<figure>
+  <img src="https://dc-blog-images.s3.amazonaws.com/2021-05-07/WhereDoIVote.
+co.uk%20coverage%206%20May%202021.png" alt="Map of council areas covered by the polling station finder on 
+election day">
+  <figcaption>Map of council areas covered by the polling station finder on 
+election day</figcaption>
+</figure>
 
 Key to achieving this result was the fantastic team of people we were able to bring together. This included one full-time and two part-time developers, as well as two people handling the council communications (including one to focus on Scotland and Wales - see below). This gave us the capacity to handle the large amounts of data we gathered: we are especially pleased to say that, with the exception of two late submissions, all council areas were online by the end of April, meaning that the number of users met with a ‘look at your poll card’ message in election week was very low.
 
