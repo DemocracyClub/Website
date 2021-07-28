@@ -102,6 +102,11 @@ $scope: false;
     width: 100%;
 }
 
+.entry img {
+  width:100%;
+  max-width: 100%;
+}
+
 address {
   display:inline;
 }
