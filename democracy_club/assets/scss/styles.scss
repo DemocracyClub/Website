@@ -102,11 +102,22 @@ $scope: false;
     width: 100%;
 }
 
-.entry img {
+img {
   width:100%;
   max-width: 100%;
 }
 
 address {
   display:inline;
+}
+
+
+figure {
+  @extend .ds-card;
+  img {
+    width:100%
+  }
+  figcaption {
+    @extend .ds-card-body
+  }
 }

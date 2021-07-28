@@ -181,21 +181,39 @@ Compared to WCIVF, WDIV underwent only modest changes for the 2021 elections. Mo
 
 Lastly, we also added some extra information to WDIV, relevant for the 2021 elections. Prior to the elections we added cards to the postcode look up which advised people that they would have multiple ballots on the day (with a link to WCIVF), as well as information on how to work at an election (an interesting experiment, which divided opinion among electoral administrators!). We also added information regarding Covid-safe voting to the front page.
 
+
 <figure>
   <img src="{% static 'report_2021/Renfrewshire.png' %}" alt="Renfrewshire">
+  <figcaption>
 
-  <img src="{% static 'report_2021/Orkney.png' %}" alt="Orkney">
+    Our widget on the front page of Renfrewshire VJB
+  </figcaption>
 
-  <img src="{% static 'report_2021/Glamorgan.png' %}" alt="Glamorgan">
-
-  <img src="{% static 'report_2021/NeathPortTalbot.png' %}" alt="Neath Port Talbot">
-<figcaption>
-From top to bottom: our widget on the front page of Renfrewshire VJB, 
-Orkney council’s dedicated ‘election information’ page, social media posts 
-from Vale of Glamorgan council promoting our services, and the widget on 
-Neath Port Talbot’s polling station page.
-</figcaption>
 </figure>
+
+<figure>
+  <img src="{% static 'report_2021/Orkney.png' %}" alt="Orkney">
+  <figcaption>
+    Orkney council’s dedicated ‘election information’ page
+  </figcaption>
+
+</figure>
+
+<figure>
+  <img src="{% static 'report_2021/Glamorgan.png' %}" alt="Glamorgan">
+  <figcaption>
+    Social media posts from Vale of Glamorgan council promoting our services,
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img src="{% static 'report_2021/NeathPortTalbot.png' %}" alt="Neath Port Talbot">
+  <figcaption>
+    The widget on Neath Port Talbot’s polling station page.
+  </figcaption>
+</figure>
+
 
 
 
