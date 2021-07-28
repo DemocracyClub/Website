@@ -6,7 +6,7 @@ git+https://github.com/DemocracyClub/dc_signup_form.git@2.1.0
 -e git+https://github.com/DemocracyClub/django-hermes.git#egg=django-hermes
 git+https://github.com/DemocracyClub/dc_django_utils.git@0.0.5
 git+https://github.com/chrisdrackett/django-typogrify.git
-git+https://github.com/DemocracyClub/design-system.git@0.1.4
+git+https://github.com/DemocracyClub/design-system.git@0.1.5
 beautifulsoup4==4.9.3
 django-braces==1.14.0
 django-cors-headers==1.1.0
