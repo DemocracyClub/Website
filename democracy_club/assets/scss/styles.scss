@@ -121,3 +121,19 @@ figure {
     @extend .ds-card-body
   }
 }
+
+@media print {
+  h2 {
+    page-break-before: always;
+  }
+  h3 {
+    page-break-before: always;
+  }
+  h2 + h3 {
+    page-break-before: avoid;
+  }
+  figure + h2, figure + h3, figure + h3 {
+    page-break-before: always;
+  }
+  #toc, nav, footer {display: none}
+}
