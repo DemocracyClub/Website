@@ -1,6 +1,10 @@
 {% load static %}
 
-# 2021 Report
+# Towards better elections — 2021
+
+
+<img src="{% static "images/maze_illustration_no_text.png" %}">
+
 
 ## Executive Summary
 
@@ -381,13 +385,15 @@ The fantastic success of our polling station finder would have been impossible w
 
 Andrew Teale and Stuart Orford provided invaluable help counting by-elections and checking our final list of seats and wards; Stuart also did much of the work collecting parish council information.
 
+As ever we are grateful to [our funders](/about/funding/#full-record-of-funders) for supporting our 
+work.
+
 Finally, thanks as always must go to our incomparable community of volunteers, who broke all the records this year for the speed and accuracy of their data collection and checking. 
 
 ## Appendix 1: WhoCanIVoteFor.co.uk data quality
 <div class="ds-table">
   <table>
-    <caption><h2></h2>
-    </caption>
+    <caption>Proportion of candidate profiles which had the following on 6 May</caption>
     <tr>
       <th>Election</th>
       <th>Images</th>
