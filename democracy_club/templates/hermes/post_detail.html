@@ -21,46 +21,46 @@
 {% endblock og_type %}
 
 {% block page_content %}
-<article class="ds-stack entry">
+  <article class="ds-stack entry">
     <header>
-        <h1>{{ post.subject }}</h1>
-        <div class="byline">
-          <address class="author">
-            By
-            {% if post.author.username == "symroe" %}
+      <h1>{{ post.subject }}</h1>
+      <div class="byline">
+        <address class="author">
+          By
+          {% if post.author.username == "symroe" %}
             <a rel="author" href="https://twitter.com/symroe">
-                {{post.author.first_name}}
-                {{post.author.last_name}}
+              {{post.author.first_name}}
+              {{post.author.last_name}}
             </a>
-            {% elif post.author.first_name == "Joe" %}
+          {% elif post.author.first_name == "Joe" %}
             <a rel="author" href="https://twitter.com/j0e_m">
-                {{post.author.first_name}}
-                {{post.author.last_name}}
+              {{post.author.first_name}}
+              {{post.author.last_name}}
             </a>
-            {% else %}
+          {% else %}
             {{post.author.first_name}}
             {{post.author.last_name}}
-            {% endif %}
-          </address>
-          on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
-        </div>
+          {% endif %}
+        </address>
+        on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
+      </div>
 
     </header>
     {% if post.hero %}
-    {% thumbnail post.hero "690" as im %}
-    <img src="{{ im.url }}">
-    {% endthumbnail %}
+      {% thumbnail post.hero "690" as im %}
+        <img src="{{ im.url }}">
+      {% endthumbnail %}
     {% endif %}
     {{ post.rendered|safe|typogrify }}
-</article>
-<div class="entry ds-stack-smaller">
+  </article>
+  <div class="entry ds-stack-smaller">
     <h2>Get in touch:</h2>
     <p>
-        Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
-        <a href="https://twitter.com/democlub">tweet us</a>,
-        post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
-        email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
-</div>
-</div>
+      Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
+      <a href="https://twitter.com/democlub">tweet us</a>,
+      post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
+      email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
+  </div>
+  </div>
 
 {% endblock %}
