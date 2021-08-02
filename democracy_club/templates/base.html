@@ -16,18 +16,11 @@
       <meta property="fb:pages" content="316731041785" />
     {% endblock site_meta %}
 
-    {% block og_description %}
-      <meta property="og:description" content="We build digital tools to support everyone’s participation in UK democracy." />
-    {% endblock og_description %}
-    {% block og_image %}
-      <meta property="og:image" content="{% static 'images/logo_icon.png' %}" />
-    {% endblock og_image %}
-    {% block og_title %}
-      <meta property="og:title" content="{{ site_title }}" />
-    {% endblock og_title %}
-    {% block og_type %}
-      <meta property="og:type" content="website">
-    {% endblock og_type %}
+      <meta property="og:description" content="{% block og_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description_content %}" />
+      <meta property="og:image" content="{% block og_image_content %}{% static 'images/logo_icon.png' %}{% endblock og_image_content %}" />
+      <meta property="og:title" content="{% block og_title_content %}{{ site_title }}{% endblock og_title_content %}" />
+      <meta property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
+
 
     {% block base_og_tags %}
       <meta property="fb:app_id" content="262795130596272" />
@@ -35,9 +28,6 @@
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://democracyclub.org.uk/">
-      <meta property="twitter:title" content="Democracy Club">
-      <meta property="twitter:description" content="We build digital tools to support everyone’s participation in UK democracy.">
-      <meta property="twitter:image" content="{% static 'images/logo_icon.png' %}">
     {% endblock base_og_tags %}
     <script src="{% static 'js/global.js' %}"></script>
   </head>
