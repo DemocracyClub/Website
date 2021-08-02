@@ -16,13 +16,22 @@
             <meta property="fb:pages" content="316731041785" />
         {% endblock site_meta %}
 
+        {% block og_description %}
+          <meta property="og:description" content="We build digital tools to support everyone’s participation in UK democracy." />
+        {% endblock og_description %}
+        {% block og_image %}
+          <meta property="og:image" content="{% static 'images/logo_icon.png' %}" />
+        {% endblock og_image %}
+        {% block og_title %}
+          <meta property="og:title" content="{{ site_title }}" />
+        {% endblock og_title %}
+        {% block og_type %}
+          <meta property="og:type" content="website">
+        {% endblock og_type %}
+
         {% block base_og_tags %}
-            <meta property="og:type" content="website">
             <meta property="fb:app_id" content="262795130596272" />
             <meta property="og:url" content="https://democracyclub.org.uk{{ request.path }}" />
-            <meta property="og:title" content="{{ site_title }}" />
-            <meta property="og:description" content="We build digital tools to support everyone’s participation in UK democracy." />
-            <meta property="og:image" content="{% static 'images/logo_icon.png' %}" />
             <!-- Twitter -->
             <meta property="twitter:card" content="summary_large_image">
             <meta property="twitter:url" content="https://democracyclub.org.uk/">
