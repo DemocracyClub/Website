@@ -19,7 +19,6 @@ This report outlines Democracy Club’s work and its measurable effects during t
 - Substantial increase in users of WhoCanIVoteFor.co.uk, and our widgets.
 - Secured excellent partnerships with London Elects and Reach PLC’s InYourArea.
 - Increased our media footprint, especially through our work with the Fawcett Society.
-- Increased our media footprint, especially through our work with the Fawcett Society.
 
 We also had some disappointments:
 
@@ -62,7 +61,7 @@ With this in mind, we took some time before May to speak with PR consultant [Gem
 
 **Our own research**
 
-Our devolved elections lead, Kate, had an article [published in Nation.Cymru[(https://nation.cymru/opinion/if-we-want-young-people-to-turn-out-for-the-senedd-vote-we-must-make-it-an-election-fit-for-digital-natives/)] on the need for greater election accessibility.
+Our devolved elections lead, Kate, had an article [published in Nation.Cymru](https://nation.cymru/opinion/if-we-want-young-people-to-turn-out-for-the-senedd-vote-we-must-make-it-an-election-fit-for-digital-natives/) on the need for greater election accessibility.
 
 We produced a [briefing on the English local election candidates](https://democracyclub.org.uk/blog/2021/04/14/2021-english-local-elections/), which was widely shared online and received some press interest, including a citation in a Guardian [story on ‘hyper-local’ party candidates](https://www.theguardian.com/politics/2021/apr/27/independents-day-the-rise-of-hyperlocal-political-parties) and by Reach PLC’s [InYourArea](https://www.inyourarea.co.uk/news/the-story-of-the-2021-local-elections-in-numbers-and-how-inyourarea-has-joined-forces-to-bring-you-the-most-complete-information/).
 
