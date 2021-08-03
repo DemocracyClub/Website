@@ -4,33 +4,34 @@
 {% block page_heading %}<h1>Jobs</h1>{% endblock page_heading %}
 
 {% block main_content %}
+{# fmt:off #}
 {% filter markdown %}
 
 {% endfilter %}
 
 <div id="always-be-hiring" class="ds-stack-smaller">
-    {% comment %}
-    <script type='application/ld+json'>
-        {
-            "@context": "http://schema.org/",
-            "@type": "JobPosting",
-            "estimatedSalary": "£20,000",
-            "datePosted": "2020-11-02",
-            "employmentType": "Flexable",
-            "validThrough": "2021-01-10",
-            "hiringOrganization": {
-                "@type": "Organization",
-                "name": "Democracy Club Community Interest Company"
-            },
-            "jobLocation": {
-                "@type": "Place",
-                "address": "UK Wide"
-            },
-            "title": "Elections Assistant - Devolved Parliaments Focus",
-            "description": "2021 will see one of the largest and most complex sets of elections the UK has ever experienced: local elections in England; Police and Crime Commissioners in England and Wales; the Greater London Authority; and the devolved parliaments of Scotland and Wales. In order to ensure that we achieve the greatest impact during these elections, we’re seeking a fixed-term Elections Assistant to help with the administration and dissemination of our voter information tools. Although this role will touch upon all regions of the UK, it will involve a specific focus on the Scottish Parliament and Welsh Parliament/Senedd Cymru."
-        }
-    </script>
-    {% endcomment %}
+{% comment %}
+<script type='application/ld+json'>
+{
+"@context": "http://schema.org/",
+"@type": "JobPosting",
+"estimatedSalary": "£20,000",
+"datePosted": "2020-11-02",
+"employmentType": "Flexable",
+"validThrough": "2021-01-10",
+"hiringOrganization": {
+    "@type": "Organization",
+    "name": "Democracy Club Community Interest Company"
+},
+"jobLocation": {
+    "@type": "Place",
+    "address": "UK Wide"
+},
+"title": "Elections Assistant - Devolved Parliaments Focus",
+"description": "2021 will see one of the largest and most complex sets of elections the UK has ever experienced: local elections in England; Police and Crime Commissioners in England and Wales; the Greater London Authority; and the devolved parliaments of Scotland and Wales. In order to ensure that we achieve the greatest impact during these elections, we’re seeking a fixed-term Elections Assistant to help with the administration and dissemination of our voter information tools. Although this role will touch upon all regions of the UK, it will involve a specific focus on the Scottish Parliament and Welsh Parliament/Senedd Cymru."
+}
+</script>
+{% endcomment %}
 
 {% filter markdown %}
 
@@ -90,7 +91,7 @@ We encourage anyone who is interested to apply even if you don’t feel like you
 
 If you have any questions about the role or application process please get in touch with [sym.roe@democracyclub.org.uk](mailto:sym.roe@democracyclub.org.uk) who will be happy to answer questions before your application.
 
-<a href=https://apply.workable.com/democracy-club/j/C8752BAA80/apply/ class="ds-cta">Application Form</a>
+<a href="https://apply.workable.com/democracy-club/j/C8752BAA80/apply/" class="ds-cta">Application Form</a>
 
 
 {### Future roles#}

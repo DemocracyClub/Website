@@ -4,7 +4,7 @@
 
 
 
-<img src={% static "report_2019/images/humber_bridge_card_title.jpg" %} alt="">
+<img src="{% static 'report_2019/images/humber_bridge_card_title.jpg' %}" alt="">
 
 
 
@@ -73,7 +73,7 @@ Our mission is to create those foundations by:
 ## Review of the Year
 
 <figure>
-    <img src="{% static "report_2019/images/VineStYork.jpg" %}" alt="">
+    <img src="{% static 'report_2019/images/VineStYork.jpg' %}" alt="">
     <figcaption>
         Are we nearly there yet?
     </figcaption>
@@ -213,7 +213,7 @@ live feed.
 
 
 <figure>
-    <img src="{% static "report_2019/images/in_your_area.png" %}" alt="">
+    <img src="{% static 'report_2019/images/in_your_area.png' %}" alt="">
     <figcaption>
         In Your Area already knows its users’ postcodes, so it called our API to determine whether to show them election data
     </figcaption>
@@ -503,7 +503,7 @@ From midnight Monday 20 May through Thursday 23 May, the week of the European el
 visitors, again with most traffic from Facebook.
 
 <figure>
-    <img src="{% static "report_2019/images/facebook-newsfeed.png" %}" alt="">
+    <img src="{% static 'report_2019/images/facebook-newsfeed.png' %}" alt="WDIV website traffic from Facebook">
     <figcaption>
         The link as it appeared in Facebook newsfeeds
     </figcaption>
@@ -549,7 +549,7 @@ This widget allows any website owner to help their users find out where to vote.
 This year, we recorded 18,524 uses at the local elections and 19,526 uses at the European elections.
 
 <figure>
-    <img src="{% static "report_2019/images/rugby-widget.png" %}" alt="">
+    <img src="{% static 'report_2019/images/rugby-widget.png' %}" alt="Rugby Council Website">
     <figcaption>
         An example of the widget in use on Rugby Council’s website
     </figcaption>
