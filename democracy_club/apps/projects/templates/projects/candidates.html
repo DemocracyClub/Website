@@ -1,6 +1,8 @@
 {% extends "projects/projects_base.html" %}
 {% load markdown_deux_tags %}
 {% load static %}
+{# fmt:off #}
+
 {% block title %}
 Candidates Wiki
 {% endblock %}
@@ -8,9 +10,8 @@ Candidates Wiki
 {% block content %}
 <div class="ds-stack-smaller">
     <h1>Candidates Wiki</h1>
-    <img src="{% static "ynr-on-a-phone.png" %}">
+    <img src="{% static 'ynr-on-a-phone.png' %}" alt="YNR Crowdsourcing Leaderboard">
 {% filter markdown %}
-
 
 In the UK, the state does not provide nationwide data on election candidates.
 

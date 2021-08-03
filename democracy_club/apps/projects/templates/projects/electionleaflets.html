@@ -1,6 +1,7 @@
 {% extends "projects/projects_base.html" %}
 {% load markdown_deux_tags %}
 {%  load static %}
+{# fmt:off #}
 
 {% block title %}
 Election Leaflets
@@ -48,8 +49,8 @@ further evidence that campaign messages are deployed strategically to portray th
 and their party – in the best possible light.”
 
 If you want to help keep this project going, please consider
-chipping in £3 a month</a>. We're intersted in partnering with acidemics or media organisations
-so please <a href="{% url "contact" %}">get in touch</a> if you want to support this project.
+chipping in £3 a month. We're intersted in partnering with academics or media organisations
+so please <a href="{% url 'contact' %}">get in touch</a> if you want to support this project.
 
 {% endfilter %}
 </div>
