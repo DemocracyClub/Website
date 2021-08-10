@@ -39,6 +39,9 @@ jobs:
             . .venv/bin/activate
             pip install tox coveralls
       - run:
+          name: Install HTML Tidy
+          command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
+      - run:
           name: install dependencies
           command: |
             python3 -m venv .venv
