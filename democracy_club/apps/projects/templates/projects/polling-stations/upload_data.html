@@ -83,19 +83,15 @@ your website, free of charge.
 
 You'll need to add a bit of code to your site.
 [Find out how]({% url "projects:polling_embed_code" %}).
+{% endfilter markdown %}
 
-<div class="ds-grid" style="--gridCellMin: 15ch; --gridGap: 1rem;">
-<ul>
-    <li>
+    <div class="partner-logo">
         <a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
-            <img src="{% static 'ccs-certificate.png' %}" alt="">
+            <img style="flex-basis:auto; padding: 1rem; "  src="{% static 'ccs-certificate.png' %}" alt="Crown Commercial Service Supplier">
         </a>
-    </li>
-    <li>
-        <img src="{% static 'images/reusers/logo--the-electoral-commission.jpg' %}" alt="">
-    </li>
-</ul>
-</div>
+        <img style="max-width: 300px; padding: 1rem; " src="{% static 'images/reusers/logo--the-electoral-commission.jpg' %}" alt="The Electoral Commission">
+    </div>
+{% filter markdown %}
 
 *Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call on [03331 122450](tel:443331122450)*
 
