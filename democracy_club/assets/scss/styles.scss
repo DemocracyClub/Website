@@ -137,3 +137,10 @@ figure {
   }
   #toc, nav, footer {display: none}
 }
+
+.partner-logo {
+  display:flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
+  align-items: baseline;
+}
