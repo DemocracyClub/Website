@@ -129,8 +129,8 @@ Our polling station tool was included in the WhoCanIVoteFor website and provided
 {% endfilter %}
 
 <figure>
-<img src="{% static 'images/report/dam_whirlpool.jpg' %}" alt="">
-<figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></caption>
+<img src="{% static '/images/report/dam_whirlpool.jpg' %}" alt="">
+<figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></figcaption>
 </figure>
 
 {% filter markdown%}
@@ -216,7 +216,7 @@ Thanks partially to our efforts, the UK Government has committed to ‘develop a
 <header>
 <a name="section_process"></a>
 <h1 data-magellan-destination="section_process">3. The process: how we did it</h1>
-<img src="{% static 'images/report/data_wombles.jpg' %}">
+<img src="{% static 'images/report/data_wombles.jpg' %}" alt="">
 </header>
 
 {% filter markdown %}
@@ -290,7 +290,7 @@ From 11pm on the night, LGiU rota-ed staff over the subsequent three days while 
 </header>
 
 <figure>
-<img src="{% static 'images/report/old_bridge_pontypridd.jpg' %}">
+<img src="{% static '/images/report/old_bridge_pontypridd.jpg' %}" alt="">
 <figcaption>Credit: Varitek via Wikipedia</figcaption>
 </figure>
 
@@ -412,7 +412,7 @@ We have many more ideas for making democracy easier, more user-friendly and perh
 <header>
 <a name="section_making_it_happen"></a>
 <h1 data-magellan-destination="section_making_it_happen">6. Making it happen</h1>
-<img src="{% static 'images/report/postits.jpg' %}">
+<img src="{% static 'images/report/postits.jpg' %}" alt="">
 </header>
 
 
@@ -514,7 +514,7 @@ We are looking for support in measuring the effects of the work we do to test fo
 
 We have produced unique identifiers for any state-run election in the UK.
 
-You can read more about these IDs on the <a href="{% url "projects:election_ids_reference" %}">Election ID project page</a>
+You can read more about these IDs on the <a href="{% url 'projects:election_ids_reference' %}">Election ID project page</a>
 
 
 ## Annex 3: Councils providing polling station data for May 2016

@@ -1,6 +1,7 @@
 {% extends "projects/projects_base.html" %}
 {% load markdown_deux_tags %}
 {%  load static %}
+{# fmt:off #}
 
 {% block title %}
 Data and APIs
@@ -52,7 +53,7 @@ data back to 2010.
 This API has been used by The Electoral Commission's YourVoteMatters site, Democratic Dashboard, Google.
 
 <figure>
-    <img src="{% static "images/google-2015.png" %}">
+    <img src="{% static 'images/google-2015.png' %}" alt="">
     <figcaption>Google used our candidates data in the 2015 General Election</figcaption>
 </figure>
 
@@ -63,7 +64,7 @@ is <a href="https://candidates.democracyclub.org.uk/uk_results/">availible as an
 
 General election results were used by mySociety in 2015 and 2017 to set up
 <a href="https://www.mysociety.org/2015/05/05/were-up-all-night-to-get-mps/">newly elected MPs on
-    TheyWorkForYou</a>.
+TheyWorkForYou</a>.
 
 {% endfilter %}
 </div>

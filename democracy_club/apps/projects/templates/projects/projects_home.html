@@ -1,52 +1,50 @@
 {% extends "projects/projects_base.html" %}
 
 {% block page_heading %}
-<h1>Projects</h1>
+    <h1>Projects</h1>
 {% endblock %}
 
 {% block main_content %}
-<div class="ds-stack-smaller">
-    <div class="ds-card">
-        {#   <img src="{% static 'images/where-on-phone.jpg' %}" alt="">#}
-        <div class="ds-card-body">
-            <h3><a class="ds-card-link" href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h3>
-            <p>Helps millions of people to find out where to vote in the UK</p>
+    <div class="ds-stack-smaller">
+        <div class="ds-card">
+            <div class="ds-card-body">
+                <h3><a class="ds-card-link" href="{% url 'projects:polling_one_pager' %}">Where Do I Vote?</a></h3>
+                <p>Helps millions of people to find out where to vote in the UK</p>
+            </div>
         </div>
-    </div>
 
-    <div class="ds-card">
-        {#   <img src="{% static 'images/where-on-phone.jpg' %}" alt=""> #}
-        <div class="ds-card-body">
-            <h3><a class="ds-card-link" href="{% url "projects:whocanivotefor" %}">Who Can I Vote For?</a></h3>
-            <p>Helps people learn about elections, candidates and results in their area</p>
+        <div class="ds-card">
+            <div class="ds-card-body">
+                <h3><a class="ds-card-link" href="{% url 'projects:whocanivotefor' %}">Who Can I Vote For?</a></h3>
+                <p>Helps people learn about elections, candidates and results in their area</p>
+            </div>
         </div>
-    </div>
 
-    <div class="ds-card">
-        <div class="ds-card-body">
-            <h3><a class="ds-card-link" href="{% url "projects:candidates" %}">Candidates Wiki</a></h3>
-            <p>The crowdsourced database of candidates</p>
+        <div class="ds-card">
+            <div class="ds-card-body">
+                <h3><a class="ds-card-link" href="{% url 'projects:candidates' %}">Candidates Wiki</a></h3>
+                <p>The crowdsourced database of candidates</p>
+            </div>
         </div>
-    </div>
 
-    <div class="ds-card">
-        <div class="ds-card-body">
-            <h3><a class="ds-card-link" href="{% url "projects:election_widget" %}">Election Widget</a></h3>
-            <p>Add our widget to your website to help people learn about elections.</p>
+        <div class="ds-card">
+            <div class="ds-card-body">
+                <h3><a class="ds-card-link" href="{% url 'projects:election_widget' %}">Election Widget</a></h3>
+                <p>Add our widget to your website to help people learn about elections.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="ds-card">
-        <div class="ds-card-body">
-            <h3><a class="ds-card-link" href="{% url "projects:data" %}">Election data and APIs</a></h3>
-            <p>Open data on:</p>
-            <ul>
-                <li>Elections</li>
-                <li>Polling locations</li>
-                <li>Candidates</li>
-                <li>Results</li>
-            </ul>
+        <div class="ds-card">
+            <div class="ds-card-body">
+                <h3><a class="ds-card-link" href="{% url 'projects:data' %}">Election data and APIs</a></h3>
+                <p>Open data on:</p>
+                <ul>
+                    <li>Elections</li>
+                    <li>Polling locations</li>
+                    <li>Candidates</li>
+                    <li>Results</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 {% endblock main_content %}
