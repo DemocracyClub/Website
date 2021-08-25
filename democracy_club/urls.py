@@ -94,7 +94,6 @@ urlpatterns = [
             namespace="wheredoivote_user_feedback",
         ),
     ),
-    path("quests/", include("backlog.urls", namespace="backlog")),
     path(
         "data/",
         RedirectView.as_view(url=reverse_lazy("projects")),
