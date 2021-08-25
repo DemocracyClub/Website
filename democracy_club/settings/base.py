@@ -99,7 +99,6 @@ PROJECT_APPS = (
     "report_2021",
     "report_whos_missing",
     "wheredoivote_user_feedback",
-    "backlog",
     "mailing_list",
     "projects",
     "dc_utils",
@@ -225,8 +224,6 @@ GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
 SITE_TITLE = "Democracy Club"
 
-BACKLOG_TRELLO_BOARD_ID = "O00ATMzS"
-BACKLOG_TRELLO_DEFAULT_LIST_ID = "58bd618abc9a825bd64b5d8f"
 
 
 # .local.py overrides all the common settings.
