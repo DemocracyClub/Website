@@ -24,7 +24,7 @@ We also had some disappointments:
 
 - Failed to convince other large media organisations - notably the BBC - to make use of our API.
 - Few users of our candidate data, and poor media take-up of our research output.
-- Ran out of time to implement some service improvement, notably support for non-First-Past-the-Post elections.
+- Ran out of time to implement some service improvements, notably support for non-First-Past-the-Post election results.
 
 
 ## Intro
@@ -91,7 +91,7 @@ The House of Commons Library made extensive use of our data in a number of resea
 
 **Areas for improvement**
 
-There remains much room for improvement in our PR work. Despite often linking to our postcode look-ups, few newspapers have accepted our offers of help with their election coverage. Journalistic interest in and awareness of non-parliamentary elections remains low, and this is reflected in their reporting Almost no media outlets correctly reported the number of English council seats up for election, for example, while the Hartlepool parliamentary by-election dominated the coverage).
+There remains much room for improvement in our PR work. Despite often linking to our postcode look-ups, few newspapers have accepted our offers of help with their election coverage. Journalistic interest in and awareness of non-parliamentary elections remains low, and this is reflected in their reporting. Almost no media outlets correctly reported the number of English council seats up for election, for example, while the Hartlepool parliamentary by-election dominated the coverage).
  
 For our own part, Democracy Club’s online offering in this area could do with considerable improvement. Our website lacks a dedicated press section, and our research output is not signposted for easy access. Our social media cut-through remains negligible, especially when compared with other accounts focusing on election output - this isn’t a problem from a service delivery point of view, but does mean that we are less likely to be picked up by the media.
 
@@ -148,7 +148,7 @@ The situation in Scotland was much more complex. We had few existing links with 
 
 Furthermore, Scottish elections are organised on a different basis than in England and Wales, with responsibilities split between councils and Valuation Joint Boards (VJBs).
 
-Working alongside the Scottish Electoral Commission team, the strategy we adopted was to approach the problem via the VJBs, whose remit often covers more than one council area (for example, Renfrewshire VJB serves Inverclyde, Renfrewshire, and East Renfrewshire Councils). The benefit of this method was that we were able to acquire data for multiple council areas via one point of contact. However, this meant that If we found issues in the data of a specific council, we did not have a clear line to the council’s election team.We also found that multiple council areas were combined in single files, leading to complications when working with the data. Additionally, we had some complaints from councils that the file export process took a very long time, (six hours in one case).As such, although the overall project was a success, we still have some way to go to make Scottish data collection as efficient as in England and Wales.
+Working alongside the Scottish Electoral Commission team, the strategy we adopted was to approach the problem via the VJBs, whose remit often covers more than one council area (for example, Renfrewshire VJB serves Inverclyde, Renfrewshire, and East Renfrewshire Councils). The benefit of this method was that we were able to acquire data for multiple council areas via one point of contact. However, this meant that If we found issues in the data of a specific council, we did not have a clear line to the council’s election team.We also found that multiple council areas were combined in single files, leading to complications when working with the data. Additionally, we had some complaints from councils that the file export process took a very long time, (six hours in one case). As such, although the overall project was a success, we still have some way to go to make Scottish data collection as efficient as in England and Wales.
 
 #### Areas for improvement
 
@@ -260,7 +260,7 @@ We learnt a lot during these experiments, and would like to expand upon them for
 
 #### Users and feedback
 
-As highlighted in our report on the 2019 election, WhoCanIVoteFor.co.uk is now widely used and trusted by citizens, parties, and the UK state.The popularity of the site has grown enormously. Between January-May 2019 we received 264,000 unique visitors. For the same period in 2021 we received almost 1.2 million. Our by-election coverage also receives a respectable level of attention (the two Waltham forest council by-elections on 10 June 2021 each received over 300 unique page views between SoPN and election day, for example). Indeed, despite the suspension of all elections for most of 2020, Google Analytics reports over 230,000 individual visitors between 1 March 2020 and 1 January 2021!
+As highlighted in our report on the 2019 election, WhoCanIVoteFor.co.uk is now widely used and trusted by citizens, parties, and the UK state. The popularity of the site has grown enormously. Between January-May 2019 we received 264,000 unique visitors. For the same period in 2021 we received almost 1.2 million. Our by-election coverage also receives a respectable level of attention (the two Waltham forest council by-elections on 10 June 2021 each received over 300 unique page views between SoPN and election day, for example). Indeed, despite the suspension of all elections for most of 2020, Google Analytics reports over 230,000 individual visitors between 1 March 2020 and 1 January 2021!
 
 Focussing on the 2021 elections, WCIVF received 593,961 individual visitors, 3-6 May 2021, of which 23% were acquired via referral (indicating we now have extremely strong SEO):
 
