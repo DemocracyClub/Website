@@ -44,9 +44,9 @@ urlpatterns = [
         name="jobs",
     ),
     path(
-        "about/funding/",
-        TemplateView.as_view(template_name="about/funding.html"),
-        name="funding",
+        "about/impact/",
+        TemplateView.as_view(template_name="about/impact.html"),
+        name="impact",
     ),
     path(
         "about/team/",
@@ -64,6 +64,11 @@ urlpatterns = [
         name="coc",
     ),
     path("projects/", include("projects.urls", "projects")),
+    path(
+        "support-us/",
+        TemplateView.as_view(template_name="support_us.html"),
+        name="support_us",
+    ),
     path(
         "contact/",
         TemplateView.as_view(template_name="contact.html"),
@@ -94,16 +99,26 @@ urlpatterns = [
             namespace="wheredoivote_user_feedback",
         ),
     ),
-    path("quests/", include("backlog.urls", namespace="backlog")),
-    path(
-        "data/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
-    ),
     path(
         "mailing_list/",
         include(("mailing_list.urls", "dc_signup_form")),
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Tuple of URLs to redirect to. Maintained for backwards compatibility / old links
+url_redirects = (
+    path(
+        "data/",
+        RedirectView.as_view(url=reverse_lazy("projects")),
+    ),
+    path(
+        "about/funding/",
+        RedirectView.as_view(url=reverse_lazy("support_us")),
+        name="funding",
+    ),
+)
+
+urlpatterns += url_redirects
 
 
 if settings.DEBUG:

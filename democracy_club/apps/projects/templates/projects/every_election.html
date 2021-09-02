@@ -1,0 +1,24 @@
+{% extends "projects/projects_base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>EveryElection</h1>
+  <img src="{% static "images/ee-sample.png" %}" alt="A sample of a map produced by EveryElection">
+  <p>Established in 2016, our elections database underpins all our other elections projects.</p>
+
+  <p>The database collects and holds information on every UK electoral event, including elections to all parliaments,
+    principal councils, combined authorities, Police and Crime Commissioners, and council-wide governance referendums.
+    It also covers all by-elections to these bodies. We’re the only organisation in the UK which collects and publishes
+    this information openly.</p>
+
+  <p>Every Election provides a unique identifier for each election, down to individual council wards. These are used as
+    the building blocks upon which our other services are constructed, allowing us to tell users about upcoming
+    elections with a high level of precision.</p>
+
+  <p>The project tracks boundary changes, hosts a register of organisations that hold elections and provides postcode look ups for elections</p>
+
+
+
+  {% load post_tags %}
+  {% posts_for_tag "EveryElection" %}
+{% endblock %}

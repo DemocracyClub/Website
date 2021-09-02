@@ -6,8 +6,6 @@
 
 {% block content %}
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
 <div id="report_2016" class="ds-stack-smaller">
 <header class="panel intro_panel" markdown="1">
 <div class="wrap" style="page-break-before: avoid;page-break-after: always;">
@@ -129,7 +127,7 @@ Our polling station tool was included in the WhoCanIVoteFor website and provided
 {% endfilter %}
 
 <figure>
-<img src="{% static '/images/report/dam_whirlpool.jpg' %}" alt="">
+<img src="{% static 'images/report/dam_whirlpool.jpg' %}" alt="">
 <figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></figcaption>
 </figure>
 
@@ -240,7 +238,7 @@ To the rescue came Tim Green, who designed a robust system for issuing election 
 {% endfilter %}
 
 <figure style="page-break-inside: avoid;">
-{% include "report_2016/includes/_ynr_edits_over_time_graph.html" %}
+<img src="{% static "report_2016/images/edits-over-time.png" %}">
 <figcaption>
 Edits over time to <a href="https://candidates.democracyclub.org.uk">candidates.democracyclub.org.uk</a>
 </figcaption>

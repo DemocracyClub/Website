@@ -9,7 +9,6 @@ class TestHtml:
         return [
             reverse("home"),
             reverse("about"),
-            reverse("funding"),
             reverse("jobs"),
             reverse("team"),
             reverse("coc"),
@@ -19,10 +18,8 @@ class TestHtml:
             reverse("projects:home"),
             reverse("projects:cvs"),
             reverse("projects:election_leaflets"),
-            reverse("projects:whocanivotefor"),
             reverse("projects:candidates"),
             reverse("projects:data"),
-            reverse("projects:election_ids"),
             reverse("projects:election_widget"),
             reverse("projects:past"),
             reverse("projects:polling_one_pager"),
