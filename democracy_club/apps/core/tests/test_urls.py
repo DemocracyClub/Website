@@ -1,6 +1,5 @@
 import pytest
 from django.urls import reverse
-from dc_utils.tests.helpers import validate_html
 
 urls_to_check = [
     "home",
