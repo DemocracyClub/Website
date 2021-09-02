@@ -225,7 +225,6 @@ GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 SITE_TITLE = "Democracy Club"
 
 
-
 # .local.py overrides all the common settings.
 import os
 

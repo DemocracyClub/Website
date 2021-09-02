@@ -80,7 +80,8 @@ urlpatterns = [
         "every-election/",
         TemplateView.as_view(template_name="projects/every_election.html"),
         name="every_election",
-    ),path(
+    ),
+    path(
         "election-ids/",
         RedirectView.as_view(url=reverse_lazy("projects:every_election")),
         name="election_ids",

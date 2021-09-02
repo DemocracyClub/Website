@@ -64,7 +64,11 @@ urlpatterns = [
         name="coc",
     ),
     path("projects/", include("projects.urls", "projects")),
-    path("support-us/", TemplateView.as_view(template_name="support_us.html"), name="support_us"),
+    path(
+        "support-us/",
+        TemplateView.as_view(template_name="support_us.html"),
+        name="support_us",
+    ),
     path(
         "contact/",
         TemplateView.as_view(template_name="contact.html"),
