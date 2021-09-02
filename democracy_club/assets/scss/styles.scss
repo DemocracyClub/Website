@@ -140,7 +140,26 @@ figure {
 
 .partner-logo {
   display:flex;
-  flex-wrap: wrap; 
-  justify-content: space-evenly; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: baseline;
+}
+
+hr {
+  border-bottom:0;
+  border-top: $ss2 solid $blueForWhite;
+
+}
+
+a[href="#TODO"] {
+  border:1px solid black;
+  color:green;
+}
+a[href="#TODO"]:after {
+  content: "📝"
+}
+
+.ds-cta {
+  // FIXME: tmp fix for https://github.com/DemocracyClub/design-system/issues/36
+  transform-origin: left;
 }

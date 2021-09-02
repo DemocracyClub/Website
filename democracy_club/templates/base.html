@@ -16,10 +16,10 @@
       <meta property="fb:pages" content="316731041785" />
     {% endblock site_meta %}
 
-      <meta property="og:description" content="{% block og_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description_content %}" />
-      <meta property="og:image" content="{% block og_image_content %}{% static 'images/logo_icon.png' %}{% endblock og_image_content %}" />
-      <meta property="og:title" content="{% block og_title_content %}{{ site_title }}{% endblock og_title_content %}" />
-      <meta property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
+    <meta property="og:description" content="{% block og_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description_content %}" />
+    <meta property="og:image" content="{% block og_image_content %}{% static 'images/logo_icon.png' %}{% endblock og_image_content %}" />
+    <meta property="og:title" content="{% block og_title_content %}{{ site_title }}{% endblock og_title_content %}" />
+    <meta property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
 
 
     {% block base_og_tags %}
@@ -48,16 +48,19 @@
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/about/">About</a>
+                <a href="{% url "about" %}">About</a>
               </li>
               <li>
-                <a href="/projects/">Our work</a>
+                <a href="{% url "projects:home" %}">Our work</a>
               </li>
               <li>
-                <a href="/blog/">Blog</a>
+                <a href="{% url "hermes_post_list" %}">Blog</a>
               </li>
               <li>
-                <a href="/contact/">Contact</a>
+                <a href="{% url "support_us" %}">Support us</a>
+              </li>
+              <li>
+                <a href="{% url "contact" %}">Contact</a>
               </li>
             </ul>
           </nav>

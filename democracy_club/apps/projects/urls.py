@@ -73,12 +73,21 @@ urlpatterns = [
     ),
     path(
         "election-ids/",
-        TemplateView.as_view(template_name="projects/election-ids.html"),
+        RedirectView.as_view(url=reverse_lazy("projects:every_election")),
+        name="election_ids",
+    ),
+    path(
+        "every-election/",
+        TemplateView.as_view(template_name="projects/every_election.html"),
+        name="every_election",
+    ),path(
+        "election-ids/",
+        RedirectView.as_view(url=reverse_lazy("projects:every_election")),
         name="election_ids",
     ),
     path(
         "who-can-i-vote-for/",
-        TemplateView.as_view(template_name="projects/whocanivotefor.html"),
+        RedirectView.as_view(url=reverse_lazy("projects:candidates")),
         name="whocanivotefor",
     ),
     path(
@@ -105,5 +114,10 @@ urlpatterns = [
         "csv/",
         TemplateView.as_view(template_name="projects/cvs.html"),
         name="cvs",
+    ),
+    path(
+        "representatives/",
+        TemplateView.as_view(template_name="projects/representatives.html"),
+        name="representatives",
     ),
 ]

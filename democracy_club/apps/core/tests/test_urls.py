@@ -1,10 +1,10 @@
 import pytest
 from django.urls import reverse
+from dc_utils.tests.helpers import validate_html
 
 urls_to_check = [
     "home",
     "about",
-    "funding",
     "jobs",
     "team",
     "coc",
@@ -14,10 +14,8 @@ urls_to_check = [
     "projects:home",
     "projects:cvs",
     "projects:election_leaflets",
-    "projects:whocanivotefor",
     "projects:candidates",
     "projects:data",
-    "projects:election_ids",
     "projects:election_widget",
     "projects:past",
     "projects:polling_one_pager",
@@ -40,5 +38,11 @@ urls_to_check = [
 
 @pytest.mark.django_db
 @pytest.mark.parametrize("url", urls_to_check)
-def test_eval(client, url):
+def test_eval(client, url, subtests):
     assert client.get(reverse(url)).status_code == 200
+
+    # with subtests.test(msg=url):
+    #     _, errors = validate_html(client, reverse(url))
+    #     if errors:
+    #         print(url, errors)
+    #     assert errors == ""

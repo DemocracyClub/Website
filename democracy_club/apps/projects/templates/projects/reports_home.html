@@ -7,8 +7,24 @@
 
 {% block main_content %}
 
-    <div class="ds-stack-smaller">
-
+    <div class="ds-stack">
+      <div class="ds-card">
+        <div class="ds-card-image">
+          <img src="{% static "images/report/old_bridge_pontypridd.jpg" %}" alt="">
+        </div>
+        <div class="ds-card-body">
+          <h3>Towards better elections</h3>
+          <p>Our yearly report on elections and the future of digital services for democracy.</p>
+          <ul>
+            <li><a href="{% url "report_2016:report_2016" %}">2016</a></li>
+            <li><a href="{% url "report_2017:report_2017" %}">2017</a></li>
+            <li><a href="{% url "report_2018:report_2018" %}">2018</a></li>
+            <li><a href="{% url "report_2019:report_2019" %}">2019</a></li>
+            <li><a href="{% url "report_2019_general_election:report_2019_general_election" %}">2019 General election</a></li>
+            <li><a href="{% url "report_2021:report_2021" %}">2021</a></li>
+          </ul>
+        </div>
+      </div>
         <div class="ds-card">
             <div class="ds-card-image">
                 <img src="{% static 'report_whos_missing/images/robin-hoods-bay_thumb.jpg' %}" alt="Robin Hood's Bay">
@@ -28,24 +44,6 @@
                 <h3><a class="ds-card-link" href="{% url 'projects:reports_registers' %}">Registers and collaboration: making lists we can trust</a></h3>
                 <p>This report is about registers or lists, and ways of publishing and maintaining them. We examine models of stewarding registers and review case studies of different registers. We argue that transparency is necessary, and collaboration desirable, in managing registers that are trusted by their users.</p>
                 <p>Commissioned and <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">initially published by the ODI</a></p>
-            </div>
-        </div>
-
-        <div class="ds-card">
-            <div class="ds-card-image">
-                <img src="{% static 'images/report/old_bridge_pontypridd.jpg' %}" alt="">
-            </div>
-            <div class="ds-card-body">
-                <h3>Towards better elections</h3>
-                <p>Our yearly report on elections and the future of digital services for democracy.</p>
-                <ul>
-                    <li><a href="{% url 'report_2016:report_2016' %}">2016</a></li>
-                    <li><a href="{% url 'report_2017:report_2017' %}">2017</a></li>
-                    <li><a href="{% url 'report_2018:report_2018' %}">2018</a></li>
-                    <li><a href="{% url 'report_2019:report_2019' %}">2019</a></li>
-                    <li><a href="{% url 'report_2019_general_election:report_2019_general_election' %}">2019 General election</a></li>
-                    <!-- <li><a href="{% url "report_2021:report_2021" %}">2021</a></li> -->
-                </ul>
             </div>
         </div>
 
