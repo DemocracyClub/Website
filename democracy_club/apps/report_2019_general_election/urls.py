@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import re_path
 from django.views.generic import TemplateView
 
 app_name = "report_2019_general_election"
 
 urlpatterns = [
-    url(
+    re_path(
         r"^$",
         TemplateView.as_view(
             template_name="report_2019_general_election/report.html"
