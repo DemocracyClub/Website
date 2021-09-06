@@ -15,7 +15,7 @@ django-localflavor==3.1
 django-markdown-deux==1.0.5
 django-model-utils==4.1.1
 django-ratelimit==0.6.0
-Django==2.2.24
+Django==3.2
 djangorestframework==3.12.2
 gocardless_pro==1.1.0
 jsonfield==3.1.0
