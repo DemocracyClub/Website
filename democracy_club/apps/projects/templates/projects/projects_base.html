@@ -1,19 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-  <article>
 
-  {% block page_heading %}{% endblock page_heading %}
+<div class="ds-stack-smaller">
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "projects:home" %}">Projects</a>
+            </li>
+            <li>
+                <a href="{% url "projects:reports" %}">Reports</a>
+            </li>
+            <li>
+                <a href="{% url "projects:past" %}">Past Projects</a>
+            </li>
+        </ul>
+    </nav>
+    {% block page_heading %}{% endblock page_heading %}
+    {% block main_content %}
 
-  <nav class="inline_page_nav">
-    <ul>
-      <li class="{% if request.path == "/projects/" %} nav-site__item--active{% endif %}"><a href="{% url "projects:home" %}">Projects</a></li>
-    <li class="{% if request.path|slice:"-18:" == "/projects/reports/" %} nav-site__item--active{% endif %}"><a href="{% url "projects:reports" %}">Reports</a></li>
-      <li class="{% if request.path|slice:"-15:" == "/projects/past/" %} nav-site__item--active{% endif %}"><a href="{% url "projects:past" %}">Past Projects</a></li>
-    </ul>
-  </nav>
+    {% endblock main_content %}
 
-  {% block main_content %}
-
-  {% endblock main_content %}
-  </article>
-{% endblock %}
+    {% endblock %}
+</div>

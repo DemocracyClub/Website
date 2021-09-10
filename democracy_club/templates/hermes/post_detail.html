@@ -5,62 +5,53 @@
 
 {% block title %}{{ post.subject }} | {{ site_title }}{% endblock title %}
 
-{% block og_tags %}
-    <meta property="og:title" content="{{ post.subject }}" />
-    <meta property="og:description" content="{{ post.summary }}" />
-    <meta property="og:type"   content="article" />
-    {% thumbnail post.hero "690" as im %}
-      <meta property="og:image" content="{{ im.url }}" />
-    {% endthumbnail %}
-{% endblock og_tags %}
+{% block og_description_content %}{{ post.summary }}{% endblock og_description_content %}
+{% block og_image_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}
+{% endblock og_image_content %}
+{% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
+{% block og_type_content %}article{% endblock og_type_content %}
 
 {% block page_content %}
+  <article class="ds-stack entry">
+    <header>
+      <h1>{{ post.subject }}</h1>
+      <div class="byline">
+        <address class="author">
+          By
+          {% if post.author.username == "symroe" %}
+            <a rel="author" href="https://twitter.com/symroe">
+              {{post.author.first_name}}
+              {{post.author.last_name}}
+            </a>
+          {% elif post.author.first_name == "Joe" %}
+            <a rel="author" href="https://twitter.com/j0e_m">
+              {{post.author.first_name}}
+              {{post.author.last_name}}
+            </a>
+          {% else %}
+            {{post.author.first_name}}
+            {{post.author.last_name}}
+          {% endif %}
+        </address>
+        on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
+      </div>
 
-    <article>
-        <header>
-            <h2><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
-            <div role="contentinfo">
-                <p>
-                  <span class="date">
-                      <time datetime="{{post.modified_on|date:"c"}}">{{post.created_on|date:"jS E Y"}}</time>
-                  </span>
-                  by
-                  <span rel="author">
-                    {% if post.author.first_name == "Sym" %}
-                    <a href="https://twitter.com/symroe">
-                    {{post.author.first_name}}
-                    {{post.author.last_name}}
-                    </a>
-                    {% elif post.author.first_name == "Joe" %}
-                    <a href="https://twitter.com/j0e_m">
-                    {{post.author.first_name}}
-                    {{post.author.last_name}}
-                    </a>
-                    {% else %}
-                    {{post.author.first_name}}
-                    {{post.author.last_name}}
-                    {% endif %}
-                  </span>
-                </p>
-            </div>
-        </header>
-        {% if post.hero %}
-          {% thumbnail post.hero "690" as im %}
-              <img src="{{ im.url }}">
-          {% endthumbnail %}
-        {% endif %}
-        <div class="entry">{{ post.rendered|safe|typogrify }}</div>
-
-
-      <h3>Get in touch:</h3>
-
-      <p>
-        Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
-        <a href="https://twitter.com/democlub">tweet us</a>,
-        post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
-        email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
-
-    </article>
-
+    </header>
+    {% if post.hero %}
+      {% thumbnail post.hero "690" as im %}
+        <img src="{{ im.url }}">
+      {% endthumbnail %}
+    {% endif %}
+    {{ post.rendered|safe|typogrify }}
+  </article>
+  <div class="entry ds-stack-smaller">
+    <h2>Get in touch:</h2>
+    <p>
+      Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
+      <a href="https://twitter.com/democlub">tweet us</a>,
+      post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
+      email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
+  </div>
+  </div>
 
 {% endblock %}

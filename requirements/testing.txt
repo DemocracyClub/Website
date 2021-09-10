@@ -8,5 +8,8 @@ pytest-django
 pytest-pep8
 pytest-flakes
 pytest-cov
+pytest-subtests
 factory_boy
 vcrpy==2.0.1
+
+pytest-subtests

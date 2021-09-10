@@ -1,7 +1,7 @@
 {% extends "report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
-
+{# fmt:off #}
 
 {% block title %}
 Who’s missing, and why? –
@@ -11,47 +11,49 @@ candidacy, informedness and turnout
 
 
 {% block content %}
-  <article id="report_whos_missing" class="numbered">
+    <div id="report_whos_missing" class="numbered ds-stack-smaller">
 
 {%  markdown %}
 
 
-
-
-<h1>Who’s missing, and why?</h1>
-
+#Who’s missing, and why?
 
 
 **Underrepresentation in voter registration, candidacy, informedness and turnout**
 
 **Joe Mitchell, Democracy Club, December 2018**
+{%  endmarkdown %}
 
-
-*Draft: This report is in draft form. We welcome comments, questions and references
-to things we should have read. We aim to come back and update it, in response to comments,
-in early 2019. Please comment directly on the Google Doc version, or [email us](hello@democracyclub.org.uk) . Pun-based
-title suggestions for the report warmly welcomed.*
-
-<div class="toc">
-{{ toc|safe }}
-</div>
+            <ul class="ds-details">
+                <li>
+                    <details>
+                        <summary>
+                            <h2>Table of Contents</h2>
+                        </summary>
+                        <div class="toc ds-padded-large">
+                            {{ toc|safe }}
+                        </div>
+                    </details>
+                </li>
+            </ul>
+{%  markdown %}
 
 ## Introduction
-
-<img src="{%  static "report_whos_missing/images/robin-hoods-bay.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{%  static 'report_whos_missing/images/robin-hoods-bay.jpg' %}" alt="">
+{%  markdown %}
 Not everyone takes part in elections. Around 15% of people are not registered to vote, elections candidates do not reflect the diversity of the population, not everyone can access good information about elections, turnout rarely nudges above two-thirds of eligible voters in general elections and around one-third in local elections. Understanding who is missing, and why, is a perpetual challenge for any society that considers itself democratic.
 
 
 Democracy Club is a non-partisan non-profit that seeks to improve the democratic process by bringing it up to date with the way people live now. As part of our grant agreement with Unbound Philanthropy, a foundation that aims to ensure all people can enjoy a life free of
 barriers to their full participation in society, we set out to produce new research on the experiences of underrepresented people through People are reluctant to open doors; people think you’re looking for money; there’s a slight fear or lack of interest.the election process.
 
-Democracy Club already assumes that some of our work is particularly useful to audiences typically underrepresented at elections. For example, we assume that a recent migrant or young person has more need of our online polling station finder than someone who has lived in the same location for many years. However, there may be other ways that democratic participation could be improved that we have not considered. This research and report will guide our work to do better to engage more groups in the elections process and we hope it will serve useful to other organisations in pursuit of the same goal. 
+Democracy Club already assumes that some of our work is particularly useful to audiences typically underrepresented at elections. For example, we assume that a recent migrant or young person has more need of our online polling station finder than someone who has lived in the same location for many years. However, there may be other ways that democratic participation could be improved that we have not considered. This research and report will guide our work to do better to engage more groups in the elections process and we hope it will serve useful to other organisations in pursuit of the same goal.
 
 ## Summary
-
-<img src="{%  static "report_whos_missing/images/sheffield.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{% static 'report_whos_missing/images/sheffield.jpg' %}" alt="">
+{%  markdown %}
 The scope of the research is the experience of underrepresented people throughout the elections process. ‘The elections process’ is defined as voter registration, candidacy, receiving and consuming information on elections, and ultimately, turnout. The report attempts to identify groups of people that are underrepresented at each stage and looks at why that might be.
 
 Research for the report was conducted over the summer and autumn of 2018. It began with desk research across the field and then approached a range of experts and organisations working on electoral engagement issues. Semi-structured interviews were conducted with nine individuals or organisations. Lastly, we conducted 14 short interviews with people in Easton, an area of significant deprivation in Bristol.
@@ -145,12 +147,12 @@ A detailed piece of audience segmentation research could identify attitudinal or
 
 Until there is better research, incremental improvements that serve everyone can still be made, particularly in making the election process more accessible. But there may be a limit to what accessibility can do. Politics and democracy is complex, and greater effort at comprehensive civic education for all, delivered by expanded or new institutions may be necessary.
 
-But better information or education cannot deliver a democracy in which everyone takes part, if that education helps people only to realise that the system does not work. As a society, we may need to ask bigger questions about reform of our democratic systems. The current political, legal, constitutional turmoil created by the EU referendum has shaken up the pieces — now might be a good time to consider how they should land.
+But better information or education cannot deliver a democracy in which everyone takes part, if that education helps people only to realise that the system does not work. As a society, we may need to ask bigger questions about reform of our democratic systems. The current political, legal, constitutional turmoil created by the EU referendum has shaken up the pieces — now might be a good time to consider how they should land.
 
 ## Voter registration
-
-<img src="{%  static "report_whos_missing/images/regent-st.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{% static 'report_whos_missing/images/regent-st.jpg' %}" alt="">
+{%  markdown %}
 Voter registration is a prerequisite for electoral participation and receives both a significant amount of attention in the literature and in efforts to improve the rate of registration.
 
 Overall, The Electoral Commission estimates that around only 85% of eligible registrants are correctly registered. The most recent and large-scale survey of voter registration, which features prominently in much other literature, is The Electoral Commission’s ‘Quality of the 2014 electoral registers…’, which was a face-to-face survey of 5,000 people. It drew the conclusion that 7.5m people were not correctly registered at their current address in March 2014. This meant that the parliamentary electoral register was only 85.9% complete and the local government electoral register was only 84.7% complete. These 7.5m have been referred to as the ‘missing millions’ by organisations such as Bite the Ballot[^missing-millions].
@@ -318,12 +320,12 @@ A range of civil society organisations get involved with voter registration, tho
 
 There are barriers to more effective civil society efforts. One interviewee mentioned a group in Bristol that went door-knocking and claimed to have registered 2,000 people, but verifying impact is difficult because there’s no quick and easy way to check whether someone is already registered, and because there’s no ‘referral code’ for gov.uk/register-to-vote. Further, the online process requests the registrant’s national insurance number, which means that reaching people out-of-home, where they are less likely to have access to that information, is less effective, even if community centres or faith centres might seem a better place to reach people.
 
-There may be room for better coordination across the sector, including between public and third sector organisations. This could involve better targeting in areas shown to have low registration rates (clues to which can be seen by comparing the electoral roll numbers with the census numbers as for Democracy Club’s 2016 project, takepart.london). The extent to which civil society and local electoral registration officers already work together is not clear. The only group with the on-the-ground reach across the entire country are the election officials in each local authority, who will also have knowledge of the local under-registered groups and areas. Finding better ways to support them, or opening up their knowledge and data so that civil society groups can better target gaps may be worth further investigation.
+There may be room for better coordination across the sector, including between public and third sector organisations. This could involve better targeting in areas shown to have low registration rates (clues to which can be seen by comparing the electoral roll numbers with the census numbers as for Democracy Club’s 2016 project, takepart.london). The extent to which civil society and local electoral registration officers already work together is not clear. The only group with the on-the-ground reach across the entire country are the election officials in each local authority, who will also have knowledge of the local under-registered groups and areas. Finding better ways to support them, or opening up their knowledge and data so that civil society groups can better target gaps may be worth further investigation.
 
 ## Candidacy
-
-  <img src="{%  static "report_whos_missing/images/old-dapper-dude.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{%  static 'report_whos_missing/images/old-dapper-dude.jpg' %}" alt="">
+{%  markdown %}
 When compared to research on registration, and to some extent, turnout, there is little work o on the representativeness of UK election candidates. Democracy Club estimates that every year between 10,000 and 15,000 people stand for election. Not a great deal is known about who they are and whether they are representative of the UK population. There are sometimes surveys of candidates, including a recent one by The Electoral Commission, but of course this cannot review the experiences of those who considered candidacy and chose not to stand. We found no research into the general public’s views on standing as a candidate. There may be differences between party candidates and independent candidates, but the latter are a very small minority of candidates.
 
 > “It’s the political parties who do the real work [in encouraging people to stand] here — we’re just normally presented with what we have.”
@@ -336,7 +338,7 @@ The underrepresentation of women in parliament and in councils across the countr
 
 We know that women are significantly underrepresented at the candidacy stage. Women were only 29% of GE2017 candidates[^9-since-1918]. In terms of non-parliamentary election candidates, Democracy Club estimated that of around 12,500 candidates standing in May 2016, only one-third were women.
 
- [^9-since-1918]: Only 9% of all MPs elected since 1918 have been women. Most recently, women make up 32% of the MPs in the 2017 intake.
+[^9-since-1918]: Only 9% of all MPs elected since 1918 have been women. Most recently, women make up 32% of the MPs in the 2017 intake.
 
 We found no quantitative survey data on the reasons for this gap, but there is some qualitative data. Research by the Fawcett Society, consisting of a survey and at least one focus group, found that local party branches were not perceived as hospitable. Some local party branches were perceived to have ‘an ideal candidate’ in mind: a ‘white male: middle class and able-bodied’. The research also found that women were inhibited from gaining informal experience at early stages of candidacy process, such as speaking at fringe events at a conference[^The-Fawcett-Society-Women-candidates].
 
@@ -415,13 +417,13 @@ The evidence we have seen suggests that candidates believe that there is adequat
 
 Notwithstanding this research, there are several projects that exist to encourage people to stand. The Local Government Association (LGA) runs a programme called Be A Councillor, which takes a different group as its target each year. The programme is essentially a marketing campaign that partners with local authorities to provide information through events, microsites and guidebooks ‘to encourage understanding and dispel myths.’ Community organisations help organise similar events: interviewees told us about events on ‘what it’s like to be a councillor, governor or magistrate’ for ethnic minority audiences run by councillors from ethnic minorities.
 
-Partly, a desire to stand is probably related to the more significant problem of weak public  understanding of governance and democracy:
+Partly, a desire to stand is probably related to the more significant problem of weak public understanding of governance and democracy:
 
 > “People think councils equal bin collection and potholes...People don’t get how far local government is in schools, health, parks, museums, cultural events, voluntary sector partnerships…”
 
 > “[Candidates must recognise that governance] is complex, there are many tiers [of government] and it differs across the country… most people switch off, but to be a councillor you do need to understand that.”
 
-Several interventions involve encouraging more candidates from underrepresented groups. Organisations from government, political parties, civil society and media have worked on these interventions, such as #AskHerToStand. These are to be welcomed, but with recognition of the risks of encouraging more entrants into a system that is unreformed. If there are reasons that women have been historically excluded from a system, pushing more people into it may risk disappointment by those new candidates or they could receive unfair  blame for not succeeding despite this renewed attention.
+Several interventions involve encouraging more candidates from underrepresented groups. Organisations from government, political parties, civil society and media have worked on these interventions, such as #AskHerToStand. These are to be welcomed, but with recognition of the risks of encouraging more entrants into a system that is unreformed. If there are reasons that women have been historically excluded from a system, pushing more people into it may risk disappointment by those new candidates or they could receive unfair blame for not succeeding despite this renewed attention.
 
 There are several party-based campaigns working on this area, such as the Conservative Party’s WomenWinning or Labour Party’s Women Leading Labour. Boosting women’s representation through all-women candidate shortlists has resulted in greater number of women representatives. It may be time to consider all-underrepresented-group shortlists. Interviewees told us that most political parties are committed to improving diversity, including diversity of careers and work experience, partly due to their keenness to avoid the ‘professional politician’ label. This may assist people from minority ethnicities, as they are less likely to be from the professional classes. More research into the efforts of the parties would be valuable.
 
@@ -433,12 +435,12 @@ Broadly, studies with significant sample sizes that run over time seem vital if 
 
 One area that several interviewees pointed to in terms of a quick data win would be on gender: getting parties to publish gender data on their candidates. This kind of gender gap publishing has resulted in headline news when it comes to pay, for example. In this field, there is a campaign for the entry into force of s.106 of the Equalities Act, which could be introduced with secondary legislation. This legislation would force political parties to publish gender data on their candidates. In the experience of Democracy Club, the central offices of political parties rarely have comprehensive nationwide data, but presumably passing the legislation would be enough to ensure the parties would make a greater effort.
 
-Lastly, it would be good to see more data on the experience of independent candidates, who seem likely to have a significantly difference experience of standing for election than those standing for experienced political parties. Local officials told us that there is not much support or advice for independents, that officials spend much more time with them, but that independents can be more drive by local problems or agendas and are sometimes more motivated to raise public awareness.
+Lastly, it would be good to see more data on the experience of independent candidates, who seem likely to have a significantly difference experience of standing for election than those standing for experienced political parties. Local officials told us that there is not much support or advice for independents, that officials spend much more time with them, but that independents can be more drive by local problems or agendas and are sometimes more motivated to raise public awareness.
 
 ## Information about elections
-
-<img src="{%  static "report_whos_missing/images/black-dude-in-union-jack-suit.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{% static 'report_whos_missing/images/black-dude-in-union-jack-suit.jpg' %}" alt="">
+{%  markdown %}
 Democracy Club’s work largely pertains to providing voter information, so we particularly want to understand if there are groups underserved by election information.
 
 ### Electoral ignorance
@@ -491,12 +493,12 @@ More broadly, we might question the effectiveness of one-size-fits-all elections
 
 More research on in-person election debates or hustings would be valuable. There are hints in the Audit of Political Engagement, above, that suggest debates may be particularly important in helping people to decide how to vote, but that they do not currently have a wide reach. A greater number of debates could be arranged, taking care to ensure accessibility and representative audiences. New York City’s state institution for elections provides an exemplar: it is legally obliged to run debates, for which it ensures live broadcasts with translation. On a smaller scale, debates could be recorded online and translations crowdsourced by volunteers. In Bristol, a local community organisation told us they found it difficult to identify and contact all the candidates for an area in order to run a hustings. In one of our interviews in Easton, a 20-year old man, working as a cashier while studying at an FE college, expressed concern that he had never actually met any candidates or politicians.
 
-It is fair to say the UK’s local government structures are not completely clear. System changes could improve understanding. One community group told us that because Bristol had a mayor, it made politics more real and understandable for people. However, at the same time they pointed out that Bristol is part of the West of England Combined Authority, and nobody knew what that was or who the mayor was. In local elections, where Democracy Club’s work battles a tide of indifference and lack of public information on candidates, there are systemic questions about the role of local government and their actual powers. Even if information on elections were provided perfectly to everybody, if it simply confirmed their existing assumptions that councillors are old white people that only deal with bin collections and potholes, then clearly information alone will not affect participation. 
+It is fair to say the UK’s local government structures are not completely clear. System changes could improve understanding. One community group told us that because Bristol had a mayor, it made politics more real and understandable for people. However, at the same time they pointed out that Bristol is part of the West of England Combined Authority, and nobody knew what that was or who the mayor was. In local elections, where Democracy Club’s work battles a tide of indifference and lack of public information on candidates, there are systemic questions about the role of local government and their actual powers. Even if information on elections were provided perfectly to everybody, if it simply confirmed their existing assumptions that councillors are old white people that only deal with bin collections and potholes, then clearly information alone will not affect participation.
 
 ## Turnout
-
-  <img src="{%  static "report_whos_missing/images/funfair.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{% static 'report_whos_missing/images/funfair.jpg' %}" alt="">
+{%  markdown %}
 Registration, candidacy and information are important, but people still need to mark a ballot paper. But who turns out and who doesn’t? Are there significant differences between groups beyond simply reflecting the same discrepancies that we see in registration?
 
 For context, the 2017 general election saw the highest turnout in 20 years at 68.8%, following the 72.2% turnout at the EU referendum and 84.6% at the Scottish independence referendum. In the postwar decades, turnout at general elections has typically exceeded 70%, though it fell significantly after 1997. Turnout in local elections is generally around 30%, but in places will fall as low as 15%. It can be much higher if a local election coincides with a general election. Turnout for devolved administration elections is better than for local elections, but worse than in general elections: turnout hovers in the low- or mid-40s for elections to the National Assembly for Wales; low or mid 50s for the Scottish Parliament; and 50s to 60s for Northern Ireland Assembly[^Dempsey-ni].
@@ -512,15 +514,15 @@ Perhaps unsurprisingly by now, there is no clear picture of turnout by different
 There is good evidence that older people are more likely to turnout to vote. From its work on both the 2015 and 2017 general elections, the British Election Study team reports that ‘older people are much more likely to have voted than young people.’[^bes-young-people] At the general election in 2017, those in their late 20s were more likely than not to have voted, and as age increases, people are more and more likely to vote, up to about 70 years old, where the margins of error increases. There is an around 80% chance that a 70-year-old voted, something like a 45% chance that a 20-year-old voted[^bes-young-people].
 
 [^bes-young-people]: The British Election Study Team, 2018.
+{%  endmarkdown %}
+            <figure>
+                <img src="{% static 'report_whos_missing/images/blog-turnout.png' %}" alt="">
+                <figcaption>
+                    Image one: British Election Study graph showing probability of voting against age for both the 2015 and 2017 general elections.
+                </figcaption>
 
-<figure>
-  <img src="{% static "report_whos_missing/images/blog-turnout.png" %}">
-<figcaption>
-  Image one: British Election Study graph showing probability of voting against age for both the 2015 and 2017 general elections.
-</figcaption>
-
-</figure>
-
+            </figure>
+{%  markdown %}
 Among 18-24s, self-reported ‘certainty to vote’ has risen over recent years to 44%, but this is a long way from the 75% and 76% certainty to vote among those of between 55-64s and 65-74s[^hansard-55-64].
 
 [^hansard-55-64]: Hansard Society, 2018.
@@ -547,7 +549,7 @@ One interviewee suggested that there is a larger gap between ethnic minority vot
 
 There is some other data that might help our understanding of this issue. Surveys that ask people about their ‘certainty to vote’ show that 53% of ethnic minorities say they are ‘certain to vote’, compared with 63% of white people[^Hansard-Soc-minorities]. People of ethnic minorities are more likely (15% against 6%) to say that electoral fraud is ‘very common’ where they live. The Commons library report quotes research that suggests that people of ethnic minorities are more likely to vote if someone of the same ethnicity is standing[^hoc-minorities].
 
-[^Hansard-Soc-minorities]:  Hansard Soc, 2018
+[^Hansard-Soc-minorities]: Hansard Soc, 2018
 [^hoc-minorities]: House of Commons Library, 2017
 
 ### Lower social classes
@@ -600,12 +602,12 @@ Some interviewees believed that online voting would increase turnout, particular
 
 > “Online voting would dramatically increase the numbers… Just the walk to the polling station turns people off.”
 
-As ever, better data is required, particularly on local elections. All the data seen in research reports and surveys refers to general elections. Even this data does not actually tell us why people do not vote nor whether there are different reasons for not voting within different groups. A mix of qualitative and quantitative methods is necessary to tease this out further. Moreover, this research should focus equally on local elections, where we have no good turnout data. Given that the difference between the total electoral registers for local elections and parliamentary elections is not vast (a couple of percentage points), then something is going wrong on the way to turnout — if we desire a well-functioning democracy with high turnout, it behoves us to find out what it is. 
+As ever, better data is required, particularly on local elections. All the data seen in research reports and surveys refers to general elections. Even this data does not actually tell us why people do not vote nor whether there are different reasons for not voting within different groups. A mix of qualitative and quantitative methods is necessary to tease this out further. Moreover, this research should focus equally on local elections, where we have no good turnout data. Given that the difference between the total electoral registers for local elections and parliamentary elections is not vast (a couple of percentage points), then something is going wrong on the way to turnout — if we desire a well-functioning democracy with high turnout, it behoves us to find out what it is.
 
 ## Overarching influences on electoral participation
-
-<img src="{%  static "report_whos_missing/images/british-museum.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{% static 'report_whos_missing/images/british-museum.jpg' %}" alt="">
+{%  markdown %}
 Underrepresentation in the elections process might be affected by or correlate with underrepresentation in other areas of political activity or in lived experiences more generally. It might be useful, therefore, to seek interventions in areas that prima facie do not appear to relate to elections.
 
 ### Non-electoral political engagement
@@ -624,7 +626,7 @@ The importance of knowledge and understanding, which may vary among different gr
 
 ### Trust
 
-One of the factors that could affect all elements of participation is trust.  NatCen’s British Social Attitudes research shows trust in politics and the government has fallen from 38% in the 1980s to 20% or below, since 2008[^NatCen-bsa-Trust]. Ipsos-MORI suggest trust in politicians has been terrible since the 1980s, with an average of one in five trusting them[^MORI-Long-term-trends]. When asked about their local MP, however, people tend to offer a higher score[^YouGov-33-score].
+One of the factors that could affect all elements of participation is trust. NatCen’s British Social Attitudes research shows trust in politics and the government has fallen from 38% in the 1980s to 20% or below, since 2008[^NatCen-bsa-Trust]. Ipsos-MORI suggest trust in politicians has been terrible since the 1980s, with an average of one in five trusting them[^MORI-Long-term-trends]. When asked about their local MP, however, people tend to offer a higher score[^YouGov-33-score].
 
 [^NatCen-bsa-Trust]: NatCen Social Research, British Social Attitudes 30, 2012.
 [^MORI-Long-term-trends]: Ipsos MORI, [Trust in Professions: Long-term trends](https://www.ipsos.com/ipsos-mori/en-uk/trust-professions-long-term-trends) , accessed 5 Dec 2018.
@@ -643,7 +645,7 @@ The problem of trust may go beyond elections and politicians, to all civic life.
 
 Only 34% of people believe they can affect political change but perhaps surprisingly, young people (18-24s) have the strongest sense of this. Ethnic minorities have stronger sense of political efficacy than white people, but lower interest in politics (a record high in 2018 however, at 48% cf 57%). Youth political efficacy is at a recent high of 41% — higher than average; interest up to 41% vs 57% average — that’s still 59% not interested in politics[^Hansard-Society-59-not-interested]. This is not an easy number to shift.
 
- [^Hansard-Society-59-not-interested]: Hansard Society, 2018.
+[^Hansard-Society-59-not-interested]: Hansard Society, 2018.
 
 Relatedly, Citizens Advice found that “those who didn’t identify as assertive were less likely to engage, seek to influence, or complain when things went wrong. Citizens perceive democratic channels for influence as largely public or combative, which turns off a majority of the public.”
 
@@ -674,7 +676,7 @@ Seeing the elections process as a user journey as DC attempts to do, is good pla
 
 It is possible to turn around public perception of institutions, including those the lack the public’s trust. One parallel could be drawn to the police recruitment efforts of the early 2000s. The Home Office planned to recruit thousands more officers, but struggled partly due to negative perceptions of the role. The Home Office spent £15m on a recruitment campaign which featured celebrities asking themselves whether they could perform a specific example of a police role. The “Police: Could you?” campaign was claimed to have resulted in 66,000 applications, improved respect for the role and even a reduction in perceived levels of crime[^crime-boy-i-donno]. Investment in public understanding and education as to the role of elected politicians could help with improving their public perception and reduce abusive behaviour towards them.
 
-[^crime-boy-i-donno]: CampaignLive, [2002 IPA Effectiveness Awards: Silver Award…](https://www.campaignlive.co.uk/article/2002-ipa-effectiveness-awards-silver-award-best-insight-innovation-m-c-saatchi-police-recruitment-sponsored-warc/166249)  online, accessed 5 December 2018.
+[^crime-boy-i-donno]: CampaignLive, [2002 IPA Effectiveness Awards: Silver Award…](https://www.campaignlive.co.uk/article/2002-ipa-effectiveness-awards-silver-award-best-insight-innovation-m-c-saatchi-police-recruitment-sponsored-warc/166249) online, accessed 5 December 2018.
 
 #### Civic education
 
@@ -694,19 +696,19 @@ More accessible processes and information, and better education, may still not s
 
 > “We have encouraged young people to come to council meetings and they’re blown away that adults fall out and argue.”
 
-How that reform should be conducted, what reforms would be most effective, moves into the territory of debates over fundamental constitutional and electoral reform, way beyond this research report, but we cannot ignore the idea that electoral participation is not affected by our current political systems. 
+How that reform should be conducted, what reforms would be most effective, moves into the territory of debates over fundamental constitutional and electoral reform, way beyond this research report, but we cannot ignore the idea that electoral participation is not affected by our current political systems.
 
 ## Conclusions
-
-<img src="{%  static "report_whos_missing/images/blackpool.jpg" %}">
-
+{%  endmarkdown %}
+        <img src="{%  static 'report_whos_missing/images/blackpool.jpg' %}" alt="">
+{%  markdown %}
 The process of conducting this research and of writing this report has led to some unanticipated conclusions.
 
 First, it is difficult to clearly distinguish underrepresented groups and factors that lead to underrepresentation. This report attempted to separate out the stages of electoral engagement and then analyse demographic groups in order to spot problems that could be targeted. Sometimes this approach finds something actionable — such as the under registration of young people at university — but largely, the reasons for underrepresentation in the electoral process run across social groups and demographics. The reasons for non-participation are multifaceted, complex and deeply cultural or psychological.
 
 Second, the research leads us to suggest that it is not really the process that presents a serious barrier to participation. It is not so difficult to register, it is not so difficult to either get a postal vote or get to a polling station. Instead, the barriers are psychological, cultural, attitudinal and knowledge-based: what do you believe about politics and the state, its impact upon your life, and is there a duty to take part — or is it just one of those things you mean to do but were a bit busy that day. While they are related, it is not directly your age nor the colour of your skin that is stopping you from registration; it is your beliefs, your priorities, your education, your income, your life experiences and your information sources.
 
-Third, the lack of broad and deep data on electoral participation renders it difficult to understand where the problems lie and how to go about solving them. One or two longitudinal surveys of a relatively small sample size are hardly sufficient to understand how well our democracy is functioning.  If we consider how much effort is put into measuring the economy, or how in order to make good public health decisions, the government relies upon robust statistical studies and other quality evidence sources, why do we not have the same for the health of democratic engagement? Even where there is sound evidence on who is engaging and who is not, there is precious little to tell us why, to explain the causes of these gaps. This must change, either through the priorities of academic funding councils or through the sustained action of public institutions.
+Third, the lack of broad and deep data on electoral participation renders it difficult to understand where the problems lie and how to go about solving them. One or two longitudinal surveys of a relatively small sample size are hardly sufficient to understand how well our democracy is functioning. If we consider how much effort is put into measuring the economy, or how in order to make good public health decisions, the government relies upon robust statistical studies and other quality evidence sources, why do we not have the same for the health of democratic engagement? Even where there is sound evidence on who is engaging and who is not, there is precious little to tell us why, to explain the causes of these gaps. This must change, either through the priorities of academic funding councils or through the sustained action of public institutions.
 
 To begin to solve the lack of data, a comprehensive piece of audience segmentation could be commissioned. A survey and analysis that produced a statistically sound UK-wide audience segmentation by behaviour and attitudes towards electoral participation, could give us a clearer sense of where to intervene. It might identify clusters of people — we could imagine the “never-evers”, the “voted-oncers”, the “too-busy”, the “duty-bound” and the “super-keen advocates” — to whom appropriate interventions could be tested. An accompanying piece of research could involve deep ethnographic study of people’s experience of different stages of an election within the context of their day-to-day lives. Annual surveys with large representative samples should be employed or improved. The budget and coordination necessary for these research projects may go beyond what is possible from academic research grants, suggesting an expanded role for The Electoral Commission or perhaps a new civic institution.
 
@@ -714,12 +716,12 @@ Fourth, new research might show us that a single intervention is unlikely to be 
 
 Fifth, the lack of data and of easy answers should not blind us to making incremental improvements that aim to serve everyone. Where there are accessibility barriers to the electoral process, they should be tackled. It still makes sense to solve basic informational problems like how you register, when, where you vote, and where are elections happening. To focus on barriers that we know people have and that can be relatively easily and affordably solved and tested. It seems likely that alongside accessibility, a sensible next step is better education. Comprehensive civic education for all, weighted perhaps towards the young and those adults with less formal education. This would also have the potential to impact positively on self-perceived political efficacy. We may need to consider new civic institutions to take on this role.
 
-Lastly, there is only so much that incremental improvements will achieve. Better education will only get us so far. Before long, it becomes necessary to consider the reforms that may have to be made to our political structures and systems — and beyond — to our cultural and social life — with the aim of maximal electoral and political participation. Today, the UK may currently have the opportunity to ask those questions. In the midst of — or as a result of — a situation of political turmoil, perhaps we face an opportunity better than in recent decades, to hold a conversation that involves everyone about the democracy we want. The people of the UK may have the opportunity to consider and develop a system that maximises the participation of all at every stage and that can cope with the multiple and complex ways power is exercised in the 21st century. There is a rich British tradition of tinkering on the edges of our political processes, of making piecemeal reform to allay collapse or revolution. That may not be enough if we are serious about ending underrepresentation in democracy.
+Lastly, there is only so much that incremental improvements will achieve. Better education will only get us so far. Before long, it becomes necessary to consider the reforms that may have to be made to our political structures and systems — and beyond — to our cultural and social life — with the aim of maximal electoral and political participation. Today, the UK may currently have the opportunity to ask those questions. In the midst of — or as a result of — a situation of political turmoil, perhaps we face an opportunity better than in recent decades, to hold a conversation that involves everyone about the democracy we want. The people of the UK may have the opportunity to consider and develop a system that maximises the participation of all at every stage and that can cope with the multiple and complex ways power is exercised in the 21st century. There is a rich British tradition of tinkering on the edges of our political processes, of making piecemeal reform to allay collapse or revolution. That may not be enough if we are serious about ending underrepresentation in democracy.
 
 ## Acknowledgements
-
-<img src="{%  static "report_whos_missing/images/red-phone-box.jpg" %}">
-
+{%  endmarkdown %}
+            <img src="{%  static 'report_whos_missing/images/red-phone-box.jpg' %}" alt="">
+{%  markdown %}
 The author wishes to express his gratitude to everyone who volunteered time to discuss the topic with the author. Those contacted specifically for this research are listed below, but many others contributed indirectly. Thanks too to those who stopped for a brief conversation in Easton, Bristol on an overcast day in October.
 
 * Samantha Atkinson and Sharon Salvanos, Kirklees Council
@@ -732,7 +734,7 @@ The author wishes to express his gratitude to everyone who volunteered time to d
 * Rachel Stevens and Michael Barrett, Local Government Association
 * Stacy Yelland and Tamsin Harcort, Up Our Street
 
-Thanks also to Unbound Philanthropy for their continued support of Democracy Club. 
+Thanks also to Unbound Philanthropy for their continued support of Democracy Club.
 
 
 ## Selective bibliography
@@ -759,11 +761,11 @@ Ehsan, M.R., *[What Matters? Non-Electoral Youth Political Participation in Aust
 
 The Electoral Commission:
 
-*  *The quality of the 2014 electoral registers in Great Britain: Research into the last registers produced under the household registration system*, London, July 2014
-*  *Promoting voter registration at the May 2015 elections: A review of public awareness activity conducted by the Electoral Commission and other organisations*, London, July 2015.
-*  *Analysis of the December 2016 electoral registers in the United Kingdom*, London, March 2017
-*  *Standing for office in 2017*, London, November 2017.
-*  *[Accuracy and completeness of electoral registers](https://www.electoralcommission.org.uk/our-work/our-research/electoral-registration-research2/accuracy-and-completeness)*, accessed 7 August 2018.
+* *The quality of the 2014 electoral registers in Great Britain: Research into the last registers produced under the household registration system*, London, July 2014
+* *Promoting voter registration at the May 2015 elections: A review of public awareness activity conducted by the Electoral Commission and other organisations*, London, July 2015.
+* *Analysis of the December 2016 electoral registers in the United Kingdom*, London, March 2017
+* *Standing for office in 2017*, London, November 2017.
+* *[Accuracy and completeness of electoral registers](https://www.electoralcommission.org.uk/our-work/our-research/electoral-registration-research2/accuracy-and-completeness)*, accessed 7 August 2018.
 
 Hansard Society, *Audit of Political Engagement 15: The 2018 Report*, London, 2018.
 
@@ -792,5 +794,5 @@ Runymede Trust, *Diversity and Democracy: Race and the 2015 General Election*, J
 
 
 
-  </article>
+    </div>
 {% endblock %}

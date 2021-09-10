@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Representatives</h1>
+  <p>The people who are elected to run the UK collectively hold a huge amount of power. Most of their work is done
+    transparently, however transparency isn’t the same as accessibility. This is especially true with local authorities.
+    Approximately 400 organisations with 22,000 elected people make decisions every day about everything from schools
+    and social care to roads and travel, the environment to elections.</p>
+
+  <p>The scale and fragmentation of this information makes working with it hard. Most questions about local government
+    can only be answered by researchers trawling through hundreds of websites of varying quality. The different layers
+    of local government adds complexity, and longitudinal study means repeating the initial research from scratch. The
+    cost of this work is prohibitive for many projects and organizations, and the result is that local government is far
+    less scrutinised than it could be, simply because of information fragmentation.</p>
+
+  <p>Democracy Club is trying to solve this problem.</p>
+
+  <p>We plan to start by creating basic, foundational, lists for others to build on. We already have services listing
+    local authorities, elections, polling stations and candidates that are used by millions of people. The next step is
+    to build a single list of all elected representatives with an ultimate aim of facilitating scrutiny through
+    increased transparency.</p>
+
+  <p>To achieve this goal, we want to partner with organisations who are trying to research, lobby or better understand
+    the people who run local governments. This might be in the form of tracking gender make up over time, or
+    understanding more about who holds particular roles within the council. It might be to help the public understand
+    what their representatives are up to, or to help them resolve issues in their area.</p>
+
+  <p>The costs of running the system should not be met by charging for access, as this goes against the principles
+    lowering the barriers to accessing this information. Rather than a traditional commercial model, we are trying to
+    create a community of organisations that contribute to the running costs and product direction. This “data commons”
+    will help everyone through a shared and open resource.</p>
+
+  <p>We are seeking grant funding in the short term, but the long term aim is that a coalition of organisations can
+    share the costs, with Democracy Club acting as a delivery partner for them.</p>
+
+  <p>Democracy Club are building a coalition of organisations who are interested in this product 
+    if you are interested, please <a href="{% url "contact" %}">get in touch</a> to discuss.</p>
+
+  {% load post_tags %}
+  {% posts_for_tag "representatives" %}
+{% endblock %}

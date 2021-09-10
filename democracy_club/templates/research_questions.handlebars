@@ -1,42 +1,43 @@
 <style>
-.research_step {
-    text-align:center;
-}
-
-.research_step button {
-    border:1px solid #FFF;
-    font-size:1.1em;
-}
-
-.simplemodal-container a {
-    color:#FFF;
-}
-
-.simplemodal-container input {
-  border:1px solid #FFF;
-  font-size:1em;
-}
-
-.simplemodal-container textarea {
-  width:50%;
-  height:80%;
-  color:#000 !important;
-}
-
-a.simplemodal-close, a.simplemodal-close:visited {
-    position:absolute;
-    right:0;
-    bottom:0;
-    font-size:1em;
-    padding:0.2em;
-    color:#FFF;
-}
-
-@media only screen and (max-width:35em){
-  button {
-    margin:0.2em;
+  .research_step {
+    text-align: center;
   }
-}
+
+  .research_step button {
+    border: 1px solid #FFF;
+    font-size: 1.1em;
+  }
+
+  .simplemodal-container a {
+    color: #FFF;
+  }
+
+  .simplemodal-container input {
+    border: 1px solid #FFF;
+    font-size: 1em;
+  }
+
+  .simplemodal-container textarea {
+    width: 50%;
+    height: 80%;
+    color: #000 !important;
+  }
+
+  a.simplemodal-close,
+  a.simplemodal-close:visited {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 1em;
+    padding: 0.2em;
+    color: #FFF;
+  }
+
+  @media only screen and (max-width:35em) {
+    button {
+      margin: 0.2em;
+    }
+  }
 </style>
 
 <section id="research_form" style="display:none;">
@@ -58,7 +59,8 @@ a.simplemodal-close, a.simplemodal-close:visited {
       <button type="submit" aria-describedby="research_influenced">N/A</button>
     </div>
     <div class="research_step">
-      <p id="research_power">Having used this website, how do you feel about your own power over candidates or parties?</p>
+      <p id="research_power">Having used this website, how do you feel about your own power over candidates or parties?
+      </p>
       <button type="submit" aria-describedby="research_power">More powerful</button>
       <button type="submit" aria-describedby="research_power">About the same</button>
       <button type="submit" aria-describedby="research_power">Less powerful</button>
@@ -96,9 +98,9 @@ a.simplemodal-close, a.simplemodal-close:visited {
       <p>We're a small organisation and would really appreciate a one off donation
         so we can continue to provide services like this.</p>
       <p><a href="https://democracyclub.org.uk/donate/"></a></p>
-        <p>Or <a href="https://democracyclub.org.uk/contact/">Get in touch</a>
+      <p>Or <a href="https://democracyclub.org.uk/contact/">Get in touch</a>
         if you would like to talk to us more!</p>
-        <a href="#" onclick="$.modal.close();">Close</a>
+      <a href="#" onclick="$.modal.close();">Close</a>
     </div>
   </form>
 </section>

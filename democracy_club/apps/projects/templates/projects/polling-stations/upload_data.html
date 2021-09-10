@@ -1,9 +1,9 @@
 {% extends "projects/polling-stations/polling_stations_base.html" %}
 {% load markdown_deux_tags %}
 {% load static %}
-
+{# fmt:off #}
 {% block page_title %}
-<h1>Polling station finder</h1>
+    <h1>Polling station finder</h1>
 {% endblock page_title %}
 
 
@@ -83,24 +83,18 @@ your website, free of charge.
 
 You'll need to add a bit of code to your site.
 [Find out how]({% url "projects:polling_embed_code" %}).
+{% endfilter markdown %}
 
-
-<div class="logo-list">
-  <ul class="fukol-grid logo-list">
-    <li>
-      <a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
-        <img src="{% static "ccs-certificate.png" %}">
-      </a>
-    </li>
-    <li>
-      <img src="{% static "images/reusers/logo--the-electoral-commission.jpg" %}">
-    </li>
-  </ul>
-</div>
+    <div class="partner-logo">
+        <a href="https://www.digitalmarketplace.service.gov.uk/g-cloud/services/505951175500567">
+            <img style="flex-basis:auto; padding: 1rem; "  src="{% static 'ccs-certificate.png' %}" alt="Crown Commercial Service Supplier">
+        </a>
+        <img style="max-width: 300px; padding: 1rem; " src="{% static 'images/reusers/logo--the-electoral-commission.jpg' %}" alt="The Electoral Commission">
+    </div>
+{% filter markdown %}
 
 *Want to talk to a human? Please email [pollingstations@democracyclub.org.uk](mailto:pollingstations@democracyclub.org.uk) or call on [03331 122450](tel:443331122450)*
 
 
 {% endfilter %}
 {% endblock main_content %}
-

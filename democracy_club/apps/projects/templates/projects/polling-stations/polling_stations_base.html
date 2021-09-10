@@ -2,22 +2,26 @@
 {% load markdown_deux_tags %}
 
 {% block content %}
-<div class="site-wrapper__body-text">
+    <div class="ds-stack-smaller">
+        <nav class="ds-subnav">
+            <ul>
+                <li>
+                    <a href="{% url 'projects:polling_one_pager' %}" aria-current="true">Overview</a>
+                </li>
+                <li>
+                    <a href="{% url 'projects:polling_embed_code' %}">Use on your Website</a>
+                </li>
+                <li>
+                    <a href="{% url 'projects:polling_data_upload' %}">For councils</a>
+                </li>
+            </ul>
+        </nav>
+        {% block page_title %}{% endblock page_title %}
 
-    {% block page_title %}{% endblock page_title %}
-    <nav class="inline_page_nav">
-      <ul>
-        <li {% if request.path == "/projects/polling-stations/" %}class="selected"{% endif %}><a href="{% url "projects:polling_one_pager" %}">Overview</a></li>
-        <li {% if request.path == "/projects/polling-stations/embed/" %}class="selected"{% endif %}><a href="{% url "projects:polling_embed_code" %}">Use on your website</a></li>
-        <li {% if request.path == "/projects/polling-stations/upload/" %}class="selected"{% endif %}><a href="{% url "projects:polling_data_upload" %}">For councils</a></li>
-      </ul>
-    </nav>
+        {% block main_content %}
+        {% endblock main_content %}
+        {% block page_menu %}
+        {% endblock page_menu %}
 
-{% block main_content %}
-{% endblock main_content %}
-{% block page_menu %}
-{% endblock page_menu %}
-
-</div><!-- /.site-wrapper__body-text -->
+    </div>
 {% endblock content %}
-

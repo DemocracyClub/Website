@@ -1,14 +1,15 @@
 {% extends "projects/projects_base.html" %}
 {% load markdown_deux_tags %}
 {%  load static %}
+{# fmt:off #}
 
 {% block title %}
 Data and APIs
 {% endblock %}
 
 {% block content %}
-  <article>
-  <h1>Data and APIs</h1>
+<div class="ds-stack-smaller">
+    <h1>Data and APIs</h1>
 {% filter markdown %}
 
 We provide APIs and data for almost all our services.
@@ -17,21 +18,21 @@ We provide APIs and data for almost all our services.
 
 ### Elections
 
-[Data on UK elections](https://elections.democracyclub.org.uk/) from council by-elections to general elections. We provide an API
-  for looking up elections and ballot papers by postcode as well as tracking boundary changes
-  and Electoral Change Orders.
+[Data on UK elections](https://elections.democracyclub.org.uk/) from council by-elections to general elections. We provide an API 
+for looking up elections and ballot papers by postcode as well as tracking boundary changes
+and Electoral Change Orders.
 
 Each election and ballot paper is
 [given an ID that we use in our other projects](https://elections.democracyclub.org.uk/reference_definition/).
 
 We track canceled polls, and provide additional data where needed, for example information
-  on the recent voter ID pilots.
+on the recent voter ID pilots.
 
 
 ### Polling locations
 
 The API for our [polling station finder]({% url "projects:polling_one_pager" %}), providing
-  polling station information for UK addresses.
+polling station information for UK addresses.
 
 Used by The Electoral Commission, hundreds of councils, political parties and newspapers, this API.
 
@@ -52,8 +53,8 @@ data back to 2010.
 This API has been used by The Electoral Commission's YourVoteMatters site, Democratic Dashboard, Google.
 
 <figure>
-  <img src="{% static "images/google-2015.png" %}">
-  <figcaption>Google used our candidates data in the 2015 General Election</figcaption>
+    <img src="{% static 'images/google-2015.png' %}" alt="">
+    <figcaption>Google used our candidates data in the 2015 General Election</figcaption>
 </figure>
 
 ### Results
@@ -66,6 +67,6 @@ General election results were used by mySociety in 2015 and 2017 to set up
 TheyWorkForYou</a>.
 
 {% endfilter %}
-</article>
+</div>
 
 {% endblock %}

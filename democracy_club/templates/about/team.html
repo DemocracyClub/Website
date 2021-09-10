@@ -2,111 +2,203 @@
 {% load markdown_deux_tags %}
 {% load static %}
 
-
+{# fmt:off #}
 {% block page_heading %}<h1>The Team</h1>{% endblock page_heading %}
 
 {% block title %}
-The Team -
+  The Team -
 {% endblock %}
 
 {% block main_content %}
-{% filter markdown %}
+  <p>Building and maintaining Democracy Club's services is a long-term commitment, both in the run up to the elections
+    held in May every year, and in keeping the underlying technology running year round.
+  </p>
+  <p>Throughout the year, we also run
+    an online community of around 800 members and a mailing list with 15K subscribers. Our volunteers are non-partisan, either
+    interested in democracy, open source technology, or both.
+  </p>
+  <p>Around elections, we're supported by a core team of 20
+    super-volunteers and a community of 300 supporters to crowdsource publicly available information like candidate manifestos. </p>
+  <p>
+    Our volunteers are non-partisan, either interested in democracy, open source technology, or both.
+  </p>
 
-We’re a strong digital community who work online via Slack and Trello.
+  <p>The club is supported by a small core team and an experienced board of directors.</p>
 
-Club members put in hundreds of hours of work to help build the databases that
-help inform voters. They sometimes get points for doing so: here's the
-[leaderboard](https://candidates.democracyclub.org.uk/leaderboard).
+  <h2>Sym Roe - CEO</h2>
 
-The club is supported by a small core team and an experienced board of directors.
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="{% static "images/team/sym.png"%}" style="width:170px;height:170px" alt="Photo of Sym Roe">
+      </div>
+      <p class="ds-not-sidebar">
+        Sym has 15 years experience in open data, government and technology, for folks
+        like ScraperWiki, Ministry of Justice and FarmSubsidy.org. He has
+        never knowingly set foot in a school, lives in Stroud, has a dog with a hard
+        to explain name, and is trying to rebuild a Cotswold stone house.
 
-### Sym Roe - Coordinator
+      </p>
+    </div>
+  </div>
 
-<img src={% static "images/team/sym.png"%} style="float:left;padding:1em;width:170px;height:170px;">
-Sym has 15 years experience in open data, government and technology, for folks
-like ScraperWiki, Ministry of Justice and FarmSubsidy.org. He has
-never knowingly set foot in a school, lives in Stroud, has a dog with a hard
-to explain name, and is trying to rebuild a Cotswold stone house.
+  <h2>Peter Keeling - Voting information</h2>
 
-### Peter Keeling - Voting information manager
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="{% static "images/team/peter.png"%}" style="width:170px;height:170px" alt="Photo of Peter Keeling">
+      </div>
+      <p class="ds-not-sidebar">
 
-<img src={% static "images/team/peter.png"%} style="float:left;padding:1em;width:170px;height:170px;">
-Peter oversees the election administration and communications at Democracy Club, including polling stations and
-candidate information. He previously spent far too much time at university, and holds a PhD in nineteenth-century
-British political history.
+        Peter oversees the election administration and communications at Democracy Club, including polling stations and
+        candidate information. He previously spent far too much time at university, and holds a PhD in nineteenth-century
+        British political history.
 
-### Virginia Dooley - Developer
+      </p>
+    </div>
+  </div>
 
-With a background in international development, Virginia pivoted to coding after working with startups and charities
-struggling with outdated products and systems.
-In a quest for better weather, Virginia moved from NYC to London in 2015.
+  <h2>Virginia Dooley - Developer</h2>
 
-### Kate Seary - Devolved Elections Assistant
+  <p>
+    With a background in international development, Virginia pivoted to coding after working with startups and charities
+    struggling with outdated products and systems.
+    In a quest for better weather, Virginia moved from NYC to London in 2015.
 
-Kate has a background in political science and youth politics. She studied and is based in Birmingham but holds a
-strong connection to her home in Wales. She also spent time as a student-athlete in Portland, Oregon and particularly
-relates to the city’s motto ‘Keep Portland Weird’.
+  </p>
+
+  <h2>Michael Collins - Developer</h2>
+
+  <p>Based in Sheffield, having previously studied English at Leicester as well as having spent some time living in
+    London
+    where he worked for a variety of charities, including a brief stint at ZSL London Zoo!
+    He decided to retrain to become a developer in 2015, completing the Makers Academy bootcamp.
+    Since then He's been working as a python developer, and in my last role was focussed on delivering websites and
+    digital services for a range of clients in the not-for-profit sector.</p>
+
+  <h2>Ella Botting - Admin assistant</h2>
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="{% static "images/team/ella.png"%}" style="width:170px;height:170px" alt="Photo of Ella Botting">
+      </div>
+      <p class="ds-not-sidebar">
+
+        Alongside helping out with operational support at Democracy Club, Ella is a freelance user researcher with
+        significant experience in the public sector. She writes a blog, <a href="https://cyberwomen.co.uk">cyberwomen.co.uk</a>, which aims to raise the
+        visibility of women and non-binary people in tech. Other than that, she likes weightlifting, ballet and plants.
+
+      </p>
+    </div>
+  </div>
 
 
-### Michael Collins - Developer
+  <h1>Board</h1>
 
-Based in Sheffield, having previously studied English at Leicester as well as having spent some time living in London
-where he worked for a variety of charities, including a brief stint at ZSL London Zoo!
-He decided to retrain to become a developer in 2015, completing the Makers Academy bootcamp.
-Since then He's been working as a python developer, and in my last role was focussed on delivering websites and
-digital services for a range of clients in the not-for-profit sector.
+  <h2>Alice Casey (Chair)</h2>
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="https://dc-blog-images.s3.amazonaws.com/2017-12-01/alice%20circle.png" style="width:170px;height:170px" alt="Photo of Alice Casey">
+      </div>
+      <p class="ds-not-sidebar">
 
-### Ella Botting - Admin assistant
+        Alice works at Nesta, leading on a portfolio of work looking at how technology is transforming communities and civic life.
+        This has included <a href="https://www.nesta.org.uk/sharelab-fund">ShareLab Fund</a>, exploring how collaborative platforms
+        can help tackle social challenges, as well as co-founding a new open data infrastructure charity,
+        <a href="https://www.threesixtygiving.org/">360Giving</a>, that supports grantmaking bodies to publish and use their data.
+        Alice has been involved in Nesta's Neighbourhood Challenge, the Big Green Challenge, and Innovation in Giving. Before Nesta,
+        Alice worked for Involve on public involvement in policy making. Alice is a trustee of Local Trust which leads Big Local,
+        a £220m place-based fund to support communities to lead change at a local level, and has acted as an advisor to a range of socially minded startups.
 
-  <img src={% static "images/team/ella.png"%} style="float:left;padding:1em;width:170px;height:170px;">
-Alongside helping out with operational support at Democracy Club, Ella is a freelance user researcher with
-significant experience in the public sector. She writes a blog, [cyberwomen.co.uk](https://cyberwomen.co.uk), which aims to raise the
-visibility of women and non-binary people in tech. Other than that, she likes weightlifting, ballet and plants.
+
+      </p>
+    </div>
+  </div>
+
+  <h2>Ian Watt</h2>
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="https://dc-blog-images.s3.amazonaws.com/2017-12-01/ian%20circle.png" style="width:170px;height:170px" alt="Photo of Ian Watt">
+      </div>
+      <p class="ds-not-sidebar">
+
+        Ian is a director and co-founder of <a href="https://codethecity.org/">Code The City</a> and <a href="https://aberdeen.theodi.org/our-team/">ODI
+        Aberdeen</a>.
+        He recently left Aberdeen City Council where he had led numerous programmes, at city-region, Scotland-wide and EU scale,
+        including their participation in Code For Europe, and other NESTA-funded projects. He is a long-term open data advocate,
+        contributed to the Scottish Government’s 2015 Open Data Strategy, and recently led the Data programme for the 7 Cities of Scotland.
+        He was involved in the design of the MSc Data Science programme at Robert Gordon University. In 2013 Ian won a public vote to become
+        Local Government digital leader of the year.
 
 
-## Board
+      </p>
+    </div>
+  </div>
 
-### Alice Casey (Chair)
+  <h2>Mevan Babakar</h2>
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="https://dc-blog-images.s3.amazonaws.com/2017-12-01/mevan%20circle.png" style="width:170px;height:170px" alt="Photo of Mevan Babakar">
+      </div>
+      <p class="ds-not-sidebar">
 
-<img src=https://dc-blog-images.s3.amazonaws.com/2017-12-01/alice%20circle.png style="float:left;padding: 1em;width:170px;height:170px;">
+        Mevan leads on <a href="https://fullfact.org/">Full Fact</a>'s automated factchecking work which seeks to scale the work of
+        factchecking organisations everywhere. She co-authored 'The State of Automated Factchecking' in 2016 and regularly
+        speaks in the UK and internationally about misinformation, factchecking, and civic technology. Mevan joined Full Fact
+        in 2014 after working at Cancer Research in the digital team. Before that she helped build <a href="https://bitetheballot.co.uk/">Bite the
+        Ballot</a>,
+        a non-profit organisation that registers young people to vote. There she launched Britain’s first ever National Voter Registration Day.
+        She is a founding organiser of <a href="https://www.citizenbeta.org/">Citizen Beta</a>. She graduated with a Masters in Bioengineering
+        from the University of Sheffield.
 
-Alice works at Nesta, leading on a portfolio of work looking at how technology is transforming communities and civic life. This has included [ShareLab Fund](https://www.nesta.org.uk/sharelab-fund), exploring how collaborative platforms can help tackle social challenges, as well as co-founding a new open data infrastructure charity, [360Giving](http://www.threesixtygiving.org/), that supports grantmaking bodies to publish and use their data. Alice has been involved in Nesta's Neighbourhood Challenge, the Big Green Challenge, and Innovation in Giving. Before Nesta, Alice worked for Involve on public involvement in policy making. Alice is a trustee of Local Trust which leads Big Local, a £220m place-based fund to support communities to lead change at a local level, and has acted as an advisor to a range of socially minded startups.
 
-### Ian Watt
+      </p>
+    </div>
+  </div>
 
-<img src=https://dc-blog-images.s3.amazonaws.com/2017-12-01/ian%20circle.png style="float:left;padding: 1em;width:170px;height:170px;">
+  <h2>Olly Benson</h2>
+  <div class="ds-with-sidebar">
+    <div> <!-- inner wrapper element -->
+      <div class="ds-sidebar">
+        <img src="https://dc-blog-images.s3.amazonaws.com/2017-12-01/olly%20circle.png" style="width:170px;height:170px" alt="Photo of Olly Benson">
+      </div>
+      <p class="ds-not-sidebar">
 
-Ian is a director and co-founder of [Code The City](http://codethecity.org/) and [ODI Aberdeen](http://aberdeen.theodi.org/our-team/).  He recently left Aberdeen City Council where he had led numerous programmes, at city-region, Scotland-wide and EU scale, including their participation in Code For Europe, and other NESTA-funded projects. He is a long-term open data advocate, contributed to the Scottish Government’s 2015 Open Data Strategy, and recently led the Data programme for the 7 Cities of Scotland. He was involved in the design of the MSc Data Science programme at Robert Gordon University. In 2013 Ian won a public vote to become Local Government digital leader of the year.
+        Olly currently works for NHS England, with a focus on how to introduce person and community centred approaches at
+        scale, particularly in Greater Manchester. Prior to joining the NHS, Olly was Operations Director at the Do-it Trust,
+        responsible for the <a href="https://do-it.org/">do-it.org</a> volunteering website, and he previously worked in senior roles in
+        two charities: YouthNet and Headliners. He started his career at the BBC, working in local radio, Radio 1 and English
+        Regions HQ. Outside of work he has previously been a trustee of the Citizenship Foundation as well as volunteering
+        for a number of different organisations.
 
-### Mevan Babakar
 
-<img src=https://dc-blog-images.s3.amazonaws.com/2017-12-01/mevan%20circle.png style="float:left;padding: 1em;width:170px;height:170px;">
+      </p>
+    </div>
+  </div>
 
-Mevan leads on [Full Fact](https://fullfact.org/)'s automated factchecking work which seeks to scale the work of factchecking organisations everywhere. She co-authored 'The State of Automated Factchecking' in 2016 and regularly speaks in the UK and internationally about misinformation, factchecking, and civic technology. Mevan joined Full Fact in 2014 after working at Cancer Research in the digital team. Before that she helped build [Bite the Ballot](http://bitetheballot.co.uk/), a non-profit organisation that registers young people to vote. There she launched Britain’s first ever National Voter Registration Day. She is a founding organiser of [Citizen Beta](http://www.citizenbeta.org/). She graduated with a Masters in Bioengineering from the University of Sheffield.
+  <h2>With thanks to</h2>
 
-### Olly Benson
+  <p>Democracy Club has been helped by many people along the way. We are grateful to them all, but some deserve a
+    special mention:</p>
 
-<img src=https://dc-blog-images.s3.amazonaws.com/2017-12-01/olly%20circle.png style="float:left;padding: 1em;width:170px;height:170px;">
+  <p>Seb Bacon, Tim Green, Edmund von der Burg and Tom Steinberg for their initial work in 2010, and much help
+    since.</p>
 
-Olly currently works for NHS England, with a focus on how to introduce person and community centred approaches at scale, particularly in Greater Manchester. Prior to joining the NHS, Olly was Operations Director at the Do-it Trust, responsible for the [do-it.org](http://do-it.org/) volunteering website, and he previously worked in senior roles in two charities: YouthNet and Headliners. He started his career at the BBC, working in local radio, Radio 1 and English Regions HQ. Outside of work he has previously been a trustee of the Citizenship Foundation as well as volunteering for a number of different organisations.
+  <p>Mark Longair for all his work on YourNextRepresentative.</p>
 
-## With thanks to
+  <p>Andy Lulham for support, feedback and code contributions and general top wombling.</p>
 
-Democracy Club has been helped by many people along the way. We are greatful to them all, but some deserve a special mention:
+  <p>Former board members Sarah Hartley, Alison Walters and Rebecca Eligon, Rebecca Kemp.</p>
 
-Seb Bacon, Tim Green, Edmund von der Burg and Tom Steinberg for their initial work in 2010, and much help since.
+  <p>Chris Shaw for "being the person who cared about WhereDoIVote the most". Without him the polling station finder
+    wouldn't exist, and millions of people would still be looking for their polling station to this very day.</p>
 
-Mark Longair for all his work on YourNextRepresentative.
-
-Andy Lulham for support, feedback and code contributions and general top wombling.
-
-Former board members  Sarah Hartley, Alison Walters and Rebecca Eligon, Rebecca Kemp.
-
-Chris Shaw for "being the person who cared about WhereDoIVote the most". Without him the polling station finder
-wouldn't exist, and millions of people would still be looking for their polling station to this very day.
-
-And last but not least, Joe Mitchell who took a leap in to Democracy Club, via a basement, after Sym spammed him once in 2014,
-and kept us afloat as co-coordinator for the best part of 5 years. He also wrote [almost all the blog posts](/blog).
-
-{% endfilter %}
+  <p>And last but not least, Joe Mitchell who took a leap in to Democracy Club, via a basement, after Sym spammed him
+    once in 2014,
+    and kept us afloat as co-coordinator for the best part of 5 years. He also wrote <a href="{% url "hermes_post_list" %}">almost all the blog
+      posts</a>.</p>
 {% endblock %}

@@ -1,41 +1,59 @@
 {% extends "projects/projects_base.html" %}
 {% load markdown_deux_tags %}
 {% load static %}
+{# fmt:off #}
+
 {% block title %}
 Candidates Wiki
 {% endblock %}
 
 {% block content %}
-  <article>
+<div class="ds-stack-smaller">
   <h1>Candidates Wiki</h1>
+  <img src="{% static "who-on-a-phone.png" %}">
   <img src="{% static "ynr-on-a-phone.png" %}">
 {% filter markdown %}
 
-
-  In the UK, the state does not provide nationwide data on election candidates.
+In the UK, the state does not provide nationwide data on election candidates.
 
 But everyone — from individual voters to journalists and campaigners — wants this information.
 
-So we created the crowdsourced database of UK election candidates.
+> I am looking for information on the candidates I am supposed to be voting for on Thursday.
+I cannot find anything on either candidate. If they cannot be bothered to get the
+information out there why should I bother turning out to vote???
 
-The data powers our voter information website, WhoCanIVoteFor.co.uk. It’s also been used by Google, The Electoral Commission, The Guardian and many other organisations.
 
-Since 2015, it has helped tens millions of people to learn about their candidates.
+So, we created the crowdsourced database of UK election candidates.
+
+The website regularly sees over half a
+  million users during a major election and covers all elections form weekly by-elections to snap general election.
+
+The data powers our voter information website, WhoCanIVoteFor.co.uk. It’s also used by many other organisations, including The Electoral Commission.
+
+<figure>
+  <img src="{% static "images/google-2015.png" %}">
+  <figcaption>Google used our candidates data in the 2015 General Election, allowing approximatly
+    9 million people to find their candidates directly on Google</figcaption>
+</figure>
+
+Since 2015, it has helped tens of millions of people to learn about their candidates.
 
 > Democracy Club’s work gathering data on candidates standing for election has been enormously helpful to us.
-  It has allowed us to produce a more detailed analysis of the elections than was possible before and has
-  made the process of gathering candidate data easier. In the absence of a comprehensive, standardised,
-  digital process for reporting the results of elections across the UK, Democracy Club performs a vital
-  role in collecting and distributing this data.
+It has allowed us to produce a more detailed analysis of the elections than was possible before and has
+made the process of gathering candidate data easier. In the absence of a comprehensive, standardised,
+digital process for reporting the results of elections across the UK, Democracy Club performs a vital
+role in collecting and distributing this data.
 
 <cite>Oliver Hawkins, Social & General Statistics Section, House of Commons Library</cite>
 
-  <a href="https://candidates.democracyclub.org.uk/">Help add to the database here</a>.
+<a href="https://candidates.democracyclub.org.uk/">Help add to the database here</a>.
 
 <a href="https://candidates.democracyclub.org.uk/help/api">Get the data here</a>.
 
 {% endfilter %}
 
-</article>
+{% load post_tags %}
+{% posts_for_tag "WCIVF" %}
+</div>
 
 {% endblock %}

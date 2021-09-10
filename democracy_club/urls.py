@@ -12,9 +12,10 @@ from core.views import HomeView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 
+
 admin.autodiscover()
 
-handler500 = "dc_theme.urls.dc_server_error"
+handler500 = "dc_utils.urls.dc_server_error"
 
 
 urlpatterns = [
@@ -43,9 +44,9 @@ urlpatterns = [
         name="jobs",
     ),
     path(
-        "about/funding/",
-        TemplateView.as_view(template_name="about/funding.html"),
-        name="funding",
+        "about/impact/",
+        TemplateView.as_view(template_name="about/impact.html"),
+        name="impact",
     ),
     path(
         "about/team/",
@@ -64,6 +65,11 @@ urlpatterns = [
     ),
     path("projects/", include("projects.urls", "projects")),
     path(
+        "support-us/",
+        TemplateView.as_view(template_name="support_us.html"),
+        name="support_us",
+    ),
+    path(
         "contact/",
         TemplateView.as_view(template_name="contact.html"),
         name="contact",
@@ -81,6 +87,7 @@ urlpatterns = [
             namespace="report_2019_general_election",
         ),
     ),
+    path("report_2021/", include("report_2021.urls", namespace="report_2021")),
     path(
         "reports/whos_missing/",
         include("report_whos_missing.urls", namespace="report_whos_missing"),
@@ -92,13 +99,29 @@ urlpatterns = [
             namespace="wheredoivote_user_feedback",
         ),
     ),
-    path("quests/", include("backlog.urls", namespace="backlog")),
-    path(
-        "data/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
-    ),
     path(
         "mailing_list/",
         include(("mailing_list.urls", "dc_signup_form")),
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Tuple of URLs to redirect to. Maintained for backwards compatibility / old links
+url_redirects = (
+    path(
+        "data/",
+        RedirectView.as_view(url=reverse_lazy("projects")),
+    ),
+    path(
+        "about/funding/",
+        RedirectView.as_view(url=reverse_lazy("support_us")),
+        name="funding",
+    ),
+)
+
+urlpatterns += url_redirects
+
+
+if settings.DEBUG:
+    from dc_utils.urls import dc_utils_testing_patterns
+
+    urlpatterns += dc_utils_testing_patterns

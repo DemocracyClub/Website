@@ -40,6 +40,13 @@ This will:
 
 If the build fails, run `zappa tail [dev|prod] --since SINCE` to [tail the log](https://github.com/Miserlou/Zappa#tailing-logs) and debug the build.
 
+## Update docs to include 
+new pipeline settings
+Whitenoise
+dc_utils is the source code for forms
+dc_design_system
+staging deploy
+
 ## Cron / scheduling / events
 
 See the `events` key in `zappa_settings.json`.

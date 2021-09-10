@@ -4,33 +4,13 @@
 {% block page_heading %}<h1>Jobs</h1>{% endblock page_heading %}
 
 {% block main_content %}
+{# fmt:off #}
 {% filter markdown %}
 
 {% endfilter %}
 
-<article id="always-be-hiring">
-{% comment %}
-<script type='application/ld+json'>
-{
-	"@context": "http://schema.org/",
-	"@type": "JobPosting",
-	"estimatedSalary": "£20,000",
-	"datePosted": "2020-11-02",
-	"employmentType": "Flexable",
-    "validThrough": "2021-01-10",
-	"hiringOrganization": {
-		"@type": "Organization",
-		"name": "Democracy Club Community Interest Company"
-	},
-	"jobLocation": {
-		"@type": "Place",
-		"address": "UK Wide"
-	},
-	"title": "Elections Assistant - Devolved Parliaments Focus",
-	"description": "2021 will see one of the largest and most complex sets of elections the UK has ever experienced: local elections in England; Police and Crime Commissioners in England and Wales; the Greater London Authority; and the devolved parliaments of Scotland and Wales. In order to ensure that we achieve the greatest impact during these elections, we’re seeking a fixed-term Elections Assistant to help with the administration and dissemination of our voter information tools. Although this role will touch upon all regions of the UK, it will involve a specific focus on the Scottish Parliament and Welsh Parliament/Senedd Cymru."
-}
-</script>
-{% endcomment %}
+
+<div id="always-be-hiring" class="ds-stack">
 {% filter markdown %}
 
 ## Future roles
@@ -49,8 +29,8 @@ We also have a small staff team. We're not currently hiring, but in the past we'
 * General mucker-inners (events, admin, finance, comms)
 
 If you'd like to hear about future roles, do join the mailing list (below) —
-or hop in [our Slack](https://slack.democracyclub.org.uk/).
+or [get in touch]({% url "contact" %}).
 
 {% endfilter %}
-</article>
+</div>
 {% endblock main_content %}

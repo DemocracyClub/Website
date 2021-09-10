@@ -5,8 +5,8 @@
         "memory_size": 1536,
         "keep_warm": false,
         "django_settings": "democracy_club.settings.zappa",
-        "profile_name": "dc",
         "project_name": "democracy-club",
+        "manage_roles": false,
         "runtime": "python3.6",
         "exclude": [
             "*.csv",
@@ -14,7 +14,6 @@
             "*.log",
             "*.pyc",
             "*.rar",
-            "*.svg",
             "babel",
             "boto3*",
             "botocore*",
@@ -25,10 +24,12 @@
             "local.py",
             "pygments",
             "sphinx",
-            "static_files",
             "__pycache__",
             ".tox"
         ],
+        "environment_variables": {
+          "REQUESTS_CA_BUNDLE": "/var/task/cacert.pem"
+        },
         "s3_bucket": "dc-website-test-dev",
         "extra_permissions": [
             {
@@ -44,10 +45,6 @@
         ],
         "timeout_seconds": 300,
         "events": [
-            {
-                "function": "zappa_commands.backlog_import_from_trello",
-                "expression": "rate(2 minutes)"
-            },
             {
                 "function": "zappa_commands.sync_to_sendgrid",
                 "expression": "rate(2 hours)"

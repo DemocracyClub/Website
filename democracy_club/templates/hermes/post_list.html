@@ -1,26 +1,37 @@
 {% extends "base.html" %}
-{% load typogrify_tags %}
+{% load typogrify_tags %}}
 
 {% block body_class %}class="blog"{% endblock %}
-
 {% block page_content %}
-    <h2>Democracy Club Blog</h2>
-    {% for post in posts %}
-    <article>
-        <header>
-            <h3><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h3>
-            <div role="contentinfo">
-              <span class="date">
-                <time datetime="{{post.created_on|date:"c"}}" itemprop="published">
-                  {{post.created_on}}
-                </time>
-              </span>
-              <span rel="author" itemprop="fn">{{post.author.first_name}} {{post.author.last_name}}</span>
-            </div>
-        </header>
 
-        {{ post.rendered_summary|safe|typogrify }}
-        <a href="{{ post.get_absolute_url }}" class="read_more">Read more</a>
+  <div class="ds-stack">
+  <h1>Democracy Club Blog</h1>
+  {% for post in posts %}
+    <article class="ds-stack-smaller">
+      <h2 class="ds-h3"><a href="{{ post.get_absolute_url }}">{{ post.subject }}</a></h2>
+      <div class="byline">
+        <address class="author">
+          By
+          {% if post.author.username == "symroe" %}
+            <a rel="author" href="https://twitter.com/symroe">
+              {{post.author.first_name}}
+              {{post.author.last_name}}
+            </a>
+          {% elif post.author.first_name == "Joe" %}
+            <a rel="author" href="https://twitter.com/j0e_m">
+              {{post.author.first_name}}
+              {{post.author.last_name}}
+            </a>
+          {% else %}
+            {{post.author.first_name}}
+            {{post.author.last_name}}
+          {% endif %}
+        </address>
+        on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
+      </div>
+      {{ post.rendered_summary|safe|typogrify }}
+      <a class="ds-cta ds-cta-blue" href="{{ post.get_absolute_url }}">Read more</a>
     </article>
-    {% endfor %}
+  {% endfor %}
 {% endblock %}
+</div>

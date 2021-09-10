@@ -1,16 +1,19 @@
 {% extends "report_base.html" %}
 {% load static %}
 {% load markdown_deux_tags %}
+{# fmt:off #}
 
 {% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy{% endblock title %}
 
 {% block content %}
-<article id="report_2017">
+    <div id="report_2017" class="ds-stack-smaller">
+
 {% filter markdown %}
+
 
 # Towards better elections
 
-<img src="{% static "report_2017/images/bridge.jpg" %}">
+<img src="{% static 'report_2017/images/bridge.jpg' %}" alt="">
 
 **Democracy Club’s annual report — June 2016 - June 2017**
 
@@ -37,17 +40,17 @@ This report covers Democracy Club’s work from the May 2016 local elections to 
 
 ## Data
 
-### Elections
+###Elections
 
 We are near to meeting our goal of covering every election in the UK, with the capability of collecting candidates, for 100% of district council elections and above. Barriers to this include the absence of open data on new political area boundaries and the difficulty of finding every by-election notice. In future we hope that all data on all boundaries in the UK will be published and updated under an open licence by the organisation that creates the data. Our elections API was not used by any partners, so we will promote this more over the next year.
 
-### Polling locations
+###Polling locations
 
 We reached 44% coverage for the local elections in May and 61% for the general election across England and Wales. Thanks to many partners for all their help with this. We should find new ways to reach electoral staff who may not be aware of our approach. Over the last year, two political parties developed their own polling location datasets, so we will urge them and our partners to work together to create one comprehensive dataset to serve everyone.
 
 The polling locations API served 200k uses for the local elections and 1.8m uses for the June general election. We had two partners use the API in June. We will continue to try to engage similar consumer mapping or transport services to make use of the API in future.
 
-### Candidates
+###Candidates
 
 We listed every candidate for the May local elections (over 16,000) and June general election (over 3,000), but missed a few local by-election candidates. We are confident that our data remains the most comprehensive and accurate available. Our volunteers gathered a significant amount of data on candidates and we should set more specific targets for emails, photos and social media contacts in future.
 
@@ -55,13 +58,13 @@ We may be able to increase the automation of gathering candidate data and aim to
 
 The candidates API served over 300,000 uses at the local elections, beating our expectations. At the general election it was used by at least five partners for over 660,000 lookups. Many more partners are likely to have used the spreadsheet download of candidates data and we should introduce a way to track this in future.
 
-### Results
+## Results
 
 We met our goal to record 50% of first-past-the-post vote shares, but did not make an attempt to model more complex results, such as that used in Scottish local elections. We need to decide whether we have the resources to improve the results recording infrastructure or whether it is better to press the UK Government to meet its Open Government Partnership commitment on this.
 
 For the general election, we marked candidates as ‘elected’ throughout results night, which powered an update for all facebook users the morning after, creating an exemplar fast feedback loop. We will encourage other popular platforms to borrow this approach.
 
-### Partners
+## Partners
 
 On data partners more broadly, we were disappointed by the absence of some big players who chose not fulfil their civic responsibility. We will try to better understand the barriers to action in such organisations and commit to undertaking more research and advocacy in this space.
 
@@ -73,7 +76,7 @@ This year we introduced a ‘statement to voters’ for candidates to use. Take 
 
 Where Do I Vote? is our voter-facing service that uses the polling location data. At the May local elections it was used 45,000 times. At the general election it was used nearly 600,000 times, with 93% of people saying they found it useful (only surveyed in areas where we had data).
 
-Election Leaflets is a service for volunteers to upload photos of printed election materials.  In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service.
+Election Leaflets is a service for volunteers to upload photos of printed election materials. In future, we need to decide whether we continue to run this service, continue to run it only if we can secure funding from academic and media institutions, or discontinue the service.
 
 No work was done on our stretch goal to prototype an election alerts service.
 
@@ -87,7 +90,7 @@ We set significant goals for the overall organisation this year. We met a fundin
 
 ## What’s next?
 
-We will continue to focus on elections as the main point of contact with democracy for most people in the UK.  Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information. There’s also more we can do to improve voter engagement with candidates before an election.
+We will continue to focus on elections as the main point of contact with democracy for most people in the UK. Open data on elections, candidates, polling locations and results is still vitally important infrastructure for a better democracy. People increasingly look to us for this information. There’s also more we can do to improve voter engagement with candidates before an election.
 
 We need to be aware of the possibility of another general election over the next year and there are local elections planned in May 2018, including all-out elections across 32 London boroughs, Birmingham and Manchester. We will work with members of the club over the summer to develop our goals and plans for the year.
 
@@ -96,7 +99,7 @@ More broadly, much of the work we do helps us see the limits of civic education 
 
 # Democracy Club: Data
 
-<img src="{% static "report_2017/images/tube.jpg" %}">
+<img src="{% static 'report_2017/images/tube.jpg' %}" alt="">
 Data refers to the datasets we manage and the Application Programming Interfaces (APIs) we provide (the things that computers use to talk to each other). We assume it is better to take information to where the people are, rather than try to bring people to a new place, so we provide accurate and comprehensive open data in order to make it easy for organisations of all shapes and sizes to provide civic information tailored to their audience.
 
 ## Election data
@@ -227,7 +230,7 @@ In a democracy, everyone — and every organisation — has a civic responsibili
 
 # Democracy Club: Apps
 
-<img src="{% static "report_2017/images/bridge-2.jpg" %}">
+<img src="{% static 'report_2017/images/bridge-2.jpg' %}" alt="">
 
 Apps — or applications — are the services we run for voters’ direct use. And, perhaps in future, candidates’ use too.
 
@@ -303,14 +306,14 @@ The goals we set were as follows:
 
 We managed to achieve one of these labs ideas, largely thanks to Alex Wilson’s terrific volunteering efforts over two weeks to produce a polling station finder widget. This had been requested by councils who had had problems embedding the full finder and was an attractive offer to make to partner organisations. Despite such a short delivery time-frame, the widget was popular and appeared on Manchester Evening News’ website and several council websites.
 
-We looked at Brexit as a possibility for a project not relating to elections. We created a [prototype API of EU regulations](https://eu-regulation.labs.democracyclub.org.uk/) that could be used to make corresponding reports or digital tools.  The importance of this issue means **we could look at this again as part of our plans for 2017/2018**. We did not get anywhere in adopting [Alex Parsons’ online postal vote application service](http://postalvote.inkleby.com), but this is also a possibility for the coming year.
+We looked at Brexit as a possibility for a project not relating to elections. We created a [prototype API of EU regulations](https://eu-regulation.labs.democracyclub.org.uk/) that could be used to make corresponding reports or digital tools. The importance of this issue means **we could look at this again as part of our plans for 2017/2018**. We did not get anywhere in adopting [Alex Parsons’ online postal vote application service](http://postalvote.inkleby.com), but this is also a possibility for the coming year.
 
 In terms of the civic tech sector at large, it seems likely that a lot of the enthusiasm for the general election will have resulted in projects that now get abandoned. Our idea with Labs is to attempt to at least provide an archive for some of these things and ideally some lessons learned so that the enthusiasm at the next election can be directed more effectively. **We should seek to develop and adequately resource this idea over 2017/2018**.
 
 
 
 # Democracy Club: The Club
-<img src="{% static "report_2017/images/severn-bridge.jpg" %}">
+<img src="{% static 'report_2017/images/severn-bridge.jpg' %}" alt="">
 
 The ‘club’ is everyone involved in making every database and project mentioned in this report happen. At June 2017, we are three full time staff and tens of closely involved volunteers and thousands of people who add data, as well as a mailing list of 10,000 people.
 
@@ -351,7 +354,7 @@ Ideally, we would be funded by voters to serve voters, separately from governmen
 
 # What’s next?
 
-<img src="{% static "report_2017/images/canal.jpg" %}">
+<img src="{% static 'report_2017/images/canal.jpg' %}" alt="">
 
 Last year, we outlined a four-year plan. The snap general election dealt with that — and forces us to reconsider how we plan for the future. Several elements are still basically the same:
 
@@ -365,7 +368,7 @@ Everything in this report, particularly where we have failed to meet our goals, 
 
 Lastly, we are aware that the work we do is relatively small in comparison to the need and potential for democratic improvement. The user feedback on Who Can I Vote For?, the top searches on Google Search Insights, and some anecdotal evidence from electoral staff suggests a need for considerably greater civic education across the UK. We consider Democracy Club’s work to be part of a systemic effort by a range of civic organisations to improve democracy. These organisations typically punch above their weight, but struggle to achieve their aims and to do so while becoming financially sustainable. Aside from notable examples, most obviously mySociety, the sector appears to have many proofs of concept, but not the ability to scale up and to evaluable its effect properly. We believe there may be a better approach. To help us understand what that approach might be — and to advocate for it, **Democracy Club aims to develop a research project on both the public understanding of democracy and the state and civil society’s current civic education efforts**, with a view to proposing a large-scale multiplier of our collective efforts.
 
-[^1]: Currently the micro-level geographic data — and possibly ID system —  to be able to aggregate and provide data on parish, town or community elections does not exist.
+[^1]: Currently the micro-level geographic data — and possibly ID system — to be able to aggregate and provide data on parish, town or community elections does not exist.
 
 [^2]: All political parties were welcome to take advantage of the polling location API — Labour was the only one to do so.
 
@@ -375,7 +378,6 @@ Lastly, we are aware that the work we do is relatively small in comparison to th
 
 
 
-{% endfilter %}
-</article>
-
+        {% endfilter %}
+    </div>
 {% endblock content %}

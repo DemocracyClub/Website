@@ -1,0 +1,165 @@
+// DC Design System
+// Main files
+@import 'partials/_fonts.scss';
+@import 'partials/_variables.scss';
+@import 'partials/_type.scss';
+@import 'partials/_forms.scss';
+@import 'partials/_description-lists.scss';
+@import 'partials/_button.scss';
+@import 'partials/_call-to-action.scss';
+@import 'partials/_details.scss';
+@import 'partials/_stack.scss';
+@import 'partials/_cluster.scss';
+@import 'partials/_grid.scss';
+@import 'partials/_sidebar.scss';
+@import 'partials/_breadcrumbs.scss';
+@import 'partials/_card.scss';
+@import 'partials/_table.scss';
+@import 'partials/_language.scss';
+@import 'partials/_header.scss';
+@import 'partials/_subnav.scss';
+@import 'partials/_footer.scss';
+@import 'partials/_radio.scss';
+@import 'partials/_checkbox.scss';
+@import 'partials/_filter.scss';
+@import 'partials/_codeblock.scss';
+@import 'partials/_dark.scss';
+@import 'partials/_page.scss';
+@import 'partials/_utilities.scss';
+@import 'partials/_status.scss';
+@import 'partials/_logo.scss';
+$scope: false;
+@mixin optional-styles {
+    @include description-lists;
+    @include button;
+    @include cta;
+    @include cluster;
+    @include grid;
+    @include sidebar;
+    @include details;
+    @include card;
+    @include breadcrumbs;
+    @include table;
+    @include language;
+    @include header;
+    @include subnav;
+    @include footer;
+    @include radio;
+    @include checkbox;
+    @include filter;
+    @include codeblock;
+    @include status;
+    @include logo;
+}
+
+@if $scope {
+    .ds-scope {
+        font-size: clamp(#{$s1}, 2vw, #{$s2});
+        @include fontMain;
+        @include type;
+        @include forms;
+        @include stack;
+        @include optional-styles;
+        @include page;
+        @include utilities;
+    }
+    .ds-scope *,
+    .ds-scope *::before,
+    .ds-scope *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+}
+
+@else {
+     body {
+        //font-size: 100%;
+        @include fontMain;
+        font-size: clamp(#{$s1}, 2vw, #{$s2});
+    }
+  body *,
+  body *::before,
+  body *::after {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    @include type;
+    @include forms;
+    @include stack;
+    @include optional-styles;
+    @include dark;
+    @include page;
+    @include utilities;
+}
+
+.entry table {
+    @extend .ds-table;
+    width: 100%;
+}
+
+img {
+  width:100%;
+  max-width: 100%;
+}
+
+address {
+  display:inline;
+}
+
+
+figure {
+  @extend .ds-card;
+  img {
+    width:100%
+  }
+  figcaption {
+    @extend .ds-card-body
+  }
+}
+
+@media print {
+  h2 {
+    page-break-before: always;
+  }
+  h3 {
+    page-break-before: always;
+  }
+  h2 + h3 {
+    page-break-before: avoid;
+  }
+  figure + h2, figure + h3, figure + h3 {
+    page-break-before: always;
+  }
+  #toc, nav, footer {display: none}
+}
+
+.partner-logo {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+hr {
+  border-bottom:0;
+  border-top: $ss2 solid $blueForWhite;
+
+}
+
+a[href="#TODO"] {
+  border:1px solid black;
+  color:green;
+}
+a[href="#TODO"]:after {
+  content: "📝"
+}
+
+.ds-cta {
+  // FIXME: tmp fix for https://github.com/DemocracyClub/design-system/issues/36
+  transform-origin: left;
+}

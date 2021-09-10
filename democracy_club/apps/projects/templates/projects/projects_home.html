@@ -1,63 +1,44 @@
 {% extends "projects/projects_base.html" %}
 
 {% block page_heading %}
-<h1>Projects</h1>
+    <h1>Projects</h1>
 {% endblock %}
 
 {% block main_content %}
+  <div class="ds-stack">
+    <h2>Voting information</h2>
+    <p>Democracy Club runs a range of tools and services that help voters take part in elections.</p>
 
-<ul class="card-list">
+    <h3><a href="{% url "projects:every_election" %}">EveryElection</a></h3>
+    <p>Our elections database collects all elections to UK parliaments, principal councils (districts, counties and unitaries) and other bodies.</p>
 
-  <li class="link-card">
-{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
-    <div class="text">
-      <h3><a href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h3>
-      <p>Helps millions of people to find out where to vote in the UK</p>
-    </div>
-  </li>
+    <h3><a href="{% url "projects:polling_one_pager" %}">Where Do I Vote?</a></h3>
+    <p>One of the most common questions from voters on election day is “where do I vote?”. Our polling station finder has the answer!</p>
 
-<li class="link-card">
-{#    <img src="/static/images/where-on-phone.jpg" alt="">#}
-    <div class="text">
-      <h3><a href="{% url "projects:whocanivotefor" %}">Who Can I Vote For?</a></h3>
-      <p>Helps people learn about elections, candidates and results in their area</p>
-    </div>
-  </li>
-
-  <li class="link-card">
-    <div class="text">
     <h3><a href="{% url "projects:candidates" %}">Candidates Wiki</a></h3>
-    <p>The crowdsourced database of candidates</p>
-    </div>
-  </li>
-  <li class="link-card">
-    <div class="text">
+    <p>In the UK, the state does not provide nationwide data on election candidates.
+
+      But everyone — from individual voters to journalists and campaigners — wants this information.
+
+      So we created the crowdsourced database of UK election candidates.</p>
+
     <h3><a href="{% url "projects:election_widget" %}">Election Widget</a></h3>
-    <p>Add our widget to your website to help people learn about elections.</p>
-    </div>
-  </li>
+    <p>All of our services wrapped up in a single, embeddable widget. Add it to your own website for free!</p>
 
-  <li class="link-card">
-    <div class="text">
-      <h3><a href="{% url "projects:data" %}">Election data and APIs</a></h3>
-      <p>Open data on:</p>
-      <ul>
-        <li>Elections</li>
-        <li>Polling locations</li>
-        <li>Candidates</li>
-        <li>Results</li>
-      </ul>
+    <h3><a href="{% url "projects:data" %}">Election data and APIs</a></h3>
+    <p>All our data is available as API or CSV downloads</p>
+    <ul>
+      <li>Elections</li>
+      <li>Polling locations</li>
+      <li>Candidates</li>
+      <li>Results</li>
+    </ul>
 
-
-
-      <ul>
-
-
-      </ul>
-    </div>
-  </li>
-
-</ul>
-
-
+    <p>Planning your own project using our data? We’d appreciate it if you could let us know. We’re happy to provide
+      advice on project proposals.</p>
+  </div>
+  <h2>Year round services</h2>
+  <h3><a href="{% url "projects:representatives" %}">Representatives</a></h3>
+  <p>Approximately 400 organisations with 22,000 elected people make decisions every day about everything from schools
+    and social care to roads and travel, the environment to elections. Democracy Club is trying to make a list of them all.</p>
 {% endblock main_content %}

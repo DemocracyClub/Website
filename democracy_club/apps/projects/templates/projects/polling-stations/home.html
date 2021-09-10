@@ -1,40 +1,41 @@
 {% extends "projects/polling-stations/polling_stations_base.html" %}
 {% load markdown_deux_tags %}
 {% load static %}
-
+{# fmt:off #}
 {% block page_title %}
-<h1>Polling station finder</h1>
+    <h1>Polling station finder</h1>
 {% endblock page_title %}
 
 {% block main_content %}
 
-<img src="{% static "where-on-a-phone.jpg" %}" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
+    <img src="{% static 'where-on-a-phone.jpg' %}" alt="A screenshot of WhereDoIVote.co.uk showing a polling station in Cardiff">
+
 {% filter markdown %}
-*A screenshot from Democracy Club's <a href="https://wheredoivote.co.uk/">WhereDoIVote.co.uk</a> service, embeddable in council websites.*
+*A screenshot from Democracy Club's <a href="https://wheredoivote.co.uk/">WhereDoIVote.co.uk</a> service, embeddable on any website.*
 
-One of the most common questions from voters on election day is “*where do I vote?*”. We try to get people answers.
+One of the most common questions from voters on election day is “*where do I vote?*”.
 
-  <a href="https://wheredoivote.co.uk/">Our polling station finder</a> can be used by voters searching on the internet or on their local council website. <a href="https://wheredoivote.co.uk/example">See an example result</a> for a postcode.
+<a href="https://wheredoivote.co.uk/">Our polling station finder</a> provides the answer via a simple postcode search
+  <a href="https://wheredoivote.co.uk/example">See an example result</a>.
 
 We work with local government to establish internal best practice for publishing open data on polling stations —
 which means it becomes incredibly easy for voters to find it. Voters don’t need to know which ward or
 constituency they’re in or who manages their elections — we just get them the answer they’re searching for,
 in seconds.
 
-
 > Very clear, simple, comprehensive. It’s a wonderful voting tool and it definitely influenced positively my decision to vote. Thank you for providing such informative and easy-to-follow pre-voting platform.
 
-Find out more in our
-  <a href="{% url "wheredoivote_user_feedback:wheredoivote_user_feedback_2017" %}">2017</a> and
-  <a href="{% url "wheredoivote_user_feedback:wheredoivote_user_feedback_2018" %}">2018</a> feedback reports.
+The finder regularly receives over a million searches per election.
 
-If you work at a council, <a href="{% url "projects:polling_data_upload" %}">find out how to send us data</a>.
+If you work at a council, <a href="{% url 'projects:polling_data_upload' %}">find out how to send us data</a>.
 
 Find out how to
-  <a href="{% url "projects:polling_embed_code" %}">use the widget on your website or in an app</a>.
+<a href="{% url 'projects:polling_embed_code' %}">use the widget on your website or in an app</a>.
 
 
 {% endfilter %}
 
-{% endblock main_content %}
+{% load post_tags %}
+{% posts_for_tag "WDIV" %}
 
+{% endblock main_content %}

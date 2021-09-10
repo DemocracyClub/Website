@@ -24,15 +24,14 @@ DATABASES = {
     }
 }
 
+WHITENOISE_AUTOREFRESH = False
+PIPELINE["PIPELINE_ENABLED"] = True  # noqa
+PIPELINE["PIPELINE_COLLECTOR_ENABLED"] = False  # noqa
+
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "pipeline.finders.CachedFileFinder",
-    "pipeline.finders.PipelineFinder",
 )
-
-
-PIPELINE["COMPILERS"] = ("core.s3_lambda_storage.LambdaSASSCompiler",)  # noqa
 
 AWS_S3_SECURE_URLS = True
 AWS_S3_HOST = "s3-eu-west-1.amazonaws.com"
@@ -46,10 +45,6 @@ else:
     AWS_STORAGE_BUCKET_NAME = "static.democracyclub.org.uk"
     AWS_S3_CUSTOM_DOMAIN = "static.democracyclub.org.uk"
 
-STATICFILES_LOCATION = "static"
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-STATICFILES_STORAGE = "core.s3_lambda_storage.StaticStorage"
-
 MEDIAFILES_LOCATION = "media"
 MEDIA_URL = "https://{}/{}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 DEFAULT_FILE_STORAGE = "core.s3_lambda_storage.MediaStorage"
@@ -61,9 +56,6 @@ CSRF_TRUSTED_ORIGINS = [
 
 DEBUG = False
 GOCARDLESS_ACCESS_TOKEN = os.environ.get("GOCARDLESS_ACCESS_TOKEN")
-
-BACKLOG_TRELLO_KEY = os.environ.get("BACKLOG_TRELLO_KEY")
-BACKLOG_TRELLO_TOKEN = os.environ.get("BACKLOG_TRELLO_TOKEN")
 
 
 GOCARDLESS_APP_ID = os.environ.get("GOCARDLESS_APP_ID")
