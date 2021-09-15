@@ -3,3 +3,4 @@
 Sphinx
 ipdb
 djhtml
+black==21.9b0
