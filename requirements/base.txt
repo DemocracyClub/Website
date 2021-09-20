@@ -21,6 +21,7 @@ https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.1.tar.gz
 https://github.com/DemocracyClub/design-system/archive/refs/tags/0.1.6.tar.gz
 https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.2.tar.gz
 
+https://github.com/DemocracyClub/awsgi/archive/refs/heads/master.zip
 
 beautifulsoup4==4.10.0
 django-cors-headers==3.8.0
