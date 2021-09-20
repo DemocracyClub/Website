@@ -10,53 +10,53 @@
     
 {% filter markdown %}
 
+We'd love you to use our polling station finder on your web site. If you do, we kindly ask that you:
 
-    We'd love you to use our polling station finder on your web site. If you do, we kindly ask that you:
+1. Credit Democracy Club, linking to our home page at [https://democracyclub.org.uk/](https://democracyclub.org.uk/) along side the embedded widget.
+2. <a href="{% url 'contact' %}">Let us know</a> you're using it. We don't limit use, but it's great to know who has used the embed feature.
+3. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
 
-    1. Credit Democracy Club, linking to our home page at [https://democracyclub.org.uk/](https://democracyclub.org.uk/) along side the embedded widget.
-    2. <a href="{% url 'contact' %}">Let us know</a> you're using it. We don't limit use, but it's great to know who has used the embed feature.
-    3. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
+##Customise and Embed
+For councils in Wales, we offer optional Welsh language support.
 
-    <h2>Customise and Embed</h2>
-    For councils in Wales, we offer optional Welsh language support.
-    <form id="widget-options" class="form form-inline">
-        <div class="form-group">
-            <fieldset>
-                <label for="no-lang" class="block-label selection-button-radio">
-                    <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
-                    In English only
-                </label>
-                <label for="en" class="block-label selection-button-radio">
-                    <input type="radio" name="language" id="en" value="en">
-                    With language toggle (Default English)
-                </label>
-                <label for="cy" class="block-label selection-button-radio">
-                    <input type="radio" name="language" id="cy" value="cy">
-                    With language toggle (Default Welsh)
-                </label>
-            </fieldset>
-        </div>
-        <button>Generate</button>
-    </form>
+<form id="widget-options" class="form form-inline">
+    <div class="form-group">
+        <fieldset>
+            <label for="no-lang" class="block-label selection-button-radio">
+                <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
+                In English only
+            </label>
+            <label for="en" class="block-label selection-button-radio">
+                <input type="radio" name="language" id="en" value="en">
+                With language toggle (Default English)
+            </label>
+            <label for="cy" class="block-label selection-button-radio">
+                <input type="radio" name="language" id="cy" value="cy">
+                With language toggle (Default Welsh)
+            </label>
+        </fieldset>
+    </div>
+    <button>Generate</button>
+</form>
 
-    <figure>
-        <noscript>
-            <iframe src="https://wheredoivote.co.uk/embed/" style="width:100%; height:1100px" frameborder="0" scrolling="no">
-            </iframe>
-        </noscript>
-        <div id="widget-area">
-            <div id="dc_wdiv" aria-live="polite" role="region"></div>
-            <script type="text/javascript" src="https://widget.wheredoivote.co.uk/wdiv.js">
-            </script>
-        </div>
-        <figcaption>
-            Live data varies, so results might not show for example postcodes.
-            We tend not to have data outside of major elections, <a href="{% url 'contact' %}">contact us</a>
-            if you'd like a demo.
-        </figcaption>
-    </figure>
+<figure>
+    <noscript>
+        <iframe src="https://wheredoivote.co.uk/embed/" style="width:100%; height:1100px" frameborder="0" scrolling="no">
+        </iframe>
+    </noscript>
+    <div id="widget-area">
+        <div id="dc_wdiv" aria-live="polite" role="region"></div>
+        <script type="text/javascript" src="https://widget.wheredoivote.co.uk/wdiv.js">
+        </script>
+    </div>
+    <figcaption>
+        Live data varies, so results might not show for example postcodes.
+        We tend not to have data outside of major elections, <a href="{% url 'contact' %}">contact us</a>
+        if you'd like a demo.
+    </figcaption>
+</figure>
 
-    To embed on your site, use the following code:
+To embed on your site, use the following code:
 {% endfilter %}
 
 
@@ -67,12 +67,14 @@
     style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;
   &lt;/iframe&gt;
 &lt;/noscript&gt;
+
 &lt;div id="dc_wdiv" aria-live="polite" role="region"&gt;&lt;/div&gt;
 &lt;script type="text/javascript"
   src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
 &lt;/script&gt;
 
 </code></pre>
+
 {% filter markdown %}
 ## Adding your data
 Work in a council and want your polling stations to work in the widget?
