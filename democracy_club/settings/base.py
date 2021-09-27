@@ -77,7 +77,6 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.admin",
     "localflavor",
-    "markdown_deux",
     "django_extensions",
     "dc_design_system",
     "pipeline",
