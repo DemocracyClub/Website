@@ -1,6 +1,7 @@
-{% load markdown_deux_tags %}
+{% load markdown_filter %}
 {% load thumbnail %}
 {% load typogrify_tags %}
+{# fmt:off #}
 
 {% if post.hero %}
 {% thumbnail post.hero "690" as im %}

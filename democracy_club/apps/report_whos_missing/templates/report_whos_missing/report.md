@@ -1,5 +1,5 @@
-{% load markdown_deux_tags %}
-{%  markdown %}
+{% load markdown_filter %}
+{% markdown %}
 
 
 

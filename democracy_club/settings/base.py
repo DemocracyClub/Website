@@ -195,6 +195,8 @@ MARKDOWN_DEUX_STYLES = {
     },
 }
 
+REPORT_MARKDOWN_EXTENSIONS = ["toc"]
+
 
 def blog_markdown(value):
     import markdown

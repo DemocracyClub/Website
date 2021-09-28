@@ -1,10 +1,10 @@
 {% extends "about/about_base.html" %}
-{% load markdown_deux_tags %}
+{% load markdown_filter %}
 
 {% block page_heading %}<h1>Jobs</h1>{% endblock page_heading %}
 
 {% block main_content %}
-{# fmt:off #}
+    {# fmt:off #}
 {% filter markdown %}
 
 {% endfilter %}
