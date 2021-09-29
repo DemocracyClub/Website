@@ -1,14 +1,30 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
-  build:
+  install_and_update_dependencies:
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6-jessie-node
+      - image: cimg/python:3.8.12
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-dependencies-{{ checksum "Pipfile.lock" }}
+      - run: &install-pipenv sudo pip install -U pipenv urllib3 pip --quiet --no-input
+      - run: pipenv install --dev
+      - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
+      - run: make lambda-layers/DependenciesLayer/requirements.txt
+      - persist_to_workspace:
+          root: ~/repo/
+          paths: [ lambda-layers/DependenciesLayer/requirements.txt ]
+      - save_cache:
+          when: on_success
+          paths:
+            - ~/.local/share/virtualenvs/
+          key: v2-dependencies-{{ checksum "Pipfile.lock" }}
+
+  test:
+    docker:
+      - image: cimg/python:3.8.12
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
@@ -16,11 +32,6 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: democracy_club
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-
     working_directory: ~/repo
 
     steps:
@@ -29,43 +40,25 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements/base.txt" }}-{{ checksum "requirements/testing.txt" }}
-
-
-      - run:
-          name: install Tox
-          command: |
-            python3 -m venv .venv
-            . .venv/bin/activate
-            pip install tox coveralls
+            - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv .venv
-            . .venv/bin/activate
-            pip install -r requirements.txt
-            tox --notest --workdir /home/circleci/repo/.tox/
-      - save_cache:
-          paths:
-            - ./.venv
-            - /home/circleci/repo/.tox/
-          key: v1-dependencies-{{ checksum "requirements/base.txt" }}-{{ checksum "requirements/testing.txt" }}
-
-      # run tests!
-      - run:
-          name: run tests
-          command: |
-            . .venv/bin/activate
-            tox --workdir /home/circleci/repo/.tox/
-      # Coverage
-      - run:
-          name: Update Coveralls
-          command: |
-            . .venv/bin/activate
-            coveralls
+      - run: *install-pipenv
+      - run: pipenv run black-check
+      - run: pipenv run pytest --flakes
+      - run: pipenv run pytest --cov-report= --cov=aggregator --junitxml=test-results/junit.xml
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v2
+        with:
+          fail_ci_if_error: true
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+workflows:
+  version: 2
+  test_build_deploy:
+    jobs:
+      - install_and_update_dependencies
+      - test
