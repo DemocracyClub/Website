@@ -75,7 +75,6 @@ urlpatterns = [
         name="contact",
     ),
     path("blog/", include("hermes.urls")),
-    path("donate/", include("donations.urls", namespace="donations")),
     path("report_2016/", include("report_2016.urls", namespace="report_2016")),
     path("report_2017/", include("report_2017.urls", namespace="report_2017")),
     path("report_2018/", include("report_2018.urls", namespace="report_2018")),
