@@ -30,7 +30,7 @@ Markdown = "==3.3.4"
 
 [dev-packages]
 aws-sam-cli = "==1.31.0"
-black = "==21.9b0"
+black = "==21.7b0"
 vcrpy = "==2.0.1"
 pytest = "*"
 pytest-cov = "*"
