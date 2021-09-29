@@ -8,4 +8,6 @@ clean: ## Delete any generated static asset or req.txt files and git-restore the
 lambda-layers/DependenciesLayer/requirements.txt:
 	pipenv lock -r | sed "s/^-e //" >lambda-layers/DependenciesLayer/requirements.txt
 
-
+.PHONY: collectstatic
+collectstatic: ## Rebuild the static assets
+	python manage.py collectstatic --noinput --clear
