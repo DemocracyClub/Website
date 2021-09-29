@@ -1,6 +1,0 @@
--r testing.txt
-
-Sphinx
-ipdb
-djhtml
-black==21.9b0
