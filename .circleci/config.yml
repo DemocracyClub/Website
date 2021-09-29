@@ -50,7 +50,7 @@ jobs:
       - run: *install-pipenv
       - run: pipenv run black-check
       - run: pipenv run pytest --flakes
-      - run: pipenv run pytest --cov-report= --cov=aggregator --junitxml=test-results/junit.xml
+      - run: pipenv run pytest --cov-report= --cov=democracy_club --junitxml=test-results/junit.xml
       - codecov/upload
       - store_artifacts:
           path: test-reports
