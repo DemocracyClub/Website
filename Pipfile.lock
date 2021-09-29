@@ -102,9 +102,9 @@
         "django-hermes": {
             "file": "https://github.com/DemocracyClub/django-hermes/archive/refs/heads/master.tar.gz",
             "hashes": [
-                "sha256:f5abb52bc2a9405e185371e576300256f0fbd1f104ae3e63b4bebb72bfe0e166"
+                "sha256:7433c0f9d54ecca5477fd1db78f249edb569aea29a3b45b5084aa4f2a8aaf852"
             ],
-            "version": "==1.4.3"
+            "version": "==1.5.3"
         },
         "django-localflavor": {
             "hashes": [
