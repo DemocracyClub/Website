@@ -45,3 +45,8 @@ factory-boy = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+black = "black ."
+black-check = "black --check ."
+pytest = "pytest"
