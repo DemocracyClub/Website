@@ -3,8 +3,16 @@ import os
 from .base import setup_sentry
 from .base import *  # noqa
 
-if os.environ.get("APP_IS_BEHIND_CLOUDFRONT", False):
-    FORCE_SCRIPT_NAME = "/"
+if os.environ.get("APP_IS_BEHIND_CLOUDFRONT", False) in [
+    True,
+    "true",
+    "True",
+    "TRUE",
+]:
+    USE_X_FORWARDED_HOST = True
+else:
+    USE_X_FORWARDED_HOST = False
+    FORCE_SCRIPT_NAME = "/Prod"
 
 ALLOWED_HOSTS = [os.environ.get("FQDN")]
 
