@@ -197,7 +197,7 @@ Resources:
           SslSupportMethod: sni-only
 
         DefaultCacheBehavior:
-          AllowedMethods: [ GET, HEAD, OPTIONS ]
+          AllowedMethods: [ GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE ]
           TargetOriginId: Dynamic
           ForwardedValues:
             QueryString: true
@@ -206,6 +206,7 @@ Resources:
             Headers:
               - Authorization
               - Origin
+              - Referer
           ViewerProtocolPolicy: "redirect-to-https"
 
         CacheBehaviors:
