@@ -14,7 +14,13 @@ def lambda_handler(event, context):
         application,
         event,
         context,
-        base64_content_types={"image/png", "image/jpeg", "image/x-icon"},
+        base64_content_types={
+            "image/png",
+            "image/x-icon",
+            "image/jpeg",
+            "image/jpg",
+            "font/woff2",
+        },
     )
 
 
