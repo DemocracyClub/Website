@@ -1,0 +1,26 @@
+version = 0.1
+
+[staging]
+
+[staging.global.parameters]
+stack_name = "dc_website_staging"
+
+[staging.deploy]
+[staging.deploy.parameters]
+stack_name = "dc-website-staging"
+s3_bucket = "dc-website-deployment-artifacts-staging-fj38dm33ud"
+s3_prefix = "dc-website-staging"
+region = "eu-west-2"
+capabilities = "CAPABILITY_IAM"
+
+confirm_changeset = false
+tags = "dc-product=\"dc-website\" dc-environment=\"staging\""
+progressbar = false
+fail_on_empty_changeset = false
+force_upload = true
+
+[staging.logs]
+[staging.logs.parameters]
+stack_name = "dc-website-staging"
+name = "DCWebsiteFunction"
+region = "eu-west-2"

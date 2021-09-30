@@ -73,6 +73,36 @@ jobs:
           root: ~/repo/
           paths: [ .aws-sam/build/ ]
 
+  sam_deploy:
+    docker:
+      - image: cimg/python:3.8.12
+    working_directory: ~/repo/
+    parameters:
+      dc-environment:
+        type: enum
+        enum: [ development, staging, production ]
+    environment:
+      SAM_CONFIG_FILE: samconfig.toml.d/ci-<<parameters.dc-environment>>.toml
+      SAM_LAMBDA_CONFIG_ENV: <<parameters.dc-environment>>
+      SAM_PUBLIC_CONFIG_ENV: <<parameters.dc-environment>>-public-access
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/repo/
+      - restore_cache:
+          keys:
+            - v2-dependencies-{{ checksum "Pipfile.lock" }}
+      - run: *install-pipenv
+
+      - run:
+          name: "pipenv run sam deploy # App: Lambda + API Gateway"
+          command: |
+            pipenv run sam deploy ${DASH_DASH_DEBUG} \
+              --config-file ~/repo/${SAM_CONFIG_FILE} \
+              --config-env $SAM_LAMBDA_CONFIG_ENV \
+              --template-file ~/repo/.aws-sam/build/template.yaml \
+              --parameter-overrides "GitHash='$CIRCLE_SHA1'"
+
 
 workflows:
   version: 2
@@ -85,3 +115,10 @@ workflows:
       - sam_build:
           requires:
             - test
+      - sam_deploy:
+          name: sam_deploy_staging
+          dc-environment: staging
+          requires:
+            - sam_build
+          context: [ deployment-staging-dc-website ]
+          filters: { branches: { only: [ 'feature/django-upgrade', main, master ] } }

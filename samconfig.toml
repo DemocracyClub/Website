@@ -1,0 +1,42 @@
+version = 0.1
+[staging]
+[staging.deploy]
+[staging.deploy.parameters]
+stack_name = "dc-website-staging"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-mw12y945nb23fzz"
+s3_prefix = "dc-website-staging"
+region = "eu-west-2"
+capabilities = "CAPABILITY_IAM"
+
+confirm_changeset = false
+tags = "dc-product=\"dc-website\" dc-environment=\"staging\""
+progressbar = false
+fail_on_empty_changeset = false
+force_upload = true
+
+[staging.logs]
+[staging.logs.parameters]
+stack_name = "dc-website-staging"
+name = "DCWebsiteFunction"
+region = "eu-west-2"
+
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "dc-website-staging"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-mw12y945nb23fzz"
+s3_prefix = "dc-website-staging"
+region = "eu-west-2"
+capabilities = "CAPABILITY_IAM"
+
+confirm_changeset = false
+tags = "dc-product=\"dc-website\" dc-environment=\"staging\""
+progressbar = false
+fail_on_empty_changeset = false
+force_upload = true
+
+[default.logs]
+[staging.logs.parameters]
+stack_name = "dc-website-staging"
+name = "DCWebsiteFunction"
+region = "eu-west-2"
