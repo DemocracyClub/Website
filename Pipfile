@@ -13,7 +13,7 @@ django-ratelimit = "==3.0.1"
 django-storages = "==1.11.1"
 djangorestframework = "==3.12.4"
 djhtml = "*"
-aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/heads/master.zip"}
+aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"}
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.5.tar.gz"}
 dc-signup-form = {file = "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.1.tar.gz"}
 dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.1.6.tar.gz"}

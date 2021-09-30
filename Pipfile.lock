@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "36bd21ce923e3422aa53e854f0d0f78bb087172380b7fd18da5b296597015df5"
+            "sha256": "f582309edc65c5a757b3184bc57ecc73fad28388f4b6d5072b88dc3de525bcf1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -33,8 +33,9 @@
             "version": "==21.2.0"
         },
         "aws-wsgi": {
-            "file": "https://github.com/DemocracyClub/awsgi/archive/refs/heads/master.zip",
+            "file": "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz",
             "hashes": [
+                "sha256:0c1cd1856ca4ccaa40b3579a93318fb7b6a81d4022888d54dc17351592031995",
                 "sha256:9937d64c8c7a5001a89fb0a490370d37db9dde76876f058ebf85c5b48cf2bfb5"
             ],
             "version": "==0.2.7"
@@ -589,19 +590,19 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:6c9f2b50827ba9233a143b71746b7f1caee0467cf5004d7b43d5a7d5f468827b",
-                "sha256:f7ab057556461678dda5597ceb08b233a82b7bbfb29b47d18b2fa102bd5ad680"
+                "sha256:83d6f539e0f0e0f0c532bb2b11d1e9c5055d1d806d64a61aff4f49399c294ee7",
+                "sha256:98279095b1d08ee6d8d587f2c66fda6d560ad3046e98cd140c1aa8e1ed018c70"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==1.18.50"
+            "version": "==1.18.51"
         },
         "botocore": {
             "hashes": [
-                "sha256:06e4d529071accac2ef93de1f9827dce0b41b0b6d9f81bd81d31aa2342d72631",
-                "sha256:3c24e20ad2b155c5a031db2ed060191df282369c5e59225ef20126cdfa6f082f"
+                "sha256:17a10dd33334e7e3aaa4e12f66317284f96bb53267e20bc877a187c442681772",
+                "sha256:2089f9fa36a59d8c02435c49d58ccc7b3ceb9c0c054ea4f71631c3c3a1c5245e"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==1.21.50"
+            "version": "==1.21.51"
         },
         "certifi": {
             "hashes": [
