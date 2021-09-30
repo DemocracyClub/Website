@@ -44,7 +44,7 @@ Parameters:
   AppDjangoSettingsModule:
     Description: "The DJANGO_SETTINGS_MODULE environment variable passed to the app."
     Type: String
-    Default: "democracy_club.settings.base"
+    Default: "democracy_club.settings.aws_lambda"
 
   AppIsBehindCloudFront:
     Description: "The APP_IS_BEHIND_CLOUDFRONT environment variable passed to the app, which modifies various path- and host-related settings."
@@ -84,7 +84,7 @@ Resources:
       Environment:
         Variables:
           SECRET_KEY: !Ref AppSecretKey
-#          SENTRY_DSN: !Ref AppSentryDSN
+          SENTRY_DSN: !Ref AppSentryDSN
           DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
           APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
           GIT_HASH: !Ref GitHash

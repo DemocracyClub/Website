@@ -102,8 +102,13 @@ jobs:
               --config-env $SAM_LAMBDA_CONFIG_ENV \
               --template-file ~/repo/.aws-sam/build/template.yaml \
               --parameter-overrides "GitHash='$CIRCLE_SHA1'"
-
-
+      - run:
+          name: "Publish a new Sentry Release"
+          command: |
+            curl -sL https://sentry.io/get-cli/ | bash
+            sentry-cli releases --org democracy-club-gp new $CIRCLE_SHA1 --project dc-website
+            sentry-cli releases --org democracy-club-gp set-commits --auto $CIRCLE_SHA1
+            sentry-cli releases --org democracy-club-gp finalize $CIRCLE_SHA1
 workflows:
   version: 2
   test_build_deploy:

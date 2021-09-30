@@ -225,12 +225,35 @@ GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 SITE_TITLE = "Democracy Club"
 
 
+def setup_sentry(environment=None):
+    SENTRY_DSN = os.environ.get("SENTRY_DSN")
+    if not SENTRY_DSN:
+        return
+
+    if not environment:
+        environment = os.environ.get("SAM_LAMBDA_CONFIG_ENV", "staging")
+    release = os.environ.get("GIT_HASH", "unknown")
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=0,
+        environment=environment,
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True,
+        release=release,
+    )
+
+
 # .local.py overrides all the common settings.
 import os
 
 try:
     if os.environ.get("FRAMEWORK", None) == "Zappa":
-        from .zappa import *  # noqa
+        from .aws_lambda import *  # noqa
     else:
         from .local import *  # noqa
 except ImportError:
