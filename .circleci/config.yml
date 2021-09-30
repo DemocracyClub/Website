@@ -68,7 +68,7 @@ jobs:
       - run: pip install --upgrade pip
       - run: pip install -r lambda-layers/DependenciesLayer/requirements.txt
       - run: make collectstatic
-      - run: sam build ${DASH_DASH_DEBUG}
+      - run: sam build ${DASH_DASH_DEBUG} --template-file sam-template.yaml
       - persist_to_workspace:
           root: ~/repo/
           paths: [ .aws-sam/build/ ]

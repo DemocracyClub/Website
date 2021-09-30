@@ -74,3 +74,4 @@ democracy_club/static
 .cache
 .pytest_cache/
 lambda-layers/DependenciesLayer/requirements.txt
+.aws-sam

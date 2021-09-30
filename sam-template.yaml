@@ -1,0 +1,118 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "DC Website Django app: Lambda, API Gateway"
+
+Globals:
+  Function:
+    Timeout: 10
+  Api:
+    BinaryMediaTypes:
+      - "*/*"
+
+Parameters:
+
+  AppSecretKey:
+    Default: AppSecretKey
+    Description: "The SECRET_KEY environment variable passed to the app."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppSentryDSN:
+    Default: AppSentryDSN
+    Description: "The SENTRY_DSN environment variable passed to the app."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresHost:
+    Default: AppPostgresHost
+    Description: "The Postgres database host for this deploy."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresDatabaseName:
+    Default: AppPostgresDatabaseName
+    Description: "The Postgres database name for this deploy."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresPassword:
+    Default: AppPostgresPassword
+    Description: "The password for the postgres user"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppSendgridAPIKey:
+    Default: AppSendgridAPIKey
+    Description: "The SendGrid API key"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppDjangoSettingsModule:
+    Description: "The DJANGO_SETTINGS_MODULE environment variable passed to the app."
+    Type: String
+    Default: "democracy_club.settings.base"
+
+  AppIsBehindCloudFront:
+    Description: "The APP_IS_BEHIND_CLOUDFRONT environment variable passed to the app, which modifies various path- and host-related settings."
+    Type: String
+    AllowedValues:
+      - "True"
+      - "False"
+    Default: "True"
+
+  GitHash:
+    Description: "The Hash of the git commit that's deployed"
+    Type: String
+
+
+Resources:
+
+  DependenciesLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: ./lambda-layers/DependenciesLayer/
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: makefile
+    RetentionPolicy: Delete
+
+  DCWebsiteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
+      CodeUri: .
+      Handler: democracy_club.lambda_awsgi.lambda_handler
+      Layers:
+        - !Ref DependenciesLayer
+      Runtime: python3.8
+      MemorySize: 192
+      Environment:
+        Variables:
+          SECRET_KEY: !Ref AppSecretKey
+#          SENTRY_DSN: !Ref AppSentryDSN
+          DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
+          APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
+          GIT_HASH: !Ref GitHash
+          DATABASE_HOST: !Ref AppPostgresHost
+          POSTGRES_DATABASE_NAME: !Ref AppPostgresDatabaseName
+          DATABASE_PASS: !Ref AppPostgresPassword
+      Events:
+        HTTPRequests:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+        HTTPRequestRoots:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+
+  DCWebsiteFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    DependsOn: [ DCWebsiteFunction ]
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${DCWebsiteFunction}
+      RetentionInDays: 60
+
+Outputs:
+  DCWebsiteFqdn:
+    Description: "API Gateway endpoint FQDN for DC Website function"
+    Value: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+    Export:
+      Name: !Join [ ":", [ !Ref "AWS::StackName", "DCWebsiteFqdn" ] ]
