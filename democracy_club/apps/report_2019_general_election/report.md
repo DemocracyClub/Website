@@ -1,16 +1,8 @@
-{% extends "report_base.html" %}
 {% load static %}
-{% load markdown_filter %}
-{# fmt:off #}
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2019 general election{% endblock title %}
-
-{% block content %}
-<div id="report_2019ge" class="ds-stack-smaller">
-{% filter markdown %}
 
 # Report on the 2019 General Election
 
-<img src="{% static "images/maze_illustration_no_text.png" %} alt="">
+<img src="{% static 'report_2019_general_election/images/maze.png' %}" alt="">
 
 **A Note on Publication**
 
@@ -803,8 +795,3 @@ We had identified all council seats up for election, and had begun developing
 partnerships strategy, including relating to the Police and Crime Commissioner
 elections. We are now well prepared for the anticipated resumption of elections
 in 2021.
-
-
-{% endfilter %}
-</div>
-{%  endblock %}

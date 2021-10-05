@@ -6,8 +6,8 @@ app_name = "report_2019_general_election"
 urlpatterns = [
     re_path(
         r"^$",
-        TemplateView.as_view(
-            template_name="report_2019_general_election/report.html"
+        MarkdownFileView.as_view(
+            markdown_file="apps/report_2019_general_election/report.md"
         ),
         name="report_2019_general_election",
     )
