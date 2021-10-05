@@ -1,17 +1,7 @@
-{% extends "report_base.html" %}
 {% load static %}
-{% load markdown_filter %}
-{# fmt:off #}
-
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy{% endblock title %}
-
-{% block content %}
-    <div id="report_2017" class="ds-stack-smaller">
-
-{% filter markdown %}
-
 
 # Towards better elections
+## Report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy
 
 <img src="{% static 'report_2017/images/bridge.jpg' %}" alt="">
 
@@ -373,11 +363,3 @@ Lastly, we are aware that the work we do is relatively small in comparison to th
 [^2]: All political parties were welcome to take advantage of the polling location API — Labour was the only one to do so.
 
 [^3]: One of our directors wrote in the Guardian on this subject on the day before the local elections: [https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils](https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils)
-
-
-
-
-
-        {% endfilter %}
-    </div>
-{% endblock content %}
