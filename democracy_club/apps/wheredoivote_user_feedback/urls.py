@@ -8,22 +8,22 @@ urlpatterns = [
     # map this URL to there
     re_path(
         r"^$",
-        TemplateView.as_view(
-            template_name="wheredoivote_user_feedback/report2017.html"
+        MarkdownFileView.as_view(
+            markdown_file="apps/wheredoivote_user_feedback/templates/wheredoivote_user_feedback/report2017.md"
         ),
         name="wheredoivote_user_feedback",
     ),
     re_path(
         r"^2017/$",
-        TemplateView.as_view(
-            template_name="wheredoivote_user_feedback/report2017.html"
+        MarkdownFileView.as_view(
+            markdown_file="apps/wheredoivote_user_feedback/templates/wheredoivote_user_feedback/report2017.md"
         ),
         name="wheredoivote_user_feedback_2017",
     ),
     re_path(
         r"^2018/$",
-        TemplateView.as_view(
-            template_name="wheredoivote_user_feedback/report2018.html"
+        MarkdownFileView.as_view(
+            markdown_file="apps/wheredoivote_user_feedback/templates/wheredoivote_user_feedback/report2018.md"
         ),
         name="wheredoivote_user_feedback_2018",
     ),
