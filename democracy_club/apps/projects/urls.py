@@ -1,6 +1,7 @@
 from django.urls import path
 from django.urls import reverse_lazy
 from django.views.generic import RedirectView, TemplateView
+from core.report_helpers.views import MarkdownFileView
 
 app_name = "projects"
 
@@ -22,8 +23,8 @@ urlpatterns = [
     ),
     path(
         "reports/registers/",
-        TemplateView.as_view(
-            template_name="projects/report_odi_registers.html"
+        MarkdownFileView.as_view(
+            markdown_file="apps/projects/templates/projects/report_odi_registers.md"
         ),
         name="reports_registers",
     ),
