@@ -6,7 +6,7 @@ app_name = "report_2016"
 urlpatterns = [
     re_path(
         r"^$",
-        TemplateView.as_view(template_name="report_2016/report.html"),
+        MarkdownFileView.as_view(markdown_file="apps/report_2016/report.md"),
         name="report_2016",
     )
 ]
