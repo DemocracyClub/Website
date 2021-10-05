@@ -1,13 +1,5 @@
-{% extends "report_base.html" %}
 {% load static %}
-{% load markdown_filter %}
-{# fmt:off #}
 
-
-{% block title %}Towards better elections, report on Democracy Club’s work on the 2017 elections and the future of
-digital services for democracy{% endblock title %}
-
-{% block content %}
 <style>
 .met {
 color: rgb(77, 179, 20)
@@ -22,18 +14,15 @@ color: #e62e1a;
 }
 </style>
 
-<div id="report_2018" class="ds-stack-smaller">
-
-{% filter markdown %}
-
 # Towards better elections
+## Report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy
+
 <figure>
 <img src="{% static 'report_2018/images/andy-kelly-401397-unsplash.jpg' %}" alt="">
 <figcaption>
 Democracy Club’s annual report — 2017–2018
 </figcaption>
 </figure>
-{# fmt:off #}
 
 This report is a work in progress, [you can comment on the Google Documents version of
 it](https://docs.google.com/document/d/19K08IW6PLstuoRvKDSfKVjBMYM4zK5jZbc_wOZ_op7Y/edit#).
@@ -275,7 +264,6 @@ elections:
 </table>
 </div>
 
-{# fmt:off #}
 We have <a href="https://democracyclub.github.io/wheredoivote-usage-may-2018/data/wheredoivote-usage-may-2018">separately
 published a table</a> with the numbers of searches per local authority area.
 ### Analysis
@@ -886,9 +874,3 @@ forward.
 We will seek to produce a similar list of goals for the next election year. Drafts for feedback and the final
 list
 will be published on the Democracy Club blog.
-
-
-{% endfilter %}
-</div>
-
-{% endblock content %}
