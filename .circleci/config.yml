@@ -103,6 +103,10 @@ jobs:
               --template-file ~/repo/.aws-sam/build/template.yaml \
               --parameter-overrides "GitHash='$CIRCLE_SHA1'"
       - run:
+          name: "Migrate database"
+          command: |
+            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }'
+      - run:
           name: "Publish a new Sentry Release"
           command: |
             curl -sL https://sentry.io/get-cli/ | bash
