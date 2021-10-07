@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   codecov: codecov/codecov@3.1.0
+  aws-cli: circleci/aws-cli@2.0.3
 
 jobs:
   install_and_update_dependencies:
@@ -102,10 +103,11 @@ jobs:
               --config-env $SAM_LAMBDA_CONFIG_ENV \
               --template-file ~/repo/.aws-sam/build/template.yaml \
               --parameter-overrides "GitHash='$CIRCLE_SHA1'"
+      - aws-cli/setup
       - run:
           name: "Migrate database"
           command: |
-            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }'
+            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -
       - run:
           name: "Publish a new Sentry Release"
           command: |
