@@ -1,0 +1,26 @@
+version = 0.1
+
+[production]
+
+[production.global.parameters]
+stack_name = "dc_website_production"
+
+[production.deploy]
+[production.deploy.parameters]
+stack_name = "dc-website-production"
+s3_bucket = "dc-website-deployment-artifacts-production-kjd83k38yfn"
+s3_prefix = "dc-website-production"
+region = "eu-west-2"
+capabilities = "CAPABILITY_IAM"
+
+confirm_changeset = false
+tags = "dc-product=\"dc-website\" dc-environment=\"production\""
+progressbar = false
+fail_on_empty_changeset = false
+force_upload = true
+
+[production.logs]
+[staging.logs.parameters]
+stack_name = "dc-website-production"
+name = "DCWebsiteFunction"
+region = "eu-west-2"

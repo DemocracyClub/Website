@@ -133,3 +133,10 @@ workflows:
             - sam_build
           context: [ deployment-staging-dc-website ]
           filters: { branches: { only: [ 'feature/django-upgrade', main, master ] } }
+      - sam_deploy:
+          name: sam_deploy_production
+          dc-environment: production
+          requires:
+            - sam_build
+          context: [ deployment-production-dc-website ]
+          filters: { branches: { only: [ 'feature/django-upgrade', main, master ] } }
