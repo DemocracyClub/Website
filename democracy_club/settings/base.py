@@ -252,9 +252,6 @@ def setup_sentry(environment=None):
 import os
 
 try:
-    if os.environ.get("FRAMEWORK", None) == "Zappa":
-        from .aws_lambda import *  # noqa
-    else:
-        from .local import *  # noqa
+    from .local import *  # noqa
 except ImportError:
     pass
