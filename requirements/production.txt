@@ -1,5 +1,0 @@
--r base.txt
-
-gunicorn==20.0.4
-zappa==0.46.1
-jmespath==0.9.3

@@ -1,0 +1,270 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "DC Website Django app: Lambda, API Gateway"
+
+Globals:
+  Function:
+    Timeout: 10
+  Api:
+    BinaryMediaTypes:
+      - "*/*"
+
+Parameters:
+
+  AppSecretKey:
+    Default: AppSecretKey
+    Description: "The SECRET_KEY environment variable passed to the app."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppSentryDSN:
+    Default: AppSentryDSN
+    Description: "The SENTRY_DSN environment variable passed to the app."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresHost:
+    Default: AppPostgresHost
+    Description: "The Postgres database host for this deploy."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresDatabaseName:
+    Default: AppPostgresDatabaseName
+    Description: "The Postgres database name for this deploy."
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppPostgresPassword:
+    Default: AppPostgresPassword
+    Description: "The password for the postgres user"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppSendgridAPIKey:
+    Default: AppSendgridAPIKey
+    Description: "The SendGrid API key"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  FQDN:
+    Default: FQDN
+    Description: "The domain name this app is mounted on"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  CertificateArn:
+    Default: CertificateArn
+    Description: "The ARN of the cert to use"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppStorageBucketName:
+    Default: AppStorageBucketName
+    Description: "The ARN of the cert to use"
+    Type: AWS::SSM::Parameter::Value<String>
+
+  AppDjangoSettingsModule:
+    Description: "The DJANGO_SETTINGS_MODULE environment variable passed to the app."
+    Type: String
+    Default: "democracy_club.settings.aws_lambda"
+
+  AppIsBehindCloudFront:
+    Description: "The APP_IS_BEHIND_CLOUDFRONT environment variable passed to the app, which modifies various path- and host-related settings."
+    Type: String
+    AllowedValues:
+      - "True"
+      - "False"
+    Default: "True"
+
+  GitHash:
+    Description: "The Hash of the git commit that's deployed"
+    Type: String
+
+
+Resources:
+
+  DependenciesLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: ./lambda-layers/DependenciesLayer/
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: makefile
+    RetentionPolicy: Delete
+
+  DCWebsiteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: DCWebsiteFunction
+      Timeout: 60
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
+      CodeUri: .
+      Handler: democracy_club.lambda_awsgi.lambda_handler
+      Layers:
+        - !Ref DependenciesLayer
+      Runtime: python3.8
+      MemorySize: 192
+      Environment:
+        Variables:
+          SECRET_KEY: !Ref AppSecretKey
+          SENTRY_DSN: !Ref AppSentryDSN
+          DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
+          APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
+          GIT_HASH: !Ref GitHash
+          DATABASE_HOST: !Ref AppPostgresHost
+          POSTGRES_DATABASE_NAME: !Ref AppPostgresDatabaseName
+          DATABASE_PASS: !Ref AppPostgresPassword
+          FQDN: !Ref FQDN
+          STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+      Events:
+        HTTPRequests:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+        HTTPRequestRoots:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+
+  DCWebsiteManagementFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: DCWebsiteManagementFunction
+      Timeout: 60
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
+      CodeUri: .
+      Handler: democracy_club.lambda_awsgi.management_handler
+      Layers:
+        - !Ref DependenciesLayer
+      Runtime: python3.8
+      MemorySize: 192
+      Environment:
+        Variables:
+          SECRET_KEY: !Ref AppSecretKey
+          SENTRY_DSN: !Ref AppSentryDSN
+          DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
+          APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
+          GIT_HASH: !Ref GitHash
+          DATABASE_HOST: !Ref AppPostgresHost
+          POSTGRES_DATABASE_NAME: !Ref AppPostgresDatabaseName
+          DATABASE_PASS: !Ref AppPostgresPassword
+          FQDN: !Ref FQDN
+          STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+      Events:
+        SyncToSendgrid:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 day)
+            Name: sync_to_sendgrid
+            Description: Sync emails to sendgrid
+            Input: '{"command": "sync_to_sendgrid"}'
+
+
+  DCWebsiteFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    DependsOn: [ DCWebsiteFunction ]
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${DCWebsiteFunction}
+      RetentionInDays: 60
+
+
+  CloudFrontDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Comment: 'Cloudfront Distribution pointing to Lambda origin'
+        Origins:
+          - Id: Static
+            DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+            OriginPath: "/Prod"
+            CustomOriginConfig:
+              OriginProtocolPolicy: "https-only"
+            OriginCustomHeaders:
+              - HeaderName: X-Forwarded-Host
+                HeaderValue: !Ref FQDN
+              - HeaderName: X-Forwarded-Proto
+                HeaderValue: https
+            OriginShield:
+              Enabled: true
+              OriginShieldRegion: eu-west-2
+
+          - Id: Media
+            DomainName: !Sub "${AppStorageBucketName}.s3.eu-west-2.amazonaws.com"
+            CustomOriginConfig:
+              OriginProtocolPolicy: "https-only"
+            OriginShield:
+              Enabled: false
+
+          - Id: Dynamic
+            DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+            OriginPath: "/Prod"
+            CustomOriginConfig:
+              OriginProtocolPolicy: "https-only"
+            OriginCustomHeaders:
+              - HeaderName: X-Forwarded-Host
+                HeaderValue: !Ref FQDN
+              - HeaderName: X-Forwarded-Proto
+                HeaderValue: https
+
+        Enabled: true
+        HttpVersion: 'http2'
+        Aliases:
+          - !Ref FQDN
+        PriceClass: "PriceClass_100"
+        ViewerCertificate:
+          AcmCertificateArn: !Ref CertificateArn
+          MinimumProtocolVersion: TLSv1.1_2016
+          SslSupportMethod: sni-only
+
+        DefaultCacheBehavior:
+          AllowedMethods: [ GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE ]
+          TargetOriginId: Dynamic
+          ForwardedValues:
+            QueryString: true
+            Cookies:
+              Forward: "all"
+            Headers:
+              - Authorization
+              - Origin
+              - Referer
+          ViewerProtocolPolicy: "redirect-to-https"
+
+        CacheBehaviors:
+          - AllowedMethods: [ GET, HEAD, OPTIONS ]
+            PathPattern: static/*
+            TargetOriginId: Static
+            Compress: true
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: none
+              Headers:
+                - Authorization
+                - Origin
+            ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
+          - AllowedMethods: [ GET, HEAD ]
+            PathPattern: media/*
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            TargetOriginId: Media
+            Compress: true
+            ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
+
+
+
+  DnsRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      AliasTarget:
+        DNSName: !GetAtt CloudFrontDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2 # this is an AWS-owned, global singleton required for Aliases to CloudFront
+      HostedZoneName: !Sub "${FQDN}."
+      Name: !Sub "${FQDN}."
+      Type: A
+
+Outputs:
+  DCWebsiteFqdn:
+    Description: "API Gateway endpoint FQDN for DC Website function"
+    Value: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+    Export:
+      Name: !Join [ ":", [ !Ref "AWS::StackName", "DCWebsiteFqdn" ] ]

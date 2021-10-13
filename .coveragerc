@@ -6,3 +6,5 @@ omit =
     democracy_club/wsgi.py
     */lib/python3.4/site-packages/*
     src/*
+    .aws-sam
+source = democracy_club

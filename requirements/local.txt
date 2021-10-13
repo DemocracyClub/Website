@@ -1,5 +1,0 @@
--r testing.txt
-
-Sphinx
-ipdb
-djhtml
