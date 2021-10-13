@@ -1,5 +1,5 @@
 from django.urls import re_path
-from django.views.generic import TemplateView
+from core.report_helpers.views import MarkdownFileView
 
 app_name = "report_2019_general_election"
 
