@@ -170,7 +170,6 @@ Resources:
       DistributionConfig:
         Comment: 'Cloudfront Distribution pointing to Lambda origin'
         Origins:
-
           - Id: Static
             DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
             OriginPath: "/Prod"
@@ -181,10 +180,16 @@ Resources:
                 HeaderValue: !Ref FQDN
               - HeaderName: X-Forwarded-Proto
                 HeaderValue: https
-
             OriginShield:
               Enabled: true
               OriginShieldRegion: eu-west-2
+
+          - Id: Media
+            DomainName: !Sub "${AppStorageBucketName}.s3.eu-west-2.amazonaws.com"
+            CustomOriginConfig:
+              OriginProtocolPolicy: "https-only"
+            OriginShield:
+              Enabled: false
 
           - Id: Dynamic
             DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
@@ -224,6 +229,7 @@ Resources:
           - AllowedMethods: [ GET, HEAD, OPTIONS ]
             PathPattern: static/*
             TargetOriginId: Static
+            Compress: true
             ForwardedValues:
               QueryString: true
               Cookies:
@@ -233,6 +239,18 @@ Resources:
                 - Origin
             ViewerProtocolPolicy: "redirect-to-https"
             MinTTL: '50'
+          - AllowedMethods: [ GET, HEAD ]
+            PathPattern: media/*
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            TargetOriginId: Media
+            Compress: true
+            ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
+
+
 
   DnsRecord:
     Type: AWS::Route53::RecordSet
