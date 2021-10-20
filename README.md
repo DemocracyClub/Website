@@ -3,13 +3,13 @@
 This is the website hosted at https://democracyclub.org.uk/
 
 ## Set up
-
 This is a Django project using PostgreSQL. The project is deployed using Python 3.6.
 
-Use by setting up a `virtualenv` and install packages using `pip install -r requirements/production.txt`.
+`pip install pipenv`
 
-For local and testing environments use `pip install -r requirements/testing.txt`.
+then 
 
+`pipenv install`
 ## Update docs to include 
 new pipeline settings
 Whitenoise

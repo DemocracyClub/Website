@@ -8,23 +8,23 @@
 {% block main_content %}
 
     <div class="ds-stack">
-      <div class="ds-card">
-        <div class="ds-card-image">
-          <img src="{% static "images/report/old_bridge_pontypridd.jpg" %}" alt="">
+        <div class="ds-card">
+            <div class="ds-card-image">
+                <img src="{% static "images/report/old_bridge_pontypridd.jpg" %}" alt="">
+            </div>
+            <div class="ds-card-body">
+                <h3>Towards better elections</h3>
+                <p>Our yearly report on our elections work and the future of digital services for democracy.</p>
+                <ul>
+                    <li><a href="{% url "report_2016:report_2016" %}">2016</a></li>
+                    <li><a href="{% url "report_2017:report_2017" %}">2017</a></li>
+                    <li><a href="{% url "report_2018:report_2018" %}">2018</a></li>
+                    <li><a href="{% url "report_2019:report_2019" %}">2019</a></li>
+                    <li><a href="{% url "report_2019_general_election:report_2019_general_election" %}">2019 General election</a></li>
+                    <li><a href="{% url "report_2021:report_2021" %}">2021</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="ds-card-body">
-          <h3>Towards better elections</h3>
-          <p>Our yearly report on our elections work and the future of digital services for democracy.</p>
-          <ul>
-            <li><a href="{% url "report_2016:report_2016" %}">2016</a></li>
-            <li><a href="{% url "report_2017:report_2017" %}">2017</a></li>
-            <li><a href="{% url "report_2018:report_2018" %}">2018</a></li>
-            <li><a href="{% url "report_2019:report_2019" %}">2019</a></li>
-            <li><a href="{% url "report_2019_general_election:report_2019_general_election" %}">2019 General election</a></li>
-            <li><a href="{% url "report_2021:report_2021" %}">2021</a></li>
-          </ul>
-        </div>
-      </div>
         <div class="ds-card">
             <div class="ds-card-image">
                 <img src="{% static 'report_whos_missing/images/robin-hoods-bay_thumb.jpg' %}" alt="Robin Hood's Bay">
@@ -59,7 +59,7 @@
                     <li><a href="{% url 'wheredoivote_user_feedback:wheredoivote_user_feedback_2018' %}">2018</a></li>
                     <li><a href="https://democracyclub.org.uk/blog/2019/06/27/users-have-spoken/">2019 (local and European elections)</a></li>
                     <li><a href="https://democracyclub.org.uk/blog/2020/01/30/vox-user-vox-dei-ge2019/">2019 (general election)</a></li>
-                    <li><a href="https://democracyclub.org.uk/blog/2021/05/19/Tell_me_what_you_want/">2021)</a></li>
+                    <li><a href="https://democracyclub.org.uk/blog/2021/05/19/Tell_me_what_you_want/">2021</a></li>
                 </ul>
             </div>
         </div>

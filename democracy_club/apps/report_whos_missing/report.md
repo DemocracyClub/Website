@@ -1,7 +1,4 @@
-{% load markdown_deux_tags %}
-{%  markdown %}
-
-
+{% load markdown_filter %}
 
 
 # Who’s missing, and why?
@@ -747,5 +744,3 @@ National Centre for Social Research (NatCen), _British Social Attitudes 35_, 201
 
 Runymede Trust, _Diversity and Democracy: Race and the 2015 General Election_, June 2015
 
-
-{% endmarkdown %}

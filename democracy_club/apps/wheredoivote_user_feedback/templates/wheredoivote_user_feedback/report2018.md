@@ -1,12 +1,4 @@
-{% extends "wheredoivote_user_feedback/report_base.html" %}
 {% load static %}
-{% load markdown_deux_tags %}
-{# fmt:off #}
-{% block title %}Where Do I Vote - User Feedback May 2018{% endblock title %}
-
-{% block content %}
-<div id="report" class="ds-stack-smaller">
-{% filter markdown %}
 
 # Where Do I Vote - User Feedback May 2018
 
@@ -20,34 +12,30 @@ This year we slightly modified our question, adding an additional option for "Re
 
 From midnight on Monday 30 May to close of polls on Thursday 3 May, we collected 1,711 responses. This gives a smaller evidence base to work with than in 2017 (a reflection of the lower level of website usage and interest in local elections). Of the 1,711 responses:
 
-{% endfilter %}
-
 <div class="ds-table">
-    <table>
-        <tr>
-            <th>Found useful</th>
-            <th>Number</th>
-            <th>Percent</th>
-        </tr>
-        <tr>
-            <td>Yes</td>
-            <td>1,645</td>
-            <td>96.14%</td>
-        </tr>
-        <tr>
-            <td>No</td>
-            <td>66</td>
-            <td>3.86%</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>1,711</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+<table>
+<tr>
+<th>Found useful</th>
+<th>Number</th>
+<th>Percent</th>
+</tr>
+<tr>
+<td>Yes</td>
+<td>1,645</td>
+<td>96.14%</td>
+</tr>
+<tr>
+<td>No</td>
+<td>66</td>
+<td>3.86%</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>1,711</td>
+<td>&nbsp;</td>
+</tr>
+</table>
 </div>
-
-{% filter markdown %}
 
 This represents an improvement in the proportion of satisfied users from last year's baseline. It is probably realistic to attribute some of this increase to improvements we have made based on last year's feedback.
 
@@ -184,10 +172,3 @@ What can we do to improve our service for data re-users? We've spent a lot of ti
 A substantial number of users now find their polling station using our javascript widget. This allows councils, local media outlets and other third parties to embed a finder in their own website, but we have relatively little feedback on this. How can we collect feedback on this or apply the things we've learned from collecting feedback on [wheredoivote.co.uk](https://wheredoivote.co.uk/) to this increasingly important part of our offering?
 
 The most important thing we can do to provide value to users is to answer the question "Where Do I Vote?". This year, we were able to serve a higher proportion of users with an answer than ever before. How can we remove the remaining barriers that prevent some councils for wanting or being able to share data with us? As we need to process and check an increasingly large amount of data, how can we improve our processes behind the scenes to do this efficiently in a short space of time?
-
-
-
-{% endfilter %}
-</div>
-
-{% endblock content %}

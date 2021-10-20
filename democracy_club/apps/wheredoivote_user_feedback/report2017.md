@@ -1,12 +1,4 @@
-{% extends "wheredoivote_user_feedback/report_base.html" %}
 {% load static %}
-{% load markdown_deux_tags %}
-
-{% block title %}Where Do I Vote - User Feedback June 2017{% endblock title %}
-{# fmt:off #}
-{% block content %}
-    <div id="report" class="ds-stack-smaller">
-{% filter markdown %}
 
 # Where Do I Vote - User Feedback June 2017
 
@@ -16,32 +8,32 @@ On 29th May 2017, we introduced a feedback form asking a Yes/No question: “Did
 
 From introducing the form until close of polls on 8th June, we served 480,000 unique users on the site and collected 18,394 responses from them. Of the 18,394 responses:
 
-{% endfilter %}
-        <div class="ds-table">
-            <table>
-                <tr>
-                    <th>Found useful</th>
-                    <th>Number</th>
-                    <th>Percent</th>
-                </tr>
-                <tr>
-                    <td>Yes</td>
-                    <td>17,197</td>
-                    <td>93.49%</td>
-                </tr>
-                <tr>
-                    <td>No</td>
-                    <td>1,197</td>
-                    <td>6.51%</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>18,394</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
-        </div>
-{% filter markdown %}
+
+<div class="ds-table">
+<table>
+<tr>
+<th>Found useful</th>
+<th>Number</th>
+<th>Percent</th>
+</tr>
+<tr>
+<td>Yes</td>
+<td>17,197</td>
+<td>93.49%</td>
+</tr>
+<tr>
+<td>No</td>
+<td>1,197</td>
+<td>6.51%</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>18,394</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+
 
 It is important to understand what people liked and found useful so we can keep doing it, and also why people found it unhelpful and what we can do to improve. To drill down into this, we will examine some text comments in greater detail.
 
@@ -184,13 +176,13 @@ Also a few people left positive comments that they found the opening times usefu
 > VERY USEFUL INFORMATION GIVEN RE TIMES AND ID
 
 While the opening hours are at the top of the page in desktop layout, on mobile devices, that information ‘collapses’ and is displayed lower down the page.
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image1.png' %}" alt="">
-{% filter markdown %}
+
 <em>Screenshot of [wheredoivote.co.uk](https://wheredoivote.co.uk/) in a desktop browser</em>
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image2.png' %}" alt="">
-{% filter markdown %}
+
 
 <em>Screenshot of [wheredoivote.co.uk](https://wheredoivote.co.uk/) in a mobile browser</em>
 
@@ -316,21 +308,21 @@ Additionally, in situations where we were unable to show a map, directions or di
 A common reason for people to leave negative feedback about mapping/directions was that the directions lines didn't follow the roads exactly (particularly if the roads are curved). In these examples, the maps the comments relate to are shown with the comments to provide context.
 
 > This "suggested" route is awful, am I expected to fly or crawl over gardens to get there?
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image3.png' %}" alt="">
-{% filter markdown %}
+
 > The line doesn't match up with the roads - it's just a straight line between points on the journey. It's better than just a blank map with two points on, but a bit frustrating as it doesn't actually show a route
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image4.png' %}" alt="">
-{% filter markdown %}
+
 > There is something wrong with your maps. The route to the polling station means going through the gardens of several neighbours -- I'm not sure that would be appreciated…
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image5.png' %}" alt="">
-{% filter markdown %}
+
 > Walking direction is wrong! (You are walking through houses!)
-{% endfilter %}
+
 <img class="screenshot" src="{% static 'wheredoivote_user_feedback/image6.png' %}" alt="">
-{% filter markdown %}
+
 
 In general, providing directions is useful more frequently than it is not useful but we need to take a more sophisticated approach to the way we represent directions to ensure that the directions provided are of a high quality. We have also run into usage limits with the google directions API which prevented us from being able to serve directions to some users. We should evaluate alternative providers to see if we can find a better solution. It is clear that this is a valuable feature for users.
 
@@ -593,8 +585,3 @@ In reading through the feedback comments, there were a few nice ‘human interes
 <!---->
 
 > Very clear, simple, comprehensive. It's a wonderful voting tool and it definitely influenced positively my decision to vote. Thank you for providing such informative and easy-to-follow pre-voting platform.
-
-{% endfilter %}
-</div>
-
-{% endblock content %}

@@ -77,7 +77,6 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.admin",
     "localflavor",
-    "markdown_deux",
     "django_extensions",
     "dc_design_system",
     "pipeline",
@@ -195,6 +194,8 @@ MARKDOWN_DEUX_STYLES = {
         "safe_mode": False,
     },
 }
+
+REPORT_MARKDOWN_EXTENSIONS = ["toc"]
 
 
 def blog_markdown(value):

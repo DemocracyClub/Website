@@ -1,23 +1,8 @@
-{% extends "base.html" %}
-{% load markdown_deux_tags %}
 {% load static %}
-{% block content %}
 
-    <div class="ds-stack-smaller">
-        <aside>
-            <p><em>This is an HTML version of the
-                <a href="https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/">report pubished
-                    on the ODI website</a>.
+### This is an HTML version of the [report pubished on the ODI website](https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/)
 
-            </em></p>
-            <p>
-                <em>The CC BY-SA licence applies to this HTML version, as the original. For other formats, see the ODI website.</em></p>
-        </aside>
-
-
-        {% filter markdown %}
-
-
+<em>The CC BY-SA licence applies to this HTML version, as the original. For other formats, see the ODI website.</em>
 # About
 
 This report is about registers or lists, and ways of publishing and maintaining them. We examine models of stewarding registers and review case studies of different registers. We argue that transparency is necessary, and collaboration desirable, in managing registers that are trusted by their users.
@@ -104,14 +89,14 @@ Reliable data of a known provenance is critical to people who build services usi
 When registers can be easily accessed by other products or services, they are more widely useful than when they were books in council basements. Combining internet technology for publication with a commitment from the state to maintain registers means society can reap increased benefits from these official lists of things, consuming and using them in ways that were not previously possible.
 
 
-## Registers and abstractions
+# Registers and abstractions
 
 Before exploring the details of specific registers, it is worth looking at some of the abstract aspects of lists. We are deliberately examining the more general case of lists rather than only registers. This helps establish ways of talking and thinking about different kinds of registers as well as allowing us to consider which of these properties are required for us to think of a list as a register.
 
 We have grouped the features of registers into three related categories: type of list, authority and stewardship. We created the categories by examining a sample of 20 registers of varying forms, how they were similar, how they differed and by noting how people discuss them and describe their key features. The results of this analysis are available as open data.[^4] When people make lists, they often create hybrid forms that cross these boundaries.
 
 
-### 1. Type of list
+## 1. Type of list
 
 The first group of features allows us to understand what kind of list we are dealing with.
 
@@ -150,82 +135,82 @@ Linkable: the list is published in a machine-readable, computable format, with i
 Many lists are published in ways that span more than one of these list technologies; the Companies House register can be downloaded in a machine-readable format[^11] and is also published as a linkable online service.[^12]
 
 <div class="ds-table">
-    <table>
-        <tr>
-            <th>List</th>
-            <th>Source</th>
-            <th>Contents</th>
-            <th>Technology</th>
-        </tr>
+<table>
+<tr>
+<th>List</th>
+<th>Source</th>
+<th>Contents</th>
+<th>Technology</th>
+</tr>
 
 
-        <tr>
-            <td>Register of Shipping
-            </td>
-            <td>Primary
-            </td>
-            <td>Broad dataset
-            </td>
-            <td>Paper
-            </td>
-        </tr>
-        <tr>
-            <td>Democracy Club Candidates
-            </td>
-            <td>Secondary
-            </td>
-            <td>Broad dataset
-            </td>
-            <td>Linkable
-            </td>
-        </tr>
-        <tr>
-            <td>Council candidate notifications
-            </td>
-            <td>Primary
-            </td>
-            <td>Minimum viable dataset
-            </td>
-            <td>Digital paper
-            </td>
-        </tr>
-        <tr>
-            <td>Countries Register
-            </td>
-            <td>Primary
-            </td>
-            <td>Minimum viable dataset
-            </td>
-            <td>Linkable
-            </td>
-        </tr>
-        <tr>
-            <td>Register of pupils in a class
-            </td>
-            <td>Primary
-            </td>
-            <td>Minimum viable dataset
-            </td>
-            <td>Paper
-            </td>
-        </tr>
-        <tr>
-            <td>Historic England’s list of listed buildings
-            </td>
-            <td>Primary
-            </td>
-            <td>Broad dataset
-            </td>
-            <td>Machine-readable
-            </td>
-        </tr>
+<tr>
+<td>Register of Shipping
+</td>
+<td>Primary
+</td>
+<td>Broad dataset
+</td>
+<td>Paper
+</td>
+</tr>
+<tr>
+<td>Democracy Club Candidates
+</td>
+<td>Secondary
+</td>
+<td>Broad dataset
+</td>
+<td>Linkable
+</td>
+</tr>
+<tr>
+<td>Council candidate notifications
+</td>
+<td>Primary
+</td>
+<td>Minimum viable dataset
+</td>
+<td>Digital paper
+</td>
+</tr>
+<tr>
+<td>Countries Register
+</td>
+<td>Primary
+</td>
+<td>Minimum viable dataset
+</td>
+<td>Linkable
+</td>
+</tr>
+<tr>
+<td>Register of pupils in a class
+</td>
+<td>Primary
+</td>
+<td>Minimum viable dataset
+</td>
+<td>Paper
+</td>
+</tr>
+<tr>
+<td>Historic England’s list of listed buildings
+</td>
+<td>Primary
+</td>
+<td>Broad dataset
+</td>
+<td>Machine-readable
+</td>
+</tr>
 
-    </table>
+</table>
 </div>
 
 Taken from the full list of lists used to make this system[^13].
 
-### 2. Authority
+## 2. Authority
 
 The second group of features are reasons to consider a list authoritative.
 
@@ -286,67 +271,67 @@ A list may also be accurate only at a certain granularity. For instance, Open St
 Some lists contain pieces of information which can never really be entirely accurate; they are opinions rather than facts, as in the Shipping Register example discussed above.
 
 <div class="ds-table">
-    <table>
-        <tr>
-            <th>List</th>
-            <th>Source of authority</th>
-            <th>Reality</th>
-            <th>Completeness</th>
-            <th>Accuracy</th>
-        </tr>
+<table>
+<tr>
+<th>List</th>
+<th>Source of authority</th>
+<th>Reality</th>
+<th>Completeness</th>
+<th>Accuracy</th>
+</tr>
 
-        <tr>
-            <td>Pupils in a class
-            </td>
-            <td>Institutional
-            </td>
-            <td>Defining
-            </td>
-            <td>Complete
-            </td>
-            <td>Accurate
-            </td>
-        </tr>
-        <tr>
-            <td>Open Street Map
-            </td>
-            <td>Verifiable Observations
-            </td>
-            <td>Describing
-            </td>
-            <td>Incomplete
-            </td>
-            <td>Sometimes accurate
-            </td>
-        </tr>
-        <tr>
-            <td>General Medical Council Register
-            </td>
-            <td>Legislative
-            </td>
-            <td>Defining
-            </td>
-            <td>Complete
-            </td>
-            <td>Accurate
-            </td>
-        </tr>
-        <tr>
-            <td>First thousand prime numbers
-            </td>
-            <td>A priori
-            </td>
-            <td>Describing
-            </td>
-            <td>Provably complete
-            </td>
-            <td>Provably accurate
-            </td>
-        </tr>
-    </table>
+<tr>
+<td>Pupils in a class
+</td>
+<td>Institutional
+</td>
+<td>Defining
+</td>
+<td>Complete
+</td>
+<td>Accurate
+</td>
+</tr>
+<tr>
+<td>Open Street Map
+</td>
+<td>Verifiable Observations
+</td>
+<td>Describing
+</td>
+<td>Incomplete
+</td>
+<td>Sometimes accurate
+</td>
+</tr>
+<tr>
+<td>General Medical Council Register
+</td>
+<td>Legislative
+</td>
+<td>Defining
+</td>
+<td>Complete
+</td>
+<td>Accurate
+</td>
+</tr>
+<tr>
+<td>First thousand prime numbers
+</td>
+<td>A priori
+</td>
+<td>Describing
+</td>
+<td>Provably complete
+</td>
+<td>Provably accurate
+</td>
+</tr>
+</table>
 </div>
 
-### 3. Stewardship
+## 3. Stewardship
 
 Stewarding is the process of maintaining a register. This includes how and when information is added, removed or changed and who does those things. Understanding how a custodian stewards a register allows people who are thinking about using it to make informed decisions about how much they can trust it.
 
@@ -390,8 +375,8 @@ The register website simply lists the government department responsible for main
 
 
 <figure>
-    <img src="{% static 'images/report/gds-register-page.png' %}" alt="GDS Register">
-    <figcaption>Gov.uk, ‘Country register’</figcaption>
+<img src="{% static 'images/report/gds-register-page.png' %}" alt="GDS Register">
+<figcaption>Gov.uk, ‘Country register’</figcaption>
 </figure>
 
 Without understanding how and why a country has an entry on the register, it is hard for anyone considering using the register to decide whether or not it is an appropriate list of countries. This in turn influences what you can use the register for. A service in the UK recognising passports or visas could not use this country register as it does not include Taiwan (the UK does not formally recognise Taiwan). However, Taiwan issues passports to citizens, and they are granted visas to travel to the UK.
@@ -462,7 +447,7 @@ While HM Land Registry is a department of the government of the United Kingdom, 
 
 
 <figure>
-    <img src="{% static 'images/report/land-registry.png' %}" alt="Land Registry">
+<img src="{% static 'images/report/land-registry.png' %}" alt="Land Registry">
 </figure>
 
 
@@ -565,7 +550,7 @@ In this model, many different custodians create separate registers, which are th
 Separate custodians are also found where there is a division of the register that makes logical or administrative sense. In this manner, book publishers are allocated blocks of ISBN numbers[^44] to use for books they publish.
 
 <figure>
-    <img src="{% static 'images/report/aggregator-registers.png' %}" alt="Aggregator Registers">
+<img src="{% static 'images/report/aggregator-registers.png' %}" alt="Aggregator Registers">
 </figure>
 
 Due to the range of ways in which current custodians make registers they are responsible for available, automating the transformation of primary registers into a secondary register is not always possible.
@@ -801,7 +786,3 @@ Wikidata (2018), ‘Wikidata:Page protection policy’, [https://www.wikidata.or
 
 [^50]:
 Internet Archive, [https://archive.org](https://archive.org/)
-
-        {% endfilter %}
-    </div>
-{% endblock %}

@@ -1,31 +1,8 @@
-{% extends "report_base.html" %}
-{% load markdown_deux_tags %}
 {% load static %}
-{# fmt:off #}
-{% block title %}Towards better elections, report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy{% endblock title %}
 
-{% block content %}
+# Towards better elections
+## Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy
 
-<div id="report_2016" class="ds-stack-smaller">
-<header class="panel intro_panel" markdown="1">
-<div class="wrap" style="page-break-before: avoid;page-break-after: always;">
-<h1>Towards better elections <sup style="font-size: 0.5em;">beta</sup></h1>
-<div class="ds-card-image">
-<img src="{% static 'images/report/old_bridge_pontypridd.jpg'%}" alt="">
-</div>
-<p id="subhead">Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy.</p>
-<p id="byline">Democracy Club, May 2016</p>
-</div>
-</header>
-</div>
-<div class="ds-stack">
-
-<section id="block_section_summary" markdown="1" class="ds-stack-smaller">
-<header><a name="section_summary"></a>
-<h1 data-magellan-destination="section_summary">Summary</h1>
-</header>
-
-{% filter markdown %}
 Elections took place across the UK in May 2016: the most varied set of elections seen here for decades. Everyone had a vote in at least one election.
 
 Democracy Club built tools that allowed anyone in the UK to enter their postcode and discover their local elections and their local candidates. To make this happen, we listed elections, including by-elections, and crowdsourced the details of 13,068 candidates. In addition, for the first time, we also ran a pilot to crowdsource data on the results of elections.
@@ -49,26 +26,15 @@ Ideally, all of this data will remain open for anyone to use. In the long run, p
 To continue to provide a credible, accurate and reliable source of data for partners, and to continue to test new digital features for voters, Democracy Club needs to find sustainable funding. We estimate that we require just £250,000 per year for a small agile project team to deliver this. Everyone benefits from better political decision making. We are therefore seeking grant funding from governmental and philanthropic institutions, and we encourage partners who benefit from the data to help us in any way they can.
 
 We predict that demand for digital services for democracy will only increase over the next few years, and that by 2020, a majority of voters will expect to be able to engage with their candidates online before deciding who to vote for. Democracy Club can deliver this: efficiently, inexpensively and — crucially — in a non-partisan and fair fashion. Help us make it happen.
-{% endfilter %}
-</section>
-<section id="block_section_vision" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_vision"></a>
-<h1 data-magellan-destination="section_vision">1. Our vision, mission, and an invitation</h1>
-</header>
 
-
-{% filter markdown %}
+# 1. Our vision, mission, and an invitation
 
 **Our vision is of a society in which democracy thrives through knowledge, participation and openness.**
-
-{% endfilter %}
 
 <figure>
 <img src="{% static 'images/report/somerset_house.jpg' %}" alt="Somerset House">
 </figure>
 
-{% filter markdown %}
 This can only happen if people’s experience of democracy reflects their expectations of 21st century interaction.
 
 Building on our experience of recent elections — this report covers May 2016 in detail — we will test and iterate products and services over the next four years to culminate in the provision of world-leading digital infrastructure for a modern democratic experience at the 2020 General Election. That experience will embrace the best of open data, design and technology to give every voter the information and participation opportunities they need, in a way that suits them.
@@ -81,24 +47,10 @@ Come join us.
 
 Joe Mitchell &amp; Sym Roe
 
-
-{% endfilter %}
-
-
 {% include "email_form/mailing_list_form.html" %}
-{% filter markdown %}
 
-{% endfilter %}
 
-</section>
-
-<section id="block_section_review" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_review"></a>
-<h1 data-magellan-destination="section_review">2. Review of May 2016 elections</h1>
-</header>
-
-{% filter markdown %}
+# 2. Review of May 2016 elections
 
 ## Summary
 
@@ -124,18 +76,15 @@ We provided an online lookup tool, WhoCanIVoteFor, used by over 180,000 people a
 
 Our polling station tool was included in the WhoCanIVoteFor website and provided as a micro-site for NUS Wales. Our tool was also embedded in one council’s website and linked to by several other councils via their election webpages.
 
-{% endfilter %}
 
 <figure>
 <img src="{% static 'images/report/dam_whirlpool.jpg' %}" alt="">
 <figcaption>Photo credit: <a href="https://www.flickr.com/photos/gregmarshall/3123062806">Greg Marshall</a></figcaption>
 </figure>
 
-{% filter markdown%}
+## Candidates data
 
-# Candidates data
-
-## Data quality and coverage
+### Data quality and coverage
 
 Earlier this year we hoped by the election to have the details of every candidate for the Scottish Parliament, Police and Crime Commissioners, Mayors in Bristol, Liverpool, London and Salford, Assemblies in London, Northern Ireland and Wales. We also estimated that we might pull in a thousand or so of the local candidates. *We went much further.*
 
@@ -153,7 +102,7 @@ We tested an ‘Election Mentions’ tool, which found and linked to interesting
 
 While [candidates.democracyclub.org.uk](https://candidates.democracyclub.org.uk) was updated in real time, a lag between that site and the public-facing WhoCanIVoteFor.co.uk meant that on a small number of occasions changes to the candidates data would not be immediately reflected on WhoCanIVoteFor, which occasionally led to complaints from candidates and, in one instance, a council who spotted candidates on WhoCanIVoteFor that had in fact withdrawn. We were able to react to these problems within hours of them being reported.
 
-# Usage
+## Usage
 
 **We served over *180,000 visitors* to WhoCanIVoteFor.co.uk.**
 
@@ -177,9 +126,9 @@ Campaign groups are often able to take advantage of this sort of data, for insta
 
 Assuming we were significantly down on use by campaigners, this was probably due to the time it took us build the database. We suspect that several organisations will have spent time and money building their own closed databases, or simply not been able to run campaigns that required such data. We belive that this is more evidence to suggest that there is value in providing candidates data significantly in advance of the ‘official’ Statements of Persons Nominated published by councils.
 
-# Polling station location data
+## Polling station location data
 
-## Data quality and coverage
+### Data quality and coverage
 
 We began the year with the lofty goal of reaching 90% coverage of UK polling station locations. This was wildly optimistic, for reasons explained in the next section.
 
@@ -187,7 +136,7 @@ Due to these reasons, and an approach by NUS Wales, whose student survey had ide
 
 In total we covered ten councils in Wales, seven in England and one in Scotland (see Annexes). **Our coverage in Wales extended to 47% of the Welsh voting-age population**.
 
-## Data use
+### Data use
 
 We used the polling station data to serve a finder (address and map) on WhoCanIVoteFor.co.uk if we had data for that user’s postcode. Where we did not have polling station data, users were served with a phone number for their council, further down the information hierarchy of the page.
 
@@ -195,7 +144,7 @@ We also created a mini-site for NUS Wales — [WhereDoIVote.wales](http://WhereD
 
 Particularly successful areas in Wales included Neath Port Talbot, where 448 people entered a postcode and 414 found their polling station, and Cardiff, where 969 people entered a postcode and 943 found their polling station. (The small number that didn't find a polling station most probably entered a business/office postcode that didn't correspond to a station.) In both of these areas, we saw nearly 0.5% of the voting-age population use the finder.
 
-## Results data
+### Results data
 
 **This May we piloted the crowdsourcing of open results data with partners at the Local Government Information Unit (LGiU) and the Open Data Institute.**
 
@@ -205,19 +154,10 @@ At a ward level, an army of online volunteers has nearly entered all votes data.
 
 Thanks partially to our efforts, the UK Government has committed to ‘develop a common data standard for reporting election results in the UK faster and more efficiently, and develop a plan to support electoral administrators to voluntarily adopt the standard’. This is [commitment #7](https://www.google.com/url?q=https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18%23commitment-7-elections-data&sa=D&ust=1463423062513000&usg=AFQjCNGFrk_VFOAaz2-Y66CWZKDAiUoEaQ) in the UK’s National Action Plan as part of the UK’s membership of the Open Government Partnership.
 
-
-{% endfilter %}
-
-</section>
-
-<section id="block_section_process" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_process"></a>
-<h1 data-magellan-destination="section_process">3. The process: how we did it</h1>
+# 3. The process: how we did it
 <img src="{% static 'images/report/data_wombles.jpg' %}" alt="">
 </header>
 
-{% filter markdown %}
 
 ## Finding and identifying elections
 
@@ -235,7 +175,6 @@ To the rescue came Tim Green, who designed a robust system for issuing election 
 
 ## Building a database of candidates
 
-{% endfilter %}
 
 <figure style="page-break-inside: avoid;">
 <img src="{% static "report_2016/images/edits-over-time.png" %}">
@@ -244,7 +183,6 @@ Edits over time to <a href="https://candidates.democracyclub.org.uk">candidates.
 </figcaption>
 </figure>
 
-{% filter markdown %}
 
 In 2015, volunteers accurately crowdsourced 4,000 candidates in advance of the publication of the Statement of Persons Nominated (SOPN). This is the document published by electoral teams in councils once the deadline has past and all the candidates have paid the deposit, completed the requisite paperwork, and achieved the necessary nomination.
 
@@ -260,7 +198,7 @@ We achieved full coverage of the scheduled elections weeks before the 5th of May
 
 This is an extraordinary achievement, made possible only by the efforts of many volunteers. If, eventually, councils can get to a place where this data is all published in an open format at a predictable location, the hours these volunteers spent could be employed to more productive ends.
 
-##Creating a polling station finder
+## Creating a polling station finder
 
 As with candidates, we had set out with ambitious targets for polling stations, but after many conversations with even supportive councils it became clear that acquiring, checking and cleaning the data was a significantly time-consuming process. Data could be provided in many different formats and at many different levels of quality.
 
@@ -278,23 +216,14 @@ For the local elections in England, we joined with the Local Government Informat
 
 From 11pm on the night, LGiU rota-ed staff over the subsequent three days while results were announced. We focused initially on council control, as a change in council control makes the biggest difference to a council’s work. We are continuing to collect results data at an individual ward level: votes per candidate, winner, spoil ballot and turnout recorded. We allow anyone to add ‘unverified’ data and then a team of trusted volunteers and staff at LGiU confirm these submissions in order to ‘verify’. **Full results data should be available by June 2016.**
 
-{% endfilter %}
-
-</section>
-<section id="block_section_four_year_plan" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_four_year_plan"></a>
-<h1 data-magellan-destination="section_four_year_plan">4. The four year plan</h1>
-</header>
+# 4. The four year plan
 
 <figure>
 <img src="{% static '/images/report/old_bridge_pontypridd.jpg' %}" alt="">
 <figcaption>Credit: Varitek via Wikipedia</figcaption>
 </figure>
 
-{% filter markdown %}
-
-##1 A. We want to cover every election
+## A. We want to cover every election
 
 While we’ve solved election identifiers — and we encourage everyone to adopt this — we still need a way to know an election is happening, including by-elections. There exist people with good local expertise who know this for their patch, but we need a way to scale this process nationally.
 
@@ -337,14 +266,11 @@ Another way to test this approach is with lab experiments. We could run an imagi
 
 Lastly, it’s worth pointing out that Google have been testing one approach for the US Presidential election, providing highlighted search results based on statements from candidates. We plan to meet with the elections team at Google after the US election on the 8th of November.
 
-{% endfilter %}
 
 <figure>
 <img alt="Google topic search results" src="{% static 'images/report/google_hilary.png' %}" />
 <figcaption>Google Search with ‘issue stances’.</figcaption>
 </figure>
-
-{% filter markdown %}
 
 ## E. We want to vastly improve coverage of the polling station finder
 
@@ -372,20 +298,11 @@ We want to do all of the above until (to the extent appropriate) government deli
 
 We hope that by 2020, digital media companies, charities and governmental institutions will be, as a norm, creating better and better tools for their audiences, members or citizens. This way we can reach millions of people to create a better informed electorate.
 
-{% endfilter %}
 
-</section>
+# 5. After May 2020
 
-<section id="block_section_after_may" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_after_may"></a>
-<h1 data-magellan-destination="section_after_may">5. After May 2020</h1>
-</header>
-<figure>
-<figcaption>Credit <a href="https://www.flickr.com/photos/22691568@N04/26052152400/in/photolist-FG96go-FELpEC-5SKmAN-dhBVrA-89UKtz-df3XHr-dfyatb-bgL5t-dhBWK1-wedU3q-dfzZaF-bMa9E4-deVnZr-dmjm5F-3bxY6n-oxhLEQ-dhBSen-dnNYH4-dobYEz-dmgNHn-dmF7Zd-dhZo6W-pvpzgp-dscjzW-eWmWF9-3cSprM-2CrkVp-hhqb3g-vS8rwM-4iMPCb-o7X3sL-s7Mq7d-owp1pq-nPSdGv-8nHwqN-7LuQYd-oRhwX4-oF7ffc-CFKriU-y5QVmd-aRDvMZ-dPnrf1-y2hWaZ-4wvT47-5evUL2-AnNphU-2TPVG-cYnxJ7-yUwqNi-4mMNPs">Bill Higham</a></figcaption>
-</figure>
 
-{% filter markdown %}
+![Credit: Bill Higham](https://live.staticflickr.com/1685/26052152400_9f1bcb81a5_h.jpg)Credit: Bill Higham
 
 Over time, we expect to see to see governmental bodies produce nationwide level election, candidate and polling station location data. This kind of data, perhaps combined with GOV.UK’s new Notify platform, will allow push notifications to occur when an election is announced or on polling day itself.
 
@@ -402,19 +319,12 @@ This will give civic technology groups such as Democracy Club the chance to focu
 
 We have many more ideas for making democracy easier, more user-friendly and perhaps even more fun through digital services. **These exciting projects can only begin to be realised once the basic data infrastructure is there, which remains our goal for the next few years.**
 
-{% endfilter %}
-
 </section>
 
-<section id="block_section_making_it_happen" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_making_it_happen"></a>
-<h1 data-magellan-destination="section_making_it_happen">6. Making it happen</h1>
+# 6. Making it happen
 <img src="{% static 'images/report/postits.jpg' %}" alt="">
 </header>
 
-
-{% filter markdown %}
 
 ## What we need
 
@@ -444,16 +354,9 @@ As economists talk about lighthouses, roads or clean air, we should talk about o
 
 **We are grateful for every donation, grant and connection to funders.**
 
-{% endfilter %}
 
-</section>
-<section id="block_section_acknowledgements" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_acknowledgements"></a>
-<h1 data-magellan-destination="section_acknowledgements">7. Acknowledgements</h1>
-</header>
+# 7. Acknowledgements
 
-{% filter markdown %}
 Thanks are due to many individuals and organisations who have helped us make significant progress over the last 18 months.
 
 First, to the volunteers across the UK whose willingness to spend hours writing code, providing feedback and inputting data is testament to the power of the crowd.
@@ -480,29 +383,17 @@ Lastly, thanks to every user that left feedback, tweeted or emailed us, every ca
 
 Together, we will make democracy work better for everyone.
 
-{% endfilter %}
 
-</section>
-
-<section id="block_section_annexes" markdown="1" class="ds-stack-smaller">
-<header>
-<a name="section_annexes"></a>
-<h1 data-magellan-destination="section_annexes">8. Annexes</h1>
-</header>
-
-{% filter markdown %}
+# 8. Annexes
 
 ## Annex 1: Theory of change and evaluation
 
 We believe that the work we do will ultimately increase societal wellbeing. Earlier this year we sketched out that happens.
 
-{% endfilter %}
-
 <figure>
 <img src="{% static 'images/report/draft_theory_of_change.jpg' %}" alt="Draft theory of Change" />
 </figure>
 
-{% filter markdown %}
 
 There is much existing evidence that enhanced trust in politics and feelings of empowerment lead to greater human wellbeing (for a summary of the literature, see the Legatum Institute’s Commission on Wellbeing and Policy, 2014).
 
@@ -516,8 +407,6 @@ You can read more about these IDs on the <a href="{% url 'projects:election_ids_
 
 
 ## Annex 3: Councils providing polling station data for May 2016
-
-{% endfilter %}
 
 <div class="ds-table">
 <table>
@@ -634,14 +523,5 @@ You can read more about these IDs on the <a href="{% url 'projects:election_ids_
 </table>
 </div>
 
-{% filter markdown %}
 
 Up to date data can be found at the [polling stations league table](http://pollingstations.democracyclub.org.uk/league_table).
-
-{% endfilter %}
-
-                </section>
-
-        </div>
-
-{% endblock content %}

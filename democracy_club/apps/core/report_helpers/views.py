@@ -1,4 +1,4 @@
-import markdown_deux
+import markdown
 from django.conf import settings
 from django.template import Template, RequestContext
 from django.views.generic import TemplateView
@@ -18,12 +18,8 @@ class MarkdownFileView(TemplateView):
 
         template = Template(self.markdown_content())
         rendered_template = template.render(RequestContext(self.request))
-
-        markdown_doc = markdown_deux.markdown(
-            rendered_template, style="default"
-        )
-        context["toc"] = markdown_doc.toc_html
-
-        context["html_content"] = markdown_doc
-
+        md = markdown.Markdown(extensions=settings.REPORT_MARKDOWN_EXTENSIONS)
+        html = md.convert(rendered_template)
+        context["html_content"] = html
+        context["toc"] = md.toc
         return context
