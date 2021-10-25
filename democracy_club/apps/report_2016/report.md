@@ -219,7 +219,7 @@ From 11pm on the night, LGiU rota-ed staff over the subsequent three days while 
 # 4. The four year plan
 
 <figure>
-<img src="{% static '/images/report/old_bridge_pontypridd.jpg' %}" alt="">
+<img src="{% static 'images/report/old_bridge_pontypridd.jpg' %}" alt="">
 <figcaption>Credit: Varitek via Wikipedia</figcaption>
 </figure>
 
