@@ -27,6 +27,7 @@ sorl-thumbnail = "==12.7.0"
 Django = "==3.2.7"
 Pillow = "==8.4.0"
 Markdown = "==3.3.4"
+flask = "==2.0.2"
 
 [dev-packages]
 aws-sam-cli = "==1.34.1"
