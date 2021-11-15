@@ -10,7 +10,7 @@ django-localflavor = "==3.1"
 django-markdown-deux = "==1.0.5"
 django-model-utils = "==4.2.0"
 django-ratelimit = "==3.0.1"
-django-storages = "==1.12.2"
+django-storages = "==1.12.3"
 djangorestframework = "==3.12.4"
 djhtml = "*"
 aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"}
