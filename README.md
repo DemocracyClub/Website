@@ -10,6 +10,13 @@ This is a Django project using PostgreSQL. The project is deployed using Python 
 then 
 
 `pipenv install`
+## Blog Posts
+To view blog posts, you need to first add new posts to your db. 
+You can do this by creating an admin user in your terminal, then
+navigating to the `/admin` panel to create a new post.
+
+Blog posts now include tags which correspond to projects, such as
+`representatives`. 
 ## Update docs to include 
 new pipeline settings
 Whitenoise
