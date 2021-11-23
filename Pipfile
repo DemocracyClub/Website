@@ -17,7 +17,7 @@ aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.8.tar.gz"}
 dc-signup-form = {file = "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.1.tar.gz"}
 dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.1.6.tar.gz"}
-django-hermes = {file = "https://github.com/DemocracyClub/django-hermes/archive/refs/tags/1.5.6.tar.gz"}
+django-hermes = {file = "https://github.com/DemocracyClub/django-hermes/archive/refs/tags/1.5.7.tar.gz"}
 django-typogrify = {file = "https://github.com/chrisdrackett/django-typogrify/archive/refs/heads/master.tar.gz"}
 jsonfield = "==3.1.0"
 markdown-headdown = "==0.1.3"
