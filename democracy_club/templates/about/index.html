@@ -3,69 +3,73 @@
 
 {% block title %}About | {{ block.super }}{% endblock title %}
 
-{% block extra_page_css %}
-    <style>
-        .videoWrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 */
-            padding-top: 25px;
-            height: 0;
-        }
 
-        .videoWrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-{% endblock %}
 {# fmt:off #}
 
 {% block page_heading %}<h1>About</h1>{% endblock page_heading %}
 
 {% block main_content %}
 
-<div class="ds-stack">
-
 {% filter markdown %}
 
-<p class="ds-h5">Our vision is of a country with the digital foundations to support everyone’s participation in democratic life.</p>
+<p class="ds-h4">Our vision is of a country with the digital foundations to support everyone’s participation in democratic life.</p>
 
-Our mission is to create those foundations by:
+_Our mission_ is to create those foundations by:
 
 - Identifying areas for improvement in democratic engagement;
 - Ensuring everyone has access to quality information on democratic processes, particularly on elections;
 - Mobilising a non-partisan movement of volunteers for democracy.
 
-We are non-partisan and we work openly. We’re a community of 10,000 volunteers and a small core team.
+Started in 2010 and a Community Interest Company since 2015, we are a small, core team of full-time software developers,
+  data specialists, geospatial engineers and election experts. Working with our community of online volunteers, we
+  deliver free, simple and practical services.
 
-We don’t have a view of ‘the perfect democracy’. Instead, we try to make constant iterative improvements based on citizens’ needs. We judge those needs based on publicly available research, feedback on our websites and online search data.
+We want as many people as possible to benefit from our work:
 
-In this video from March 2016, Joe Mitchell — a co-ordinator at Democracy Club - explains how we try to do this.
+On election days, we collaborate with Facebook, Twitter and Google. Each year we process millions of postcode searches,
+  helping people find out when and where to vote.
 
-<div class="videoWrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/efA1l9q7a1M" frameborder="0" allowfullscreen></iframe>
-</div>
+We provide APIs, embeddable widgets and research data to a range of partners across the political spectrum who share our
+  values, from charities and think tanks to news sites and the House of Commons Library.
 
-## What we do
+We also build and maintain services people can use directly, like [WhoCanIVoteFor](https://whocanivotefor.co.uk/)
+  and [WhereDoIVote](https://wheredoivote.co.uk).
 
-### The club
+We work with different parts of the UK government, like the Electoral Commission, to help them provide election information.
 
-We coordinate a club of thousands of democracy volunteers who do small online tasks to help make democracy better. The club help create our Data and Apps.
+Our impact is both direct and indirect. Directly, we have helped millions of people access election and local
+  government information online. Indirectly, we have extensive anecdotal evidence that more people take part in
+  public life as a result of Democracy Club's efforts.
 
-### Data
+Our work has been covered by most national news outlets, as well as in local media across the four nations of the UK.
 
-We create the tools to aggregate data for democracy and make it available to everyone. This includes lists of elections, candidates and polling locations. Our data is trusted by the Electoral Commission, Google, Facebook, the *Guardian* and more.
+Building and maintaining Democracy Club's services is a long-term commitment - elections happen throughout the year
+  which means we’ve got to keep our technology active and up to date at all times.Throughout the year, we also host
+  an online community of 800 members and a mailing list with 15K subscribers.
 
-### Apps
+Our volunteers are non-partisan, either interested in democracy, open source technology, or both. Around elections,
+  we're supported by a core team of 20 super-volunteers and a community of 300+ supporters to crowdsource publicly
+  available information like candidate manifestos.
 
-We build apps to answer direct questions from voters, such as 'Who can I vote for?' and 'Where do I vote?'.
 
-Try out the Apps and get the Data via our [Projects page](http://democracyclub.org.uk/projects).
+## How we work
 
+Our core team works with local councils, organisations and individuals to collect information about elections and
+  local government. In its original format, this data is available to the public, but is often hard for computers to
+  read and use, or difficult for the public to find.
+
+Then, the core team makes sure all the information is accurate.
+
+Laws and regulations around public life and elections are highly complex. Getting things wrong undermines people's
+  trust and risks breaking the law.
+
+We're obsessive about getting it right.
+
+Having compiled that data, our software developers standardise and repackage it, making the information accessible for
+  computers, charities and individuals alike.
+
+
+Read more about [our team](/about/team/).
 
 ## What people say about us
 
@@ -73,64 +77,41 @@ Our data has reached millions of people since 2015. Here’s what some of them s
 
 > “Amazing accessible website that encourages people to vote by its sheer simplicity.”
 
-<!---->
-
 > “This was a very quick and precise answer to my question. Well Done!”
-
-<!---->
 
 > “Exactly what I was looking for. I appreciate the work of democracyclub and its supporters in providing this resource.”
 
-### People who work on democracy trust us
-{% endfilter %}
+## People who work on democracy trust us
 
-<p>
-    <blockquote>
-        “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.”
-    </blockquote>
+> “We've been impressed by Democracy Club's attention to detail and ability to make things work. We have complete trust in the data they provide and are highly supportive of their efforts to help voters get more information about elections.”
 
-    <p>— Stuart Harrison, Senior Communication Officer, The Electoral Commission</p>
-</p>
+— Stuart Harrison, Senior Communication Officer, The Electoral Commission
 
-<p>
-    <blockquote>
-        “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.”
-    </blockquote>
+> “This is great – you offer a fantastic service, it is a real help to us and our electors. We really appreciate it.”
 
-    <p>— Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics</p>
-</p>
+— Seth Alker, Head of Electoral Services, London Borough of Croydon
 
-<p>
-    <blockquote>
-        “...making this information available centrally will become an invaluable service for citizens...”
-    </blockquote>
 
-    <p>— The Minister for the Constitution</p>
-</p>
+  > “Democracy Club provide reliable, vital and timely election-related data that is a great boon for democracy in the UK.”
 
-{% filter markdown %}
-### Here’s a roundup of articles about us
+— Patrick Dunleavy, Professor of Political Science and Public Policy, London School of Economics
 
-- Oxford City Council (2017) *[“Collaboration, Not Reinvention”](http://digital.oxford.gov.uk/blog/2017/05/17/collaboration-not-reinvention)*
-- TBD (2017) *[“Democracy Club”](https://www.tbd.community/en/a/democracy-club-uk)*
-- The Guardian (2017) *[“Democracy? There’s an app for that”](https://www.theguardian.com/politics/2017/jun/06/democracy-theres-an-app-for-that-the-tech-upstarts-trying-to-hack-british-politics)*
-- The Guardian (2017) *[“Why are British voters in the dark about this week’s elections?”](https://www.theguardian.com/commentisfree/2017/may/03/british-voters-local-elections-councils)*
-- The Guardian (2017) *[“Our democracy is broken, debased and distrusted – but there are ways to fix it”](https://www.theguardian.com/commentisfree/2017/jan/25/democracy-broken-distrusted-trump-brexit-political-system)*
-- The Electoral Commission (2017) *[“Helping voters find out where to vote”](https://ukelectoralcommission.wordpress.com/2017/02/06/helping-voters-find-out-where-to-vote/)*
-- The Electoral Commission (2017) *[“How We Set Up A Campaign In 12 Days”](https://ukelectoralcommission.wordpress.com/2017/09/14/how-we-set-up-a-campaign-in-12-working-days/)*
-- TechPresident (2015) *[“Democracy Club Finally Lets Brits Know Who Is Running For Parliament”](http://techpresident.com/news/25519/democracy-club-brings-transparency-uks-obscure-election-procedures)*
+> “I was pleased to hear that Democracy Club, working with the Electoral Commission, will be strengthening their
+  work to provide direct polling station and candidate information to the public online, where we know they expect to
+  find it. Over time, I believe that making this information available centrally will become an invaluable service
+  for citizens.”
 
-### Some examples of our data in use
+— [Chris Skidmore, The Minister for the Constitution](https://www.gov.uk/government/speeches/skidmore-an-effective-democracy-that-works-for-everyone)
 
-- The Times (2019) *[“Who are the general election candidates in my area?”](https://www.thetimes.co.uk/article/who-are-the-general-election-candidates-in-my-constituency-area-60btrdpxs)*
-- Cambridgeshire Live (2019) *[“General Election 2019: This is how diverse the candidate list is in Cambridgeshire”](https://www.cambridge-news.co.uk/news/cambridge-news/general-election-2019-how-diverse-17290381)*
-- Fawcett Society (2019) *[“Lack of women candidates in local elections ‘puts councils behind the times’”](https://www.fawcettsociety.org.uk/news/lack-of-women-candidates-in-local-elections-puts-councils-behind-the-times)*
-- BBC News (2019) *[“Council elections: 'Not enough' women and minorities stand”](https://www.bbc.co.uk/news/uk-england-47947867)*
-- Left Foot Forward (2019) *[“Six things you need to know about the English local elections”](https://leftfootforward.org/2019/04/six-things-you-need-to-know-about-the-english-local-elections/)*
-- In Your Area (2019) *[“Local Elections 2019: Who you can vote for and where”](https://www.inyourarea.co.uk/news/local-elections-2019-who-you-can-vote-for-a-where/)*
-- Democratic Audit (2019) *[“‘Conceived in Harlesden’: When do candidates emphasise their local connections in UK general elections?”](http://www.democraticaudit.com/2019/01/14/conceived-in-harlesden-when-do-candidates-emphasise-their-local-connections-in-uk-general-elections/)*
-- Democratic Audit (2018) *[“England’s local elections 2018: bridging the information gap with the Democratic Dashboard”](https://www.democraticaudit.com/2018/04/09/englands-local-elections-2018-bridging-the-information-gap-with-the-democratic-dashboard/)*
-- The Daily Telegraph (2017) *[“General election 2017 sees record level of female candidates”](https://www.telegraph.co.uk/women/politics/general-election-2017-sees-record-level-female-candidates/)*
+> “a heroic crowd-sourcing effort.”
+
+  — [The Guardian](https://www.theguardian.com/politics/2021/apr/27/independents-day-the-rise-of-hyperlocal-political-parties)
+
+
+> “Nifty.”
+
+— [Oadby and Wigston Council](https://twitter.com/Oadby_Wigston/status/1388901733011755025)
+
 
 ## Who funds us
 
@@ -139,5 +120,4 @@ Our data has reached millions of people since 2015. Here’s what some of them s
 
 {% endfilter %}
 
-</div>
 {% endblock main_content %}
