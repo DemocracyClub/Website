@@ -10,25 +10,29 @@
       {% stylesheet 'styles' %}
     {% endblock extra_site_css %}
     {% block site_meta %}
-      <link rel="shortcut icon" href="{%  static 'images/logo_icon.png' %}">
+      <link rel="shortcut icon" href="{% static 'images/logo_icon.png' %}">
       <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
       <link rel="manifest" href="{% static "manifest.json" %}">
-      <meta property="fb:pages" content="316731041785" />
     {% endblock site_meta %}
+    {% block base_og_tags %} 
+      <meta property="og:description" content="{% block og_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description_content %}" />
+      <meta property="og:image" content="{% block og_image_content %}{{ CANONICAL_URL }}{% static 'images/maze_illustration_no_text.png' %}{% endblock og_image_content %}" />
+      <meta property="og:title" content="{% block og_title_content %}{{ SITE_TITLE }}{% endblock og_title_content %}" />
+      <meta property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
+      <meta property="og:url" content="{{ CANONICAL_URL }}">
 
-    <meta property="og:description" content="{% block og_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description_content %}" />
-    <meta property="og:image" content="{% block og_image_content %}{% static 'images/logo_icon.png' %}{% endblock og_image_content %}" />
-    <meta property="og:title" content="{% block og_title_content %}{{ site_title }}{% endblock og_title_content %}" />
-    <meta property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
-
-
-    {% block base_og_tags %}
-      <meta property="fb:app_id" content="262795130596272" />
-      <meta property="og:url" content="https://democracyclub.org.uk{{ request.path }}" />
-      <!-- Twitter -->
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:url" content="https://democracyclub.org.uk{{ request.path }}>
     {% endblock base_og_tags %}
+    <!-- Facebook -->
+    <meta property="fb:pages" content="316731041785" />
+    <meta property="fb:app_id" content="262795130596272" />
+    <!-- Twitter -->
+    <meta name="twitter:title" content="{% block twitter_title_content %}Democracy Club{% endblock twitter_title_content %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@democlub">
+    <meta name="twitter:url" content="{% block twitter_url %}{{ CANONICAL_URL }}{% endblock twitter_url %}">
+    <meta name="twitter:image:alt" content="Democracy Club">  
+    <meta name="twitter:image" content="{% block twitter_image_url %}{{ CANONICAL_URL }}{% static 'images/maze_illustration_no_text.png' %}{% endblock twitter_image_url %}" />
+    <meta name="twitter:description" content="{% block twitter_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock twitter_description_content %}"/>  
     <script src="{% static 'js/global.js' %}"></script>
   </head>
 

@@ -11,6 +11,12 @@
 {% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
 
+ <!-- Twitter -->
+{% block twitter_image_url %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock twitter_image_url %} 
+{% block twitter_title %}{{ post.subject }}{% endblock twitter_title  %}
+{% block twitter_url %}{{ CANONICAL_URL }}{{ post.get_absolute_url }}{% endblock twitter_url %}
+{% block twitter_description_content %}{{ post.summary }}{% endblock twitter_description_content %}"/>
+
 {% block page_content %}
   <article class="ds-stack entry">
     <header>

@@ -1,4 +1,5 @@
 import sys
+import os
 from os.path import join, abspath, dirname
 import dc_design_system
 
@@ -156,6 +157,8 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
                 "dc_signup_form.context_processors.signup_form",
+                "democracy_club.context_processors.canonical_url",
+                "democracy_club.context_processors.site_title",
             ],
             "debug": DEBUG,
         },
@@ -224,6 +227,7 @@ GO_CARDLESS_PAYMENT_DESCRIPTION = (
 GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
 SITE_TITLE = "Democracy Club"
+CANONICAL_URL = f"https://{os.environ.get('FQDN')}"
 
 
 def setup_sentry(environment=None):
