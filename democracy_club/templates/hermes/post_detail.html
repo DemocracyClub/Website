@@ -35,8 +35,10 @@
               {{post.author.last_name}}
             </a>
           {% else %}
+          <a rel="author" href="{% url 'team' %}#{{post.author.first_name}}">
             {{post.author.first_name}}
             {{post.author.last_name}}
+          </a>
           {% endif %}
         </address>
         on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
