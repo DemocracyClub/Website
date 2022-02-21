@@ -30,7 +30,7 @@ Markdown = "==3.3.6"
 flask = "==2.0.2"
 
 [dev-packages]
-aws-sam-cli = "==1.35.0"
+aws-sam-cli = "==1.38.1"
 black = "==21.7b0"
 vcrpy = "==4.1.1"
 pytest = "*"
