@@ -6,8 +6,7 @@
 {% block title %}{{ post.subject }} | {{ site_title }}{% endblock title %}
 
 {% block og_description_content %}{{ post.summary }}{% endblock og_description_content %}
-{% block og_image_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}
-{% endblock og_image_content %}
+{% block og_image_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock og_image_content %}
 {% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
 
