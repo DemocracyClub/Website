@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dd0093e855f5457eda03a219c103121f4b833a43ed9d2e0336b6385e916a53c4"
+            "sha256": "bc1dd1dac8f1665876edb921d20037918465579dbdf561ee17231bbb3aaee128"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -639,28 +639,29 @@
         },
         "aws-lambda-builders": {
             "hashes": [
-                "sha256:1498fb374d3f2e289a78a4843cfcee86f777011cd8d3c29f38826c16239839f9",
-                "sha256:335966e9dc19ab37ad9a600dbcf90ecb8d47f1fcffbf83ef6eebe61fcbdd6731",
-                "sha256:742a67123dc0ea91983e7a6947dad0f23dff9c958a28da46162ee675ae257273"
+                "sha256:221f50d7a36c1fe4a8495a1acfff3cf539ef528310c76cfe2341e250817ceb74",
+                "sha256:96e16fb9d860c91484daef296445fbc856a951dc8c35523882695d33cb177c2d",
+                "sha256:c9f4a284b856c43e18e47aeb28c4ee6b702d632953b03ef4fe2fb24fd6cc99e5"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==1.9.0"
+            "version": "==1.14.0"
         },
         "aws-sam-cli": {
             "hashes": [
-                "sha256:0794095cfbb287c8148348e379810f45b06bcab6e0a9258e3877a9906a515435",
-                "sha256:a232680bc52e643566e820e661b3e83b47bed500186b451c7a460477f3061513"
+                "sha256:430f15b9336b5bb8ba53acfd42988ac2f12b39fd26f7aa664444ca1467ae003a",
+                "sha256:a301e9583a715ab7fd53ce7fb7793a9087c00dadf2fb8b377f981414d1fbd5b4"
             ],
             "index": "pypi",
-            "version": "==1.35.0"
+            "version": "==1.43.0"
         },
         "aws-sam-translator": {
             "hashes": [
-                "sha256:99e3b80c2ca4f6f67c9bcfa757ba9f30eee9716a4a93d698a581476dc9945307",
-                "sha256:ae52c5941048ea7e4a2fd268dbd5d34a133e128913a641f41c9360f6d77b05c3",
-                "sha256:bc7dbda72526763049a156a9bfdda9a2529d0a0a4ac670c1158980f6aee33dfd"
+                "sha256:10af688585ebfd71959a32a2c6f46e0dc9dbb275a8ca9472348cbccf0f2b9d05",
+                "sha256:134ce1e72f69725b7385b3a22acca60513aba50cb74f958495775a540c66712c",
+                "sha256:77be965487f20303528c9febd17bbe0bad6a980be2762486d090a7c5e07b4187"
             ],
-            "version": "==1.40.0"
+            "markers": "python_version >= '3.7' and python_version != '4.0' and python_version <= '4.0'",
+            "version": "==1.44.0"
         },
         "backcall": {
             "hashes": [
@@ -1421,6 +1422,14 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.1.10"
+        },
+        "setuptools": {
+            "hashes": [
+                "sha256:8f4813dd6a4d6cc17bde85fb2e635fe19763f96efbb0ddf5575562e5ee0bc47a",
+                "sha256:c3d4e2ab578fbf83775755cd76dae73627915a22832cf4ea5de895978767833b"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==61.2.0"
         },
         "six": {
             "hashes": [
