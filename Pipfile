@@ -30,8 +30,8 @@ Markdown = "==3.3.6"
 flask = "==2.0.2"
 
 [dev-packages]
-aws-sam-cli = "==1.35.0"
-black = "==21.7b0"
+aws-sam-cli = "==1.43.0"
+black = "==21.12b0"
 vcrpy = "==4.1.1"
 pytest = "*"
 pytest-cov = "*"
@@ -51,3 +51,6 @@ python_version = "3.8"
 black = "black ."
 black-check = "black --check ."
 pytest = "pytest"
+
+[pipenv]
+allow_prereleases = true
