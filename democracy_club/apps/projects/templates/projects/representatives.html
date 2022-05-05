@@ -1,40 +1,52 @@
 {% extends "base.html" %}
+{% load markdown_filter %}
+{% block title %}
+Representatives |
+{% endblock %}
+{% block og_description_content %}
+Democracy Club wants to connect the national to the local.
+{% endblock %}
+
 {% block content %}
-<h1>Representatives</h1>
-  <p>The people who are elected to run the UK collectively hold a huge amount of power. Most of their work is done
-    transparently, however transparency isn’t the same as accessibility. This is especially true with local authorities.
-    Approximately 400 organisations with 22,000 elected people make decisions every day about everything from schools
-    and social care to roads and travel, the environment to elections.</p>
+{% filter markdown %}
 
-  <p>The scale and fragmentation of this information makes working with it hard. Most questions about local government
-    can only be answered by researchers trawling through hundreds of websites of varying quality. The different layers
-    of local government adds complexity, and longitudinal study means repeating the initial research from scratch. The
-    cost of this work is prohibitive for many projects and organizations, and the result is that local government is far
-    less scrutinised than it could be, simply because of information fragmentation.</p>
+# Representatives project
 
-  <p>Democracy Club is trying to solve this problem.</p>
+## Empowering local democracy
 
-  <p>We plan to start by creating basic, foundational, lists for others to build on. We already have services listing
-    local authorities, elections, polling stations and candidates that are used by millions of people. The next step is
-    to build a single list of all elected representatives with an ultimate aim of facilitating scrutiny through
-    increased transparency.</p>
+Democracy Club wants to connect the national to the local.
 
-  <p>To achieve this goal, we want to partner with organisations who are trying to research, lobby or better understand
-    the people who run local governments. This might be in the form of tracking gender make up over time, or
-    understanding more about who holds particular roles within the council. It might be to help the public understand
-    what their representatives are up to, or to help them resolve issues in their area.</p>
+The people who are elected to run the UK collectively hold a huge amount of power, but this power isn’t always accessible to communities or campaigners. This is especially true of local councils.
 
-  <p>The costs of running the system should not be met by charging for access, as this goes against the principles
-    lowering the barriers to accessing this information. Rather than a traditional commercial model, we are trying to
-    create a community of organisations that contribute to the running costs and product direction. This “data commons”
-    will help everyone through a shared and open resource.</p>
+There are approximately 400 local organisations with 22,000 elected representatives. They make decisions about everything from schools and social care, to the environment and elections.
 
-  <p>We are seeking grant funding in the short term, but the long term aim is that a coalition of organisations can
-    share the costs, with Democracy Club acting as a delivery partner for them.</p>
+Unlike MPs, there is no centralised database of who our local councillors are. As a consequence we see many national and local campaigns by-pass making stakeholders of local government. Councillors themselves also report feeling isolated from national politics too. We want to correct this.
 
-  <p>Democracy Club are building a coalition of organisations who are interested in this product 
-    if you are interested, please <a href="{% url "contact" %}">get in touch</a> to discuss.</p>
+Democracy Club is going to build the Representatives Project.
 
-  {% load post_tags %}
-  {% posts_for_tag "representatives" %}
+### What?
+The Representatives Project will start as a single list of all elected representatives in the UK, and hopefully grow to become a platform for local campaigning.
+
+The current scale and fragmentation of local government makes working with it hard. Most questions can only be answered by researchers trawling through hundreds of websites of varying quality. The cost of working with local government is prohibitive for many projects and organisations, and the result is that local government is regularly circumvented.
+
+Democracy Club has a lot of experience in overcoming information fragmentation, and we believe we can build something that will make local government more accessible to many.
+
+### How?
+Because of our elections work we work closely with all ~333 councils. We also already collect all the candidates who stand to be your representative. Now we want to go the extra step and collect all the people who are elected into those roles, and to build from there. We want to make this data available to everyone: voters, communities and campaigners.
+
+We will be starting this work in the Summer of 2022.
+
+### Get Involved
+If you want to use this service, either as an individual or as a campaigner, sign up below and we will keep you updated on our progress.
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdV7aYW7hbN-Y0fckeEkcS2NFcSqUkhyKv6MspP8ObPh3XBIw/viewform?embedded=true" width="100%" height="859" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
+
+
+{% endfilter %}
+
+    {% load post_tags %}
+    {% posts_for_tag "representatives" %}
 {% endblock %}
