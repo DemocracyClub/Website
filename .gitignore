@@ -75,3 +75,4 @@ democracy_club/static
 .pytest_cache/
 lambda-layers/DependenciesLayer/requirements.txt
 .aws-sam
+.vscode/
