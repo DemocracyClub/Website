@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load markdown_filter %}
+{% block title %}Polling station finder{% endblock title %}
 
 {% block content %}
     <div class="ds-stack-smaller">
@@ -16,7 +17,6 @@
                 </li>
             </ul>
         </nav>
-        {% block page_title %}{% endblock page_title %}
 
         {% block main_content %}
         {% endblock main_content %}

@@ -22,4 +22,5 @@ class MarkdownFileView(TemplateView):
         html = md.convert(rendered_template)
         context["html_content"] = html
         context["toc"] = md.toc
+        context["page_title"] = md.toc_tokens[0]["name"]
         return context

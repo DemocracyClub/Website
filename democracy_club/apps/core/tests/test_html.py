@@ -43,6 +43,7 @@ class TestHtml:
             reverse(
                 "wheredoivote_user_feedback:wheredoivote_user_feedback_2018"
             ),
+            reverse("projects:every_election"),
         ]
 
     @pytest.mark.django_db
@@ -52,3 +53,25 @@ class TestHtml:
                 assert client.get(url).status_code == 200
                 _, errors = validate_html(client, url)
                 assert errors == ""
+
+    @pytest.mark.django_db
+    def test_page_title(self, client, urls):
+        """test every page has a page title in the
+        block title tag"""
+        for url in urls:
+            response = client.get(url)
+            assert "<title>" in response.content.decode("utf-8")
+            assert "</title>" in response.content.decode("utf-8")
+
+    def test_report_page_title(self, client):
+        """test report page has a page title in the
+        block title tag that is equal to the report title"""
+        response = client.get("/report_2016/")
+        assert (
+            "<title>Towards better elections | Democracy Club</title>"
+            in response.content.decode("utf-8")
+        )
+        assert (
+            "<title> | Democracy Club</title>"
+            not in response.content.decode("utf-8")
+        )
