@@ -22,23 +22,14 @@
       <h1>{{ post.subject }}</h1>
       <div class="byline">
         <address class="author">
-          By
-          {% if post.author.username == "symroe" %}
-            <a rel="author" href="https://twitter.com/symroe">
-              {{post.author.first_name}}
-              {{post.author.last_name}}
-            </a>
-          {% elif post.author.first_name == "Joe" %}
-            <a rel="author" href="https://twitter.com/j0e_m">
-              {{post.author.first_name}}
-              {{post.author.last_name}}
-            </a>
+        By
+        {% for author in post.author.all %}
+          {% if post.author.count == 1 %}
+            {% include 'linked_authors.html' with author=author%}
           {% else %}
-          <a rel="author" href="{% url 'team' %}#{{post.author.first_name}}">
-            {{post.author.first_name}}
-            {{post.author.last_name}}
-          </a>
+            {% if forloop.last %} and {% else %}{% if not forloop.first %}, {% endif %}{% endif %}{% include 'linked_authors.html' with author=author %}
           {% endif %}
+        {% endfor %}
         </address>
         on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
       </div>

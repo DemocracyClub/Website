@@ -29,7 +29,7 @@ class PostListView(ListView):
     template_name = "hermes/post_list.html"
 
     def get_queryset(self):
-        qs = self.model.objects.published().select_related("author")
+        qs = self.model.objects.published().prefetch_related("author")
         tag = self.request.GET.get("tag", None)
         if tag:
             qs = qs.for_tag(tag)

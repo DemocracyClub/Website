@@ -12,6 +12,12 @@ class PostListViewTestCase(HermesTestCase):
         expected = list(models.Post.objects.published())
         self.assertEqual(expected, list(response.context["posts"]))
 
+    def test_qs_contains_tags(self):
+        """The PostListView can filter tags if requested"""
+        response = self.get(self.url() + "?tag=foo")
+        expected = list(models.Post.objects.published().for_tag("foo"))
+        self.assertEqual(expected, list(response.context["posts"]))
+
 
 class CategoryPostListViewTestCase(HermesTestCase):
     def url(self, category):

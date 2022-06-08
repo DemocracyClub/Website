@@ -7,6 +7,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ("subject",),
     }
+    filter_horizontal = ["author"]
 
 
 class CategoryAdmin(admin.ModelAdmin):

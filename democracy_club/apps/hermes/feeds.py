@@ -35,10 +35,13 @@ class LatestPostFeed(Feed):
         return [category.title for category in item.category.hierarchy()]
 
     def item_author_name(self, item):
-        return "{first_name} {last_name}".format(
-            first_name=item.author.first_name,
-            last_name=item.author.last_name,
-        )
+        authors = [author.name for author in item.author.all()]
+        if len(authors) == 1:
+            return authors[0]
+        elif len(authors) == 2:
+            return "{} {}".format(authors[0], authors[1])
+        elif len(authors) > 2:
+            return "{} {}".format(authors[0], authors[-1])
 
     def item_author_email(self, item):
         return item.author.email
