@@ -19,19 +19,6 @@ class PostListViewTestCase(HermesTestCase):
         self.assertEqual(expected, list(response.context["posts"]))
 
 
-class CategoryPostListViewTestCase(HermesTestCase):
-    def url(self, category):
-        return category.get_absolute_url()
-
-    def test_context_contains_posts(self):
-        """The CategoryPostListView Context should contain a QuerySet of all
-        Posts in the given Category
-        """
-        response = self.get(self.url(self.root_category))
-        expected = list(models.Post.objects.filter(category=self.root_category))
-        self.assertEqual(expected, list(response.context["posts"]))
-
-
 class ArchivePostListViewTestCase(HermesTestCase):
     def url(self, year=None, month=None, day=None):
         if year and month and day:
@@ -79,21 +66,6 @@ class ArchivePostListViewTestCase(HermesTestCase):
         """
         response = self.get(self.url(year=2012))
         expected = list(models.Post.objects.created_on(year=2012))
-        self.assertEqual(expected, list(response.context["posts"]))
-
-
-class AuthorPostListViewTestCase(HermesTestCase):
-    def url(self, author):
-        return super(AuthorPostListViewTestCase, self).url(
-            "hermes_author_post_list", author
-        )
-
-    def test_context_contains_posts(self):
-        """The AuthorPoustListView Context should cotain a QuerySet af all
-        Posts by the given Author.
-        """
-        expected = list(models.Post.objects.by("author1"))
-        response = self.get(self.url("author1"))
         self.assertEqual(expected, list(response.context["posts"]))
 
 

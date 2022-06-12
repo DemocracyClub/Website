@@ -2,8 +2,6 @@ from django.urls import re_path
 
 from .views import (
     ArchivePostListView,
-    AuthorPostListView,
-    CategoryPostListView,
     PostDetail,
     PostListView,
 )
@@ -29,16 +27,6 @@ urlpatterns = [
         r"^(?P<year>\d+)/$",
         view=ArchivePostListView.as_view(),
         name="hermes_archive_year",
-    ),
-    re_path(
-        r"categories/(?P<slug>.+)/$",
-        view=CategoryPostListView.as_view(),
-        name="hermes_category_post_list",
-    ),
-    re_path(
-        r"authors/(?P<author>.+)/$",
-        view=AuthorPostListView.as_view(),
-        name="hermes_author_post_list",
     ),
     re_path(
         r"^$",

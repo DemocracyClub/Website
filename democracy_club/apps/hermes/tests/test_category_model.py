@@ -82,17 +82,6 @@ class CategoryTestCase(HermesTestCase):
         expected = "Programming > Python > Django"
         self.assertEqual(expected, self.third_category.__unicode__())
 
-    def test_get_absolute_url(self):
-        """A Category should know its absolute URL"""
-        expected = "/blog/categories/programming/"
-        self.assertEqual(expected, self.root_category.get_absolute_url())
-
-        expected = "/blog/categories/programming/python/"
-        self.assertEqual(expected, self.second_category.get_absolute_url())
-
-        expected = "/blog/categories/food/"
-        self.assertEqual(expected, self.another_category.get_absolute_url())
-
     def test_save(self):
         """A Category should update its slug on save"""
         self.third_category.slug = "Banana Slug"
