@@ -115,6 +115,11 @@ url_redirects = (
         RedirectView.as_view(url=reverse_lazy("support_us")),
         name="funding",
     ),
+    path(
+        "donate/",
+        RedirectView.as_view(url=reverse_lazy("support_us")),
+        name="funding",
+    ),
 )
 
 urlpatterns += url_redirects
