@@ -16,7 +16,7 @@
         By
         {% for author in post.author.all %}
           {% if post.author.count == 1 %}
-            {% include 'linked_authors.html' with author=author %}
+            {% include 'linked_authors.html' with author=author%}
           {% else %}
             {% if forloop.last %} and {% else %}{% if not forloop.first %}, {% endif %}{% endif %}{% include 'linked_authors.html' with author=author %}
           {% endif %}
