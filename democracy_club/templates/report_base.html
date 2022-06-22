@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body_class_attr %}class="report"{% endblock body_class_attr %}
-
+{% block title %}{{ page_title|safe }}{% endblock title %}
 {% block content %}
   <style>
       #toc.sticky details {
