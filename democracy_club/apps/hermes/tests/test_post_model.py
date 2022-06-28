@@ -90,19 +90,43 @@ class PostTestCase(HermesTestCase):
         self.post1.save()
         self.assertEqual(expected, self.post1.reading_time)
 
+    def test_multiple_authors(self):
+        authors = self.post5.author.all()
+        self.assertEqual(3, len(authors))
+
+    def is_staff(self):
+        """A Post authored by staff should link the name to the team page anchor"""
+        response = self.client.get(self.post5.get_absolute_url())
+        self.assertContains(
+            response,
+            '<a rel="author" href="/about/team/#Joyce">Joyce Byers</a>',
+        )
+        self.assertContains(
+            response, '<a rel="author" href="/about/team/#Jim">Jim Hoppper</a>'
+        )
+        self.assertContains(response, "Mike Wheeler")
+        self.assertNotContains(
+            response,
+            '<a rel="author" href="/about/team/#Mike">Mike Wheeler</a>',
+        )
+
+    def test_author_formatting(self):
+        """A Post with 3+ authors should be formatted properly"""
+        expected = """
+            <address class="author">
+            By <a rel="author" href="/about/team/#Jim">Jim Hopper</a>, 
+            <a rel="author" href="/about/team/#Joyce">Joyce Byers</a> 
+            and Mike Wheeler
+            </address>"""
+        response = self.client.get(self.post5.get_absolute_url())
+        self.assertInHTML(expected, response.rendered_content)
+
 
 class PostQuerySetTestCase(HermesTestCase):
-    def test_by(self):
-        """The Post QuerySet should return Posts by a specific author"""
-        expected = [
-            self.post3,
-            self.post1,
-        ]
-        self.assertEqual(expected, list(models.Post.objects.by("author1")))
-
     def test_reverse_creation_order(self):
         """The Post QuerySet should return Posts in reverse creation order"""
         expected = [
+            self.post5,
             self.post4,
             self.post3,
             self.post2,
@@ -113,29 +137,13 @@ class PostQuerySetTestCase(HermesTestCase):
     def test_in_category(self):
         """The Post QuerySet should return Posts in a specific Category"""
         expected = [
+            self.post5,
             self.post3,
             self.post2,
             self.post1,
         ]
         self.assertEqual(
             expected, list(models.Post.objects.in_category("programming"))
-        )
-
-    def test_in_category_children(self):
-        """The Post QuerySet should return Posts in a specific Category and its Children"""
-        self.post1.category = self.third_category
-        self.post1.save()
-
-        self.post2.category = self.second_category
-        self.post2.save()
-
-        expected = [
-            self.post2,
-            self.post1,
-        ]
-        self.assertEqual(
-            expected,
-            list(models.Post.objects.in_category("programming/python")),
         )
 
     def test_recent(self):

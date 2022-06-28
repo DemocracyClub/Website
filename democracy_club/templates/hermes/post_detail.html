@@ -10,55 +10,45 @@
 {% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
 
- <!-- Twitter -->
-{% block twitter_image_url %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock twitter_image_url %} 
+<!-- Twitter -->
+{% block twitter_image_url %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock twitter_image_url %}
 {% block twitter_title %}{{ post.subject }}{% endblock twitter_title  %}
 {% block twitter_url %}{{ CANONICAL_URL }}{{ post.get_absolute_url }}{% endblock twitter_url %}
 {% block twitter_description_content %}{{ post.summary }}{% endblock twitter_description_content %}"/>
 
 {% block page_content %}
-  <article class="ds-stack entry">
-    <header>
-      <h1>{{ post.subject }}</h1>
-      <div class="byline">
-        <address class="author">
-          By
-          {% if post.author.username == "symroe" %}
-            <a rel="author" href="https://twitter.com/symroe">
-              {{post.author.first_name}}
-              {{post.author.last_name}}
-            </a>
-          {% elif post.author.first_name == "Joe" %}
-            <a rel="author" href="https://twitter.com/j0e_m">
-              {{post.author.first_name}}
-              {{post.author.last_name}}
-            </a>
-          {% else %}
-          <a rel="author" href="{% url 'team' %}#{{post.author.first_name}}">
-            {{post.author.first_name}}
-            {{post.author.last_name}}
-          </a>
-          {% endif %}
-        </address>
-        on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
-      </div>
+    <article class="ds-stack entry">
+        <header>
+            <h1>{{ post.subject }}</h1>
+            <div class="byline">
+                <address class="author">
+                    By
+                    {% for author in post.author.all %}
+                        {% if post.author.count == 1 %}
+                            {% include 'linked_authors.html' with author=author%}
+                        {% else %}
+                            {% if forloop.last %} and {% else %}{% if not forloop.first %}, {% endif %}{% endif %}{% include 'linked_authors.html' with author=author %}
+                        {% endif %}
+                    {% endfor %}
+                </address>
+                on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
+            </div>
 
-    </header>
-    {% if post.hero %}
-      {% thumbnail post.hero "690" as im %}
-        <img class="blog_hero" src="{{ im.url }}">
-      {% endthumbnail %}
-    {% endif %}
-    {{ post.rendered|safe|typogrify }}
-  </article>
-  <div class="entry ds-stack-smaller">
-    <h2>Get in touch:</h2>
-    <p>
-      Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
-      <a href="https://twitter.com/democlub">tweet us</a>,
-      post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
-      email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
-  </div>
-  </div>
+        </header>
+        {% if post.hero %}
+            {% thumbnail post.hero "690" as im %}
+                <img class="blog_hero" src="{{ im.url }}">
+            {% endthumbnail %}
+        {% endif %}
+        {{ post.rendered|safe|typogrify }}
+    </article>
+    <div class="entry ds-stack-smaller">
+        <h2>Get in touch:</h2>
+        <p>
+            Jump into the online chat in <a href="http://slack.democracyclub.org.uk">Slack</a>,
+            <a href="https://twitter.com/democlub">tweet us</a>,
+            post on our <a href="https://www.facebook.com/democracyclub/">facebook page</a>, or
+            email <a href="mailto:hello@democracyclub.org.uk">hello@democracyclub.org.uk</a>.</p>
+    </div>
 
 {% endblock %}

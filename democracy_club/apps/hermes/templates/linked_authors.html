@@ -1,0 +1,14 @@
+{% if author.first_name %}
+    {% if author.username == "symroe" %}
+        <a rel="author" href="https://twitter.com/symroe">{{author.first_name}} {{author.last_name}}</a>
+    {% elif author.first_name == "Joe" %}
+        <a rel="author" href="https://twitter.com/j0e_m">{{author.first_name}} {{author.last_name}}</a>
+    {% elif author.is_staff %}
+        <a rel="author" href="{% url 'team' %}#{{author.first_name}}">{{author.first_name}} {{author.last_name}}</a>
+    {% else %}
+        {{author.first_name}} {{author.last_name}}
+    {% endif %}
+{% else %}
+    {{author.username}}
+{% endif %}
+

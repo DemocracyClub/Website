@@ -192,8 +192,8 @@ class Post(TimestampedModel):
     body = models.TextField(_("body"))
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    author = models.ForeignKey(
-        django_settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    author = models.ManyToManyField(
+        django_settings.AUTH_USER_MODEL, verbose_name="Authors"
     )
     tags = ArrayField(models.CharField(max_length=30), blank=True, default=list)
 

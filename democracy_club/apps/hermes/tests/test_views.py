@@ -12,17 +12,10 @@ class PostListViewTestCase(HermesTestCase):
         expected = list(models.Post.objects.published())
         self.assertEqual(expected, list(response.context["posts"]))
 
-
-class CategoryPostListViewTestCase(HermesTestCase):
-    def url(self, category):
-        return category.get_absolute_url()
-
-    def test_context_contains_posts(self):
-        """The CategoryPostListView Context should contain a QuerySet of all
-        Posts in the given Category
-        """
-        response = self.get(self.url(self.root_category))
-        expected = list(models.Post.objects.filter(category=self.root_category))
+    def test_qs_contains_tags(self):
+        """The PostListView can filter tags if requested"""
+        response = self.get(self.url() + "?tag=foo")
+        expected = list(models.Post.objects.published().for_tag("foo"))
         self.assertEqual(expected, list(response.context["posts"]))
 
 
@@ -73,21 +66,6 @@ class ArchivePostListViewTestCase(HermesTestCase):
         """
         response = self.get(self.url(year=2012))
         expected = list(models.Post.objects.created_on(year=2012))
-        self.assertEqual(expected, list(response.context["posts"]))
-
-
-class AuthorPostListViewTestCase(HermesTestCase):
-    def url(self, author):
-        return super(AuthorPostListViewTestCase, self).url(
-            "hermes_author_post_list", author
-        )
-
-    def test_context_contains_posts(self):
-        """The AuthorPoustListView Context should cotain a QuerySet af all
-        Posts by the given Author.
-        """
-        expected = list(models.Post.objects.by("author1"))
-        response = self.get(self.url("author1"))
         self.assertEqual(expected, list(response.context["posts"]))
 
 
