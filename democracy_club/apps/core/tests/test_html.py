@@ -35,6 +35,7 @@ class TestHtml:
                 "report_2019_general_election:report_2019_general_election"
             ),
             reverse("report_2021:report_2021"),
+            reverse("report_2022:report_2022"),
             reverse("report_whos_missing:report_whos_missing"),
             reverse("wheredoivote_user_feedback:wheredoivote_user_feedback"),
             reverse(
