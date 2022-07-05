@@ -87,6 +87,7 @@ urlpatterns = [
         ),
     ),
     path("report_2021/", include("report_2021.urls", namespace="report_2021")),
+    path("report_2022/", include("report_2022.urls", namespace="report_2022")),
     path(
         "reports/whos_missing/",
         include("report_whos_missing.urls", namespace="report_whos_missing"),

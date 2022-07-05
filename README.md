@@ -23,14 +23,17 @@ Once you have pushed your latest changes to your branch:
 
 `git fetch origin` to get access to the development branch 
 `git checkout development`
+`git rebase master`
 `git merge [YOUR BRANCH NAME]`
 `git push origin development`
+
+## DC Dependencies
+- `[dc_django_utils]()` is the source code for basic HTML structure, forms
+- `[dc_design_system]()` 
 
 ## Cron / scheduling / events
 
 [TODO]
 ## Update docs to include 
-new pipeline settings
-Whitenoise
-dc_utils is the source code for forms
-dc_design_system
+- new pipeline settings
+- Whitenoise
