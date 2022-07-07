@@ -212,6 +212,7 @@ We have identified a few areas where we would like to focus our attention ahead 
 There are fundamental improvements that can be made which could dramatically improve the quality of our democratic systems.
 
 1. We strongly recommend that nomination papers are published on a timely, [discoverable register](https://democracyclub.org.uk/blog/2016/02/08/service-registers-governmental-websites/).
+<br/><br/>
 2. We strongly recommend improvements to the nomination papers so that they
     1. are published efficiently and empower electoral organisations, government, community organisations, researchers and civic technologists. They should
         1. be accessible
@@ -220,16 +221,17 @@ There are fundamental improvements that can be made which could dramatically imp
         4. have standardised ward names and identifiers
         5. contain election IDs
     2. unlock more candidate information for voters, government, and researchers such as 
-  2. unlock more candidate information for voters, government, and researchers such as 
-    2. unlock more candidate information for voters, government, and researchers such as 
         1. age and gender
         2. past party affiliations
             1. This was trialled for the first time in Wales and captured whether a candidate had switched party within 12 months. We recommend widening the reporting period beyond 12 months to best encompass changes between national election cycles.
+<br/><br/>
 3. We recommend a mandatory campaign email address for all candidates. In order to collect campaign statements, and further candidate information, we need to officially verify candidates so they can self report.
+<br/><br/>
 4. We strongly recommend improvements to polling station data so that they contain
     1. IDs for each polling station that persist across elections
     2. UPRNs, latitude and longitude coordinates for each polling station
     3. more information on the polling station itself to include accessibility and facilities, photographs of the building, parking, public transport links and notes fields from the council.
+<br/><br/>
 5. The ONS should assign identifiers to new boundaries as soon as the statutory instruments are finalised before the election, instead of several months after the election when they are currently published. This would dramatically improve analysis, and efficiency for electoral organisations, campaigners, civic technologists and councils. At the moment this causes significant delays and duplication. 
 
 ## Thank you
