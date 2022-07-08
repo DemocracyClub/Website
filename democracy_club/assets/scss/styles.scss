@@ -190,9 +190,13 @@ figure figcaption {
 }
 
 #main > article > ol > li > ol > li {
-  list-style-type: lower-alpha; 
+  list-style-type: lower-alpha;
 }
 
 #main > article > ol > li > ol > li > ol > li {
-  list-style-type: lower-roman; 
+  list-style-type: lower-roman;
+}
+
+article > ol, article > ul {
+  @extend .ds-stack-smaller;
 }
