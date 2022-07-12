@@ -188,3 +188,15 @@ figure figcaption {
 #always-be-hiring > ul:nth-child(6){
   margin: 0em;
 }
+
+#main > article > ol > li > ol > li {
+  list-style-type: lower-alpha;
+}
+
+#main > article > ol > li > ol > li > ol > li {
+  list-style-type: lower-roman;
+}
+
+article > ol, article > ul {
+  @extend .ds-stack-smaller;
+}

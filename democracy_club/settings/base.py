@@ -96,6 +96,7 @@ PROJECT_APPS = (
     "report_2019",
     "report_2019_general_election",
     "report_2021",
+    "report_2022",
     "report_whos_missing",
     "wheredoivote_user_feedback",
     "mailing_list",
