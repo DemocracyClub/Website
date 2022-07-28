@@ -1,6 +1,16 @@
+import re
 import pytest
+from django.test import TestCase
 from dc_utils.tests.helpers import validate_html
 from django.urls import reverse
+
+
+class TestBaseTemplate(TestCase):
+    def test_base_template(self):
+        with self.assertTemplateUsed("dc_base.html"):
+            req = self.client.get("/")
+            assert req.status_code == 200
+            assert "dc_base_naked.html" in (t.name for t in req.templates)
 
 
 class TestHtml:
@@ -58,7 +68,7 @@ class TestHtml:
     @pytest.mark.django_db
     def test_page_title(self, client, urls):
         """test every page has a page title in the
-        block title tag"""
+        block page title tag"""
         for url in urls:
             response = client.get(url)
             assert "<title>" in response.content.decode("utf-8")
@@ -66,13 +76,14 @@ class TestHtml:
 
     def test_report_page_title(self, client):
         """test report page has a page title in the
-        block title tag that is equal to the report title"""
+        block page title tag that is equal to the report title"""
         response = client.get("/report_2016/")
+        content = str(response.content).replace("\\n", "")
+        content_no_spaces = re.sub(" +", " ", content)
         assert (
-            "<title>Towards better elections | Democracy Club</title>"
-            in response.content.decode("utf-8")
+            "<title>"
+            + " Towards better elections | Democracy Club "
+            + "</title>"
+            in content_no_spaces
         )
-        assert (
-            "<title> | Democracy Club</title>"
-            not in response.content.decode("utf-8")
-        )
+        assert "<title> | Democracy Club</title>" not in content_no_spaces
