@@ -16,7 +16,7 @@
     {% endblock site_icons %}
     {% block base_og_tags %}
         <meta name="description" property="og:description" content="{% block og_description %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description %}" />
-        <meta name="image" property="og:image" content="{% block og_image_content %}{{ CANONICAL_URL }}{% static 'images/logo_icon.png' %}{% endblock og_image_content %}" />
+        <meta name="image" property="og:image" content="{% block og_image_content %}{{ CANONICAL_URL }}{% static 'images/og_image_logo.png' %}{% endblock og_image_content %}" />
         <meta name="title" property="og:title" content="{% block og_title_content %}{{ SITE_TITLE }}{% endblock og_title_content %}" />
         <meta name="type" property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
         <meta name="url" property="og:url" content="{% block og_url_content %}{{ CANONICAL_URL }}{{ request.path }}{% endblock og_url_content %}">
