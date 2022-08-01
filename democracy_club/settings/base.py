@@ -199,7 +199,7 @@ MARKDOWN_DEUX_STYLES = {
     },
 }
 
-REPORT_MARKDOWN_EXTENSIONS = ["toc"]
+REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta"]
 
 
 def blog_markdown(value):
