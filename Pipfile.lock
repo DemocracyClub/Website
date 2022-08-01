@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a6bd5c3c8969c7845bd56ab2b6320cd36a15d09eceea9629c10dd0c4c8864c3a"
+            "sha256": "e76e43575748ebe663bcad7a79899a1bd7ab2cc6dde4b32b0403ec7ffad93815"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -263,7 +263,7 @@
                 "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670",
                 "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"
             ],
-            "markers": "python_version < '3.10'",
+            "markers": "python_version >= '3.7'",
             "version": "==4.12.0"
         },
         "iniconfig": {
@@ -784,14 +784,6 @@
             "index": "pypi",
             "version": "==12.7.0"
         },
-        "soupsieve": {
-            "hashes": [
-                "sha256:3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759",
-                "sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"
-            ],
-            "markers": "python_full_version >= '3.6.0'",
-            "version": "==2.3.2.post1"
-        },
         "sqlparse": {
             "hashes": [
                 "sha256:0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae",
@@ -872,11 +864,11 @@
         },
         "werkzeug": {
             "hashes": [
-                "sha256:7ea2d48322cc7c0f8b3a215ed73eabd7b5d75d0b50e31ab006286ccff9e00b8f",
-                "sha256:f979ab81f58d7318e064e99c4506445d60135ac5cd2e177a2de0089bfd4c9bd5"
+                "sha256:60ab4823078f08fdb36b5b83b35f1c422eab8c92929eba5487e1bd52d2316fd4",
+                "sha256:6a3fe061435495aed49c1ea54dbdf1529b6333bb7ddbe20089e4360250b040ec"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.2.2"
+            "version": "==2.2.0a1"
         },
         "whitenoise": {
             "hashes": [
