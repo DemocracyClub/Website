@@ -27,6 +27,11 @@ urlpatterns = [
         name="auth_logout",
     ),
     path("", HomeView.as_view(), name="home"),
+    path(
+        "voters/",
+        TemplateView.as_view(template_name="for_voters.html"),
+        name="voters",
+    ),
     path("thanks/", TemplateView.as_view(template_name="thanks.html")),
     path(
         "thanks/finished/",
