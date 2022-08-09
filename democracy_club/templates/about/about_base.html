@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<nav class="ds-subnav" aria-label="true">
-    <ul>
-        <li>
-            <a href="{% url "about" %}">About</a>
-        </li>
-        <li>
-            <a href="{% url "impact" %}">Our impact</a>
-        </li>
-        <li>
-            <a href="{% url "team" %}">The Team</a>
-        </li>
-        <li>
-            <a href="{% url "jobs" %}">Jobs</a>
-        </li>
-    </ul>
-</nav>
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "about" %}">About</a>
+            </li>
+            <li>
+                <a href="{% url "support_us" %}">Funding</a>
+            </li>
+            <li>
+                <a href="{% url "team" %}">The Team</a>
+            </li>
+            <li>
+                <a href="{% url "jobs" %}">Jobs</a>
+            </li>
+        </ul>
+    </nav>
 
-{% block page_heading %}{% endblock page_heading %}
+    {% block page_heading %}{% endblock page_heading %}
 
-{% block main_content %}
+    {% block main_content %}
 
-{% endblock main_content %}
+    {% endblock main_content %}
 
 {% endblock %}
