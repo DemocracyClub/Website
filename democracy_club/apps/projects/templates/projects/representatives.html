@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load markdown_filter %}
-{% block title %}Representatives{% endblock %}
+{% block page_title %}Representatives{% endblock %}
 {% block og_description_content %}
-Democracy Club wants to connect the national to the local.
+    Democracy Club wants to connect the national to the local.
 {% endblock %}
 
 {% block content %}
-{% filter markdown %}
+    {% filter markdown %}
 
 # Representatives project
 
@@ -45,7 +45,7 @@ If you want to use this service, either as an individual or as a campaigner, sig
 
 
 
-{% endfilter %}
+    {% endfilter %}
 
     {% load post_tags %}
     {% posts_for_tag "representatives" %}
