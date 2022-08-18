@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dba4610d298213b0ddadaf123388cec7caea754524579e67cdf1d27067686448"
+            "sha256": "f59d7c44e6aca57c46c1f76b3158801fcfecfcc3e245a5122834c0e69d6907ee"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -100,11 +100,11 @@
             "version": "==0.2.1"
         },
         "dc-django-utils": {
-            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.9.tar.gz",
+            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.10.tar.gz",
             "hashes": [
-                "sha256:6b8a85bf26227bd363cab135a77e21b581f940c84a76255bae87df6ee469f4cd"
+                "sha256:cff02461e7a80e7aec55e1ab07baeb2d0d8262095d58c33eb4c9da3283bf5341"
             ],
-            "version": "==0.1.9"
+            "version": "==0.1.10"
         },
         "dc-signup-form": {
             "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.1.tar.gz",
@@ -263,7 +263,7 @@
                 "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670",
                 "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_version < '3.10'",
             "version": "==4.12.0"
         },
         "iniconfig": {
