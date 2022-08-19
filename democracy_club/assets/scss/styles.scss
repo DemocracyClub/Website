@@ -146,9 +146,16 @@ figure {
 }
 
 hr {
-  border-bottom:0;
-  border-top: $ss2 solid $blueForWhite;
+  border:0;
 
+}
+
+hr:after {
+  border-top: $ss1 solid $blackOpacity;
+  content: " ";
+  width: 50%;
+  margin:0 auto;
+  display: block;
 }
 
 a[href="#TODO"] {
@@ -199,4 +206,17 @@ figure figcaption {
 
 article > ol, article > ul {
   @extend .ds-stack-smaller;
+}
+
+
+// Showcase
+.ds-showcase li {
+  font-family: $familyBody;
+}
+
+.ds-showcase strong {
+  color: $pinkForWhite;
+  display: block;
+  font-family: $familyMain;
+  @extend .ds-h4;
 }
