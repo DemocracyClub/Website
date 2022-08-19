@@ -27,6 +27,11 @@ urlpatterns = [
         name="auth_logout",
     ),
     path("", HomeView.as_view(), name="home"),
+    path(
+        "voters/",
+        TemplateView.as_view(template_name="for_voters.html"),
+        name="voters",
+    ),
     path("thanks/", TemplateView.as_view(template_name="thanks.html")),
     path(
         "thanks/finished/",
@@ -54,6 +59,11 @@ urlpatterns = [
         name="team",
     ),
     path(
+        "about/support_us/",
+        TemplateView.as_view(template_name="about/support_us.html"),
+        name="support_us",
+    ),
+    path(
         "privacy/",
         TemplateView.as_view(template_name="privacy.html"),
         name="privacy",
@@ -64,11 +74,6 @@ urlpatterns = [
         name="coc",
     ),
     path("projects/", include("projects.urls", "projects")),
-    path(
-        "support-us/",
-        TemplateView.as_view(template_name="support_us.html"),
-        name="support_us",
-    ),
     path(
         "contact/",
         TemplateView.as_view(template_name="contact.html"),
@@ -113,12 +118,17 @@ url_redirects = (
     ),
     path(
         "about/funding/",
-        RedirectView.as_view(url=reverse_lazy("support_us")),
+        RedirectView.as_view(url=reverse_lazy("about/support_us")),
         name="funding",
     ),
     path(
         "donate/",
-        RedirectView.as_view(url=reverse_lazy("support_us")),
+        RedirectView.as_view(url=reverse_lazy("about/support_us")),
+        name="funding",
+    ),
+    path(
+        "support-us/",
+        RedirectView.as_view(url=reverse_lazy("about/support_us")),
         name="funding",
     ),
 )
