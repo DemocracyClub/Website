@@ -28,6 +28,8 @@
 @import 'partials/_utilities.scss';
 @import 'partials/_status.scss';
 @import 'partials/_logo.scss';
+@import 'partials/_showcase.scss';
+@import 'partials/_switcher.scss';
 $scope: false;
 @mixin optional-styles {
     @include description-lists;
@@ -50,6 +52,8 @@ $scope: false;
     @include codeblock;
     @include status;
     @include logo;
+    @include showcase;
+    @include switcher;
 }
 
 @if $scope {
@@ -206,17 +210,4 @@ figure figcaption {
 
 article > ol, article > ul {
   @extend .ds-stack-smaller;
-}
-
-
-// Showcase
-.ds-showcase li {
-  font-family: $familyBody;
-}
-
-.ds-showcase strong {
-  color: $pinkForWhite;
-  display: block;
-  font-family: $familyMain;
-  @extend .ds-h4;
 }
