@@ -101,7 +101,7 @@ How does this compare to our historic postcode searches?
 
 Excitingly, we spotted two examples of WhereDoIVote.co.uk featured on physical signage in or near polling stations. Additionally, one council advertised the site in their print newsletter, and we also found an example of it featuring on a political party leaflet put out on polling day.
 <div class="ds-grid">
-<figure><img src="{% static 'report_2022/images/Lambeth_physical_sign.png'%}" alt="Lambeth physical sign"><figcaption>Lambeth physical sign</figcaption>
+<figure><img src="{% static 'report_2022/images/Lambeth_physical_sign.jpeg'%}" alt="Lambeth physical sign"><figcaption>Lambeth physical sign</figcaption>
 </figure>
 <figure><img src="{% static 'report_2022/images/Peckham_Rye_physical_sign.png' %}" alt="Peckham Rye physical sign"><figcaption>Peckham Rye physical sign</figcaption></figure>
 </div>
