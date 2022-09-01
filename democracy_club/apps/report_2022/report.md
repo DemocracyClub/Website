@@ -1,9 +1,10 @@
-{% load static %}
+{% load static %}---
+hero_image: {% static "images/maze_illustration_no_text.png" %}
+---
 
 # Local and Devolved Elections, 5 May 2022
 
 <img src="{% static "images/maze_illustration_no_text.png" %}">
-
 ## Summary Highlights
 
 - 1.9 million postcode searches during election week
@@ -99,18 +100,12 @@ How does this compare to our historic postcode searches?
 </figure>
 
 Excitingly, we spotted two examples of WhereDoIVote.co.uk featured on physical signage in or near polling stations. Additionally, one council advertised the site in their print newsletter, and we also found an example of it featuring on a political party leaflet put out on polling day.
-
 <div class="ds-grid">
-  <figure>
-    <img src="{% static 'report_2022/images/Lambeth_physical_sign.jpeg' %}" alt="Lambeth physical sign">
-    <figcaption>Lambeth physical sign</figcaption>
-  </figure>
-
-  <figure>
-    <img src="{% static 'report_2022/images/Peckham_Rye_physical_sign.png' %}" alt="Peckham Rye physical sign">
-    <figcaption>Peckham Rye physical sign</figcaption>
-  </figure>
+<figure><img src="{% static 'report_2022/images/Lambeth_physical_sign.jpeg'%}" alt="Lambeth physical sign"><figcaption>Lambeth physical sign</figcaption>
+</figure>
+<figure><img src="{% static 'report_2022/images/Peckham_Rye_physical_sign.png' %}" alt="Peckham Rye physical sign"><figcaption>Peckham Rye physical sign</figcaption></figure>
 </div>
+
 
 ### Website Traffic
 
@@ -224,6 +219,8 @@ There are fundamental improvements that can be made which could dramatically imp
         3. have standardised table column names
         4. have standardised ward names and identifiers
         5. contain election IDs
+    2. unlock more candidate information for voters, government, and researchers such as 
+  2. unlock more candidate information for voters, government, and researchers such as 
     2. unlock more candidate information for voters, government, and researchers such as 
         1. age and gender
         2. past party affiliations

@@ -28,6 +28,8 @@
 @import 'partials/_utilities.scss';
 @import 'partials/_status.scss';
 @import 'partials/_logo.scss';
+@import 'partials/_showcase.scss';
+@import 'partials/_switcher.scss';
 $scope: false;
 @mixin optional-styles {
     @include description-lists;
@@ -50,6 +52,8 @@ $scope: false;
     @include codeblock;
     @include status;
     @include logo;
+    @include showcase;
+    @include switcher;
 }
 
 @if $scope {
@@ -146,9 +150,16 @@ figure {
 }
 
 hr {
-  border-bottom:0;
-  border-top: $ss2 solid $blueForWhite;
+  border:0;
 
+}
+
+hr:after {
+  border-top: $ss1 solid $blackOpacity;
+  content: " ";
+  width: 50%;
+  margin:0 auto;
+  display: block;
 }
 
 a[href="#TODO"] {

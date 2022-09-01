@@ -18,9 +18,18 @@ class MarkdownFileView(TemplateView):
 
         template = Template(self.markdown_content())
         rendered_template = template.render(RequestContext(self.request))
-        md = markdown.Markdown(extensions=settings.REPORT_MARKDOWN_EXTENSIONS)
-        html = md.convert(rendered_template)
-        context["html_content"] = html
-        context["toc"] = md.toc
-        context["page_title"] = md.toc_tokens[0]["name"]
+        self.md = markdown.Markdown(
+            extensions=settings.REPORT_MARKDOWN_EXTENSIONS
+        )
+        self.html = self.md.convert(rendered_template)
+        context["html_content"] = self.html
+        context["toc"] = self.md.toc
+        context["page_title"] = self.md.toc_tokens[0]["name"]
+        context["report_metadata"] = self.md.Meta
+        context["report_hero_image"] = self.report_hero_image()
         return context
+
+    def report_hero_image(self):
+        hero_image = self.md.Meta.get("hero_image", None)
+        if hero_image:
+            return hero_image[0]

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}For Voters{% endblock page_title %}
+
+{% block content %}
+    <section class="ds-stack">
+        <h3 class="ds-text-centered"><strong>For Voters</strong></h3>
+
+        <div class="ds-stack">
+            <h4 class="ds-text-left"><strong>I want to find my voting information…</strong></h4>
+            <div>
+                <h5 class="ds-text-left">Where Do I Vote?</h5>
+                <p>One of the most common questions from voters on election day is “where do I vote?”
+                    our polling station finder has the answer! Democracy Club is the only organisation
+                    that aggregates and cleans all the polling station data across the UK. Find your polling station
+                    <a style="text-decoration: none;" href="https://www.wheredoivote.co.uk">wheredoivote.co.uk</a>.</p>
+            </div>
+
+            <div>
+                <h5 class="ds-text-left">Who Can I Vote For?</h5>
+                <p>Another common question from voters is “who can I vote for?” with the help of thousands of
+                    volunteers we collect candidate data and make it available to all voters ahead of every election.
+                    Find your candidates at
+                    <a style="text-decoration: none;" href="https://www.whocanivotefor.co.uk">whocanivotefor.co.uk</a>.</p>
+            </div>
+            <div class="ds-stack">
+                <h4 class="ds-text-left"><strong>I want to help voters find their voting information…</strong></h4>
+
+                <div>
+                    <h5 class="ds-text-left">Election Widget</h5>
+                    <p>You can embed use our Election Widget to We make our impact by enabling others to work better.
+                        It's free to use and can be embedded on any web page, without a developer, in seconds.
+                        If you would like a custom election widget - you should get in touch, we might be able to help.
+                        <a style="text-decoration: none;" href="{% url "projects:election_widget" %}">Find out more about this project</a>.
+                    </p>
+
+                    <img style="margin-top: 1rem;box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.1);"
+                        src="{% static 'images/widget.png' %}" alt="Election Widget">
+                </div>
+
+            </section>
+
+{% endblock content %}

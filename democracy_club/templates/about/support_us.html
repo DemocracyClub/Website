@@ -1,40 +1,13 @@
-{% extends "base.html" %}
+{% extends "about/about_base.html" %}
 {% block page_title %}Support us{% endblock page_title %}
 {% block page_heading %}<h1>Funding</h1>{% endblock page_heading %}
 
-{% block content %}
-    <h1>Support our Work</h1>
-    <p>Democracy Club is a non-profit Community Interest Company. About half of our work is funded by donations from individuals and
-        philanthropic organisations. The other half is from sales revenue for our APIs and other services.</p>
-
-    <p>By supporting Democracy Club, you’ll be helping us to deliver our core election information services to millions
-        of UK voters, as well as supporting our research and the development of new products.
-        <a href="{% url "impact" %}">Find out more about the impact we’ve already made in the UK</a>.</p>
-
-
-    <p><em>We accept one-off donations of any amount; please use the button below to donate</em>.</p>
-
-    <p><a href="https://www.paypal.com/biz/fund?id=EX33MCYQ9UUDJ" class="ds-cta">Donate now</a></p>
-
-    <p>Want to make a large donation on behalf of yourself or your organisation? <a href="{% url "contact" %}">Please get in touch</a>.</p>
-
-
-    <h2>Services, sales, and collaboration</h2>
-    <p>We are happy to discuss democracy-related project proposals from non-partisan organisations and companies. We have
-        a wide range of expertise and can offer services from consultancy to product design and development (for example, we
-        have built data infrastructure and bespoke interactive election tools for customers in the past).</p>
-
-    <p>Similarly, we are always open to new project proposals, including joint funding bids, from organisations who share
-        our vision of a more accessible democracy.</p>
-
-    <p>For an initial discussion about any of the above, <a href="{% url "contact" %}">please get in touch</a>.</p>
-
-
+{% block main_content %}
     <h2>Funding policy</h2>
     <p>Any donations made to Democracy Club are for the sole purpose of delivering the vision of the organisation as
         determined by the executive and board team.</p>
 
-    <p>Where a donation is ‘restricted’ to a particular project, as is common with charitable grants, such projects must
+    <p>Where a donation is 'restricted' to a particular project, as is common with charitable grants, such projects must
         align with the vision of the organisation.</p>
 
     <p>Democracy Club is strictly non-partisan; donations will never be used for partisan purposes.</p>
@@ -212,4 +185,4 @@
     </div>
 
 
-{% endblock content %}
+{% endblock main_content %}

@@ -158,8 +158,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
                 "dc_signup_form.context_processors.signup_form",
-                "democracy_club.context_processors.canonical_url",
-                "democracy_club.context_processors.site_title",
+                "dc_utils.context_processors.dc_django_utils",
             ],
             "debug": DEBUG,
         },
@@ -199,7 +198,7 @@ MARKDOWN_DEUX_STYLES = {
     },
 }
 
-REPORT_MARKDOWN_EXTENSIONS = ["toc"]
+REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta"]
 
 
 def blog_markdown(value):

@@ -6,7 +6,7 @@ clean: ## Delete any generated static asset or req.txt files and git-restore the
 	rm -rf lambda-layers/DependenciesLayer/requirements.txt
 
 lambda-layers/DependenciesLayer/requirements.txt:
-	pipenv lock -r | sed "s/^-e //" >lambda-layers/DependenciesLayer/requirements.txt
+	pipenv requirements | sed "s/^-e //" >lambda-layers/DependenciesLayer/requirements.txt
 
 .PHONY: collectstatic
 collectstatic: ## Rebuild the static assets
