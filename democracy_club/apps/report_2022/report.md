@@ -9,7 +9,7 @@ hero_image: {% static "images/maze_illustration_no_text.png" %}
 
 - 1.9 million postcode searches during election week
 - 83% of users were more likely to vote after using the polling station finder
-- 100% of councils (227 total) provided us will polling place data
+- 100% of councils (227 total) provided us with polling place data
 - 21,300 candidates added to the database
 - 1,526 volunteers made 64,000 edits over the election period
 ## Election overview
