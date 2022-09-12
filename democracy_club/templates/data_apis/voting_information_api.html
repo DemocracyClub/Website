@@ -1,0 +1,98 @@
+{% extends "data_apis/base.html" %}
+
+{% load markdown_filter %}
+
+{% block main_content %}
+
+    <h2>Voting Information APIs</h2>
+
+    <p>We collect and standardise election data from seats,
+        polling stations, candidates and more.
+        Everything you need to get your users informed and voting.
+        This information is endorsed and used by the Electoral Commission
+        and powers many other organisations.</p>
+
+    <ul class="ds-grid" style="--gridCellMin: 20ch; --gridGap: 2rem;">
+        <li class="ds-card">
+            <div class="ds-card-body">
+                <h5>Hobbyists</h5>
+                <p>
+                    For individuals who want to prototype new tools
+                </p>
+                <p><strong>Pay what you can</strong><p>
+                    <p>Up to 1,000 requests a day</p>
+                    <p>Self serve</p>
+                    <a class="ds-cta ds-cta-blue" href="mailto:hello@democracyclub.org.uk">Get started</a>
+                </div>
+                </li>
+                <li class="ds-card">
+                    <div class="ds-card-body">
+                        <h5>Standard</h5>
+                        <p>
+                            For small teams who want to build election services
+                        </p>
+                        <p><strong>£3,500 per year</strong><p>
+                            <p>Up to 10,000 requests a day</p>
+                            <p>4 hours technical integration support</p>
+                            <a class="ds-cta ds-cta-blue" href="mailto:hello@democracyclub.org.uk">Get started</a>
+                        </div>
+                        </li>
+                        <li class="ds-card">
+                            <div class="ds-card-body">
+                                <h5>Enterprise</h5>
+                                <p>
+                                    For companies who want a fully scalable service
+                                </p>
+                                <p><strong>PoA</strong><p>
+                                    <p>Unlimited requests</p>
+                                    <p>Technical integration support</p>
+                                    <p>Real time technical support</p>
+                                    <p>Bespoke fields</p>
+                                    <a class="ds-cta ds-cta-blue" href="mailto:hello@democracyclub.org.uk">Get started</a>
+                                </div>
+                                </li>
+                            </ul>
+
+
+                            {% filter markdown %}
+                                {# fmt:off #}
+##Can we help you build something? (consulting and widget)
+
+Using the API is quite involved, if you are looking for a
+lightweight solution to empower your users to find their voting
+information, we recommend looking at the [Election Widget]({% url "projects:election_widget" %}). It's
+free to use and can be embedded on any web page, without a developer,
+in seconds. If you would like a custom election widget - you should
+get in touch, we might be able to help.
+
+##Voting Information API Features and Documentation
+
+#####The following types of information are available on the Voting Information API. [See full documentation](https://developers.democracyclub.org.uk/api/v1/).
+
+{% include "_includes/voter_info_documentation.html" %}
+
+##We got you
+
+We will make sure your service doesn't break during the election,
+even if you get more users than you expected.
+
+##Where does this data come from?
+
+Democratic data is published in a decentralised way across the UK.
+We work alongside every council in the UK to aggregate, standardise
+and publish it. Our volunteer community comes together every election
+to help us collect and clean the data, and then we make it widely
+available so that get-out-the-vote campaigns can work their magic.
+
+In some cases the state does not provide nationwide data on vital
+pieces of the puzzle,  one  example of this is  election candidates.
+But everyone — from individual voters to journalists and campaigners
+— wants this information. So we created the crowdsourced database of
+UK election candidates called [CandidatesWiki]({% url "projects:candidates" %})
+to help gather it.
+
+{% endfilter %}
+
+{% endblock main_content %}
+
+

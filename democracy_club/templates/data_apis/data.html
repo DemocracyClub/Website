@@ -1,0 +1,19 @@
+{% extends "data_apis/base.html" %}
+
+{% load markdown_filter %}
+
+{% block page_title %}Data{% endblock page_title %}
+
+{# fmt:off #}
+
+{% block page_heading %}<h1>Data</h1>{% endblock page_heading %}
+
+{% block main_content %}
+
+{% filter markdown %}
+
+{% endfilter %}
+
+{% endblock main_content %}
+
+
