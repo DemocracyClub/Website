@@ -28,6 +28,23 @@ urlpatterns = [
     ),
     path("", HomeView.as_view(), name="home"),
     path(
+        "data_apis/index/",
+        TemplateView.as_view(template_name="data_apis/index.html"),
+        name="data_and_apis",
+    ),
+    path(
+        "data_apis/data/",
+        TemplateView.as_view(template_name="data_apis/data.html"),
+        name="data",
+    ),
+    path(
+        "data_apis/voting_information_api/",
+        TemplateView.as_view(
+            template_name="data_apis/voting_information_api.html"
+        ),
+        name="voting_information_api",
+    ),
+    path(
         "voters/",
         TemplateView.as_view(template_name="for_voters.html"),
         name="voters",

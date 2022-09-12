@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "data" %}">Data</a>
+            </li>
+            <li>
+                <a href="{% url "voting_information_api" %}">Voting Information API</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% block page_heading %}{% endblock page_heading %}
+
+    {% block main_content %}
+
+    {% endblock main_content %}
+
+{% endblock %}
