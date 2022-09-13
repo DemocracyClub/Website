@@ -198,3 +198,26 @@ article > ol, article > ul {
   @extend .ds-stack-smaller;
 }
 
+.ds-card {
+  .ds-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: $s1;
+    .ds-cta:last-child {
+      position: absolute;
+      bottom: $s1;
+    }
+  } 
+}
+
+ul > li > ul {
+  page-break-inside: avoid;
+}
+
+.documentation-list {
+  columns: 2 20em;
+  column-gap: $s2;
+  list-style: none;
+}

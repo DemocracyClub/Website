@@ -1,16 +1,51 @@
 {% extends "data_apis/base.html" %}
-
 {% load markdown_filter %}
-
-{% block page_title %}Data{% endblock page_title %}
-
 {# fmt:off #}
-
-{% block page_heading %}<h1>Data</h1>{% endblock page_heading %}
+{% block page_title %}Data and APIs{% endblock %}
 
 {% block main_content %}
 
+    <h2>CSVs</h2>
+
+    <p>All of Democracy Club’s election candidate and results data is available as free-to-download CSV files. </p>
+
+    <ul class="post-list ds-switcher" style="--gridCellMin: 20ch; --gridGap: 2rem;">
+        <li class="ds-card">
+            <div class="ds-card-body">
+                <a class="ds-cta ds-cta-blue" href="https://candidates.democracyclub.org.uk/api/docs/">Candidates</a>
+                <p>
+                    All of our candidate information, including votes cast.
+                </p>
+            </div>
+        </li>
+        <li class="ds-card">
+            <div class="ds-card-body">
+                <a class="ds-cta ds-cta-blue" href="https://candidates.democracyclub.org.uk/uk_results/">Results</a>
+                <p>
+                    A slimmed down file containing only votes cast.
+                </p>
+            </div>
+        </li>
+    </ul>
+
 {% filter markdown %}
+These file downloads contain a row for each candidate per election.
+The candidate's name and party are drawn from the official nomination papers.
+All other information is added by Democracy Club or our volunteers.
+This additional information includes geographic data, contact details,
+and demographic information such as age.
+
+Each candidate is assigned a unique ID number, allowing for candidacies
+to be tracked across time.
+
+The database covers all General Elections since 2010, all local and
+devolved elections since 2016, and all by-elections since May 2017.
+It does not include town or parish councils.
+
+Please be aware that the files are updated hourly, and are liable
+to undergo rapid change during busy periods.
+
+If you have any questions or comments about our data, please [email us](mailto:hello@democracyclub.org.uk).
 
 {% endfilter %}
 
