@@ -59,9 +59,9 @@ urlpatterns = [
         name="team",
     ),
     path(
-        "about/support_us/",
-        TemplateView.as_view(template_name="about/support_us.html"),
-        name="support_us",
+        "about/funding/",
+        TemplateView.as_view(template_name="about/funding.html"),
+        name="funding",
     ),
     path(
         "privacy/",
@@ -117,19 +117,16 @@ url_redirects = (
         RedirectView.as_view(url=reverse_lazy("projects")),
     ),
     path(
-        "about/funding/",
-        RedirectView.as_view(url=reverse_lazy("about/support_us")),
-        name="funding",
-    ),
-    path(
         "donate/",
-        RedirectView.as_view(url=reverse_lazy("about/support_us")),
-        name="funding",
+        RedirectView.as_view(url=reverse_lazy("funding")),
     ),
     path(
         "support-us/",
-        RedirectView.as_view(url=reverse_lazy("about/support_us")),
-        name="funding",
+        RedirectView.as_view(url=reverse_lazy("funding")),
+    ),
+    path(
+        "about/support-us/",
+        RedirectView.as_view(url=reverse_lazy("funding")),
     ),
 )
 

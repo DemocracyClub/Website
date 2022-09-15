@@ -6,127 +6,127 @@
 {% block base_title %}{% block page_title %}Home{% endblock page_title %} | Democracy Club{% endblock base_title %}
 
 {% block site_meta %}
-  <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
-  <link rel="manifest" href="{% static "manifest.json" %}">
-  {% block site_icons %}
-    <link rel="shortcut icon" href="{{ CANONICAL_URL }}{% static 'images/logo_icon.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ CANONICAL_URL }}{% static 'icons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" href="{{ CANONICAL_URL }}{% static 'icons/favicon-32x32.png' %}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ CANONICAL_URL }}{% static 'icons/favicon-16x16.png' %}" sizes="16x16">
-    <link rel="mask-icon" href="{{ CANONICAL_URL }}{% static 'icons/safari-pinned-tab.svg' %}" color="#ec008c">
-  {% endblock site_icons %}
-  {% block base_og_tags %}
-    <meta name="description" property="og:description" content="{% block og_description %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description %}" />
-    <meta name="image" property="og:image" content="{% block og_image_content %}{{ CANONICAL_URL }}{% static 'images/og_image_logo.png' %}{% endblock og_image_content %}" />
-    <meta name="title" property="og:title" content="{% block og_title_content %}{{ SITE_TITLE }}{% endblock og_title_content %}" />
-    <meta name="type" property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
-    <meta name="url" property="og:url" content="{% block og_url_content %}{{ CANONICAL_URL }}{{ request.path }}{% endblock og_url_content %}">
-  {% endblock base_og_tags %}
-  {% block twitter_tags %}
-    <meta name="twitter:card" content="{% block twitter_card_type %}summary{% endblock twitter_card_type %}">
-    <meta name="twitter:site" content="@democlub">
-    <meta name="twitter:image" content="{% block twitter_image %}{{ CANONICAL_URL }}{% static 'images/logo_icon.png' %}{% endblock twitter_image %}" />
-    <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Democracy Club logo{% endblock twitter_image_alt %}">
-    <meta name="twitter:title" content="{% block twitter_title_content %}Democracy Club{% endblock twitter_title_content %}">
-    <meta name="twitter:url" content="{{ CANONICAL_URL }}{{ request.path }}">
-    <meta name="twitter:description" content="{% block twitter_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock twitter_description_content %}"/>
-  {% endblock twitter_tags %}
+    <link rel="alternate" type="application/atom+xml" title="Democracy Club Blog" href="{% url "hermes_post_feed" %}" />
+    <link rel="manifest" href="{% static "manifest.json" %}">
+    {% block site_icons %}
+        <link rel="shortcut icon" href="{{ CANONICAL_URL }}{% static 'images/logo_icon.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ CANONICAL_URL }}{% static 'icons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" href="{{ CANONICAL_URL }}{% static 'icons/favicon-32x32.png' %}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ CANONICAL_URL }}{% static 'icons/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="mask-icon" href="{{ CANONICAL_URL }}{% static 'icons/safari-pinned-tab.svg' %}" color="#ec008c">
+    {% endblock site_icons %}
+    {% block base_og_tags %}
+        <meta name="description" property="og:description" content="{% block og_description %}We build digital tools to support everyone’s participation in UK democracy.{% endblock og_description %}" />
+        <meta name="image" property="og:image" content="{% block og_image_content %}{{ CANONICAL_URL }}{% static 'images/og_image_logo.png' %}{% endblock og_image_content %}" />
+        <meta name="title" property="og:title" content="{% block og_title_content %}{{ SITE_TITLE }}{% endblock og_title_content %}" />
+        <meta name="type" property="og:type" content="{% block og_type_content %}website{% endblock og_type_content %}">
+        <meta name="url" property="og:url" content="{% block og_url_content %}{{ CANONICAL_URL }}{{ request.path }}{% endblock og_url_content %}">
+    {% endblock base_og_tags %}
+    {% block twitter_tags %}
+        <meta name="twitter:card" content="{% block twitter_card_type %}summary{% endblock twitter_card_type %}">
+        <meta name="twitter:site" content="@democlub">
+        <meta name="twitter:image" content="{% block twitter_image %}{{ CANONICAL_URL }}{% static 'images/logo_icon.png' %}{% endblock twitter_image %}" />
+        <meta name="twitter:image:alt" content="{% block twitter_image_alt %}Democracy Club logo{% endblock twitter_image_alt %}">
+        <meta name="twitter:title" content="{% block twitter_title_content %}Democracy Club{% endblock twitter_title_content %}">
+        <meta name="twitter:url" content="{{ CANONICAL_URL }}{{ request.path }}">
+        <meta name="twitter:description" content="{% block twitter_description_content %}We build digital tools to support everyone’s participation in UK democracy.{% endblock twitter_description_content %}"/>
+    {% endblock twitter_tags %}
 {% endblock site_meta %}
 
 {% block extra_site_css %}
-  {% stylesheet 'styles' %}
+    {% stylesheet 'styles' %}
 {% endblock extra_site_css %}
 
 {% block body_base %}
-  <body class="ds-width-full">
-    <div class="ds-page">
-      <p><a class="ds-skip-link" href="#main">skip to content</a></p>
-      {% block header %}
-        {% block site_menu %}
-          <header class="ds-header">
-            <a class="ds-logo" href="/">
-              <img src="{%  static 'images/logo_icon.svg' %}" alt="" width="{{ SITE_LOGO_WIDTH|default:"100" }}" />
-              <span>democracy<br>club</span>
-            </a>
+    <body class="ds-width-full">
+        <div class="ds-page">
+            <p><a class="ds-skip-link" href="#main">skip to content</a></p>
+            {% block header %}
+                {% block site_menu %}
+                    <header class="ds-header">
+                        <a class="ds-logo" href="/">
+                            <img src="{%  static 'images/logo_icon.svg' %}" alt="" width="{{ SITE_LOGO_WIDTH|default:"100" }}" />
+                            <span>democracy<br>club</span>
+                        </a>
 
-            <nav>
-              <ul>
-                <li>
-                  <a href="/">Home</a>
-                </li>
-                <li>
-                  {#                  <a href="{% url 'voters' %}">For Voters</a>#}
-                </li>
-                <li>
-                  <a href="{% url 'about' %}">About</a>
-                </li>
-                <li>
-                  <a href="{% url "impact" %}">Research and Impact</a>
-                </li>
-                <li>
-                  <a href="{% url 'projects:home' %}">Our work</a>
-                </li>
-                <li>
-                  <a href="{% url 'hermes_post_list' %}">Blog</a>
-                </li>
-                <li>
-                  <a href="{% url 'contact' %}">Contact</a>
-                </li>
-              </ul>
-            </nav>
-          </header>
-        {% endblock site_menu %}
-      {% endblock header %}
-      <main id="main" tabindex="-1" class="ds-stack">
-        {% block messages %}
-          {% if messages %}
-            <aside class="ds-status messages" aria-label="Status">
-              <ul class="ds-stack">
-                {% for message in messages %}
-                  <li {% if message.tags %}class=" {{ message.tags }} ds-status-message " {% endif %}> {{ message }} </li>
-                {% endfor %}
-              </ul>
-            </aside>
-          {% endif %}
-        {% endblock messages %}
-        {% block content %}
-          {% block page_content %}{% endblock page_content %}
-        {% endblock content %}
-      </main>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    {#                  <a href="{% url 'voters' %}">For Voters</a>#}
+                                </li>
+                                <li>
+                                    <a href="{% url 'about' %}">About</a>
+                                </li>
+                                <li>
+                                    <a href="{% url "impact" %}">Research and Impact</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'projects:home' %}">Our work</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'hermes_post_list' %}">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'contact' %}">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+                {% endblock site_menu %}
+            {% endblock header %}
+            <main id="main" tabindex="-1" class="ds-stack">
+                {% block messages %}
+                    {% if messages %}
+                        <aside class="ds-status messages" aria-label="Status">
+                            <ul class="ds-stack">
+                                {% for message in messages %}
+                                    <li {% if message.tags %}class=" {{ message.tags }} ds-status-message " {% endif %}> {{ message }} </li>
+                                {% endfor %}
+                            </ul>
+                        </aside>
+                    {% endif %}
+                {% endblock messages %}
+                {% block content %}
+                    {% block page_content %}{% endblock page_content %}
+                {% endblock content %}
+            </main>
 
-      <!-- FOOTER -->
-      {% block site_footer %}
-        <footer class="ds-footer">
-          {% include "email_form/mailing_list_form.html" %}
-          {% include "_includes/footer_internal_links.html" %}
-        </footer>
-      {% endblock site_footer %}
-    </div>
-  </body>
+            <!-- FOOTER -->
+            {% block site_footer %}
+                <footer class="ds-footer">
+                    {% include "email_form/mailing_list_form.html" %}
+                    {% include "_includes/footer_internal_links.html" %}
+                </footer>
+            {% endblock site_footer %}
+        </div>
+    </body>
 {% endblock body_base %}
 
 {% block extra_site_js %}
-  {% block extra_javascript %}
-    <script src="{% static 'js/global.js' %}"></script>
-  {% endblock extra_javascript %}
+    {% block extra_javascript %}
+        <script src="{% static 'js/global.js' %}"></script>
+    {% endblock extra_javascript %}
 {% endblock extra_site_js %}
 
 {% block ga_tracking_code %}
-  {% if request.META.HTTP_HOST != "localhost:8000" %}
-    <script>
-      (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-52202336-1', 'democracyclub.org.uk');
-      ga('send', 'pageview');
-    </script>
-  {% endif %}
+    {% if request.META.HTTP_HOST != "localhost:8000" %}
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-52202336-1', 'democracyclub.org.uk');
+            ga('send', 'pageview');
+        </script>
+    {% endif %}
 {% endblock ga_tracking_code %}
