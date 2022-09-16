@@ -80,6 +80,11 @@ urlpatterns = [
         name="contact",
     ),
     path("blog/", include("hermes.urls")),
+    path(
+        "donate/",
+        TemplateView.as_view(template_name="donate.html"),
+        name="donate",
+    ),
     path("report_2016/", include("report_2016.urls", namespace="report_2016")),
     path("report_2017/", include("report_2017.urls", namespace="report_2017")),
     path("report_2018/", include("report_2018.urls", namespace="report_2018")),
@@ -122,11 +127,11 @@ url_redirects = (
     ),
     path(
         "support-us/",
-        RedirectView.as_view(url=reverse_lazy("funding")),
+        RedirectView.as_view(url=reverse_lazy("donate")),
     ),
     path(
         "about/support-us/",
-        RedirectView.as_view(url=reverse_lazy("funding")),
+        RedirectView.as_view(url=reverse_lazy("donate")),
     ),
 )
 
