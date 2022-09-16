@@ -11,7 +11,7 @@ django-markdown-deux = "==1.0.5"
 django-model-utils = "==4.2.0"
 django-ratelimit = "==3.0.1"
 django-storages = "==1.12.3"
-djangorestframework = "==3.12.4"
+djangorestframework = "==3.13.1"
 djhtml = "*"
 aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"}
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/0.1.11.tar.gz"}
