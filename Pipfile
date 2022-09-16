@@ -37,7 +37,7 @@ black = "==22.8.0"
 
 [dev-packages]
 black = "==22.8.0"
-vcrpy = "==4.1.1"
+vcrpy = "==4.2.1"
 pytest = "*"
 pytest-cov = "*"
 pytest-django = "*"
