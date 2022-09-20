@@ -52,7 +52,6 @@
     </ul>
     <p><a href="{% url 'projects:reports' %}">See all our reports and research</a></p>
 
-
     <h2>Postcode searches</h2>
     <p>Our polling station and candidate databases have handled over ten million postcode searches since 2015. Our own research suggests
         that our tools are effective at reaching less engaged groups, particularly younger voters.</p>
@@ -121,5 +120,8 @@
         frictionless as possible to access and good digital infrastructure, paired with bold partnerships,
         are the best way of making that possible.</p>
     <p><a href="{% url 'contact' %}">Work with us</a></p>
+
+    {% load post_tags %}
+    {% posts_for_tag "research" %}
     </section>
 {% endblock content %}
