@@ -13,27 +13,32 @@
 We'd love you to use our polling station finder on your web site. If you do, we kindly ask that you:
 
 1. Credit Democracy Club, linking to our home page at [https://democracyclub.org.uk/](https://democracyclub.org.uk/) along side the embedded widget.
-2. <a href="{% url 'contact' %}">Let us know</a> you're using it. We don't limit use, but it's great to know who has used the embed feature.
+2. [Let us know]({% url 'contact' %}) you're using it. We don't limit use, but it's great to know who has used the embed feature.
 3. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
 
 ##Customise and Embed
 For councils in Wales, we offer optional Welsh language support.
 
+{% endfilter %}
 <form id="widget-options" class="form form-inline">
     <div class="form-group">
         <fieldset>
-            <label for="no-lang" class="block-label selection-button-radio">
-                <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
-                In English only
-            </label>
-            <label for="en" class="block-label selection-button-radio">
-                <input type="radio" name="language" id="en" value="en">
-                With language toggle (Default English)
-            </label>
-            <label for="cy" class="block-label selection-button-radio">
-                <input type="radio" name="language" id="cy" value="cy">
-                With language toggle (Default Welsh)
-            </label>
+            <legend>Language options</legend>
+            <div class="ds-stack-smallest">
+
+                <label for="no-lang" class="ds-field-radio">
+                    <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
+                    <span>In English only</span>
+                </label>
+                <label for="en" class="ds-field-radio">
+                    <input type="radio" name="language" id="en" value="en">
+                    <span>With language toggle (Default English)</span>
+                </label>
+                <label for="cy" class="ds-field-radio">
+                    <input type="radio" name="language" id="cy" value="cy">
+                    <span>With language toggle (Default Welsh)</span>
+                </label>
+            </div>
         </fieldset>
     </div>
     <button>Generate</button>
@@ -56,12 +61,12 @@ For councils in Wales, we offer optional Welsh language support.
     </figcaption>
 </figure>
 
-To embed on your site, use the following code:
-{% endfilter %}
+<p>To embed on your site, use the following code:</p>
 
 
 
-    <pre class="ds-codeblock"><code>
+
+    <pre class="ds-codeblock" id="code-area"><code>
 &lt;noscript&gt;
   &lt;iframe src="https://wheredoivote.co.uk/embed/"
     style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;
@@ -76,9 +81,10 @@ To embed on your site, use the following code:
 </code></pre>
 
 {% filter markdown %}
+
 ## Adding your data
 Work in a council and want your polling stations to work in the widget?
-<a href="{% url 'projects:polling_data_upload' %}">Find out how to provide us with data.</a>
+[Find out how to provide us with data]({% url 'projects:polling_data_upload' %}).
 
 ## Custom designs, white label and API
 
@@ -91,66 +97,66 @@ Please [contact us]({% url "contact"%}) for more information about this.
 
 {% endfilter %}
 
-    <script>
-        var form = document.querySelector('#widget-options');
-        if (form) {
-            form.addEventListener('submit', handleWidgetOptions);
-        }
+<script>
+    var form = document.querySelector('#widget-options');
+    if (form) {
+        form.addEventListener('submit', handleWidgetOptions);
+    }
 
-        function handleWidgetOptions(event) {
-            event.preventDefault();
-            createWidgetVersion(form.elements.language.value);
-        }
+    function handleWidgetOptions(event) {
+        event.preventDefault();
+        createWidgetVersion(form.elements.language.value);
+    }
 
-        function getEmbedCode(customAttributes) {
-            return '<pre><code>&lt;noscript&gt;\n' +
-            '  &lt;iframe src="https://wheredoivote.co.uk/embed/"\n' +
-            '    style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;\n' +
-            '  &lt;/iframe&gt;\n' +
-            '&lt;/noscript&gt;\n' +
-            '&lt;div id="dc_wdiv" ' + customAttributes + '&gt;&lt;/div&gt;\n' +
-            '&lt;script type="text/javascript"\n' +
-            '  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;\n' +
-            '&lt;/script&gt;\n' +
-            '</code></pre>\n';
-        }
+    function getEmbedCode(customAttributes) {
+        return '<pre><code>&lt;noscript&gt;\n' +
+        '  &lt;iframe src="https://wheredoivote.co.uk/embed/"\n' +
+        '    style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;\n' +
+        '  &lt;/iframe&gt;\n' +
+        '&lt;/noscript&gt;\n' +
+        '&lt;div id="dc_wdiv" ' + customAttributes + '&gt;&lt;/div&gt;\n' +
+        '&lt;script type="text/javascript"\n' +
+        '  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;\n' +
+        '&lt;/script&gt;\n' +
+        '</code></pre>\n';
+    }
 
-        function makeAttributeList(language) {
-            var attrs = '';
-            if ((language === 'en') || (language === 'cy')) {
-                attrs = 'data-language="' + language + '" ';
-            }
-            return attrs + 'aria-live="polite" role="region"';
+    function makeAttributeList(language) {
+        var attrs = '';
+        if ((language === 'en') || (language === 'cy')) {
+            attrs = 'data-language="' + language + '" ';
         }
+        return attrs + 'aria-live="polite" role="region"';
+    }
 
-        function makeWidget(language) {
-            var div = document.createElement('div');
-            div.setAttribute('id', 'dc_wdiv');
-            if ((language === 'en') || (language === 'cy')) {
-                div.setAttribute('data-language', language);
-            }
-            div.setAttribute('aria-live', 'polite');
-            div.setAttribute('role', 'region');
-            return div;
+    function makeWidget(language) {
+        var div = document.createElement('div');
+        div.setAttribute('id', 'dc_wdiv');
+        if ((language === 'en') || (language === 'cy')) {
+            div.setAttribute('data-language', language);
         }
+        div.setAttribute('aria-live', 'polite');
+        div.setAttribute('role', 'region');
+        return div;
+    }
 
-        function makeScript() {
-            var script = document.createElement('script');
-            script.type = "text/javascript";
-            script.src = "https://widget.wheredoivote.co.uk/wdiv.js";
-            return script;
-        }
+    function makeScript() {
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+        script.src = "https://widget.wheredoivote.co.uk/wdiv.js";
+        return script;
+    }
 
-        function createWidgetVersion(language) {
-            var widgetArea = document.querySelector('#widget-area');
-            var codeArea = document.querySelector('#code-area');
-            var widget = makeWidget(language);
-            var script = makeScript();
-            var embedCode = getEmbedCode(makeAttributeList(language));
-            widgetArea.innerHTML = '';
-            widgetArea.appendChild(widget);
-            widgetArea.appendChild(script);
-            codeArea.innerHTML = embedCode;
-        }
-    </script>
+    function createWidgetVersion(language) {
+        var widgetArea = document.querySelector('#widget-area');
+        var codeArea = document.querySelector('#code-area');
+        var widget = makeWidget(language);
+        var script = makeScript();
+        var embedCode = getEmbedCode(makeAttributeList(language));
+        widgetArea.innerHTML = '';
+        widgetArea.appendChild(widget);
+        widgetArea.appendChild(script);
+        codeArea.innerHTML = embedCode;
+    }
+</script>
 {% endblock main_content %}
