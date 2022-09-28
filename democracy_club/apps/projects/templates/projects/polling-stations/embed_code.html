@@ -20,65 +20,8 @@ We'd love you to use our polling station finder on your web site. If you do, we 
 For councils in Wales, we offer optional Welsh language support.
 
 {% endfilter %}
-<form id="widget-options" class="form form-inline">
-    <div class="form-group">
-        <fieldset>
-            <legend>Language options</legend>
-            <div class="ds-stack-smallest">
 
-                <label for="no-lang" class="ds-field-radio">
-                    <input type="radio" name="language" id="no-lang" value="no-lang" checked="checked">
-                    <span>In English only</span>
-                </label>
-                <label for="en" class="ds-field-radio">
-                    <input type="radio" name="language" id="en" value="en">
-                    <span>With language toggle (Default English)</span>
-                </label>
-                <label for="cy" class="ds-field-radio">
-                    <input type="radio" name="language" id="cy" value="cy">
-                    <span>With language toggle (Default Welsh)</span>
-                </label>
-            </div>
-        </fieldset>
-    </div>
-    <button>Generate</button>
-</form>
-
-<figure>
-    <noscript>
-        <iframe src="https://wheredoivote.co.uk/embed/" style="width:100%; height:1100px" frameborder="0" scrolling="no">
-        </iframe>
-    </noscript>
-    <div id="widget-area">
-        <div id="dc_wdiv" aria-live="polite" role="region"></div>
-        <script type="text/javascript" src="https://widget.wheredoivote.co.uk/wdiv.js">
-        </script>
-    </div>
-    <figcaption>
-        Live data varies, so results might not show for example postcodes.
-        We tend not to have data outside of major elections, <a href="{% url 'contact' %}">contact us</a>
-        if you'd like a demo.
-    </figcaption>
-</figure>
-
-<p>To embed on your site, use the following code:</p>
-
-
-
-
-    <pre class="ds-codeblock" id="code-area"><code>
-&lt;noscript&gt;
-  &lt;iframe src="https://wheredoivote.co.uk/embed/"
-    style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;
-  &lt;/iframe&gt;
-&lt;/noscript&gt;
-
-&lt;div id="dc_wdiv" aria-live="polite" role="region"&gt;&lt;/div&gt;
-&lt;script type="text/javascript"
-  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
-&lt;/script&gt;
-
-</code></pre>
+{% include "_includes/widget_embed_code.html" %}
 
 {% filter markdown %}
 
@@ -97,66 +40,4 @@ Please [contact us]({% url "contact"%}) for more information about this.
 
 {% endfilter %}
 
-<script>
-    var form = document.querySelector('#widget-options');
-    if (form) {
-        form.addEventListener('submit', handleWidgetOptions);
-    }
-
-    function handleWidgetOptions(event) {
-        event.preventDefault();
-        createWidgetVersion(form.elements.language.value);
-    }
-
-    function getEmbedCode(customAttributes) {
-        return '<pre><code>&lt;noscript&gt;\n' +
-        '  &lt;iframe src="https://wheredoivote.co.uk/embed/"\n' +
-        '    style="width:100%; height:1100px" frameborder="0" scrolling="no"&gt;\n' +
-        '  &lt;/iframe&gt;\n' +
-        '&lt;/noscript&gt;\n' +
-        '&lt;div id="dc_wdiv" ' + customAttributes + '&gt;&lt;/div&gt;\n' +
-        '&lt;script type="text/javascript"\n' +
-        '  src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;\n' +
-        '&lt;/script&gt;\n' +
-        '</code></pre>\n';
-    }
-
-    function makeAttributeList(language) {
-        var attrs = '';
-        if ((language === 'en') || (language === 'cy')) {
-            attrs = 'data-language="' + language + '" ';
-        }
-        return attrs + 'aria-live="polite" role="region"';
-    }
-
-    function makeWidget(language) {
-        var div = document.createElement('div');
-        div.setAttribute('id', 'dc_wdiv');
-        if ((language === 'en') || (language === 'cy')) {
-            div.setAttribute('data-language', language);
-        }
-        div.setAttribute('aria-live', 'polite');
-        div.setAttribute('role', 'region');
-        return div;
-    }
-
-    function makeScript() {
-        var script = document.createElement('script');
-        script.type = "text/javascript";
-        script.src = "https://widget.wheredoivote.co.uk/wdiv.js";
-        return script;
-    }
-
-    function createWidgetVersion(language) {
-        var widgetArea = document.querySelector('#widget-area');
-        var codeArea = document.querySelector('#code-area');
-        var widget = makeWidget(language);
-        var script = makeScript();
-        var embedCode = getEmbedCode(makeAttributeList(language));
-        widgetArea.innerHTML = '';
-        widgetArea.appendChild(widget);
-        widgetArea.appendChild(script);
-        codeArea.innerHTML = embedCode;
-    }
-</script>
 {% endblock main_content %}
