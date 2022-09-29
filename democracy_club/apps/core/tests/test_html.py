@@ -24,6 +24,7 @@ class TestHtml:
             reverse("coc"),
             reverse("contact"),
             reverse("privacy"),
+            reverse("donate"),
             reverse("dc_signup_form:mailing_list_signup_view"),
             reverse("projects:home"),
             reverse("projects:cvs"),
