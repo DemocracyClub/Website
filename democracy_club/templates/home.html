@@ -7,7 +7,7 @@
     <section class="ds-stack-larger">
         <div class="ds-stack">
             <h1 class="ds-h2 ds-text-centered">Democracy Club strengthens democracy and civic engagement in the UK</h1>
-            <p class="ds-text-centered  ds-width-full">We are building a country with the digital foundations to support everyone’s
+            <p class="ds-text-centered  ds-width-full">We are building a country with the digital foundations to support everyone's
                 participation in democracy. We collect, standardise and share the data that empowers voters, companies
                 and campaigners to build the democracy we all deserve.</p>
             <img src="{% static "images/maze_illustration_no_text.png" %}" alt="Maze illustration with a voter at the beginning and the poll at the end">
@@ -17,15 +17,19 @@
 
         <div class="ds-stack">
             <h2>Our impact in numbers</h2>
-            <p class="ds-width-full">Democracy Club is a not-for-profit, powered by an incredible community of volunteers. Working in partnership with councils and partners, we build services that get people voting during national and local elections.</p>
+            <p class="ds-width-full">Democracy Club is a not-for-profit Community Interest Company,
+                powered by an incredible community of volunteers.
+                Working in partnership with the Electoral Commission, councils, and other
+                organisations, we build services that get people voting during national
+                and local elections.</p>
 
             <ul class="ds-switcher ds-showcase" style="--gridCellMin: 16ch; --gridGap: 1.5rem;">
                 <li><strong>219m</strong> reminders to vote sent via partnerships in&nbsp;2019</li>
-                <li><strong>1.9m</strong> people used our services in the last&nbsp;election</li>
+                <li><strong>3.5m</strong> people used our services in the last general election</li>
                 <li><strong>83%</strong> of users say that our services make them more likely to&nbsp;vote</li>
                 <li><strong>98%</strong> of councils across the UK work with&nbsp;us</li>
             </ul>
-            <p><a href="{% url 'impact' %}">Read more about our research and impact</a></p>
+            <p><a href="{% url 'impact' %}"><strong>Read more about our research and impact</strong></a></p>
         </div>
 
         <hr>
@@ -40,7 +44,7 @@
 
         <div class="ds-stack ds-text-centered">
             <h2>Voting APIs: Data-powered democracy</h2>
-            <p class="ds-width-full">Civic engagement powered by the most comprehensive election APIs in the UK.</p>
+            <p class="ds-width-full">Civic engagement powered by the most comprehensive election data in the UK.</p>
             <p class="ds-width-full"><a href="{% url 'data_and_apis' %}" class="ds-cta">Data and APIs</a></p>
         </div>
 
@@ -48,14 +52,16 @@
 
         <div class="ds-stack-smaller">
             <h2>Community volunteers</h2>
-            <p class="ds-width-full">Democracy Club is a not-for-profit, powered by an incredible community of volunteers. Thousands of people help us every election to make this service available. Our first priority will always be opening up the vital data that powers our democracy for the benefit of all.</p>
+            <p class="ds-width-full">Our services are made possible by the thousands of people who
+                volunteer their time to build our databases during each election. Our first priority
+                will always be opening up the vital data that powers our democracy for the benefit of all.</p>
 
             <ul class="ds-switcher ds-showcase" style="--gridCellMin: 15ch; --gridGap: 1.5rem;">
                 <li><strong>12,200</strong> people have contributed to improving our democratic&nbsp;data</li>
                 <li><strong>60,000</strong> edits were made by our community in the 2022 local&nbsp;elections</li>
                 <li><strong>900</strong> people in our Democracy Club Slack. <a class="ds-text-left" href="#">Join us</a></li>
             </ul>
-            <p><a href="{% url 'about' %}">Read more about volunteering and our commitment to open data</a></p>
+            <p><a href="{% url 'about' %}"><strong>Read more about volunteering and our commitment to open data</strong></a></p>
         </div>
 
         <hr>
@@ -79,7 +85,7 @@
                     </li>
                 {% endfor %}
             </ul>
-            <p><a href="{% url "hermes_post_list" %}">More posts</a></p>
+            <p><a href="{% url "hermes_post_list" %}"><strong>Our latest blog posts</strong></a></p>
         {% endif %}
 
         <hr>

@@ -6,6 +6,11 @@
 {% block content %}
     <section class="ds-stack">
         <h1>For Voters</h1>
+        <aside class="ds-status" aria-label="Status">
+            <ul class="ds-stack">
+                <li class="ds-status-message">Please note: our services provide information only in the months immediately before an election.</li>
+            </ul>
+        </aside>
 
         <div class="ds-stack">
             <h2>I want to find my voting information…</h2>
@@ -13,31 +18,27 @@
             <div class="ds-stack">
                 <h3>WhereDoIVote.co.uk</h3>
                 <p>'Where Do I Vote?' tells you the location of your polling station using only your postcode.</p>
-                <p><a href="https://www.wheredoivote.co.uk">Visit WhereDoIVote.co.uk</a></p>
+                <p><a href="https://www.wheredoivote.co.uk"><strong>Visit WhereDoIVote.co.uk</strong></a></p>
             </div>
 
             <div class="ds-stack">
                 <h3>WhoCanIVoteFor.co.uk</h3>
                 <p>'Who Can I Vote For?' tells you about elections in the near future, including who will be on
                     your ballot paper.</p>
-                <p>Please note: our services provide information only in the months immediately before an election.</p>
-                <p><a href="https://www.whocanivotefor.co.uk">Visit WhoCanIVoteFor.co.uk</a></p>
+                <p><a href="https://www.whocanivotefor.co.uk"><strong>Visit WhoCanIVoteFor.co.uk</strong></a></p>
             </div>
 
             <div class="ds-stack">
                 <h2>I want to help voters find their voting information…</h2>
 
                 <h3>Election Widget</h3>
-                <p>You can embed our Election 'Widget' for free on on any web page.
-                    The embedding process is as simple as complying and pasting some code,
+                <p>You can embed our 'Widget' for free on on any web page.
+                    The embedding process is as simple as copying and pasting some code,
                     and does not require a web developer. We have two widgets to choose from:</p>
                 <ul>
-                    <li>Combined elections widget. This shows elections, candidates and polling stations to the user.</li>
-                    <li>Polling station widget. This displays only the location of the user's polling place.</li>
+                    <li><a href="{% url 'projects:election_widget' %}">Combined elections widget</a>. This shows elections, candidates and polling stations to the user.</li>
+                    <li><a href="{% url 'projects:polling_embed_code' %}">Polling station widget</a>. This displays only the location of the user's polling place.</li>
                 </ul>
-
-                <img style="margin-top: 1rem;box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.1);"
-                    src="{% static 'images/widget.png' %}" alt="Election Widget">
 
                 <p>If you would like a custom election widget to fit with your website's theme,
                     please get in touch to discuss this with us.</p>
@@ -51,11 +52,16 @@
                     downloads or in API format.</p>
 
                 <p>Researchers and journalists can find candidates and
-                    election results data on our candidate database.
-                    Our CSVs are free to download and use with credit.</p>
+                    election results data on
+                    <a href="https://candidates.democracyclub.org.uk/api/docs/">
+                        our candidate database.</a>Our CSVs are free to
+                    download and use with credit.</p>
 
                 <p>Web Developers can access our elections data via an API,
                     allowing you to build your own voter information tools.
-                    Please see our <a href="{% url 'data' %}">API pages</a> for more information.</p
+                    Please see our <a href="{% url 'data' %}">API pages</a>
+                    for more information.</p>
+
+
 
 {% endblock content %}

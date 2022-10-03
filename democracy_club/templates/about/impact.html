@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block page_heading %}<h1>Our impact</h1>{% endblock page_heading %}
-{% block title %}Our Impact{% endblock title %}
+{% block page_title %}Our Impact{% endblock page_title %}
 {% block content %}
 
     <div class="ds-stack">
 
         <h1>Research and Impact</h1>
         <h2>Our impact in numbers</h2>
-        <p>Democracy Club is a not-for-profit, powered by an incredible community of volunteers.
+        <p>Democracy Club is a not-for-profit Community Interest Company, powered by an incredible community of volunteers.
             Our first priority will always be opening up the vital data that powers our democracy for the benefit of all voters.</p>
 
         <ul class="ds-showcase ds-switcher" style="--gridCellMin: 15ch; --gridGap: 2rem;">
             <li><strong>219m</strong><br> Reminders to vote sent in partnerships in 2019</li>
             <li><strong>83%</strong><br> Of users say that our services make them more likely to vote</li>
-            <li><strong>1.9m</strong><br> People used our services in the last election</li>
+            <li><strong>3.5m</strong><br> People used our services in the last election</li>
             <li><strong>98%</strong><br> Of councils across the UK work with us</li>
             <li><strong>12,200</strong><br> People have contributed to improving our democratic data</li>
             <li><strong>60,000</strong><br> Edits were made by our community in the 2022 local elections</li>
@@ -50,7 +50,7 @@
             </div>
         </li>
     </ul>
-    <p><a href="{% url 'projects:reports' %}">See all our reports and research</a></p>
+    <p><a href="{% url 'projects:reports' %}"><strong>See all our reports and research</strong></a></p>
 
     <h2>Postcode searches</h2>
     <p>Our polling station and candidate databases have handled over ten million postcode searches since 2015. Our own research suggests
@@ -119,9 +119,9 @@
         The Times, Reach, Sky News and many others. We believe that democratic data should be as
         frictionless as possible to access and good digital infrastructure, paired with bold partnerships,
         are the best way of making that possible.</p>
-    <p><a href="{% url 'contact' %}">Work with us</a></p>
+    <p><a href="{% url 'contact' %}"><strong>Work with us</strong></a></p>
 
     {% load post_tags %}
     {% posts_for_tag "research" %}
-    </section>
+    </div>
 {% endblock content %}

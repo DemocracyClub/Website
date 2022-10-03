@@ -1,12 +1,7 @@
 {% load static %}
 # Towards better elections — 2019
 
-
-
-
-<img src="{% static 'report_2019/images/humber_bridge_card_title.jpg' %}" alt="">
-
-
+<img src="{% static 'images/maze_illustration_no_text.png' %}" alt="Maze illustration representing the voters journey to the polls">
 
 
 ## Executive Summary
