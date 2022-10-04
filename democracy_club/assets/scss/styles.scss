@@ -198,21 +198,24 @@ article > ol, article > ul {
   @extend .ds-stack-smaller;
 }
 
-.ds-card {
+.ds-cta-card {
+  display: flex;
+  flex-direction: column;
   .ds-card-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: $s1;
-    .ds-cta:last-child {
-      @media screen and (min-width:750px) {
-        position: absolute;
-        bottom: $s1;
-      }
-    }
-  } 
+    flex-grow: 1;
+   & :nth-last-child(2) {
+     margin-bottom: 1em;
+   }
+
+   & :last-child {
+     margin-top: auto;
+     text-align: center;
+   }
+ }
 }
+
 
 ul > li > ul {
   page-break-inside: avoid;
