@@ -5,15 +5,40 @@ This is the website hosted at https://democracyclub.org.uk/
 ## Set up
 This is a Django project using PostgreSQL. The project is deployed using Python 3.6.
 
-`pip install pipenv`
+### Packages
+This project uses pipenv to manage dependencies. 
+To perform the package install, run the following within your venv:
+```commandline
+pip install pipenv
+pipenv install
+```
+Read more about pipenv package management [here](https://pipenv.pypa.io/en/latest/).
 
-then 
+### Database
+First, ensure you have Postgres available. 
+```commandline
+#OSX
+brew install postgres
+```
+You'll then need to create a database for this project.
+```
+createdb democracy_club
+```
+Once you're st up, run the migration:
+```commandline
+python manage.py migrate
+```
 
-`pipenv install`
+
 ## Blog Posts
 To view blog posts, you need to first add new posts to your db. 
-You can do this by creating an admin user in your terminal, then
-navigating to the `/admin` panel to create a new post.
+You can do this by creating an admin user in your terminal
+```
+python manage.py createsuperuser
+```
+then navigate to the `/admin` panel to create a new post.
+New posts are created at `/admin/hermes/post`.
+
 
 Blog posts now include tags which correspond to projects, such as
 `representatives`. 
