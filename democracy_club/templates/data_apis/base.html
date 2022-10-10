@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}Data-powered democracy{% endblock %}
+
+{% block content %}
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "voting_information_api" %}">Voting Information API</a>
+            </li>
+            <li>
+                <a href="{% url "data" %}">Data and Downloads</a>
+            </li>
+        </ul>
+    </nav>
+    {% block page_heading %}<h1>Data-powered democracy</h1>{% endblock page_heading %}
+    <p>Civic engagement powered by the most comprehensive election data in the UK.</p>
+
+    {% block main_content %}
+
+    {% endblock main_content %}
+
+{% endblock %}

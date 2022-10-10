@@ -198,3 +198,31 @@ article > ol, article > ul {
   @extend .ds-stack-smaller;
 }
 
+.ds-cta-card {
+  display: flex;
+  flex-direction: column;
+  .ds-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+   & :nth-last-child(2) {
+     margin-bottom: 1em;
+   }
+
+   & :last-child {
+     margin-top: auto;
+     text-align: center;
+   }
+ }
+}
+
+
+ul > li > ul {
+  page-break-inside: avoid;
+}
+
+.documentation-list {
+  columns: 2 20em;
+  column-gap: $s2;
+  list-style: none;
+}
