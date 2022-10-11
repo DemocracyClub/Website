@@ -66,8 +66,8 @@ urlpatterns = [
         name="jobs",
     ),
     path(
-        "about/impact/",
-        TemplateView.as_view(template_name="about/impact.html"),
+        "impact/",
+        TemplateView.as_view(template_name="impact.html"),
         name="impact",
     ),
     path(
