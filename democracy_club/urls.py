@@ -28,11 +28,6 @@ urlpatterns = [
     ),
     path("", HomeView.as_view(), name="home"),
     path(
-        "data_apis/index/",
-        TemplateView.as_view(template_name="data_apis/index.html"),
-        name="data_and_apis",
-    ),
-    path(
         "data_apis/data/",
         TemplateView.as_view(template_name="data_apis/data.html"),
         name="data",
@@ -66,8 +61,8 @@ urlpatterns = [
         name="jobs",
     ),
     path(
-        "about/impact/",
-        TemplateView.as_view(template_name="about/impact.html"),
+        "impact/",
+        TemplateView.as_view(template_name="impact.html"),
         name="impact",
     ),
     path(
@@ -149,6 +144,14 @@ url_redirects = (
     path(
         "about/support-us/",
         RedirectView.as_view(url=reverse_lazy("donate")),
+    ),
+    path(
+        "about/impact/",
+        RedirectView.as_view(url=reverse_lazy("impact")),
+    ),
+    path(
+        "data_apis/index/",
+        RedirectView.as_view(url=reverse_lazy("voter_information_api")),
     ),
 )
 
