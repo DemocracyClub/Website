@@ -226,7 +226,7 @@ GO_CARDLESS_PAYMENT_DESCRIPTION = (
 )
 GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
-SITE_TITLE = "Democracy Club"
+SITE_TITLE = "democracy club"
 CANONICAL_URL = f"https://{os.environ.get('FQDN')}"
 
 
