@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   codecov: codecov/codecov@3.1.0
-  aws-cli: circleci/aws-cli@2.0.3
+  aws-cli: circleci/aws-cli@3.1
 
 jobs:
   install_and_update_dependencies:
@@ -32,7 +32,7 @@ jobs:
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
-      - image: circleci/postgres:10-alpine-ram
+      - image: cimg/postgres:11.17
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: democracy_club
@@ -67,7 +67,7 @@ jobs:
       - attach_workspace:
           at: ~/repo/
       - run: pip install --upgrade pip
-      - run: pip install aws-sam-cli==1.43.0
+      - run: pip install aws-sam-cli==1.60.0
       - run: pip install -r lambda-layers/DependenciesLayer/requirements.txt
       - run: make collectstatic
       - run: sam build ${DASH_DASH_DEBUG} --template-file sam-template.yaml
@@ -95,7 +95,7 @@ jobs:
           keys:
             - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
-      - run: pip install aws-sam-cli==1.43.0
+      - run: pip install aws-sam-cli==1.60.0
 
       - run:
           name: "pipenv run sam deploy # App: Lambda + API Gateway"
