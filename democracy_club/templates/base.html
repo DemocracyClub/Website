@@ -9,34 +9,43 @@
     {% stylesheet 'styles' %}
 {% endblock extra_site_css %}
 
+{% block header_base %}
+    <header class="ds-header">
+        <a class="ds-logo" href="/">
+            <img src="{% static 'images/logo_icon.svg' %}" alt="{{ SITE_TITLE }}" width="{{ SITE_LOGO_WIDTH|default:'100' }}">
+            <span>democracy<br>club</span>
+            {% block language_code %}{% endblock language_code %}
+        </a>
+        {% block site_menu %}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'voting_information_api' %}">Data and APIs</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'voters' %}">For Voters</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'impact' %}">Research and Impact</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'hermes_post_list' %}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'donate' %}">Donate</a>
+                    </li>
+                </ul>
+            </nav>
+        {% endblock site_menu %}
+    </header>
+{% endblock header_base %}
 
-{% block site_menu %}
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'voting_information_api' %}">Data and APIs</a>
-            </li>
-            <li>
-                <a href="{% url 'voters' %}">For Voters</a>
-            </li>
-            <li>
-                <a href="{% url 'about' %}">About</a>
-            </li>
-            <li>
-                <a href="{% url 'impact' %}">Research and Impact</a>
-            </li>
-            <li>
-                <a href="{% url 'hermes_post_list' %}">Blog</a>
-            </li>
-            <li>
-                <a href="{% url 'donate' %}">Donate</a>
-            </li>
-        </ul>
-    </nav>
-{% endblock site_menu %}
 
 
 {% block messages %}
