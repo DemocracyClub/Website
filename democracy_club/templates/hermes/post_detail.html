@@ -5,7 +5,7 @@
 
 {% block page_title %}{{ post.subject }}{% endblock page_title %}
 
-{% block og_description %}{{ post.summary }}{% endblock og_description %}
+{% block og_description_content %}{{ post.summary }}{% endblock og_description_content %}
 {% block og_image_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock og_image_content %}
 {% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
