@@ -58,6 +58,13 @@ Once you have pushed your latest changes to your branch:
 
 ## Cron / scheduling / events
 
+# Deployment
+
+This project is deployed using CircleCI.
+
+Pages are normally cached using CloudFront, and a site-side invalidation is
+created on each new deployment.
+
 [TODO]
 ## Update docs to include 
 - new pipeline settings
