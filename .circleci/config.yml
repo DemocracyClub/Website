@@ -111,6 +111,10 @@ jobs:
           command: |
             aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -
       - run:
+          name: "Invalidate CloudFront cache"
+          command: |
+            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "invalidate_cloudfront", "args": ["--paths", "*"] }' --cli-binary-format raw-in-base64-out -
+      - run:
           name: "Publish a new Sentry Release"
           command: |
             curl -sL https://sentry.io/get-cli/ | bash

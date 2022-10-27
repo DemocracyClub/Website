@@ -24,7 +24,11 @@ def invalidate_paths(path_list):
     if not dist_id:
         return
 
-    cloudfront.create_invalidation(
+    for i, path in enumerate(path_list):
+        if not path.startswith("/"):
+            path_list[i] = f"/{path}"
+
+    return cloudfront.create_invalidation(
         DistributionId=dist_id,
         InvalidationBatch={
             "Paths": {"Quantity": len(path_list), "Items": path_list},
