@@ -25,3 +25,11 @@ class LatestPostFeedTestCase(HermesTestCase):
         data = feedparser.parse(response.content)
 
         self.assertEqual(data["feed"]["title"], "Democracy Club Blog")
+
+    def test_feed_author_email(self):
+        response = self.get(self.url())
+        data = feedparser.parse(response.content)
+        entries = data["entries"]
+        authors = [entry["authors"] for entry in entries]
+        emails = [author[0]["email"] for author in authors]
+        self.assertGreaterEqual(len(entries), len(emails))

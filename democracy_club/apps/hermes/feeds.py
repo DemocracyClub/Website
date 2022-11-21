@@ -45,4 +45,8 @@ class LatestPostFeed(Feed):
             ", ".join(authors)
 
     def item_author_email(self, item):
-        return [author.email for author in item.author.all()]
+        emails = [author.email for author in item.author.all()]
+        if len(emails) == 1:
+            return emails[0]
+        else:
+            "; ".join(emails)
