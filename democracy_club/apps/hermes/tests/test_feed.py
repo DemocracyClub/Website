@@ -19,3 +19,9 @@ class LatestPostFeedTestCase(HermesTestCase):
         ]
 
         self.assertEqual(expected, post_urls)
+
+    def test_blog_title(self):
+        response = self.get(self.url())
+        data = feedparser.parse(response.content)
+
+        self.assertEqual(data["feed"]["title"], "Democracy Club Blog")
