@@ -77,7 +77,7 @@ The House of Commons Library made extensive use of our data in a number of resea
 
 **Library briefings featuring our data:**
 
-- [May 2021 elections: Candidates and results by part](https://commonslibrary.parliament.uk/may-2021-elections-candidates-and-results-by-party/)
+- [May 2021 elections: Candidates and results by party](https://commonslibrary.parliament.uk/may-2021-elections-candidates-and-results-by-party/)
 
 - [Scottish Parliament Elections: 2021](https://commonslibrary.parliament.uk/research-briefings/cbp-9230/)
 
