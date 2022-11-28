@@ -52,7 +52,7 @@ factory-boy = "*"
 wheel = ">=0.38.1"
 
 [requires]
-python_version = "3.10"
+python_version = "3.10.8"
 
 [scripts]
 black = "black ."
