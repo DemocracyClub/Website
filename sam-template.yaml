@@ -81,7 +81,7 @@ Resources:
     Properties:
       ContentUri: ./lambda-layers/DependenciesLayer/
       CompatibleRuntimes:
-        - python3.8
+        - python3.10
     Metadata:
       BuildMethod: makefile
     RetentionPolicy: Delete
@@ -96,7 +96,7 @@ Resources:
       Handler: democracy_club.lambda_awsgi.lambda_handler
       Layers:
         - !Ref DependenciesLayer
-      Runtime: python3.8
+      Runtime: python3.10
       MemorySize: 192
       Environment:
         Variables:
@@ -132,7 +132,7 @@ Resources:
       Handler: democracy_club.lambda_awsgi.management_handler
       Layers:
         - !Ref DependenciesLayer
-      Runtime: python3.8
+      Runtime: python3.10
       MemorySize: 192
       Environment:
         Variables:
