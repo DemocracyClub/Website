@@ -96,7 +96,7 @@ jobs:
           at: ~/repo/
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "Pipfile.lock" }}
+            - v3-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
       - run: pip install aws-sam-cli==1.60.0
 
