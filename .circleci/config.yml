@@ -12,7 +12,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "Pipfile.lock" }}
+            - v3-dependencies-{{ checksum "Pipfile.lock" }}
       - run: &install-pipenv pip install -U pipenv urllib3 wheel==0.38.4 pip --quiet --no-input
       - run: pipenv install --dev
       - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
@@ -24,7 +24,7 @@ jobs:
           when: on_success
           paths:
             - ~/.local/share/virtualenvs/
-          key: v2-dependencies-{{ checksum "Pipfile.lock" }}
+          key: v3-dependencies-{{ checksum "Pipfile.lock" }}
 
   test:
     docker:
