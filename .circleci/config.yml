@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  codecov: codecov/codecov@3.1.0
-  aws-cli: circleci/aws-cli@3.1
+  codecov: codecov/codecov@3.2.4
+  aws-cli: circleci/aws-cli@3.1.3
 
 jobs:
   install_and_update_dependencies:
