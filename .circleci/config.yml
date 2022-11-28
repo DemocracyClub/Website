@@ -49,6 +49,9 @@ jobs:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
       - run: *install-pipenv
+      - run: pipenv check
+      - run: python manage.py check 
+      - run: python manage.py makemigrations --check 
       - run: pipenv run black-check
       - run: pipenv run pytest --flakes
       - run: pipenv run pytest --cov-report=xml --cov=democracy_club
