@@ -6,7 +6,7 @@ orbs:
 jobs:
   install_and_update_dependencies:
     docker:
-      - image: cimg/python:3.10.4
+      - image: cimg/python:3.10.8
     working_directory: ~/repo
     steps:
       - checkout
@@ -28,7 +28,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/python:3.10.4
+      - image: cimg/python:3.10.8
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
@@ -80,7 +80,7 @@ jobs:
 
   sam_deploy:
     docker:
-      - image: cimg/python:3.10.4
+      - image: cimg/python:3.10.8
     working_directory: ~/repo/
     parameters:
       dc-environment:
