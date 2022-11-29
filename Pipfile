@@ -33,6 +33,7 @@ textile = "==4.0.2"
 mkdocs = "==1.4.2"
 Flask = "==2.1.0"
 black = "==22.10.0"
+pre-commit = "*"
 
 [dev-packages]
 black = "==22.10.0"
