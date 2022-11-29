@@ -52,6 +52,7 @@ jobs:
       - run: pipenv run black-check
       - run: pipenv run pytest --flakes
       - run: pipenv run pytest --cov-report=xml --cov=democracy_club
+      - run: pipenv run python manage.py makemigrations --check
       - codecov/upload:
           file: /home/circleci/repo/coverage.xml
       - store_artifacts:
