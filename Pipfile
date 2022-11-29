@@ -47,6 +47,7 @@ mock = "*"
 model-mommy = "*"
 ipdb = "*"
 factory-boy = "*"
+wheel = "==0.38.4"
 
 [requires]
 python_version = "3.8"
