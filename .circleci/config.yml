@@ -59,6 +59,8 @@ jobs:
           path: test-reports
           destination: test-reports
 
+# Support for python 3.10 is not yet available for aws-lambda-base-images
+# https://github.com/aws/aws-lambda-base-images/issues/31
   sam_build:
     docker:
       - image: amazon/aws-sam-cli-build-image-python3.8:latest
