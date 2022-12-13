@@ -25,7 +25,6 @@
             "pygments",
             "sphinx",
             "__pycache__",
-            ".tox"
         ],
         "environment_variables": {
           "REQUESTS_CA_BUNDLE": "/var/task/cacert.pem"

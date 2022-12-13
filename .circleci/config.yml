@@ -52,12 +52,15 @@ jobs:
       - run: pipenv run black-check
       - run: pipenv run pytest --flakes
       - run: pipenv run pytest --cov-report=xml --cov=democracy_club
+      - run: pipenv run python manage.py makemigrations --check
       - codecov/upload:
           file: /home/circleci/repo/coverage.xml
       - store_artifacts:
           path: test-reports
           destination: test-reports
 
+# Support for python 3.10 is not yet available for aws-lambda-base-images
+# https://github.com/aws/aws-lambda-base-images/issues/31
   sam_build:
     docker:
       - image: amazon/aws-sam-cli-build-image-python3.8:latest
