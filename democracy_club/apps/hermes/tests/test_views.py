@@ -1,5 +1,6 @@
-from . import HermesTestCase
 from hermes import models
+
+from . import HermesTestCase
 
 
 class PostListViewTestCase(HermesTestCase):
