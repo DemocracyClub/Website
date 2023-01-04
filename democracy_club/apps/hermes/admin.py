@@ -8,6 +8,8 @@ class PostAdmin(admin.ModelAdmin):
         "slug": ("subject",),
     }
     filter_horizontal = ["author"]
+    search_fields = ["subject"]
+    search_help_text = "Search by subject (Post title)"
 
 
 class CategoryAdmin(admin.ModelAdmin):
