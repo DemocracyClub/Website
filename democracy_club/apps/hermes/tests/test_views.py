@@ -14,9 +14,21 @@ class PostListViewTestCase(HermesTestCase):
 
     def test_qs_contains_tags(self):
         """The PostListView can filter tags if requested"""
+
+        self.post1.tags.append("foo")
+        self.post1.save()
+
+        self.post2.tags.append("foo")
+        self.post2.save()
+
+        self.post3.tags.append("bar")
+        self.post3.save()
+
         response = self.get(self.url() + "?tag=foo")
-        expected = list(models.Post.objects.published().for_tag("foo"))
+        expected = list(models.Post.objects.published().filter(tags=["foo"]))
         self.assertEqual(expected, list(response.context["posts"]))
+        self.assertContains(response, self.post1.subject)
+        self.assertNotContains(response, self.post3.subject)
 
 
 class ArchivePostListViewTestCase(HermesTestCase):
