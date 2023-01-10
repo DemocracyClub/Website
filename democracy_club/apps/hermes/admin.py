@@ -8,6 +8,10 @@ class PostAdmin(admin.ModelAdmin):
         "slug": ("subject",),
     }
     filter_horizontal = ["author"]
+    search_fields = ["subject"]
+    search_help_text = "Search by subject (Post title)"
+    list_display = ["subject", "created_on", "category"]
+    list_filter = ["is_published", "author"]
 
 
 class CategoryAdmin(admin.ModelAdmin):
