@@ -98,7 +98,8 @@ jobs:
           keys:
             - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
-      - run: pip install aws-sam-cli==1.60.0
+      - run: pip install aws-sam-cli==1.65.0
+      - run: pip install cryptography==38.0.4
 
       - run:
           name: "pipenv run sam deploy # App: Lambda + API Gateway"
