@@ -187,7 +187,7 @@ class Post(TimestampedModel):
         _("hero"), upload_to=post_hero_upload_to, blank=True, null=True
     )
     subject = models.CharField(_("subject"), max_length=100)
-    slug = models.SlugField(_("slug"), max_length=100)
+    slug = models.SlugField(_("slug"), max_length=100, unique=True)
     summary = models.TextField(_("summary"), blank=True, null=True)
     body = models.TextField(_("body"))
 
