@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_title %}TITLE{% endblock %}
+
+{% block content %}
+    <nav class="ds-subnav" aria-label="true">
+        <ul>
+            <li>
+                <a href="{% url "impact" %}">Our Impact</a>
+            </li>
+            <li>
+                <a href="{% url "case_studies" %}">Case Studies</a>
+            </li>
+        </ul>
+    </nav>
+    {% block page_heading %}<h1>PAGE HEADING</h1>{% endblock page_heading %}
+    <p>Page summary</p>
+
+    {% block main_content %}
+
+    {% endblock main_content %}
+
+{% endblock %}

@@ -61,9 +61,18 @@ urlpatterns = [
         name="jobs",
     ),
     path(
-        "impact/",
-        TemplateView.as_view(template_name="impact.html"),
+        "research/case_studies/",
+        TemplateView.as_view(template_name="research/case_studies.html"),
+        name="case_studies",
+    ),
+    path(
+        "research/impact/",
+        TemplateView.as_view(template_name="research/impact.html"),
         name="impact",
+    ),
+    path(
+        "research/index/",
+        RedirectView.as_view(url=reverse_lazy("research/impact.html")),
     ),
     path(
         "about/team/",

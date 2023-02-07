@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "research/base.html" %}
 {% load static %}
 
 {% block page_heading %}<h1>Our impact</h1>{% endblock page_heading %}
 {% block page_title %}Our Impact{% endblock page_title %}
-{% block content %}
+{% block main_content %}
 
     <div class="ds-stack">
 
@@ -22,8 +22,6 @@
             <li><strong>90%</strong><br> User satisfaction</li>
             <li><strong>900</strong><br> People in our Democracy Club Slack. <a class="ds-text-left" href="#">Join us</a></li></li>
     </ul>
-
-    {% include "_includes/case_studies.html" %}
 
     <h2>Latest research and reports</h2>
     <ul class="ds-grid" style="--gridCellMin: 30ch; --gridGap: 1rem;">
@@ -126,4 +124,4 @@
     {% load post_tags %}
     {% posts_for_tag "research" %}
     </div>
-{% endblock content %}
+{% endblock main_content %}
