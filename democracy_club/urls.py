@@ -162,6 +162,10 @@ url_redirects = (
         "data_apis/index/",
         RedirectView.as_view(url=reverse_lazy("voter_information_api")),
     ),
+    path(
+        "impact/",
+        RedirectView.as_view(url=reverse_lazy("impact")),
+    ),
 )
 
 urlpatterns += url_redirects
