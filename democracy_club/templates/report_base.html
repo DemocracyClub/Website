@@ -6,6 +6,7 @@
 {% block og_description_content %}{{ page_title|safe }}{% endblock og_description_content %}
 {% block og_title_content %}{{ page_title|safe }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
+{% block og_url_content %}{{ CANONICAL_URL }}{{ report_hero_image }}{% endblock og_url_content %}">
 
 {% block twitter_card_type %}summary_large_image{% endblock twitter_card_type %}
 {% block twitter_image %}{{ CANONICAL_URL }}{{ report_hero_image }}{% endblock twitter_image %}
