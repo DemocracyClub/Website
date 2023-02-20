@@ -1,5 +1,6 @@
-{% load static %}
-
+{% load static %}---
+hero_image: {% static "images/maze_illustration_no_text.png" %}
+---
 # Report on the 2019 General Election
 
 <img src="{% static 'images/maze_illustration_no_text.png' %}" alt="Maze illustration representing the voters journey to the polls">

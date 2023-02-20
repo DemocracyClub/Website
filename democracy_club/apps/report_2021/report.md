@@ -1,5 +1,6 @@
-{% load static %}
-
+{% load static %}---
+hero_image: {% static 'images/maze_illustration_no_text.png' %}
+--- 
 # Towards better elections — 2021
 
 

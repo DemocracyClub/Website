@@ -1,4 +1,6 @@
-{% load static %}
+{% load static %}---
+hero_image: {% static "images/maze_illustration_no_text.png" %}
+---
 # Towards better elections — 2019
 
 <img src="{% static 'images/maze_illustration_no_text.png' %}" alt="Maze illustration representing the voters journey to the polls">
