@@ -9,7 +9,7 @@
 {% block og_image_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock og_image_content %}
 {% block og_title_content %}{{ post.subject }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
-{% block og_url_content %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock og_url_content %}">
+{% block og_url_content %}{{ CANONICAL_URL }}{{ post.get_absolute_url }}{% endblock og_url_content %}">
 
 {% block twitter_image %}{% thumbnail post.hero "690" as im %}{{ im.url }}{% endthumbnail %}{% endblock twitter_image %}
 {% block twitter_title_content %}{{ post.subject }}{% endblock twitter_title_content  %}
