@@ -2,13 +2,13 @@
 {% block body_class_attr %}class="report"{% endblock body_class_attr %}
 {% block page_title %}{{ page_title|safe }}{% endblock page_title %}
 
-{% block og_image_content %}{{ CANONICAL_URL }}{{ report_hero_image }}{% endblock og_image_content %}
+{% block og_image_content %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}{% endif %}{% endblock og_image_content %}
 {% block og_description_content %}{{ page_title|safe }}{% endblock og_description_content %}
 {% block og_title_content %}{{ page_title|safe }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
+{% block og_url_content %}{{ CANONICAL_URL }}{{ request.path }}{% endblock og_url_content %}">
 
-{% block twitter_card_type %}summary_large_image{% endblock twitter_card_type %}
-{% block twitter_image %}{{ CANONICAL_URL }}{{ report_hero_image }}{% endblock twitter_image %}
+{% block twitter_image %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}{% endif %}{% endblock twitter_image %}
 {% block twitter_title_content %}{{ page_title|safe }}{% endblock twitter_title_content  %}
 {% block twitter_url %}{{ CANONICAL_URL }}{{ request.path }}{% endblock twitter_url %}
 {% block twitter_description_content %}{{ page_title|safe }}{% endblock twitter_description_content %}

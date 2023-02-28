@@ -1,5 +1,6 @@
-{% load static %}
-
+{% load static %}---
+hero_image: {% static 'report_2018/images/andy-kelly-401397-unsplash.jpg' %}
+---
 <style>
 .met {
 color: rgb(77, 179, 20)

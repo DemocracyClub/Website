@@ -4,7 +4,8 @@ hero_image: {% static "images/maze_illustration_no_text.png" %}
 
 # Local and Devolved Elections, 5 May 2022
 
-<img src="{% static "images/maze_illustration_no_text.png" %}">
+<img src="{% static 'images/maze_illustration_no_text.png' %}" alt="Maze illustration representing the voters journey to the polls">
+
 ## Summary Highlights
 
 - 1.9 million postcode searches during election week
