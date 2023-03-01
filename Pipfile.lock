@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8d0753cad78a1f20921bb65bc9e391a1741b6a9004f5bf41bfcf34d70b590f13"
+            "sha256": "79817bfeff0caa1e404aa28f6063dc3bd972710284affbdd8cd6289f6d6fe061"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -299,11 +299,11 @@
             "version": "==0.2.4"
         },
         "dc-django-utils": {
-            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.1.5.tar.gz",
+            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.1.6.tar.gz",
             "hashes": [
-                "sha256:9e9043d56d9da5a0b9e333daacc16a981a742982596ac9aece1754ded998c2eb"
+                "sha256:0f742ab80bf097850e0b3b985121623d1fd3ee2e58be41db6192156856ac5b2f"
             ],
-            "version": "==2.1.5"
+            "version": "==2.1.6"
         },
         "dc-signup-form": {
             "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.3.tar.gz",
@@ -400,10 +400,10 @@
         },
         "djhtml": {
             "hashes": [
-                "sha256:534deac3d2e474ccbd6daac0de458a3e0ae20e9c2d4b1ca496258bd62a328a18"
+                "sha256:f260cdfe7033b21ebc01961db7e1c8832fd5830ec9af1b0e57f3e1f58deb1bd0"
             ],
             "index": "pypi",
-            "version": "==3.0.3"
+            "version": "==3.0.2"
         },
         "docopt": {
             "hashes": [
@@ -1060,11 +1060,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:15136a251127da2d2e77ac7a1bc231eb504654f7e3346d93613a13f2e2787535",
-                "sha256:1c39d42bda4cb89f7fdcad52b6762e3c309ec8f8715b27c684176b7d71283242"
+                "sha256:e5fd0a713141a4a105412233c63dc4e17ba0090c8e8334594ac790ec97792330",
+                "sha256:f106dee1b506dee5102cc3f3e9e68137bbad6d47b616be7991714b0c62204251"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==67.5.1"
+            "version": "==67.4.0"
         },
         "sgmllib3k": {
             "hashes": [
@@ -1404,11 +1404,11 @@
         },
         "faker": {
             "hashes": [
-                "sha256:51f37ff9df710159d6d736d0ba1c75e063430a8c806b91334d7794305b5a6114",
-                "sha256:5aaa16fa9cfde7d117eef70b6b293a705021e57158f3fa6b44ed1b70202d2065"
+                "sha256:7b225dd6bc33405188f33f77c990bd08057f5c512042f7e0966e026c633ec646",
+                "sha256:fdd9cc16cd7e0d8dfcd2bb19d80c1bca5ce52d79690f93bfbb13916d7ed1cb2e"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==17.6.0"
+            "version": "==17.4.0"
         },
         "idna": {
             "hashes": [
