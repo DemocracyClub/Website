@@ -43,14 +43,7 @@ New posts are created at `/admin/hermes/post`.
 Blog posts now include tags which correspond to projects, such as
 `representatives`. 
 ## Staging environment
-Deploy to https://stage.democracyclub.org.uk to test/view edits
-Once you have pushed your latest changes to your branch:
-
-`git fetch origin` to get access to the development branch 
-`git checkout development`
-`git rebase master`
-`git merge [YOUR BRANCH NAME]`
-`git push origin development`
+Add your branch to the staging env on .circleci/config to deploy to https://stage.democracyclub.org.uk and test/view edits
 
 ## DC Dependencies
 - `[dc_django_utils]()` is the source code for basic HTML structure, forms
