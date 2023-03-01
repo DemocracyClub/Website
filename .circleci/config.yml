@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@3.1.0
   aws-cli: circleci/aws-cli@3.1
+  slack: circleci/slack@4.1
 
 jobs:
   install_and_update_dependencies:
@@ -125,6 +126,11 @@ jobs:
             sentry-cli releases --org democracy-club-gp new $CIRCLE_SHA1 --project dc-website
             sentry-cli releases --org democracy-club-gp set-commits --auto $CIRCLE_SHA1
             sentry-cli releases --org democracy-club-gp finalize $CIRCLE_SHA1
+      # In the event the deployment has failed, alert the dev team
+      - slack/notify:
+            event: fail
+            template: basic_fail_1
+            channel: $SLACK_DEFAULT_CHANNEL
 workflows:
   version: 2
   test_build_deploy:
@@ -141,12 +147,13 @@ workflows:
           dc-environment: staging
           requires:
             - sam_build
-          context: [ deployment-staging-dc-website ]
+          context: [ deployment-staging-dc-website, slack-secrets ]
           filters: { branches: { only: [ main, master, development ] } }
       - sam_deploy:
           name: sam_deploy_production
           dc-environment: production
           requires:
             - sam_deploy_staging
-          context: [ deployment-production-dc-website ]
+          context: [ deployment-production-dc-website, slack-secrets  ]
           filters: { branches: { only: [ main, master ] } }
+  
