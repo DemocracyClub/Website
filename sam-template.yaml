@@ -110,6 +110,7 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+      ReservedConcurrentExecutions: 1
       Events:
         HTTPRequests:
           Type: Api
