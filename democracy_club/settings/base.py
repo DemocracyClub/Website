@@ -240,10 +240,14 @@ def setup_sentry(environment=None):
     release = os.environ.get("GIT_HASH", "unknown")
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
+    from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
 
     sentry_sdk.init(
         dsn=SENTRY_DSN,
-        integrations=[DjangoIntegration()],
+        integrations=[
+            AwsLambdaIntegration(),
+            DjangoIntegration()
+        ],
         traces_sample_rate=0,
         environment=environment,
         # If you wish to associate users to errors (assuming you are using
