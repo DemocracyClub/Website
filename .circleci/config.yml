@@ -18,9 +18,13 @@ jobs:
       - run: pipenv install --dev
       - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
       - run: make lambda-layers/DependenciesLayer/requirements.txt
+      - run: pipenv run collectstatic
       - persist_to_workspace:
           root: ~/repo/
-          paths: [ lambda-layers/DependenciesLayer/requirements.txt ]
+          paths: [
+            lambda-layers/DependenciesLayer/requirements.txt,
+            democracy_club/static_files/,
+          ]
       - save_cache:
           when: on_success
           paths:
@@ -72,8 +76,7 @@ jobs:
           at: ~/repo/
       - run: pip install --upgrade pip
       - run: pip install -r deploy-requirements.txt
-      - run: pip install -r lambda-layers/DependenciesLayer/requirements.txt
-      - run: make collectstatic
+
       - run: sam build ${DASH_DASH_DEBUG} --template-file sam-template.yaml
       - persist_to_workspace:
           root: ~/repo/
