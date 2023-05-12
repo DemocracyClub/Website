@@ -1,0 +1,2 @@
+aws-sam-cli==1.83.0
+urllib3<2

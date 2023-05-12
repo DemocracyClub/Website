@@ -71,7 +71,7 @@ jobs:
       - attach_workspace:
           at: ~/repo/
       - run: pip install --upgrade pip
-      - run: pip install aws-sam-cli==1.60.0
+      - run: pip install -r deploy-requirements.txt
       - run: pip install -r lambda-layers/DependenciesLayer/requirements.txt
       - run: make collectstatic
       - run: sam build ${DASH_DASH_DEBUG} --template-file sam-template.yaml
@@ -99,8 +99,7 @@ jobs:
           keys:
             - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
-      - run: pip install aws-sam-cli==1.65.0
-      - run: pip install cryptography==38.0.4
+      - run: pip install deploy-requirements.txt
 
       - run:
           name: "pipenv run sam deploy # App: Lambda + API Gateway"
@@ -156,4 +155,3 @@ workflows:
             - sam_deploy_staging
           context: [ deployment-production-dc-website, slack-secrets  ]
           filters: { branches: { only: [ main, master ] } }
-  
