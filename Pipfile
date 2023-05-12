@@ -49,6 +49,7 @@ python_version = "3.8"
 black = "black ."
 black-check = "black --check ."
 pytest = "pytest"
+collectstatic = "python manage.py collectstatic --noinput --clear"
 
 [pipenv]
 allow_prereleases = true
