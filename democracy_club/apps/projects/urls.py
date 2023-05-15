@@ -60,7 +60,7 @@ urlpatterns = [
         name="polling_data_upload",
     ),
     path(
-        "polling-stations/techincal/",
+        "polling-stations/technical/",
         RedirectView.as_view(
             url=reverse_lazy("projects:polling_technical_explainer")
         ),
