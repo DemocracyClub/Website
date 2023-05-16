@@ -54,6 +54,8 @@ STATICFILES_DIRS = (root("assets"),)
 
 SECRET_KEY = "CHANGE THIS!!!"
 
+EMAIL_SIGNUP_BACKEND = "remote_db"
+
 MIDDLEWARE = (
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
