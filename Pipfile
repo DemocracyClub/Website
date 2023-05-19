@@ -8,9 +8,7 @@ django-cors-headers = "==3.13.0"
 django-extensions = "==3.2.1"
 django-localflavor = "==3.1"
 django-model-utils = "==4.3.1"
-django-ratelimit = "==3.0.1"
 django-storages = "==1.13.1"
-djangorestframework = "==3.14.0"
 djhtml = "*"
 aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"}
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.1.6.tar.gz"}
@@ -26,15 +24,7 @@ Django = "==4.1.7"
 Pillow = "==9.3.0"
 Markdown = "==3.3.7"
 feedparser = "==6.0.10"
-docutils = "==0.19"
 pytz = "==2022.6"
-regex = "==2022.10.31 "
-textile = "==4.0.2"
-mkdocs = "==1.4.2"
-Flask = "==2.1.0"
-black = "==22.10.0"
-pre-commit = "*"
-pyOpenSSL = "23.0.0"
 
 [dev-packages]
 black = "==22.10.0"
@@ -50,6 +40,7 @@ model-mommy = "*"
 ipdb = "*"
 factory-boy = "*"
 wheel = "==0.38.4"
+pre-commit = "*"
 
 [requires]
 python_version = "3.8"
@@ -58,6 +49,7 @@ python_version = "3.8"
 black = "black ."
 black-check = "black --check ."
 pytest = "pytest"
+collectstatic = "python manage.py collectstatic --noinput --clear"
 
 [pipenv]
 allow_prereleases = true
