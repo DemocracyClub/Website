@@ -102,7 +102,7 @@ jobs:
           keys:
             - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
-      - run: pip install deploy-requirements.txt
+      - run: pip install -r deploy-requirements.txt
 
       - run:
           name: "pipenv run sam deploy # App: Lambda + API Gateway"
