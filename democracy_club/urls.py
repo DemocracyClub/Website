@@ -18,6 +18,11 @@ admin.autodiscover()
 handler500 = "dc_utils.urls.dc_server_error"
 
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+    return division_by_zero
+
+
 urlpatterns = [
     # Uncomment the next line to enable the admin:
     path("admin/", admin.site.urls),
@@ -134,6 +139,7 @@ urlpatterns = [
         "mailing_list/",
         include(("mailing_list.urls", "dc_signup_form")),
     ),
+    path("sentry-debug/", trigger_error),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Tuple of URLs to redirect to. Maintained for backwards compatibility / old links
