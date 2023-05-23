@@ -110,6 +110,7 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+          SENDGRID_API_KEY: !Ref AppSendgridAPIKey
       ReservedConcurrentExecutions: 1
       Events:
         HTTPRequests:
@@ -147,6 +148,7 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+          SENDGRID_API_KEY: !Ref AppSendgridAPIKey
       Events:
         SyncToSendgrid:
           Type: Schedule
