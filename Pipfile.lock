@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b849d128e5a3e0f1095491df33246a32ef3fa3acd8d330f019e2318297cebbc7"
+            "sha256": "64439466cc4177799c8ec37399a2d26ef50d6a2294df0430046ad7c8f9fba737"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -157,11 +157,11 @@
             "version": "==2.1.6"
         },
         "dc-signup-form": {
-            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.4.tar.gz",
+            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.1.6.tar.gz",
             "hashes": [
-                "sha256:53ae6b7ec2693bc321af0f22a6679cb823f1f208c0c6cc9109c2b229c1823c00"
+                "sha256:c6644b371a0169661b365ca711eb5af9a7c3945fb2ebf5e67c534f4fc6a80e37"
             ],
-            "version": "==2.1.4"
+            "version": "==2.1.6"
         },
         "django": {
             "hashes": [
@@ -525,11 +525,11 @@
         },
         "requests": {
             "hashes": [
-                "sha256:10e94cc4f3121ee6da529d358cdaeaff2f1c409cd377dbc72b825852f2f7e294",
-                "sha256:239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+                "sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f",
+                "sha256:942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2.30.0"
+            "version": "==2.31.0"
         },
         "sentry-sdk": {
             "hashes": [
@@ -1265,11 +1265,11 @@
         },
         "typing-extensions": {
             "hashes": [
-                "sha256:5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb",
-                "sha256:fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"
+                "sha256:6ad00b63f849b7dcc313b70b6b304ed67b2b2963b3098a33efe18056b1a9a223",
+                "sha256:ff6b238610c747e44c268aa4bb23c8c735d665a63726df3f9431ce707f2aa768"
             ],
             "markers": "python_version < '3.10'",
-            "version": "==4.5.0"
+            "version": "==4.6.0"
         },
         "vcrpy": {
             "hashes": [
