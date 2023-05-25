@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "24d29984abff0b36e213ddfe65e4962bd1273ace451050e3c430a159b668c276"
+            "sha256": "5b763edc5db44e5d48f3d6ac9445c8e6c82370af535e4810b8a18c9130a1fa17"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -139,7 +139,7 @@
                 "sha256:f8303414c7b03f794347ad062c0516cee0e15f7a612abd0ce1e25caf6ceb47df",
                 "sha256:fca62a8301b605b954ad2e9c3666f9d97f63872aa4efcae5492baca2056b74ab"
             ],
-            "markers": "python_full_version >= '3.7.0'",
+            "markers": "python_version >= '3.7'",
             "version": "==3.1.0"
         },
         "dc-design-system": {
@@ -189,11 +189,11 @@
         },
         "django-localflavor": {
             "hashes": [
-                "sha256:6593865dc671333b3edc88e729e6d384d00b6db7891ef5d3a65db831a40050d2",
-                "sha256:ac2fa377bbcba4cae95e97077d9e77c7f22b3d93e4845e2e133ba7e664043a44"
+                "sha256:11859e522dba74aa6dde5a659242b1fbc5efb4dea08e9b77315402bdeca5194e",
+                "sha256:7a5b1df03ca8e10df9d1b3c2e4314e43383067868183cdf41ab4e7a973694a8b"
             ],
             "index": "pypi",
-            "version": "==3.1"
+            "version": "==4.0"
         },
         "django-model-utils": {
             "hashes": [
@@ -608,14 +608,6 @@
         }
     },
     "develop": {
-        "appnope": {
-            "hashes": [
-                "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24",
-                "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"
-            ],
-            "markers": "sys_platform == 'darwin'",
-            "version": "==0.1.3"
-        },
         "asgiref": {
             "hashes": [
                 "sha256:33958cb2e4b3cd8b1b06ef295bd8605cde65b11df51d3beab39e2e149a610ab3",
@@ -1084,7 +1076,7 @@
                 "sha256:23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b",
                 "sha256:45ea77a2f7c60418850331366c81cf6b5b9cf4c7fd34616f733c5427e6abbb1f"
             ],
-            "markers": "python_full_version >= '3.7.0'",
+            "markers": "python_version >= '3.7'",
             "version": "==3.0.38"
         },
         "ptyprocess": {
