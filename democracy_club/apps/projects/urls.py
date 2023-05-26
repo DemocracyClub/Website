@@ -37,7 +37,7 @@ urlpatterns = [
     ),
     path(
         "polling-stations/technical/",
-        RedirectView.as_view(url=reverse_lazy("polling_data_upload")),
+        RedirectView.as_view(url=reverse_lazy("projects:polling_data_upload")),
         name="polling_technical_explainer",
     ),
     path(
@@ -58,12 +58,6 @@ urlpatterns = [
             template_name="projects/polling-stations/upload_data.html"
         ),
         name="polling_data_upload",
-    ),
-    path(
-        "polling-stations/technical/",
-        RedirectView.as_view(
-            url=reverse_lazy("projects:polling_technical_explainer")
-        ),
     ),
     path(
         "election-ids/reference/",
