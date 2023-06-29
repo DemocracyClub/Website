@@ -1,7 +1,8 @@
 import re
+
 import pytest
-from django.test import TestCase
 from dc_utils.tests.helpers import validate_html
+from django.test import TestCase
 from django.urls import reverse
 
 
