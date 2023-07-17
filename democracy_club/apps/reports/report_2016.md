@@ -1,7 +1,13 @@
 {% load static %}
 
-# Towards better elections
-## Report on Democracy Club’s work on the May 2016 elections and the future of digital services for democracy
+<hgroup markdown="1">
+
+#  Towards better elections
+
+<p class="ds-h2">Report on Democracy Club’s work on the May 2016 elections and 
+the 
+future of digital services for democracy</p>
+</hgroup>
 
 Elections took place across the UK in May 2016: the most varied set of elections seen here for decades. Everyone had a vote in at least one election.
 

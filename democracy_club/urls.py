@@ -111,23 +111,7 @@ urlpatterns = [
         TemplateView.as_view(template_name="donate.html"),
         name="donate",
     ),
-    path("report_2016/", include("report_2016.urls", namespace="report_2016")),
-    path("report_2017/", include("report_2017.urls", namespace="report_2017")),
-    path("report_2018/", include("report_2018.urls", namespace="report_2018")),
-    path("report_2019/", include("report_2019.urls", namespace="report_2019")),
-    path(
-        "report_2019_general_election/",
-        include(
-            "report_2019_general_election.urls",
-            namespace="report_2019_general_election",
-        ),
-    ),
-    path("report_2021/", include("report_2021.urls", namespace="report_2021")),
-    path("report_2022/", include("report_2022.urls", namespace="report_2022")),
-    path(
-        "reports/whos_missing/",
-        include("report_whos_missing.urls", namespace="report_whos_missing"),
-    ),
+    path("", include("reports.urls", namespace="reports")),
     path(
         "wheredoivote_user_feedback/",
         include(
