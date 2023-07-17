@@ -1,9 +1,17 @@
 {% load static %}
 
-### This is an HTML version of the [report pubished on the ODI website](https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/)
+<hgroup markdown="1">
+
+# Registers and collaboration: making lists we can trust
+
+This is an HTML version of the [report 
+pubished on 
+the ODI website](https://theodi.org/article/registers-and-collaboration-making-lists-we-can-trust-report/)
 
 <em>The CC BY-SA licence applies to this HTML version, as the original. For other formats, see the ODI website.</em>
-# About
+
+</hgroup>
+
 
 This report is about registers or lists, and ways of publishing and maintaining them. We examine models of stewarding registers and review case studies of different registers. We argue that transparency is necessary, and collaboration desirable, in managing registers that are trusted by their users.
 

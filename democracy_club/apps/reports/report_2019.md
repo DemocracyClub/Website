@@ -634,7 +634,7 @@ new vision and mission statement above. There were no changes to the membership 
 We believe digital information on elections is likely to lead to outcomes such as a sustainable increase in:
 
 * meeting civic expectations of access to information on the democratic process;
-* # of citizens informed about elections and the democratic process,
+* number of citizens informed about elections and the democratic process,
 * engagement with candidates or the elections process,
 * engagement by groups normally less likely to take part in democratic process,
 * turnout at elections, and

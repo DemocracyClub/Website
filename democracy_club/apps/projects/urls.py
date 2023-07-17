@@ -21,13 +21,7 @@ urlpatterns = [
         TemplateView.as_view(template_name="projects/reports_home.html"),
         name="reports",
     ),
-    path(
-        "reports/registers/",
-        MarkdownFileView.as_view(
-            markdown_file="apps/projects/templates/projects/report_odi_registers.md"
-        ),
-        name="reports_registers",
-    ),
+
     path(
         "polling-stations/",
         TemplateView.as_view(

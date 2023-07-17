@@ -39,7 +39,7 @@ citizens’ needs. We judge those needs based on publicly available research, fe
 data.
 
 This report covers our 2017/2018 ‘election year’. This is covers the 11 months after the
-[2017 general election]({% url "report_2017:report_2017" %}) up to
+[2017 general election]({% url "reports:report_2017" %}) up to
 and including the local elections on 3 May 2018. It aims to explain the effects of the club’s work.
 
 # Summary
