@@ -43,9 +43,7 @@ class TestHtml:
             reverse("reports:report_2017"),
             reverse("reports:report_2018"),
             reverse("reports:report_2019"),
-            reverse(
-                "reports:report_2019_general_election"
-            ),
+            reverse("reports:report_2019_general_election"),
             reverse("reports:report_2021"),
             reverse("reports:report_2022"),
             reverse("reports:report_2023"),

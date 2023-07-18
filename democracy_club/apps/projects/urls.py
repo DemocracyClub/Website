@@ -21,7 +21,6 @@ urlpatterns = [
         TemplateView.as_view(template_name="projects/reports_home.html"),
         name="reports",
     ),
-
     path(
         "polling-stations/",
         TemplateView.as_view(

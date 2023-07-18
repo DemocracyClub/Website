@@ -48,7 +48,9 @@ urlpatterns = [
     ),
     path(
         r"reports/whos_missing/",
-        MarkdownFileView.as_view(markdown_file="apps/reports/report_whos_missing.md"),
+        MarkdownFileView.as_view(
+            markdown_file="apps/reports/report_whos_missing.md"
+        ),
         name="report_whos_missing",
     ),
     path(
