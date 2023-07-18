@@ -53,7 +53,6 @@ def management_handler(event, context):
 
     django.setup()
 
-    print(f"Calling {cmd} with args {args}")
     call_command(cmd, *args)
 
     arg_str = " ".join(args)
