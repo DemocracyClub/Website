@@ -195,7 +195,7 @@ figure figcaption {
 }
 
 article > ol, article > ul {
-  @extend .ds-stack-smaller;
+  @extend .ds-stack-smallest;
 }
 
 .ds-cta-card {
