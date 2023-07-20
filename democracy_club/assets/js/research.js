@@ -143,7 +143,7 @@ this.d.container.hide().remove();this.d.overlay.hide();this.d.iframe&&this.d.ifr
       $.modal.close();
 
       var CONTAINER_CSS = {
-        'background-image':"url('https://democracyclub.org.uk/static/images/logo.png')",
+        'background-image':"url('https://democracyclub.org.uk/static/images/logo_icon.png')",
         'background-repeat': 'no-repeat',
         'background-position': '2% 1em',
         'padding-left': '150px',
