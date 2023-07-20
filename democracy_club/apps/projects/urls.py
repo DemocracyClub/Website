@@ -1,7 +1,6 @@
 from django.urls import path
 from django.urls import reverse_lazy
 from django.views.generic import RedirectView, TemplateView
-from core.report_helpers.views import MarkdownFileView
 
 app_name = "projects"
 
