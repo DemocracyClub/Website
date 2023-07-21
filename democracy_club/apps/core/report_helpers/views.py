@@ -10,7 +10,6 @@ class MarkdownFileView(TemplateView):
 
     def markdown_content(self):
         path = f"{settings.PROJECT_ROOT}/{self.markdown_file}"
-        print(path)
         return open(path).read()
 
     def get_context_data(self, **kwargs):

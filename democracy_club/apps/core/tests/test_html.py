@@ -38,17 +38,16 @@ class TestHtml:
             reverse("projects:polling_embed_code"),
             reverse("projects:polling_data_upload"),
             reverse("projects:reports"),
-            reverse("projects:reports_registers"),
-            reverse("report_2016:report_2016"),
-            reverse("report_2017:report_2017"),
-            reverse("report_2018:report_2018"),
-            reverse("report_2019:report_2019"),
-            reverse(
-                "report_2019_general_election:report_2019_general_election"
-            ),
-            reverse("report_2021:report_2021"),
-            reverse("report_2022:report_2022"),
-            reverse("report_whos_missing:report_whos_missing"),
+            reverse("reports:reports_registers"),
+            reverse("reports:report_2016"),
+            reverse("reports:report_2017"),
+            reverse("reports:report_2018"),
+            reverse("reports:report_2019"),
+            reverse("reports:report_2019_general_election"),
+            reverse("reports:report_2021"),
+            reverse("reports:report_2022"),
+            reverse("reports:report_2023"),
+            reverse("reports:report_whos_missing"),
             reverse("wheredoivote_user_feedback:wheredoivote_user_feedback"),
             reverse(
                 "wheredoivote_user_feedback:wheredoivote_user_feedback_2017"

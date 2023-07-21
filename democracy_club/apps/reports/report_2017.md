@@ -1,8 +1,16 @@
 {% load static %}---
 hero_image: {% static 'report_2017/images/bridge.jpg' %}
 ---
-# Towards better elections
-## Report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy
+
+
+<hgroup markdown="1">
+
+#  Towards better elections
+
+<p class="ds-h2">Report on Democracy Club’s work on the 2017 elections and the future of digital services for democracy</p>
+</hgroup>
+
+
 
 <img src="{% static 'report_2017/images/bridge.jpg' %}" alt="">
 

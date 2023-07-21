@@ -1,13 +1,19 @@
 {% load markdown_filter %}
 
+<hgroup markdown="1">
 
 # Who’s missing, and why?
 
 
+<p class="ds-h2">Underrepresentation in voter registration, candidacy, 
+informedness 
+and 
+turnout</p>
 
-**Underrepresentation in voter registration, candidacy, informedness and turnout**
+<p class="ds-h4">Joe Mitchell, Democracy Club, December 2018</p>
 
-**Joe Mitchell, Democracy Club, December 2018**
+</hgroup>
+
 
 
 *Draft: This report is in draft form. We welcome comments, questions and references
@@ -743,4 +749,3 @@ McInnes, Rod, [GE2017: Marginal seats and turnout](https://commonslibrary.parlia
 National Centre for Social Research (NatCen), _British Social Attitudes 35_, 2018.
 
 Runymede Trust, _Diversity and Democracy: Race and the 2015 General Election_, June 2015
-

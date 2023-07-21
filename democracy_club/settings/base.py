@@ -92,14 +92,7 @@ PROJECT_APPS = (
     "core.apps.CoreConfig",
     "hermes",
     "typogrify",
-    "report_2016",
-    "report_2017",
-    "report_2018",
-    "report_2019",
-    "report_2019_general_election",
-    "report_2021",
-    "report_2022",
-    "report_whos_missing",
+    "reports",
     "wheredoivote_user_feedback",
     "mailing_list",
     "projects",
@@ -200,7 +193,7 @@ MARKDOWN_DEUX_STYLES = {
     },
 }
 
-REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta"]
+REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta", "md_in_html", "footnotes"]
 
 
 def blog_markdown(value):
