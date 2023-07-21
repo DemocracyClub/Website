@@ -11,9 +11,27 @@ extend-select = [
     "Q003",
     "RET",
 ]
+extend-exclude = ["democracy_club/settings/local.py"]
 
 [tool.coverage.report]
 exclude_lines = [
     "if __name__ == .__main__.:",
     "@abstractmethod"
+]
+
+[tool.pytest.ini_options]
+norecursedirs =[
+    "democracy_club/static_root",
+    "src",
+    ".aws-sam",
+    ".ruff-cache",
+]
+DJANGO_SETTINGS_MODULE = "democracy_club.settings.testing"
+addopts =[
+    "--ignore=*/__pycache__",
+    "--ignore=.*",
+    "--ignore=.download-cache",
+    "--ignore=democracy_club/settings/local.py",
+    "--ignore=lib",
+    "--ruff",
 ]
