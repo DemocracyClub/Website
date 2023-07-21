@@ -36,6 +36,13 @@ Our work was rewarded with more than two million postcode searches from the UK p
 
 > “I was feeling apathetic and not going to vote now I feel I’ve got to make the effort”
 
+<figure>
+<img src="{% static 'report_2023/images/bbc-widget.png' %}" alt="BBC Northern Ireland election lookup">
+<figcaption>
+  BBC Northern Ireland election lookup
+</figcaption>
+</figure>
+
 ## Data Collection
 
 ### Polling Stations
