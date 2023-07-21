@@ -7,11 +7,17 @@ import dc_design_system
 
 # PATH vars
 
+
 def here(*x):
     return join(abspath(dirname(__file__)), *x)
+
+
 PROJECT_ROOT = here("..")
+
+
 def root(*x):
     return join(abspath(PROJECT_ROOT), *x)
+
 
 sys.path.insert(0, root("apps"))
 

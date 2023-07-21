@@ -26,5 +26,4 @@ path.append(SITE_ROOT)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "democracy_club.settings")
 
 
-
 application = get_wsgi_application()

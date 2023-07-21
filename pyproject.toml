@@ -34,4 +34,5 @@ addopts =[
     "--ignore=democracy_club/settings/local.py",
     "--ignore=lib",
     "--ruff",
+    "--black",
 ]
