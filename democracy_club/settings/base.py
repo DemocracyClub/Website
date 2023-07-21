@@ -1,13 +1,17 @@
-import sys
+import contextlib
 import os
-from os.path import join, abspath, dirname
+import sys
+from os.path import abspath, dirname, join
+
 import dc_design_system
 
 # PATH vars
 
-here = lambda *x: join(abspath(dirname(__file__)), *x)
+def here(*x):
+    return join(abspath(dirname(__file__)), *x)
 PROJECT_ROOT = here("..")
-root = lambda *x: join(abspath(PROJECT_ROOT), *x)
+def root(*x):
+    return join(abspath(PROJECT_ROOT), *x)
 
 sys.path.insert(0, root("apps"))
 
@@ -102,8 +106,8 @@ PROJECT_APPS = (
 INSTALLED_APPS += PROJECT_APPS
 
 from dc_utils.settings.pipeline import *  # noqa
-from dc_utils.settings.pipeline import get_pipeline_settings
-from dc_utils.settings.whitenoise import whitenoise_add_middleware
+from dc_utils.settings.pipeline import get_pipeline_settings  # noqa
+from dc_utils.settings.whitenoise import whitenoise_add_middleware  # noqa
 
 MIDDLEWARE = whitenoise_add_middleware(MIDDLEWARE)
 
@@ -234,8 +238,8 @@ def setup_sentry(environment=None):
         environment = os.environ.get("SAM_LAMBDA_CONFIG_ENV", "staging")
     release = os.environ.get("GIT_HASH", "unknown")
     import sentry_sdk
-    from sentry_sdk.integrations.django import DjangoIntegration
     from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
+    from sentry_sdk.integrations.django import DjangoIntegration
 
     sentry_sdk.init(
         dsn=SENTRY_DSN,
@@ -250,9 +254,5 @@ def setup_sentry(environment=None):
 
 
 # .local.py overrides all the common settings.
-import os
-
-try:
+with contextlib.suppress(ImportError):
     from .local import *  # noqa
-except ImportError:
-    pass

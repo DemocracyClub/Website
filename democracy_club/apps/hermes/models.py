@@ -1,21 +1,15 @@
-import os
 import operator
+import os
 from functools import reduce
 
-from django.contrib.postgres.fields import ArrayField
-
-try:
-    from itertools import ifilter as filter
-except:
-    pass  # Must be python 3
-
 from django.conf import settings as django_settings
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
 from django.urls import reverse
 from django.utils.text import Truncator, slugify
 from django.utils.translation import gettext as _
-from django.db.models.signals import pre_delete
-from django.dispatch.dispatcher import receiver
 
 from . import settings
 
@@ -224,12 +218,11 @@ class Post(TimestampedModel):
     def short(self):
         if self.summary:
             return self.rendered_summary
-        else:
-            return Truncator(self.rendered).words(
-                settings.HERMES_SHORT_TRUNCATE_WORDS,
-                truncate="…",
-                html=True,
-            )
+        return Truncator(self.rendered).words(
+            settings.HERMES_SHORT_TRUNCATE_WORDS,
+            truncate="…",
+            html=True,
+        )
 
     @property
     def rendered_summary(self):
@@ -243,8 +236,7 @@ class Post(TimestampedModel):
         attr_value = getattr(self, attr_name)
         if settings.MARKUP_RENDERER:
             return settings.MARKUP_RENDERER(attr_value)
-        else:
-            return attr_value
+        return attr_value
 
     @property
     def reading_time(self):

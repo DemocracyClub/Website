@@ -1,11 +1,11 @@
 from django.urls import re_path
 
+from .feeds import LatestPostFeed
 from .views import (
     ArchivePostListView,
     PostDetail,
     PostListView,
 )
-from .feeds import LatestPostFeed
 
 urlpatterns = [
     re_path(

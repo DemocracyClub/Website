@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from hermes.models import Post, Category
+from hermes.models import Category, Post
 
 
 class PostAdmin(admin.ModelAdmin):

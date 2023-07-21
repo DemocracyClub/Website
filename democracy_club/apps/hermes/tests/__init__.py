@@ -1,7 +1,6 @@
 from django import test
-from django.urls import reverse
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 from hermes import models
 
 

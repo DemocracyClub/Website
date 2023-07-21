@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.utils.feedgenerator import Atom1Feed
 
+from . import renderers
+
 SYNDICATION_FEED_TITLE = getattr(
     settings, "SYNDICATION_FEED_TITLE", "Democracy Club Blog"
 )
@@ -16,9 +18,5 @@ HERMES_SHORT_TRUNCATE_WORDS = getattr(
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-try:
-    from . import renderers
 
-    MARKUP_RENDERER = getattr(settings, "MARKUP_RENDERER", renderers.markdown)
-except:
-    MARKUP_RENDERER = getattr(settings, "MARKUP_RENDERER", None)
+MARKUP_RENDERER = getattr(settings, "MARKUP_RENDERER", renderers.markdown)

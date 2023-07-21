@@ -1,7 +1,7 @@
 import feedparser
+from hermes import models
 
 from . import HermesTestCase
-from hermes import models
 
 
 class LatestPostFeedTestCase(HermesTestCase):
