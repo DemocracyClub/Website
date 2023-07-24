@@ -1,5 +1,5 @@
-from django.urls import path
 from core.report_helpers.views import MarkdownFileView
+from django.urls import path
 
 app_name = "reports"
 

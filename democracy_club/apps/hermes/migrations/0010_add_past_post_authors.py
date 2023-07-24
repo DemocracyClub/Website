@@ -1,6 +1,7 @@
+import csv
+
 from django.conf import settings
 from django.db import migrations
-import csv
 
 
 def get_post_by_slug(Post, slug):

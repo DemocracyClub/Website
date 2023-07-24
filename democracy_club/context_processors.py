@@ -9,5 +9,4 @@ def days_to_election(request):
         days = delta.days
 
         return {"days_to_election": days + 1}
-    else:
-        return {}
+    return {}

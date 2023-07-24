@@ -1,6 +1,5 @@
-from django.core.management import BaseCommand
-
 from core.cloudfront import invalidate_paths
+from django.core.management import BaseCommand
 
 
 class Command(BaseCommand):

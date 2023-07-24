@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from django.conf import settings
-from django.urls import include, path
-from django.urls import reverse_lazy
-from django.conf.urls.static import static
-from django.views.generic import TemplateView, RedirectView
-from django.contrib.auth import views as auth_views
-
 from core.views import HomeView
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-
+from django.contrib.auth import views as auth_views
+from django.urls import include, path, reverse_lazy
+from django.views.generic import RedirectView, TemplateView
 
 admin.autodiscover()
 
@@ -19,8 +16,7 @@ handler500 = "dc_utils.urls.dc_server_error"
 
 
 def trigger_error(request):
-    division_by_zero = 1 / 0
-    return division_by_zero
+    return 1 / 0
 
 
 urlpatterns = [

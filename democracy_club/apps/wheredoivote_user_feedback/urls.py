@@ -1,5 +1,5 @@
-from django.urls import re_path
 from core.report_helpers.views import MarkdownFileView
+from django.urls import re_path
 
 app_name = "report_wheredoivote_user_feedback"
 

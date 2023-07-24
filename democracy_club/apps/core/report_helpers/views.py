@@ -1,6 +1,6 @@
 import markdown
 from django.conf import settings
-from django.template import Template, RequestContext
+from django.template import RequestContext, Template
 from django.views.generic import TemplateView
 
 
@@ -10,7 +10,9 @@ class MarkdownFileView(TemplateView):
 
     def markdown_content(self):
         path = f"{settings.PROJECT_ROOT}/{self.markdown_file}"
-        return open(path).read()
+
+        with open(path) as f:
+            return f.read()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -32,3 +34,4 @@ class MarkdownFileView(TemplateView):
         hero_image = self.md.Meta.get("hero_image", None)
         if hero_image:
             return hero_image[0]
+        return None

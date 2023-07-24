@@ -1,9 +1,7 @@
+from core.cloudfront import invalidate_paths
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
 from hermes.models import Post
-
-from core.cloudfront import invalidate_paths
 
 
 @receiver(post_save, sender=Post)

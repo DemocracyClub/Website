@@ -1,8 +1,7 @@
 from django import template
+from hermes.models import Post
 
 register = template.Library()
-
-from hermes.models import Post
 
 
 def posts_for_tag(tag):

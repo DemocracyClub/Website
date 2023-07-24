@@ -1,10 +1,10 @@
 from django.contrib.syndication.views import Feed
-
 from hermes.models import Post
+
 from .settings import (
-    SYNDICATION_FEED_TITLE,
-    SYNDICATION_FEED_LINK,
     SYNDICATION_FEED_DESCRIPTION,
+    SYNDICATION_FEED_LINK,
+    SYNDICATION_FEED_TITLE,
     SYNDICATION_FEED_TYPE,
 )
 
@@ -41,12 +41,10 @@ class LatestPostFeed(Feed):
         ]
         if len(authors) == 1:
             return authors[0]
-        else:
-            ", ".join(authors)
+        return ", ".join(authors)
 
     def item_author_email(self, item):
         emails = [author.email for author in item.author.all()]
         if len(emails) == 1:
             return emails[0]
-        else:
-            "; ".join(emails)
+        return "; ".join(emails)

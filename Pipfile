@@ -33,8 +33,6 @@ vcrpy = "==4.2.1"
 pytest = "*"
 pytest-cov = "*"
 pytest-django = "*"
-pytest-flakes = "*"
-pytest-pep8 = "*"
 pytest-subtests = "*"
 mock = "*"
 model-mommy = "*"
@@ -42,13 +40,14 @@ ipdb = "*"
 factory-boy = "*"
 wheel = "==0.38.4"
 pre-commit = "*"
+ruff = "*"
+pytest-ruff = "*"
+pytest-black = "*"
 
 [requires]
 python_version = "3.8"
 
 [scripts]
-black = "black ."
-black-check = "black --check ."
 pytest = "pytest"
 collectstatic = "python manage.py collectstatic --noinput --clear"
 

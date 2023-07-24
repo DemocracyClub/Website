@@ -1,7 +1,7 @@
 import os
 
-from .base import setup_sentry
 from .base import *  # noqa
+from .base import setup_sentry
 
 if os.environ.get("APP_IS_BEHIND_CLOUDFRONT", False) in [
     True,

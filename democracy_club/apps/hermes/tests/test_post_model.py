@@ -1,6 +1,7 @@
-from . import HermesTestCase
-from .. import settings
 from hermes import models
+
+from .. import settings
+from . import HermesTestCase
 
 
 class PostTestCase(HermesTestCase):
