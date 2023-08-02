@@ -37,7 +37,7 @@ jobs:
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
-      - image: cimg/postgres:11.17
+      - image: cimg/postgres:12.15
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: democracy_club
