@@ -1,5 +1,6 @@
 [tool.black]
 line-length = 80
+extend-exclude = "democracy_club/settings/local.py"
 
 [tool.ruff]
 line-length = 80
