@@ -28,7 +28,7 @@ pytz = "==2022.6"
 urllib3 = "<2.0.0"
 
 [dev-packages]
-black = "==22.10.0"
+black = "==23.7.0"
 vcrpy = "==4.2.1"
 pytest = "*"
 pytest-cov = "*"
