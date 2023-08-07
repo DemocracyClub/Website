@@ -25,7 +25,7 @@ Pillow = "==10.0.0"
 Markdown = "==3.3.7"
 feedparser = "==6.0.10"
 pytz = "==2022.6"
-urllib3 = "<2.0.0"
+urllib3 = "<3.0.0"
 
 [dev-packages]
 black = "==22.10.0"
