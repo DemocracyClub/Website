@@ -223,8 +223,8 @@ Create enteries for each of:
 * AppPostgresHost
 * AppPostgresPassword
 * AppSecretKey
-* AppSendgridAPIKey
 * AppSentryDSN
+* AppEmailSignUpEventBridgeArn
 * AppStorageBucketName
 * CertificateArn
 * FQDN

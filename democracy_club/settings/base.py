@@ -64,7 +64,12 @@ STATICFILES_DIRS = (root("assets"),)
 
 SECRET_KEY = "CHANGE THIS!!!"
 
-EMAIL_SIGNUP_BACKEND = "local_db"
+EMAIL_SIGNUP_BACKEND = "event_bridge"
+EMAIL_SIGNUP_BACKEND_KWARGS = {
+    "source": "DC_WEBSITE",
+    "bus_arn": os.environ.get("EMAIL_SIGNUP_EVENT_BRIDGE_ARN"),
+}
+
 
 MIDDLEWARE = (
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -95,7 +100,6 @@ INSTALLED_APPS = (
     "pipeline",
     "sorl.thumbnail",
     "dc_signup_form",
-    "dc_signup_form.signup_server",
 )
 
 PROJECT_APPS = (
