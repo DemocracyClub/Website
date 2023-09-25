@@ -12,6 +12,7 @@ urlpatterns = [
                 template_name="base.html",
                 form_class=MailingListSignupForm,
                 backend=settings.EMAIL_SIGNUP_BACKEND,
+                backend_kwargs=settings.EMAIL_SIGNUP_BACKEND_KWARGS,
             )
         ),
         name="mailing_list_signup_view",
