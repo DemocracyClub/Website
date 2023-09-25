@@ -12,7 +12,7 @@ django-storages = "==1.13.1"
 djhtml = "*"
 aws-wsgi = {file = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"}
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.4.0.tar.gz"}
-dc-signup-form = {file = "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.2.0.tar.gz"}
+dc-signup-form = {file = "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.3.0.tar.gz"}
 dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.3.0.tar.gz"}
 django-typogrify = {file = "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz"}
 jsonfield = "==3.1.0"
