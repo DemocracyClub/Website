@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "619241e6925acabcbe03456ea38a496dd3a243248f5fac1601859b4cee6d9b16"
+            "sha256": "efbd3a501cefad432b9f300c5fa7fb0584f6aff2eb81a16807d88a94b08c9ee3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -25,11 +25,7 @@
             "version": "==3.7.2"
         },
         "aws-wsgi": {
-            "file": "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz",
-            "hashes": [
-                "sha256:0c1cd1856ca4ccaa40b3579a93318fb7b6a81d4022888d54dc17351592031995"
-            ],
-            "version": "==0.2.7"
+            "file": "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz"
         },
         "backports.zoneinfo": {
             "hashes": [
@@ -143,32 +139,20 @@
             "version": "==3.2.0"
         },
         "dc-design-system": {
-            "file": "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.3.0.tar.gz",
-            "hashes": [
-                "sha256:5f095913e70320f20c2529c1415dedd79468098002324ad38bad9bb67507429d"
-            ],
-            "version": "==0.3.0"
+            "file": "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.3.0.tar.gz"
         },
         "dc-django-utils": {
-            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.4.0.tar.gz",
-            "hashes": [
-                "sha256:4da94ada2d5dbd3b990174aefbecbaf637d9f9d4ae78d3242446b5f8324ec6d0"
-            ],
-            "version": "==2.4.0"
+            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.4.0.tar.gz"
         },
         "dc-signup-form": {
-            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.3.0.tar.gz",
-            "hashes": [
-                "sha256:0e1e6691f6d9c3bd7d64939c20368a4b005c14a3aae8ac75ebdab6deeb017102"
-            ],
-            "version": "==2.3.0"
+            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.3.0.tar.gz"
         },
         "django": {
             "hashes": [
                 "sha256:45a747e1c5b3d6df1b141b1481e193b033fd1fdbda3ff52677dc81afdaacbaed",
                 "sha256:f7c7852a5ac5a3da5a8d5b35cc6168f31b605971441798dac845f17ca8028039"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.2.3"
         },
         "django-cors-headers": {
@@ -177,6 +161,7 @@
                 "sha256:f9749c6410fe738278bc2b6ef17f05195bc7b251693c035752d8257026af024f"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.2.0"
         },
         "django-extensions": {
@@ -185,6 +170,7 @@
                 "sha256:9600b7562f79a92cbf1fde6403c04fee314608fefbb595502e34383ae8203401"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==3.2.3"
         },
         "django-localflavor": {
@@ -201,6 +187,7 @@
                 "sha256:8c0b0177bab909a8635b602d960daa67e80607aa5469217857271a60726d7a4b"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==4.3.1"
         },
         "django-pipeline": {
@@ -216,14 +203,11 @@
                 "sha256:b3d98ecc09f1b1627c2b2cf430964322ce4e08617dbf9b4236c16a32875a1e0b"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==1.13.1"
         },
         "django-typogrify": {
-            "file": "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz",
-            "hashes": [
-                "sha256:348e71ffabceeb23e000c4be39f0edf9f8b704fdb196fa173c85914ec6de9fcb"
-            ],
-            "version": "==1.3.3"
+            "file": "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz"
         },
         "djhtml": {
             "hashes": [
@@ -252,6 +236,7 @@
                 "sha256:79c257d526d13b944e965f6095700587f27388e50ea16fd245babe4dfae7024f"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==6.0.10"
         },
         "idna": {
@@ -290,6 +275,7 @@
                 "sha256:df857811587f252b97bafba42e02805e70a398a7a47870bc6358a0308dd689ed"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==3.1.0"
         },
         "libsass": {
@@ -308,7 +294,7 @@
                 "sha256:cbb516f16218e643d8e0a95b309f77eb118cb138d39a4f27851e6a63581db874",
                 "sha256:f5da449a6e1c989a4cea2631aa8ee67caa5a2ef855d551c88f9e309f4634c621"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==3.3.7"
         },
         "markdown-headdown": {
@@ -393,7 +379,7 @@
                 "sha256:f88a0b92277de8e3ca715a0d79d68dc82807457dae3ab8699c758f07c20b3c51",
                 "sha256:faaf07ea35355b01a35cb442dd950d8f1bb5b040a7787791a535de13db15ed90"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==10.0.0"
         },
         "pluggy": {
@@ -470,6 +456,7 @@
                 "sha256:ffe9dc0a884a8848075e576c1de0290d85a533a9f6e9c4e564f19adf8f6e54a7"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==2.9.6"
         },
         "pytest": {
@@ -543,6 +530,7 @@
                 "sha256:ec586724bea7dc8c53561ce18335ea641fcd0e560d6387b2353a2afdd06705a4"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==12.9.0"
         },
         "sqlparse": {
@@ -571,11 +559,12 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f",
-                "sha256:8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
+                "sha256:13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594",
+                "sha256:ef16afa8ba34a1f989db38e1dbbe0c302e4289a47856990d0682e374563ce35e"
             ],
             "index": "pypi",
-            "version": "==1.26.16"
+            "markers": "python_version >= '3.7'",
+            "version": "==2.0.5"
         },
         "whitenoise": {
             "hashes": [
@@ -672,6 +661,7 @@
                 "sha256:fba8a281e570adafb79f7755ac8721b6cf1bbf691186a287e990c7929c7692ff"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==22.10.0"
         },
         "cfgv": {
@@ -771,7 +761,7 @@
                 "sha256:45a747e1c5b3d6df1b141b1481e193b033fd1fdbda3ff52677dc81afdaacbaed",
                 "sha256:f7c7852a5ac5a3da5a8d5b35cc6168f31b605971441798dac845f17ca8028039"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.2.3"
         },
         "exceptiongroup": {
@@ -795,6 +785,7 @@
                 "sha256:bc76d97d1a65bbd9842a6d722882098eb549ec8ee1081f9fb2e8ff29f0c300f1"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==3.3.0"
         },
         "faker": {
@@ -843,6 +834,7 @@
                 "sha256:e3ac6018ef05126d442af680aad863006ec19d02290561ac88b8b1c0b0cfc726"
             ],
             "index": "pypi",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==0.13.13"
         },
         "ipython": {
@@ -875,6 +867,7 @@
                 "sha256:5e96aad5ccda4718e0a229ed94b2024df75cc2d55575ba5762d31f5767b8767d"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==5.1.0"
         },
         "model-mommy": {
@@ -1042,6 +1035,7 @@
                 "sha256:96d529a951f8b677f730a7212442027e8ba53f9b04d217c4c67dc56c393ad945"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==3.4.0"
         },
         "prompt-toolkit": {
@@ -1087,6 +1081,7 @@
                 "sha256:1d339b004f764d6cd0f06e690f6dd748df3d62e6fe1a692d6a5500ac2c5b75a5"
             ],
             "index": "pypi",
+            "markers": "python_version >= '2.7'",
             "version": "==0.3.12"
         },
         "pytest-cov": {
@@ -1095,6 +1090,7 @@
                 "sha256:6ba70b9e97e69fcc3fb45bfeab2d0a138fb65c4d0d6a41ef33983ad114be8c3a"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==4.1.0"
         },
         "pytest-django": {
@@ -1111,6 +1107,7 @@
                 "sha256:f599768ff3834d6b1d6d26b25a030a5b1dcc9cf187239bd9621a7f25f7d8fe46"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7' and python_version < '4.0'",
             "version": "==0.1.1"
         },
         "pytest-subtests": {
@@ -1119,6 +1116,7 @@
                 "sha256:51865c88457545f51fb72011942f0a3c6901ee9e24cbfb6d1b9dc1348bafbe37"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==0.11.0"
         },
         "python-dateutil": {
@@ -1206,6 +1204,7 @@
                 "sha256:fd17220611047de247b635596e3174f3d7f2becf63bd56301fc758778df9b629"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==0.0.291"
         },
         "setuptools": {
@@ -1277,6 +1276,7 @@
                 "sha256:efac3e2e0b2af7686f83a266518180af7a048619b2f696e7bad9520f5e2eac09"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==4.2.1"
         },
         "virtualenv": {
@@ -1300,6 +1300,7 @@
                 "sha256:b60533f3f5d530e971d6737ca6d58681ee434818fab630c83a734bb10c083ce8"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==0.38.4"
         },
         "wrapt": {
