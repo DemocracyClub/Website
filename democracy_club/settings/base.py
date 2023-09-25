@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     "pipeline",
     "sorl.thumbnail",
     "dc_signup_form",
+    "dc_signup_form.signup_server",
 )
 
 PROJECT_APPS = (
