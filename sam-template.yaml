@@ -128,31 +128,41 @@ Resources:
             Path: /
             Method: ANY
 
-  DCWebsiteManagementFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      FunctionName: DCWebsiteManagementFunction
-      Timeout: 60
-      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
-      CodeUri: .
-      Handler: democracy_club.lambda_manage.management_handler
-      Layers:
-        - !Ref DependenciesLayer
-      Runtime: python3.12
-      MemorySize: 512
-      Environment:
-        Variables:
-          SECRET_KEY: !Ref AppSecretKey
-          SENTRY_DSN: !Ref AppSentryDSN
-          DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
-          APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
-          GIT_HASH: !Ref GitHash
-          DATABASE_HOST: !Ref AppPostgresHost
-          POSTGRES_DATABASE_NAME: !Ref AppPostgresDatabaseName
-          DATABASE_PASS: !Ref AppPostgresPassword
-          FQDN: !Ref FQDN
-          STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
 
+# Add this back in if we have any management commands that we want to run on a cron
+#  DCWebsiteManagementFunction:
+#    Type: AWS::Serverless::Function
+#    Properties:
+#      FunctionName: DCWebsiteManagementFunction
+#      Timeout: 60
+#      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
+#      CodeUri: .
+#      Handler: democracy_club.lambda_awsgi.management_handler
+#      Layers:
+#        - !Ref DependenciesLayer
+#      Runtime: python3.8
+#      MemorySize: 512
+#      Environment:
+#        Variables:
+#          SECRET_KEY: !Ref AppSecretKey
+#          SENTRY_DSN: !Ref AppSentryDSN
+#          DJANGO_SETTINGS_MODULE: !Ref AppDjangoSettingsModule
+#          APP_IS_BEHIND_CLOUDFRONT: !Ref AppIsBehindCloudFront
+#          GIT_HASH: !Ref GitHash
+#          DATABASE_HOST: !Ref AppPostgresHost
+#          POSTGRES_DATABASE_NAME: !Ref AppPostgresDatabaseName
+#          DATABASE_PASS: !Ref AppPostgresPassword
+#          FQDN: !Ref FQDN
+#          STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+#          SENDGRID_API_KEY: !Ref AppSendgridAPIKey
+#      Events:
+#        SyncToSendgrid:
+#          Type: Schedule
+#          Properties:
+#            Schedule: rate(1 day)
+#            Name: sync_to_sendgrid
+#            Description: Sync emails to sendgrid
+#            Input: '{"command": "sync_to_sendgrid"}'
 
 
   DCWebsiteFunctionLogGroup:
