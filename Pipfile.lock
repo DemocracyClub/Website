@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "619241e6925acabcbe03456ea38a496dd3a243248f5fac1601859b4cee6d9b16"
+            "sha256": "639c79cd0c575ccff8a822f6a6fbd55a023a6ba48b95e2c894c97c22141445ed"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -157,9 +157,10 @@
             "version": "==2.4.0"
         },
         "dc-signup-form": {
-            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.3.0.tar.gz",
+            "file": "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/3.0.0.tar.gz",
             "hashes": [
-                "sha256:0e1e6691f6d9c3bd7d64939c20368a4b005c14a3aae8ac75ebdab6deeb017102"
+                "sha256:0e1e6691f6d9c3bd7d64939c20368a4b005c14a3aae8ac75ebdab6deeb017102",
+                "sha256:3d3af7a34e474c9c02c350ce83d1ccecfb50c88ff16d8ae14002180fa119eb89"
             ],
             "version": "==2.3.0"
         },
