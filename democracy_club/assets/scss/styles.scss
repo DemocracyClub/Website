@@ -226,3 +226,8 @@ ul > li > ul {
   column-gap: $s2;
   list-style: none;
 }
+
+.blog-tag {
+  // # show them inline rather than as a list
+  display: inline;
+}

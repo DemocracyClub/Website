@@ -1,10 +1,11 @@
-from django.urls import re_path
+from django.urls import path, re_path
 
 from .feeds import LatestPostFeed
 from .views import (
     ArchivePostListView,
     PostDetail,
     PostListView,
+    TagPostListView,
 )
 
 urlpatterns = [
@@ -34,4 +35,9 @@ urlpatterns = [
         name="hermes_post_list",
     ),
     re_path(r"^feed/$", view=LatestPostFeed(), name="hermes_post_feed"),
+    path(
+        "tag/<slug:tag>/",
+        view=TagPostListView.as_view(),
+        name="hermes_post_list_by_tag",
+    ),
 ]

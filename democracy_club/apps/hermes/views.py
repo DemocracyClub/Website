@@ -35,6 +35,14 @@ class PostListView(ListView):
         return qs
 
 
+class TagPostListView(PostListView):
+    """Displays posts from a specific Tag"""
+
+    def get_queryset(self):
+        tag = self.kwargs.get("tag", "")
+        return self.model.objects.for_tag(tag)
+
+
 class CategoryPostListView(PostListView):
     """Displays posts from a specific Category"""
 

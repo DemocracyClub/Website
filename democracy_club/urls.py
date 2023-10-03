@@ -67,6 +67,11 @@ urlpatterns = [
         name="case_studies",
     ),
     path(
+        "research/media/",
+        TemplateView.as_view(template_name="research/media.html"),
+        name="media",
+    ),
+    path(
         "research/impact/",
         TemplateView.as_view(template_name="research/impact.html"),
         name="impact",
