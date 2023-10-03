@@ -32,6 +32,21 @@ class PostListViewTestCase(HermesTestCase):
         self.assertNotContains(response, self.post3.subject)
 
 
+class TagPostListViewTestCase(HermesTestCase):
+    def url(self, tag):
+        return super(TagPostListViewTestCase, self).url(
+            "hermes_post_list_by_tag", tag=tag
+        )
+
+    def test_get_queryset(self):
+        """The TagPostListView Context should contain a QuerySet of all Posts
+        with the given tag
+        """
+        response = self.get(self.url("foo"))
+        expected = list(models.Post.objects.for_tag("foo"))
+        self.assertEqual(expected, list(response.context["posts"]))
+
+
 class ArchivePostListViewTestCase(HermesTestCase):
     def url(self, year=None, month=None, day=None):
         if year and month and day:
