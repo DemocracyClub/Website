@@ -1,7 +1,9 @@
 {% load thumbnail %}
 {% load typogrify_tags %}
 {% if posts %}
-    <h2>On the blog</h2>
+    {% if not hide_header %}
+        <h2>On the blog</h2>
+    {% endif %}
     <ul class="post-list ds-grid">
         {% for post in posts %}
             <li class="ds-card">
@@ -19,5 +21,7 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url "hermes_post_list" %}?tag={{tag}}" class="ds-cta">Our latest blog posts</a>
+    {% if not hide_header %}
+        <a href="{% url "hermes_post_list" %}?tag={{tag}}" class="ds-cta">Our latest blog posts</a>
+    {% endif %}
 {% endif %}
