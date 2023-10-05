@@ -52,16 +52,19 @@
 
 
 {% block messages %}
-    {% if messages %}
-        <aside class="ds-status messages" aria-label="Status">
-            <ul class="ds-stack">
+    <aside class="ds-status messages" aria-label="Status">
+        <ul class="ds-stack">
+            {% if messages %}
                 {% for message in messages %}
-                    <li {% if message.tags %}class=" {{ message.tags }} ds-status-message " {% endif %}> {{ message }} </li>
+                    <li class="ds-status-message"> {{ message }} </li>
                 {% endfor %}
-            </ul>
-        </aside>
-    {% endif %}
+            {% endif %}
+            <li class="ds-status-message">We are getting ready for the next General Election. <a href="https://democracyclub.org.uk/blog/2023/07/20/planning-for-the-general-election/">Learn more</a>.</li>
+        </ul>
+    </aside>
 {% endblock messages %}
+
+
 {% block content %}
     {% block page_content %}{% endblock page_content %}
 {% endblock content %}
