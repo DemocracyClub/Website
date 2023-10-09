@@ -10,7 +10,7 @@ class PostAdminForm(forms.ModelForm):
         fields = "__all__"
 
     tag_values = [
-        ("wcivf", "WCIVF"),
+        ("who_can_i_vote_for", "WCIVF"),
         ("case_study", "case_study"),
         ("research", "research"),
         ("elections", "elections"),
@@ -18,8 +18,8 @@ class PostAdminForm(forms.ModelForm):
         ("candidates", "candidates"),
         ("representatives", "representatives"),
         ("data", "data"),
-        ("WDIV", "WDIV"),
-        ("electionleaflets", "electionleaflets"),
+        ("where_do_i_vote", "WDIV"),
+        ("election_leaflets", "electionleaflets"),
         ("blog", "blog"),
     ]
 
