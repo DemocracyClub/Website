@@ -1,13 +1,16 @@
-{% extends "projects/polling-stations/polling_stations_base.html" %}
+{% extends "base.html" %}
 {% load markdown_filter %}
 {% load static %}
 {# fmt:off #}
 {% block page_title %}
     Polling station finder
 {% endblock page_title %}
+{% block page_heading %}
+    <h1>Polling station finder</h1>
+{% endblock %}
 
 
-{% block main_content %}
+{% block page_content %}
 {% filter markdown %}
 <h3>All you need to help people in your area to find their polling station.</h3>
 
@@ -82,7 +85,7 @@ If you provide data to us then you can embed our polling station finder directly
 your website, free of charge.
 
 You'll need to add a bit of code to your site.
-[Find out how]({% url "projects:polling_embed_code" %}).
+[Find out how]({% url "projects:election_widget" %}).
 {% endfilter markdown %}
 
     <div class="partner-logo">
@@ -97,4 +100,4 @@ You'll need to add a bit of code to your site.
 
 
 {% endfilter %}
-{% endblock main_content %}
+{% endblock page_content %}

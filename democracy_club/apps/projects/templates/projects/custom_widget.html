@@ -1,0 +1,24 @@
+{% extends "projects/widgets_base.html" %}
+{% load markdown_filter %}
+{% load static %}
+{# fmt:off #}
+{% block page_title %}
+    Custom widgets
+{% endblock page_title %}
+{% block page_heading %}
+    <h1>Custom designs, white label and API</h1>
+{% endblock %}
+{% block main_content %}
+{% filter markdown %}
+
+If you would like something other than the default design on your pages, we can
+provide a white label or custom version. For software developers we have an
+[API]({% url "voting_information_api"%}) that allows you to use our service in
+your bespoke applications. Please [contact us]({% url "contact"%}) for more information about this.
+
+
+<p>If you would like a custom branded election widget to fit with your website's theme, please <a href="{% url 'contact' %}">get in touch</a> to discuss your needs.</p>
+<p>An example of a custom widget powered by our data can be found here: <a href="https://www.electoralcommission.org.uk/i-am-a/voter/your-election-information">https://www.electoralcommission.org.uk/i-am-a/voter/your-election-information</a></p>
+
+{% endfilter %}
+{% endblock main_content %}

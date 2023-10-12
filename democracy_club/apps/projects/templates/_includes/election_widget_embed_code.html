@@ -22,7 +22,7 @@
 
 <form id="widget-options">
     <fieldset>
-        <legend>Widget options</legend>
+        <legend>Language options</legend>
         <div class="ds-stack-smallest">
 
             <label for="no-lang" class="ds-field-radio">
@@ -40,6 +40,19 @@
             </label>
         </div>
     </fieldset>
+    <fieldset>
+        <legend>Candidate options</legend>
+        <div class="ds-stack-smallest">
+            <label for="with-candidates" class="ds-field-radio">
+                <input type="radio" name="candidates" id="with-candidates" value="true">
+                <span>With candidates</span>
+            </label>
+            <label for="without-candidates" class="ds-field-radio">
+                <input type="radio" name="candidates" id="without-candidates" value="false">
+                <span>Without candidates</span>
+            </label>
+        </div>
+    </fieldset>
     <button type="submit" class="ds-button">Generate</button>
 </form>
 
@@ -50,7 +63,7 @@
 &lt;a href="https://whocanivotefor.co.uk">Find election information at
 &lt;span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;
 &lt;/noscript&gt;
-&lt;div id="dc_wdiv" aria-live="polite" role="region" data-candidates="true"&gt;&lt;/div&gt;
+&lt;div id="dc_wdiv" aria-live="polite" role="region"&gt;&lt;/div&gt;
 &lt;script type="text/javascript"
   src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
 &lt;/script&gt;
@@ -65,7 +78,7 @@
 
     function handleWidgetOptions(event) {
         event.preventDefault();
-        createWidgetVersion(form.elements.language.value);
+        createWidgetVersion(form.elements.language.value, form.elements.candidates.value);
     }
 
     function getEmbedCode(customAttributes) {
@@ -80,23 +93,29 @@
         '</code></pre>\n';
     }
 
-    function makeAttributeList(language) {
+    function makeAttributeList(language, candidates) {
         var attrs = '';
         if ((language === 'en') || (language === 'cy')) {
-            attrs = 'data-language="' + language + '" ';
+            attrs = 'data-language="' + language + '"';
+
         }
-        return attrs + 'aria-live="polite" role="region" data-candidates="true"';
+        if ((candidates === 'true') || (candidates === 'false')) {
+            attrs = attrs + ' data-candidates="' + candidates + '"';
+        }
+        return attrs + ' aria-live="polite" role="region"';
     }
 
-    function makeWidget(language) {
+    function makeWidget(language, candidates) {
         var div = document.createElement('div');
         div.setAttribute('id', 'dc_wdiv');
         if ((language === 'en') || (language === 'cy')) {
             div.setAttribute('data-language', language);
         }
+        if ((candidates === 'true') || (candidates === 'false')) {
+            div.setAttribute('data-candidates', candidates);
+        }
         div.setAttribute('aria-live', 'polite');
         div.setAttribute('role', 'region');
-        div.setAttribute('data-candidates', 'true');
         return div;
     }
 
@@ -107,12 +126,12 @@
         return script;
     }
 
-    function createWidgetVersion(language) {
+    function createWidgetVersion(language, candidates) {
         var widgetArea = document.querySelector('#widget-area');
         var codeArea = document.querySelector('#code-area');
-        var widget = makeWidget(language);
+        var widget = makeWidget(language, candidates);
         var script = makeScript();
-        var embedCode = getEmbedCode(makeAttributeList(language));
+        var embedCode = getEmbedCode(makeAttributeList(language, candidates));
         widgetArea.innerHTML = '';
         widgetArea.appendChild(widget);
         widgetArea.appendChild(script);

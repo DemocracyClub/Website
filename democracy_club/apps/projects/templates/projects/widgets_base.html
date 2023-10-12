@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="ds-stack-smaller">
+        <nav class="ds-subnav" aria-label="true">
+            <ul>
+                <li>
+                    <a href="{% url "projects:election_widget" %}">Use our free widget</a>
+                </li>
+                <li>
+                    <a href="{% url "projects:custom_widget" %}">Request a custom widget</a>
+                </li>
+
+            </nav>
+            {% block page_heading %}{% endblock page_heading %}
+            {% block main_content %}
+
+            {% endblock main_content %}
+
+{% endblock %}
+</div>

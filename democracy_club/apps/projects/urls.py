@@ -78,6 +78,11 @@ urlpatterns = [
         name="whocanivotefor",
     ),
     path(
+        "custom-widget/",
+        TemplateView.as_view(template_name="projects/custom_widget.html"),
+        name="custom_widget",
+    ),
+    path(
         "election-widget/",
         TemplateView.as_view(template_name="projects/election-widget.html"),
         name="election_widget",
@@ -106,5 +111,10 @@ urlpatterns = [
         "representatives/",
         TemplateView.as_view(template_name="projects/representatives.html"),
         name="representatives",
+    ),
+    path(
+        "embed_code/",
+        RedirectView.as_view(url=reverse_lazy("projects:election_widget")),
+        name="embed_code",
     ),
 ]
