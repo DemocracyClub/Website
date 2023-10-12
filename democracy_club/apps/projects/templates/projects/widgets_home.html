@@ -1,0 +1,32 @@
+{% extends "projects/widgets_base.html" %}
+{% block page_title %}Widget{% endblock page_title %}
+{% load markdown_filter %}
+{% load static %}
+{# fmt:off #}
+
+{% block page_heading %}
+    <h1>Election Widget</h1>
+{% endblock %}
+
+
+{% block main_content %}
+{% filter markdown %}
+## Our embeddable tool to help voters find their election information.</h2>
+The embedding process is as simple as copying and pasting some code, and does not require a web developer.</p>
+
+Features include:
+
+- Search by postcode polling station finder
+- Optional Welsh language support
+- Optional candidate information
+- Responsive design
+- Mobile friendly
+- Accessible
+- Free to use
+
+{% endfilter %}
+
+{% load post_tags %}
+{% posts_for_tag "widget" %}
+
+{% endblock %}

@@ -1,14 +1,40 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/widgets_base.html" %}
+{% load static %}
+{% load markdown_filter %}
+
 {% block page_title %}Election widget{% endblock page_title %}
 
+{% block page_heading %}
+    <h1>Election Widget</h1>
+{% endblock %}
+{# fmt:off #}
 
-{% block content %}
-    <div class="ds-stack-smaller">
-        <h1>Election widget</h1>
-        <p>You can add Democracy Club’s election widget to any website.</p>
-        {% include "_includes/election_widget_embed_code.html" %}
+{% block main_content %}
+{% filter markdown %}
+## All of our services wrapped up in a free election lookup for your website</p>
 
-        {% load post_tags %}
-        {% posts_for_tag "widget" %}
-    </div>
+Our embeddable widget helps voters find their election information.</h2>
+The embedding process is as simple as copying and pasting some code, and does not require a web developer.</p>
+
+Features include:
+
+- Search by postcode polling station finder
+- Optional Welsh language support
+- Optional candidate information
+- Responsive design
+- Mobile friendly
+- Accessible
+- Free to use, but not to maintain. Please [consider a donation]({% url 'donate' %}) to help us keep this service running.
+
+We'd love you to use our election widget on your web site. If you do, we kindly ask that you:
+
+1. [Let us know]({% url 'contact' %}) you're using it. We don't limit use, but it's great to know who has used the embed feature.
+2. Give us feedback either from your users or yourselves. We want to learn and iterate, and we can't do that without feedback!
+{% endfilter %}
+
+{% include "_includes/election_widget_embed_code.html" %}
+
+{% load post_tags %}
+{% posts_for_tag "widget" %}
+
 {% endblock %}

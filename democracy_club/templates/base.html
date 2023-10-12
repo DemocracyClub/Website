@@ -23,22 +23,22 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
+                        <a href="{% url 'projects:home' %}">Our Work</a>
+                    </li>
+                    <li>
                         <a href="{% url 'voting_information_api' %}">Data and APIs</a>
                     </li>
                     <li>
-                        <a href="{% url 'projects:polling_one_pager' %}">For Councils</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'voters' %}">For Voters</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'about' %}">About</a>
+                        <a href="{% url 'projects:polling_data_upload' %}">For Councils</a>
                     </li>
                     <li>
                         <a href="{% url 'impact' %}">Research and Impact</a>
                     </li>
                     <li>
                         <a href="{% url 'hermes_post_list' %}">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
                     </li>
                     <li>
                         <a href="{% url 'donate' %}">Donate</a>
