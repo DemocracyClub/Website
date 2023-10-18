@@ -180,6 +180,9 @@ class Post(TimestampedModel):
     hero = models.ImageField(
         _("hero"), upload_to=post_hero_upload_to, blank=True, null=True
     )
+    hero_alt_text = models.CharField(
+        _("hero alt text"), max_length=100, blank=True, null=True
+    )
     subject = models.CharField(_("subject"), max_length=100)
     slug = models.SlugField(_("slug"), max_length=100, unique=True)
     summary = models.TextField(_("summary"), blank=True, null=True)
@@ -237,6 +240,13 @@ class Post(TimestampedModel):
         if settings.MARKUP_RENDERER:
             return settings.MARKUP_RENDERER(attr_value)
         return attr_value
+
+    def _generate_slug(self):
+        return slugify(self.subject)
+
+    def save(self, *args, **kwargs):
+        self.slug = self._generate_slug()
+        super(Post, self).save(*args, **kwargs)
 
     @property
     def reading_time(self):

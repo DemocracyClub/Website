@@ -8,5 +8,6 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context["latest_posts"] = Post.objects.recent(3)
+        context["featured_posts"] = Post.objects.for_tag("featured").recent(3)
 
         return context
