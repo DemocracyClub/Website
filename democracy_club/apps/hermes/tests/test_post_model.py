@@ -122,6 +122,11 @@ class PostTestCase(HermesTestCase):
         response = self.client.get(self.post5.get_absolute_url())
         self.assertInHTML(expected, response.rendered_content)
 
+    def test_generate_slug(self):
+        """A Post should know how to generate its slug"""
+        expected = "a-leela-of-her-own"
+        self.assertEqual(expected, self.post1._generate_slug())
+
 
 class PostQuerySetTestCase(HermesTestCase):
     def test_reverse_creation_order(self):

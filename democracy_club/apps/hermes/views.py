@@ -34,6 +34,17 @@ class PostListView(ListView):
             qs = qs.for_tag(tag)
         return qs
 
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        posts = Post.objects.all().published()
+        tags = []
+        for post in posts:
+            for tag in post.tags:
+                if tag not in tags:
+                    tags.append(tag)
+        context["all_tags"] = tags
+        return context
+
 
 class TagPostListView(PostListView):
     """Displays posts from a specific Tag"""

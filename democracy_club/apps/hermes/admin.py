@@ -10,17 +10,19 @@ class PostAdminForm(forms.ModelForm):
         fields = "__all__"
 
     tag_values = [
-        ("who_can_i_vote_for", "WCIVF"),
-        ("case_study", "case_study"),
-        ("research", "research"),
-        ("elections", "elections"),
-        ("councils", "councils"),
-        ("candidates", "candidates"),
-        ("representatives", "representatives"),
-        ("data", "data"),
-        ("where_do_i_vote", "WDIV"),
-        ("election_leaflets", "electionleaflets"),
-        ("blog", "blog"),
+        ("WhoCanIVoteFor", "WhoCanIVoteFor"),
+        ("CaseStudy", "Case Study"),
+        ("Research", "Research"),
+        ("Elections", "Elections"),
+        ("Councils", "Councils"),
+        ("Candidates", "Candidates"),
+        ("Representatives", "Representatives"),
+        ("Data", "Data"),
+        ("WhereDoIVote", "WhereDoIVote"),
+        ("Election_Leaflets", "Election Leaflets"),
+        ("Blog", "Blog"),
+        ("Impact", "Impact"),
+        ("Featured", "Featured"),
     ]
 
     tags = forms.MultipleChoiceField(

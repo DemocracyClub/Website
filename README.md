@@ -42,6 +42,9 @@ New posts are created at `/admin/hermes/post`.
 
 Blog posts now include tags which correspond to projects, such as
 `representatives`. 
+
+We've hard-coded tags to reduce the risk of typos and to ensure that tags are used consistently. To add or edit a tag, change the `tag_values` variable in `democracy_club/apps/hermes/admin.py`.
+
 ## Staging environment
 Add your branch to the staging env on .circleci/config to deploy to https://stage.democracyclub.org.uk and test/view edits
 
