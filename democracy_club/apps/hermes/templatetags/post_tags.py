@@ -5,7 +5,7 @@ register = template.Library()
 
 
 def posts_for_tag(tag, hide_header=False):
-    posts = Post.objects.for_tag(tag)[:4]
+    posts = Post.objects.for_tag(tag).published()[:4]
     return {
         "posts": posts,
         "tag": tag,
