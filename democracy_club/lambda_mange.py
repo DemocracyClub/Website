@@ -1,27 +1,8 @@
 import json
 
-import awsgi
 import django
 import sentry_sdk
 from django.core.management import call_command
-from django.core.wsgi import get_wsgi_application
-
-application = get_wsgi_application()
-
-
-def lambda_handler(event, context):
-    return awsgi.response(
-        application,
-        event,
-        context,
-        base64_content_types={
-            "image/png",
-            "image/x-icon",
-            "image/jpeg",
-            "image/jpg",
-            "font/woff2",
-        },
-    )
 
 
 def management_handler(event, context):
