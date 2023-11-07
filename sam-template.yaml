@@ -178,27 +178,6 @@ Resources:
       DistributionConfig:
         Comment: 'Cloudfront Distribution pointing to Lambda origin'
         Origins:
-          - Id: Static
-            DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
-            OriginPath: "/Prod"
-            CustomOriginConfig:
-              OriginProtocolPolicy: "https-only"
-            OriginCustomHeaders:
-              - HeaderName: X-Forwarded-Host
-                HeaderValue: !Ref FQDN
-              - HeaderName: X-Forwarded-Proto
-                HeaderValue: https
-            OriginShield:
-              Enabled: true
-              OriginShieldRegion: eu-west-2
-
-          - Id: Media
-            DomainName: !Sub "${AppStorageBucketName}.s3.eu-west-2.amazonaws.com"
-            CustomOriginConfig:
-              OriginProtocolPolicy: "https-only"
-            OriginShield:
-              Enabled: false
-
           - Id: Dynamic
             DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
             OriginPath: "/Prod"
@@ -209,6 +188,12 @@ Resources:
                 HeaderValue: !Ref FQDN
               - HeaderName: X-Forwarded-Proto
                 HeaderValue: https
+          - Id: Media
+            DomainName: !Sub "${AppStorageBucketName}.s3.eu-west-2.amazonaws.com"
+            CustomOriginConfig:
+              OriginProtocolPolicy: "https-only"
+            OriginShield:
+              Enabled: false
 
         Enabled: true
         HttpVersion: 'http2'
@@ -234,29 +219,33 @@ Resources:
           ViewerProtocolPolicy: "redirect-to-https"
 
         CacheBehaviors:
-          - AllowedMethods: [ GET, HEAD, OPTIONS ]
-            PathPattern: static/*
-            TargetOriginId: Static
+          - AllowedMethods: [ GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE ]
+            PathPattern: admin/*
+            TargetOriginId: Dynamic
             Compress: true
+            ViewerProtocolPolicy: "redirect-to-https"
             ForwardedValues:
               QueryString: true
               Cookies:
-                Forward: none
+                Forward: "all"
               Headers:
                 - Authorization
                 - Origin
+                - Referer
+            DefaultTTL: 0
+            MaxTTL: 0
+          - AllowedMethods: [ GET, HEAD, OPTIONS ]
+            PathPattern: static/*
+            TargetOriginId: Dynamic
+            Compress: true
+            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
             ViewerProtocolPolicy: "redirect-to-https"
-            MinTTL: '50'
           - AllowedMethods: [ GET, HEAD ]
             PathPattern: media/*
-            ForwardedValues:
-              QueryString: false
-              Cookies:
-                Forward: none
             TargetOriginId: Media
             Compress: true
+            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
             ViewerProtocolPolicy: "redirect-to-https"
-            MinTTL: '50'
 
 
 
