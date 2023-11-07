@@ -153,15 +153,7 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
-          SENDGRID_API_KEY: !Ref AppSendgridAPIKey
-      Events:
-        SyncToSendgrid:
-          Type: Schedule
-          Properties:
-            Schedule: rate(1 day)
-            Name: sync_to_sendgrid
-            Description: Sync emails to sendgrid
-            Input: '{"command": "sync_to_sendgrid"}'
+
 
 
   DCWebsiteFunctionLogGroup:
