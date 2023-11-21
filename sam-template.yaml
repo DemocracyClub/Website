@@ -98,7 +98,7 @@ Resources:
       Timeout: 60
       Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
       CodeUri: .
-      Handler: democracy_club.asgi.handler
+      Handler: democracy_club.lambda_wsgi.handler
       Layers:
         - !Ref DependenciesLayer
       Runtime: python3.8
