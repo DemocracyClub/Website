@@ -108,7 +108,6 @@ PROJECT_APPS = (
     "typogrify",
     "reports",
     "wheredoivote_user_feedback",
-    "mailing_list",
     "projects",
     "dc_utils",
 )

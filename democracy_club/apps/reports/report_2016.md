@@ -53,7 +53,7 @@ Come join us.
 
 Joe Mitchell &amp; Sym Roe
 
-{% include "email_form/mailing_list_form.html" %}
+[Join our Mailing List]("https://mailinglist.democracyclub.org.uk/subscription/form")
 
 
 # 2. Review of May 2016 elections

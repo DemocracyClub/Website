@@ -72,8 +72,15 @@
 <!-- FOOTER -->
 {% block footer_base %}
     <footer class="ds-footer">
-        {% include "email_form/mailing_list_form.html" %}
-        {% include "_includes/footer_internal_links.html" %}
+        <div class="ds-block-centered ds-text-centered ds-stack">
+            <div class="ds-dark">
+                <a class="ds-cta ds-cta-blue" href="https://mailinglist.democracyclub.org.uk/subscription/form">
+                    Join our mailing list
+                </a>
+            </div>
+
+            {% include "_includes/footer_internal_links.html" %}
+        </div>
     </footer>
 {% endblock footer_base %}
 

@@ -50,7 +50,7 @@ You can help by [donating to the club](https://democracyclub.org.uk/donate) or [
 time](https://democracyclub.org.uk/quests/). We work openly and always seek feedback on our work and plans: [you can see
 our current and future workplans on Trello](https://trello.com/b/Tjrz79eE/dc-current-sprint).
 
-Please [signup to the mailing list](https://democracyclub.org.uk/), [join us on
+Please [signup to the mailing list](https://mailinglist.democracyclub.org.uk/subscription/form), [join us on
 Slack](http://slack.democracyclub.org.uk), [message us on Twitter](https://twitter.com/democlub) or
 [Facebook](https://www.facebook.com/democracyclub), or [email us via
 hello@democracyclub.org.uk](mailto:hello@democracyclub.org.uk).
@@ -679,7 +679,7 @@ Thanks also to The Electoral Commission and local governments for their expertis
 ## How to Help
 
 Want to help build a better democracy? Get news and requests via our our mailing list at
-[democracyclub.org.uk](https://democracyclub.org.uk).
+[democracyclub.org.uk](https://mailinglist.democracyclub.org.uk/subscription/form).
 
 For more day-to-day chatter and calls for help, [join our Slack](http://slack.democracyclub.org.uk).
 
