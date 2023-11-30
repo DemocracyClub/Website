@@ -120,10 +120,6 @@ urlpatterns = [
             namespace="wheredoivote_user_feedback",
         ),
     ),
-    path(
-        "mailing_list/",
-        include(("mailing_list.urls", "dc_signup_form")),
-    ),
     path("sentry-debug/", trigger_error),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -156,6 +152,12 @@ url_redirects = (
     path(
         "impact/",
         RedirectView.as_view(url=reverse_lazy("impact")),
+    ),
+    path(
+        "mailing_list/",
+        RedirectView.as_view(
+            url="https://mailinglist.democracyclub.org.uk/subscription/form"
+        ),
     ),
 )
 
