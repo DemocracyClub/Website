@@ -1,7 +1,3 @@
-[tool.black]
-line-length = 80
-extend-exclude = "democracy_club/settings/local.py"
-
 [tool.ruff]
 line-length = 80
 ignore = ["E501"]
@@ -35,5 +31,4 @@ addopts =[
     "--ignore=democracy_club/settings/local.py",
     "--ignore=lib",
     "--ruff",
-    "--black",
 ]
