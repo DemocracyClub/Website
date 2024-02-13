@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ffe65e92d722ea0ba43dedad9660e03e45a386659d494de88f7f279734b54549"
+            "sha256": "138b755608883380dada7373798a0f3aaa6a59084054657bc9e98c8955956951"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -195,11 +195,12 @@
         },
         "django": {
             "hashes": [
-                "sha256:12498cc3cb8bc8038539fef9e90e95f507502436c1f0c3a673411324fa675d14",
-                "sha256:2cc2fc7d1708ada170ddd6c99f35cc25db664f165d3794bc7723f46b2f8c8984"
+                "sha256:a2d4c4d4ea0b6f0895acde632071aff6400bfc331228fc978b05452a0ff3e9f1",
+                "sha256:b1260ed381b10a11753c73444408e19869f3241fc45c985cd55a30177c789d13"
             ],
             "index": "pypi",
-            "version": "==4.2.9"
+            "markers": "python_version >= '3.8'",
+            "version": "==4.2.10"
         },
         "django-cors-headers": {
             "hashes": [
@@ -242,11 +243,12 @@
         },
         "django-storages": {
             "hashes": [
-                "sha256:3540b45618b04be2c867c0982e8d2bd8e34f84dae922267fcebe4691fb93daf0",
-                "sha256:b3d98ecc09f1b1627c2b2cf430964322ce4e08617dbf9b4236c16a32875a1e0b"
+                "sha256:1db759346b52ada6c2efd9f23d8241ecf518813eb31db9e2589207174f58f6ad",
+                "sha256:51b36af28cc5813b98d5f3dfe7459af638d84428c8df4a03990c7d74d1bea4e5"
             ],
             "index": "pypi",
-            "version": "==1.13.1"
+            "markers": "python_version >= '3.7'",
+            "version": "==1.14.2"
         },
         "django-typogrify": {
             "file": "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz",
