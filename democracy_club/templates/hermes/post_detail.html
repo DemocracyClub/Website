@@ -44,7 +44,7 @@
 
         </header>
         {% if post.hero %}
-            {% thumbnail post.hero "690" as im %}
+            {% thumbnail post.hero "890" format='PNG' quality=100 as im  %}
                 <img class="blog_hero" src="{{ im.url }}" alt="{{ post.hero_alt_text }}">
             {% endthumbnail %}
         {% endif %}
