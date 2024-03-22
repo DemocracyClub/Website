@@ -11,9 +11,9 @@ django-localflavor = "==3.1"
 django-model-utils = "==4.3.1"
 django-storages = "==1.13.1"
 djhtml = "*"
-dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.4.1.tar.gz"}
+dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/2.5.2.tar.gz"}
 dc-signup-form = {file = "https://github.com/DemocracyClub/dc_signup_form/archive/refs/tags/2.3.0.tar.gz"}
-dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.4.5.tar.gz"}
+dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.4.6.tar.gz"}
 django-typogrify = {file = "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz"}
 jsonfield = "==3.1.0"
 markdown-headdown = "==0.1.3"
