@@ -70,19 +70,25 @@
 {% endblock content %}
 
 <!-- FOOTER -->
-{% block footer_base %}
-    <footer class="ds-footer">
-        <div class="ds-block-centered ds-text-centered ds-stack">
-            <div class="ds-dark">
-                <a class="ds-cta ds-cta-blue" href="https://mailinglist.democracyclub.org.uk/subscription/form">
-                    Join our mailing list
-                </a>
-            </div>
-
-            {% include "_includes/footer_internal_links.html" %}
-        </div>
-    </footer>
-{% endblock footer_base %}
+{% block footer_menu %}
+    <div class="ds-cluster-center">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'projects:home' %}">Our work</a></li>
+            <li><a href="{% url 'hermes_post_list' %}">Blog</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'jobs' %}">Jobs</a></li>
+            <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
+            <li><a href="{% url 'coc' %}">Code of Conduct</a></li>
+            <li><a href="{% url "hermes_post_feed" %}">Blog RSS/Atom feed</a></li>
+            <li><a rel="me" href="https://mastodon.me.uk/@DemocracyClub">Mastodon</a></li>
+            <li><a href="https://twitter.com/democlub">Twitter</a></li>
+            <li><a href="https://github.com/DemocracyClub">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/company/democracy-club-cic">LinkedIn</a></li>
+        </ul>
+    </div>
+{% endblock footer_menu %}
 
 {% block extra_site_js %}
     {% block extra_javascript %}
