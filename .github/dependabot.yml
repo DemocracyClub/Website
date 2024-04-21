@@ -20,3 +20,7 @@ updates:
     versions:
     - ">= 3.0.a"
     - "< 4.2"
+  groups:
+    python-packages:
+      patterns:
+        - "*"
