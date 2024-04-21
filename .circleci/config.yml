@@ -7,7 +7,7 @@ orbs:
 jobs:
   install_and_update_dependencies:
     docker:
-      - image: cimg/python:3.8.12
+      - image: cimg/python:3.10
     working_directory: ~/repo
     steps:
       - checkout
@@ -33,7 +33,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/python:3.8.12
+      - image: cimg/python:3.10
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
@@ -66,7 +66,7 @@ jobs:
 # https://github.com/aws/aws-lambda-base-images/issues/31
   sam_build:
     docker:
-      - image: amazon/aws-sam-cli-build-image-python3.8:latest
+      - image: public.ecr.aws/sam/build-python3.10:latest
     working_directory: ~/repo
     steps:
       - checkout
@@ -82,7 +82,7 @@ jobs:
 
   sam_deploy:
     docker:
-      - image: cimg/python:3.8.12
+      - image: cimg/python:3.10
     working_directory: ~/repo/
     parameters:
       dc-environment:
