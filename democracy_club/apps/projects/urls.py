@@ -38,9 +38,7 @@ urlpatterns = [
     ),
     path(
         "polling-stations/embed/",
-        TemplateView.as_view(
-            template_name="projects/polling-stations/embed_code.html"
-        ),
+        RedirectView.as_view(url=reverse_lazy("projects:election_widget")),
         name="polling_embed_code",
     ),
     path(

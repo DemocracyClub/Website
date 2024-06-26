@@ -34,7 +34,6 @@ class TestHtml:
             reverse("projects:election_widget"),
             reverse("projects:past"),
             reverse("projects:polling_one_pager"),
-            reverse("projects:polling_embed_code"),
             reverse("projects:polling_data_upload"),
             reverse("projects:reports"),
             reverse("reports:reports_registers"),
