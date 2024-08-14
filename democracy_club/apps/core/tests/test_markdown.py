@@ -3,7 +3,7 @@ from markdown.test_tools import TestCase
 
 class TestHr(TestCase):
     def test_markdown_formatting(self):
-        self.assertMarkdownRenders("# Header", "<h1>Header</h1>"),
+        (self.assertMarkdownRenders("# Header", "<h1>Header</h1>"),)
 
     def test_image(self):
         self.assertMarkdownRenders(
