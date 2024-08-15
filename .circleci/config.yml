@@ -54,8 +54,13 @@ jobs:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
       - run: *install-pipenv
-      - run: pipenv run pytest --cov-report=xml --cov=democracy_club
+      - run: pipenv run pipenv verify
+      - run: pipenv run python manage.py check
       - run: pipenv run python manage.py makemigrations --check
+      - run: pipenv run ruff check .
+      - run: pipenv run ruff format . --check
+      - run: pipenv run djhtml --check .
+      - run: pipenv run pytest --cov-report=xml --cov=democracy_club
       - codecov/upload:
           file: /home/circleci/repo/coverage.xml
       - store_artifacts:
