@@ -39,7 +39,6 @@ def get_authors_for_past_posts(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ("hermes", "0009_alter_post_author"),
