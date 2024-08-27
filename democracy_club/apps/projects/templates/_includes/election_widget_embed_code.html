@@ -58,8 +58,8 @@
 
 <p>Second, use the code to embed the widget in your website.</p>
 
-<pre class="ds-codeblock"><code id="code-area">
-&lt;noscript&gt;
+<pre class="ds-codeblock">
+<code id="code-area">&lt;noscript&gt;
 &lt;a href="https://whocanivotefor.co.uk">Find election information at
 &lt;span aria-label="Who Can I Vote For">WhoCanIVoteFor.co.uk&lt;/span&gt;&lt;/a&gt;
 &lt;/noscript&gt;
@@ -68,6 +68,31 @@
   src="https://widget.wheredoivote.co.uk/wdiv.js"&gt;
 &lt;/script&gt;
 </code></pre>
+
+
+<h3>Pre-populating a postcode</h3>
+<p>
+    If you already know the user's postcode, you can render the widget div with the postcode
+    pre-populated by adding a <code>data-postcode</code> attribute to the
+    <code>&lt;div id="dc_wdiv"&gt;</code>.
+    This will take the user straight to their results (or an address picker).
+    For example:
+</p>
+
+<pre class="ds-codeblock">
+<code id="code-area">&lt;div
+  id="dc_wdiv"
+  data-postcode="SW1A 1AA"
+  aria-live="polite"
+  role="region"
+&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>
+    This allows you to show election information in a context where you've already
+    collected the user's postcode without requiring the user to perform two searches.
+</p>
 
 
 <script>
