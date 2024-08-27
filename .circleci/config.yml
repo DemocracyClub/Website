@@ -1,13 +1,13 @@
 version: 2.1
 orbs:
-  codecov: codecov/codecov@3.1.0
-  aws-cli: circleci/aws-cli@3.1
-  slack: circleci/slack@4.1
+  codecov: codecov/codecov@3.3.0
+  aws-cli: circleci/aws-cli@3.2.0
+  slack: circleci/slack@4.12.5
 
 jobs:
   install_and_update_dependencies:
     docker:
-      - image: cimg/python:3.10
+      - image: cimg/python:3.12
     working_directory: ~/repo
     steps:
       - checkout
@@ -15,7 +15,7 @@ jobs:
           keys:
             - v2-dependencies-{{ checksum "Pipfile.lock" }}
       - run: &install-pipenv pip install -U pipenv==2023.6.26 urllib3 wheel==0.38.4 pip --quiet --no-input
-      - run: pipenv install --dev
+      - run: pipenv sync --dev
       - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
       - run: make lambda-layers/DependenciesLayer/requirements.txt
       - run: pipenv run collectstatic
@@ -33,11 +33,11 @@ jobs:
 
   test:
     docker:
-      - image: cimg/python:3.10
+      - image: cimg/python:3.12
         environment:
           CIRCLECI: true
           PGHOST: 127.0.0.1
-      - image: cimg/postgres:12.15
+      - image: cimg/postgres:16.3
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: democracy_club
@@ -54,19 +54,22 @@ jobs:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
       - run: *install-pipenv
-      - run: pipenv run pytest --cov-report=xml --cov=democracy_club
+      - run: pipenv run pipenv verify
+      - run: pipenv run python manage.py check
       - run: pipenv run python manage.py makemigrations --check
+      - run: pipenv run ruff check .
+      - run: pipenv run ruff format . --check
+      - run: pipenv run djhtml --check .
+      - run: pipenv run pytest --cov-report=xml --cov=democracy_club
       - codecov/upload:
           file: /home/circleci/repo/coverage.xml
       - store_artifacts:
           path: test-reports
           destination: test-reports
 
-# Support for python 3.10 is not yet available for aws-lambda-base-images
-# https://github.com/aws/aws-lambda-base-images/issues/31
   sam_build:
     docker:
-      - image: public.ecr.aws/sam/build-python3.10:latest
+      - image: public.ecr.aws/sam/build-python3.12:latest
     working_directory: ~/repo
     steps:
       - checkout
@@ -82,7 +85,7 @@ jobs:
 
   sam_deploy:
     docker:
-      - image: cimg/python:3.10
+      - image: cimg/python:3.12
     working_directory: ~/repo/
     parameters:
       dc-environment:
