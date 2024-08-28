@@ -224,7 +224,6 @@ Create enteries for each of:
 * AppPostgresPassword
 * AppSecretKey
 * AppSentryDSN
-* AppEmailSignUpEventBridgeArn
 * AppStorageBucketName
 * CertificateArn
 * FQDN

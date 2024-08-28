@@ -56,11 +56,6 @@ Parameters:
     Description: "The ARN of the cert to use"
     Type: AWS::SSM::Parameter::Value<String>
 
-  AppEmailSignUpEventBridgeArn:
-    Default: AppEmailSignUpEventBridgeArn
-    Description: "The ARN of the cert to use"
-    Type: AWS::SSM::Parameter::Value<String>
-
   AppDjangoSettingsModule:
     Description: "The DJANGO_SETTINGS_MODULE environment variable passed to the app."
     Type: String
@@ -115,7 +110,6 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
-          EMAIL_SIGNUP_EVENT_BRIDGE_ARN: !Ref AppEmailSignUpEventBridgeArn
       Events:
         HTTPRequests:
           Type: Api
