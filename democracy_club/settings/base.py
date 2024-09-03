@@ -64,12 +64,6 @@ STATICFILES_DIRS = (root("assets"),)
 
 SECRET_KEY = "CHANGE THIS!!!"
 
-EMAIL_SIGNUP_BACKEND = "event_bridge"
-EMAIL_SIGNUP_BACKEND_KWARGS = {
-    "source": "DC_WEBSITE",
-    "bus_arn": os.environ.get("EMAIL_SIGNUP_EVENT_BRIDGE_ARN"),
-}
-
 
 MIDDLEWARE = (
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -99,7 +93,6 @@ INSTALLED_APPS = (
     "dc_design_system",
     "pipeline",
     "sorl.thumbnail",
-    "dc_signup_form",
 )
 
 PROJECT_APPS = (
@@ -165,7 +158,6 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "django.contrib.auth.context_processors.auth",
-                "dc_signup_form.context_processors.signup_form",
                 "dc_utils.context_processors.dc_django_utils",
             ],
             "debug": DEBUG,
