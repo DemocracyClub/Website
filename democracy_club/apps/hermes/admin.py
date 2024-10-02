@@ -21,7 +21,7 @@ class PostAdminForm(forms.ModelForm):
         ("WhereDoIVote", "WhereDoIVote"),
         ("Election_Leaflets", "Election Leaflets"),
         ("EveryElection", "EveryElection"),
-        ("Blog", "Blog"),
+        ("Ideas", "Ideas"),
         ("Impact", "Impact"),
         ("Featured", "Featured"),
         ("Widget", "Widget"),
