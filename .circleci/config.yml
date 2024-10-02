@@ -93,8 +93,7 @@ jobs:
         enum: [ development, staging, production ]
     environment:
       SAM_CONFIG_FILE: samconfig.toml.d/ci-<<parameters.dc-environment>>.toml
-      SAM_LAMBDA_CONFIG_ENV: <<parameters.dc-environment>>
-      SAM_PUBLIC_CONFIG_ENV: <<parameters.dc-environment>>-public-access
+      DC_ENVIRONMENT: <<parameters.dc-environment>>
     steps:
       - checkout
       - attach_workspace:
@@ -110,7 +109,7 @@ jobs:
           command: |
             pipenv run sam deploy ${DASH_DASH_DEBUG} \
               --config-file ~/repo/${SAM_CONFIG_FILE} \
-              --config-env $SAM_LAMBDA_CONFIG_ENV \
+              --config-env $DC_ENVIRONMENT \
               --template-file ~/repo/.aws-sam/build/template.yaml \
               --parameter-overrides "GitHash='$CIRCLE_SHA1'"
       - aws-cli/setup

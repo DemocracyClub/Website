@@ -236,7 +236,7 @@ def setup_sentry(environment=None):
         return
 
     if not environment:
-        environment = os.environ.get("SAM_LAMBDA_CONFIG_ENV", "staging")
+        environment = os.environ.get("DC_ENVIRONMENT", "staging")
     release = os.environ.get("GIT_HASH", "unknown")
     import sentry_sdk
     from sentry_sdk.integrations.aws_lambda import AwsLambdaIntegration
