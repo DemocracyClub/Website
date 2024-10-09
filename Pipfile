@@ -24,7 +24,7 @@ feedparser = "==6.0.11"
 pytz = "==2024.1"
 urllib3 = "<3.0.0"
 pre-commit = "*"
-django = "==4.2.15"
+django = "==4.2.16"
 zipp = "*"
 certifi = "*"
 dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/6.1.1.tar.gz"}
