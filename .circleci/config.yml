@@ -13,7 +13,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "Pipfile.lock" }}
+            - v4-dependencies-{{ checksum "Pipfile.lock" }}
       - run: &install-pipenv pip install -U pipenv==2023.6.26 urllib3 wheel==0.38.4 pip --quiet --no-input
       - run: pipenv sync --dev
       - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
@@ -29,7 +29,7 @@ jobs:
           when: on_success
           paths:
             - ~/.local/share/virtualenvs/
-          key: v3-dependencies-{{ checksum "Pipfile.lock" }}
+          key: v4-dependencies-{{ checksum "Pipfile.lock" }}
 
   test:
     docker:
@@ -49,7 +49,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "Pipfile.lock" }}
+            - v4-dependencies-{{ checksum "Pipfile.lock" }}
       - run:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
@@ -101,7 +101,7 @@ jobs:
           at: ~/repo/
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "Pipfile.lock" }}
+            - v4-dependencies-{{ checksum "Pipfile.lock" }}
       - run: *install-pipenv
       - run: pip install -r deploy-requirements.txt
 
