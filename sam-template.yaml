@@ -73,6 +73,11 @@ Parameters:
     Description: "The Hash of the git commit that's deployed"
     Type: String
 
+  DCEnvironment:
+    Default: DCEnvironment  
+    Description: "The DC_ENVIRONMENT environment variable passed to the app."
+    Type: AWS::SSM::Parameter::Value<String>
+
 
 Resources:
 
@@ -110,6 +115,7 @@ Resources:
           DATABASE_PASS: !Ref AppPostgresPassword
           FQDN: !Ref FQDN
           STORAGE_BUCKET_NAME: !Ref AppStorageBucketName
+          DC_ENVIRONMENT: !Ref DCEnvironment
       Events:
         HTTPRequests:
           Type: Api
