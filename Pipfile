@@ -27,7 +27,7 @@ pre-commit = "*"
 django = "==4.2.16"
 zipp = "*"
 certifi = "*"
-dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/6.1.1.tar.gz"}
+dc-django-utils = {file = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/7.0.1.tar.gz"}
 
 [dev-packages]
 vcrpy = "==6.0.2"
