@@ -150,7 +150,7 @@ workflows:
           requires:
             - sam_build
           context: [ deployment-staging-dc-website, slack-secrets ]
-          filters: { branches: { only: [ main, master, development ] } }
+          filters: { branches: { only: [ main, master, development, temp-direct-lambda20241014 ] } }
       - sam_deploy:
           name: sam_deploy_production
           dc-environment: production
