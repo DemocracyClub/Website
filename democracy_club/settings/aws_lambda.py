@@ -14,7 +14,10 @@ else:
     USE_X_FORWARDED_HOST = False
     FORCE_SCRIPT_NAME = "/Prod"
 
-ALLOWED_HOSTS = [os.environ.get("FQDN"), 'yt8qhkdmj9.execute-api.eu-west-2.amazonaws.com']
+ALLOWED_HOSTS = [
+    os.environ.get("FQDN"),
+    "yt8qhkdmj9.execute-api.eu-west-2.amazonaws.com",
+]
 
 # Override the database name and user if needed
 DATABASES = {
