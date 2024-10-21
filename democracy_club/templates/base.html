@@ -69,25 +69,49 @@
 {% endblock content %}
 
 <!-- FOOTER -->
-{% block footer_menu %}
-    <div class="ds-cluster-center">
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'projects:home' %}">Our work</a></li>
-            <li><a href="{% url 'hermes_post_list' %}">Blog</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
-            <li><a href="{% url 'jobs' %}">Jobs</a></li>
-            <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
-            <li><a href="{% url 'coc' %}">Code of Conduct</a></li>
-            <li><a href="{% url "hermes_post_feed" %}">Blog RSS/Atom feed</a></li>
-            <li><a rel="me" href="https://mastodon.me.uk/@DemocracyClub">Mastodon</a></li>
-            <li><a href="https://twitter.com/democlub">Twitter</a></li>
-            <li><a href="https://github.com/DemocracyClub">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/company/democracy-club-cic">LinkedIn</a></li>
-        </ul>
-    </div>
+{% block footer_menu %} 
+    {% block footer_links %}
+        <div class="footer-links">
+            <nav>
+                <h2 class="ds-h6">Made by Democracy Club</h2>
+                <ul>
+                    <li><a href="https://whocanivotefor.co.uk/">Who Can I Vote For?</a></li>
+                    <li><a href="https://wheredoivote.co.uk/">Where Do I Vote?</a></li>
+                    <li><a href="https://electionleaflets.org/">Election Leaflets</a></li>
+                    <li><a href="{% url 'projects:candidates' %}">Candidates Wiki</a></li>
+                    <li><a href="{% url 'projects:election_widget' %}">Election Widgets</a></li>
+                    <li><a href="{% url 'projects:data' %}">Election Data and API</a></li>
+                    <li><a href="{% url 'projects:representatives' %}">Representatives</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h2 class="ds-h6">About Democracy Club</h2>
+                <ul>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'donate' %}">Donate</a></li>
+                    <li><a href="{% url 'jobs' %}">Jobs</a></li>
+                    <li><a href="{% url 'hermes_post_list' %}">Blog</a></li>
+                    <li><a href="{% url 'hermes_post_feed' %}">Blog RSS/Atom feed</a></li>
+                    <li><a href="{% url 'privacy' %}">Privacy &amp; Terms</a></li>
+                    <li><a href="{% url 'coc' %}">Code of Conduct</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <h2 class="ds-h6">Connect with us</h2>
+                <ul>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a rel="me" href="https://mastodon.me.uk/@DemocracyClub">Mastodon</a></li>
+                    <li><a href="https://twitter.com/democlub">Twitter</a></li>
+                    <li><a href="https://github.com/DemocracyClub">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/company/democracy-club-cic">LinkedIn</a></li>
+                    <li><a href="https://mailinglist.democracyclub.org.uk/subscription/form">Join our Mailing List</a></li>
+                    <li><a href="https://mailinglist.democracyclub.org.uk/archive">Newsletter Archive</a></li>
+                </ul>
+            </nav>
+        </div>
+    {% endblock footer_links %}
 {% endblock footer_menu %}
+<!-- FOOTER -->
 
 {% block extra_site_js %}
     {% block extra_javascript %}
