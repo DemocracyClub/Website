@@ -65,6 +65,25 @@ class TestHtml:
                 _, errors = validate_html(client, url)
                 assert errors == ""
 
+    @pytest.fixture
+    def redirected_urls(self):
+        return [
+            "/voters/",
+            "/data/",
+            "/mailing_list/",
+            "/impact/",
+            "/data_apis/index/",
+            "/about/impact/",
+            "/about/support-us/",
+        ]
+
+    @pytest.mark.django_db
+    def test_redirected_urls(self, client, redirected_urls):
+        """test redirected urls return a 301 or 302 status code"""
+        for redirect in redirected_urls:
+            status_code = client.get(redirect).status_code
+            assert status_code == 301 or status_code == 302
+
     @pytest.mark.django_db
     def test_page_title(self, client, urls):
         """test every page has a page title in the
