@@ -159,6 +159,10 @@ url_redirects = (
             url="https://mailinglist.democracyclub.org.uk/subscription/form"
         ),
     ),
+    path(
+        "voters/",
+        RedirectView.as_view(url=reverse_lazy("projects")),
+    ),
 )
 
 urlpatterns += url_redirects
