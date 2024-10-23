@@ -122,7 +122,7 @@ urlpatterns = [
 url_redirects = (
     path(
         "data/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
+        RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
     path(
         "donate/",
@@ -156,7 +156,7 @@ url_redirects = (
     ),
     path(
         "voters/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
+        RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
 )
 
