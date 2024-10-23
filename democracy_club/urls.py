@@ -40,11 +40,6 @@ urlpatterns = [
         ),
         name="voting_information_api",
     ),
-    path(
-        "voters/",
-        TemplateView.as_view(template_name="for_voters.html"),
-        name="voters",
-    ),
     path("thanks/", TemplateView.as_view(template_name="thanks.html")),
     path(
         "thanks/finished/",
