@@ -66,6 +66,7 @@ $scope: false;
         @include optional-styles;
         @include page;
         @include utilities;
+        @include switcher;
     }
     .ds-scope *,
     .ds-scope *::before,
@@ -237,5 +238,26 @@ ul > li > ul {
   list-style: none;
   li {
     margin-left: 0;
+  }
+}
+
+
+footer {
+  .footer-links {
+    @extend .ds-switcher;
+    @extend .ds-stack-smaller;
+    @extend .ds-text-left;
+    --gridCellMin: 20ch;
+    h2 {
+      @extend .ds-text-left;
+      color: white;
+      margin-left: $s4;
+    }
+    ul {
+      margin-top: $s1;
+    }
+    nav {
+      margin-top: 0;
+    }
   }
 }
