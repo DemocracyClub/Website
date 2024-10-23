@@ -72,7 +72,7 @@ class TestHtml:
             "/data/",
             "/mailing_list/",
             "/impact/",
-            "/data_apis/",
+            "/data_apis/index/",
             "/about/impact/",
             "/about/support_us/",
             "/donate/",
@@ -82,7 +82,10 @@ class TestHtml:
     def test_redirected_urls(self, client, redirected_urls):
         """test redirected urls return a 301 status code"""
         for redirect in redirected_urls:
-            assert client.get(redirect).status_code == 301 or 302
+            status_code = client.get(redirect).status_code
+            if status_code not in [301, 302]:
+                import pdb; pdb.set_trace()
+            assert status_code == 301 or status_code == 302
 
     @pytest.mark.django_db
     def test_page_title(self, client, urls):
