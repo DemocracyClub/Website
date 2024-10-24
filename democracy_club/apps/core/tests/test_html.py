@@ -80,7 +80,7 @@ class TestHtml:
 
     @pytest.mark.django_db
     def test_redirected_urls(self, client, redirected_urls):
-        """test redirected urls return a 301 status code"""
+        """test redirected urls return a 301 or 302 status code"""
         for redirect in redirected_urls:
             status_code = client.get(redirect).status_code
             if status_code not in [301, 302]:
