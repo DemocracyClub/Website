@@ -74,7 +74,7 @@ class TestHtml:
             "/impact/",
             "/data_apis/index/",
             "/about/impact/",
-            "/about/support_us/",
+            "/about/support-us/",
             "/donate/",
         ]
 
