@@ -83,8 +83,6 @@ class TestHtml:
         """test redirected urls return a 301 or 302 status code"""
         for redirect in redirected_urls:
             status_code = client.get(redirect).status_code
-            if status_code not in [301, 302]:
-                import pdb; pdb.set_trace()
             assert status_code == 301 or status_code == 302
 
     @pytest.mark.django_db
