@@ -40,11 +40,6 @@ urlpatterns = [
         ),
         name="voting_information_api",
     ),
-    path(
-        "voters/",
-        TemplateView.as_view(template_name="for_voters.html"),
-        name="voters",
-    ),
     path("thanks/", TemplateView.as_view(template_name="thanks.html")),
     path(
         "thanks/finished/",
@@ -127,11 +122,7 @@ urlpatterns = [
 url_redirects = (
     path(
         "data/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
-    ),
-    path(
-        "donate/",
-        RedirectView.as_view(url=reverse_lazy("funding")),
+        RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
     path(
         "support-us/",
@@ -147,7 +138,7 @@ url_redirects = (
     ),
     path(
         "data_apis/index/",
-        RedirectView.as_view(url=reverse_lazy("voter_information_api")),
+        RedirectView.as_view(url=reverse_lazy("voting_information_api")),
     ),
     path(
         "impact/",
@@ -161,7 +152,7 @@ url_redirects = (
     ),
     path(
         "voters/",
-        RedirectView.as_view(url=reverse_lazy("projects")),
+        RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
 )
 
