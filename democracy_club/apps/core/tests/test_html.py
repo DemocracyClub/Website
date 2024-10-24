@@ -75,7 +75,6 @@ class TestHtml:
             "/data_apis/index/",
             "/about/impact/",
             "/about/support-us/",
-            "/donate/",
         ]
 
     @pytest.mark.django_db

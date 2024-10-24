@@ -125,10 +125,6 @@ url_redirects = (
         RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
     path(
-        "donate/",
-        RedirectView.as_view(url=reverse_lazy("funding")),
-    ),
-    path(
         "support-us/",
         RedirectView.as_view(url=reverse_lazy("donate")),
     ),
