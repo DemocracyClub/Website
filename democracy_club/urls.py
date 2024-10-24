@@ -142,7 +142,7 @@ url_redirects = (
     ),
     path(
         "data_apis/index/",
-        RedirectView.as_view(url=reverse_lazy("voter_information_api")),
+        RedirectView.as_view(url=reverse_lazy("voting_information_api")),
     ),
     path(
         "impact/",
