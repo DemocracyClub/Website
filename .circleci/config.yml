@@ -115,8 +115,11 @@ jobs:
       - aws-cli/setup
       - run:
           name: "Migrate database"
+          # Invoke Lambda using the AWS CLI. Grep for errors in the response because
+          # the command will exit 0 even if the invocation failed. The JSON key `FunctionError` will contain something
+          # if there's an error.
           command: |
-            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -
+            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -  | grep 'FunctionError": ""'
       - run:
           name: "Invalidate CloudFront cache"
           command: |
