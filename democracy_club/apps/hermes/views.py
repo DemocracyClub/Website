@@ -28,7 +28,11 @@ class PostListView(ListView):
     template_name = "hermes/post_list.html"
 
     def get_queryset(self):
-        qs = self.model.objects.published().prefetch_related("author")
+        qs = (
+            self.model.objects.published()
+            .prefetch_related("author")
+            .defer("body", "hero_alt_text")
+        )
         tag = self.request.GET.get("tag", None)
         if tag:
             qs = qs.for_tag(tag)
@@ -36,9 +40,8 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        posts = Post.objects.all().published()
         tags = []
-        for post in posts:
+        for post in context["object_list"]:
             for tag in post.tags:
                 if tag not in tags:
                     tags.append(tag)
