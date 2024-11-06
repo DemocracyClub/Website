@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fba1ba0f4200a107e65cbddd8bc344da509b3eef753ad49c1f68bdb42e9c8b09"
+            "sha256": "ed8144d42865196b8d1b5f64679bc14a30dafa018b8f9f7722058dbffe542cee"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,7 +70,7 @@
             "file": "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.6.0.tar.gz"
         },
         "dc-django-utils": {
-            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/8.0.0.tar.gz"
+            "file": "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/8.0.1.tar.gz"
         },
         "distlib": {
             "hashes": [
