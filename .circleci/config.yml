@@ -119,7 +119,7 @@ jobs:
           # the command will exit 0 even if the invocation failed. The JSON key `FunctionError` will contain something
           # if there's an error.
           command: |
-            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -  | grep 'FunctionError": ""'
+            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -  | grep -v 'FunctionError'
       - run:
           name: "Invalidate CloudFront cache"
           command: |
