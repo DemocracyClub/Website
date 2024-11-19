@@ -120,14 +120,25 @@ Resources:
         HTTPRequests:
           Type: Api
           Properties:
+            RestApiId: !Ref WebsiteApiGateway
             Path: /{proxy+}
             Method: ANY
         HTTPRequestRoots:
           Type: Api
           Properties:
+            RestApiId: !Ref WebsiteApiGateway
             Path: /
             Method: ANY
 
+  WebsiteApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      AlwaysDeploy: True
+      StageName: Prod
+      Cors:
+        AllowMethods: "'GET'"
+        AllowOrigin: "'*'"
+        MaxAge: "'600'"
 
   DCWebsiteManagementFunction:
     Type: AWS::Serverless::Function
@@ -171,7 +182,7 @@ Resources:
         Comment: 'Cloudfront Distribution pointing to Lambda origin'
         Origins:
           - Id: Dynamic
-            DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+            DomainName: !Sub "${WebsiteApiGateway}.execute-api.${AWS::Region}.amazonaws.com"
             OriginPath: "/Prod"
             CustomOriginConfig:
               OriginProtocolPolicy: "https-only"
@@ -254,6 +265,6 @@ Resources:
 Outputs:
   DCWebsiteFqdn:
     Description: "API Gateway endpoint FQDN for DC Website function"
-    Value: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+    Value: !Sub "${WebsiteApiGateway}.execute-api.${AWS::Region}.amazonaws.com"
     Export:
       Name: !Join [ ":", [ !Ref "AWS::StackName", "DCWebsiteFqdn" ] ]
