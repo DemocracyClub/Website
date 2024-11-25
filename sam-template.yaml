@@ -275,14 +275,28 @@ Resources:
             PathPattern: static/*
             TargetOriginId: Dynamic
             Compress: true
-            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: none
+              Headers:
+                - Authorization
+                - Origin
             ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
           - AllowedMethods: [ GET, HEAD ]
             PathPattern: media/*
             TargetOriginId: Media
             Compress: true
-            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: none
+              Headers:
+                - Authorization
+                - Origin
             ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
 
 
 
