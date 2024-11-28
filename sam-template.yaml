@@ -1,5 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
+Transform:
+  - AWS::LanguageExtensions
+  - AWS::Serverless-2016-10-31
 Description: "DC Website Django app: Lambda, API Gateway"
 
 Globals:
@@ -78,6 +80,10 @@ Parameters:
     Description: "The DC_ENVIRONMENT environment variable passed to the app."
     Type: AWS::SSM::Parameter::Value<String>
 
+Conditions:
+  UseBasicAuth: !Or
+    - !Equals [ !Ref DCEnvironment, development ]
+    - !Equals [ !Ref DCEnvironment, staging ]
 
 Resources:
 
@@ -120,14 +126,53 @@ Resources:
         HTTPRequests:
           Type: Api
           Properties:
+            RestApiId: !Ref WebsiteApiGateway
             Path: /{proxy+}
             Method: ANY
         HTTPRequestRoots:
           Type: Api
           Properties:
+            RestApiId: !Ref WebsiteApiGateway
             Path: /
             Method: ANY
 
+  WebsiteApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      AlwaysDeploy: True
+      StageName: Prod
+      Cors:
+        AllowMethods: "'GET'"
+        AllowOrigin: "'*'"
+        MaxAge: "'600'"
+      Auth:
+        DefaultAuthorizer: !If [ UseBasicAuth, "BasicAuthFunction", !Ref AWS::NoValue]
+        Authorizers:
+          BasicAuthFunction:
+            FunctionArn: !GetAtt BasicAuthFunction.Arn
+            FunctionPayloadType: REQUEST
+            Identity:
+              Headers:
+                - Authorization
+              ReauthorizeEvery: 3600
+
+  BasicAuthGatewayResponse:
+    Condition: UseBasicAuth
+    Type: AWS::ApiGateway::GatewayResponse
+    Properties:
+      ResponseParameters:
+        gatewayresponse.header.www-authenticate: "'Basic realm=\"Restricted\"'"
+      ResponseType: UNAUTHORIZED
+      RestApiId: !Ref WebsiteApiGateway
+      StatusCode: '401'
+
+  BasicAuthFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/DCWebsiteLambdaExecutionRole"
+      CodeUri: ./democracy_club/
+      Handler: lambda_basic_auth.lambda_handler
+      Runtime: python3.12
 
   DCWebsiteManagementFunction:
     Type: AWS::Serverless::Function
@@ -171,7 +216,7 @@ Resources:
         Comment: 'Cloudfront Distribution pointing to Lambda origin'
         Origins:
           - Id: Dynamic
-            DomainName: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+            DomainName: !Sub "${WebsiteApiGateway}.execute-api.${AWS::Region}.amazonaws.com"
             OriginPath: "/Prod"
             CustomOriginConfig:
               OriginProtocolPolicy: "https-only"
@@ -230,14 +275,28 @@ Resources:
             PathPattern: static/*
             TargetOriginId: Dynamic
             Compress: true
-            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: none
+              Headers:
+                - Authorization
+                - Origin
             ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
           - AllowedMethods: [ GET, HEAD ]
             PathPattern: media/*
             TargetOriginId: Media
             Compress: true
-            CachePolicyId: "658327ea-f89d-4fab-a63d-7e88639e58f6"
+            ForwardedValues:
+              QueryString: true
+              Cookies:
+                Forward: none
+              Headers:
+                - Authorization
+                - Origin
             ViewerProtocolPolicy: "redirect-to-https"
+            MinTTL: '50'
 
 
 
@@ -254,6 +313,6 @@ Resources:
 Outputs:
   DCWebsiteFqdn:
     Description: "API Gateway endpoint FQDN for DC Website function"
-    Value: !Sub "${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com"
+    Value: !Sub "${WebsiteApiGateway}.execute-api.${AWS::Region}.amazonaws.com"
     Export:
       Name: !Join [ ":", [ !Ref "AWS::StackName", "DCWebsiteFqdn" ] ]
