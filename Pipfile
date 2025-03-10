@@ -23,7 +23,7 @@ feedparser = "==6.0.11"
 pytz = "==2024.2"
 urllib3 = "<3.0.0"
 pre-commit = "*"
-django = "==4.2.19"
+django = "==4.2.20"
 zipp = "*"
 certifi = "*"
 dc-design-system = {file = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.6.0.tar.gz"}
