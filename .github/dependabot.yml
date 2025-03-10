@@ -18,8 +18,7 @@ updates:
     
   - dependency-name: django
     versions:
-    - ">= 3.0.a"
-    - "< 5.0"
+    - ">= 5.0"
   groups:
     python-packages:
       patterns:
