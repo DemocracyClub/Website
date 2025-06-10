@@ -172,30 +172,6 @@ if len(sys.argv) > 1 and "test" in sys.argv[1]:
     from .testing import *  # noqa
 
 
-MARKDOWN_DEUX_STYLES = {
-    "default": {
-        "extras": {
-            "code-friendly": True,
-            "markdown-in-html": True,
-            "footnotes": True,
-            "header-ids": True,
-            "smarty-pants": True,
-            "toc": {"depth": 3},
-        },
-        "safe_mode": False,
-    },
-    "blog": {
-        "extras": {
-            "markdown-in-html": True,
-            "footnotes": True,
-            "header-ids": True,
-            "smarty-pants": True,
-            "toc": {},
-        },
-        "safe_mode": False,
-    },
-}
-
 REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta", "md_in_html", "footnotes"]
 
 
