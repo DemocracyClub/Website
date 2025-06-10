@@ -88,8 +88,6 @@ INSTALLED_APPS = (
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.admin",
-    "localflavor",
-    "django_extensions",
     "dc_design_system",
     "pipeline",
     "sorl.thumbnail",
