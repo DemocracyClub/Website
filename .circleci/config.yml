@@ -18,7 +18,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "uv.lock" }}
+            - v6-dependencies-{{ checksum "uv.lock" }}
       - install_uv
       - run: uv sync --dev --no-python-downloads
       - run: make lambda-layers/DependenciesLayer/requirements.txt
@@ -35,7 +35,7 @@ jobs:
           paths:
             - ./.venv
             - $HOME/.cache/uv
-          key: v4-dependencies-{{ checksum "uv.lock" }}
+          key: v6-dependencies-{{ checksum "uv.lock" }}
 
   test:
     docker:
@@ -55,7 +55,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "uv.lock" }}
+            - v6-dependencies-{{ checksum "uv.lock" }}
       - run:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
@@ -104,7 +104,7 @@ jobs:
           at: ~/repo/
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "uv.lock" }}
+            - v6-dependencies-{{ checksum "uv.lock" }}
 
       - run:
           name: "sam deploy # App: Lambda + API Gateway"
