@@ -193,13 +193,6 @@ def blog_markdown(value):
 
 MARKUP_RENDERER = blog_markdown
 
-GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
-GO_CARDLESS_PAYMENT_DESCRIPTION = (
-    "Helping Democracy Club "
-    "increase the quality of information on elections & the democratic processes"
-)
-GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
-
 SITE_TITLE = "Democracy Club"
 CANONICAL_URL = f"https://{os.environ.get('FQDN')}"
 
