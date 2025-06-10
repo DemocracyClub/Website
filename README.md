@@ -3,16 +3,15 @@
 This is the website hosted at https://democracyclub.org.uk/
 
 ## Set up
-This is a Django project using PostgreSQL. The project is deployed using Python 3.6.
+This is a Django project using PostgreSQL. The project is deployed using Python 3.12.
 
 ### Packages
-This project uses pipenv to manage dependencies. 
-To perform the package install, run the following within your venv:
+This project uses [uv](https://docs.astral.sh/uv/) to manage python packages.
+[Install uv](https://docs.astral.sh/uv/getting-started/installation/) first if you don't already have it. Then
+
 ```commandline
-pip install pipenv
-pipenv install
+uv sync
 ```
-Read more about pipenv package management [here](https://pipenv.pypa.io/en/latest/).
 
 ### Database
 First, ensure you have Postgres available. 
