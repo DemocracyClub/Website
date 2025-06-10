@@ -4,6 +4,11 @@ orbs:
   aws-cli: circleci/aws-cli@3.2.0
   slack: circleci/slack@4.12.5
 
+commands:
+  install_uv:
+    steps:
+      - run: pip install --upgrade uv">=0.5.12,<0.6.0"
+
 jobs:
   install_and_update_dependencies:
     docker:
@@ -13,12 +18,12 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "Pipfile.lock" }}
-      - run: &install-pipenv pip install -U pipenv==2023.6.26 urllib3 wheel==0.38.4 pip --quiet --no-input
-      - run: pipenv sync --dev
-      - run: pipenv run pipenv check # before save_cache so an insecure cache is never saved
+            - v4-dependencies-{{ checksum "uv.lock" }}
+      - install_uv
+      - run: uv sync --dev --no-python-downloads
       - run: make lambda-layers/DependenciesLayer/requirements.txt
-      - run: pipenv run collectstatic
+      - run: uv run python manage.py collectstatic --noinput --clear
+      - run: uv cache prune --ci
       - persist_to_workspace:
           root: ~/repo/
           paths: [
@@ -28,8 +33,9 @@ jobs:
       - save_cache:
           when: on_success
           paths:
-            - ~/.local/share/virtualenvs/
-          key: v4-dependencies-{{ checksum "Pipfile.lock" }}
+            - ./.venv
+            - $HOME/.cache/uv
+          key: v4-dependencies-{{ checksum "uv.lock" }}
 
   test:
     docker:
@@ -49,18 +55,18 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "Pipfile.lock" }}
+            - v4-dependencies-{{ checksum "uv.lock" }}
       - run:
           name: Install HTML Tidy
           command: wget https://github.com/htacg/tidy-html5/releases/download/5.8.0/tidy-5.8.0-Linux-64bit.deb && sudo dpkg -i tidy-5.8.0-Linux-64bit.deb
-      - run: *install-pipenv
-      - run: pipenv run pipenv verify
-      - run: pipenv run python manage.py check
-      - run: pipenv run python manage.py makemigrations --check
-      - run: pipenv run ruff check .
-      - run: pipenv run ruff format . --check
-      - run: pipenv run djhtml --check .
-      - run: pipenv run pytest --cov-report=xml --cov=democracy_club
+      - install_uv
+      - run: uv lock --locked
+      - run: uv run python manage.py check
+      - run: uv run python manage.py makemigrations --check
+      - run: uv run ruff check .
+      - run: uv run ruff format . --check
+      - run: git ls-files '*.html' | xargs uv run djhtml --check
+      - run: uv run pytest --cov-report=xml --cov=democracy_club
       - codecov/upload:
           file: /home/circleci/repo/coverage.xml
       - store_artifacts:
@@ -75,8 +81,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo/
-      - run: pip install --upgrade pip
-      - run: pip install -r deploy-requirements.txt
 
       - run: sam build ${DASH_DASH_DEBUG} --template-file sam-template.yaml
       - persist_to_workspace:
@@ -85,7 +89,7 @@ jobs:
 
   sam_deploy:
     docker:
-      - image: cimg/python:3.12
+      - image: public.ecr.aws/sam/build-python3.12:latest
     working_directory: ~/repo/
     parameters:
       dc-environment:
@@ -100,14 +104,12 @@ jobs:
           at: ~/repo/
       - restore_cache:
           keys:
-            - v4-dependencies-{{ checksum "Pipfile.lock" }}
-      - run: *install-pipenv
-      - run: pip install -r deploy-requirements.txt
+            - v4-dependencies-{{ checksum "uv.lock" }}
 
       - run:
-          name: "pipenv run sam deploy # App: Lambda + API Gateway"
+          name: "sam deploy # App: Lambda + API Gateway"
           command: |
-            pipenv run sam deploy ${DASH_DASH_DEBUG} \
+            sam deploy ${DASH_DASH_DEBUG} \
               --config-file ~/repo/${SAM_CONFIG_FILE} \
               --config-env $DC_ENVIRONMENT \
               --template-file ~/repo/.aws-sam/build/template.yaml \

@@ -6,4 +6,4 @@ clean: ## Delete any generated static asset or req.txt files and git-restore the
 	rm -rf lambda-layers/DependenciesLayer/requirements.txt
 
 lambda-layers/DependenciesLayer/requirements.txt:
-	pipenv requirements | sed "s/^-e //" >lambda-layers/DependenciesLayer/requirements.txt
+	uv export --no-hashes --no-dev > lambda-layers/DependenciesLayer/requirements.txt
