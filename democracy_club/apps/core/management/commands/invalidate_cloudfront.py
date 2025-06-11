@@ -1,5 +1,8 @@
+import json
+
 from core.cloudfront import invalidate_paths
 from django.core.management import BaseCommand
+from django.core.management.base import CommandError
 
 
 class Command(BaseCommand):
@@ -11,4 +14,6 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        return invalidate_paths(options["paths"])
+        resp = invalidate_paths(options["paths"])
+        if resp["ResponseMetadata"]["HTTPStatusCode"] != 201:
+            raise CommandError(f"Invalidation failed: {json.dumps(resp)}")
