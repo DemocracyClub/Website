@@ -121,11 +121,25 @@ jobs:
           # the command will exit 0 even if the invocation failed. The JSON key `FunctionError` will contain something
           # if there's an error.
           command: |
-            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "migrate", "args": ["--no-input"] }' --cli-binary-format raw-in-base64-out -  | grep -v 'FunctionError'
+            output=$(aws lambda invoke \
+              --function-name DCWebsiteManagementFunction \
+              --payload '{ "command": "migrate", "args": ["--no-input"] }' \
+              --cli-binary-format raw-in-base64-out \
+              --output json \
+              /dev/stdout)
+            echo "$output"
+            echo "$output" | grep -q '"FunctionError"' && exit 1 || exit 0
       - run:
           name: "Invalidate CloudFront cache"
           command: |
-            aws lambda invoke --function-name DCWebsiteManagementFunction --payload '{ "command": "invalidate_cloudfront", "args": ["--paths", "*"] }' --cli-binary-format raw-in-base64-out -
+            output=$(aws lambda invoke \
+              --function-name DCWebsiteManagementFunction \
+              --payload '{ "command": "invalidate_cloudfront", "args": ["--paths", "*"] }' \
+              --cli-binary-format raw-in-base64-out \
+              --output json \
+              /dev/stdout)
+            echo "$output"
+            echo "$output" | grep -q '"FunctionError"' && exit 1 || exit 0
       - run:
           name: "Publish a new Sentry Release"
           command: |
