@@ -19,7 +19,7 @@ ALLOWED_HOSTS = [os.environ.get("FQDN")]
 # Override the database name and user if needed
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "HOST": os.environ.get("DATABASE_HOST"),
         "USER": "postgres",
         "PORT": "5432",

@@ -31,7 +31,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": "democracy_club",
         "USER": "postgres",
         "PASSWORD": "",
@@ -88,8 +88,6 @@ INSTALLED_APPS = (
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.admin",
-    "localflavor",
-    "django_extensions",
     "dc_design_system",
     "pipeline",
     "sorl.thumbnail",
@@ -174,30 +172,6 @@ if len(sys.argv) > 1 and "test" in sys.argv[1]:
     from .testing import *  # noqa
 
 
-MARKDOWN_DEUX_STYLES = {
-    "default": {
-        "extras": {
-            "code-friendly": True,
-            "markdown-in-html": True,
-            "footnotes": True,
-            "header-ids": True,
-            "smarty-pants": True,
-            "toc": {"depth": 3},
-        },
-        "safe_mode": False,
-    },
-    "blog": {
-        "extras": {
-            "markdown-in-html": True,
-            "footnotes": True,
-            "header-ids": True,
-            "smarty-pants": True,
-            "toc": {},
-        },
-        "safe_mode": False,
-    },
-}
-
 REPORT_MARKDOWN_EXTENSIONS = ["toc", "meta", "md_in_html", "footnotes"]
 
 
@@ -218,13 +192,6 @@ def blog_markdown(value):
 
 
 MARKUP_RENDERER = blog_markdown
-
-GO_CARDLESS_PAYMENT_NAME = "Democracy Club Donation"
-GO_CARDLESS_PAYMENT_DESCRIPTION = (
-    "Helping Democracy Club "
-    "increase the quality of information on elections & the democratic processes"
-)
-GOCARDLESS_REDIRECT_URL = "https://democracyclub.org.uk/donate/process/"
 
 SITE_TITLE = "Democracy Club"
 CANONICAL_URL = f"https://{os.environ.get('FQDN')}"
