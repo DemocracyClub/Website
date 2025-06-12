@@ -31,8 +31,7 @@ wheels = [
 [[package]]
 name = "aws-wsgi"
 version = "0.2.7"
-source = { url = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz" }
-sdist = { hash = "sha256:0c1cd1856ca4ccaa40b3579a93318fb7b6a81d4022888d54dc17351592031995" }
+source = { git = "https://github.com/DemocracyClub/awsgi.git?tag=v0.2.8#b286f129c5580547577f942c75be74cdca707386" }
 
 [[package]]
 name = "certifi"
@@ -84,13 +83,12 @@ wheels = [
 [[package]]
 name = "dc-design-system"
 version = "0.6.0"
-source = { url = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.6.0.tar.gz" }
-sdist = { hash = "sha256:22783a13a51aca71e29388c6aa46357ab5501b77685fd27521387e30cfbb72cf" }
+source = { git = "https://github.com/DemocracyClub/design-system.git?tag=0.6.0#7b1e8171a7567f75d4eb5bd27db7f994f7cf1a5d" }
 
 [[package]]
 name = "dc-django-utils"
 version = "8.0.1"
-source = { url = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/8.0.1.tar.gz" }
+source = { git = "https://github.com/DemocracyClub/dc_django_utils.git?tag=8.0.1#d140e554cd3f62541036464fb8d515fa212e4b46" }
 dependencies = [
     { name = "django" },
     { name = "django-localflavor" },
@@ -100,31 +98,6 @@ dependencies = [
     { name = "pysass" },
     { name = "pytidylib" },
     { name = "setuptools" },
-    { name = "whitenoise" },
-]
-sdist = { hash = "sha256:757a1965c55077f832074c70c9baac420316ccf4ac1be5a147d93e428eb58e53" }
-
-[package.metadata]
-requires-dist = [
-    { name = "dc-design-system", marker = "extra == 'dev'", url = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.5.0.tar.gz" },
-    { name = "django", specifier = ">=4.2" },
-    { name = "django-localflavor", specifier = ">=4.0" },
-    { name = "django-pipeline", specifier = ">=3.0.0" },
-    { name = "djhtml", marker = "extra == 'dev'", specifier = "==3.0.6" },
-    { name = "ipdb", marker = "extra == 'dev'", specifier = "==0.13.13" },
-    { name = "jsmin", specifier = "<3.1" },
-    { name = "markdown" },
-    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=3.0.0" },
-    { name = "pysass" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = "==8.3.2" },
-    { name = "pytest-django", marker = "extra == 'dev'", specifier = "==4.8.0" },
-    { name = "pytest-flakes", marker = "extra == 'dev'", specifier = "==4.0.5" },
-    { name = "pytest-mock", marker = "extra == 'dev'", specifier = "==3.14.0" },
-    { name = "pytest-ruff", marker = "extra == 'dev'", specifier = "==0.4.1" },
-    { name = "pytidylib" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = "==0.6.1" },
-    { name = "setuptools", specifier = ">=69.2.0" },
-    { name = "tox", marker = "extra == 'ci'", specifier = "==4.18.0" },
     { name = "whitenoise" },
 ]
 
@@ -201,17 +174,10 @@ wheels = [
 [[package]]
 name = "django-typogrify"
 version = "1.3.3"
-source = { url = "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz" }
+source = { git = "https://github.com/matthewn/django-typogrify.git?tag=v2.0#ab0f3f200fd270de081f863e80d3716011d696f6" }
 dependencies = [
     { name = "num2words" },
     { name = "smartypants" },
-]
-sdist = { hash = "sha256:348e71ffabceeb23e000c4be39f0edf9f8b704fdb196fa173c85914ec6de9fcb" }
-
-[package.metadata]
-requires-dist = [
-    { name = "num2words" },
-    { name = "smartypants", specifier = ">=1.8.3" },
 ]
 
 [[package]]
@@ -857,12 +823,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aws-wsgi", url = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz" },
-    { name = "dc-design-system", url = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.6.0.tar.gz" },
-    { name = "dc-django-utils", url = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/8.0.1.tar.gz" },
+    { name = "aws-wsgi", git = "https://github.com/DemocracyClub/awsgi.git?tag=v0.2.8" },
+    { name = "dc-design-system", git = "https://github.com/DemocracyClub/design-system.git?tag=0.6.0" },
+    { name = "dc-django-utils", git = "https://github.com/DemocracyClub/dc_django_utils.git?tag=8.0.1" },
     { name = "django", specifier = "==4.2.22" },
     { name = "django-storages", specifier = "==1.14.4" },
-    { name = "django-typogrify", url = "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz" },
+    { name = "django-typogrify", git = "https://github.com/matthewn/django-typogrify.git?tag=v2.0" },
     { name = "markdown", specifier = "==3.3.7" },
     { name = "markdown-headdown", specifier = "==0.1.3" },
     { name = "pillow", specifier = "==10.3.0" },

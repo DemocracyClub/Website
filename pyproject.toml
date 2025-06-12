@@ -23,10 +23,10 @@ dependencies = [
 package = false
 
 [tool.uv.sources]
-aws-wsgi = { url = "https://github.com/DemocracyClub/awsgi/archive/refs/tags/v0.2.8.tar.gz" }
-django-typogrify = { url = "https://github.com/matthewn/django-typogrify/archive/refs/tags/v2.0.tar.gz" }
-dc-design-system = { url = "https://github.com/DemocracyClub/design-system/archive/refs/tags/0.6.0.tar.gz" }
-dc-django-utils = { url = "https://github.com/DemocracyClub/dc_django_utils/archive/refs/tags/8.0.1.tar.gz" }
+aws-wsgi = { git = "https://github.com/DemocracyClub/awsgi.git", tag = "v0.2.8" }
+django-typogrify = { git = "https://github.com/matthewn/django-typogrify.git", tag = "v2.0" }
+dc-design-system = { git = "https://github.com/DemocracyClub/design-system.git", tag = "0.6.0" }
+dc-django-utils = { git = "https://github.com/DemocracyClub/dc_django_utils.git", tag =  "8.0.1" }
 
 [dependency-groups]
 dev = [
