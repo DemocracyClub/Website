@@ -22,6 +22,8 @@ dependencies = [
 [tool.uv]
 package = false
 
+required-version = "==0.8.*"
+
 [tool.uv.sources]
 aws-wsgi = { git = "https://github.com/DemocracyClub/awsgi.git", tag = "v0.2.8" }
 django-typogrify = { git = "https://github.com/matthewn/django-typogrify.git", tag = "v2.0" }
