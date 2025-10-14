@@ -8,8 +8,8 @@ class PostTestCase(HermesTestCase):
     def test_short(self):
         """A Post should return the truncated body if there is no summary"""
         expected = (
-            "<p>I&rsquo;ve got to find a way to escape the horrible ravages of youth. "
-            "Suddenly, I&rsquo;m going to the bathroom like clockwork, every three "
+            "<p>I’ve got to find a way to escape the horrible ravages of youth. "
+            "Suddenly, I’m going to the bathroom like clockwork, every three "
             "hours. And those jerks at Social Security…</p>"
         )
         self.assertEqual(expected, self.post1.short)
