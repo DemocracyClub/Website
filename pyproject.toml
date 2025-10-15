@@ -27,7 +27,7 @@ required-version = "==0.8.*"
 [tool.uv.sources]
 aws-wsgi = { git = "https://github.com/DemocracyClub/awsgi.git", tag = "v0.2.8" }
 django-typogrify = { git = "https://github.com/matthewn/django-typogrify.git", tag = "v2.0" }
-dc-design-system = { git = "https://github.com/DemocracyClub/design-system.git", tag = "0.6.0" }
+dc-design-system = { git = "https://github.com/DemocracyClub/design-system.git", tag = "0.9.0" }
 dc-django-utils = { git = "https://github.com/DemocracyClub/dc_django_utils.git", tag =  "8.0.5" }
 
 [dependency-groups]
