@@ -1,6 +1,6 @@
 from .base import *  # noqa
 
 
-STATICFILES_STORAGE = "pipeline.storage.PipelineStorage"
+STORAGES["staticfiles"] = {"BACKEND": "pipeline.storage.PipelineStorage"}  # noqa F405
 
 SITE_TITLE = "democracy club"

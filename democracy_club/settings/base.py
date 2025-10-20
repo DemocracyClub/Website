@@ -51,8 +51,6 @@ SITE_ID = 1
 
 USE_I18N = False
 
-USE_L10N = True
-
 USE_TZ = True
 
 MEDIA_ROOT = root("assets", "uploads")

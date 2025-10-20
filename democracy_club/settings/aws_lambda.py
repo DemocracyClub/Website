@@ -48,7 +48,7 @@ AWS_S3_CUSTOM_DOMAIN = os.environ.get("FQDN")
 
 MEDIAFILES_LOCATION = "media"
 MEDIA_URL = "https://{}/{}/".format(AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-DEFAULT_FILE_STORAGE = "core.s3_lambda_storage.MediaStorage"
+STORAGES["default"] = {"BACKEND": "core.s3_lambda_storage.MediaStorage"}  # noqa F405
 
 CSRF_TRUSTED_ORIGINS = [os.environ.get("FQDN")]
 
