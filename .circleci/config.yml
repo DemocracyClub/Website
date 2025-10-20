@@ -104,7 +104,7 @@ jobs:
       - restore_cache:
           keys:
             - v7-dependencies-{{ checksum "uv.lock" }}
-
+      - setup_remote_docker
       - run:
           name: "sam deploy # App: Lambda + API Gateway"
           command: |
