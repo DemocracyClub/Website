@@ -117,7 +117,7 @@ One reason for these strong numbers was the involvement of the BBC, who used our
  </table>
 Changes to Google Analytics led to us dropping the service earlier this year. We’re exploring alternatives for analysing user traffic on WhoCanIVoteFor and WhereDoIVote. Consequently we are unable to provide visitor figures for this year.
 
-We continue to find great examples of political parties using our services, especially WhereDoIVote, and [blogged about it earlier in the year](https://democracyclub.org.uk/blog/2023/02/17/democracy-club-and-political-impartiality/) (since publishing the blog, Reform UK have confirmed to us that they use WhoCanIVoteFor a lot internally).
+We continue to find great examples of political parties using our services, especially WhereDoIVote, and [blogged about it earlier in the year](https://democracyclub.org.uk/blog/2023/02/17/why-democracy-club-is-non-partisan/) (since publishing the blog, Reform UK have confirmed to us that they use WhoCanIVoteFor a lot internally).
 
 <figure>
 <img src="{% static 'report_2023/images/voter_id.png' %}" alt="WhereDoIVote.co.
