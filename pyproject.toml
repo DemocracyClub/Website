@@ -22,7 +22,7 @@ dependencies = [
 [tool.uv]
 package = false
 
-required-version = "==0.8.*"
+required-version = "==0.9.*"
 
 [tool.uv.sources]
 aws-wsgi = { git = "https://github.com/DemocracyClub/awsgi.git", tag = "v0.2.8" }
