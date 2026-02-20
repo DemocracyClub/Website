@@ -10,7 +10,7 @@ dependencies = [
     "psycopg2-binary==2.9.10",
     "sentry-sdk==2.17.0",
     "sorl-thumbnail==12.11.0",
-    "Pillow==10.3.0",
+    "Pillow==12.1.1",
     "Markdown==3.3.7",
     "django==5.2.11",
     "aws-wsgi",
