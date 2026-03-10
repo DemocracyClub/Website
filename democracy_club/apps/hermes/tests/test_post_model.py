@@ -44,7 +44,7 @@ class PostTestCase(HermesTestCase):
         """A Post should return its body if no renderer is defined"""
         renderer = settings.MARKUP_RENDERER
         settings.MARKUP_RENDERER = None
-        expected = "<p>I&rsquo;ve got to find a way to escape the horrible ravages of youth. Suddenly, I&rsquo;m going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now &lsquo;I&rsquo;&lsquo; have to pay &lsquo;&rsquo;them&rsquo;! Well I&rsquo;da done better, but it&rsquo;s plum hard pleading a case while awaiting trial for that there incompetence. She also liked to shut up!</p>"
+        expected = "<p>I&rsquo;ve got to find a way to escape the horrible ravages of youth. Suddenly, I&rsquo;m going to the bathroom like clockwork, every three hours. And those jerks at Social Security stopped sending me checks. Now &lsquo;I&rsquo;&rsquo; have to pay &lsquo;&rsquo;them&rsquo;! Well I&rsquo;da done better, but it&rsquo;s plum hard pleading a case while awaiting trial for that there incompetence. She also liked to shut up!</p>"
         self.assertEqual(expected, self.post1.rendered)
 
         settings.MARKUP_RENDERER = renderer
