@@ -70,8 +70,19 @@ MIDDLEWARE = (
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
 )
 
+# Django's SecurityMiddleware defaults to "same-origin", which prevents the browser from sending
+# the Referer header on cross-origin requests, e.g. to tile.openstreetmap.org.
+# "strict-origin-when-cross-origin" sends the origin (i.e. up to, and including the tld) as the
+# referer on cross-origin requests.
+# This doesn't give any information about which specific page on our site a user was visiting
+# (i.e. which might contain postcode/uprn) just that they came from one of our sits.
+# refs:
+#       - https://docs.djangoproject.com/en/5.2/ref/middleware/#referrer-policy
+#       - https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 ROOT_URLCONF = "democracy_club.urls"
 
