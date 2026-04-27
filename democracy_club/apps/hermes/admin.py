@@ -25,6 +25,7 @@ class PostAdminForm(forms.ModelForm):
         ("Impact", "Impact"),
         ("Featured", "Featured"),
         ("Widget", "Widget"),
+        ("ParishCouncils", "Parish councils"),
     ]
 
     tags = forms.MultipleChoiceField(
