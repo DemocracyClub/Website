@@ -19,12 +19,13 @@ class PostAdminForm(forms.ModelForm):
         ("Representatives", "Representatives"),
         ("Data", "Data"),
         ("WhereDoIVote", "WhereDoIVote"),
-        ("Election_Leaflets", "Election Leaflets"),
+        ("Election Leaflets", "Election Leaflets"),
         ("EveryElection", "EveryElection"),
         ("Ideas", "Ideas"),
         ("Impact", "Impact"),
         ("Featured", "Featured"),
         ("Widget", "Widget"),
+        ("Parish councils", "Parish councils"),
     ]
 
     tags = forms.MultipleChoiceField(
