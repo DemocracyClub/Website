@@ -2,64 +2,158 @@
 {% block body_class_attr %}class="report"{% endblock body_class_attr %}
 {% block page_title %}{{ page_title|safe }}{% endblock page_title %}
 
-{% block og_image_content %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}{% endif %}{% endblock og_image_content %}
+{% block og_image_content %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}
+{% endif %}{% endblock og_image_content %}
 {% block og_description_content %}{{ page_title|safe }}{% endblock og_description_content %}
 {% block og_title_content %}{{ page_title|safe }}{% endblock og_title_content %}
 {% block og_type_content %}article{% endblock og_type_content %}
 {% block og_url_content %}{{ CANONICAL_URL }}{{ request.path }}{% endblock og_url_content %}">
 
-{% block twitter_image %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}{% endif %}{% endblock twitter_image %}
-{% block twitter_title_content %}{{ page_title|safe }}{% endblock twitter_title_content  %}
+{% block twitter_image %}{{ CANONICAL_URL }}{% if report_hero_image %}{{ report_hero_image }}
+{% endif %}{% endblock twitter_image %}
+{% block twitter_title_content %}{{ page_title|safe }}{% endblock twitter_title_content %}
 {% block twitter_url %}{{ CANONICAL_URL }}{{ request.path }}{% endblock twitter_url %}
 {% block twitter_description_content %}{{ page_title|safe }}{% endblock twitter_description_content %}
 
 {% block content %}
     <style>
-        #toc.sticky details {
-            position: fixed;
-            top: 0;
-            width: 70ch;
-            background-color: white;
-            z-index: 100;
+        html {
+            --scroll-offset: 3.8rem;
         }
 
-        #toc + article h2, #toc + article h3 {
-            scroll-margin-top: 2.4em;
+        .ds-page {
+            overflow-x: visible;
+
+        }
+
+        #report-toc {
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 101;
+        }
+
+        #report-toc {
+            background-color: white;
+        }
+
+        #report-toc[open] nav {
+            position: absolute;
+            top: 100%; /* hang below the summary */
+            left: 0;
+            right: 0;
+            max-height: 80vh;
+            overflow: auto;
+            background: white;
+        }
+
+
+        article h2 {
+            position: sticky;
+            z-index: 100;
+            background-color: white;
+            top: var(--scroll-offset);
+            scroll-margin-top: var(--scroll-offset);
+        }
+
+
+        @media print {
+            #report-toc-wrapper {
+                display: none;
+            }
+        }
+
+        .stickable {
+            display: block;
+            scroll-margin-top: var(--scroll-offset);
+        }
+
+        article h2::after {
+            content: "";
+            display: block;
+            transition: border-bottom-color 300ms ease;
+            border-bottom-color: transparent;
+        }
+
+        article h2.is-stuck::after {
+            border-bottom: 1px solid currentColor;
         }
 
     </style>
 
-    <ul class="ds-details" id="toc">
-        <li>
-            <details>
-                <summary>
-                    <h2>Table of Contents</h2>
-                </summary>
-                {{ toc|safe }}
-            </details>
-        </li>
-    </ul>
+    <details id="report-toc">
+        <summary>
+            Contents
+        </summary>
+        <nav aria-label="Table of contents">
+            {{ toc|safe }}
+        </nav>
+    </details>
+
     <article class="ds-stack">
         {{ html_content|safe }}
     </article>
+
     <script>
-        window.onscroll = function() {PinToc()};
+        // Close the details nav when clicking on a link
+        document.querySelectorAll("details#report-toc a").forEach((link) => {
+            link.addEventListener("click", (event) => {
+                link.closest("details").open = false;
+            })
+        })
 
-        var toc = document.getElementById("toc");
-        var details = document.getElementById("toc").getElementsByTagName("details")[0];
-        var sticky = toc.offsetTop;
+        // Move the TOC to sit after the <h1> in the article
+        const toc = document.getElementById("report-toc");
+        const h1 = document.querySelector("article > h1:first-child");
+        if (toc && h1) h1.after(toc);
 
+        // Wrap each h2 and its following content in a <div> until the next h2
+        // This makes the sticky elements get out of the way nicely
+        const article = document.querySelector("article");
+        if (article) {
+            let section = null;
+            Array.from(article.childNodes).forEach((node) => {
+                if (node.nodeName === "H2") {
+                    section = document.createElement("div");
+                    section.classList.add("ds-stack")
+                    article.insertBefore(section, node);
+                }
+                if (section) section.appendChild(node);
+            });
+        }
 
-        function PinToc() {
-            if (window.pageYOffset >= sticky) {
-                toc.classList.add("sticky")
+        // Add a new element to track stuck headers
+        document.querySelectorAll("article h2").forEach((heading) => {
+            const stuck_tracker = document.createElement("span");
+
+            stuck_tracker.className = "stickable";
+
+            // Move IDs to static elements, don't use stuck elements
+            // This is because stuck elements move around, and don't always scroll
+            // to the right place when using hash fragments navigation
+            if (heading.id) {
+                stuck_tracker.id = heading.id;
+                heading.removeAttribute("id");
             } else {
-                toc.classList.remove("sticky");
+                stuck_tracker.setAttribute("aria-hidden", "true");
             }
-        }
-        var details_content = details.getElementsByTagName("ul")[0];
-        details_content.onclick = function(e){
-            details.removeAttribute("open");
-        }
+
+            heading.before(stuck_tracker);
+
+            var nav_height = getComputedStyle(document.getElementById("report-toc")).height
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    heading.classList.toggle("is-stuck", !entry.isIntersecting);
+                },
+                {
+                    root: null,
+                    threshold: 0,
+                    rootMargin: `-${nav_height} 0px 0px 0px`,
+                }
+            );
+
+            observer.observe(stuck_tracker);
+        });
     </script>
 {% endblock %}
