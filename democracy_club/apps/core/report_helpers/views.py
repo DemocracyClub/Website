@@ -20,7 +20,10 @@ class MarkdownFileView(TemplateView):
         template = Template(self.markdown_content())
         rendered_template = template.render(RequestContext(self.request))
         self.md = markdown.Markdown(
-            extensions=settings.REPORT_MARKDOWN_EXTENSIONS
+            extensions=settings.REPORT_MARKDOWN_EXTENSIONS,
+            extension_configs={
+                "toc": {"toc_depth": 2},
+            },
         )
         self.html = self.md.convert(rendered_template)
         context["html_content"] = self.html

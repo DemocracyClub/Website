@@ -57,6 +57,11 @@ urlpatterns = [
         name="report_2025",
     ),
     path(
+        r"report_2026/",
+        MarkdownFileView.as_view(markdown_file="apps/reports/report_2026.md"),
+        name="report_2026",
+    ),
+    path(
         r"reports/whos_missing/",
         MarkdownFileView.as_view(
             markdown_file="apps/reports/report_whos_missing.md"
