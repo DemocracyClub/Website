@@ -87,7 +87,7 @@ As mentioned above, however, we still struggled to get through all the photo upl
 
 ## Evaluating overall reach and impact
 
-Between 00:00 1 April, and 22:00 7 May, our elections database processed [over 10 million postcode searches](https://democracyclub.org.uk/blog/2026/05/08/2026-postcode-search-summary/) from the UK public. This is an unprecedented figure for a local or developed election. Comparing election week searches, this outpaced the figures for the 2019 General Election by some margin.
+Between 00:00 1 April, and 22:00 7 May, our elections database processed [over 10 million postcode searches](https://democracyclub.org.uk/blog/2026/05/08/2026-postcode-search-summary/) from the UK public. This is an unprecedented figure for a local or devolved election. Comparing election week searches, this outpaced the figures for the 2019 General Election by some margin.
 
 <figure>
 <img src="https://dc-blog-images.s3.amazonaws.com/2026-05-08/Postcode%20searches%20per%20election%20week%20%28Monday-Thursday%29.png" 
