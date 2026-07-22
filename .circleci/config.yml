@@ -7,7 +7,7 @@ orbs:
 commands:
   install_uv:
     steps:
-      - run: pip install --upgrade "uv==0.9.*"
+      - run: pip install --upgrade "uv==0.11.*"
 
 jobs:
   install_and_update_dependencies:
