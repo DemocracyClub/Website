@@ -37,7 +37,7 @@ dev = [
     "pytest-django==4.11.1",
     "pytest-ruff==0.4.1",
     "pytest-subtests==0.13.1",
-    "ruff==0.7.1",
+    "ruff==0.15.22",
     "ipdb==0.13.13",
     "pre-commit==3.5.0",
     "feedparser==6.0.11",
