@@ -1,4 +1,5 @@
 from hermes import models
+from django.contrib.auth.models import User
 
 from .. import settings
 from . import HermesTestCase
@@ -238,3 +239,16 @@ class PostQuerySetTestCase(HermesTestCase):
             self.post1,
         ]
         self.assertEqual(expected, list(models.Post.objects.published()))
+
+    def test_active_users_only(self):
+        """The UserQuerySet should only return active users"""
+        author_6 = User.objects.create(
+            username="eleven",
+            email="jane@mac.com",
+            first_name="Jane",
+            last_name="Hopper",
+            is_staff=False,
+            is_active=False,
+        )
+        expected = [author_6]
+        self.assertNotEqual(expected, list(User.objects.filter(is_active=True)))
