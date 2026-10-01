@@ -36,7 +36,7 @@ fail_on_empty_changeset = false
 force_upload = true
 
 [default.logs]
-[staging.logs.parameters]
+[default.logs.parameters]
 stack_name = "dc-website-staging"
 name = "DCWebsiteFunction"
 region = "eu-west-2"
