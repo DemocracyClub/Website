@@ -25,7 +25,6 @@ class TestHtml:
             reverse("coc"),
             reverse("contact"),
             reverse("privacy"),
-            reverse("donate"),
             reverse("projects:home"),
             reverse("projects:cvs"),
             reverse("projects:election_leaflets"),

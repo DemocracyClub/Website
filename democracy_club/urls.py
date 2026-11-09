@@ -8,11 +8,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path, reverse_lazy
+from django.utils.text import format_lazy
 from django.views.generic import RedirectView, TemplateView
 
 admin.autodiscover()
 
 handler500 = "dc_utils.urls.dc_server_error"
+
+DONATE_URL = format_lazy("{}#donate", reverse_lazy("about"))
 
 
 def trigger_error(request):
@@ -102,11 +105,6 @@ urlpatterns = [
         name="contact",
     ),
     path("blog/", include("hermes.urls")),
-    path(
-        "donate/",
-        TemplateView.as_view(template_name="donate.html"),
-        name="donate",
-    ),
     path("", include("reports.urls", namespace="reports")),
     path(
         "wheredoivote_user_feedback/",
@@ -125,12 +123,16 @@ url_redirects = (
         RedirectView.as_view(url=reverse_lazy("projects:home")),
     ),
     path(
+        "donate/",
+        RedirectView.as_view(url=DONATE_URL),
+    ),
+    path(
         "support-us/",
-        RedirectView.as_view(url=reverse_lazy("donate")),
+        RedirectView.as_view(url=DONATE_URL),
     ),
     path(
         "about/support-us/",
-        RedirectView.as_view(url=reverse_lazy("donate")),
+        RedirectView.as_view(url=DONATE_URL),
     ),
     path(
         "about/impact/",
