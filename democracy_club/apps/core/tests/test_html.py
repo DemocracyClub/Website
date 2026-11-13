@@ -24,6 +24,7 @@ class TestHtml:
             reverse("team"),
             reverse("coc"),
             reverse("contact"),
+            reverse("contributors"),
             reverse("privacy"),
             reverse("projects:home"),
             reverse("projects:cvs"),

@@ -100,6 +100,11 @@ urlpatterns = [
     ),
     path("projects/", include("projects.urls", "projects")),
     path(
+        "contributors/",
+        TemplateView.as_view(template_name="contributors.html"),
+        name="contributors",
+    ),
+    path(
         "contact/",
         TemplateView.as_view(template_name="contact.html"),
         name="contact",
