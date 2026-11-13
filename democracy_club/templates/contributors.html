@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load markdown_filter %}
+
+{% block page_title %}Contributors{% endblock page_title %}
+
+{% block page_content %}
+    {# fmt:off #}
+    {# @formatter:off #}
+{% filter markdown %}
+# Democracy Club contributors: when and how you can help
+
+Our candidate database is largely produced and overseen by a network of volunteer contributors. These amazing
+individuals ensure that we have maximum information available for voters ahead of each election. Interested in
+pitching in? Here’s when and how you can help.
+
+## Around scheduled elections
+
+Scheduled elections in the UK happen each year on the first Thursday in May. It is in the run-up to this event that we
+are in greatest need of assistance.
+
+The main event is the deadline for candidates to register to stand, roughly a month before polling day (this date is
+different each year — we will publish it on our blog and social media). This is when official candidate lists are
+published, usually in PDF format, on local council websites. We require help from volunteers to enter the names into
+the database – this is a fairly hectic process which usually takes around 48 hours.
+
+{#**[Learn more about official candidate lists.](#sopn)**#}
+
+Once this initial work is completed, the second task is to collect a photograph and contact details of every candidate
+standing in the election. Each candidate has their own profile in the database, and this is displayed to users of our
+flagship voter information website [WhoCanIVoteFor.co.uk](https://whocanivotefor.co.uk/). We’re always looking for
+more people to help with this – you’re welcome to focus on a particular political party or region.
+
+* Does each candidate profile have a good quality recent colour photo?
+* Do they have links to social media, or an email address?
+* Can we find an election address published by them for the current election?
+
+**[Learn more about the details we collect.](https://candidates.democracyclub.org.uk/volunteer/)**
+
+Once the election is over we collect the results: votes cast for each candidate in First-Past-the-Post elections, and
+turnout data for other electoral systems. This data can be added to the candidate database: simply navigate to the
+[relevant ballot](https://candidates.democracyclub.org.uk/elections/).
+
+## Other times of year
+
+The candidate database covers all by-elections, so the process described above occurs in miniature each week. We are
+always grateful for contributors who can dedicate a little time to check and update the latest by-election candidates.
+
+In the months ahead of each election, we construct spreadsheets of local political party details for display on each
+candidate’s profile on WhoCanIVoteFor.co.uk. This is a task we are always looking for help on —
+[you can find the latest sheets here](https://drive.google.com/drive/u/0/folders/17rAxFSG0V6FBQR2Bxjc5txCQKztOJ5NY).
+
+## Keep in touch
+
+Key dates and calls for help will be published on our [blog]({% url 'hermes_post_list' %}), social media, and
+[mailing list](https://mailinglist.democracyclub.org.uk/) ahead of each election.
+
+**[Join our mailing list](https://mailinglist.democracyclub.org.uk/)**
+{% endfilter %}
+{# @formatter:on #}
+    {# fmt:on #}
+{% endblock page_content %}

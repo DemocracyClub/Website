@@ -32,6 +32,9 @@
                         <a href="{% url 'projects:polling_data_upload' %}">For Councils</a>
                     </li>
                     <li>
+                        <a href="{% url 'contributors' %}">Contributors</a>
+                    </li>
+                    <li>
                         <a href="{% url 'impact' %}">Research and Impact</a>
                     </li>
                     <li>
@@ -39,9 +42,6 @@
                     </li>
                     <li>
                         <a href="{% url 'about' %}">About</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'donate' %}">Donate</a>
                     </li>
                 </ul>
             </nav>
@@ -88,7 +88,7 @@
                 <h2>About Democracy Club</h2>
                 <ul>
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'donate' %}">Donate</a></li>
+                    <li><a href="{% url 'about' %}#donate">Donate</a></li>
                     <li><a href="{% url 'jobs' %}">Jobs</a></li>
                     <li><a href="{% url 'hermes_post_list' %}">Blog</a></li>
                     <li><a href="{% url 'hermes_post_feed' %}">Blog RSS/Atom feed</a></li>
