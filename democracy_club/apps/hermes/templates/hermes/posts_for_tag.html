@@ -22,6 +22,6 @@
         {% endfor %}
     </ul>
     {% if not hide_header %}
-        <a href="{% url "hermes_post_list" %}?tag={{tag}}" class="ds-cta">Our latest blog posts</a>
+        <a href="{{ tag.get_absolute_url }}" class="ds-cta">Our latest blog posts</a>
     {% endif %}
 {% endif %}

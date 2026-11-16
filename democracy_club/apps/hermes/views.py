@@ -1,9 +1,11 @@
 import hashlib
 
+from django.http import Http404
+from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import condition
 from django.views.generic import DetailView, ListView
-from hermes.models import Post
+from hermes.models import Post, Tag
 
 
 def latest_post(request, *args, **kwargs):
@@ -27,34 +29,52 @@ class PostListView(ListView):
     model = Post
     template_name = "hermes/post_list.html"
 
+    def get(self, request, *args, **kwargs):
+        # Old-style /blog/?tag=Foo links go to the tag's own page
+        tag = Tag.objects.resolve(request.GET.get("tag"))
+        if tag:
+            return redirect(tag, permanent=True)
+        return super().get(request, *args, **kwargs)
+
     def get_queryset(self):
-        qs = (
+        return (
             self.model.objects.published()
-            .prefetch_related("author")
+            .prefetch_related("author", "tags")
             .defer("body", "hero_alt_text")
         )
-        tag = self.request.GET.get("tag", None)
-        if tag:
-            qs = qs.for_tag(tag)
-        return qs
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        tags = []
-        for post in context["object_list"]:
-            for tag in post.tags:
-                if tag not in tags:
-                    tags.append(tag)
-        context["all_tags"] = tags
+        # Every tag with a published post, so the filter is the same
+        # on every page rather than depending on what's being listed
+        context["all_tags"] = Tag.objects.filter(
+            posts__is_published=True
+        ).distinct()
         return context
 
 
 class TagPostListView(PostListView):
     """Displays posts from a specific Tag"""
 
+    def get(self, request, *args, **kwargs):
+        self.tag = Tag.objects.resolve(self.kwargs["tag"])
+        if self.tag is None:
+            raise Http404("No such tag")
+        if self.tag.slug != self.kwargs["tag"]:
+            # A renamed tag, or an old mixed-case URL such as
+            # /blog/tag/WhoCanIVoteFor/
+            return redirect(self.tag, permanent=True)
+        return super().get(request, *args, **kwargs)
+
     def get_queryset(self):
-        tag = self.kwargs.get("tag", "")
-        return self.model.objects.for_tag(tag)
+        return self.model.objects.for_tag(self.tag).prefetch_related(
+            "author", "tags"
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["tag"] = self.tag
+        return context
 
 
 class CategoryPostListView(PostListView):

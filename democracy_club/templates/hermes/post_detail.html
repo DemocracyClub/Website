@@ -32,14 +32,14 @@
                     {% endfor %}
                 </address>
                 on <time pubdate datetime="{{post.modified_on|date:"c"}}" title="{{post.created_on|date:"jS E Y"}}">{{post.created_on|date:"jS E Y"}}</time>
-                {% if post.tags %}
+                {% with post_tags=post.tags.all %}{% if post_tags %}
                     <ul class="unindented-list">
                         <span aria-hidden="true">🏷️</span>
-                        {% for tag in post.tags %}
-                            <li class="blog-tag"><a href="{% url 'hermes_post_list_by_tag' tag %}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}</li>
+                        {% for tag in post_tags %}
+                            <li class="blog-tag"><a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>{% if not forloop.last %}, {% endif %}</li>
                         {% endfor %}
                     </ul>
-                {% endif %}
+                {% endif %}{% endwith %}
             </div>
 
         </header>
