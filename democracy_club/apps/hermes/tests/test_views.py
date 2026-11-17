@@ -1,3 +1,4 @@
+from django.urls import reverse
 from hermes import models
 
 from . import HermesTestCase
@@ -13,23 +14,24 @@ class PostListViewTestCase(HermesTestCase):
         expected = list(models.Post.objects.published())
         self.assertEqual(expected, list(response.context["posts"]))
 
-    def test_qs_contains_tags(self):
-        """The PostListView can filter tags if requested"""
-
-        self.post1.tags.append("foo")
-        self.post1.save()
-
-        self.post2.tags.append("foo")
-        self.post2.save()
-
-        self.post3.tags.append("bar")
-        self.post3.save()
-
-        response = self.get(self.url() + "?tag=foo")
-        expected = list(models.Post.objects.published().filter(tags=["foo"]))
-        self.assertEqual(expected, list(response.context["posts"]))
-        self.assertContains(response, self.post1.subject)
+    def test_unpublished_posts_not_listed(self):
+        self.assertFalse(self.post3.is_published)
+        response = self.get(self.url())
+        self.assertNotIn(self.post3, response.context["posts"])
         self.assertNotContains(response, self.post3.subject)
+
+    def test_tag_filter_lists_tags_in_use(self):
+        """The PostListView offers a filter link for each tag in use"""
+        foo = models.Tag.objects.create(name="Foo", slug="foo")
+        models.Tag.objects.create(name="Unused", slug="unused")
+        self.post1.tags.add(foo)
+
+        response = self.get(self.url())
+        self.assertIn(foo, response.context["all_tags"])
+        self.assertNotIn(
+            "Unused", [t.name for t in response.context["all_tags"]]
+        )
+        self.assertContains(response, 'href="/blog/tag/foo/"')
 
 
 class TagPostListViewTestCase(HermesTestCase):
@@ -38,13 +40,128 @@ class TagPostListViewTestCase(HermesTestCase):
             "hermes_post_list_by_tag", tag=tag
         )
 
+    def setUp(self):
+        super().setUp()
+        self.tag = models.Tag.objects.create(
+            name="Test Studies", slug="test-studies"
+        )
+        self.post1.tags.add(self.tag)
+
     def test_get_queryset(self):
         """The TagPostListView Context should contain a QuerySet of all Posts
         with the given tag
         """
-        response = self.get(self.url("foo"))
-        expected = list(models.Post.objects.for_tag("foo"))
+        response = self.get(self.url("test-studies"))
+        expected = list(models.Post.objects.for_tag("test-studies"))
+        self.assertEqual(expected, [self.post1])
         self.assertEqual(expected, list(response.context["posts"]))
+        self.assertEqual(response.context["tag"], self.tag)
+
+    def test_unpublished_posts_not_listed(self):
+        """Unpublished posts with the tag don't appear on the tag page"""
+        self.assertFalse(self.post3.is_published)
+        self.post3.tags.add(self.tag)
+        response = self.get(self.url("test-studies"))
+        self.assertEqual([self.post1], list(response.context["posts"]))
+        self.assertNotContains(response, self.post3.subject)
+
+    def test_filter_shows_all_tags_on_tag_page(self):
+        """The tag filter isn't limited to tags on the listed posts"""
+        other = models.Tag.objects.create(name="Other", slug="other")
+        self.post2.tags.add(other)
+        response = self.get(self.url("test-studies"))
+        self.assertIn(other, response.context["all_tags"])
+        self.assertContains(response, 'href="/blog/tag/other/"')
+        self.assertContains(
+            response, 'href="/blog/tag/test-studies/" aria-current="true"'
+        )
+
+    def test_filter_hides_tags_only_on_unpublished_posts(self):
+        draft_only = models.Tag.objects.create(name="Draft", slug="draft")
+        draft = models.Post.objects.filter(is_published=False).first()
+        draft.tags.add(draft_only)
+        response = self.get(self.url("test-studies"))
+        self.assertNotIn(draft_only, response.context["all_tags"])
+
+    def test_unknown_tag_404s(self):
+        response = self.get(self.url("nope"))
+        self.assertEqual(response.status_code, 404)
+
+    def test_non_canonical_slug_redirects(self):
+        """Old-style mixed-case tag URLs redirect to the canonical slug"""
+        response = self.get(self.url("Test-Studies"))
+        self.assertRedirects(
+            response, self.url("test-studies"), status_code=301
+        )
+
+    def test_renamed_slug_redirects(self):
+        self.tag.slug = "studies"
+        self.tag.save()
+        self.assertRedirects(
+            self.get(self.url("test-studies")),
+            self.url("studies"),
+            status_code=301,
+        )
+        # Old slugs are matched case-insensitively too
+        self.assertRedirects(
+            self.get(self.url("Test-Studies")),
+            self.url("studies"),
+            status_code=301,
+        )
+        self.assertEqual(
+            list(models.Post.objects.for_tag("test-studies")), [self.post1]
+        )
+
+    def test_chained_renames_all_redirect_to_current_slug(self):
+        self.tag.slug = "second"
+        self.tag.save()
+        self.tag.slug = "third"
+        self.tag.save()
+        for old in ("test-studies", "second"):
+            self.assertRedirects(
+                self.get(self.url(old)), self.url("third"), status_code=301
+            )
+        self.assertEqual(
+            sorted(self.tag.slug_redirects.values_list("old_slug", flat=True)),
+            ["second", "test-studies"],
+        )
+
+    def test_renaming_back_removes_redirect(self):
+        self.tag.slug = "studies"
+        self.tag.save()
+        self.tag.slug = "test-studies"
+        self.tag.save()
+        self.assertEqual(
+            list(self.tag.slug_redirects.values_list("old_slug", flat=True)),
+            ["studies"],
+        )
+        response = self.get(self.url("test-studies"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_new_tag_can_claim_an_old_slug(self):
+        self.tag.slug = "studies"
+        self.tag.save()
+        new_tag = models.Tag.objects.create(name="New", slug="test-studies")
+        response = self.get(self.url("test-studies"))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context["tag"], new_tag)
+        self.assertFalse(self.tag.slug_redirects.exists())
+
+    def test_slugs_are_lowercased(self):
+        tag = models.Tag.objects.create(name="Upper", slug="UpperCase")
+        self.assertEqual(tag.slug, "uppercase")
+
+    def test_query_string_tag_redirects_to_tag_page(self):
+        """Old-style /blog/?tag=... links go to the tag page"""
+        self.assertRedirects(
+            self.get(reverse("hermes_post_list") + "?tag=Test-Studies"),
+            self.url("test-studies"),
+            status_code=301,
+        )
+
+    def test_unknown_query_string_tag_shows_all_posts(self):
+        response = self.get(reverse("hermes_post_list") + "?tag=nope")
+        self.assertEqual(response.status_code, 200)
 
 
 class ArchivePostListViewTestCase(HermesTestCase):
@@ -92,9 +209,16 @@ class ArchivePostListViewTestCase(HermesTestCase):
         """The ArchivePostListView Context should contain a QuerySet of all
         Posts in the given year
         """
-        response = self.get(self.url(year=2012))
-        expected = list(models.Post.objects.created_on(year=2012))
+        response = self.get(self.url(year=2013))
+        expected = list(models.Post.objects.created_on(year=2013))
+        self.assertEqual(expected, [self.post4])
         self.assertEqual(expected, list(response.context["posts"]))
+
+    def test_unpublished_posts_not_listed(self):
+        """post3 (2012) isn't published, so the archive doesn't show it"""
+        self.assertFalse(self.post3.is_published)
+        response = self.get(self.url(year=2012))
+        self.assertEqual([], list(response.context["posts"]))
 
 
 class PostDetailViewTestCase(HermesTestCase):

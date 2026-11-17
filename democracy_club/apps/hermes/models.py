@@ -3,8 +3,8 @@ import os
 from functools import reduce
 
 from django.conf import settings as django_settings
-from django.contrib.postgres.fields import ArrayField
-from django.db import models
+from django.core.exceptions import ValidationError
+from django.db import models, transaction
 from django.db.models.signals import pre_delete
 from django.dispatch.dispatcher import receiver
 from django.urls import reverse
@@ -94,6 +94,125 @@ class Category(models.Model):
         return next(filter(lambda c: c.is_root, self.hierarchy()))
 
 
+class TagManager(models.Manager):
+    def resolve(self, slug):
+        """
+        Find a tag by slug, case-insensitively, falling back to slugs the
+        tag used to have. Returns None if nothing matches.
+
+        Callers can compare `tag.slug` to the slug they asked for to tell
+        whether they should redirect to the canonical URL.
+        """
+        if not slug:
+            return None
+        # Slugs are always stored lower case, so these exact lookups can
+        # use the unique indexes (unlike __iexact)
+        slug = slug.lower()
+        tag = self.filter(slug=slug).first()
+        if tag:
+            return tag
+        redirect = (
+            TagSlugRedirect.objects.select_related("tag")
+            .filter(old_slug=slug)
+            .first()
+        )
+        return redirect.tag if redirect else None
+
+    def matching_slug(self, slug):
+        """
+        A lazy queryset of the tag with this current or old slug, for use
+        in subqueries. Doesn't hit the database until evaluated.
+        """
+        if not slug:
+            return self.none()
+        slug = slug.lower()
+        return self.filter(
+            models.Q(slug=slug) | models.Q(slug_redirects__old_slug=slug)
+        )
+
+
+class Tag(models.Model):
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+        help_text="The name shown on the site, e.g. 'Case Study'",
+    )
+    slug = models.SlugField(
+        max_length=100,
+        unique=True,
+        help_text=(
+            "Used in URLs, e.g. /blog/tag/case-study/. If you change this, "
+            "the old URL will redirect to the new one."
+        ),
+    )
+
+    objects = TagManager()
+
+    class Meta:
+        ordering = ("name",)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("hermes_post_list_by_tag", kwargs={"tag": self.slug})
+
+    def clean(self):
+        super().clean()
+        if self.slug:
+            self.slug = self.slug.lower()
+            clash = Tag.objects.filter(slug=self.slug).exclude(pk=self.pk)
+            if clash.exists():
+                raise ValidationError(
+                    {"slug": "Another tag already uses this slug."}
+                )
+
+    def save(self, *args, **kwargs):
+        update_fields = kwargs.get("update_fields")
+        if update_fields is not None and "slug" not in update_fields:
+            # The slug isn't being written, so there's nothing to redirect
+            super().save(*args, **kwargs)
+            return
+        self.slug = self.slug.lower()
+        old_slug = None
+        if self.pk:
+            old_slug = (
+                Tag.objects.filter(pk=self.pk)
+                .values_list("slug", flat=True)
+                .first()
+            )
+        with transaction.atomic():
+            super().save(*args, **kwargs)
+            # This slug now belongs to this tag, so it can't redirect anywhere
+            TagSlugRedirect.objects.filter(old_slug=self.slug).delete()
+            if old_slug and old_slug != self.slug:
+                TagSlugRedirect.objects.update_or_create(
+                    old_slug=old_slug, defaults={"tag": self}
+                )
+
+
+class TagSlugRedirect(models.Model):
+    """
+    A slug a tag used to have. Requests for the old slug redirect to the
+    tag's current URL. Created automatically when a tag's slug changes.
+    """
+
+    old_slug = models.SlugField(max_length=100, unique=True)
+    tag = models.ForeignKey(
+        Tag, related_name="slug_redirects", on_delete=models.CASCADE
+    )
+
+    class Meta:
+        ordering = ("old_slug",)
+
+    def __str__(self):
+        return f"{self.old_slug} → {self.tag.slug}"
+
+    def save(self, *args, **kwargs):
+        self.old_slug = self.old_slug.lower()
+        super().save(*args, **kwargs)
+
+
 class PostQuerySet(models.query.QuerySet):
     def by(self, author):
         return self.filter(author__username=author)
@@ -136,7 +255,13 @@ class PostQuerySet(models.query.QuerySet):
         return self.filter(is_published=True)
 
     def for_tag(self, tag):
-        return self.filter(tags__contains=[tag])
+        """
+        Filter to posts with the given tag. `tag` can be a Tag instance
+        or a tag slug (matched case-insensitively, following old slugs).
+        """
+        if isinstance(tag, Tag):
+            return self.filter(tags=tag)
+        return self.filter(tags__in=Tag.objects.matching_slug(tag))
 
 
 class PostManager(models.Manager):
@@ -192,7 +317,7 @@ class Post(TimestampedModel):
     author = models.ManyToManyField(
         django_settings.AUTH_USER_MODEL, verbose_name="Authors"
     )
-    tags = ArrayField(models.CharField(max_length=30), blank=True, default=list)
+    tags = models.ManyToManyField(Tag, blank=True, related_name="posts")
 
     objects = PostManager()
 
