@@ -67,9 +67,7 @@ class TagPostListView(PostListView):
         return super().get(request, *args, **kwargs)
 
     def get_queryset(self):
-        return self.model.objects.for_tag(self.tag).prefetch_related(
-            "author", "tags"
-        )
+        return super().get_queryset().for_tag(self.tag)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -82,7 +80,7 @@ class CategoryPostListView(PostListView):
 
     def get_queryset(self):
         category_slug = self.kwargs.get("slug", "")
-        return self.model.objects.in_category(category_slug)
+        return super().get_queryset().in_category(category_slug)
 
 
 class ArchivePostListView(PostListView):
@@ -93,7 +91,9 @@ class ArchivePostListView(PostListView):
         month = self.kwargs.get("month", None)
         day = self.kwargs.get("day", None)
 
-        return self.model.objects.created_on(year=year, month=month, day=day)
+        return (
+            super().get_queryset().created_on(year=year, month=month, day=day)
+        )
 
 
 class AuthorPostListView(PostListView):
@@ -101,7 +101,7 @@ class AuthorPostListView(PostListView):
 
     def get_queryset(self):
         author = self.kwargs.get("author", "")
-        return self.model.objects.by(author)
+        return super().get_queryset().by(author)
 
 
 class PostDetail(DetailView):

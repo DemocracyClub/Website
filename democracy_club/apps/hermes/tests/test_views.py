@@ -14,6 +14,12 @@ class PostListViewTestCase(HermesTestCase):
         expected = list(models.Post.objects.published())
         self.assertEqual(expected, list(response.context["posts"]))
 
+    def test_unpublished_posts_not_listed(self):
+        self.assertFalse(self.post3.is_published)
+        response = self.get(self.url())
+        self.assertNotIn(self.post3, response.context["posts"])
+        self.assertNotContains(response, self.post3.subject)
+
     def test_tag_filter_lists_tags_in_use(self):
         """The PostListView offers a filter link for each tag in use"""
         foo = models.Tag.objects.create(name="Foo", slug="foo")
@@ -50,6 +56,14 @@ class TagPostListViewTestCase(HermesTestCase):
         self.assertEqual(expected, [self.post1])
         self.assertEqual(expected, list(response.context["posts"]))
         self.assertEqual(response.context["tag"], self.tag)
+
+    def test_unpublished_posts_not_listed(self):
+        """Unpublished posts with the tag don't appear on the tag page"""
+        self.assertFalse(self.post3.is_published)
+        self.post3.tags.add(self.tag)
+        response = self.get(self.url("test-studies"))
+        self.assertEqual([self.post1], list(response.context["posts"]))
+        self.assertNotContains(response, self.post3.subject)
 
     def test_filter_shows_all_tags_on_tag_page(self):
         """The tag filter isn't limited to tags on the listed posts"""
@@ -195,9 +209,16 @@ class ArchivePostListViewTestCase(HermesTestCase):
         """The ArchivePostListView Context should contain a QuerySet of all
         Posts in the given year
         """
-        response = self.get(self.url(year=2012))
-        expected = list(models.Post.objects.created_on(year=2012))
+        response = self.get(self.url(year=2013))
+        expected = list(models.Post.objects.created_on(year=2013))
+        self.assertEqual(expected, [self.post4])
         self.assertEqual(expected, list(response.context["posts"]))
+
+    def test_unpublished_posts_not_listed(self):
+        """post3 (2012) isn't published, so the archive doesn't show it"""
+        self.assertFalse(self.post3.is_published)
+        response = self.get(self.url(year=2012))
+        self.assertEqual([], list(response.context["posts"]))
 
 
 class PostDetailViewTestCase(HermesTestCase):
