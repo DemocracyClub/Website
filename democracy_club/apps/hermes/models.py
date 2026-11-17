@@ -168,6 +168,11 @@ class Tag(models.Model):
                 )
 
     def save(self, *args, **kwargs):
+        update_fields = kwargs.get("update_fields")
+        if update_fields is not None and "slug" not in update_fields:
+            # The slug isn't being written, so there's nothing to redirect
+            super().save(*args, **kwargs)
+            return
         self.slug = self.slug.lower()
         old_slug = None
         if self.pk:

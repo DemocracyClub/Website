@@ -84,6 +84,28 @@ class BlogTestCase(HermesTestCase):
             [self.blog_with_multiple_tags],
         )
 
+    def test_for_tag_empty_slug(self):
+        self.assertEqual(list(models.Post.objects.for_tag(None)), [])
+        self.assertEqual(list(models.Post.objects.for_tag("")), [])
+
+    def test_save_without_slug_in_update_fields(self):
+        """An unsaved in-memory slug change doesn't create a redirect"""
+        self.foo_tag.slug = "not-saved"
+        self.foo_tag.name = "Renamed"
+        self.foo_tag.save(update_fields=["name"])
+        self.foo_tag.refresh_from_db()
+        self.assertEqual(self.foo_tag.slug, "foo")
+        self.assertEqual(self.foo_tag.name, "Renamed")
+        self.assertFalse(models.TagSlugRedirect.objects.exists())
+
+    def test_save_with_slug_in_update_fields(self):
+        self.foo_tag.slug = "new-foo"
+        self.foo_tag.save(update_fields=["slug"])
+        self.assertEqual(
+            models.TagSlugRedirect.objects.get(old_slug="foo").tag,
+            self.foo_tag,
+        )
+
     def test_posts_for_tag_template_tag(self):
         from hermes.templatetags.post_tags import posts_for_tag
 
