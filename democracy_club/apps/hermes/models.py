@@ -315,7 +315,9 @@ class Post(TimestampedModel):
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ManyToManyField(
-        django_settings.AUTH_USER_MODEL, verbose_name="Authors"
+        django_settings.AUTH_USER_MODEL,
+        verbose_name="Authors",
+        limit_choices_to={"is_active": True},
     )
     tags = models.ManyToManyField(Tag, blank=True, related_name="posts")
 
